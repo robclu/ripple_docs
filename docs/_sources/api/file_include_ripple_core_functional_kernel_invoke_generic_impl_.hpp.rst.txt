@@ -77,11 +77,11 @@ Functions
 
 - :ref:`exhale_function_invoke__generic__impl___8hpp_1a0669a665845b203b45f10fe5ddeb06d6`
 
-- :ref:`exhale_function_invoke__generic__impl___8hpp_1a3c0471e0060839e3829b53755fd4e43c`
-
 - :ref:`exhale_function_invoke__generic__impl___8hpp_1a4b963c2de3ba1b57f9abf9b8f9422dae`
 
 - :ref:`exhale_function_invoke__generic__impl___8hpp_1aa4e8c0013f4da52dd3877f9001102a63`
+
+- :ref:`exhale_function_invoke__generic__impl___8hpp_1a3c0471e0060839e3829b53755fd4e43c`
 
 
 Typedefs

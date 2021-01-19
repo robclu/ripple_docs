@@ -531,11 +531,11 @@ Functions
 
 - :ref:`exhale_function_namespaceripple_1a6dada9e1d4b6a42fd3b45f50efc72811`
 
+- :ref:`exhale_function_namespaceripple_1afd68ed4e746c3ea8168ad06d3f6968bc`
+
 - :ref:`exhale_function_namespaceripple_1aedf2188e29d0ae0bc4e7b2f30887b5d9`
 
 - :ref:`exhale_function_namespaceripple_1a6968f4764a926fb5044789a7fecf5b01`
-
-- :ref:`exhale_function_namespaceripple_1afd68ed4e746c3ea8168ad06d3f6968bc`
 
 - :ref:`exhale_function_namespaceripple_1a5aaeea317b030d274eb618f168850bfc`
 

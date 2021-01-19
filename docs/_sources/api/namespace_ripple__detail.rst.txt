@@ -189,9 +189,9 @@ Functions
 
 - :ref:`exhale_function_utils___8hpp_1a1095f8328255ccd61bd206a79c1de09a`
 
-- :ref:`exhale_function_basic__tuple___8hpp_1a502c6e60b809c6f9d34b253a2e4c128f`
-
 - :ref:`exhale_function_basic__tuple___8hpp_1ae9e9531cce1cbff386e8af9a50f8d2be`
+
+- :ref:`exhale_function_basic__tuple___8hpp_1a502c6e60b809c6f9d34b253a2e4c128f`
 
 - :ref:`exhale_function_basic__tuple___8hpp_1a2fd64c4f3e2ea3ea5e330d232e702cee`
 
@@ -217,17 +217,17 @@ Functions
 
 - :ref:`exhale_function_load__global__boundary__impl___8hpp_1a5a9c3563f89d9fd943256caed9de7dc6`
 
-- :ref:`exhale_function_load__global__boundary__impl___8hpp_1ac13a071a69fbe67663a63ac453e378c2`
-
 - :ref:`exhale_function_load__global__boundary__impl___8hpp_1ad6767e7e04b298d3b43337c04e97ab83`
+
+- :ref:`exhale_function_load__global__boundary__impl___8hpp_1ac13a071a69fbe67663a63ac453e378c2`
 
 - :ref:`exhale_function_load__global__boundary__impl___8hpp_1a4a7a0ef14f2f387faa10f96b153f8c42`
 
 - :ref:`exhale_function_load__internal__boundary__impl___8hpp_1a5320e599c77559d1218f3ab042bdb114`
 
-- :ref:`exhale_function_max__element_8hpp_1ac83fe20a8c75fac7b16f2f3307212d5c`
-
 - :ref:`exhale_function_max__element_8hpp_1a4519db7224256ed6b40a8098e5cdf5b2`
+
+- :ref:`exhale_function_max__element_8hpp_1ac83fe20a8c75fac7b16f2f3307212d5c`
 
 - :ref:`exhale_function_utils___8hpp_1a15c771d089d0b5c79d0bfa841c355b8a`
 

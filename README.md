@@ -1,4 +1,5 @@
-# ripple_docs
-Location of hosted documentation for ripple.
+RippleDocs
+==========
 
-This repositiry simply holders the most up to date version of the documentation for ripple.
+Repo for ripple documentation.
+

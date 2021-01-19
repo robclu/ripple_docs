@@ -56,9 +56,9 @@ Functions
 
 - :ref:`exhale_function_math_8hpp_1a4c60b72cebe4e74b62184043b8e9b29a`
 
-- :ref:`exhale_function_lerp_8hpp_1a872e7362ead9bfbbf3a45b3070f0f421`
-
 - :ref:`exhale_function_lerp_8hpp_1a64758aedf49aad7bb2728c02161583bd`
+
+- :ref:`exhale_function_lerp_8hpp_1a872e7362ead9bfbbf3a45b3070f0f421`
 
 - :ref:`exhale_function_math_8hpp_1ab389086da42891f5da6b32ec9449967b`
 
