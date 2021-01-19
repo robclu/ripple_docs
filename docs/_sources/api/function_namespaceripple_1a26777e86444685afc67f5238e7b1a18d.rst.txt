@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a26777e86444685afc67f5238e7b1a18d:
+
+Template Function ripple::grid_size
+===================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::grid_size(Dim&&)

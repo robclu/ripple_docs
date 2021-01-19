@@ -1,0 +1,25 @@
+.. _exhale_struct_structripple_1_1DynamicMultidimSpace:
+
+Template Struct DynamicMultidimSpace
+====================================
+
+- Defined in :ref:`file_include_ripple_core_multidim_dynamic_multidim_space.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public ripple::MultidimSpace< DynamicMultidimSpace< Dimensions > >`` (:ref:`exhale_struct_structripple_1_1MultidimSpace`)
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::DynamicMultidimSpace
+   :members:
+   :protected-members:
+   :undoc-members:

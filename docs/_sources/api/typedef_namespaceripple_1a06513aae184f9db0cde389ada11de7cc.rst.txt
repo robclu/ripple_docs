@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a06513aae184f9db0cde389ada11de7cc:
+
+Typedef ripple::array_traits_t
+==============================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::array_traits_t

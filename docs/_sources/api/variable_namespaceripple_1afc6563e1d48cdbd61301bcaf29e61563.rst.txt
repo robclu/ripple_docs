@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1afc6563e1d48cdbd61301bcaf29e61563:
+
+Variable ripple::tuple_size_v
+=============================
+
+- Defined in :ref:`file_include_ripple_core_container_tuple_traits.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::tuple_size_v

@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1aab205db063daf6c8a81f393467b425bd:
+
+Template Function ripple::log_error
+===================================
+
+- Defined in :ref:`file_include_ripple_core_utility_logger.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::log_error(Fmt&&, FmtArgs&&...)

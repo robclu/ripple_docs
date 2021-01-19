@@ -1,0 +1,13 @@
+.. _exhale_function_portability_8hpp_1ae8f55936e454a6d03a671468ee80eec5:
+
+Function ripple::gpu::debug::check_cuda_error
+=============================================
+
+- Defined in :ref:`file_include_ripple_core_utility_portability.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::gpu::debug::check_cuda_error(GpuError, const char *, int)

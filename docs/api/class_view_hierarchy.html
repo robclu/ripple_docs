@@ -1,0 +1,401 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class Hierarchy &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+      <li>Class Hierarchy</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/class_view_hierarchy.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="class-hierarchy">
+<h1>Class Hierarchy<a class="headerlink" href="#class-hierarchy" title="Permalink to this headline">¶</a></h1>
+<ul class="treeView" id="class-treeView">
+  <li>
+    <ul class="collapsibleList">
+      <li>Namespace <a href="namespace_ripple.html#namespace-ripple">ripple</a><ul><li>Namespace <a href="namespace_ripple__detail.html#namespace-ripple-detail">ripple::detail</a><ul><li>Template Struct <a href="structripple_1_1detail_1_1BasicTuple.html#exhale-struct-structripple-1-1detail-1-1BasicTuple">BasicTuple</a></li><li>Template Struct <a href="structripple_1_1detail_1_1ContigStorageHelper.html#exhale-struct-structripple-1-1detail-1-1ContigStorageHelper">ContigStorageHelper</a><ul><li class="lastChild">Template Struct <a href="structripple_1_1detail_1_1ContigStorageHelper_1_1Vec.html#exhale-struct-structripple-1-1detail-1-1ContigStorageHelper-1-1Vec">ContigStorageHelper::Vec</a></li></ul></li><li>Struct <a href="structripple_1_1detail_1_1Dim3.html#exhale-struct-structripple-1-1detail-1-1Dim3">Dim3</a></li><li>Template Struct <a href="structripple_1_1detail_1_1Element.html#exhale-struct-structripple-1-1detail-1-1Element">Element</a></li><li>Template Struct <a href="structripple_1_1detail_1_1FunctionTraits.html#exhale-struct-structripple-1-1detail-1-1FunctionTraits">FunctionTraits</a></li><li>Template Struct <a href="structripple_1_1detail_1_1FunctionTraits_3_01R_07_6_08_07Args_8_8_8_08_4.html#exhale-struct-structripple-1-1detail-1-1FunctionTraits-3-01R-07-6-08-07Args-8-8-8-08-4">FunctionTraits&lt; R(&amp;)(Args...)&gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1FunctionTraits_3_01R_07_6_08_07Args_8_8_8_00_8_8_8_08_4.html#exhale-struct-structripple-1-1detail-1-1FunctionTraits-3-01R-07-6-08-07Args-8-8-8-00-8-8-8-08-4">FunctionTraits&lt; R(&amp;)(Args...,...)&gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1FunctionTraits_3_01R_07_5_08_07Args_8_8_8_08_4.html#exhale-struct-structripple-1-1detail-1-1FunctionTraits-3-01R-07-5-08-07Args-8-8-8-08-4">FunctionTraits&lt; R(*)(Args...)&gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1FunctionTraits_3_01R_07_5_08_07Args_8_8_8_00_8_8_8_08_4.html#exhale-struct-structripple-1-1detail-1-1FunctionTraits-3-01R-07-5-08-07Args-8-8-8-00-8-8-8-08-4">FunctionTraits&lt; R(*)(Args...,...)&gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1FunctionTraits_3_01R_07Args_8_8_8_08_01_6_6_01_4.html#exhale-struct-structripple-1-1detail-1-1FunctionTraits-3-01R-07Args-8-8-8-08-01-6-6-01-4">FunctionTraits&lt; R(Args...) &amp;&amp; &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1FunctionTraits_3_01R_07Args_8_8_8_08_01const_01_6_01_4.html#exhale-struct-structripple-1-1detail-1-1FunctionTraits-3-01R-07Args-8-8-8-08-01const-01-6-01-4">FunctionTraits&lt; R(Args...) const &amp; &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1FunctionTraits_3_01R_07Args_8_8_8_08_01const_01_6_6_01_4.html#exhale-struct-structripple-1-1detail-1-1FunctionTraits-3-01R-07Args-8-8-8-08-01const-01-6-6-01-4">FunctionTraits&lt; R(Args...) const &amp;&amp; &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1FunctionTraits_3_01R_07Args_8_8_8_08_01const_01_4.html#exhale-struct-structripple-1-1detail-1-1FunctionTraits-3-01R-07Args-8-8-8-08-01const-01-4">FunctionTraits&lt; R(Args...) const &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1FunctionTraits_3_01R_07Args_8_8_8_08_6_01_4.html#exhale-struct-structripple-1-1detail-1-1FunctionTraits-3-01R-07Args-8-8-8-08-6-01-4">FunctionTraits&lt; R(Args...)&amp; &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1FunctionTraits_3_01R_07Args_8_8_8_08_4.html#exhale-struct-structripple-1-1detail-1-1FunctionTraits-3-01R-07Args-8-8-8-08-4">FunctionTraits&lt; R(Args...)&gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1FunctionTraits_3_01R_07Args_8_8_8_00_8_8_8_08_01_6_6_01_4.html#exhale-struct-structripple-1-1detail-1-1FunctionTraits-3-01R-07Args-8-8-8-00-8-8-8-08-01-6-6-01-4">FunctionTraits&lt; R(Args...,...) &amp;&amp; &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1FunctionTraits_3_01R_07Args_8_8_8_00_8_8_8_08_01const_01_6_01_4.html#exhale-struct-structripple-1-1detail-1-1FunctionTraits-3-01R-07Args-8-8-8-00-8-8-8-08-01const-01-6-01-4">FunctionTraits&lt; R(Args...,...) const &amp; &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1FunctionTraits_3_01R_07Args_8_8_8_00_8_8_8_08_01const_01_6_6_01_4.html#exhale-struct-structripple-1-1detail-1-1FunctionTraits-3-01R-07Args-8-8-8-00-8-8-8-08-01const-01-6-6-01-4">FunctionTraits&lt; R(Args...,...) const &amp;&amp; &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1FunctionTraits_3_01R_07Args_8_8_8_00_8_8_8_08_01const_01_4.html#exhale-struct-structripple-1-1detail-1-1FunctionTraits-3-01R-07Args-8-8-8-00-8-8-8-08-01const-01-4">FunctionTraits&lt; R(Args...,...) const &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1FunctionTraits_3_01R_07Args_8_8_8_00_8_8_8_08_6_01_4.html#exhale-struct-structripple-1-1detail-1-1FunctionTraits-3-01R-07Args-8-8-8-00-8-8-8-08-6-01-4">FunctionTraits&lt; R(Args...,...)&amp; &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1FunctionTraits_3_01R_07Args_8_8_8_00_8_8_8_08_4.html#exhale-struct-structripple-1-1detail-1-1FunctionTraits-3-01R-07Args-8-8-8-00-8-8-8-08-4">FunctionTraits&lt; R(Args...,...)&gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1FunctionTraits_3_01R_07C_1_1_5_08_07Args_8_8_8_08_01const_01_4.html#exhale-struct-structripple-1-1detail-1-1FunctionTraits-3-01R-07C-1-1-5-08-07Args-8-8-8-08-01const-01-4">FunctionTraits&lt; R(C::*)(Args...) const &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1FunctionTraits_3_01R_07C_1_1_5_08_07Args_8_8_8_08_4.html#exhale-struct-structripple-1-1detail-1-1FunctionTraits-3-01R-07C-1-1-5-08-07Args-8-8-8-08-4">FunctionTraits&lt; R(C::*)(Args...)&gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1FunctionTraits_3_01R_07C_1_1_5_08_07Args_8_8_8_00_8_8_8_08_01const_01_4.html#exhale-struct-structripple-1-1detail-1-1FunctionTraits-3-01R-07C-1-1-5-08-07Args-8-8-8-00-8-8-8-08-01const-01-4">FunctionTraits&lt; R(C::*)(Args...,...) const &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1FunctionTraits_3_01R_07C_1_1_5_08_07Args_8_8_8_00_8_8_8_08_4.html#exhale-struct-structripple-1-1detail-1-1FunctionTraits-3-01R-07C-1-1-5-08-07Args-8-8-8-00-8-8-8-08-4">FunctionTraits&lt; R(C::*)(Args...,...)&gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1FunctionTraits_3_01T_01_4.html#exhale-struct-structripple-1-1detail-1-1FunctionTraits-3-01T-01-4">FunctionTraits&lt; T &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1FunctionTraits_3_01T_00_01T1_00_01Ts_8_8_8_01_4.html#exhale-struct-structripple-1-1detail-1-1FunctionTraits-3-01T-00-01T1-00-01Ts-8-8-8-01-4">FunctionTraits&lt; T, T1, Ts... &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1FunctionTypes.html#exhale-struct-structripple-1-1detail-1-1FunctionTypes">FunctionTypes</a></li><li>Template Struct <a href="structripple_1_1detail_1_1HasStorageLayout.html#exhale-struct-structripple-1-1detail-1-1HasStorageLayout">HasStorageLayout</a></li><li>Template Struct <a href="structripple_1_1detail_1_1HasStorageLayout_3_01T_3_01Ts_8_8_8_01_4_01_4.html#exhale-struct-structripple-1-1detail-1-1HasStorageLayout-3-01T-3-01Ts-8-8-8-01-4-01-4">HasStorageLayout&lt; T&lt; Ts... &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1IndexOf.html#exhale-struct-structripple-1-1detail-1-1IndexOf">IndexOf</a></li><li>Template Struct <a href="structripple_1_1detail_1_1IndexOf_3_01I_00_01T_01_4.html#exhale-struct-structripple-1-1detail-1-1IndexOf-3-01I-00-01T-01-4">IndexOf&lt; I, T &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1IndexOf_3_01I_00_01T_00_01U_00_01Ts_8_8_8_01_4.html#exhale-struct-structripple-1-1detail-1-1IndexOf-3-01I-00-01T-00-01U-00-01Ts-8-8-8-01-4">IndexOf&lt; I, T, U, Ts... &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1IsDimension.html#exhale-struct-structripple-1-1detail-1-1IsDimension">IsDimension</a></li><li>Template Struct <a href="structripple_1_1detail_1_1IsDimension_3_01Dimension_3_01Value_01_4_01_4.html#exhale-struct-structripple-1-1detail-1-1IsDimension-3-01Dimension-3-01Value-01-4-01-4">IsDimension&lt; Dimension&lt; Value &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1IsInvocable.html#exhale-struct-structripple-1-1detail-1-1IsInvocable">IsInvocable</a></li><li>Template Struct <a href="structripple_1_1detail_1_1IsInvocable_3_01Invocable_3_01F_01_4_01_4.html#exhale-struct-structripple-1-1detail-1-1IsInvocable-3-01Invocable-3-01F-01-4-01-4">IsInvocable&lt; Invocable&lt; F &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1IsNumber.html#exhale-struct-structripple-1-1detail-1-1IsNumber">IsNumber</a></li><li>Template Struct <a href="structripple_1_1detail_1_1IsNumber_3_01Int64_3_01Value_01_4_01_4.html#exhale-struct-structripple-1-1detail-1-1IsNumber-3-01Int64-3-01Value-01-4-01-4">IsNumber&lt; Int64&lt; Value &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1IsNumber_3_01Num_3_01Value_01_4_01_4.html#exhale-struct-structripple-1-1detail-1-1IsNumber-3-01Num-3-01Value-01-4-01-4">IsNumber&lt; Num&lt; Value &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1IsStorageLayout.html#exhale-struct-structripple-1-1detail-1-1IsStorageLayout">IsStorageLayout</a></li><li>Template Struct <a href="structripple_1_1detail_1_1IsStorageLayout_3_01StorageLayout_3_01Layout_01_4_01_4.html#exhale-struct-structripple-1-1detail-1-1IsStorageLayout-3-01StorageLayout-3-01Layout-01-4-01-4">IsStorageLayout&lt; StorageLayout&lt; Layout &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1IsTuple.html#exhale-struct-structripple-1-1detail-1-1IsTuple">IsTuple</a></li><li>Template Struct <a href="structripple_1_1detail_1_1IsTuple_3_01Tuple_3_01Ts_8_8_8_01_4_01_4.html#exhale-struct-structripple-1-1detail-1-1IsTuple-3-01Tuple-3-01Ts-8-8-8-01-4-01-4">IsTuple&lt; Tuple&lt; Ts... &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1NthElement.html#exhale-struct-structripple-1-1detail-1-1NthElement">NthElement</a></li><li>Template Struct <a href="structripple_1_1detail_1_1NthElement_3_01N_01_4.html#exhale-struct-structripple-1-1detail-1-1NthElement-3-01N-01-4">NthElement&lt; N &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1StorageAs.html#exhale-struct-structripple-1-1detail-1-1StorageAs">StorageAs</a></li><li>Template Struct <a href="structripple_1_1detail_1_1StorageAs_3_01Storage_00_01T_3_01Ts_8_8_8_01_4_01_4.html#exhale-struct-structripple-1-1detail-1-1StorageAs-3-01Storage-00-01T-3-01Ts-8-8-8-01-4-01-4">StorageAs&lt; Storage, T&lt; Ts... &gt; &gt;</a><ul><li class="lastChild">Template Struct <a href="structripple_1_1detail_1_1StorageAs_3_01Storage_00_01T_3_01Ts_8_8_8_01_4_01_4_1_1MakeStorageType.html#exhale-struct-structripple-1-1detail-1-1StorageAs-3-01Storage-00-01T-3-01Ts-8-8-8-01-4-01-4-1-1MakeStorageType">StorageAs&lt; Storage, T&lt; Ts... &gt; &gt;::StorageAs&lt; Storage, T&lt; Ts... &gt; &gt;</a></li></ul></li><li>Template Struct <a href="structripple_1_1detail_1_1StorageAsImpl.html#exhale-struct-structripple-1-1detail-1-1StorageAsImpl">StorageAsImpl</a></li><li>Template Struct <a href="structripple_1_1detail_1_1StorageAsImpl_3_01Storage_00_01std_1_1tuple_3_01T_00_01Ts_8_8_8_01_4_020d70afb531d7e0a13c7eb6011d42ff3.html#exhale-struct-structripple-1-1detail-1-1StorageAsImpl-3-01Storage-00-01std-1-1tuple-3-01T-00-01Ts-8-8-8-01-4-020d70afb531d7e0a13c7eb6011d42ff3">StorageAsImpl&lt; Storage, std::tuple&lt; T, Ts... &gt;, std::tuple&lt; Us... &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1StorageAsImpl_3_01Storage_00_01std_1_1tuple_3_4_00_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4.html#exhale-struct-structripple-1-1detail-1-1StorageAsImpl-3-01Storage-00-01std-1-1tuple-3-4-00-01std-1-1tuple-3-01Ts-8-8-8-01-4-01-4">StorageAsImpl&lt; Storage, std::tuple&lt;&gt;, std::tuple&lt; Ts... &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1StorageLayoutKind.html#exhale-struct-structripple-1-1detail-1-1StorageLayoutKind">StorageLayoutKind</a></li><li>Template Struct <a href="structripple_1_1detail_1_1StorageLayoutKind_3_01T_3_01Ts_8_8_8_01_4_01_4.html#exhale-struct-structripple-1-1detail-1-1StorageLayoutKind-3-01T-3-01Ts-8-8-8-01-4-01-4">StorageLayoutKind&lt; T&lt; Ts... &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1TupleElement.html#exhale-struct-structripple-1-1detail-1-1TupleElement">TupleElement</a></li><li>Template Struct <a href="structripple_1_1detail_1_1TupleElement_3_01I_00_01Tuple_3_4_01_4.html#exhale-struct-structripple-1-1detail-1-1TupleElement-3-01I-00-01Tuple-3-4-01-4">TupleElement&lt; I, Tuple&lt;&gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1TupleStorage.html#exhale-struct-structripple-1-1detail-1-1TupleStorage">TupleStorage</a></li><li>Template Struct <a href="structripple_1_1detail_1_1TupleStorage_3_01std_1_1index__sequence_3_01Is_8_8_8_01_4_00_01Ts_8_8_8_01_4.html#exhale-struct-structripple-1-1detail-1-1TupleStorage-3-01std-1-1index-sequence-3-01Is-8-8-8-01-4-00-01Ts-8-8-8-01-4">TupleStorage&lt; std::index_sequence&lt; Is... &gt;, Ts... &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1TupleTraits.html#exhale-struct-structripple-1-1detail-1-1TupleTraits">TupleTraits</a></li><li>Template Struct <a href="structripple_1_1detail_1_1TupleTraits_3_01Tuple_3_01Ts_8_8_8_01_4_01_4.html#exhale-struct-structripple-1-1detail-1-1TupleTraits-3-01Tuple-3-01Ts-8-8-8-01-4-01-4">TupleTraits&lt; Tuple&lt; Ts... &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1detail_1_1Unroll.html#exhale-struct-structripple-1-1detail-1-1Unroll">Unroll</a></li><li>Template <a href="structripple_1_1detail_1_1Unroll_3_010_01_4.html#exhale-struct-structripple-1-1detail-1-1Unroll-3-010-01-4">Struct Unroll&lt; 0 &gt;</a></li><li class="lastChild">Template <a href="structripple_1_1detail_1_1Unroll_3_011_01_4.html#exhale-struct-structripple-1-1detail-1-1Unroll-3-011-01-4">Struct Unroll&lt; 1 &gt;</a></li></ul></li><li>Namespace <a href="namespace_ripple__kernel.html#namespace-ripple-kernel">ripple::kernel</a><ul><li>Namespace <a href="namespace_ripple__kernel__cpu.html#namespace-ripple-kernel-cpu">ripple::kernel::cpu</a><ul><li>Namespace <a href="namespace_ripple__kernel__cpu__detail.html#namespace-ripple-kernel-cpu-detail">ripple::kernel::cpu::detail</a><ul><li>Template Class <a href="classripple_1_1kernel_1_1cpu_1_1detail_1_1Reducer.html#exhale-class-classripple-1-1kernel-1-1cpu-1-1detail-1-1Reducer">Reducer</a></li><li class="lastChild">Template <a href="classripple_1_1kernel_1_1cpu_1_1detail_1_1Reducer_3_010_01_4.html#exhale-class-classripple-1-1kernel-1-1cpu-1-1detail-1-1Reducer-3-010-01-4">Class Reducer&lt; 0 &gt;</a></li></ul></li><li>Template Struct <a href="structripple_1_1kernel_1_1cpu_1_1InvokeGenericImpl.html#exhale-struct-structripple-1-1kernel-1-1cpu-1-1InvokeGenericImpl">InvokeGenericImpl</a></li><li>Template <a href="structripple_1_1kernel_1_1cpu_1_1InvokeGenericImpl_3_010_01_4.html#exhale-struct-structripple-1-1kernel-1-1cpu-1-1InvokeGenericImpl-3-010-01-4">Struct InvokeGenericImpl&lt; 0 &gt;</a></li><li>Template <a href="structripple_1_1kernel_1_1cpu_1_1InvokeGenericImpl_3_011_01_4.html#exhale-struct-structripple-1-1kernel-1-1cpu-1-1InvokeGenericImpl-3-011-01-4">Struct InvokeGenericImpl&lt; 1 &gt;</a></li><li class="lastChild">Template <a href="structripple_1_1kernel_1_1cpu_1_1InvokeGenericImpl_3_012_01_4.html#exhale-struct-structripple-1-1kernel-1-1cpu-1-1InvokeGenericImpl-3-012-01-4">Struct InvokeGenericImpl&lt; 2 &gt;</a></li></ul></li><li class="lastChild">Namespace <a href="namespace_ripple__kernel__detail.html#namespace-ripple-kernel-detail">ripple::kernel::detail</a><ul><li>Template Struct <a href="structripple_1_1kernel_1_1detail_1_1InvokeBlockedImpl.html#exhale-struct-structripple-1-1kernel-1-1detail-1-1InvokeBlockedImpl">InvokeBlockedImpl</a></li><li>Template <a href="structripple_1_1kernel_1_1detail_1_1InvokeBlockedImpl_3_010_01_4.html#exhale-struct-structripple-1-1kernel-1-1detail-1-1InvokeBlockedImpl-3-010-01-4">Struct InvokeBlockedImpl&lt; 0 &gt;</a></li><li>Template Struct <a href="structripple_1_1kernel_1_1detail_1_1InvokeImpl.html#exhale-struct-structripple-1-1kernel-1-1detail-1-1InvokeImpl">InvokeImpl</a></li><li>Template <a href="structripple_1_1kernel_1_1detail_1_1InvokeImpl_3_010_01_4.html#exhale-struct-structripple-1-1kernel-1-1detail-1-1InvokeImpl-3-010-01-4">Struct InvokeImpl&lt; 0 &gt;</a></li><li>Template Struct <a href="structripple_1_1kernel_1_1detail_1_1InvokeOnBlock.html#exhale-struct-structripple-1-1kernel-1-1detail-1-1InvokeOnBlock">InvokeOnBlock</a></li><li class="lastChild">Template <a href="structripple_1_1kernel_1_1detail_1_1InvokeOnBlock_3_010_01_4.html#exhale-struct-structripple-1-1kernel-1-1detail-1-1InvokeOnBlock-3-010-01-4">Struct InvokeOnBlock&lt; 0 &gt;</a></li></ul></li></ul></li><li>Template Struct <a href="structripple_1_1AnyBlockTraits.html#exhale-struct-structripple-1-1AnyBlockTraits">AnyBlockTraits</a></li><li>Template Struct <a href="structripple_1_1Array.html#exhale-struct-structripple-1-1Array">Array</a></li><li>Template Struct <a href="structripple_1_1ArrayTraits.html#exhale-struct-structripple-1-1ArrayTraits">ArrayTraits</a></li><li>Template Struct <a href="structripple_1_1ArrayTraits_3_01Array_3_01Impl_01_4_01_4.html#exhale-struct-structripple-1-1ArrayTraits-3-01Array-3-01Impl-01-4-01-4">ArrayTraits&lt; Array&lt; Impl &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1ArrayTraits_3_01VecImpl_3_01T_00_01Size_00_01LayoutType_01_4_01_4.html#exhale-struct-structripple-1-1ArrayTraits-3-01VecImpl-3-01T-00-01Size-00-01LayoutType-01-4-01-4">ArrayTraits&lt; VecImpl&lt; T, Size, LayoutType &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1Block.html#exhale-struct-structripple-1-1Block">Block</a></li><li>Struct <a href="structripple_1_1BlockExtractor.html#exhale-struct-structripple-1-1BlockExtractor">BlockExtractor</a></li><li>Struct <a href="structripple_1_1BlockMemoryProps.html#exhale-struct-structripple-1-1BlockMemoryProps">BlockMemoryProps</a></li><li>Template Struct <a href="structripple_1_1BlockTraits.html#exhale-struct-structripple-1-1BlockTraits">BlockTraits</a></li><li>Template Struct <a href="structripple_1_1BlockTraits_3_01DeviceBlock_3_01T_00_01Dimensions_01_4_01_4.html#exhale-struct-structripple-1-1BlockTraits-3-01DeviceBlock-3-01T-00-01Dimensions-01-4-01-4">BlockTraits&lt; DeviceBlock&lt; T, Dimensions &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1BlockTraits_3_01HostBlock_3_01T_00_01Dimensions_01_4_01_4.html#exhale-struct-structripple-1-1BlockTraits-3-01HostBlock-3-01T-00-01Dimensions-01-4-01-4">BlockTraits&lt; HostBlock&lt; T, Dimensions &gt; &gt;</a></li><li>Struct <a href="structripple_1_1Cache.html#exhale-struct-structripple-1-1Cache">Cache</a></li><li>Template Struct <a href="structripple_1_1ConstLoader.html#exhale-struct-structripple-1-1ConstLoader">ConstLoader</a></li><li>Struct <a href="structripple_1_1CopyLoader.html#exhale-struct-structripple-1-1CopyLoader">CopyLoader</a></li><li>Template Struct <a href="structripple_1_1CopySpecifier.html#exhale-struct-structripple-1-1CopySpecifier">CopySpecifier</a></li><li>Struct <a href="structripple_1_1CpuInfo.html#exhale-struct-structripple-1-1CpuInfo">CpuInfo</a><ul><li class="lastChild">Struct <a href="structripple_1_1CpuInfo_1_1Regs.html#exhale-struct-structripple-1-1CpuInfo-1-1Regs">CpuInfo::Regs</a></li></ul></li><li>Template Struct <a href="structripple_1_1DefaultStorage.html#exhale-struct-structripple-1-1DefaultStorage">DefaultStorage</a><ul><li class="lastChild">Struct <a href="structripple_1_1DefaultStorage_1_1Allocator.html#exhale-struct-structripple-1-1DefaultStorage-1-1Allocator">DefaultStorage::Allocator</a></li></ul></li><li>Template Struct <a href="structripple_1_1Dimension.html#exhale-struct-structripple-1-1Dimension">Dimension</a></li><li>Template Struct <a href="structripple_1_1DynamicExecParams.html#exhale-struct-structripple-1-1DynamicExecParams">DynamicExecParams</a></li><li>Template Struct <a href="structripple_1_1DynamicMultidimSpace.html#exhale-struct-structripple-1-1DynamicMultidimSpace">DynamicMultidimSpace</a></li><li>Template Struct <a href="structripple_1_1ExecParams.html#exhale-struct-structripple-1-1ExecParams">ExecParams</a></li><li>Template Struct <a href="structripple_1_1ExecTraits.html#exhale-struct-structripple-1-1ExecTraits">ExecTraits</a></li><li>Template Struct <a href="structripple_1_1ExecTraits_3_01DynamicExecParams_3_01Shared_01_4_01_4.html#exhale-struct-structripple-1-1ExecTraits-3-01DynamicExecParams-3-01Shared-01-4-01-4">ExecTraits&lt; DynamicExecParams&lt; Shared &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1ExecTraits_3_01ExecParams_3_01ExecImpl_01_4_01_4.html#exhale-struct-structripple-1-1ExecTraits-3-01ExecParams-3-01ExecImpl-01-4-01-4">ExecTraits&lt; ExecParams&lt; ExecImpl &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1ExecTraits_3_01StaticExecParams_3_01X_00_01Y_00_01Z_00_01Padding_00_01Shared_01_4_01_4.html#exhale-struct-structripple-1-1ExecTraits-3-01StaticExecParams-3-01X-00-01Y-00-01Z-00-01Padding-00-01Shared-01-4-01-4">ExecTraits&lt; StaticExecParams&lt; X, Y, Z, Padding, Shared &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1Execution.html#exhale-struct-structripple-1-1Execution">Execution</a></li><li>Struct <a href="structripple_1_1ExpansionParams.html#exhale-struct-structripple-1-1ExpansionParams">ExpansionParams</a></li><li>Template Struct <a href="structripple_1_1ExpansionWrapper.html#exhale-struct-structripple-1-1ExpansionWrapper">ExpansionWrapper</a></li><li>Template Struct <a href="structripple_1_1ExpansionWrapperTraits.html#exhale-struct-structripple-1-1ExpansionWrapperTraits">ExpansionWrapperTraits</a></li><li>Template Struct <a href="structripple_1_1ExpansionWrapperTraits_3_01ExpansionWrapper_3_01T_01_4_01_4.html#exhale-struct-structripple-1-1ExpansionWrapperTraits-3-01ExpansionWrapper-3-01T-01-4-01-4">ExpansionWrapperTraits&lt; ExpansionWrapper&lt; T &gt; &gt;</a></li><li>Struct <a href="structripple_1_1FOExtrapLoader.html#exhale-struct-structripple-1-1FOExtrapLoader">FOExtrapLoader</a></li><li>Template Struct <a href="structripple_1_1GhostIndex.html#exhale-struct-structripple-1-1GhostIndex">GhostIndex</a></li><li>Struct <a href="structripple_1_1GpuHeapArena.html#exhale-struct-structripple-1-1GpuHeapArena">GpuHeapArena</a></li><li>Struct <a href="structripple_1_1GpuInfo.html#exhale-struct-structripple-1-1GpuInfo">GpuInfo</a><ul><li class="lastChild">Struct <a href="structripple_1_1GpuInfo_1_1Stream.html#exhale-struct-structripple-1-1GpuInfo-1-1Stream">GpuInfo::Stream</a></li></ul></li><li>Struct <a href="structripple_1_1HeapArena.html#exhale-struct-structripple-1-1HeapArena">HeapArena</a></li><li>Template Struct <a href="structripple_1_1Int64.html#exhale-struct-structripple-1-1Int64">Int64</a></li><li>Template Struct <a href="structripple_1_1IteratorTraits.html#exhale-struct-structripple-1-1IteratorTraits">IteratorTraits</a></li><li>Template Struct <a href="structripple_1_1IteratorTraits_3_01BlockIterator_3_01T_00_01Space_01_4_01_4.html#exhale-struct-structripple-1-1IteratorTraits-3-01BlockIterator-3-01T-00-01Space-01-4-01-4">IteratorTraits&lt; BlockIterator&lt; T, Space &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1IteratorTraits_3_01IndexedIterator_3_01T_00_01Space_01_4_01_4.html#exhale-struct-structripple-1-1IteratorTraits-3-01IndexedIterator-3-01T-00-01Space-01-4-01-4">IteratorTraits&lt; IndexedIterator&lt; T, Space &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1LayoutTraits.html#exhale-struct-structripple-1-1LayoutTraits">LayoutTraits</a></li><li>Template Struct <a href="structripple_1_1LayoutTraits_3_01T_00_01true_01_4.html#exhale-struct-structripple-1-1LayoutTraits-3-01T-00-01true-01-4">LayoutTraits&lt; T, true &gt;</a></li><li>Struct <a href="structripple_1_1LoadBoundary.html#exhale-struct-structripple-1-1LoadBoundary">LoadBoundary</a></li><li>Struct <a href="structripple_1_1LoadMultiBoundary.html#exhale-struct-structripple-1-1LoadMultiBoundary">LoadMultiBoundary</a></li><li>Template Struct <a href="structripple_1_1MatImpl.html#exhale-struct-structripple-1-1MatImpl">MatImpl</a></li><li>Struct <a href="structripple_1_1MaxReducer.html#exhale-struct-structripple-1-1MaxReducer">MaxReducer</a></li><li>Struct <a href="structripple_1_1Memcopy.html#exhale-struct-structripple-1-1Memcopy">Memcopy</a></li><li>Struct <a href="structripple_1_1MinReducer.html#exhale-struct-structripple-1-1MinReducer">MinReducer</a></li><li>Template Struct <a href="structripple_1_1ModificationSpecifier.html#exhale-struct-structripple-1-1ModificationSpecifier">ModificationSpecifier</a></li><li>Template Struct <a href="structripple_1_1ModificationTraits.html#exhale-struct-structripple-1-1ModificationTraits">ModificationTraits</a></li><li>Template Struct <a href="structripple_1_1ModificationTraits_3_01ModificationSpecifier_3_01T_00_01Modification_01_4_01_4.html#exhale-struct-structripple-1-1ModificationTraits-3-01ModificationSpecifier-3-01T-00-01Modification-01-4-01-4">ModificationTraits&lt; ModificationSpecifier&lt; T, Modification &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1MultiBlock.html#exhale-struct-structripple-1-1MultiBlock">MultiBlock</a></li><li>Template Struct <a href="structripple_1_1MultiBlockTraits.html#exhale-struct-structripple-1-1MultiBlockTraits">MultiBlockTraits</a></li><li>Template Struct <a href="structripple_1_1MultiBlockTraits_3_01Block_3_01T_00_01Dimensions_01_4_01_4.html#exhale-struct-structripple-1-1MultiBlockTraits-3-01Block-3-01T-00-01Dimensions-01-4-01-4">MultiBlockTraits&lt; Block&lt; T, Dimensions &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1MultiBlockTraits_3_01ExpansionWrapper_3_01T_01_4_01_4.html#exhale-struct-structripple-1-1MultiBlockTraits-3-01ExpansionWrapper-3-01T-01-4-01-4">MultiBlockTraits&lt; ExpansionWrapper&lt; T &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1MultiBlockTraits_3_01SharedWrapper_3_01T_01_4_01_4.html#exhale-struct-structripple-1-1MultiBlockTraits-3-01SharedWrapper-3-01T-01-4-01-4">MultiBlockTraits&lt; SharedWrapper&lt; T &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1MultidimSpace.html#exhale-struct-structripple-1-1MultidimSpace">MultidimSpace</a></li><li>Struct <a href="structripple_1_1NodeExecutor.html#exhale-struct-structripple-1-1NodeExecutor">NodeExecutor</a></li><li>Template Struct <a href="structripple_1_1NodeExecutorImpl.html#exhale-struct-structripple-1-1NodeExecutorImpl">NodeExecutorImpl</a></li><li>Struct <a href="structripple_1_1NodeInfo.html#exhale-struct-structripple-1-1NodeInfo">NodeInfo</a></li><li>Template Struct <a href="structripple_1_1Num.html#exhale-struct-structripple-1-1Num">Num</a></li><li>Struct <a href="structripple_1_1OffsetParam.html#exhale-struct-structripple-1-1OffsetParam">OffsetParam</a></li><li>Template Struct <a href="structripple_1_1PointerWrapper.html#exhale-struct-structripple-1-1PointerWrapper">PointerWrapper</a></li><li>Template Struct <a href="structripple_1_1PolyLayoutOverloader.html#exhale-struct-structripple-1-1PolyLayoutOverloader">PolyLayoutOverloader</a></li><li>Template Struct <a href="structripple_1_1PolymorphicLayout.html#exhale-struct-structripple-1-1PolymorphicLayout">PolymorphicLayout</a></li><li>Struct <a href="structripple_1_1ProcInfo.html#exhale-struct-structripple-1-1ProcInfo">ProcInfo</a></li><li>Template Struct <a href="structripple_1_1Quat.html#exhale-struct-structripple-1-1Quat">Quat</a></li><li>Struct <a href="structripple_1_1Reducer.html#exhale-struct-structripple-1-1Reducer">Reducer</a></li><li>Template Struct <a href="structripple_1_1SharedWrapper.html#exhale-struct-structripple-1-1SharedWrapper">SharedWrapper</a></li><li>Template Struct <a href="structripple_1_1SharedWrapperTraits.html#exhale-struct-structripple-1-1SharedWrapperTraits">SharedWrapperTraits</a></li><li>Template Struct <a href="structripple_1_1SharedWrapperTraits_3_01SharedWrapper_3_01T_01_4_01_4.html#exhale-struct-structripple-1-1SharedWrapperTraits-3-01SharedWrapper-3-01T-01-4-01-4">SharedWrapperTraits&lt; SharedWrapper&lt; T &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1SpaceTraits.html#exhale-struct-structripple-1-1SpaceTraits">SpaceTraits</a></li><li>Template Struct <a href="structripple_1_1SpaceTraits_3_01DynamicMultidimSpace_3_01Dimensions_01_4_01_4.html#exhale-struct-structripple-1-1SpaceTraits-3-01DynamicMultidimSpace-3-01Dimensions-01-4-01-4">SpaceTraits&lt; DynamicMultidimSpace&lt; Dimensions &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1SpaceTraits_3_01MultidimSpace_3_01SpaceImpl_01_4_01_4.html#exhale-struct-structripple-1-1SpaceTraits-3-01MultidimSpace-3-01SpaceImpl-01-4-01-4">SpaceTraits&lt; MultidimSpace&lt; SpaceImpl &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1SpaceTraits_3_01StaticMultidimSpace_3_01Sizes_8_8_8_01_4_01_4.html#exhale-struct-structripple-1-1SpaceTraits-3-01StaticMultidimSpace-3-01Sizes-8-8-8-01-4-01-4">SpaceTraits&lt; StaticMultidimSpace&lt; Sizes... &gt; &gt;</a></li><li>Struct <a href="structripple_1_1Spinlock.html#exhale-struct-structripple-1-1Spinlock">Spinlock</a><ul><li class="lastChild">Struct <a href="structripple_1_1Spinlock_1_1Sleeper.html#exhale-struct-structripple-1-1Spinlock-1-1Sleeper">Spinlock::Sleeper</a></li></ul></li><li>Struct <a href="structripple_1_1Splitter.html#exhale-struct-structripple-1-1Splitter">Splitter</a></li><li>Template Struct <a href="structripple_1_1StaticExecParams.html#exhale-struct-structripple-1-1StaticExecParams">StaticExecParams</a></li><li>Template Struct <a href="structripple_1_1StaticMultidimSpace.html#exhale-struct-structripple-1-1StaticMultidimSpace">StaticMultidimSpace</a></li><li>Template Struct <a href="structripple_1_1Stealer.html#exhale-struct-structripple-1-1Stealer">Stealer</a></li><li>Template <a href="structripple_1_1Stealer_3_01StealPolicy_1_1neighbour_01_4.html#exhale-struct-structripple-1-1Stealer-3-01StealPolicy-1-1neighbour-01-4">Struct Stealer&lt; StealPolicy::neighbour &gt;</a></li><li>Template Struct <a href="structripple_1_1VecImpl.html#exhale-struct-structripple-1-1VecImpl">VecImpl</a></li><li>Template Struct <a href="structripple_1_1Vector.html#exhale-struct-structripple-1-1Vector">Vector</a></li><li>Struct <a href="structripple_1_1VoidLock.html#exhale-struct-structripple-1-1VoidLock">VoidLock</a></li><li>Struct <a href="structripple_1_1VoidShared.html#exhale-struct-structripple-1-1VoidShared">VoidShared</a></li><li>Class <a href="classripple_1_1AlignedHeapAllocator.html#exhale-class-classripple-1-1AlignedHeapAllocator">AlignedHeapAllocator</a></li><li>Template Class <a href="classripple_1_1Allocator.html#exhale-class-classripple-1-1Allocator">Allocator</a></li><li>Template Class <a href="classripple_1_1BlockIterator.html#exhale-class-classripple-1-1BlockIterator">BlockIterator</a></li><li>Template Class <a href="classripple_1_1BoundaryLoader.html#exhale-class-classripple-1-1BoundaryLoader">BoundaryLoader</a></li><li>Template Class <a href="classripple_1_1ContiguousStorageView.html#exhale-class-classripple-1-1ContiguousStorageView">ContiguousStorageView</a><ul><li class="lastChild">Struct <a href="structripple_1_1ContiguousStorageView_1_1Allocator.html#exhale-struct-structripple-1-1ContiguousStorageView-1-1Allocator">ContiguousStorageView::Allocator</a></li></ul></li><li>Template Class <a href="classripple_1_1DeviceBlock.html#exhale-class-classripple-1-1DeviceBlock">DeviceBlock</a></li><li>Class <a href="classripple_1_1Executor.html#exhale-class-classripple-1-1Executor">Executor</a><ul><li class="lastChild">Struct <a href="structripple_1_1Executor_1_1ThreadState.html#exhale-struct-structripple-1-1Executor-1-1ThreadState">Executor::ThreadState</a></li></ul></li><li>Class <a href="classripple_1_1Freelist.html#exhale-class-classripple-1-1Freelist">Freelist</a><ul><li class="lastChild">Struct <a href="structripple_1_1Freelist_1_1Node.html#exhale-struct-structripple-1-1Freelist-1-1Node">Freelist::Node</a></li></ul></li><li>Class <a href="classripple_1_1GenericLoader.html#exhale-class-classripple-1-1GenericLoader">GenericLoader</a></li><li>Class <a href="classripple_1_1Graph.html#exhale-class-classripple-1-1Graph">Graph</a></li><li>Template Class <a href="classripple_1_1HostBlock.html#exhale-class-classripple-1-1HostBlock">HostBlock</a></li><li>Template Class <a href="classripple_1_1IndexedIterator.html#exhale-class-classripple-1-1IndexedIterator">IndexedIterator</a></li><li>Template Class <a href="classripple_1_1InternalLoader.html#exhale-class-classripple-1-1InternalLoader">InternalLoader</a></li><li>Template Class <a href="classripple_1_1Invocable.html#exhale-class-classripple-1-1Invocable">Invocable</a></li><li>Class <a href="classripple_1_1LinearAllocator.html#exhale-class-classripple-1-1LinearAllocator">LinearAllocator</a></li><li>Template Class <a href="classripple_1_1Logger.html#exhale-class-classripple-1-1Logger">Logger</a></li><li>Class <a href="classripple_1_1MultiarchAllocator.html#exhale-class-classripple-1-1MultiarchAllocator">MultiarchAllocator</a></li><li>Class <a href="classripple_1_1MultidimWriter.html#exhale-class-classripple-1-1MultidimWriter">MultidimWriter</a><ul><li class="lastChild">Struct <a href="structripple_1_1MultidimWriter_1_1DimSizes.html#exhale-struct-structripple-1-1MultidimWriter-1-1DimSizes">MultidimWriter::DimSizes</a></li></ul></li><li>Template Class <a href="classripple_1_1Node.html#exhale-class-classripple-1-1Node">Node</a></li><li>Template Class <a href="classripple_1_1OwnedStorage.html#exhale-class-classripple-1-1OwnedStorage">OwnedStorage</a></li><li>Template Class <a href="classripple_1_1PoolAllocator.html#exhale-class-classripple-1-1PoolAllocator">PoolAllocator</a></li><li>Template Class <a href="classripple_1_1Printable.html#exhale-class-classripple-1-1Printable">Printable</a></li><li>Class <a href="classripple_1_1PrintableElement.html#exhale-class-classripple-1-1PrintableElement">PrintableElement</a></li><li>Template Class <a href="classripple_1_1Range.html#exhale-class-classripple-1-1Range">Range</a><ul><li class="lastChild">Template Struct <a href="structripple_1_1Range_1_1Iterator.html#exhale-struct-structripple-1-1Range-1-1Iterator">Range::Iterator</a></li></ul></li><li>Template Class <a href="classripple_1_1ReductionResult.html#exhale-class-classripple-1-1ReductionResult">ReductionResult</a></li><li>Template Class <a href="classripple_1_1SimpleAllocator.html#exhale-class-classripple-1-1SimpleAllocator">SimpleAllocator</a></li><li>Template Class <a href="classripple_1_1StackArena.html#exhale-class-classripple-1-1StackArena">StackArena</a></li><li>Template Class <a href="classripple_1_1StaticStealableDequeue.html#exhale-class-classripple-1-1StaticStealableDequeue">StaticStealableDequeue</a></li><li>Class <a href="classripple_1_1VtkWriter.html#exhale-class-classripple-1-1VtkWriter">VtkWriter</a></li><li>Enum <a href="enum_namespaceripple_1adfb7267df8924979597b053026d4e492.html#exhale-enum-namespaceripple-1adfb7267df8924979597b053026d4e492">AllocArch</a></li><li>Enum <a href="enum_namespaceripple_1a8eab3f289abb7f4b625ec7525b54ce4c.html#exhale-enum-namespaceripple-1a8eab3f289abb7f4b625ec7525b54ce4c">BlockOpKind</a></li><li>Enum <a href="enum_namespaceripple_1ad242b598ccd7062fe54ff42b2f8212c7.html#exhale-enum-namespaceripple-1ad242b598ccd7062fe54ff42b2f8212c7">BoundaryLocation</a></li><li>Enum <a href="enum_namespaceripple_1a4ec397f4549f779f188aa0580cb735ca.html#exhale-enum-namespaceripple-1a4ec397f4549f779f188aa0580cb735ca">BoundaryType</a></li><li>Enum <a href="enum_namespaceripple_1a0c2d39511c6a3ff234ce9c2a7885d528.html#exhale-enum-namespaceripple-1a0c2d39511c6a3ff234ce9c2a7885d528">DataState</a></li><li>Enum <a href="enum_namespaceripple_1ae314c8184d85e6da81055513973875a6.html#exhale-enum-namespaceripple-1ae314c8184d85e6da81055513973875a6">ExecutionKind</a></li><li>Enum <a href="enum_namespaceripple_1afcacaeaac884e2155329d73c22784666.html#exhale-enum-namespaceripple-1afcacaeaac884e2155329d73c22784666">FaceLocation</a></li><li>Enum <a href="enum_namespaceripple_1a445bb0c7771b0f161cd63a10d143520e.html#exhale-enum-namespaceripple-1a445bb0c7771b0f161cd63a10d143520e">Mapping</a></li><li>Enum <a href="enum_namespaceripple_1a7eef7cf214950b4136439721c17fcf34.html#exhale-enum-namespaceripple-1a7eef7cf214950b4136439721c17fcf34">Modifier</a></li><li>Enum <a href="enum_namespaceripple_1a8b0646762847e52176939cd3d2003fdd.html#exhale-enum-namespaceripple-1a8b0646762847e52176939cd3d2003fdd">TransferKind</a></li><li>Template <a href="structripple_1_1Stealer_3_01StealPolicy_1_1random_01_4.html#exhale-struct-structripple-1-1Stealer-3-01StealPolicy-1-1random-01-4">Struct Stealer&lt; StealPolicy::random &gt;</a></li><li>Template <a href="structripple_1_1Stealer_3_01StealPolicy_1_1topological_01_4.html#exhale-struct-structripple-1-1Stealer-3-01StealPolicy-1-1topological-01-4">Struct Stealer&lt; StealPolicy::topological &gt;</a></li><li>Template Struct <a href="structripple_1_1StorageAccessor.html#exhale-struct-structripple-1-1StorageAccessor">StorageAccessor</a></li><li>Template Struct <a href="structripple_1_1StorageDescriptor.html#exhale-struct-structripple-1-1StorageDescriptor">StorageDescriptor</a></li><li>Template Struct <a href="structripple_1_1StorageElementTraits.html#exhale-struct-structripple-1-1StorageElementTraits">StorageElementTraits</a></li><li>Template Struct <a href="structripple_1_1StorageElementTraits_3_01Vector_3_01T_00_01Size_01_4_01_4.html#exhale-struct-structripple-1-1StorageElementTraits-3-01Vector-3-01T-00-01Size-01-4-01-4">StorageElementTraits&lt; Vector&lt; T, Size &gt; &gt;</a></li><li>Template Struct <a href="structripple_1_1StorageLayout.html#exhale-struct-structripple-1-1StorageLayout">StorageLayout</a></li><li>Template Struct <a href="structripple_1_1StructAccessor.html#exhale-struct-structripple-1-1StructAccessor">StructAccessor</a></li><li>Struct <a href="structripple_1_1SubtractionReducer.html#exhale-struct-structripple-1-1SubtractionReducer">SubtractionReducer</a></li><li>Struct <a href="structripple_1_1SumReducer.html#exhale-struct-structripple-1-1SumReducer">SumReducer</a></li><li>Template Struct <a href="structripple_1_1TensorTraits.html#exhale-struct-structripple-1-1TensorTraits">TensorTraits</a></li><li>Template Struct <a href="structripple_1_1TensorTraits_3_01Tensor_3_01T_00_01Dimensions_01_4_01_4.html#exhale-struct-structripple-1-1TensorTraits-3-01Tensor-3-01T-00-01Dimensions-01-4-01-4">TensorTraits&lt; Tensor&lt; T, Dimensions &gt; &gt;</a></li><li>Struct <a href="structripple_1_1Timer.html#exhale-struct-structripple-1-1Timer">Timer</a></li><li>Struct <a href="structripple_1_1Topology.html#exhale-struct-structripple-1-1Topology">Topology</a></li><li>Template Class <a href="classripple_1_1StridedStorageView.html#exhale-class-classripple-1-1StridedStorageView">StridedStorageView</a><ul><li class="lastChild">Struct <a href="structripple_1_1StridedStorageView_1_1Allocator.html#exhale-struct-structripple-1-1StridedStorageView-1-1Allocator">StridedStorageView::Allocator</a></li></ul></li><li>Template Class <a href="classripple_1_1StridedStorageView_3_01Type_01_4.html#exhale-class-classripple-1-1StridedStorageView-3-01Type-01-4">StridedStorageView&lt; Type &gt;</a><ul><li class="lastChild">Template <a href="structripple_1_1StridedStorageView_3_01Type_01_4_1_1Allocator.html#exhale-struct-structripple-1-1StridedStorageView-3-01Type-01-4-1-1Allocator">Struct StridedStorageView&lt; Type &gt;::StridedStorageView&lt; Type &gt;</a></li></ul></li><li>Template Class <a href="classripple_1_1Tensor.html#exhale-class-classripple-1-1Tensor">Tensor</a></li><li>Class <a href="classripple_1_1ThreadSafeFreelist.html#exhale-class-classripple-1-1ThreadSafeFreelist">ThreadSafeFreelist</a><ul><li>Struct <a href="structripple_1_1ThreadSafeFreelist_1_1HeadPtr.html#exhale-struct-structripple-1-1ThreadSafeFreelist-1-1HeadPtr">ThreadSafeFreelist::HeadPtr</a></li><li class="lastChild">Struct <a href="structripple_1_1ThreadSafeFreelist_1_1Node.html#exhale-struct-structripple-1-1ThreadSafeFreelist-1-1Node">ThreadSafeFreelist::Node</a></li></ul></li><li>Template Class <a href="classripple_1_1Tuple.html#exhale-class-classripple-1-1Tuple">Tuple</a></li><li>Template <a href="classripple_1_1Tuple_3_4.html#exhale-class-classripple-1-1Tuple-3-4">Class Tuple&lt;&gt;</a></li><li>Enum <a href="enum_namespaceripple_1abc26ba3863abe12cc573afb0837e43be.html#exhale-enum-namespaceripple-1abc26ba3863abe12cc573afb0837e43be">LayoutKind</a></li><li>Enum <a href="enum_namespaceripple_1a6827c37ba2831cb05fa636001c11466a.html#exhale-enum-namespaceripple-1a6827c37ba2831cb05fa636001c11466a">LogLevel</a></li><li>Enum <a href="enum_namespaceripple_1a4d5f4cde24de454f2d816f7c9a93e2c4.html#exhale-enum-namespaceripple-1a4d5f4cde24de454f2d816f7c9a93e2c4">NodeKind</a></li><li class="lastChild">Enum <a href="enum_namespaceripple_1a93491499f875b4fe958a34f7a38defbe.html#exhale-enum-namespaceripple-1a93491499f875b4fe958a34f7a38defbe">StealPolicy</a></li></ul></li><li class="lastChild">Template Struct <a href="structripple_1_1detail_1_1StorageAs_3_01Storage_00_01T_3_01Ts_8_8_8_01_4_01_4_1_1MakeStorageType65b3d3a7a64fc541b44f35da2b7d8e91.html#exhale-struct-structripple-1-1detail-1-1StorageAs-3-01Storage-00-01T-3-01Ts-8-8-8-01-4-01-4-1-1MakeStorageType65b3d3a7a64fc541b44f35da2b7d8e91">StorageAs&lt; Storage, T&lt; Ts... &gt; &gt;::MakeStorageType&lt; std::tuple&lt; Us... &gt; &gt;</a></li>
+    </ul>
+  </li><!-- only tree view element -->
+</ul><!-- /treeView class-treeView --></div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Class Hierarchy</a></li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

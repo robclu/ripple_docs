@@ -1,0 +1,556 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class Executor &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Class Freelist" href="classripple_1_1Freelist.html" />
+  <link rel="prev" title="Template Class DeviceBlock" href="classripple_1_1DeviceBlock.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Class Executor</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/classripple_1_1Executor.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="class-executor">
+<span id="exhale-class-classripple-1-1executor"></span><h1>Class Executor<a class="headerlink" href="#class-executor" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_execution_executor.hpp.html#file-include-ripple-core-execution-executor-hpp"><span class="std std-ref">File executor.hpp</span></a></p></li>
+</ul>
+<div class="section" id="nested-relationships">
+<h2>Nested Relationships<a class="headerlink" href="#nested-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="nested-types">
+<h3>Nested Types<a class="headerlink" href="#nested-types" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="structripple_1_1Executor_1_1ThreadState.html#exhale-struct-structripple-1-1executor-1-1threadstate"><span class="std std-ref">Struct Executor::ThreadState</span></a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4N6ripple8ExecutorE">
+<span id="_CPPv3N6ripple8ExecutorE"></span><span id="_CPPv2N6ripple8ExecutorE"></span><span id="ripple::Executor"></span><span class="target" id="classripple_1_1Executor"></span><em class="property">class </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">Executor</code><a class="headerlink" href="#_CPPv4N6ripple8ExecutorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#classripple_1_1Executor"><span class="std std-ref">Executor</span></a> class maintains a pool of threads, which maintain a queue of nodes which can be executed by the workers. </p>
+<p>Each node defines work to be executed and connecetivity information which defines its dependencies between other nodes. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple8Executor16set_steal_policyE11StealPolicy">
+<span id="_CPPv3N6ripple8Executor16set_steal_policyE11StealPolicy"></span><span id="_CPPv2N6ripple8Executor16set_steal_policyE11StealPolicy"></span><span id="ripple::Executor::set_steal_policy__StealPolicy"></span><span class="target" id="classripple_1_1Executor_1ae45057accfe5f364aef0f8414d75d7de"></span>auto <code class="sig-name descname">set_steal_policy</code><span class="sig-paren">(</span><a class="reference internal" href="enum_namespaceripple_1a93491499f875b4fe958a34f7a38defbe.html#_CPPv4N6ripple11StealPolicyE" title="ripple::StealPolicy">StealPolicy</a> <em>policy</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple8Executor16set_steal_policyE11StealPolicy" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the stealing policy for the executor. </p>
+<p><dl class="simple">
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="enum_namespaceripple_1a93491499f875b4fe958a34f7a38defbe.html#namespaceripple_1a93491499f875b4fe958a34f7a38defbe"><span class="std std-ref">StealPolicy</span></a></p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">policy</span></code>: The policy to use for stealing nodes. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple8Executor7executeER5Graph">
+<span id="_CPPv3N6ripple8Executor7executeER5Graph"></span><span id="_CPPv2N6ripple8Executor7executeER5Graph"></span><span id="ripple::Executor::execute__GraphR"></span><span class="target" id="classripple_1_1Executor_1a14e00ce63d1645144fd470214dc9f89e"></span>auto <code class="sig-name descname">execute</code><span class="sig-paren">(</span><a class="reference internal" href="classripple_1_1Graph.html#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a> &amp;<em>graph</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple8Executor7executeER5Graph" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Executes a graph. </p>
+<p>This emplaced all nodes using this thread while other threads start stealing. <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">graph</span></code>: The graph to execute. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple8Executor9execute_nER5Graph6size_t">
+<span id="_CPPv3N6ripple8Executor9execute_nER5Graph6size_t"></span><span id="_CPPv2N6ripple8Executor9execute_nER5Graph6size_t"></span><span id="ripple::Executor::execute_n__GraphR.s"></span><span class="target" id="classripple_1_1Executor_1a69363e2a8eaa62eaa5d1215240d76241"></span>auto <code class="sig-name descname">execute_n</code><span class="sig-paren">(</span><a class="reference internal" href="classripple_1_1Graph.html#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a> &amp;<em>graph</em>, size_t <em>n</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple8Executor9execute_nER5Graph6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Executes the graph n times. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">graph</span></code>: The graph to execute. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>: The number of times to execute the graph. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0DpEN6ripple8Executor13execute_untilEvR5GraphRR4PredDpRR4Args">
+<span id="_CPPv3I0DpEN6ripple8Executor13execute_untilER5GraphRR4PredDpRR4Args"></span><span id="_CPPv2I0DpEN6ripple8Executor13execute_untilER5GraphRR4PredDpRR4Args"></span>template&lt;typename <code class="sig-name descname">Pred</code>, typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classripple_1_1Executor_1a70546cb0394e7eebaf95bda05a6c0779"></span>auto <code class="sig-name descname">execute_until</code><span class="sig-paren">(</span><a class="reference internal" href="classripple_1_1Graph.html#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a> &amp;<em>graph</em>, <a class="reference internal" href="#_CPPv4I0DpEN6ripple8Executor13execute_untilEvR5GraphRR4PredDpRR4Args" title="ripple::Executor::execute_until::Pred">Pred</a> &amp;&amp;<em>pred</em>, <a class="reference internal" href="#_CPPv4I0DpEN6ripple8Executor13execute_untilEvR5GraphRR4PredDpRR4Args" title="ripple::Executor::execute_until::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4I0DpEN6ripple8Executor13execute_untilEvR5GraphRR4PredDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Executes the graph until the predicate returns false. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">graph</span></code>: The graph to execute. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pred</span></code>: The predicate which returns if the execution must end. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: The arguments for the predicate. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Pred</span></code>: The type of the predicate. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The type of the predicate arguments. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple8Executor5fenceEv">
+<span id="_CPPv3N6ripple8Executor5fenceEv"></span><span id="_CPPv2N6ripple8Executor5fenceEv"></span><span id="ripple::Executor::fence"></span><span class="target" id="classripple_1_1Executor_1a151b797e77ec2b8b1bef81b125b41ec3"></span>auto <code class="sig-name descname">fence</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple8Executor5fenceEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a fence, waiting for all threads to finish execution, synchronizing the gpu work. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple8Executor18num_executed_nodesEv">
+<span id="_CPPv3NK6ripple8Executor18num_executed_nodesEv"></span><span id="_CPPv2NK6ripple8Executor18num_executed_nodesEv"></span><span id="ripple::Executor::num_executed_nodesC"></span><span class="target" id="classripple_1_1Executor_1a937e49ca9b029058ada5045b6e646506"></span>auto <code class="sig-name descname">num_executed_nodes</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; uint32_t<a class="headerlink" href="#_CPPv4NK6ripple8Executor18num_executed_nodesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the number of nodes which have executed. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple8Executor19has_unfinished_workEv">
+<span id="_CPPv3N6ripple8Executor19has_unfinished_workEv"></span><span id="_CPPv2N6ripple8Executor19has_unfinished_workEv"></span><span id="ripple::Executor::has_unfinished_work"></span><span class="target" id="classripple_1_1Executor_1a69b380c3af4d5d52e08acb88f22a5c0f"></span>auto <code class="sig-name descname">has_unfinished_work</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4N6ripple8Executor19has_unfinished_workEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines if there is unfinished work to be executed. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if there is unfinished work. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple8Executor18set_active_threadsEii">
+<span id="_CPPv3N6ripple8Executor18set_active_threadsEii"></span><span id="_CPPv2N6ripple8Executor18set_active_threadsEii"></span><span id="ripple::Executor::set_active_threads__i.i"></span><span class="target" id="classripple_1_1Executor_1a020d498ec10832d3e0c6e6c6c443cf29"></span>auto <code class="sig-name descname">set_active_threads</code><span class="sig-paren">(</span>int <em>cpu_threads</em>, int <em>gpu_threads</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple8Executor18set_active_threadsEii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the number of active gpu threads. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cpu_threads</span></code>: The number of threads with cpu priority. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gpu_threads</span></code>: The number of threads with gpu priority. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Friends</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple8Executor8executorEv">
+<span id="_CPPv3N6ripple8Executor8executorEv"></span><span id="_CPPv2N6ripple8Executor8executorEv"></span><span id="ripple::Executor::executor"></span><span class="target" id="classripple_1_1Executor_1ad65163a6ff1d7a576ba119b4e5e1fdec"></span><em class="property">friend</em> auto <code class="sig-name descname">executor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> -&gt; <a class="reference internal" href="#_CPPv4N6ripple8ExecutorE" title="ripple::Executor">Executor</a>&amp;<a class="headerlink" href="#_CPPv4N6ripple8Executor8executorEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Friend function to access the global graph executor. </p>
+<p>Gets a reference to the graph executor.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the executor.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A reference to the global executor. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classripple_1_1Freelist.html" class="btn btn-neutral float-right" title="Class Freelist" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="classripple_1_1DeviceBlock.html" class="btn btn-neutral" title="Template Class DeviceBlock" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Class Executor</a><ul>
+<li><a class="reference internal" href="#nested-relationships">Nested Relationships</a><ul>
+<li><a class="reference internal" href="#nested-types">Nested Types</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

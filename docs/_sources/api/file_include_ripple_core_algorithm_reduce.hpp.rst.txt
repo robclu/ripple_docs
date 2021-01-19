@@ -1,0 +1,120 @@
+
+.. _file_include_ripple_core_algorithm_reduce.hpp:
+
+File reduce.hpp
+===============
+
+
+This file implements a reduction on a block. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/algorithm/reduce.hpp``)
+---------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_algorithm_reduce.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``../container/host_block.hpp``
+
+- ``/home/hiccup/Software/ripple/include/ripple/core/allocation/multiarch_allocator.hpp``
+
+- ``/home/hiccup/Software/ripple/include/ripple/core/arch/gpu_utils.hpp``
+
+- ``/home/hiccup/Software/ripple/include/ripple/core/execution/synchronize.hpp``
+
+- ``/home/hiccup/Software/ripple/include/ripple/core/execution/thread_index.hpp``
+
+- ``/home/hiccup/Software/ripple/include/ripple/core/functional/invoke.hpp``
+
+- ``/home/hiccup/Software/ripple/include/ripple/core/functional/kernel/invoke_utils.cuh``
+
+- ``/home/hiccup/Software/ripple/include/ripple/core/functional/kernel/invoke_utils.hpp``
+
+- ``/home/hiccup/Software/ripple/include/ripple/core/iterator/iterator_traits.hpp``
+
+- ``/home/hiccup/Software/ripple/include/ripple/core/utility/portability.hpp``
+
+- ``kernel/reduce_cpp_.hpp`` (:ref:`file_include_ripple_core_algorithm_kernel_reduce_cpp_.hpp`)
+
+- ``kernel/reduce_cuda_.cuh``
+
+- ``ripple/core/algorithm/max_element.hpp`` (:ref:`file_include_ripple_core_algorithm_max_element.hpp`)
+
+- ``ripple/core/arch/gpu_utils.hpp`` (:ref:`file_include_ripple_core_arch_gpu_utils.hpp`)
+
+- ``ripple/core/boundary/copy_loader.hpp`` (:ref:`file_include_ripple_core_boundary_copy_loader.hpp`)
+
+- ``ripple/core/boundary/load_boundary.hpp`` (:ref:`file_include_ripple_core_boundary_load_boundary.hpp`)
+
+- ``ripple/core/container/block.hpp`` (:ref:`file_include_ripple_core_container_block.hpp`)
+
+- ``ripple/core/container/block_traits.hpp`` (:ref:`file_include_ripple_core_container_block_traits.hpp`)
+
+- ``ripple/core/container/device_block.hpp`` (:ref:`file_include_ripple_core_container_device_block.hpp`)
+
+- ``ripple/core/execution/detail/thread_index_impl_.hpp`` (:ref:`file_include_ripple_core_execution_detail_thread_index_impl_.hpp`)
+
+- ``ripple/core/execution/dynamic_execution_params.hpp`` (:ref:`file_include_ripple_core_execution_dynamic_execution_params.hpp`)
+
+- ``ripple/core/execution/execution_params.hpp`` (:ref:`file_include_ripple_core_execution_execution_params.hpp`)
+
+- ``ripple/core/execution/execution_size.hpp`` (:ref:`file_include_ripple_core_execution_execution_size.hpp`)
+
+- ``ripple/core/execution/execution_traits.hpp`` (:ref:`file_include_ripple_core_execution_execution_traits.hpp`)
+
+- ``ripple/core/execution/static_execution_params.hpp`` (:ref:`file_include_ripple_core_execution_static_execution_params.hpp`)
+
+- ``ripple/core/execution/synchronize.hpp`` (:ref:`file_include_ripple_core_execution_synchronize.hpp`)
+
+- ``ripple/core/execution/thread_index.hpp`` (:ref:`file_include_ripple_core_execution_thread_index.hpp`)
+
+- ``ripple/core/iterator/iterator_traits.hpp`` (:ref:`file_include_ripple_core_iterator_iterator_traits.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_container_block.hpp`
+
+- :ref:`file_include_ripple_core_graph_reducer.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1MaxReducer`
+
+- :ref:`exhale_struct_structripple_1_1MinReducer`
+
+- :ref:`exhale_struct_structripple_1_1SubtractionReducer`
+
+- :ref:`exhale_struct_structripple_1_1SumReducer`
+

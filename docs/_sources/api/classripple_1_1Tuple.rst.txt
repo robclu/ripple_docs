@@ -1,0 +1,16 @@
+.. _exhale_class_classripple_1_1Tuple:
+
+Template Class Tuple
+====================
+
+- Defined in :ref:`file_include_ripple_core_container_tuple.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ripple::Tuple
+   :members:
+   :protected-members:
+   :undoc-members:

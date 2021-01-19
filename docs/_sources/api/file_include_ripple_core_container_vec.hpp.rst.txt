@@ -1,0 +1,76 @@
+
+.. _file_include_ripple_core_container_vec.hpp:
+
+File vec.hpp
+============
+
+
+This file defines an implementation for a vector, which implements the Array interface. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/container/vec.hpp``)
+------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_container_vec.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``array.hpp`` (:ref:`file_include_ripple_core_container_array.hpp`)
+
+- ``array_traits.hpp`` (:ref:`file_include_ripple_core_container_array_traits.hpp`)
+
+- ``ripple/core/storage/polymorphic_layout.hpp`` (:ref:`file_include_ripple_core_storage_polymorphic_layout.hpp`)
+
+- ``ripple/core/storage/storage_descriptor.hpp`` (:ref:`file_include_ripple_core_storage_storage_descriptor.hpp`)
+
+- ``ripple/core/storage/storage_traits.hpp`` (:ref:`file_include_ripple_core_storage_storage_traits.hpp`)
+
+- ``ripple/core/storage/struct_accessor.hpp`` (:ref:`file_include_ripple_core_storage_struct_accessor.hpp`)
+
+- ``ripple/core/utility/portability.hpp`` (:ref:`file_include_ripple_core_utility_portability.hpp`)
+
+- ``tuple.hpp`` (:ref:`file_include_ripple_core_container_tuple.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_iterator_indexed_iterator.hpp`
+
+- :ref:`file_include_ripple_core_math_lerp.hpp`
+
+- :ref:`file_include_ripple_core_multidim_dynamic_multidim_space.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1VecImpl`
+

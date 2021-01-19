@@ -1,0 +1,64 @@
+
+.. _file_include_ripple_core_functional_invocable.hpp:
+
+File invocable.hpp
+==================
+
+
+This file implements functionality for an invocable object. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/functional/invocable.hpp``)
+-------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_functional_invocable.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``functional_traits.hpp`` (:ref:`file_include_ripple_core_functional_functional_traits.hpp`)
+
+- ``ripple/core/container/tuple.hpp`` (:ref:`file_include_ripple_core_container_tuple.hpp`)
+
+- ``ripple/core/utility/forward.hpp`` (:ref:`file_include_ripple_core_utility_forward.hpp`)
+
+- ``ripple/core/utility/type_traits.hpp`` (:ref:`file_include_ripple_core_utility_type_traits.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_graph_node.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1Invocable`
+

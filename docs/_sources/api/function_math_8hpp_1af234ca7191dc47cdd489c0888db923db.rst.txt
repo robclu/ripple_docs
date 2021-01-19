@@ -1,0 +1,13 @@
+.. _exhale_function_math_8hpp_1af234ca7191dc47cdd489c0888db923db:
+
+Template Function ripple::math::dot
+===================================
+
+- Defined in :ref:`file_include_ripple_core_math_math.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::math::dot(const Array<ImplA>&, const Array<ImplB>&)

@@ -1,0 +1,86 @@
+
+.. _file_include_ripple_core_functional_kernel_invoke_cpp_.hpp:
+
+File invoke_cpp_.hpp
+====================
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/functional/kernel/invoke_cpp_.hpp``)
+----------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_functional_kernel_invoke_cpp_.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``chrono``
+
+- ``ripple/core/container/host_block.hpp`` (:ref:`file_include_ripple_core_container_host_block.hpp`)
+
+- ``ripple/core/iterator/iterator_traits.hpp`` (:ref:`file_include_ripple_core_iterator_iterator_traits.hpp`)
+
+- ``ripple/core/utility/dim.hpp`` (:ref:`file_include_ripple_core_utility_dim.hpp`)
+
+- ``ripple/core/utility/number.hpp`` (:ref:`file_include_ripple_core_utility_number.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_functional_invoke.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+- :ref:`namespace_ripple__kernel`
+
+- :ref:`namespace_ripple__kernel__detail`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1kernel_1_1detail_1_1InvokeBlockedImpl`
+
+- :ref:`exhale_struct_structripple_1_1kernel_1_1detail_1_1InvokeBlockedImpl_3_010_01_4`
+
+- :ref:`exhale_struct_structripple_1_1kernel_1_1detail_1_1InvokeImpl`
+
+- :ref:`exhale_struct_structripple_1_1kernel_1_1detail_1_1InvokeImpl_3_010_01_4`
+
+- :ref:`exhale_struct_structripple_1_1kernel_1_1detail_1_1InvokeOnBlock`
+
+- :ref:`exhale_struct_structripple_1_1kernel_1_1detail_1_1InvokeOnBlock_3_010_01_4`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_invoke__cpp___8hpp_1af3d168a26096d02f962ff22517bccfac`
+
+- :ref:`exhale_function_invoke__cpp___8hpp_1ad54380e145e797395aa185f5db33c13b`
+
+- :ref:`exhale_function_invoke__cpp___8hpp_1a7420d272ca4e92041a4523aadc63c9a1`
+

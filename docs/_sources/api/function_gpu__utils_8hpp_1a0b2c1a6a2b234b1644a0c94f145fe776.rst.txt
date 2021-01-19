@@ -1,0 +1,13 @@
+.. _exhale_function_gpu__utils_8hpp_1a0b2c1a6a2b234b1644a0c94f145fe776:
+
+Function ripple::gpu::synchronize_stream(GpuStream, GpuEvent)
+=============================================================
+
+- Defined in :ref:`file_include_ripple_core_arch_gpu_utils.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::gpu::synchronize_stream(GpuStream, GpuEvent)

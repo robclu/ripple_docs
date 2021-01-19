@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a4c98e494714abd18f11c98e13e8c5467:
+
+Typedef ripple::GpuStream
+=========================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::GpuStream

@@ -1,0 +1,570 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Template Struct StorageAccessor &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Template Struct StorageDescriptor" href="structripple_1_1StorageDescriptor.html" />
+  <link rel="prev" title="Template Struct Stealer&lt; StealPolicy::topological &gt;" href="structripple_1_1Stealer_3_01StealPolicy_1_1topological_01_4.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Template Struct StorageAccessor</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/structripple_1_1StorageAccessor.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="template-struct-storageaccessor">
+<span id="exhale-struct-structripple-1-1storageaccessor"></span><h1>Template Struct StorageAccessor<a class="headerlink" href="#template-struct-storageaccessor" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_storage_storage_accessor.hpp.html#file-include-ripple-core-storage-storage-accessor-hpp"><span class="std std-ref">File storage_accessor.hpp</span></a></p></li>
+</ul>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp struct">
+<dt id="_CPPv4I0EN6ripple15StorageAccessorE">
+<span id="_CPPv3I0EN6ripple15StorageAccessorE"></span><span id="_CPPv2I0EN6ripple15StorageAccessorE"></span>template&lt;typename <code class="sig-name descname">Impl</code>&gt;<br /><span class="target" id="structripple_1_1StorageAccessor"></span><em class="property">struct </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">StorageAccessor</code><a class="headerlink" href="#_CPPv4I0EN6ripple15StorageAccessorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#structripple_1_1StorageAccessor"><span class="std std-ref">StorageAccessor</span></a> struct defines an interface for all classes which access storage using compile time indices, where the compile time indices are used to access the Ith type in the storage, and for storage where the Ith type is a vectortype, the Jth element. </p>
+<p>The <a class="reference internal" href="#structripple_1_1StorageAccessor"><span class="std std-ref">StorageAccessor</span></a> types defines an interface for all classes which access storage using compile time indices, where the compile time indices are used to access the Ith type in the storage for N type, and for storage where the Ith type is an array type, also any of the J elements.</p>
+<p><dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Impl</span></code>: The implementation of the interface. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple15StorageAccessor4copyEvRK5Other">
+<span id="_CPPv3I0EN6ripple15StorageAccessor4copyERK5Other"></span><span id="_CPPv2I0EN6ripple15StorageAccessor4copyERK5Other"></span>template&lt;typename <code class="sig-name descname">Other</code>&gt;<br /><span class="target" id="structripple_1_1StorageAccessor_1acd2a0b1b9755041d99a492650815ef2f"></span>auto <code class="sig-name descname">copy</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN6ripple15StorageAccessor4copyEvRK5Other" title="ripple::StorageAccessor::copy::Other">Other</a> &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4I0EN6ripple15StorageAccessor4copyEvRK5Other" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Explicitly copies the data from the other storage type. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other storage type tto copy from. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ImplOhter</span></code>: The type of the other storage. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I_6size_tENK6ripple15StorageAccessor13components_ofE6size_tv">
+<span id="_CPPv3I_6size_tENK6ripple15StorageAccessor13components_ofEv"></span><span id="_CPPv2I_6size_tENK6ripple15StorageAccessor13components_ofEv"></span>template&lt;size_t <code class="sig-name descname">I</code>&gt;<br /><span class="target" id="structripple_1_1StorageAccessor_1ac048615d16f2cd08f9ad0acc818816f0"></span><em class="property">constexpr</em> auto <code class="sig-name descname">components_of</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4I_6size_tENK6ripple15StorageAccessor13components_ofE6size_tv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the number of components in the Ith type being stored. </p>
+<p>For non-indexable types this will always return 1, otherwise will return the number of possible components which can be indexed. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of components in the Ith element. </p>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">I</span></code>: The index of the type to get the number of components for. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I_6size_tEN6ripple15StorageAccessor3getEDcv">
+<span id="_CPPv3I_6size_tEN6ripple15StorageAccessor3getEv"></span><span id="_CPPv2I_6size_tEN6ripple15StorageAccessor3getEv"></span>template&lt;size_t <code class="sig-name descname">I</code>&gt;<br /><span class="target" id="structripple_1_1StorageAccessor_1aa064c01ecb7f756351bb0060627c8177"></span>decltype(auto) <code class="sig-name descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4I_6size_tEN6ripple15StorageAccessor3getEDcv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets a reference to the Ith data type which is stored. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the Ith type. </p>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">I</span></code>: The index of the type to get the data from. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I_6size_tENK6ripple15StorageAccessor3getEDcv">
+<span id="_CPPv3I_6size_tENK6ripple15StorageAccessor3getEv"></span><span id="_CPPv2I_6size_tENK6ripple15StorageAccessor3getEv"></span>template&lt;size_t <code class="sig-name descname">I</code>&gt;<br /><span class="target" id="structripple_1_1StorageAccessor_1af3b8ff3d772f9aa0d223bbfff20997f4"></span>decltype(auto) <code class="sig-name descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4I_6size_tENK6ripple15StorageAccessor3getEDcv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets a const reference to the Ith data type which is stored. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A const reference to the Ith type. </p>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">I</span></code>: The index of the type to get the data from. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I_6size_t_6size_tEN6ripple15StorageAccessor3getEDcv">
+<span id="_CPPv3I_6size_t_6size_tEN6ripple15StorageAccessor3getEv"></span><span id="_CPPv2I_6size_t_6size_tEN6ripple15StorageAccessor3getEv"></span>template&lt;size_t <code class="sig-name descname">I</code>, size_t <code class="sig-name descname">J</code>&gt;<br /><span class="target" id="structripple_1_1StorageAccessor_1a2d3fee1b0ecc2c91ff6c93ce2ac9f25b"></span>decltype(auto) <code class="sig-name descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4I_6size_t_6size_tEN6ripple15StorageAccessor3getEDcv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets a reference to the Jth element in the Ith data type which is stored. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>The implementation should ensure that calling this with indices I, J which results in incorrect access causes a compile time error. For example if the Ith type is an int, for which there is no J element, then this should cause a compile time error.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A reference to the Jth component of the Ith type. </p>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">I</span></code>: The index of the type to get the data from. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">J</span></code>: The index of the element in the type to get. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I_6size_t_6size_tENK6ripple15StorageAccessor3getEDcv">
+<span id="_CPPv3I_6size_t_6size_tENK6ripple15StorageAccessor3getEv"></span><span id="_CPPv2I_6size_t_6size_tENK6ripple15StorageAccessor3getEv"></span>template&lt;size_t <code class="sig-name descname">I</code>, size_t <code class="sig-name descname">J</code>&gt;<br /><span class="target" id="structripple_1_1StorageAccessor_1a755ed6d8fb4aaccb47b308591c6b7819"></span>decltype(auto) <code class="sig-name descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4I_6size_t_6size_tENK6ripple15StorageAccessor3getEDcv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets a const reference to the Jth element in the Ith data type which is stored. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>The implementation should ensure that calling this with indices I, J which results in incorrect access causes a compile time error. For example if the Ith type is an int, for which there is no J element, then this should cause a compile time error.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A const reference to the Jth component of the Ith type. </p>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">I</span></code>: The index of the type to get the data from. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">J</span></code>: The index of the element in the type to get. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I_6size_tEN6ripple15StorageAccessor3getEDc6size_t">
+<span id="_CPPv3I_6size_tEN6ripple15StorageAccessor3getE6size_t"></span><span id="_CPPv2I_6size_tEN6ripple15StorageAccessor3getE6size_t"></span>template&lt;size_t <code class="sig-name descname">I</code>&gt;<br /><span class="target" id="structripple_1_1StorageAccessor_1a2f5d3c30273c6d15eef680610c6f02f8"></span>decltype(auto) <code class="sig-name descname">get</code><span class="sig-paren">(</span>size_t <em>j</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4I_6size_tEN6ripple15StorageAccessor3getEDc6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets a reference to the jth element in the Ith data type which is stored. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the jth component of the Ith type. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">j</span></code>: The index of the element in the type to get. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">I</span></code>: The index of the type to get the data from. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I_6size_tENK6ripple15StorageAccessor3getEDc6size_t">
+<span id="_CPPv3I_6size_tENK6ripple15StorageAccessor3getE6size_t"></span><span id="_CPPv2I_6size_tENK6ripple15StorageAccessor3getE6size_t"></span>template&lt;size_t <code class="sig-name descname">I</code>&gt;<br /><span class="target" id="structripple_1_1StorageAccessor_1a28dc8584c5ef521b89d54ee08dcd559b"></span>decltype(auto) <code class="sig-name descname">get</code><span class="sig-paren">(</span>size_t <em>j</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4I_6size_tENK6ripple15StorageAccessor3getEDc6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets a reference to the jth element in the Ith data type which is stored. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A const reference to the jth component of the Ith type. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">j</span></code>: The index of the element in the type to get. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">I</span></code>: The index of the type to get the data from. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structripple_1_1StorageDescriptor.html" class="btn btn-neutral float-right" title="Template Struct StorageDescriptor" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="structripple_1_1Stealer_3_01StealPolicy_1_1topological_01_4.html" class="btn btn-neutral" title="Template Struct Stealer&lt; StealPolicy::topological &gt;" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Template Struct StorageAccessor</a><ul>
+<li><a class="reference internal" href="#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

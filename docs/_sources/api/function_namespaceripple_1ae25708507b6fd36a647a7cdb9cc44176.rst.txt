@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1ae25708507b6fd36a647a7cdb9cc44176:
+
+Template Function ripple::get_dim_num_blocks
+============================================
+
+- Defined in :ref:`file_include_ripple_core_execution_execution_size.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::get_dim_num_blocks(T, U)

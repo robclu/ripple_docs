@@ -1,0 +1,160 @@
+
+.. _program_listing_file_include_ripple_core_graph_reducer.hpp:
+
+Program Listing for File reducer.hpp
+====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_graph_reducer.hpp>` (``include/ripple/core/graph/reducer.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/graph/reducer.hpp ---------------------- -*- C++ -*- ---==//
+   //
+   //                                 Ripple
+   //
+   //                      Copyright (c) 2019, 2020 Rob Clucas
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_GRAPH_REDUCER_HPP
+   #define RIPPLE_GRAPH_REDUCER_HPP
+   
+   #include <ripple/core/algorithm/reduce.hpp>
+   #include <ripple/core/container/block_extractor.hpp>
+   
+   namespace ripple {
+   
+   template <typename T>
+   class ReductionResult {
+    public:
+     ReductionResult() noexcept = default;
+   
+     ReductionResult(const T& value) noexcept : initial_{value} {
+       set_value(value);
+     }
+   
+     auto value() const noexcept -> T {
+       return value_.load(std::memory_order_relaxed);
+     }
+   
+     auto value_and_reset() noexcept -> T {
+       const T val = value_.load(std::memory_order_relaxed);
+       reset();
+       return val;
+     }
+   
+     auto reset() noexcept -> void {
+       set_value(initial_);
+       set_unfinished();
+     }
+   
+     auto set_value(const T& value) noexcept -> void {
+       value_.store(value, std::memory_order_relaxed);
+     }
+   
+     auto finished() const noexcept -> bool {
+       return finished_.load(std::memory_order_relaxed);
+     }
+   
+     auto set_finished() noexcept -> void {
+       finished_.store(true, std::memory_order_relaxed);
+     }
+   
+     auto set_unfinished() noexcept -> void {
+       finished_.store(false, std::memory_order_relaxed);
+     }
+   
+    private:
+     std::atomic<T>    value_;           
+     T                 initial_{0};      
+     std::atomic<bool> finished_{false}; 
+   };
+   
+   template <typename T>
+   auto make_reduction_result(const T& value = T()) noexcept
+     -> ReductionResult<T> {
+     return ReductionResult<T>{value};
+   }
+   
+   struct Reducer {
+    public:
+     // clang-format off
+     template <
+       typename    GraphType,
+       typename    T,
+       size_t      Dims,
+       typename    Pred,
+       typename... Args>
+     static auto reduce(
+       GraphType&          graph,
+       ExecutionKind       exec_kind,
+       Tensor<T, Dims>&    data,
+       ReductionResult<T>& result,
+       Pred&&              pred,
+       Args&&...           args) noexcept -> void {
+       reduce_impl<Dims>(
+         graph,
+         exec_kind,
+         BlockExtractor::extract_blocks_if_tensor(data),
+         result,
+         ripple_forward(pred),
+         ripple_forward(args)...);
+     }
+   
+    private:
+     template <
+       size_t      Dims,
+       typename    Graph,
+       typename    Blocks,
+       typename    T,
+       typename    Pred,
+       typename... Args>
+     static auto reduce_impl(
+       Graph&              graph,
+       ExecutionKind       exec_kind,
+       Blocks&&            blocks,
+       ReductionResult<T>& result,
+       Pred&&              predicate,
+       Args&&...           args) noexcept -> void {
+       using Indices = std::array<uint32_t, Dims>;
+       // clang-format on
+       invoke_generic(
+         CpuExecutor(),
+         [&, exec_kind](auto&& iter) {
+           Indices indices;
+           bool    set = false;
+           fill_indices(indices, set, iter);
+   
+           /* Emplace an operation into the graph which reduces the block pointed
+            * to by the tensor block iterator, reducing the result from the block
+            * reduction into the final result of the overall reduction across the
+            * entire tensor. */
+           const auto name = NodeInfo::name_from_indices(indices);
+           const auto id   = NodeInfo::id_from_indices(indices);
+           graph.emplace_named(
+             NodeInfo(name, id, NodeKind::split, exec_kind),
+             [&result, exec_kind](auto block_iter, auto&& pred, auto&&... as) {
+               auto temp_result = block_iter->reduce(
+                 exec_kind, ripple_forward(pred), ripple_forward(as)...);
+               temp_result =
+                 pred(result.value(), temp_result, ripple_forward(as)...);
+               result.set_value(temp_result);
+             },
+             ripple_forward(iter),
+             ripple_forward(predicate),
+             ripple_forward(args)...);
+         },
+         ripple_forward(blocks));
+     }
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_GRAPH_REDUCER_HPP

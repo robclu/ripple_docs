@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a7c175fd219d67505dbd1af37b87b166c:
+
+Typedef ripple::variadic_size_enable_t
+======================================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::variadic_size_enable_t

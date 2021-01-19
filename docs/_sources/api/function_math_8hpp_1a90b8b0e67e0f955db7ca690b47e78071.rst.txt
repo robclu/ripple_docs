@@ -1,0 +1,13 @@
+.. _exhale_function_math_8hpp_1a90b8b0e67e0f955db7ca690b47e78071:
+
+Template Function ripple::math::min(const Array<Impl>&, T)
+==========================================================
+
+- Defined in :ref:`file_include_ripple_core_math_math.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::math::min(const Array<Impl>&, T)

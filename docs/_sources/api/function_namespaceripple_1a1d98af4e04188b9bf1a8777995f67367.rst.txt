@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a1d98af4e04188b9bf1a8777995f67367:
+
+Function ripple::with_expansion
+===============================
+
+- Defined in :ref:`file_include_ripple_core_graph_modifier.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::with_expansion(ExpType)

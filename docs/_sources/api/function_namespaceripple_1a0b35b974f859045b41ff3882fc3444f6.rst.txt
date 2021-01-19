@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a0b35b974f859045b41ff3882fc3444f6:
+
+Template Function ripple::invoke(DeviceBlock<T, Dims>&, Callable&&, Args&&...)
+==============================================================================
+
+- Defined in :ref:`file_include_ripple_core_functional_invoke.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::invoke(DeviceBlock<T, Dims>&, Callable&&, Args&&...)

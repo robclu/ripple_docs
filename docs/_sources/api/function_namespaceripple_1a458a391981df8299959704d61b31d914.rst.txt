@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a458a391981df8299959704d61b31d914:
+
+Template Function ripple::apply_modifier_after_deref
+====================================================
+
+- Defined in :ref:`file_include_ripple_core_graph_splitter.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::apply_modifier_after_deref(Arg&&, ExpansionParams)

@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a5eb52ac87711789fcd1f2563c97debef:
+
+Typedef ripple::as_strided_view_t
+=================================
+
+- Defined in :ref:`file_include_ripple_core_storage_storage_traits.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::as_strided_view_t

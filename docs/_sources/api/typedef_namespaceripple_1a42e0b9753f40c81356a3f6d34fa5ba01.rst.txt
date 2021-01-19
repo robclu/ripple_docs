@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a42e0b9753f40c81356a3f6d34fa5ba01:
+
+Typedef ripple::DimZ
+====================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::DimZ

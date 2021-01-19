@@ -1,0 +1,13 @@
+.. _exhale_function_lerp_8hpp_1a872e7362ead9bfbbf3a45b3070f0f421:
+
+Template Function ripple::math::lerp(Iterator&&, const Weights&)
+================================================================
+
+- Defined in :ref:`file_include_ripple_core_math_lerp.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::math::lerp(Iterator&&, const Weights&)

@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1af40d7d3c9cb56f5947d995c55eb3e8ef:
+
+Template Function ripple::max_element
+=====================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::max_element(T&&, Ts&&...)

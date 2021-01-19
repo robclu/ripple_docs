@@ -1,0 +1,1052 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Template Struct Array &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Template Struct ArrayTraits" href="structripple_1_1ArrayTraits.html" />
+  <link rel="prev" title="Template Struct AnyBlockTraits" href="structripple_1_1AnyBlockTraits.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Template Struct Array</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/structripple_1_1Array.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="template-struct-array">
+<span id="exhale-struct-structripple-1-1array"></span><h1>Template Struct Array<a class="headerlink" href="#template-struct-array" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_container_array.hpp.html#file-include-ripple-core-container-array-hpp"><span class="std std-ref">File array.hpp</span></a></p></li>
+</ul>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp struct">
+<dt id="_CPPv4I0EN6ripple5ArrayE">
+<span id="_CPPv3I0EN6ripple5ArrayE"></span><span id="_CPPv2I0EN6ripple5ArrayE"></span>template&lt;typename <code class="sig-name descname">Impl</code>&gt;<br /><span class="target" id="structripple_1_1Array"></span><em class="property">struct </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">Array</code><a class="headerlink" href="#_CPPv4I0EN6ripple5ArrayE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#structripple_1_1Array"><span class="std std-ref">Array</span></a> class defines a static interface for array type classes. </p>
+<p>The <a class="reference internal" href="#structripple_1_1Array"><span class="std std-ref">Array</span></a> class defines a static interface for array types  essentially types which have contiguous storage and can be accessed with the index operator.</p>
+<p>The implementation is provided by the template type Impl, and any derived types which don’t define the necessary functions will fail at compile time when the requried function is called.</p>
+<p><p>The implementation is provided by the template type Impl. </p>
+<dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Impl</span></code>: The implementation of the array interface.</p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Impl</span></code>: The implementation of the array interface. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple5ArrayixE6size_t">
+<span id="_CPPv3N6ripple5ArrayixE6size_t"></span><span id="_CPPv2N6ripple5ArrayixE6size_t"></span><span id="ripple::Array::subscript-operator__sCE"></span><span class="target" id="structripple_1_1Array_1a3e34acd9f5c7d779c24d27934901fe2f"></span><em class="property">constexpr</em> decltype(auto) <code class="sig-name descname">operator[]</code><span class="sig-paren">(</span>size_t <em>i</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple5ArrayixE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the value at position <code class="docutils literal notranslate"><span class="pre">i</span></code> in the array. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This may return a reference or a value, depending on the implementation.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>The element at position i in the array. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>: The index of the element to return. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple5ArrayixE6size_t">
+<span id="_CPPv3NK6ripple5ArrayixE6size_t"></span><span id="_CPPv2NK6ripple5ArrayixE6size_t"></span><span id="ripple::Array::subscript-operator__sCCE"></span><span class="target" id="structripple_1_1Array_1a2b8063d2587819519797198ae9d019ba"></span><em class="property">constexpr</em> decltype(auto) <code class="sig-name descname">operator[]</code><span class="sig-paren">(</span>size_t <em>i</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK6ripple5ArrayixE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the value at position <code class="docutils literal notranslate"><span class="pre">i</span></code> in the array. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This may return a reference or a value, depending on the implementation.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>: The index of the element to return. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple5Array4sizeEv">
+<span id="_CPPv3NK6ripple5Array4sizeEv"></span><span id="_CPPv2NK6ripple5Array4sizeEv"></span><span id="ripple::Array::sizeCCE"></span><span class="target" id="structripple_1_1Array_1a8c13e22650fd5e2770bfa52689e05167"></span><em class="property">constexpr</em> auto <code class="sig-name descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple5Array4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the number of elements in the array. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of elements in the array. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple5ArrayeqEbRK5ArrayI9ImplOtherE">
+<span id="_CPPv3I0EN6ripple5ArrayeqERK5ArrayI9ImplOtherE"></span><span id="_CPPv2I0EN6ripple5ArrayeqERK5ArrayI9ImplOtherE"></span>template&lt;typename <code class="sig-name descname">ImplOther</code>&gt;<br /><span class="target" id="structripple_1_1Array_1a58d8b7208bf2deeecf6c79da2f56f5c7"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator==</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array">Array</a>&lt;<a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayeqEbRK5ArrayI9ImplOtherE" title="ripple::Array::operator==::ImplOther">ImplOther</a>&gt; &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4I0EN6ripple5ArrayeqEbRK5ArrayI9ImplOtherE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of equality operator to compare one array to another. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if all elements of both arrays are the same, false otherwise. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other array to compare against this one. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ImplOther</span></code>: The implementation type of the other array. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0_20array_value_enable_tI1T4ImplEENK6ripple5ArrayeqEb1T">
+<span id="_CPPv3I0_20array_value_enable_tI1T4ImplEENK6ripple5ArrayeqE1T"></span><span id="_CPPv2I0_20array_value_enable_tI1T4ImplEENK6ripple5ArrayeqE1T"></span>template&lt;typename <code class="sig-name descname">T</code>, <a class="reference internal" href="typedef_namespaceripple_1a5628f49a48d187a91a56065d17e9e661.html#_CPPv4I0000EN6ripple20array_value_enable_tE" title="ripple::array_value_enable_t">array_value_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEENK6ripple5ArrayeqEb1T" title="ripple::Array::operator==::T">T</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&gt; = 0&gt;<br /><span class="target" id="structripple_1_1Array_1abb8e97cc73b901498d000beacfd234e7"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator==</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEENK6ripple5ArrayeqEb1T" title="ripple::Array::operator==::T">T</a> <em>val</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEENK6ripple5ArrayeqEb1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of equality operator to compare all elements of the array to the given value. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This overload is only enabled if the type T is comparible to the type stored in the array.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>true if all array elements are equal to the value. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">val</span></code>: The value to compare to. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the value. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple5ArrayneEbRK5ArrayI9ImplOtherE">
+<span id="_CPPv3I0EN6ripple5ArrayneERK5ArrayI9ImplOtherE"></span><span id="_CPPv2I0EN6ripple5ArrayneERK5ArrayI9ImplOtherE"></span>template&lt;typename <code class="sig-name descname">ImplOther</code>&gt;<br /><span class="target" id="structripple_1_1Array_1a9721d88816fdf38c09cae42c141f271b"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator!=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array">Array</a>&lt;<a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayneEbRK5ArrayI9ImplOtherE" title="ripple::Array::operator!=::ImplOther">ImplOther</a>&gt; &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4I0EN6ripple5ArrayneEbRK5ArrayI9ImplOtherE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of inequality operator to compare one array not equal to another. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if any element of the arrays are not equal, false otherwise. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other array to compare against this one. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ImplOther</span></code>: The implementation type of the other array. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0_20array_value_enable_tI1T4ImplEENK6ripple5ArrayneEb1T">
+<span id="_CPPv3I0_20array_value_enable_tI1T4ImplEENK6ripple5ArrayneE1T"></span><span id="_CPPv2I0_20array_value_enable_tI1T4ImplEENK6ripple5ArrayneE1T"></span>template&lt;typename <code class="sig-name descname">T</code>, <a class="reference internal" href="typedef_namespaceripple_1a5628f49a48d187a91a56065d17e9e661.html#_CPPv4I0000EN6ripple20array_value_enable_tE" title="ripple::array_value_enable_t">array_value_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEENK6ripple5ArrayneEb1T" title="ripple::Array::operator!=::T">T</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&gt; = 0&gt;<br /><span class="target" id="structripple_1_1Array_1ac2c9bd43f62fd8007fd3429d03b19d88"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator!=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEENK6ripple5ArrayneEb1T" title="ripple::Array::operator!=::T">T</a> <em>val</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEENK6ripple5ArrayneEb1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of inequality operator to compare if any elements of the array are not equal to the given value. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if any elements of the array are not equal to the value. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">val</span></code>: The value to compare to. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the value. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple5ArrayleEbRK5ArrayI9ImplOtherE">
+<span id="_CPPv3I0EN6ripple5ArrayleERK5ArrayI9ImplOtherE"></span><span id="_CPPv2I0EN6ripple5ArrayleERK5ArrayI9ImplOtherE"></span>template&lt;typename <code class="sig-name descname">ImplOther</code>&gt;<br /><span class="target" id="structripple_1_1Array_1a07d29503a43516136f63e3b41e27df2a"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator&lt;=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array">Array</a>&lt;<a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayleEbRK5ArrayI9ImplOtherE" title="ripple::Array::operator&lt;=::ImplOther">ImplOther</a>&gt; &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4I0EN6ripple5ArrayleEbRK5ArrayI9ImplOtherE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of less than or equal operator to compare one array to another. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if <em>all</em> elements of this array are &lt;= to the corresponding elements in the other array. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other array to compare against this one. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ImplOther</span></code>: The implementation type of the other array. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0_20array_value_enable_tI1T4ImplEENK6ripple5ArrayleEb1T">
+<span id="_CPPv3I0_20array_value_enable_tI1T4ImplEENK6ripple5ArrayleE1T"></span><span id="_CPPv2I0_20array_value_enable_tI1T4ImplEENK6ripple5ArrayleE1T"></span>template&lt;typename <code class="sig-name descname">T</code>, <a class="reference internal" href="typedef_namespaceripple_1a5628f49a48d187a91a56065d17e9e661.html#_CPPv4I0000EN6ripple20array_value_enable_tE" title="ripple::array_value_enable_t">array_value_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEENK6ripple5ArrayleEb1T" title="ripple::Array::operator&lt;=::T">T</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&gt; = 0&gt;<br /><span class="target" id="structripple_1_1Array_1a7a89c09feb0cba2e879db3131208e10f"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator&lt;=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEENK6ripple5ArrayleEb1T" title="ripple::Array::operator&lt;=::T">T</a> <em>val</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEENK6ripple5ArrayleEb1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of comparison operator to compare if <em>all</em> elements of the array are &lt;= the given value. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if all elements are less than or equal to the given value. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">val</span></code>: The value to compare to. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the value. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple5ArraygeEbRK5ArrayI9ImplOtherE">
+<span id="_CPPv3I0EN6ripple5ArraygeERK5ArrayI9ImplOtherE"></span><span id="_CPPv2I0EN6ripple5ArraygeERK5ArrayI9ImplOtherE"></span>template&lt;typename <code class="sig-name descname">ImplOther</code>&gt;<br /><span class="target" id="structripple_1_1Array_1ad9b691d0c4e3c8329d475bf17a8d7e14"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator&gt;=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array">Array</a>&lt;<a class="reference internal" href="#_CPPv4I0EN6ripple5ArraygeEbRK5ArrayI9ImplOtherE" title="ripple::Array::operator&gt;=::ImplOther">ImplOther</a>&gt; &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4I0EN6ripple5ArraygeEbRK5ArrayI9ImplOtherE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of greater than or equal operator to compare one array to another. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if <em>all</em> elements of this array are &gt;= the corresponding elements in the other array. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other array to compare against this one. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ImplOther</span></code>: The implementation type of the other array. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0_20array_value_enable_tI1T4ImplEENK6ripple5ArraygeEb1T">
+<span id="_CPPv3I0_20array_value_enable_tI1T4ImplEENK6ripple5ArraygeE1T"></span><span id="_CPPv2I0_20array_value_enable_tI1T4ImplEENK6ripple5ArraygeE1T"></span>template&lt;typename <code class="sig-name descname">T</code>, <a class="reference internal" href="typedef_namespaceripple_1a5628f49a48d187a91a56065d17e9e661.html#_CPPv4I0000EN6ripple20array_value_enable_tE" title="ripple::array_value_enable_t">array_value_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEENK6ripple5ArraygeEb1T" title="ripple::Array::operator&gt;=::T">T</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&gt; = 0&gt;<br /><span class="target" id="structripple_1_1Array_1a4de00e2bf6f91ab48a7470ed3ee85997"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator&gt;=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEENK6ripple5ArraygeEb1T" title="ripple::Array::operator&gt;=::T">T</a> <em>val</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEENK6ripple5ArraygeEb1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of greater than or equal operator to compare if all elements of the array are greater than or equal to the given value. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if all elements are greater than or equal to the given value. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">val</span></code>: The value to compare to. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the value. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple5ArrayltEbRK5ArrayI9ImplOtherE">
+<span id="_CPPv3I0ENK6ripple5ArrayltERK5ArrayI9ImplOtherE"></span><span id="_CPPv2I0ENK6ripple5ArrayltERK5ArrayI9ImplOtherE"></span>template&lt;typename <code class="sig-name descname">ImplOther</code>&gt;<br /><span class="target" id="structripple_1_1Array_1adbff3c431df28769e2125792058b2aab"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator&lt;</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array">Array</a>&lt;<a class="reference internal" href="#_CPPv4I0ENK6ripple5ArrayltEbRK5ArrayI9ImplOtherE" title="ripple::Array::operator&lt;::ImplOther">ImplOther</a>&gt; &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4I0ENK6ripple5ArrayltEbRK5ArrayI9ImplOtherE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of less than operator to compare one array to another. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if all elements of this array are less than the other array elements. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other array to compare against this one. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ImplOther</span></code>: The implementation type of the other array. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0_20array_value_enable_tI1T4ImplEENK6ripple5ArrayltEb1T">
+<span id="_CPPv3I0_20array_value_enable_tI1T4ImplEENK6ripple5ArrayltE1T"></span><span id="_CPPv2I0_20array_value_enable_tI1T4ImplEENK6ripple5ArrayltE1T"></span>template&lt;typename <code class="sig-name descname">T</code>, <a class="reference internal" href="typedef_namespaceripple_1a5628f49a48d187a91a56065d17e9e661.html#_CPPv4I0000EN6ripple20array_value_enable_tE" title="ripple::array_value_enable_t">array_value_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEENK6ripple5ArrayltEb1T" title="ripple::Array::operator&lt;::T">T</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&gt; = 0&gt;<br /><span class="target" id="structripple_1_1Array_1a0243f2ca4c54390807c8d73b555062f2"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator&lt;</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEENK6ripple5ArrayltEb1T" title="ripple::Array::operator&lt;::T">T</a> <em>val</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEENK6ripple5ArrayltEb1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of less than operator to compare the array elements againt the given value. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if all array elements are less than the given value. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">val</span></code>: The value to compare to. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the value. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple5ArraygtEbRK5ArrayI9ImplOtherE">
+<span id="_CPPv3I0ENK6ripple5ArraygtERK5ArrayI9ImplOtherE"></span><span id="_CPPv2I0ENK6ripple5ArraygtERK5ArrayI9ImplOtherE"></span>template&lt;typename <code class="sig-name descname">ImplOther</code>&gt;<br /><span class="target" id="structripple_1_1Array_1ab2285bc5d1941e8f1465bdb04cc360bd"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator&gt;</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array">Array</a>&lt;<a class="reference internal" href="#_CPPv4I0ENK6ripple5ArraygtEbRK5ArrayI9ImplOtherE" title="ripple::Array::operator&gt;::ImplOther">ImplOther</a>&gt; &amp;<em>a</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4I0ENK6ripple5ArraygtEbRK5ArrayI9ImplOtherE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of greater than operator to compare one array to another. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if all elements of this array are greater than the elements in the other array. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other array to compare against this one. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ImplOther</span></code>: The implementation type of the other array. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0_20array_value_enable_tI1T4ImplEENK6ripple5ArraygtEb1T">
+<span id="_CPPv3I0_20array_value_enable_tI1T4ImplEENK6ripple5ArraygtE1T"></span><span id="_CPPv2I0_20array_value_enable_tI1T4ImplEENK6ripple5ArraygtE1T"></span>template&lt;typename <code class="sig-name descname">T</code>, <a class="reference internal" href="typedef_namespaceripple_1a5628f49a48d187a91a56065d17e9e661.html#_CPPv4I0000EN6ripple20array_value_enable_tE" title="ripple::array_value_enable_t">array_value_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEENK6ripple5ArraygtEb1T" title="ripple::Array::operator&gt;::T">T</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&gt; = 0&gt;<br /><span class="target" id="structripple_1_1Array_1a9afa26e7f784527233ea86d4f319fc28"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator&gt;</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEENK6ripple5ArraygtEb1T" title="ripple::Array::operator&gt;::T">T</a> <em>val</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEENK6ripple5ArraygtEb1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of greater than operator to compare the elements of the array to given value. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if all elements in the array are greater than the given value. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">val</span></code>: The value to compare to. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the value. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple5ArraypLER4ImplRK5ArrayI9ImplOtherE">
+<span id="_CPPv3I0EN6ripple5ArraypLERK5ArrayI9ImplOtherE"></span><span id="_CPPv2I0EN6ripple5ArraypLERK5ArrayI9ImplOtherE"></span>template&lt;typename <code class="sig-name descname">ImplOther</code>&gt;<br /><span class="target" id="structripple_1_1Array_1a81b49eefcfa0592189e2f3dc94b385f2"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator+=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array">Array</a>&lt;<a class="reference internal" href="#_CPPv4I0EN6ripple5ArraypLER4ImplRK5ArrayI9ImplOtherE" title="ripple::Array::operator+=::ImplOther">ImplOther</a>&gt; &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&amp;<a class="headerlink" href="#_CPPv4I0EN6ripple5ArraypLER4ImplRK5ArrayI9ImplOtherE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of operator+= to add each element of the other array to this array. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the sizes of the arrays are different, this will cause a compile time error.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified array. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The array to add with. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ImplOther</span></code>: The implementation type of the other array. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0_20array_value_enable_tI1T4ImplEEN6ripple5ArraypLER4Impl1T">
+<span id="_CPPv3I0_20array_value_enable_tI1T4ImplEEN6ripple5ArraypLE1T"></span><span id="_CPPv2I0_20array_value_enable_tI1T4ImplEEN6ripple5ArraypLE1T"></span>template&lt;typename <code class="sig-name descname">T</code>, <a class="reference internal" href="typedef_namespaceripple_1a5628f49a48d187a91a56065d17e9e661.html#_CPPv4I0000EN6ripple20array_value_enable_tE" title="ripple::array_value_enable_t">array_value_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEEN6ripple5ArraypLER4Impl1T" title="ripple::Array::operator+=::T">T</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&gt; = 0&gt;<br /><span class="target" id="structripple_1_1Array_1a6572ba8c6f7a55c18addbdd6be9ac740"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator+=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEEN6ripple5ArraypLER4Impl1T" title="ripple::Array::operator+=::T">T</a> <em>val</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&amp;<a class="headerlink" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEEN6ripple5ArraypLER4Impl1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of operator+= to add the value to each element of this array. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the type T cannot be converted to the value type of the array then this will cause a compile time error.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified array. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">val</span></code>: The value to add to each element of the array. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the value. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I00ENK6ripple5ArrayplE1RRK5ArrayI9ImplOtherE">
+<span id="_CPPv3I00ENK6ripple5ArrayplERK5ArrayI9ImplOtherE"></span><span id="_CPPv2I00ENK6ripple5ArrayplERK5ArrayI9ImplOtherE"></span>template&lt;typename <code class="sig-name descname">ImplOther</code>, typename <code class="sig-name descname">R</code> = <a class="reference internal" href="typedef_namespaceripple_1a8a29502ebe90edab600ee22db8f945fb.html#_CPPv4I0000_b_b0EN6ripple12array_impl_tE" title="ripple::array_impl_t">array_impl_t</a>&lt;<a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>, <a class="reference internal" href="#_CPPv4I00ENK6ripple5ArrayplE1RRK5ArrayI9ImplOtherE" title="ripple::Array::operator+::ImplOther">ImplOther</a>&gt;&gt;<br /><span class="target" id="structripple_1_1Array_1a09d39f909bab16179536a5bc946c93e4"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator+</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array">Array</a>&lt;<a class="reference internal" href="#_CPPv4I00ENK6ripple5ArrayplE1RRK5ArrayI9ImplOtherE" title="ripple::Array::operator+::ImplOther">ImplOther</a>&gt; &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I00ENK6ripple5ArrayplE1RRK5ArrayI9ImplOtherE" title="ripple::Array::operator+::R">R</a><a class="headerlink" href="#_CPPv4I00ENK6ripple5ArrayplE1RRK5ArrayI9ImplOtherE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of operator+ to add each element of the other array to this array. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A new array with either this implementation type, or the implemenation type of the other array, or the fallback type. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The array for the addition. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ImplOther</span></code>: The implementation type of the other array. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I00_20array_value_enable_tI1T4ImplEENK6ripple5ArrayplE1R1T">
+<span id="_CPPv3I00_20array_value_enable_tI1T4ImplEENK6ripple5ArrayplE1T"></span><span id="_CPPv2I00_20array_value_enable_tI1T4ImplEENK6ripple5ArrayplE1T"></span>template&lt;typename <code class="sig-name descname">T</code>, typename <code class="sig-name descname">R</code> = <a class="reference internal" href="typedef_namespaceripple_1a8a29502ebe90edab600ee22db8f945fb.html#_CPPv4I0000_b_b0EN6ripple12array_impl_tE" title="ripple::array_impl_t">array_impl_t</a>&lt;<a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&gt;, <a class="reference internal" href="typedef_namespaceripple_1a5628f49a48d187a91a56065d17e9e661.html#_CPPv4I0000EN6ripple20array_value_enable_tE" title="ripple::array_value_enable_t">array_value_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I00_20array_value_enable_tI1T4ImplEENK6ripple5ArrayplE1R1T" title="ripple::Array::operator+::T">T</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&gt; = 0&gt;<br /><span class="target" id="structripple_1_1Array_1aa453ed940f056465119844269fe41046"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator+</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00_20array_value_enable_tI1T4ImplEENK6ripple5ArrayplE1R1T" title="ripple::Array::operator+::T">T</a> <em>val</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I00_20array_value_enable_tI1T4ImplEENK6ripple5ArrayplE1R1T" title="ripple::Array::operator+::R">R</a><a class="headerlink" href="#_CPPv4I00_20array_value_enable_tI1T4ImplEENK6ripple5ArrayplE1R1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of operator+ to add the value val to each element of this array and return a new array. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the type T cannot be converted to the value type of the array then this will cause a compile time error.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A new array with either this implementation type, or the fallback type. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">val</span></code>: The value to add to each element of the array. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the value. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple5ArraymIER4ImplRK5ArrayI9ImplOtherE">
+<span id="_CPPv3I0EN6ripple5ArraymIERK5ArrayI9ImplOtherE"></span><span id="_CPPv2I0EN6ripple5ArraymIERK5ArrayI9ImplOtherE"></span>template&lt;typename <code class="sig-name descname">ImplOther</code>&gt;<br /><span class="target" id="structripple_1_1Array_1a9320307ae401ec0a4dc819769308751e"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator-=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array">Array</a>&lt;<a class="reference internal" href="#_CPPv4I0EN6ripple5ArraymIER4ImplRK5ArrayI9ImplOtherE" title="ripple::Array::operator-=::ImplOther">ImplOther</a>&gt; &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&amp;<a class="headerlink" href="#_CPPv4I0EN6ripple5ArraymIER4ImplRK5ArrayI9ImplOtherE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of operator-= to subtract each element of the other array from this array. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the sizes of the arrays are different, this will cause a compile time error.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified array. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The array to subtract with. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ImplOther</span></code>: The implementation type of the subtraction array. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0_20array_value_enable_tI1T4ImplEEN6ripple5ArraymIER4Impl1T">
+<span id="_CPPv3I0_20array_value_enable_tI1T4ImplEEN6ripple5ArraymIE1T"></span><span id="_CPPv2I0_20array_value_enable_tI1T4ImplEEN6ripple5ArraymIE1T"></span>template&lt;typename <code class="sig-name descname">T</code>, <a class="reference internal" href="typedef_namespaceripple_1a5628f49a48d187a91a56065d17e9e661.html#_CPPv4I0000EN6ripple20array_value_enable_tE" title="ripple::array_value_enable_t">array_value_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEEN6ripple5ArraymIER4Impl1T" title="ripple::Array::operator-=::T">T</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&gt; = 0&gt;<br /><span class="target" id="structripple_1_1Array_1a88259ffe4962632b9a18ccf4d06099bb"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator-=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEEN6ripple5ArraymIER4Impl1T" title="ripple::Array::operator-=::T">T</a> <em>val</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&amp;<a class="headerlink" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEEN6ripple5ArraymIER4Impl1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of operator-= to subtract the value from each element of this array. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the type T cannot be converted to the value type of the array then this will cause a compile time error.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified array. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">val</span></code>: The value to subtract from each element of the array. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the value. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I00ENK6ripple5ArraymiE1RRK5ArrayI9ImplOtherE">
+<span id="_CPPv3I00ENK6ripple5ArraymiERK5ArrayI9ImplOtherE"></span><span id="_CPPv2I00ENK6ripple5ArraymiERK5ArrayI9ImplOtherE"></span>template&lt;typename <code class="sig-name descname">ImplOther</code>, typename <code class="sig-name descname">R</code> = <a class="reference internal" href="typedef_namespaceripple_1a8a29502ebe90edab600ee22db8f945fb.html#_CPPv4I0000_b_b0EN6ripple12array_impl_tE" title="ripple::array_impl_t">array_impl_t</a>&lt;<a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>, <a class="reference internal" href="#_CPPv4I00ENK6ripple5ArraymiE1RRK5ArrayI9ImplOtherE" title="ripple::Array::operator-::ImplOther">ImplOther</a>&gt;&gt;<br /><span class="target" id="structripple_1_1Array_1a1bd4bf7efe428d6d050cf7483114253e"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator-</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array">Array</a>&lt;<a class="reference internal" href="#_CPPv4I00ENK6ripple5ArraymiE1RRK5ArrayI9ImplOtherE" title="ripple::Array::operator-::ImplOther">ImplOther</a>&gt; &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I00ENK6ripple5ArraymiE1RRK5ArrayI9ImplOtherE" title="ripple::Array::operator-::R">R</a><a class="headerlink" href="#_CPPv4I00ENK6ripple5ArraymiE1RRK5ArrayI9ImplOtherE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of operator- to subtract each element of the other array from each element in this array, returning a new array. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A new array with either this implementation type, or the implemenation type of the other array, or the fallback type. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The array for the subtraction. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ImplOther</span></code>: The implementation type of the subtraction array. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I00_20array_value_enable_tI1T4ImplEENK6ripple5ArraymiE1R1T">
+<span id="_CPPv3I00_20array_value_enable_tI1T4ImplEENK6ripple5ArraymiE1T"></span><span id="_CPPv2I00_20array_value_enable_tI1T4ImplEENK6ripple5ArraymiE1T"></span>template&lt;typename <code class="sig-name descname">T</code>, typename <code class="sig-name descname">R</code> = <a class="reference internal" href="typedef_namespaceripple_1a8a29502ebe90edab600ee22db8f945fb.html#_CPPv4I0000_b_b0EN6ripple12array_impl_tE" title="ripple::array_impl_t">array_impl_t</a>&lt;<a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&gt;, <a class="reference internal" href="typedef_namespaceripple_1a5628f49a48d187a91a56065d17e9e661.html#_CPPv4I0000EN6ripple20array_value_enable_tE" title="ripple::array_value_enable_t">array_value_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I00_20array_value_enable_tI1T4ImplEENK6ripple5ArraymiE1R1T" title="ripple::Array::operator-::T">T</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&gt; = 0&gt;<br /><span class="target" id="structripple_1_1Array_1a6ece133b345e0d301a649d9787b2a9ec"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator-</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00_20array_value_enable_tI1T4ImplEENK6ripple5ArraymiE1R1T" title="ripple::Array::operator-::T">T</a> <em>val</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I00_20array_value_enable_tI1T4ImplEENK6ripple5ArraymiE1R1T" title="ripple::Array::operator-::R">R</a><a class="headerlink" href="#_CPPv4I00_20array_value_enable_tI1T4ImplEENK6ripple5ArraymiE1R1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of operator- to subtract the value from each element of this array, returning a new array. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the type T cannot be converted to the value type of the array then this will cause a compile time error.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A new array with either this implementation type, or the fallback type. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">val</span></code>: The value to subtract from each element of the array. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the value. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple5ArraymLER4ImplRK5ArrayI9ImplOtherE">
+<span id="_CPPv3I0EN6ripple5ArraymLERK5ArrayI9ImplOtherE"></span><span id="_CPPv2I0EN6ripple5ArraymLERK5ArrayI9ImplOtherE"></span>template&lt;typename <code class="sig-name descname">ImplOther</code>&gt;<br /><span class="target" id="structripple_1_1Array_1a72ff003a32e3d7d5c779c6a3da2989c6"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator*=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array">Array</a>&lt;<a class="reference internal" href="#_CPPv4I0EN6ripple5ArraymLER4ImplRK5ArrayI9ImplOtherE" title="ripple::Array::operator*=::ImplOther">ImplOther</a>&gt; &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&amp;<a class="headerlink" href="#_CPPv4I0EN6ripple5ArraymLER4ImplRK5ArrayI9ImplOtherE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of operator*= to multiply each element of the other array with this one. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the sizes of the arrays are different, this will cause a compile time error.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified array. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The array to multiply with. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ImplOther</span></code>: The implementation type of the multiplication array. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0_20array_value_enable_tI1T4ImplEEN6ripple5ArraymLER4Impl1T">
+<span id="_CPPv3I0_20array_value_enable_tI1T4ImplEEN6ripple5ArraymLE1T"></span><span id="_CPPv2I0_20array_value_enable_tI1T4ImplEEN6ripple5ArraymLE1T"></span>template&lt;typename <code class="sig-name descname">T</code>, <a class="reference internal" href="typedef_namespaceripple_1a5628f49a48d187a91a56065d17e9e661.html#_CPPv4I0000EN6ripple20array_value_enable_tE" title="ripple::array_value_enable_t">array_value_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEEN6ripple5ArraymLER4Impl1T" title="ripple::Array::operator*=::T">T</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&gt; = 0&gt;<br /><span class="target" id="structripple_1_1Array_1a0ba79896423b3776a367bd40f95a4ed9"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator*=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEEN6ripple5ArraymLER4Impl1T" title="ripple::Array::operator*=::T">T</a> <em>val</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&amp;<a class="headerlink" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEEN6ripple5ArraymLER4Impl1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of operator*= to multiply the each element of the array with the value. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the type T cannot be converted to the value type of the array then this will cause a compile time error.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified array. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">val</span></code>: The value to multiply with each element of the array. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the value. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I00ENK6ripple5ArraymlE1RRK5ArrayI9ImplOtherE">
+<span id="_CPPv3I00ENK6ripple5ArraymlERK5ArrayI9ImplOtherE"></span><span id="_CPPv2I00ENK6ripple5ArraymlERK5ArrayI9ImplOtherE"></span>template&lt;typename <code class="sig-name descname">ImplOther</code>, typename <code class="sig-name descname">R</code> = <a class="reference internal" href="typedef_namespaceripple_1a8a29502ebe90edab600ee22db8f945fb.html#_CPPv4I0000_b_b0EN6ripple12array_impl_tE" title="ripple::array_impl_t">array_impl_t</a>&lt;<a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>, <a class="reference internal" href="#_CPPv4I00ENK6ripple5ArraymlE1RRK5ArrayI9ImplOtherE" title="ripple::Array::operator*::ImplOther">ImplOther</a>&gt;&gt;<br /><span class="target" id="structripple_1_1Array_1a6d4fe5d447b6e495e3578a5d926d1bbd"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator*</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array">Array</a>&lt;<a class="reference internal" href="#_CPPv4I00ENK6ripple5ArraymlE1RRK5ArrayI9ImplOtherE" title="ripple::Array::operator*::ImplOther">ImplOther</a>&gt; &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I00ENK6ripple5ArraymlE1RRK5ArrayI9ImplOtherE" title="ripple::Array::operator*::R">R</a><a class="headerlink" href="#_CPPv4I00ENK6ripple5ArraymlE1RRK5ArrayI9ImplOtherE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of operator* to multiply each element of the array with the other array, returning a new array. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A new array with either this implementation type, or the implemenation type of the other array, or the fallback type. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The array to multiply with. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ImplOther</span></code>: The implementation type of the multiplication array. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I00_20array_value_enable_tI1T4ImplEENK6ripple5ArraymlE1R1T">
+<span id="_CPPv3I00_20array_value_enable_tI1T4ImplEENK6ripple5ArraymlE1T"></span><span id="_CPPv2I00_20array_value_enable_tI1T4ImplEENK6ripple5ArraymlE1T"></span>template&lt;typename <code class="sig-name descname">T</code>, typename <code class="sig-name descname">R</code> = <a class="reference internal" href="typedef_namespaceripple_1a8a29502ebe90edab600ee22db8f945fb.html#_CPPv4I0000_b_b0EN6ripple12array_impl_tE" title="ripple::array_impl_t">array_impl_t</a>&lt;<a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&gt;, <a class="reference internal" href="typedef_namespaceripple_1a5628f49a48d187a91a56065d17e9e661.html#_CPPv4I0000EN6ripple20array_value_enable_tE" title="ripple::array_value_enable_t">array_value_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I00_20array_value_enable_tI1T4ImplEENK6ripple5ArraymlE1R1T" title="ripple::Array::operator*::T">T</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&gt; = 0&gt;<br /><span class="target" id="structripple_1_1Array_1a51f31c155824e8098cc1c540f409718c"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator*</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00_20array_value_enable_tI1T4ImplEENK6ripple5ArraymlE1R1T" title="ripple::Array::operator*::T">T</a> <em>val</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I00_20array_value_enable_tI1T4ImplEENK6ripple5ArraymlE1R1T" title="ripple::Array::operator*::R">R</a><a class="headerlink" href="#_CPPv4I00_20array_value_enable_tI1T4ImplEENK6ripple5ArraymlE1R1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of operator* to multiply the value with each element of this array, returning a new array. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the type T cannot be converted to the value type of the array then this will cause a compile time error.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A new array with either this implementation type, or the fallback type. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">val</span></code>: The value to multiply with each element of the array. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the value. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple5ArraydVER4ImplRK5ArrayI9ImplOtherE">
+<span id="_CPPv3I0EN6ripple5ArraydVERK5ArrayI9ImplOtherE"></span><span id="_CPPv2I0EN6ripple5ArraydVERK5ArrayI9ImplOtherE"></span>template&lt;typename <code class="sig-name descname">ImplOther</code>&gt;<br /><span class="target" id="structripple_1_1Array_1aa5f94b49aadc3cf3dd90d624b46dfac7"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator/=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array">Array</a>&lt;<a class="reference internal" href="#_CPPv4I0EN6ripple5ArraydVER4ImplRK5ArrayI9ImplOtherE" title="ripple::Array::operator/=::ImplOther">ImplOther</a>&gt; &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&amp;<a class="headerlink" href="#_CPPv4I0EN6ripple5ArraydVER4ImplRK5ArrayI9ImplOtherE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of operator/= to divide each element of the array with each element of the other array. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the sizes of the arrays are different, this will cause a compile time error.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified array. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The array to divide by. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ImplOther</span></code>: The implementation type of the other array. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0_20array_value_enable_tI1T4ImplEEN6ripple5ArraydVER4Impl1T">
+<span id="_CPPv3I0_20array_value_enable_tI1T4ImplEEN6ripple5ArraydVE1T"></span><span id="_CPPv2I0_20array_value_enable_tI1T4ImplEEN6ripple5ArraydVE1T"></span>template&lt;typename <code class="sig-name descname">T</code>, <a class="reference internal" href="typedef_namespaceripple_1a5628f49a48d187a91a56065d17e9e661.html#_CPPv4I0000EN6ripple20array_value_enable_tE" title="ripple::array_value_enable_t">array_value_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEEN6ripple5ArraydVER4Impl1T" title="ripple::Array::operator/=::T">T</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&gt; = 0&gt;<br /><span class="target" id="structripple_1_1Array_1a065dfc473f0bdbd11b67d9ec12209f66"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator/=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEEN6ripple5ArraydVER4Impl1T" title="ripple::Array::operator/=::T">T</a> <em>val</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&amp;<a class="headerlink" href="#_CPPv4I0_20array_value_enable_tI1T4ImplEEN6ripple5ArraydVER4Impl1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of operator/= to divide each element in the array by the value. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the type T cannot be converted to the value type of the array then this will cause a compile time error.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified array. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">val</span></code>: The value to divide each element of the array by. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the value. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I00ENK6ripple5ArraydvE1RRK5ArrayI9ImplOtherE">
+<span id="_CPPv3I00ENK6ripple5ArraydvERK5ArrayI9ImplOtherE"></span><span id="_CPPv2I00ENK6ripple5ArraydvERK5ArrayI9ImplOtherE"></span>template&lt;typename <code class="sig-name descname">ImplOther</code>, typename <code class="sig-name descname">R</code> = <a class="reference internal" href="typedef_namespaceripple_1a8a29502ebe90edab600ee22db8f945fb.html#_CPPv4I0000_b_b0EN6ripple12array_impl_tE" title="ripple::array_impl_t">array_impl_t</a>&lt;<a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>, <a class="reference internal" href="#_CPPv4I00ENK6ripple5ArraydvE1RRK5ArrayI9ImplOtherE" title="ripple::Array::operator/::ImplOther">ImplOther</a>&gt;&gt;<br /><span class="target" id="structripple_1_1Array_1ab5a46dc7ab7625671d1ff16245dca938"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator/</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array">Array</a>&lt;<a class="reference internal" href="#_CPPv4I00ENK6ripple5ArraydvE1RRK5ArrayI9ImplOtherE" title="ripple::Array::operator/::ImplOther">ImplOther</a>&gt; &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I00ENK6ripple5ArraydvE1RRK5ArrayI9ImplOtherE" title="ripple::Array::operator/::R">R</a><a class="headerlink" href="#_CPPv4I00ENK6ripple5ArraydvE1RRK5ArrayI9ImplOtherE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of operator/ to divide each element of the array with each element of the other array, returning a new array. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the sizes of the arrays are different, this will cause a compile time error.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A new array with either this implementation type, or the implemenation type of the other array, or the fallback type. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The array to divide by. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ImplOther</span></code>: The implementation type of the division array. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I00_20array_value_enable_tI1T4ImplEENK6ripple5ArraydvE1R1T">
+<span id="_CPPv3I00_20array_value_enable_tI1T4ImplEENK6ripple5ArraydvE1T"></span><span id="_CPPv2I00_20array_value_enable_tI1T4ImplEENK6ripple5ArraydvE1T"></span>template&lt;typename <code class="sig-name descname">T</code>, typename <code class="sig-name descname">R</code> = <a class="reference internal" href="typedef_namespaceripple_1a8a29502ebe90edab600ee22db8f945fb.html#_CPPv4I0000_b_b0EN6ripple12array_impl_tE" title="ripple::array_impl_t">array_impl_t</a>&lt;<a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&gt;, <a class="reference internal" href="typedef_namespaceripple_1a5628f49a48d187a91a56065d17e9e661.html#_CPPv4I0000EN6ripple20array_value_enable_tE" title="ripple::array_value_enable_t">array_value_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I00_20array_value_enable_tI1T4ImplEENK6ripple5ArraydvE1R1T" title="ripple::Array::operator/::T">T</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&gt; = 0&gt;<br /><span class="target" id="structripple_1_1Array_1a49ab003103f044f2ea8e1ceee8111206"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator/</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00_20array_value_enable_tI1T4ImplEENK6ripple5ArraydvE1R1T" title="ripple::Array::operator/::T">T</a> <em>val</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I00_20array_value_enable_tI1T4ImplEENK6ripple5ArraydvE1R1T" title="ripple::Array::operator/::R">R</a><a class="headerlink" href="#_CPPv4I00_20array_value_enable_tI1T4ImplEENK6ripple5ArraydvE1R1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of operator/ to divide each element of this array by the value. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the type T cannot be converted to the value type of the array then this will cause a compile time error.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A new array with either this implementation type, or the fallback type. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">val</span></code>: The value to multiply with each element of the array. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the value. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Attributes</p>
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple5Array8elementsE">
+<span id="_CPPv3N6ripple5Array8elementsE"></span><span id="_CPPv2N6ripple5Array8elementsE"></span><span id="ripple::Array::elements__s"></span><span class="target" id="structripple_1_1Array_1a407fde5207081b99fc5c5af9ade1b227"></span><em class="property">constexpr</em> size_t <code class="sig-name descname">elements</code> = <a class="reference internal" href="typedef_namespaceripple_1a06513aae184f9db0cde389ada11de7cc.html#_CPPv4I0EN6ripple14array_traits_tE" title="ripple::array_traits_t">array_traits_t</a>&lt;<a class="reference internal" href="#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array::Impl">Impl</a>&gt;::size<a class="headerlink" href="#_CPPv4N6ripple5Array8elementsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The number of elements in the array. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structripple_1_1ArrayTraits.html" class="btn btn-neutral float-right" title="Template Struct ArrayTraits" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="structripple_1_1AnyBlockTraits.html" class="btn btn-neutral" title="Template Struct AnyBlockTraits" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Template Struct Array</a><ul>
+<li><a class="reference internal" href="#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,726 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Struct GpuInfo &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Struct GpuInfo::Stream" href="structripple_1_1GpuInfo_1_1Stream.html" />
+  <link rel="prev" title="Struct GpuHeapArena" href="structripple_1_1GpuHeapArena.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Struct GpuInfo</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/structripple_1_1GpuInfo.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="struct-gpuinfo">
+<span id="exhale-struct-structripple-1-1gpuinfo"></span><h1>Struct GpuInfo<a class="headerlink" href="#struct-gpuinfo" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_arch_gpu_info.hpp.html#file-include-ripple-core-arch-gpu-info-hpp"><span class="std std-ref">File gpu_info.hpp</span></a></p></li>
+</ul>
+<div class="section" id="nested-relationships">
+<h2>Nested Relationships<a class="headerlink" href="#nested-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="nested-types">
+<h3>Nested Types<a class="headerlink" href="#nested-types" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="structripple_1_1GpuInfo_1_1Stream.html#exhale-struct-structripple-1-1gpuinfo-1-1stream"><span class="std std-ref">Struct GpuInfo::Stream</span></a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp struct">
+<dt id="_CPPv4N6ripple7GpuInfoE">
+<span id="_CPPv3N6ripple7GpuInfoE"></span><span id="_CPPv2N6ripple7GpuInfoE"></span><span id="ripple::GpuInfo"></span><span class="target" id="structripple_1_1GpuInfo"></span><em class="property">struct </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">GpuInfo</code><a class="headerlink" href="#_CPPv4N6ripple7GpuInfoE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#structripple_1_1GpuInfo"><span class="std std-ref">GpuInfo</span></a> struct stores information about the gpu. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple7GpuInfo5IndexE">
+<span id="_CPPv3N6ripple7GpuInfo5IndexE"></span><span id="_CPPv2N6ripple7GpuInfo5IndexE"></span><span class="target" id="structripple_1_1GpuInfo_1abbc54e68fb8b01559314d1e39a9ce793"></span><em class="property">using </em><code class="sig-name descname">Index</code> = uint32_t<a class="headerlink" href="#_CPPv4N6ripple7GpuInfo5IndexE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Type used for the device index. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple7GpuInfo13PeerContainerE">
+<span id="_CPPv3N6ripple7GpuInfo13PeerContainerE"></span><span id="_CPPv2N6ripple7GpuInfo13PeerContainerE"></span><span class="target" id="structripple_1_1GpuInfo_1a9e6046f5ab533cd77da79d193b252f0d"></span><em class="property">using </em><code class="sig-name descname">PeerContainer</code> = std::vector&lt;<a class="reference internal" href="#_CPPv4N6ripple7GpuInfo5IndexE" title="ripple::GpuInfo::Index">Index</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple7GpuInfo13PeerContainerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Type of container used to store peer access indices. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple7GpuInfo15StreamContainerE">
+<span id="_CPPv3N6ripple7GpuInfo15StreamContainerE"></span><span id="_CPPv2N6ripple7GpuInfo15StreamContainerE"></span><span class="target" id="structripple_1_1GpuInfo_1ad31b85c601f0104d8a11000e84ce9ff1"></span><em class="property">using </em><code class="sig-name descname">StreamContainer</code> = std::array&lt;<a class="reference internal" href="#_CPPv4N6ripple7GpuInfo6StreamE" title="ripple::GpuInfo::Stream">Stream</a>, <a class="reference internal" href="#_CPPv4N6ripple7GpuInfo13total_streamsE" title="ripple::GpuInfo::total_streams">total_streams</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple7GpuInfo15StreamContainerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Type of container for streams for the device. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple7GpuInfo2IdE">
+<span id="_CPPv3N6ripple7GpuInfo2IdE"></span><span id="_CPPv2N6ripple7GpuInfo2IdE"></span><span class="target" id="structripple_1_1GpuInfo_1a65231ccb7fbbe6646909b9fadffaf071"></span><em class="property">using </em><code class="sig-name descname">Id</code> = uint8_t<a class="headerlink" href="#_CPPv4N6ripple7GpuInfo2IdE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type used for stream ids for a gpu. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7GpuInfo7GpuInfoE5Index">
+<span id="_CPPv3N6ripple7GpuInfo7GpuInfoE5Index"></span><span id="_CPPv2N6ripple7GpuInfo7GpuInfoE5Index"></span><span id="ripple::GpuInfo::GpuInfo__Index"></span><span class="target" id="structripple_1_1GpuInfo_1a9cd59a3f34a24cf84849738b299a4440"></span><code class="sig-name descname">GpuInfo</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple7GpuInfo5IndexE" title="ripple::GpuInfo::Index">Index</a> <em>idx</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple7GpuInfo7GpuInfoE5Index" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor to initialise the info with a specific index. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">idx</span></code>: The index of the gpu for the info. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7GpuInfoD0Ev">
+<span id="_CPPv3N6ripple7GpuInfoD0Ev"></span><span id="_CPPv2N6ripple7GpuInfoD0Ev"></span><span id="ripple::GpuInfo::~GpuInfo"></span><span class="target" id="structripple_1_1GpuInfo_1a773ac9e46b2221b4d3ea1094b09c4a5a"></span><code class="sig-name descname">~GpuInfo</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple7GpuInfoD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Destructor which cleans up the streams. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple7GpuInfo10is_invalidEv">
+<span id="_CPPv3NK6ripple7GpuInfo10is_invalidEv"></span><span id="_CPPv2NK6ripple7GpuInfo10is_invalidEv"></span><span id="ripple::GpuInfo::is_invalidC"></span><span class="target" id="structripple_1_1GpuInfo_1a9076796a90ab55d2bc72f8a0868ad860"></span>auto <code class="sig-name descname">is_invalid</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4NK6ripple7GpuInfo10is_invalidEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines if the info is invalid. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if the index matches the invalid index. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple7GpuInfo22peer_to_peer_availableEv">
+<span id="_CPPv3NK6ripple7GpuInfo22peer_to_peer_availableEv"></span><span id="_CPPv2NK6ripple7GpuInfo22peer_to_peer_availableEv"></span><span id="ripple::GpuInfo::peer_to_peer_availableC"></span><span class="target" id="structripple_1_1GpuInfo_1af078dc160dde748b986f9293c5e35e53"></span>auto <code class="sig-name descname">peer_to_peer_available</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4NK6ripple7GpuInfo22peer_to_peer_availableEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines if the gpu has any peer to peer access with another device. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if the gpu can directly access any other gpu’s memory. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple7GpuInfo22peer_to_peer_availableE5Index">
+<span id="_CPPv3NK6ripple7GpuInfo22peer_to_peer_availableE5Index"></span><span id="_CPPv2NK6ripple7GpuInfo22peer_to_peer_availableE5Index"></span><span id="ripple::GpuInfo::peer_to_peer_available__IndexC"></span><span class="target" id="structripple_1_1GpuInfo_1af8a781176a9ca144363fa9d30166e993"></span>auto <code class="sig-name descname">peer_to_peer_available</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple7GpuInfo5IndexE" title="ripple::GpuInfo::Index">Index</a> <em>other_id</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4NK6ripple7GpuInfo22peer_to_peer_availableE5Index" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>R Determines if this gpu can directly access the memory of the gpu with the given index. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if this gpu can directly access the other gpu’s memory. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other_id</span></code>: The index of the other gpu to check peer access with. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7GpuInfo22next_compute_stream_idEv">
+<span id="_CPPv3N6ripple7GpuInfo22next_compute_stream_idEv"></span><span id="_CPPv2N6ripple7GpuInfo22next_compute_stream_idEv"></span><span id="ripple::GpuInfo::next_compute_stream_id"></span><span class="target" id="structripple_1_1GpuInfo_1a501f8b36c5a9b7fe86104ee580220caf"></span>auto <code class="sig-name descname">next_compute_stream_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple7GpuInfo2IdE" title="ripple::GpuInfo::Id">Id</a><a class="headerlink" href="#_CPPv4N6ripple7GpuInfo22next_compute_stream_idEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the id of the next compute stream for the device. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The id of the next compute stream for the device. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7GpuInfo23next_transfer_stream_idEv">
+<span id="_CPPv3N6ripple7GpuInfo23next_transfer_stream_idEv"></span><span id="_CPPv2N6ripple7GpuInfo23next_transfer_stream_idEv"></span><span id="ripple::GpuInfo::next_transfer_stream_id"></span><span class="target" id="structripple_1_1GpuInfo_1a6b68e4340e5baae769262a91ba4792b7"></span>auto <code class="sig-name descname">next_transfer_stream_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple7GpuInfo2IdE" title="ripple::GpuInfo::Id">Id</a><a class="headerlink" href="#_CPPv4N6ripple7GpuInfo23next_transfer_stream_idEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the id of the next transfer stream for the device. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The id of the next transfer stream for the device. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple7GpuInfo11synchronizeEv">
+<span id="_CPPv3NK6ripple7GpuInfo11synchronizeEv"></span><span id="_CPPv2NK6ripple7GpuInfo11synchronizeEv"></span><span id="ripple::GpuInfo::synchronizeC"></span><span class="target" id="structripple_1_1GpuInfo_1a9b326c85dc58564eb504f4c3c9c0bd1f"></span>auto <code class="sig-name descname">synchronize</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4NK6ripple7GpuInfo11synchronizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Synchronizes the streams for the gpu. </p>
+<p><dl class="xrefsect">
+<dt>
+<em>Todo:</em></dt>
+<dd><p>Rename this to barrier. </p>
+</dd></dl>
+
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7GpuInfo13prepare_fenceEv">
+<span id="_CPPv3N6ripple7GpuInfo13prepare_fenceEv"></span><span id="_CPPv2N6ripple7GpuInfo13prepare_fenceEv"></span><span id="ripple::GpuInfo::prepare_fence"></span><span class="target" id="structripple_1_1GpuInfo_1a94e5f47eada1be3e761fa25ba9796464"></span>auto <code class="sig-name descname">prepare_fence</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple7GpuInfo13prepare_fenceEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Prepares he fence for asynchronous execution, setting that the fence is up and should be waited on. </p>
+<p>This will then be set as down once the fence is executed. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7GpuInfo13execute_fenceEv">
+<span id="_CPPv3N6ripple7GpuInfo13execute_fenceEv"></span><span id="_CPPv2N6ripple7GpuInfo13execute_fenceEv"></span><span id="ripple::GpuInfo::execute_fence"></span><span class="target" id="structripple_1_1GpuInfo_1a2c7a62059bb664e2fc9dd862b3bcf7a3"></span>auto <code class="sig-name descname">execute_fence</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple7GpuInfo13execute_fenceEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a fence on the gpu, blocking until the device is synchronized. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple7GpuInfo13is_fence_downEv">
+<span id="_CPPv3NK6ripple7GpuInfo13is_fence_downEv"></span><span id="_CPPv2NK6ripple7GpuInfo13is_fence_downEv"></span><span id="ripple::GpuInfo::is_fence_downC"></span><span class="target" id="structripple_1_1GpuInfo_1a22e813b0e164f24312b82a4ebb26cce8"></span>auto <code class="sig-name descname">is_fence_down</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4NK6ripple7GpuInfo13is_fence_downEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns true if the fence is down. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple7GpuInfo7streamsE">
+<span id="_CPPv3N6ripple7GpuInfo7streamsE"></span><span id="_CPPv2N6ripple7GpuInfo7streamsE"></span><span id="ripple::GpuInfo::streams__StreamContainer"></span><span class="target" id="structripple_1_1GpuInfo_1a7aeba963dd7acaa3e70366fccd5671fe"></span><a class="reference internal" href="#_CPPv4N6ripple7GpuInfo15StreamContainerE" title="ripple::GpuInfo::StreamContainer">StreamContainer</a> <code class="sig-name descname">streams</code> = {}<a class="headerlink" href="#_CPPv4N6ripple7GpuInfo7streamsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Streams for the device. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple7GpuInfo5peersE">
+<span id="_CPPv3N6ripple7GpuInfo5peersE"></span><span id="_CPPv2N6ripple7GpuInfo5peersE"></span><span id="ripple::GpuInfo::peers__PeerContainer"></span><span class="target" id="structripple_1_1GpuInfo_1adac1b0a8671e533575e5e34020e4ae78"></span><a class="reference internal" href="#_CPPv4N6ripple7GpuInfo13PeerContainerE" title="ripple::GpuInfo::PeerContainer">PeerContainer</a> <code class="sig-name descname">peers</code> = {}<a class="headerlink" href="#_CPPv4N6ripple7GpuInfo5peersE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Default to no peers. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple7GpuInfo5indexE">
+<span id="_CPPv3N6ripple7GpuInfo5indexE"></span><span id="_CPPv2N6ripple7GpuInfo5indexE"></span><span id="ripple::GpuInfo::index__Index"></span><span class="target" id="structripple_1_1GpuInfo_1aa195a3eaec35e96a3b84d0b5b7fbf6b1"></span><a class="reference internal" href="#_CPPv4N6ripple7GpuInfo5IndexE" title="ripple::GpuInfo::Index">Index</a> <code class="sig-name descname">index</code> = <a class="reference internal" href="#_CPPv4N6ripple7GpuInfo7invalidE" title="ripple::GpuInfo::invalid">invalid</a><a class="headerlink" href="#_CPPv4N6ripple7GpuInfo5indexE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Index of the gpu in the system. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple7GpuInfo8mem_sizeE">
+<span id="_CPPv3N6ripple7GpuInfo8mem_sizeE"></span><span id="_CPPv2N6ripple7GpuInfo8mem_sizeE"></span><span id="ripple::GpuInfo::mem_size__uint64_t"></span><span class="target" id="structripple_1_1GpuInfo_1aad872ad7a2a80d23f4662913429f04c8"></span>uint64_t <code class="sig-name descname">mem_size</code> = 0<a class="headerlink" href="#_CPPv4N6ripple7GpuInfo8mem_sizeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Amount of memory for the device. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple7GpuInfo9mem_allocE">
+<span id="_CPPv3N6ripple7GpuInfo9mem_allocE"></span><span id="_CPPv2N6ripple7GpuInfo9mem_allocE"></span><span id="ripple::GpuInfo::mem_alloc__uint64_t"></span><span class="target" id="structripple_1_1GpuInfo_1adc1d5f8b039ef3fc0fc1cdeeb0f514c1"></span>uint64_t <code class="sig-name descname">mem_alloc</code> = 0<a class="headerlink" href="#_CPPv4N6ripple7GpuInfo9mem_allocE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Amount of device memory. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple7GpuInfo10compute_idE">
+<span id="_CPPv3N6ripple7GpuInfo10compute_idE"></span><span id="_CPPv2N6ripple7GpuInfo10compute_idE"></span><span id="ripple::GpuInfo::compute_id__Id"></span><span class="target" id="structripple_1_1GpuInfo_1aadf1af16667e92c909c8afb76fc09111"></span><a class="reference internal" href="#_CPPv4N6ripple7GpuInfo2IdE" title="ripple::GpuInfo::Id">Id</a> <code class="sig-name descname">compute_id</code> = 0<a class="headerlink" href="#_CPPv4N6ripple7GpuInfo10compute_idE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Id of the current compute stream. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple7GpuInfo11transfer_idE">
+<span id="_CPPv3N6ripple7GpuInfo11transfer_idE"></span><span id="_CPPv2N6ripple7GpuInfo11transfer_idE"></span><span id="ripple::GpuInfo::transfer_id__Id"></span><span class="target" id="structripple_1_1GpuInfo_1a0b82091b79d9da5b4a7b33835af64bf8"></span><a class="reference internal" href="#_CPPv4N6ripple7GpuInfo2IdE" title="ripple::GpuInfo::Id">Id</a> <code class="sig-name descname">transfer_id</code> = 0<a class="headerlink" href="#_CPPv4N6ripple7GpuInfo11transfer_idE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Id of the next transfer stream. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple7GpuInfo8fence_upE">
+<span id="_CPPv3N6ripple7GpuInfo8fence_upE"></span><span id="_CPPv2N6ripple7GpuInfo8fence_upE"></span><span id="ripple::GpuInfo::fence_up__b"></span><span class="target" id="structripple_1_1GpuInfo_1ada2d219e1208d9da1a32c83ec417ad3c"></span>bool <code class="sig-name descname">fence_up</code> = false<a class="headerlink" href="#_CPPv4N6ripple7GpuInfo8fence_upE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple7GpuInfo3padE">
+<span id="_CPPv3N6ripple7GpuInfo3padE"></span><span id="_CPPv2N6ripple7GpuInfo3padE"></span><span id="ripple::GpuInfo::pad__uint8_tA"></span><span class="target" id="structripple_1_1GpuInfo_1a6ff8d6383bfb262f8cd3be3fa6968435"></span>uint8_t <code class="sig-name descname">pad</code>[<code class="sig-name descname">padding_size</code>]<a class="headerlink" href="#_CPPv4N6ripple7GpuInfo3padE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Padding for false sharing. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7GpuInfo22create_for_all_devicesEv">
+<span id="_CPPv3N6ripple7GpuInfo22create_for_all_devicesEv"></span><span id="_CPPv2N6ripple7GpuInfo22create_for_all_devicesEv"></span><span id="ripple::GpuInfo::create_for_all_devices"></span><span class="target" id="structripple_1_1GpuInfo_1a352ec48dff0a3624958ca655763d822c"></span>auto <code class="sig-name descname">create_for_all_devices</code><span class="sig-paren">(</span><span class="sig-paren">)</span> -&gt; std::vector&lt;<a class="reference internal" href="#_CPPv4N6ripple7GpuInfoE" title="ripple::GpuInfo">GpuInfo</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple7GpuInfo22create_for_all_devicesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates the information for all gpus in the system. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A vector of information for all the system gpus. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7GpuInfo12device_countEv">
+<span id="_CPPv3N6ripple7GpuInfo12device_countEv"></span><span id="_CPPv2N6ripple7GpuInfo12device_countEv"></span><span id="ripple::GpuInfo::device_count"></span><span class="target" id="structripple_1_1GpuInfo_1a286ee1beea76258735d2f97a64f5cf73"></span>auto <code class="sig-name descname">device_count</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; uint32_t<a class="headerlink" href="#_CPPv4N6ripple7GpuInfo12device_countEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the total number of gpus detected in the system. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of devices in the system. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Attributes</p>
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple7GpuInfo15compute_streamsE">
+<span id="_CPPv3N6ripple7GpuInfo15compute_streamsE"></span><span id="_CPPv2N6ripple7GpuInfo15compute_streamsE"></span><span id="ripple::GpuInfo::compute_streams__s"></span><span class="target" id="structripple_1_1GpuInfo_1a58ebbdcf1100c2453e535d45d1d07c3b"></span><em class="property">constexpr</em> size_t <code class="sig-name descname">compute_streams</code> = 1<a class="headerlink" href="#_CPPv4N6ripple7GpuInfo15compute_streamsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The number of streams for the gpu. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple7GpuInfo16transfer_streamsE">
+<span id="_CPPv3N6ripple7GpuInfo16transfer_streamsE"></span><span id="_CPPv2N6ripple7GpuInfo16transfer_streamsE"></span><span id="ripple::GpuInfo::transfer_streams__s"></span><span class="target" id="structripple_1_1GpuInfo_1a6967b65f62aee35c9202366b60888bf3"></span><em class="property">constexpr</em> size_t <code class="sig-name descname">transfer_streams</code> = 7<a class="headerlink" href="#_CPPv4N6ripple7GpuInfo16transfer_streamsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The number of transfer streams for the gpu. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple7GpuInfo13total_streamsE">
+<span id="_CPPv3N6ripple7GpuInfo13total_streamsE"></span><span id="_CPPv2N6ripple7GpuInfo13total_streamsE"></span><span id="ripple::GpuInfo::total_streams__s"></span><span class="target" id="structripple_1_1GpuInfo_1a87e6344d2fc7540bd6858fefbf3586df"></span><em class="property">constexpr</em> size_t <code class="sig-name descname">total_streams</code> = <a class="reference internal" href="#_CPPv4N6ripple7GpuInfo15compute_streamsE" title="ripple::GpuInfo::compute_streams">compute_streams</a> + <a class="reference internal" href="#_CPPv4N6ripple7GpuInfo16transfer_streamsE" title="ripple::GpuInfo::transfer_streams">transfer_streams</a><a class="headerlink" href="#_CPPv4N6ripple7GpuInfo13total_streamsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The total number of streams for the gpu. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple7GpuInfo7invalidE">
+<span id="_CPPv3N6ripple7GpuInfo7invalidE"></span><span id="_CPPv2N6ripple7GpuInfo7invalidE"></span><span id="ripple::GpuInfo::invalid__Index"></span><span class="target" id="structripple_1_1GpuInfo_1a8646b6c43e107928beffa30a4c02b0f2"></span><em class="property">constexpr</em> <a class="reference internal" href="#_CPPv4N6ripple7GpuInfo5IndexE" title="ripple::GpuInfo::Index">Index</a> <code class="sig-name descname">invalid</code> = 0xFFFFFFFF<a class="headerlink" href="#_CPPv4N6ripple7GpuInfo7invalidE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Value for invalid processor information. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple7GpuInfo12padding_sizeE">
+<span id="_CPPv3N6ripple7GpuInfo12padding_sizeE"></span><span id="_CPPv2N6ripple7GpuInfo12padding_sizeE"></span><span id="ripple::GpuInfo::padding_size__s"></span><span class="target" id="structripple_1_1GpuInfo_1ad49e775b077d10d1a956c9c048299cb3"></span><em class="property">constexpr</em> size_t <code class="sig-name descname">padding_size</code> = <a class="reference internal" href="variable_namespaceripple_1abe1ecf8e84a87dd95fc8a283184bd2ea.html#_CPPv4N6ripple24avoid_false_sharing_sizeE" title="ripple::avoid_false_sharing_size">avoid_false_sharing_size</a> - ((sizeof(<a class="reference internal" href="#_CPPv4N6ripple7GpuInfo13PeerContainerE" title="ripple::GpuInfo::PeerContainer">PeerContainer</a>) + sizeof(<a class="reference internal" href="#_CPPv4N6ripple7GpuInfo5IndexE" title="ripple::GpuInfo::Index">Index</a>) + sizeof(uint64_t) + sizeof(uint64_t) + sizeof(uint8_t) + sizeof(uint8_t) + sizeof(bool) + sizeof(<a class="reference internal" href="#_CPPv4N6ripple7GpuInfo15StreamContainerE" title="ripple::GpuInfo::StreamContainer">StreamContainer</a>)) % <a class="reference internal" href="variable_namespaceripple_1abe1ecf8e84a87dd95fc8a283184bd2ea.html#_CPPv4N6ripple24avoid_false_sharing_sizeE" title="ripple::avoid_false_sharing_size">avoid_false_sharing_size</a>)<a class="headerlink" href="#_CPPv4N6ripple7GpuInfo12padding_sizeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The amount of padding to avoid false sharing. </p>
+</dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt id="_CPPv4N6ripple7GpuInfo6StreamE">
+<span id="_CPPv3N6ripple7GpuInfo6StreamE"></span><span id="_CPPv2N6ripple7GpuInfo6StreamE"></span><span id="ripple::GpuInfo::Stream"></span><span class="target" id="structripple_1_1GpuInfo_1_1Stream"></span><em class="property">struct </em><code class="sig-name descname">Stream</code><a class="headerlink" href="#_CPPv4N6ripple7GpuInfo6StreamE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Wrapper for a gpu stream and if it has been set. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7GpuInfo6Stream6createEv">
+<span id="_CPPv3N6ripple7GpuInfo6Stream6createEv"></span><span id="_CPPv2N6ripple7GpuInfo6Stream6createEv"></span><span id="ripple::GpuInfo::Stream::create"></span><span class="target" id="structripple_1_1GpuInfo_1_1Stream_1a4c50231b10fa0d3795f38a3575713ad4"></span>auto <code class="sig-name descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple7GpuInfo6Stream6createEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a non-blocking stream. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7GpuInfo6Stream7destroyEv">
+<span id="_CPPv3N6ripple7GpuInfo6Stream7destroyEv"></span><span id="_CPPv2N6ripple7GpuInfo6Stream7destroyEv"></span><span id="ripple::GpuInfo::Stream::destroy"></span><span class="target" id="structripple_1_1GpuInfo_1_1Stream_1adaf243377b6ffaf601f487a56bd576c6"></span>auto <code class="sig-name descname">destroy</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple7GpuInfo6Stream7destroyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Destroys the stream. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple7GpuInfo6Stream6streamE">
+<span id="_CPPv3N6ripple7GpuInfo6Stream6streamE"></span><span id="_CPPv2N6ripple7GpuInfo6Stream6streamE"></span><span id="ripple::GpuInfo::Stream::stream__GpuStream"></span><span class="target" id="structripple_1_1GpuInfo_1_1Stream_1a3c2045c9ee423011ff306a5fbc313a6d"></span><a class="reference internal" href="typedef_namespaceripple_1a4c98e494714abd18f11c98e13e8c5467.html#_CPPv4N6ripple9GpuStreamE" title="ripple::GpuStream">GpuStream</a> <code class="sig-name descname">stream</code> = nullptr<a class="headerlink" href="#_CPPv4N6ripple7GpuInfo6Stream6streamE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The actual stream. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple7GpuInfo6Stream3setE">
+<span id="_CPPv3N6ripple7GpuInfo6Stream3setE"></span><span id="_CPPv2N6ripple7GpuInfo6Stream3setE"></span><span id="ripple::GpuInfo::Stream::set__b"></span><span class="target" id="structripple_1_1GpuInfo_1_1Stream_1ac4e4b32feea49539b9bc4a746ab7a361"></span>bool <code class="sig-name descname">set</code> = false<a class="headerlink" href="#_CPPv4N6ripple7GpuInfo6Stream3setE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>If the stream is set. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structripple_1_1GpuInfo_1_1Stream.html" class="btn btn-neutral float-right" title="Struct GpuInfo::Stream" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="structripple_1_1GpuHeapArena.html" class="btn btn-neutral" title="Struct GpuHeapArena" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Struct GpuInfo</a><ul>
+<li><a class="reference internal" href="#nested-relationships">Nested Relationships</a><ul>
+<li><a class="reference internal" href="#nested-types">Nested Types</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

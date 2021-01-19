@@ -1,0 +1,72 @@
+
+.. _file_include_ripple_core_multidim_space_traits.hpp:
+
+File space_traits.hpp
+=====================
+
+
+This file defines traits for dimensional spaces. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/multidim/space_traits.hpp``)
+--------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_multidim_space_traits.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``ripple/core/utility/portability.hpp`` (:ref:`file_include_ripple_core_utility_portability.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_iterator_iterator_traits.hpp`
+
+- :ref:`file_include_ripple_core_multidim_multidim_space.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1DynamicMultidimSpace`
+
+- :ref:`exhale_struct_structripple_1_1MultidimSpace`
+
+- :ref:`exhale_struct_structripple_1_1SpaceTraits`
+
+- :ref:`exhale_struct_structripple_1_1SpaceTraits_3_01DynamicMultidimSpace_3_01Dimensions_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1SpaceTraits_3_01MultidimSpace_3_01SpaceImpl_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1SpaceTraits_3_01StaticMultidimSpace_3_01Sizes_8_8_8_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1StaticMultidimSpace`
+

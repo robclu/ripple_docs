@@ -1,0 +1,13 @@
+.. _exhale_function_math_8hpp_1a6456528715926646dc3d9d360a0b5172:
+
+Template Function ripple::math::cosh
+====================================
+
+- Defined in :ref:`file_include_ripple_core_math_math.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::math::cosh(T)

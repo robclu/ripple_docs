@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a8931f87a0b37e21bf794c14cb87320c2:
+
+Function ripple::first_thread_in_block()
+========================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::first_thread_in_block()

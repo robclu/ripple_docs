@@ -1,0 +1,86 @@
+
+.. _file_include_ripple_core_container_block_traits.hpp:
+
+File block_traits.hpp
+=====================
+
+
+This file defines traits and forward declarations for blocks. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/container/block_traits.hpp``)
+---------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_container_block_traits.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``ripple/core/iterator/block_iterator.hpp`` (:ref:`file_include_ripple_core_iterator_block_iterator.hpp`)
+
+- ``ripple/core/multidim/dynamic_multidim_space.hpp`` (:ref:`file_include_ripple_core_multidim_dynamic_multidim_space.hpp`)
+
+- ``ripple/core/storage/storage_traits.hpp`` (:ref:`file_include_ripple_core_storage_storage_traits.hpp`)
+
+- ``ripple/core/utility/portability.hpp`` (:ref:`file_include_ripple_core_utility_portability.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_container_host_block.hpp`
+
+- :ref:`file_include_ripple_core_container_device_block.hpp`
+
+- :ref:`file_include_ripple_core_container_memcopy_padding.hpp`
+
+- :ref:`file_include_ripple_core_container_shared_wrapper.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1AnyBlockTraits`
+
+- :ref:`exhale_struct_structripple_1_1Block`
+
+- :ref:`exhale_struct_structripple_1_1BlockTraits`
+
+- :ref:`exhale_struct_structripple_1_1BlockTraits_3_01DeviceBlock_3_01T_00_01Dimensions_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1BlockTraits_3_01HostBlock_3_01T_00_01Dimensions_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1MultiBlock`
+
+- :ref:`exhale_struct_structripple_1_1MultiBlockTraits`
+
+- :ref:`exhale_class_classripple_1_1DeviceBlock`
+
+- :ref:`exhale_class_classripple_1_1HostBlock`
+

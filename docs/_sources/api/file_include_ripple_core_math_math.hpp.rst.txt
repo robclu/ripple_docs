@@ -1,0 +1,140 @@
+
+.. _file_include_ripple_core_math_math.hpp:
+
+File math.hpp
+=============
+
+
+This file defines math functionality. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/math/math.hpp``)
+--------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_math_math.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``../container/array.hpp``
+
+- ``algorithm`` (:ref:`file_include_ripple_core_algorithm_for_each.hpp`)
+
+- ``cmath``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_iterator_block_iterator.hpp`
+
+- :ref:`file_include_ripple_core_boundary_ghost_index.hpp`
+
+- :ref:`file_include_ripple_core_container_tensor.hpp`
+
+- :ref:`file_include_ripple_core_graph_node.hpp`
+
+- :ref:`file_include_ripple_core_graph_stealer.hpp`
+
+- :ref:`file_include_ripple_core_math_lerp.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+- :ref:`namespace_ripple__math`
+
+- :ref:`namespace_ripple__math__detail`
+
+- :ref:`namespace_ripple__math__literals`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_math_8hpp_1abf3ba12db3f853d0e4416c5047b687ad`
+
+- :ref:`exhale_function_math_8hpp_1a2538d66e77e6aa9b4c63c9bf3bf0cb64`
+
+- :ref:`exhale_function_math_8hpp_1a36069a6f811ea8f6af7ac8c898a34fd2`
+
+- :ref:`exhale_function_math_8hpp_1a9aaff3af55cc676426fdda533fd49b73`
+
+- :ref:`exhale_function_math_8hpp_1a6456528715926646dc3d9d360a0b5172`
+
+- :ref:`exhale_function_math_8hpp_1a1ada34cce470bef2ed49aa4172e9d42f`
+
+- :ref:`exhale_function_math_8hpp_1a4a386c61160f7c298c4083632564fb04`
+
+- :ref:`exhale_function_math_8hpp_1a2e635a75df5c0aff26f4fd4c247c29b6`
+
+- :ref:`exhale_function_math_8hpp_1ae1ad87bcf30c7730eda5c2e3f7598c5c`
+
+- :ref:`exhale_function_math_8hpp_1a3661b433ca0c6b5e6181d1e5eb041b96`
+
+- :ref:`exhale_function_math_8hpp_1af234ca7191dc47cdd489c0888db923db`
+
+- :ref:`exhale_function_math_8hpp_1a6b38127cde1ace6c0d76c810d6a39ad2`
+
+- :ref:`exhale_function_math_8hpp_1a178da893282b99b4481c491df189bfa1`
+
+- :ref:`exhale_function_math_8hpp_1ad17bd3619107fab818f484ed95a2a9e0`
+
+- :ref:`exhale_function_math_8hpp_1adbc685795ed40a15f7226a5bf251926e`
+
+- :ref:`exhale_function_math_8hpp_1ad71fe55ec35c777c86ca0077b40325db`
+
+- :ref:`exhale_function_math_8hpp_1afbd3f0570d32901a3012bf4202d389e0`
+
+- :ref:`exhale_function_math_8hpp_1a4c60b72cebe4e74b62184043b8e9b29a`
+
+- :ref:`exhale_function_math_8hpp_1ab389086da42891f5da6b32ec9449967b`
+
+- :ref:`exhale_function_math_8hpp_1aab5eaf31f3c4904c5b824dc10db65356`
+
+- :ref:`exhale_function_math_8hpp_1a12e1bfae19e0f0e7ffca9c2935a803c2`
+
+- :ref:`exhale_function_math_8hpp_1a62fd022c7a3c990a08267dd5a17f765f`
+
+- :ref:`exhale_function_math_8hpp_1a5cf81ea8b457c74609190560fc616fac`
+
+- :ref:`exhale_function_math_8hpp_1a3aeef3543706d4e4046ce85c4891b863`
+
+- :ref:`exhale_function_math_8hpp_1af79173eb3939deaf2392d3cbf4d5a75e`
+
+- :ref:`exhale_function_math_8hpp_1a90b8b0e67e0f955db7ca690b47e78071`
+
+- :ref:`exhale_function_math_8hpp_1a57e37b60469945bd88c777ae8d5e21f4`
+
+- :ref:`exhale_function_math_8hpp_1a3e3b05723bd3ac2c37146b3fc784f105`
+
+- :ref:`exhale_function_math_8hpp_1a44b0a8da4f58745b5e35ef9f5cb3b73c`
+
+- :ref:`exhale_function_math_8hpp_1aa75ffc5e348d31d24596c27e762dacdd`
+
+- :ref:`exhale_function_math_8hpp_1a85fdbe1dc8da5ece06e3f21343695e8a`
+
+- :ref:`exhale_function_math_8hpp_1acbd76aeccdbd7fc8e73e921414bd8791`
+

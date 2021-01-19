@@ -1,0 +1,16 @@
+.. _exhale_class_classripple_1_1HostBlock:
+
+Template Class HostBlock
+========================
+
+- Defined in :ref:`file_include_ripple_core_container_block_traits.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ripple::HostBlock
+   :members:
+   :protected-members:
+   :undoc-members:

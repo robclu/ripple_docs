@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1abe1ecf8e84a87dd95fc8a283184bd2ea:
+
+Variable ripple::avoid_false_sharing_size
+=========================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::avoid_false_sharing_size

@@ -1,0 +1,557 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Namespace ripple::detail &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Namespace ripple::detail::@89" href="namespace_ripple__detail__%4089.html" />
+  <link rel="prev" title="Namespace ripple::cpu" href="namespace_ripple__cpu.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Namespace ripple::detail</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/namespace_ripple__detail.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="namespace-ripple-detail">
+<span id="id1"></span><h1>Namespace ripple::detail<a class="headerlink" href="#namespace-ripple-detail" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#namespaces" id="id2">Namespaces</a></p></li>
+<li><p><a class="reference internal" href="#classes" id="id3">Classes</a></p></li>
+<li><p><a class="reference internal" href="#functions" id="id4">Functions</a></p></li>
+<li><p><a class="reference internal" href="#variables" id="id5">Variables</a></p></li>
+</ul>
+</div>
+<div class="section" id="namespaces">
+<h2>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="namespace_ripple__detail__%4089.html#namespace-ripple-detail-89"><span class="std std-ref">Namespace ripple::detail::&#64;89</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1BasicTuple.html#exhale-struct-structripple-1-1detail-1-1basictuple"><span class="std std-ref">Template Struct BasicTuple</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1ContigStorageHelper.html#exhale-struct-structripple-1-1detail-1-1contigstoragehelper"><span class="std std-ref">Template Struct ContigStorageHelper</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1ContigStorageHelper_1_1Vec.html#exhale-struct-structripple-1-1detail-1-1contigstoragehelper-1-1vec"><span class="std std-ref">Template Struct ContigStorageHelper::Vec</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1Dim3.html#exhale-struct-structripple-1-1detail-1-1dim3"><span class="std std-ref">Struct Dim3</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1Element.html#exhale-struct-structripple-1-1detail-1-1element"><span class="std std-ref">Template Struct Element</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1FunctionTraits.html#exhale-struct-structripple-1-1detail-1-1functiontraits"><span class="std std-ref">Template Struct FunctionTraits</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1FunctionTraits_3_01R_07_6_08_07Args_8_8_8_08_4.html#exhale-struct-structripple-1-1detail-1-1functiontraits-3-01r-07-6-08-07args-8-8-8-08-4"><span class="std std-ref">Template Struct FunctionTraits&lt; R(&amp;)(Args…)&gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1FunctionTraits_3_01R_07_6_08_07Args_8_8_8_00_8_8_8_08_4.html#exhale-struct-structripple-1-1detail-1-1functiontraits-3-01r-07-6-08-07args-8-8-8-00-8-8-8-08-4"><span class="std std-ref">Template Struct FunctionTraits&lt; R(&amp;)(Args…,…)&gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1FunctionTraits_3_01R_07_5_08_07Args_8_8_8_08_4.html#exhale-struct-structripple-1-1detail-1-1functiontraits-3-01r-07-5-08-07args-8-8-8-08-4"><span class="std std-ref">Template Struct FunctionTraits&lt; R(*)(Args…)&gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1FunctionTraits_3_01R_07_5_08_07Args_8_8_8_00_8_8_8_08_4.html#exhale-struct-structripple-1-1detail-1-1functiontraits-3-01r-07-5-08-07args-8-8-8-00-8-8-8-08-4"><span class="std std-ref">Template Struct FunctionTraits&lt; R(*)(Args…,…)&gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1FunctionTraits_3_01R_07Args_8_8_8_08_01_6_6_01_4.html#exhale-struct-structripple-1-1detail-1-1functiontraits-3-01r-07args-8-8-8-08-01-6-6-01-4"><span class="std std-ref">Template Struct FunctionTraits&lt; R(Args…) &amp;&amp; &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1FunctionTraits_3_01R_07Args_8_8_8_08_01const_01_6_01_4.html#exhale-struct-structripple-1-1detail-1-1functiontraits-3-01r-07args-8-8-8-08-01const-01-6-01-4"><span class="std std-ref">Template Struct FunctionTraits&lt; R(Args…) const &amp; &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1FunctionTraits_3_01R_07Args_8_8_8_08_01const_01_6_6_01_4.html#exhale-struct-structripple-1-1detail-1-1functiontraits-3-01r-07args-8-8-8-08-01const-01-6-6-01-4"><span class="std std-ref">Template Struct FunctionTraits&lt; R(Args…) const &amp;&amp; &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1FunctionTraits_3_01R_07Args_8_8_8_08_01const_01_4.html#exhale-struct-structripple-1-1detail-1-1functiontraits-3-01r-07args-8-8-8-08-01const-01-4"><span class="std std-ref">Template Struct FunctionTraits&lt; R(Args…) const &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1FunctionTraits_3_01R_07Args_8_8_8_08_6_01_4.html#exhale-struct-structripple-1-1detail-1-1functiontraits-3-01r-07args-8-8-8-08-6-01-4"><span class="std std-ref">Template Struct FunctionTraits&lt; R(Args…)&amp; &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1FunctionTraits_3_01R_07Args_8_8_8_08_4.html#exhale-struct-structripple-1-1detail-1-1functiontraits-3-01r-07args-8-8-8-08-4"><span class="std std-ref">Template Struct FunctionTraits&lt; R(Args…)&gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1FunctionTraits_3_01R_07Args_8_8_8_00_8_8_8_08_01_6_6_01_4.html#exhale-struct-structripple-1-1detail-1-1functiontraits-3-01r-07args-8-8-8-00-8-8-8-08-01-6-6-01-4"><span class="std std-ref">Template Struct FunctionTraits&lt; R(Args…,…) &amp;&amp; &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1FunctionTraits_3_01R_07Args_8_8_8_00_8_8_8_08_01const_01_6_01_4.html#exhale-struct-structripple-1-1detail-1-1functiontraits-3-01r-07args-8-8-8-00-8-8-8-08-01const-01-6-01-4"><span class="std std-ref">Template Struct FunctionTraits&lt; R(Args…,…) const &amp; &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1FunctionTraits_3_01R_07Args_8_8_8_00_8_8_8_08_01const_01_6_6_01_4.html#exhale-struct-structripple-1-1detail-1-1functiontraits-3-01r-07args-8-8-8-00-8-8-8-08-01const-01-6-6-01-4"><span class="std std-ref">Template Struct FunctionTraits&lt; R(Args…,…) const &amp;&amp; &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1FunctionTraits_3_01R_07Args_8_8_8_00_8_8_8_08_01const_01_4.html#exhale-struct-structripple-1-1detail-1-1functiontraits-3-01r-07args-8-8-8-00-8-8-8-08-01const-01-4"><span class="std std-ref">Template Struct FunctionTraits&lt; R(Args…,…) const &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1FunctionTraits_3_01R_07Args_8_8_8_00_8_8_8_08_6_01_4.html#exhale-struct-structripple-1-1detail-1-1functiontraits-3-01r-07args-8-8-8-00-8-8-8-08-6-01-4"><span class="std std-ref">Template Struct FunctionTraits&lt; R(Args…,…)&amp; &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1FunctionTraits_3_01R_07Args_8_8_8_00_8_8_8_08_4.html#exhale-struct-structripple-1-1detail-1-1functiontraits-3-01r-07args-8-8-8-00-8-8-8-08-4"><span class="std std-ref">Template Struct FunctionTraits&lt; R(Args…,…)&gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1FunctionTraits_3_01R_07C_1_1_5_08_07Args_8_8_8_08_01const_01_4.html#exhale-struct-structripple-1-1detail-1-1functiontraits-3-01r-07c-1-1-5-08-07args-8-8-8-08-01const-01-4"><span class="std std-ref">Template Struct FunctionTraits&lt; R(C::*)(Args…) const &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1FunctionTraits_3_01R_07C_1_1_5_08_07Args_8_8_8_08_4.html#exhale-struct-structripple-1-1detail-1-1functiontraits-3-01r-07c-1-1-5-08-07args-8-8-8-08-4"><span class="std std-ref">Template Struct FunctionTraits&lt; R(C::*)(Args…)&gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1FunctionTraits_3_01R_07C_1_1_5_08_07Args_8_8_8_00_8_8_8_08_01const_01_4.html#exhale-struct-structripple-1-1detail-1-1functiontraits-3-01r-07c-1-1-5-08-07args-8-8-8-00-8-8-8-08-01const-01-4"><span class="std std-ref">Template Struct FunctionTraits&lt; R(C::*)(Args…,…) const &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1FunctionTraits_3_01R_07C_1_1_5_08_07Args_8_8_8_00_8_8_8_08_4.html#exhale-struct-structripple-1-1detail-1-1functiontraits-3-01r-07c-1-1-5-08-07args-8-8-8-00-8-8-8-08-4"><span class="std std-ref">Template Struct FunctionTraits&lt; R(C::*)(Args…,…)&gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1FunctionTraits_3_01T_01_4.html#exhale-struct-structripple-1-1detail-1-1functiontraits-3-01t-01-4"><span class="std std-ref">Template Struct FunctionTraits&lt; T &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1FunctionTraits_3_01T_00_01T1_00_01Ts_8_8_8_01_4.html#exhale-struct-structripple-1-1detail-1-1functiontraits-3-01t-00-01t1-00-01ts-8-8-8-01-4"><span class="std std-ref">Template Struct FunctionTraits&lt; T, T1, Ts… &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1FunctionTypes.html#exhale-struct-structripple-1-1detail-1-1functiontypes"><span class="std std-ref">Template Struct FunctionTypes</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1HasStorageLayout.html#exhale-struct-structripple-1-1detail-1-1hasstoragelayout"><span class="std std-ref">Template Struct HasStorageLayout</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1HasStorageLayout_3_01T_3_01Ts_8_8_8_01_4_01_4.html#exhale-struct-structripple-1-1detail-1-1hasstoragelayout-3-01t-3-01ts-8-8-8-01-4-01-4"><span class="std std-ref">Template Struct HasStorageLayout&lt; T&lt; Ts… &gt; &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1IndexOf.html#exhale-struct-structripple-1-1detail-1-1indexof"><span class="std std-ref">Template Struct IndexOf</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1IndexOf_3_01I_00_01T_01_4.html#exhale-struct-structripple-1-1detail-1-1indexof-3-01i-00-01t-01-4"><span class="std std-ref">Template Struct IndexOf&lt; I, T &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1IndexOf_3_01I_00_01T_00_01U_00_01Ts_8_8_8_01_4.html#exhale-struct-structripple-1-1detail-1-1indexof-3-01i-00-01t-00-01u-00-01ts-8-8-8-01-4"><span class="std std-ref">Template Struct IndexOf&lt; I, T, U, Ts… &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1IsDimension.html#exhale-struct-structripple-1-1detail-1-1isdimension"><span class="std std-ref">Template Struct IsDimension</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1IsDimension_3_01Dimension_3_01Value_01_4_01_4.html#exhale-struct-structripple-1-1detail-1-1isdimension-3-01dimension-3-01value-01-4-01-4"><span class="std std-ref">Template Struct IsDimension&lt; Dimension&lt; Value &gt; &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1IsInvocable.html#exhale-struct-structripple-1-1detail-1-1isinvocable"><span class="std std-ref">Template Struct IsInvocable</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1IsInvocable_3_01Invocable_3_01F_01_4_01_4.html#exhale-struct-structripple-1-1detail-1-1isinvocable-3-01invocable-3-01f-01-4-01-4"><span class="std std-ref">Template Struct IsInvocable&lt; Invocable&lt; F &gt; &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1IsNumber.html#exhale-struct-structripple-1-1detail-1-1isnumber"><span class="std std-ref">Template Struct IsNumber</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1IsNumber_3_01Int64_3_01Value_01_4_01_4.html#exhale-struct-structripple-1-1detail-1-1isnumber-3-01int64-3-01value-01-4-01-4"><span class="std std-ref">Template Struct IsNumber&lt; Int64&lt; Value &gt; &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1IsNumber_3_01Num_3_01Value_01_4_01_4.html#exhale-struct-structripple-1-1detail-1-1isnumber-3-01num-3-01value-01-4-01-4"><span class="std std-ref">Template Struct IsNumber&lt; Num&lt; Value &gt; &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1IsStorageLayout.html#exhale-struct-structripple-1-1detail-1-1isstoragelayout"><span class="std std-ref">Template Struct IsStorageLayout</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1IsStorageLayout_3_01StorageLayout_3_01Layout_01_4_01_4.html#exhale-struct-structripple-1-1detail-1-1isstoragelayout-3-01storagelayout-3-01layout-01-4-01-4"><span class="std std-ref">Template Struct IsStorageLayout&lt; StorageLayout&lt; Layout &gt; &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1IsTuple.html#exhale-struct-structripple-1-1detail-1-1istuple"><span class="std std-ref">Template Struct IsTuple</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1IsTuple_3_01Tuple_3_01Ts_8_8_8_01_4_01_4.html#exhale-struct-structripple-1-1detail-1-1istuple-3-01tuple-3-01ts-8-8-8-01-4-01-4"><span class="std std-ref">Template Struct IsTuple&lt; Tuple&lt; Ts… &gt; &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1NthElement.html#exhale-struct-structripple-1-1detail-1-1nthelement"><span class="std std-ref">Template Struct NthElement</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1NthElement_3_01N_01_4.html#exhale-struct-structripple-1-1detail-1-1nthelement-3-01n-01-4"><span class="std std-ref">Template Struct NthElement&lt; N &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1StorageAs.html#exhale-struct-structripple-1-1detail-1-1storageas"><span class="std std-ref">Template Struct StorageAs</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1StorageAs_3_01Storage_00_01T_3_01Ts_8_8_8_01_4_01_4.html#exhale-struct-structripple-1-1detail-1-1storageas-3-01storage-00-01t-3-01ts-8-8-8-01-4-01-4"><span class="std std-ref">Template Struct StorageAs&lt; Storage, T&lt; Ts… &gt; &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1StorageAs_3_01Storage_00_01T_3_01Ts_8_8_8_01_4_01_4_1_1MakeStorageType.html#exhale-struct-structripple-1-1detail-1-1storageas-3-01storage-00-01t-3-01ts-8-8-8-01-4-01-4-1-1makestoragetype"><span class="std std-ref">Template Struct StorageAs&lt; Storage, T&lt; Ts… &gt; &gt;::StorageAs&lt; Storage, T&lt; Ts… &gt; &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1StorageAsImpl.html#exhale-struct-structripple-1-1detail-1-1storageasimpl"><span class="std std-ref">Template Struct StorageAsImpl</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1StorageAsImpl_3_01Storage_00_01std_1_1tuple_3_01T_00_01Ts_8_8_8_01_4_020d70afb531d7e0a13c7eb6011d42ff3.html#exhale-struct-structripple-1-1detail-1-1storageasimpl-3-01storage-00-01std-1-1tuple-3-01t-00-01ts-8-8-8-01-4-020d70afb531d7e0a13c7eb6011d42ff3"><span class="std std-ref">Template Struct StorageAsImpl&lt; Storage, std::tuple&lt; T, Ts… &gt;, std::tuple&lt; Us… &gt; &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1StorageAsImpl_3_01Storage_00_01std_1_1tuple_3_4_00_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4.html#exhale-struct-structripple-1-1detail-1-1storageasimpl-3-01storage-00-01std-1-1tuple-3-4-00-01std-1-1tuple-3-01ts-8-8-8-01-4-01-4"><span class="std std-ref">Template Struct StorageAsImpl&lt; Storage, std::tuple&lt;&gt;, std::tuple&lt; Ts… &gt; &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1StorageLayoutKind.html#exhale-struct-structripple-1-1detail-1-1storagelayoutkind"><span class="std std-ref">Template Struct StorageLayoutKind</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1StorageLayoutKind_3_01T_3_01Ts_8_8_8_01_4_01_4.html#exhale-struct-structripple-1-1detail-1-1storagelayoutkind-3-01t-3-01ts-8-8-8-01-4-01-4"><span class="std std-ref">Template Struct StorageLayoutKind&lt; T&lt; Ts… &gt; &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1TupleElement.html#exhale-struct-structripple-1-1detail-1-1tupleelement"><span class="std std-ref">Template Struct TupleElement</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1TupleElement_3_01I_00_01Tuple_3_4_01_4.html#exhale-struct-structripple-1-1detail-1-1tupleelement-3-01i-00-01tuple-3-4-01-4"><span class="std std-ref">Template Struct TupleElement&lt; I, Tuple&lt;&gt; &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1TupleStorage.html#exhale-struct-structripple-1-1detail-1-1tuplestorage"><span class="std std-ref">Template Struct TupleStorage</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1TupleStorage_3_01std_1_1index__sequence_3_01Is_8_8_8_01_4_00_01Ts_8_8_8_01_4.html#exhale-struct-structripple-1-1detail-1-1tuplestorage-3-01std-1-1index-sequence-3-01is-8-8-8-01-4-00-01ts-8-8-8-01-4"><span class="std std-ref">Template Struct TupleStorage&lt; std::index_sequence&lt; Is… &gt;, Ts… &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1TupleTraits.html#exhale-struct-structripple-1-1detail-1-1tupletraits"><span class="std std-ref">Template Struct TupleTraits</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1TupleTraits_3_01Tuple_3_01Ts_8_8_8_01_4_01_4.html#exhale-struct-structripple-1-1detail-1-1tupletraits-3-01tuple-3-01ts-8-8-8-01-4-01-4"><span class="std std-ref">Template Struct TupleTraits&lt; Tuple&lt; Ts… &gt; &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1Unroll.html#exhale-struct-structripple-1-1detail-1-1unroll"><span class="std std-ref">Template Struct Unroll</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1Unroll_3_010_01_4.html#exhale-struct-structripple-1-1detail-1-1unroll-3-010-01-4"><span class="std std-ref">Template Struct Unroll&lt; 0 &gt;</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1Unroll_3_011_01_4.html#exhale-struct-structripple-1-1detail-1-1unroll-3-011-01-4"><span class="std std-ref">Template Struct Unroll&lt; 1 &gt;</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="function_utils___8hpp_1a7a1777a7046a5d462240adb5983da811.html#exhale-function-utils-8hpp-1a7a1777a7046a5d462240adb5983da811"><span class="std std-ref">Template Function ripple::detail::add_friend_nodes</span></a></p></li>
+<li><p><a class="reference internal" href="function_utils___8hpp_1a0e4201901f78015e4d8a2879aace4322.html#exhale-function-utils-8hpp-1a0e4201901f78015e4d8a2879aace4322"><span class="std std-ref">Template Function ripple::detail::add_padding_op_nodes</span></a></p></li>
+<li><p><a class="reference internal" href="function_utils___8hpp_1aa73d908187fa1daa439daea7f786c140.html#exhale-function-utils-8hpp-1aa73d908187fa1daa439daea7f786c140"><span class="std std-ref">Template Function ripple::detail::add_padding_op_nodes_expanded</span></a></p></li>
+<li><p><a class="reference internal" href="function_utils___8hpp_1a9e66da8785f7ea9071a2605a416b17ec.html#exhale-function-utils-8hpp-1a9e66da8785f7ea9071a2605a416b17ec"><span class="std std-ref">Template Function ripple::detail::add_padding_op_nodes_for_iter</span></a></p></li>
+<li><p><a class="reference internal" href="function_utils___8hpp_1a0db47fe3a7a3c44ea5b3e1274d0a442d.html#exhale-function-utils-8hpp-1a0db47fe3a7a3c44ea5b3e1274d0a442d"><span class="std std-ref">Template Function ripple::detail::add_padding_op_nodes_impl</span></a></p></li>
+<li><p><a class="reference internal" href="function_thread__index__impl___8hpp_1af1f5b5c359da8820c7f082a30a03cbf1.html#exhale-function-thread-index-impl-8hpp-1af1f5b5c359da8820c7f082a30a03cbf1"><span class="std std-ref">Function ripple::detail::block_idx(DimX)</span></a></p></li>
+<li><p><a class="reference internal" href="function_thread__index__impl___8hpp_1aeb76680ab29deddbf648f2ffa5a640e8.html#exhale-function-thread-index-impl-8hpp-1aeb76680ab29deddbf648f2ffa5a640e8"><span class="std std-ref">Function ripple::detail::block_idx(DimY)</span></a></p></li>
+<li><p><a class="reference internal" href="function_thread__index__impl___8hpp_1a6cedfae0ed7209cacb5beb238766b05d.html#exhale-function-thread-index-impl-8hpp-1a6cedfae0ed7209cacb5beb238766b05d"><span class="std std-ref">Function ripple::detail::block_idx(DimZ)</span></a></p></li>
+<li><p><a class="reference internal" href="function_thread__index__impl___8hpp_1ad950d42040f25690f285db6bfb6a3373.html#exhale-function-thread-index-impl-8hpp-1ad950d42040f25690f285db6bfb6a3373"><span class="std std-ref">Function ripple::detail::block_idx(size_t)</span></a></p></li>
+<li><p><a class="reference internal" href="function_thread__index__impl___8hpp_1a9c5d072603e88283d97d660bf5153c96.html#exhale-function-thread-index-impl-8hpp-1a9c5d072603e88283d97d660bf5153c96"><span class="std std-ref">Function ripple::detail::block_size(DimX)</span></a></p></li>
+<li><p><a class="reference internal" href="function_thread__index__impl___8hpp_1a5015d50d58a91ebe0e9a9322faca1c83.html#exhale-function-thread-index-impl-8hpp-1a5015d50d58a91ebe0e9a9322faca1c83"><span class="std std-ref">Function ripple::detail::block_size(DimY)</span></a></p></li>
+<li><p><a class="reference internal" href="function_thread__index__impl___8hpp_1a319a514a497d7533d9abb37e8c9747d7.html#exhale-function-thread-index-impl-8hpp-1a319a514a497d7533d9abb37e8c9747d7"><span class="std std-ref">Function ripple::detail::block_size(DimZ)</span></a></p></li>
+<li><p><a class="reference internal" href="function_thread__index__impl___8hpp_1a493376639f66abee33496e2bfbe6f9ca.html#exhale-function-thread-index-impl-8hpp-1a493376639f66abee33496e2bfbe6f9ca"><span class="std std-ref">Function ripple::detail::block_size(size_t)</span></a></p></li>
+<li><p><a class="reference internal" href="function_utils___8hpp_1ac6ab293bc3ddc9250067d9efeac0fe28.html#exhale-function-utils-8hpp-1ac6ab293bc3ddc9250067d9efeac0fe28"><span class="std std-ref">Template Function ripple::detail::copy_face_padding</span></a></p></li>
+<li><p><a class="reference internal" href="function_utils___8hpp_1a52b6b35c1cb432549af238002f70fd68.html#exhale-function-utils-8hpp-1a52b6b35c1cb432549af238002f70fd68"><span class="std std-ref">Template Function ripple::detail::deref_if_iter(T&amp;&amp;)</span></a></p></li>
+<li><p><a class="reference internal" href="function_utils___8hpp_1a1095f8328255ccd61bd206a79c1de09a.html#exhale-function-utils-8hpp-1a1095f8328255ccd61bd206a79c1de09a"><span class="std std-ref">Template Function ripple::detail::deref_if_iter(T&amp;&amp;)</span></a></p></li>
+<li><p><a class="reference internal" href="function_basic__tuple___8hpp_1a502c6e60b809c6f9d34b253a2e4c128f.html#exhale-function-basic-tuple-8hpp-1a502c6e60b809c6f9d34b253a2e4c128f"><span class="std std-ref">Template Function ripple::detail::get_impl(const Element&lt;I, T&gt;&amp;&amp;)</span></a></p></li>
+<li><p><a class="reference internal" href="function_basic__tuple___8hpp_1ae9e9531cce1cbff386e8af9a50f8d2be.html#exhale-function-basic-tuple-8hpp-1ae9e9531cce1cbff386e8af9a50f8d2be"><span class="std std-ref">Template Function ripple::detail::get_impl(const Element&lt;I, T&gt;&amp;)</span></a></p></li>
+<li><p><a class="reference internal" href="function_basic__tuple___8hpp_1a2fd64c4f3e2ea3ea5e330d232e702cee.html#exhale-function-basic-tuple-8hpp-1a2fd64c4f3e2ea3ea5e330d232e702cee"><span class="std std-ref">Template Function ripple::detail::get_impl(Element&lt;I, T&gt;&amp;)</span></a></p></li>
+<li><p><a class="reference internal" href="function_basic__tuple___8hpp_1a2184920dafb8a596c524fc3f43d48f3f.html#exhale-function-basic-tuple-8hpp-1a2184920dafb8a596c524fc3f43d48f3f"><span class="std std-ref">Template Function ripple::detail::get_impl(Element&lt;I, T&gt;&amp;&amp;)</span></a></p></li>
+<li><p><a class="reference internal" href="function_thread__index__impl___8hpp_1a421757c688ec8c94ebf81ee0851ae062.html#exhale-function-thread-index-impl-8hpp-1a421757c688ec8c94ebf81ee0851ae062"><span class="std std-ref">Template Function ripple::detail::global_elements</span></a></p></li>
+<li><p><a class="reference internal" href="function_thread__index__impl___8hpp_1ac78b966a497def625f7403a3782f0f52.html#exhale-function-thread-index-impl-8hpp-1ac78b966a497def625f7403a3782f0f52"><span class="std std-ref">Function ripple::detail::global_idx(DimX)</span></a></p></li>
+<li><p><a class="reference internal" href="function_thread__index__impl___8hpp_1aca302dc75a1ff16ce585ee24a83fdd9c.html#exhale-function-thread-index-impl-8hpp-1aca302dc75a1ff16ce585ee24a83fdd9c"><span class="std std-ref">Function ripple::detail::global_idx(DimY)</span></a></p></li>
+<li><p><a class="reference internal" href="function_thread__index__impl___8hpp_1adb2084f4494b4cfeabd15d8bf5594f61.html#exhale-function-thread-index-impl-8hpp-1adb2084f4494b4cfeabd15d8bf5594f61"><span class="std std-ref">Function ripple::detail::global_idx(DimZ)</span></a></p></li>
+<li><p><a class="reference internal" href="function_thread__index__impl___8hpp_1a03ee657d5786385f8acc381a07562376.html#exhale-function-thread-index-impl-8hpp-1a03ee657d5786385f8acc381a07562376"><span class="std std-ref">Function ripple::detail::global_idx(size_t)</span></a></p></li>
+<li><p><a class="reference internal" href="function_thread__index__impl___8hpp_1a8ef858f85cc55ed5ff2cf3e4d46dcb92.html#exhale-function-thread-index-impl-8hpp-1a8ef858f85cc55ed5ff2cf3e4d46dcb92"><span class="std std-ref">Function ripple::detail::grid_size(DimX)</span></a></p></li>
+<li><p><a class="reference internal" href="function_thread__index__impl___8hpp_1a0467cdceba58a62a0fecd89a49452f5a.html#exhale-function-thread-index-impl-8hpp-1a0467cdceba58a62a0fecd89a49452f5a"><span class="std std-ref">Function ripple::detail::grid_size(DimY)</span></a></p></li>
+<li><p><a class="reference internal" href="function_thread__index__impl___8hpp_1a22b0fc328eeb5b277593ccbd91b3c0f5.html#exhale-function-thread-index-impl-8hpp-1a22b0fc328eeb5b277593ccbd91b3c0f5"><span class="std std-ref">Function ripple::detail::grid_size(DimZ)</span></a></p></li>
+<li><p><a class="reference internal" href="function_thread__index__impl___8hpp_1a5112ce11c5974d96e6e438d5c230341d.html#exhale-function-thread-index-impl-8hpp-1a5112ce11c5974d96e6e438d5c230341d"><span class="std std-ref">Function ripple::detail::grid_size(size_t)</span></a></p></li>
+<li><p><a class="reference internal" href="function_load__global__boundary__impl___8hpp_1a5a9c3563f89d9fd943256caed9de7dc6.html#exhale-function-load-global-boundary-impl-8hpp-1a5a9c3563f89d9fd943256caed9de7dc6"><span class="std std-ref">Template Function ripple::detail::load_global_boundary(DimZ, It&amp;&amp;, const GhostIndex&lt;Dims&gt;&amp;, Loader&amp;&amp;, Args&amp;&amp;…)</span></a></p></li>
+<li><p><a class="reference internal" href="function_load__global__boundary__impl___8hpp_1ac13a071a69fbe67663a63ac453e378c2.html#exhale-function-load-global-boundary-impl-8hpp-1ac13a071a69fbe67663a63ac453e378c2"><span class="std std-ref">Template Function ripple::detail::load_global_boundary(DimX, It&amp;&amp;, const GhostIndex&lt;Dims&gt;&amp;, Loader&amp;&amp;, Args&amp;&amp;…)</span></a></p></li>
+<li><p><a class="reference internal" href="function_load__global__boundary__impl___8hpp_1ad6767e7e04b298d3b43337c04e97ab83.html#exhale-function-load-global-boundary-impl-8hpp-1ad6767e7e04b298d3b43337c04e97ab83"><span class="std std-ref">Template Function ripple::detail::load_global_boundary(DimY, It&amp;&amp;, const GhostIndex&lt;Dims&gt;&amp;, Loader&amp;&amp;, Args&amp;&amp;…)</span></a></p></li>
+<li><p><a class="reference internal" href="function_load__global__boundary__impl___8hpp_1a4a7a0ef14f2f387faa10f96b153f8c42.html#exhale-function-load-global-boundary-impl-8hpp-1a4a7a0ef14f2f387faa10f96b153f8c42"><span class="std std-ref">Template Function ripple::detail::load_global_boundary_for_dim</span></a></p></li>
+<li><p><a class="reference internal" href="function_load__internal__boundary__impl___8hpp_1a5320e599c77559d1218f3ab042bdb114.html#exhale-function-load-internal-boundary-impl-8hpp-1a5320e599c77559d1218f3ab042bdb114"><span class="std std-ref">Template Function ripple::detail::load_internal</span></a></p></li>
+<li><p><a class="reference internal" href="function_max__element_8hpp_1ac83fe20a8c75fac7b16f2f3307212d5c.html#exhale-function-max-element-8hpp-1ac83fe20a8c75fac7b16f2f3307212d5c"><span class="std std-ref">Template Function ripple::detail::max_element_impl(T&amp;&amp;, Next&amp;&amp;, Ts&amp;&amp;…)</span></a></p></li>
+<li><p><a class="reference internal" href="function_max__element_8hpp_1a4519db7224256ed6b40a8098e5cdf5b2.html#exhale-function-max-element-8hpp-1a4519db7224256ed6b40a8098e5cdf5b2"><span class="std std-ref">Template Function ripple::detail::max_element_impl(T&amp;&amp;)</span></a></p></li>
+<li><p><a class="reference internal" href="function_utils___8hpp_1a15c771d089d0b5c79d0bfa841c355b8a.html#exhale-function-utils-8hpp-1a15c771d089d0b5c79d0bfa841c355b8a"><span class="std std-ref">Template Function ripple::detail::padding_if_iter</span></a></p></li>
+<li><p><a class="reference internal" href="function_thread__index__impl___8hpp_1a475b509ee9ec69fb36f707e6ebd66209.html#exhale-function-thread-index-impl-8hpp-1a475b509ee9ec69fb36f707e6ebd66209"><span class="std std-ref">Function ripple::detail::thread_idx(DimX)</span></a></p></li>
+<li><p><a class="reference internal" href="function_thread__index__impl___8hpp_1afebba4ccc39b32217147b8fb7fc22b46.html#exhale-function-thread-index-impl-8hpp-1afebba4ccc39b32217147b8fb7fc22b46"><span class="std std-ref">Function ripple::detail::thread_idx(DimY)</span></a></p></li>
+<li><p><a class="reference internal" href="function_thread__index__impl___8hpp_1a0f85f981105b425d4cbe1440675dbb04.html#exhale-function-thread-index-impl-8hpp-1a0f85f981105b425d4cbe1440675dbb04"><span class="std std-ref">Function ripple::detail::thread_idx(DimZ)</span></a></p></li>
+<li><p><a class="reference internal" href="function_thread__index__impl___8hpp_1a544a069a6ea1634450776b0c965b3882.html#exhale-function-thread-index-impl-8hpp-1a544a069a6ea1634450776b0c965b3882"><span class="std std-ref">Function ripple::detail::thread_idx(size_t)</span></a></p></li>
+<li><p><a class="reference internal" href="function_basic__tuple___8hpp_1aa37ce41270659211c2078034a2546c92.html#exhale-function-basic-tuple-8hpp-1aa37ce41270659211c2078034a2546c92"><span class="std std-ref">Template Function ripple::detail::type_extractor</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="variable_thread__index__impl___8hpp_1ac7a1306a13651773f8f1e3856d227685.html#exhale-variable-thread-index-impl-8hpp-1ac7a1306a13651773f8f1e3856d227685"><span class="std std-ref">Variable ripple::detail::block_dim_</span></a></p></li>
+<li><p><a class="reference internal" href="variable_thread__index__impl___8hpp_1a089c7e9fac4ef1a20ed0a09862e58c16.html#exhale-variable-thread-index-impl-8hpp-1a089c7e9fac4ef1a20ed0a09862e58c16"><span class="std std-ref">Variable ripple::detail::block_idx_</span></a></p></li>
+<li><p><a class="reference internal" href="variable_utils___8hpp_1a9c15abddbc68b95c66110fde20c6a1ad.html#exhale-variable-utils-8hpp-1a9c15abddbc68b95c66110fde20c6a1ad"><span class="std std-ref">Variable ripple::detail::dims_from_block</span></a></p></li>
+<li><p><a class="reference internal" href="variable_thread__index__impl___8hpp_1ad3aa4e4a3a4b410f2aa37a6501422f8a.html#exhale-variable-thread-index-impl-8hpp-1ad3aa4e4a3a4b410f2aa37a6501422f8a"><span class="std std-ref">Variable ripple::detail::global_elements_for_device_</span></a></p></li>
+<li><p><a class="reference internal" href="variable_thread__index__impl___8hpp_1a534c3e9bb8c636a846a8c5496df19aac.html#exhale-variable-thread-index-impl-8hpp-1a534c3e9bb8c636a846a8c5496df19aac"><span class="std std-ref">Variable ripple::detail::grid_dim_</span></a></p></li>
+<li><p><a class="reference internal" href="variable_thread__index__impl___8hpp_1a4f4c870fb912b0a30c7b2a8edba81527.html#exhale-variable-thread-index-impl-8hpp-1a4f4c870fb912b0a30c7b2a8edba81527"><span class="std std-ref">Variable ripple::detail::grid_elements_</span></a></p></li>
+<li><p><a class="reference internal" href="variable_thread__index__impl___8hpp_1a81d89003fad12f74ef33b86af689b88a.html#exhale-variable-thread-index-impl-8hpp-1a81d89003fad12f74ef33b86af689b88a"><span class="std std-ref">Variable ripple::detail::thread_idx_</span></a></p></li>
+</ul>
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="namespace_ripple__detail__%4089.html" class="btn btn-neutral float-right" title="Namespace ripple::detail::@89" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="namespace_ripple__cpu.html" class="btn btn-neutral" title="Namespace ripple::cpu" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Namespace ripple::detail</a><ul>
+<li><a class="reference internal" href="#namespaces">Namespaces</a></li>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#variables">Variables</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

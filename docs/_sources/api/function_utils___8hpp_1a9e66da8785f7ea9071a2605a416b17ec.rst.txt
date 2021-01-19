@@ -1,0 +1,13 @@
+.. _exhale_function_utils___8hpp_1a9e66da8785f7ea9071a2605a416b17ec:
+
+Template Function ripple::detail::add_padding_op_nodes_for_iter
+===============================================================
+
+- Defined in :ref:`file_include_ripple_core_graph_detail_utils_.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::detail::add_padding_op_nodes_for_iter(GraphType&, ExecutionKind, TransferKind, Iterator&&, bool)

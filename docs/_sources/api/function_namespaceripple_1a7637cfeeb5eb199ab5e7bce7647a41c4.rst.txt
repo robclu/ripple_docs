@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a7637cfeeb5eb199ab5e7bce7647a41c4:
+
+Function ripple::last_thread_in_block()
+=======================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::last_thread_in_block()

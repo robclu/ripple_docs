@@ -1,0 +1,583 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Template Struct StaticMultidimSpace &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Template Struct Stealer" href="structripple_1_1Stealer.html" />
+  <link rel="prev" title="Template Struct StaticExecParams" href="structripple_1_1StaticExecParams.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Template Struct StaticMultidimSpace</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/structripple_1_1StaticMultidimSpace.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="template-struct-staticmultidimspace">
+<span id="exhale-struct-structripple-1-1staticmultidimspace"></span><h1>Template Struct StaticMultidimSpace<a class="headerlink" href="#template-struct-staticmultidimspace" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_multidim_space_traits.hpp.html#file-include-ripple-core-multidim-space-traits-hpp"><span class="std std-ref">File space_traits.hpp</span></a></p></li>
+</ul>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp struct">
+<dt id="_CPPv4I_Dp6size_tEN6ripple19StaticMultidimSpaceE">
+<span id="_CPPv3I_Dp6size_tEN6ripple19StaticMultidimSpaceE"></span><span id="_CPPv2I_Dp6size_tEN6ripple19StaticMultidimSpaceE"></span>template&lt;size_t... <code class="sig-name descname">Sizes</code>&gt;<br /><span class="target" id="structripple_1_1StaticMultidimSpace"></span><em class="property">struct </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">StaticMultidimSpace</code><a class="headerlink" href="#_CPPv4I_Dp6size_tEN6ripple19StaticMultidimSpaceE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#structripple_1_1StaticMultidimSpace"><span class="std std-ref">StaticMultidimSpace</span></a> struct defines spatial information over multiple dimensions, specifically the sizes of the dimensions and the steps required to get from one element to another in the dimensions of the space. </p>
+<p>The <a class="reference internal" href="#structripple_1_1StaticMultidimSpace"><span class="std std-ref">StaticMultidimSpace</span></a> struct defines spatial information over multiple dimensions.</p>
+<p>The static nature of the space means that it can’t be modified, and the size and steps for the space are all known at compile time, which makes using this space more efficient, all be it with less flexibility. <p>Specifically, it defines the sizes of the dimensions and the steps required to get from one element to another in a given dimensions of the space. The static nature of the space means that it can’t be modified, and the size and steps for the space are all known at compile time, which makes using this space more efficient, all be it with less flexibility. </p>
+<dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Sizes</span></code>: The sizes of the dimensions of the space.</p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Sizes</span></code>: The sizes of the dimensions of the space. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple19StaticMultidimSpace19StaticMultidimSpaceEv">
+<span id="_CPPv3N6ripple19StaticMultidimSpace19StaticMultidimSpaceEv"></span><span id="_CPPv2N6ripple19StaticMultidimSpace19StaticMultidimSpaceEv"></span><span id="ripple::StaticMultidimSpace::StaticMultidimSpaceCE"></span><span class="target" id="structripple_1_1StaticMultidimSpace_1a2036e5f5c282fcb5bd6be6ceed7cabd3"></span><em class="property">constexpr</em> <code class="sig-name descname">StaticMultidimSpace</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = default<a class="headerlink" href="#_CPPv4N6ripple19StaticMultidimSpace19StaticMultidimSpaceEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Default constructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple19StaticMultidimSpace19StaticMultidimSpaceE6size_t">
+<span id="_CPPv3N6ripple19StaticMultidimSpace19StaticMultidimSpaceE6size_t"></span><span id="_CPPv2N6ripple19StaticMultidimSpace19StaticMultidimSpaceE6size_t"></span><span id="ripple::StaticMultidimSpace::StaticMultidimSpace__sCE"></span><span class="target" id="structripple_1_1StaticMultidimSpace_1a674e241313407310fe5291eb25097592"></span><em class="property">constexpr</em> <code class="sig-name descname">StaticMultidimSpace</code><span class="sig-paren">(</span>size_t <em>padding</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple19StaticMultidimSpace19StaticMultidimSpaceE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor to set the padding for the space. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">padding</span></code>: The amount of padding for the space. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple19StaticMultidimSpace7paddingEv">
+<span id="_CPPv3N6ripple19StaticMultidimSpace7paddingEv"></span><span id="_CPPv2N6ripple19StaticMultidimSpace7paddingEv"></span><span id="ripple::StaticMultidimSpace::paddingCE"></span><span class="target" id="structripple_1_1StaticMultidimSpace_1aeab0c572fe2d43d2ff1d94ba513e0889"></span><em class="property">constexpr</em> auto <code class="sig-name descname">padding</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; size_t&amp;<a class="headerlink" href="#_CPPv4N6ripple19StaticMultidimSpace7paddingEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the amount of padding for a single side of a single dimension of the space. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The amount of padding for the space. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple19StaticMultidimSpace7paddingEv">
+<span id="_CPPv3NK6ripple19StaticMultidimSpace7paddingEv"></span><span id="_CPPv2NK6ripple19StaticMultidimSpace7paddingEv"></span><span id="ripple::StaticMultidimSpace::paddingCCE"></span><span class="target" id="structripple_1_1StaticMultidimSpace_1a042953a1690994459803689907bde85c"></span><em class="property">constexpr</em> auto <code class="sig-name descname">padding</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple19StaticMultidimSpace7paddingEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the amount of padding fot a single size of a single dimension of the space. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The amount of padding for the space. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple19StaticMultidimSpace11dim_paddingEv">
+<span id="_CPPv3NK6ripple19StaticMultidimSpace11dim_paddingEv"></span><span id="_CPPv2NK6ripple19StaticMultidimSpace11dim_paddingEv"></span><span id="ripple::StaticMultidimSpace::dim_paddingCCE"></span><span class="target" id="structripple_1_1StaticMultidimSpace_1ab1f3585b88baf38e5ac1dd4afdfef151"></span><em class="property">constexpr</em> auto <code class="sig-name descname">dim_padding</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple19StaticMultidimSpace11dim_paddingEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the total amount of padding for the dimension, which is twice the padding amount of each side. </p>
+<p><dl class="simple">
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#structripple_1_1StaticMultidimSpace_1aeab0c572fe2d43d2ff1d94ba513e0889"><span class="std std-ref">padding</span></a></p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>The total padding amount for both sides of the dimension. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple19StaticMultidimSpace10dimensionsEv">
+<span id="_CPPv3NK6ripple19StaticMultidimSpace10dimensionsEv"></span><span id="_CPPv2NK6ripple19StaticMultidimSpace10dimensionsEv"></span><span id="ripple::StaticMultidimSpace::dimensionsCCE"></span><span class="target" id="structripple_1_1StaticMultidimSpace_1a5d899e6322cc8dec64453afc60cf464a"></span><em class="property">constexpr</em> auto <code class="sig-name descname">dimensions</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple19StaticMultidimSpace10dimensionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the number of dimensions for the space. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of dimensions for the space. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple19StaticMultidimSpace4sizeEv">
+<span id="_CPPv3NK6ripple19StaticMultidimSpace4sizeEv"></span><span id="_CPPv2NK6ripple19StaticMultidimSpace4sizeEv"></span><span id="ripple::StaticMultidimSpace::sizeCCE"></span><span class="target" id="structripple_1_1StaticMultidimSpace_1aae33856052dd57b80a05c74229cc197e"></span><em class="property">constexpr</em> auto <code class="sig-name descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple19StaticMultidimSpace4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the total size of the N dimensional space i.e the total number of elements in the space, including the padding for the space. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This is the product sum of the dimension sizes including padding.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>the total number of elements in the space including padding. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple19StaticMultidimSpace4sizeE6size_tRR3Dim">
+<span id="_CPPv3I0ENK6ripple19StaticMultidimSpace4sizeERR3Dim"></span><span id="_CPPv2I0ENK6ripple19StaticMultidimSpace4sizeERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="structripple_1_1StaticMultidimSpace_1a4c6fe47195598667ab451620d4417cf3"></span><em class="property">constexpr</em> auto <code class="sig-name descname">size</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple19StaticMultidimSpace4sizeE6size_tRR3Dim" title="ripple::StaticMultidimSpace::size::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4I0ENK6ripple19StaticMultidimSpace4sizeE6size_tRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the size of the dimension with padding. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of elements in the dimension, including padding. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to get the size for. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple19StaticMultidimSpace13internal_sizeE6size_tRR3Dim">
+<span id="_CPPv3I0ENK6ripple19StaticMultidimSpace13internal_sizeERR3Dim"></span><span id="_CPPv2I0ENK6ripple19StaticMultidimSpace13internal_sizeERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="structripple_1_1StaticMultidimSpace_1a6b348095fd9964b056e34976c267747e"></span><em class="property">constexpr</em> auto <code class="sig-name descname">internal_size</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple19StaticMultidimSpace13internal_sizeE6size_tRR3Dim" title="ripple::StaticMultidimSpace::internal_size::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4I0ENK6ripple19StaticMultidimSpace13internal_sizeE6size_tRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the size of the given dimension, without padding. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to get the size of. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple19StaticMultidimSpace13internal_sizeEv">
+<span id="_CPPv3NK6ripple19StaticMultidimSpace13internal_sizeEv"></span><span id="_CPPv2NK6ripple19StaticMultidimSpace13internal_sizeEv"></span><span id="ripple::StaticMultidimSpace::internal_sizeCCE"></span><span class="target" id="structripple_1_1StaticMultidimSpace_1a7aca41a5e18780841904bd3d1571728b"></span><em class="property">constexpr</em> auto <code class="sig-name descname">internal_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple19StaticMultidimSpace13internal_sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Computes the total size of the N dimensional space without paddding, which is the total number of computable elements in the space. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The total number of elements in the space, excluding padding. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple19StaticMultidimSpace4stepE6size_tRR3Dim">
+<span id="_CPPv3I0ENK6ripple19StaticMultidimSpace4stepERR3Dim"></span><span id="_CPPv2I0ENK6ripple19StaticMultidimSpace4stepERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="structripple_1_1StaticMultidimSpace_1a9b8d861a895a306e630310e20fe5b285"></span><em class="property">constexpr</em> auto <code class="sig-name descname">step</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple19StaticMultidimSpace4stepE6size_tRR3Dim" title="ripple::StaticMultidimSpace::step::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4I0ENK6ripple19StaticMultidimSpace4stepE6size_tRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the step size to from one element in the given dimension to the next element in same dimension. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The step size between two elements in the dimension. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to get the step size in. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structripple_1_1Stealer.html" class="btn btn-neutral float-right" title="Template Struct Stealer" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="structripple_1_1StaticExecParams.html" class="btn btn-neutral" title="Template Struct StaticExecParams" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Template Struct StaticMultidimSpace</a><ul>
+<li><a class="reference internal" href="#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

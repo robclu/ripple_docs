@@ -1,0 +1,66 @@
+
+.. _file_include_ripple_core_storage_contiguous_storage_view.hpp:
+
+File contiguous_storage_view.hpp
+================================
+
+
+This file implements a storage class for storing data in a contiguous manner. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/storage/contiguous_storage_view.hpp``)
+------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_storage_contiguous_storage_view.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``owned_storage.hpp`` (:ref:`file_include_ripple_core_storage_owned_storage.hpp`)
+
+- ``storage_accessor.hpp`` (:ref:`file_include_ripple_core_storage_storage_accessor.hpp`)
+
+- ``storage_element_traits.hpp`` (:ref:`file_include_ripple_core_storage_storage_element_traits.hpp`)
+
+- ``storage_traits.hpp`` (:ref:`file_include_ripple_core_storage_storage_traits.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_storage_storage_descriptor.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1ContiguousStorageView_1_1Allocator`
+
+- :ref:`exhale_class_classripple_1_1ContiguousStorageView`
+

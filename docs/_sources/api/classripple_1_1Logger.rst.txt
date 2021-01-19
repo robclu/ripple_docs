@@ -1,0 +1,16 @@
+.. _exhale_class_classripple_1_1Logger:
+
+Template Class Logger
+=====================
+
+- Defined in :ref:`file_include_ripple_core_utility_logger.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ripple::Logger
+   :members:
+   :protected-members:
+   :undoc-members:

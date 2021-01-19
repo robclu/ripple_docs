@@ -1,0 +1,13 @@
+.. _exhale_define_portability_8hpp_1a9ff116c1f2728edfb21219451030c8f4:
+
+Define ripple_cpu_compile
+=========================
+
+- Defined in :ref:`file_include_ripple_core_utility_portability.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: ripple_cpu_compile

@@ -1,0 +1,13 @@
+.. _exhale_function_math_8hpp_1a9aaff3af55cc676426fdda533fd49b73:
+
+Template Function ripple::math::clamp(Array<Impl>&, const T&, const T&)
+=======================================================================
+
+- Defined in :ref:`file_include_ripple_core_math_math.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::math::clamp(Array<Impl>&, const T&, const T&)

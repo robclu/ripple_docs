@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a4ba56da3d1dc934b8c09f63fedd8c368:
+
+Typedef ripple::PolyLayoutOverload
+==================================
+
+- Defined in :ref:`file_include_ripple_core_iterator_block_iterator.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::PolyLayoutOverload

@@ -1,0 +1,583 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class VtkWriter &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Enum AllocArch" href="enum_namespaceripple_1adfb7267df8924979597b053026d4e492.html" />
+  <link rel="prev" title="Template Class Tuple&lt;&gt;" href="classripple_1_1Tuple_3_4.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Class VtkWriter</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/classripple_1_1VtkWriter.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="class-vtkwriter">
+<span id="exhale-class-classripple-1-1vtkwriter"></span><h1>Class VtkWriter<a class="headerlink" href="#class-vtkwriter" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_io_vtk_writer.hpp.html#file-include-ripple-core-io-vtk-writer-hpp"><span class="std std-ref">File vtk_writer.hpp</span></a></p></li>
+</ul>
+<div class="section" id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="base-type">
+<h3>Base Type<a class="headerlink" href="#base-type" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">ripple::MultidimWriter</span></code> (<a class="reference internal" href="classripple_1_1MultidimWriter.html#exhale-class-classripple-1-1multidimwriter"><span class="std std-ref">Class MultidimWriter</span></a>)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4N6ripple9VtkWriterE">
+<span id="_CPPv3N6ripple9VtkWriterE"></span><span id="_CPPv2N6ripple9VtkWriterE"></span><span id="ripple::VtkWriter"></span><span class="target" id="classripple_1_1VtkWriter"></span><em class="property">class </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">VtkWriter</code> : <em class="property">public</em> ripple::<a class="reference internal" href="classripple_1_1MultidimWriter.html#_CPPv4N6ripple14MultidimWriterE" title="ripple::MultidimWriter">MultidimWriter</a><a class="headerlink" href="#_CPPv4N6ripple9VtkWriterE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#classripple_1_1VtkWriter"><span class="std std-ref">VtkWriter</span></a> type implements the multidim writer interface to write data to a file in the Vtk format. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple9VtkWriter8DimSizesE">
+<span id="_CPPv3N6ripple9VtkWriter8DimSizesE"></span><span id="_CPPv2N6ripple9VtkWriter8DimSizesE"></span><span class="target" id="classripple_1_1VtkWriter_1ae0faf5dd6bbc5b1e2465ff63cab3d10b"></span><em class="property">using </em><code class="sig-name descname">DimSizes</code> = <a class="reference internal" href="classripple_1_1MultidimWriter.html#_CPPv4N6ripple14MultidimWriterE" title="ripple::MultidimWriter">MultidimWriter</a>::<a class="reference internal" href="classripple_1_1MultidimWriter.html#_CPPv4N6ripple14MultidimWriter8DimSizesE" title="ripple::MultidimWriter::DimSizes">DimSizes</a><a class="headerlink" href="#_CPPv4N6ripple9VtkWriter8DimSizesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the dimension sizes. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9VtkWriter9VtkWriterENSt6stringENSt6stringE">
+<span id="_CPPv3N6ripple9VtkWriter9VtkWriterENSt6stringENSt6stringE"></span><span id="_CPPv2N6ripple9VtkWriter9VtkWriterENSt6stringENSt6stringE"></span><span id="ripple::VtkWriter::VtkWriter__ss.ss"></span><span class="target" id="classripple_1_1VtkWriter_1a27a9151eed18fb9f5564bc96d0ac4acd"></span><code class="sig-name descname">VtkWriter</code><span class="sig-paren">(</span>std::string <em>base_filename</em>, std::string <em>data_name</em> = &quot;&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ripple9VtkWriter9VtkWriterENSt6stringENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor which sets the base name of the file to write, as well as the name of the data, and the names of any elements to write. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base_filename</span></code>: The base name of the file to write to. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data_name</span></code>: The name of the data. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9VtkWriterD0Ev">
+<span id="_CPPv3N6ripple9VtkWriterD0Ev"></span><span id="_CPPv2N6ripple9VtkWriterD0Ev"></span><span id="ripple::VtkWriter::~VtkWriter"></span><span class="target" id="classripple_1_1VtkWriter_1ac35d1dcf4c3622fea05b77d939fd9c28"></span><code class="sig-name descname">~VtkWriter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ripple9VtkWriterD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Destructor which closes the file. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9VtkWriter9VtkWriterERK9VtkWriter">
+<span id="_CPPv3N6ripple9VtkWriter9VtkWriterERK9VtkWriter"></span><span id="_CPPv2N6ripple9VtkWriter9VtkWriterERK9VtkWriter"></span><span id="ripple::VtkWriter::VtkWriter__VtkWriterCR"></span><span class="target" id="classripple_1_1VtkWriter_1abeb6bbc446a632f39012a6ffca99668d"></span><code class="sig-name descname">VtkWriter</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple9VtkWriter9VtkWriterERK9VtkWriter" title="ripple::VtkWriter::VtkWriter">VtkWriter</a> &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple9VtkWriter9VtkWriterERK9VtkWriter" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy constructor to create another writer from this writer. </p>
+<p>This copies the parameters from the other writer, but <strong>does not</strong> open or write any data for the writer. <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other writer to copy from. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple9VtkWriter5cloneEv">
+<span id="_CPPv3NK6ripple9VtkWriter5cloneEv"></span><span id="_CPPv2NK6ripple9VtkWriter5cloneEv"></span><span id="ripple::VtkWriter::cloneC"></span><span class="target" id="classripple_1_1VtkWriter_1a992b8c00157b77a5cc093a6b00d63533"></span>auto <code class="sig-name descname">clone</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; std::shared_ptr&lt;<a class="reference internal" href="classripple_1_1MultidimWriter.html#_CPPv4N6ripple14MultidimWriterE" title="ripple::MultidimWriter">MultidimWriter</a>&gt; <em class="property">final</em> <em class="property">override</em><a class="headerlink" href="#_CPPv4NK6ripple9VtkWriter5cloneEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clones the writer to create a new multidimensional writer. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A shared multidimensional writer. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9VtkWriter8set_nameENSt6stringE">
+<span id="_CPPv3N6ripple9VtkWriter8set_nameENSt6stringE"></span><span id="_CPPv2N6ripple9VtkWriter8set_nameENSt6stringE"></span><span id="ripple::VtkWriter::set_name__ss"></span><span class="target" id="classripple_1_1VtkWriter_1a3eff9b57b0fdd4d21025c0874fe32eac"></span>auto <code class="sig-name descname">set_name</code><span class="sig-paren">(</span>std::string <em>name</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void <em class="property">final</em> <em class="property">override</em><a class="headerlink" href="#_CPPv4N6ripple9VtkWriter8set_nameENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the name of the data to write. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: The name to set for the data. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9VtkWriter14set_resolutionEd">
+<span id="_CPPv3N6ripple9VtkWriter14set_resolutionEd"></span><span id="_CPPv2N6ripple9VtkWriter14set_resolutionEd"></span><span id="ripple::VtkWriter::set_resolution__double"></span><span class="target" id="classripple_1_1VtkWriter_1a28e188840a70b97d6be99c04fafffc5b"></span>auto <code class="sig-name descname">set_resolution</code><span class="sig-paren">(</span>double <em>res</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void <em class="property">final</em> <em class="property">override</em><a class="headerlink" href="#_CPPv4N6ripple9VtkWriter14set_resolutionEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the resolution of the data. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">res</span></code>: The resolution for the data. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9VtkWriter14write_metadataERK8DimSizes">
+<span id="_CPPv3N6ripple9VtkWriter14write_metadataERK8DimSizes"></span><span id="_CPPv2N6ripple9VtkWriter14write_metadataERK8DimSizes"></span><span id="ripple::VtkWriter::write_metadata__DimSizesCR"></span><span class="target" id="classripple_1_1VtkWriter_1a7121012bcb5add426498efb060e6ded3"></span>auto <code class="sig-name descname">write_metadata</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple9VtkWriter8DimSizesE" title="ripple::VtkWriter::DimSizes">DimSizes</a> &amp;<em>dims</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void <em class="property">final</em> <em class="property">override</em><a class="headerlink" href="#_CPPv4N6ripple9VtkWriter14write_metadataERK8DimSizes" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Writes the metadata for the file, which is the header and the indices. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dims</span></code>: The dimensions to write. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9VtkWriter13write_elementERK16PrintableElement">
+<span id="_CPPv3N6ripple9VtkWriter13write_elementERK16PrintableElement"></span><span id="_CPPv2N6ripple9VtkWriter13write_elementERK16PrintableElement"></span><span id="ripple::VtkWriter::write_element__PrintableElementCR"></span><span class="target" id="classripple_1_1VtkWriter_1a01a8d0ec7206ae88ed09225f096ad8d9"></span>auto <code class="sig-name descname">write_element</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="classripple_1_1PrintableElement.html#_CPPv4N6ripple16PrintableElementE" title="ripple::PrintableElement">PrintableElement</a> &amp;<em>element</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void <em class="property">final</em> <em class="property">override</em><a class="headerlink" href="#_CPPv4N6ripple9VtkWriter13write_elementERK16PrintableElement" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Writes the element to the output file. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">element</span></code>: The printable element to write. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9VtkWriter20write_element_headerERK16PrintableElement">
+<span id="_CPPv3N6ripple9VtkWriter20write_element_headerERK16PrintableElement"></span><span id="_CPPv2N6ripple9VtkWriter20write_element_headerERK16PrintableElement"></span><span id="ripple::VtkWriter::write_element_header__PrintableElementCR"></span><span class="target" id="classripple_1_1VtkWriter_1ae174aadfd9243629a1cb5ef1c4c74528"></span>auto <code class="sig-name descname">write_element_header</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="classripple_1_1PrintableElement.html#_CPPv4N6ripple16PrintableElementE" title="ripple::PrintableElement">PrintableElement</a> &amp;<em>element</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void <em class="property">final</em> <em class="property">override</em><a class="headerlink" href="#_CPPv4N6ripple9VtkWriter20write_element_headerERK16PrintableElement" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Writes any necessary header data for an element. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">element</span></code>: The printable element to write the start data </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9VtkWriter20write_element_footerEv">
+<span id="_CPPv3N6ripple9VtkWriter20write_element_footerEv"></span><span id="_CPPv2N6ripple9VtkWriter20write_element_footerEv"></span><span id="ripple::VtkWriter::write_element_footer"></span><span class="target" id="classripple_1_1VtkWriter_1acefb70d2a547a1d8d3e7a634672187bf"></span>auto <code class="sig-name descname">write_element_footer</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void <em class="property">final</em> <em class="property">override</em><a class="headerlink" href="#_CPPv4N6ripple9VtkWriter20write_element_footerEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Writes a footer after all element data has been written. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9VtkWriter4openENSt6stringENSt6stringE">
+<span id="_CPPv3N6ripple9VtkWriter4openENSt6stringENSt6stringE"></span><span id="_CPPv2N6ripple9VtkWriter4openENSt6stringENSt6stringE"></span><span id="ripple::VtkWriter::open__ss.ss"></span><span class="target" id="classripple_1_1VtkWriter_1a2efc0f0ad4be41697940355bc3da3ab2"></span>auto <code class="sig-name descname">open</code><span class="sig-paren">(</span>std::string <em>path</em> = &quot;&quot;, std::string <em>suffix</em> = &quot;&quot;<span class="sig-paren">)</span> -&gt; void <em class="property">final</em> <em class="property">override</em><a class="headerlink" href="#_CPPv4N6ripple9VtkWriter4openENSt6stringENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Opens the file for the writer, using the base filename for the writer and the suffix. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">path</span></code>: Path to the directory for the file. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">suffix</span></code>: The suffix to append to the base filename. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9VtkWriter5closeEv">
+<span id="_CPPv3N6ripple9VtkWriter5closeEv"></span><span id="_CPPv2N6ripple9VtkWriter5closeEv"></span><span id="ripple::VtkWriter::close"></span><span class="target" id="classripple_1_1VtkWriter_1a33ab32d766408b559b0d6c8e645ad7b2"></span>auto <code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span> -&gt; void <em class="property">final</em> <em class="property">override</em><a class="headerlink" href="#_CPPv4N6ripple9VtkWriter5closeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Close the file for writing. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="enum_namespaceripple_1adfb7267df8924979597b053026d4e492.html" class="btn btn-neutral float-right" title="Enum AllocArch" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="classripple_1_1Tuple_3_4.html" class="btn btn-neutral" title="Template Class Tuple&lt;&gt;" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Class VtkWriter</a><ul>
+<li><a class="reference internal" href="#inheritance-relationships">Inheritance Relationships</a><ul>
+<li><a class="reference internal" href="#base-type">Base Type</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

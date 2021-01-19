@@ -1,0 +1,13 @@
+.. _exhale_function_load__global__boundary__impl___8hpp_1ac13a071a69fbe67663a63ac453e378c2:
+
+Template Function ripple::detail::load_global_boundary(DimX, It&&, const GhostIndex<Dims>&, Loader&&, Args&&...)
+================================================================================================================
+
+- Defined in :ref:`file_include_ripple_core_boundary_detail_load_global_boundary_impl_.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::detail::load_global_boundary(DimX, It&&, const GhostIndex<Dims>&, Loader&&, Args&&...)

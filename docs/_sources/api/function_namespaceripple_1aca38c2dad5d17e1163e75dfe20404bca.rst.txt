@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1aca38c2dad5d17e1163e75dfe20404bca:
+
+Template Function ripple::as_expansion()
+========================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::as_expansion()

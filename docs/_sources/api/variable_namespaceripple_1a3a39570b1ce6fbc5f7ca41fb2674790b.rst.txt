@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1a3a39570b1ce6fbc5f7ca41fb2674790b:
+
+Variable ripple::is_number_v
+============================
+
+- Defined in :ref:`file_include_ripple_core_utility_number.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::is_number_v

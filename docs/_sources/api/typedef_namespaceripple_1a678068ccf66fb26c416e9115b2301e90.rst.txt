@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a678068ccf66fb26c416e9115b2301e90:
+
+Typedef ripple::GpuExecutor
+===========================
+
+- Defined in :ref:`file_include_ripple_core_functional_invoke.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::GpuExecutor

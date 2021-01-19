@@ -1,0 +1,35 @@
+.. _exhale_class_classripple_1_1MultidimWriter:
+
+Class MultidimWriter
+====================
+
+- Defined in :ref:`file_include_ripple_core_io_multidim_writer.hpp`
+
+
+Nested Relationships
+--------------------
+
+
+Nested Types
+************
+
+- :ref:`exhale_struct_structripple_1_1MultidimWriter_1_1DimSizes`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Type
+************
+
+- ``public ripple::VtkWriter`` (:ref:`exhale_class_classripple_1_1VtkWriter`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ripple::MultidimWriter
+   :members:
+   :protected-members:
+   :undoc-members:

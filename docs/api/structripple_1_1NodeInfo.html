@@ -1,0 +1,652 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Struct NodeInfo &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Template Struct Num" href="structripple_1_1Num.html" />
+  <link rel="prev" title="Template Struct NodeExecutorImpl" href="structripple_1_1NodeExecutorImpl.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Struct NodeInfo</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/structripple_1_1NodeInfo.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="struct-nodeinfo">
+<span id="exhale-struct-structripple-1-1nodeinfo"></span><h1>Struct NodeInfo<a class="headerlink" href="#struct-nodeinfo" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_graph_node.hpp.html#file-include-ripple-core-graph-node-hpp"><span class="std std-ref">File node.hpp</span></a></p></li>
+</ul>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp struct">
+<dt id="_CPPv4N6ripple8NodeInfoE">
+<span id="_CPPv3N6ripple8NodeInfoE"></span><span id="_CPPv2N6ripple8NodeInfoE"></span><span id="ripple::NodeInfo"></span><span class="target" id="structripple_1_1NodeInfo"></span><em class="property">struct </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">NodeInfo</code><a class="headerlink" href="#_CPPv4N6ripple8NodeInfoE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This class defines extra infromation for a node which may be useful for the construction of graphs, but which is not necessary for execution. </p>
+<p>We store it separately to reduce the memory footprint of the node so that on the fast path (node execution) this information does not result in a performance hit. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple8NodeInfo4NameE">
+<span id="_CPPv3N6ripple8NodeInfo4NameE"></span><span id="_CPPv2N6ripple8NodeInfo4NameE"></span><span class="target" id="structripple_1_1NodeInfo_1aa3395fdedde1142d7a88fba0a7c60bf8"></span><em class="property">using </em><code class="sig-name descname">Name</code> = std::string<a class="headerlink" href="#_CPPv4N6ripple8NodeInfo4NameE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type used for the node name. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple8NodeInfo6IdTypeE">
+<span id="_CPPv3N6ripple8NodeInfo6IdTypeE"></span><span id="_CPPv2N6ripple8NodeInfo6IdTypeE"></span><span class="target" id="structripple_1_1NodeInfo_1a6f27711c8420a51876c818c51338c14e"></span><em class="property">using </em><code class="sig-name descname">IdType</code> = uint64_t<a class="headerlink" href="#_CPPv4N6ripple8NodeInfo6IdTypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type used for the node id. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple8NodeInfo7FriendsE">
+<span id="_CPPv3N6ripple8NodeInfo7FriendsE"></span><span id="_CPPv2N6ripple8NodeInfo7FriendsE"></span><span class="target" id="structripple_1_1NodeInfo_1a476d9ff0f28fa66aa960a643909f510d"></span><em class="property">using </em><code class="sig-name descname">Friends</code> = std::vector&lt;<a class="reference internal" href="#_CPPv4N6ripple8NodeInfo6IdTypeE" title="ripple::NodeInfo::IdType">IdType</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple8NodeInfo7FriendsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the friends container. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple8NodeInfo8NodeInfoEv">
+<span id="_CPPv3N6ripple8NodeInfo8NodeInfoEv"></span><span id="_CPPv2N6ripple8NodeInfo8NodeInfoEv"></span><span id="ripple::NodeInfo::NodeInfo"></span><span class="target" id="structripple_1_1NodeInfo_1a1f895f86d719a251458a2cb73c287418"></span><code class="sig-name descname">NodeInfo</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = default<a class="headerlink" href="#_CPPv4N6ripple8NodeInfo8NodeInfoEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Default constructor for node info. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple8NodeInfo8NodeInfoE13ExecutionKind">
+<span id="_CPPv3N6ripple8NodeInfo8NodeInfoE13ExecutionKind"></span><span id="_CPPv2N6ripple8NodeInfo8NodeInfoE13ExecutionKind"></span><span id="ripple::NodeInfo::NodeInfo__ExecutionKind"></span><span class="target" id="structripple_1_1NodeInfo_1ac4f9763034cff41fa7c782a01c23d327"></span><code class="sig-name descname">NodeInfo</code><span class="sig-paren">(</span><a class="reference internal" href="enum_namespaceripple_1ae314c8184d85e6da81055513973875a6.html#_CPPv4N6ripple13ExecutionKindE" title="ripple::ExecutionKind">ExecutionKind</a> <em>exec_kind_</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple8NodeInfo8NodeInfoE13ExecutionKind" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor to set the execution kind for the node. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">exec_kind_</span></code>: The execution kind for the node. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple8NodeInfo8NodeInfoE8NodeKind13ExecutionKind">
+<span id="_CPPv3N6ripple8NodeInfo8NodeInfoE8NodeKind13ExecutionKind"></span><span id="_CPPv2N6ripple8NodeInfo8NodeInfoE8NodeKind13ExecutionKind"></span><span id="ripple::NodeInfo::NodeInfo__NodeKind.ExecutionKind"></span><span class="target" id="structripple_1_1NodeInfo_1a6242c30991388af940664fbfcd50b9c1"></span><code class="sig-name descname">NodeInfo</code><span class="sig-paren">(</span><a class="reference internal" href="enum_namespaceripple_1a4d5f4cde24de454f2d816f7c9a93e2c4.html#_CPPv4N6ripple8NodeKindE" title="ripple::NodeKind">NodeKind</a> <em>kind_</em>, <a class="reference internal" href="enum_namespaceripple_1ae314c8184d85e6da81055513973875a6.html#_CPPv4N6ripple13ExecutionKindE" title="ripple::ExecutionKind">ExecutionKind</a> <em>exec_kind_</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple8NodeInfo8NodeInfoE8NodeKind13ExecutionKind" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor to set the kind and execution kind for the node. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">kind_</span></code>: The kind of teh node. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">exec_kind_</span></code>: The execution kind for the node. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple8NodeInfo8NodeInfoE4Name">
+<span id="_CPPv3N6ripple8NodeInfo8NodeInfoE4Name"></span><span id="_CPPv2N6ripple8NodeInfo8NodeInfoE4Name"></span><span id="ripple::NodeInfo::NodeInfo__Name"></span><span class="target" id="structripple_1_1NodeInfo_1a0f2fd648d05f3ecd5f3dae03715e11b0"></span><code class="sig-name descname">NodeInfo</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple8NodeInfo4NameE" title="ripple::NodeInfo::Name">Name</a> <em>name_</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple8NodeInfo8NodeInfoE4Name" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor for node info which sets the name for the node. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name_</span></code>: The name of the node. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple8NodeInfo8NodeInfoE4Name6IdType">
+<span id="_CPPv3N6ripple8NodeInfo8NodeInfoE4Name6IdType"></span><span id="_CPPv2N6ripple8NodeInfo8NodeInfoE4Name6IdType"></span><span id="ripple::NodeInfo::NodeInfo__Name.IdType"></span><span class="target" id="structripple_1_1NodeInfo_1a8ee7f8c7da4e8cafa93cb834eedbe0cd"></span><code class="sig-name descname">NodeInfo</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple8NodeInfo4NameE" title="ripple::NodeInfo::Name">Name</a> <em>name_</em>, <a class="reference internal" href="#_CPPv4N6ripple8NodeInfo6IdTypeE" title="ripple::NodeInfo::IdType">IdType</a> <em>id_</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple8NodeInfo8NodeInfoE4Name6IdType" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor to set the node name and id. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name_</span></code>: The name of the node. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id_</span></code>: The id of the node. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple8NodeInfo8NodeInfoE4Name6IdType8NodeKind">
+<span id="_CPPv3N6ripple8NodeInfo8NodeInfoE4Name6IdType8NodeKind"></span><span id="_CPPv2N6ripple8NodeInfo8NodeInfoE4Name6IdType8NodeKind"></span><span id="ripple::NodeInfo::NodeInfo__Name.IdType.NodeKind"></span><span class="target" id="structripple_1_1NodeInfo_1af2eed508d94d6bac6aabe7de62eabe41"></span><code class="sig-name descname">NodeInfo</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple8NodeInfo4NameE" title="ripple::NodeInfo::Name">Name</a> <em>name_</em>, <a class="reference internal" href="#_CPPv4N6ripple8NodeInfo6IdTypeE" title="ripple::NodeInfo::IdType">IdType</a> <em>id_</em>, <a class="reference internal" href="enum_namespaceripple_1a4d5f4cde24de454f2d816f7c9a93e2c4.html#_CPPv4N6ripple8NodeKindE" title="ripple::NodeKind">NodeKind</a> <em>kind_</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple8NodeInfo8NodeInfoE4Name6IdType8NodeKind" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor to set the node name , id, and kind. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name_</span></code>: The name of the node. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id_</span></code>: The id of the node. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kind_</span></code>: The kind of the node. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple8NodeInfo8NodeInfoE4Name6IdType8NodeKind13ExecutionKind">
+<span id="_CPPv3N6ripple8NodeInfo8NodeInfoE4Name6IdType8NodeKind13ExecutionKind"></span><span id="_CPPv2N6ripple8NodeInfo8NodeInfoE4Name6IdType8NodeKind13ExecutionKind"></span><span id="ripple::NodeInfo::NodeInfo__Name.IdType.NodeKind.ExecutionKind"></span><span class="target" id="structripple_1_1NodeInfo_1a90482c13a422a70ef5f7f38e0fdaa649"></span><code class="sig-name descname">NodeInfo</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple8NodeInfo4NameE" title="ripple::NodeInfo::Name">Name</a> <em>name_</em>, <a class="reference internal" href="#_CPPv4N6ripple8NodeInfo6IdTypeE" title="ripple::NodeInfo::IdType">IdType</a> <em>id_</em>, <a class="reference internal" href="enum_namespaceripple_1a4d5f4cde24de454f2d816f7c9a93e2c4.html#_CPPv4N6ripple8NodeKindE" title="ripple::NodeKind">NodeKind</a> <em>kind_</em>, <a class="reference internal" href="enum_namespaceripple_1ae314c8184d85e6da81055513973875a6.html#_CPPv4N6ripple13ExecutionKindE" title="ripple::ExecutionKind">ExecutionKind</a> <em>exec_</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple8NodeInfo8NodeInfoE4Name6IdType8NodeKind13ExecutionKind" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor to set the node name, id, kind, and execution target for the node. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name_</span></code>: The name of the node. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id_</span></code>: The id of the node. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kind_</span></code>: The kind of the node. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">exec_</span></code>: The execution kind of the node. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple8NodeInfo8NodeInfoERK8NodeInfo">
+<span id="_CPPv3N6ripple8NodeInfo8NodeInfoERK8NodeInfo"></span><span id="_CPPv2N6ripple8NodeInfo8NodeInfoERK8NodeInfo"></span><span id="ripple::NodeInfo::NodeInfo__NodeInfoCR"></span><span class="target" id="structripple_1_1NodeInfo_1a42e4efa928877282804d6f0ef1d7b476"></span><code class="sig-name descname">NodeInfo</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple8NodeInfo8NodeInfoERK8NodeInfo" title="ripple::NodeInfo::NodeInfo">NodeInfo</a> &amp;<em>other</em><span class="sig-paren">)</span> = default<a class="headerlink" href="#_CPPv4N6ripple8NodeInfo8NodeInfoERK8NodeInfo" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy constructor  deleted. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple8NodeInfo8NodeInfoERR8NodeInfo">
+<span id="_CPPv3N6ripple8NodeInfo8NodeInfoERR8NodeInfo"></span><span id="_CPPv2N6ripple8NodeInfo8NodeInfoERR8NodeInfo"></span><span id="ripple::NodeInfo::NodeInfo__NodeInfoRR"></span><span class="target" id="structripple_1_1NodeInfo_1a59a0cec713bb4aef994954e44dd05381"></span><code class="sig-name descname">NodeInfo</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple8NodeInfo8NodeInfoERR8NodeInfo" title="ripple::NodeInfo::NodeInfo">NodeInfo</a> &amp;&amp;<em>other</em><span class="sig-paren">)</span> = default<a class="headerlink" href="#_CPPv4N6ripple8NodeInfo8NodeInfoERR8NodeInfo" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Move constructor deleted. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple8NodeInfoaSERK8NodeInfo">
+<span id="_CPPv3N6ripple8NodeInfoaSERK8NodeInfo"></span><span id="_CPPv2N6ripple8NodeInfoaSERK8NodeInfo"></span><span id="ripple::NodeInfo::assign-operator__NodeInfoCR"></span><span class="target" id="structripple_1_1NodeInfo_1a9d8917e5053f3d7db2fc2f03bb119920"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple8NodeInfoE" title="ripple::NodeInfo">NodeInfo</a>&amp;<span class="sig-paren">)</span> = delete<a class="headerlink" href="#_CPPv4N6ripple8NodeInfoaSERK8NodeInfo" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Move assignment  deleted. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple8NodeInfoaSERR8NodeInfo">
+<span id="_CPPv3N6ripple8NodeInfoaSERR8NodeInfo"></span><span id="_CPPv2N6ripple8NodeInfoaSERR8NodeInfo"></span><span id="ripple::NodeInfo::assign-operator__NodeInfoRR"></span><span class="target" id="structripple_1_1NodeInfo_1ae5b8b720cae71f809b984989f7d52542"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple8NodeInfoE" title="ripple::NodeInfo">NodeInfo</a>&amp;&amp;<span class="sig-paren">)</span> = delete<a class="headerlink" href="#_CPPv4N6ripple8NodeInfoaSERR8NodeInfo" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy assignment  deleted. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple8NodeInfo4nameE">
+<span id="_CPPv3N6ripple8NodeInfo4nameE"></span><span id="_CPPv2N6ripple8NodeInfo4nameE"></span><span id="ripple::NodeInfo::name__Name"></span><span class="target" id="structripple_1_1NodeInfo_1a37083d623ea4895cdcbd736fab9d851b"></span><a class="reference internal" href="#_CPPv4N6ripple8NodeInfo4NameE" title="ripple::NodeInfo::Name">Name</a> <code class="sig-name descname">name</code> = <a class="reference internal" href="#_CPPv4N6ripple8NodeInfo12default_nameE" title="ripple::NodeInfo::default_name">default_name</a><a class="headerlink" href="#_CPPv4N6ripple8NodeInfo4nameE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The name of the node. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple8NodeInfo7friendsE">
+<span id="_CPPv3N6ripple8NodeInfo7friendsE"></span><span id="_CPPv2N6ripple8NodeInfo7friendsE"></span><span id="ripple::NodeInfo::friends__Friends"></span><span class="target" id="structripple_1_1NodeInfo_1a616baaeeb0fad07d5837801134273ac8"></span><a class="reference internal" href="#_CPPv4N6ripple8NodeInfo7FriendsE" title="ripple::NodeInfo::Friends">Friends</a> <code class="sig-name descname">friends</code> = {}<a class="headerlink" href="#_CPPv4N6ripple8NodeInfo7friendsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Siblings for the node. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple8NodeInfo2idE">
+<span id="_CPPv3N6ripple8NodeInfo2idE"></span><span id="_CPPv2N6ripple8NodeInfo2idE"></span><span id="ripple::NodeInfo::id__IdType"></span><span class="target" id="structripple_1_1NodeInfo_1a2d1a5163c06054fb3a8f606f9cdf0f23"></span><a class="reference internal" href="#_CPPv4N6ripple8NodeInfo6IdTypeE" title="ripple::NodeInfo::IdType">IdType</a> <code class="sig-name descname">id</code> = <a class="reference internal" href="#_CPPv4N6ripple8NodeInfo10default_idE" title="ripple::NodeInfo::default_id">default_id</a><a class="headerlink" href="#_CPPv4N6ripple8NodeInfo2idE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Id of the node. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple8NodeInfo4kindE">
+<span id="_CPPv3N6ripple8NodeInfo4kindE"></span><span id="_CPPv2N6ripple8NodeInfo4kindE"></span><span id="ripple::NodeInfo::kind__NodeKind"></span><span class="target" id="structripple_1_1NodeInfo_1a1c70dc0417864830e6d3f2a281d43e9e"></span><a class="reference internal" href="enum_namespaceripple_1a4d5f4cde24de454f2d816f7c9a93e2c4.html#_CPPv4N6ripple8NodeKindE" title="ripple::NodeKind">NodeKind</a> <code class="sig-name descname">kind</code> = <a class="reference internal" href="enum_namespaceripple_1a4d5f4cde24de454f2d816f7c9a93e2c4.html#_CPPv4N6ripple8NodeKindE" title="ripple::NodeKind">NodeKind</a>::<a class="reference internal" href="enum_namespaceripple_1a4d5f4cde24de454f2d816f7c9a93e2c4.html#_CPPv4N6ripple8NodeKind6normalE" title="ripple::NodeKind::normal">normal</a><a class="headerlink" href="#_CPPv4N6ripple8NodeInfo4kindE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The kind of the node. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple8NodeInfo4execE">
+<span id="_CPPv3N6ripple8NodeInfo4execE"></span><span id="_CPPv2N6ripple8NodeInfo4execE"></span><span id="ripple::NodeInfo::exec__ExecutionKind"></span><span class="target" id="structripple_1_1NodeInfo_1a1980840bb0f5f7ee772d4a0dff0e6863"></span><a class="reference internal" href="enum_namespaceripple_1ae314c8184d85e6da81055513973875a6.html#_CPPv4N6ripple13ExecutionKindE" title="ripple::ExecutionKind">ExecutionKind</a> <code class="sig-name descname">exec</code> = <a class="reference internal" href="enum_namespaceripple_1ae314c8184d85e6da81055513973875a6.html#_CPPv4N6ripple13ExecutionKindE" title="ripple::ExecutionKind">ExecutionKind</a>::<a class="reference internal" href="enum_namespaceripple_1ae314c8184d85e6da81055513973875a6.html#_CPPv4N6ripple13ExecutionKind3gpuE" title="ripple::ExecutionKind::gpu">gpu</a><a class="headerlink" href="#_CPPv4N6ripple8NodeInfo4execE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference internal" href="structripple_1_1Execution.html#structripple_1_1Execution"><span class="std std-ref">Execution</span></a> kind of the node. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4I_6size_tEN6ripple8NodeInfo15id_from_indicesE8uint64_tRKNSt5arrayI8uint32_t4SizeEE">
+<span id="_CPPv3I_6size_tEN6ripple8NodeInfo15id_from_indicesERKNSt5arrayI8uint32_t4SizeEE"></span><span id="_CPPv2I_6size_tEN6ripple8NodeInfo15id_from_indicesERKNSt5arrayI8uint32_t4SizeEE"></span>template&lt;size_t <code class="sig-name descname">Size</code>&gt;<br /><span class="target" id="structripple_1_1NodeInfo_1ae2ce49d2291ad0bb0946ee408cbb3a9e"></span>auto <code class="sig-name descname">id_from_indices</code><span class="sig-paren">(</span><em class="property">const</em> std::array&lt;uint32_t, <a class="reference internal" href="#_CPPv4I_6size_tEN6ripple8NodeInfo15id_from_indicesE8uint64_tRKNSt5arrayI8uint32_t4SizeEE" title="ripple::NodeInfo::id_from_indices::Size">Size</a>&gt; &amp;<em>indices</em><span class="sig-paren">)</span> -&gt; uint64_t<a class="headerlink" href="#_CPPv4I_6size_tEN6ripple8NodeInfo15id_from_indicesE8uint64_tRKNSt5arrayI8uint32_t4SizeEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates an id for a node from the given indices, using hash combining. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The id of the node. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">indices</span></code>: The indices to create an id from. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Size</span></code>: The number of ids. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I_6size_tEN6ripple8NodeInfo17name_from_indicesE4NameRKNSt5arrayI8uint32_t4SizeEE">
+<span id="_CPPv3I_6size_tEN6ripple8NodeInfo17name_from_indicesERKNSt5arrayI8uint32_t4SizeEE"></span><span id="_CPPv2I_6size_tEN6ripple8NodeInfo17name_from_indicesERKNSt5arrayI8uint32_t4SizeEE"></span>template&lt;size_t <code class="sig-name descname">Size</code>&gt;<br /><span class="target" id="structripple_1_1NodeInfo_1af45c6bb1add94201a04f58b903cddf5b"></span>auto <code class="sig-name descname">name_from_indices</code><span class="sig-paren">(</span><em class="property">const</em> std::array&lt;uint32_t, <a class="reference internal" href="#_CPPv4I_6size_tEN6ripple8NodeInfo17name_from_indicesE4NameRKNSt5arrayI8uint32_t4SizeEE" title="ripple::NodeInfo::name_from_indices::Size">Size</a>&gt; &amp;<em>indices</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple8NodeInfo4NameE" title="ripple::NodeInfo::Name">Name</a><a class="headerlink" href="#_CPPv4I_6size_tEN6ripple8NodeInfo17name_from_indicesE4NameRKNSt5arrayI8uint32_t4SizeEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a name for a node from the indices. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The name of the node. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">indices</span></code>: The indices to create a name from. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Size</span></code>: The number of ids. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Attributes</p>
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple8NodeInfo10default_idE">
+<span id="_CPPv3N6ripple8NodeInfo10default_idE"></span><span id="_CPPv2N6ripple8NodeInfo10default_idE"></span><span id="ripple::NodeInfo::default_id__IdType"></span><span class="target" id="structripple_1_1NodeInfo_1ac5627a47e7378859554aa8286ddc9c02"></span><em class="property">constexpr</em> <a class="reference internal" href="#_CPPv4N6ripple8NodeInfo6IdTypeE" title="ripple::NodeInfo::IdType">IdType</a> <code class="sig-name descname">default_id</code> = std::numeric_limits&lt;<a class="reference internal" href="#_CPPv4N6ripple8NodeInfo6IdTypeE" title="ripple::NodeInfo::IdType">IdType</a>&gt;::max()<a class="headerlink" href="#_CPPv4N6ripple8NodeInfo10default_idE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Default id of the node. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple8NodeInfo12default_nameE">
+<span id="_CPPv3N6ripple8NodeInfo12default_nameE"></span><span id="_CPPv2N6ripple8NodeInfo12default_nameE"></span><span id="ripple::NodeInfo::default_name__auto"></span><span class="target" id="structripple_1_1NodeInfo_1a6da0fc2f2ceea20a9657835b93e0e2ec"></span><em class="property">constexpr</em> auto <code class="sig-name descname">default_name</code> = &quot;&quot;<a class="headerlink" href="#_CPPv4N6ripple8NodeInfo12default_nameE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Default name of the node. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structripple_1_1Num.html" class="btn btn-neutral float-right" title="Template Struct Num" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="structripple_1_1NodeExecutorImpl.html" class="btn btn-neutral" title="Template Struct NodeExecutorImpl" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Struct NodeInfo</a><ul>
+<li><a class="reference internal" href="#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

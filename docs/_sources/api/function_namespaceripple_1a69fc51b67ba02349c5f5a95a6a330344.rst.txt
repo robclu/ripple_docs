@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a69fc51b67ba02349c5f5a95a6a330344:
+
+Template Function ripple::make_reduction_result
+===============================================
+
+- Defined in :ref:`file_include_ripple_core_graph_reducer.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::make_reduction_result(const T&)

@@ -1,0 +1,13 @@
+.. _exhale_function_math_8hpp_1a178da893282b99b4481c491df189bfa1:
+
+Template Function ripple::math::fast_exp
+========================================
+
+- Defined in :ref:`file_include_ripple_core_math_math.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::math::fast_exp(T)

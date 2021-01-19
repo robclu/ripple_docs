@@ -1,0 +1,13 @@
+.. _exhale_variable_thread__index__impl___8hpp_1ac7a1306a13651773f8f1e3856d227685:
+
+Variable ripple::detail::block_dim_
+===================================
+
+- Defined in :ref:`file_include_ripple_core_execution_detail_thread_index_impl_.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::detail::block_dim_

@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1abec7ccb42ff365d46ffca6b100720dc6:
+
+Typedef ripple::shared_wrapper_traits_t
+=======================================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::shared_wrapper_traits_t

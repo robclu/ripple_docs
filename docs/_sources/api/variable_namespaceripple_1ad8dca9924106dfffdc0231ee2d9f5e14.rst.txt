@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1ad8dca9924106dfffdc0231ee2d9f5e14:
+
+Variable ripple::logger_default_buffer_size
+===========================================
+
+- Defined in :ref:`file_include_ripple_core_utility_logger.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::logger_default_buffer_size

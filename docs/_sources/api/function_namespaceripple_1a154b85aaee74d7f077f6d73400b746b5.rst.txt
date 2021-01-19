@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a154b85aaee74d7f077f6d73400b746b5:
+
+Function ripple::set_affinity
+=============================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::set_affinity(uint32_t)

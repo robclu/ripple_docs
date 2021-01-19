@@ -1,0 +1,25 @@
+.. _exhale_class_classripple_1_1IndexedIterator:
+
+Template Class IndexedIterator
+==============================
+
+- Defined in :ref:`file_include_ripple_core_iterator_indexed_iterator.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public ripple::BlockIterator< T, Space >`` (:ref:`exhale_class_classripple_1_1BlockIterator`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ripple::IndexedIterator
+   :members:
+   :protected-members:
+   :undoc-members:

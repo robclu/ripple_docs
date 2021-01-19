@@ -1,0 +1,72 @@
+
+.. _file_include_ripple_core_allocation_multiarch_allocator.hpp:
+
+File multiarch_allocator.hpp
+============================
+
+
+This file defines an allocator for cpus and gpus. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/allocation/multiarch_allocator.hpp``)
+-----------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_allocation_multiarch_allocator.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``arena.hpp`` (:ref:`file_include_ripple_core_allocation_arena.hpp`)
+
+- ``linear_allocator.hpp`` (:ref:`file_include_ripple_core_allocation_linear_allocator.hpp`)
+
+- ``mutex``
+
+- ``ripple/core/arch/topology.hpp`` (:ref:`file_include_ripple_core_arch_topology.hpp`)
+
+- ``ripple/core/utility/spinlock.hpp`` (:ref:`file_include_ripple_core_utility_spinlock.hpp`)
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_container_host_block.hpp`
+
+- :ref:`file_include_ripple_core_container_device_block.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1MultiarchAllocator`
+
+- :ref:`exhale_class_classripple_1_1SimpleAllocator`
+

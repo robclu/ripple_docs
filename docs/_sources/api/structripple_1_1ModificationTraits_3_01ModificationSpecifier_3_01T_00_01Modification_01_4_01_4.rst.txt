@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1ModificationTraits_3_01ModificationSpecifier_3_01T_00_01Modification_01_4_01_4:
+
+Template Struct ModificationTraits< ModificationSpecifier< T, Modification > >
+==============================================================================
+
+- Defined in :ref:`file_include_ripple_core_graph_modifier.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::ModificationTraits< ModificationSpecifier< T, Modification > >
+   :members:
+   :protected-members:
+   :undoc-members:

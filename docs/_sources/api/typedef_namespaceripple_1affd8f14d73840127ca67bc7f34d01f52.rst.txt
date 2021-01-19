@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1affd8f14d73840127ca67bc7f34d01f52:
+
+Typedef ripple::tensor_traits_t
+===============================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::tensor_traits_t

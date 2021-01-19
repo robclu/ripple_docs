@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a6e961cc19621e03af8c80de31ea6b1e8:
+
+Template Function ripple::printable_element
+===========================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::printable_element(T&&, const char *, Args&&...)

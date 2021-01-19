@@ -1,0 +1,224 @@
+
+.. _program_listing_file_include_ripple_core_allocation_arena.hpp:
+
+Program Listing for File arena.hpp
+==================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_allocation_arena.hpp>` (``include/ripple/core/allocation/arena.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/memory/arena.hpp ----------------------- -*- C++ -*- ---==//
+   //
+   //                            Ripple - Core
+   //
+   //                      Copyright (c) 2020 Ripple
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_ALLOCATION_ARENA_HPP
+   #define RIPPLE_ALLOCATION_ARENA_HPP
+   
+   #include "../arch/gpu_utils.hpp"
+   #include "../utility/memory.hpp"
+   #include <type_traits>
+   #include <cstring>
+   
+   namespace ripple {
+   
+   template <size_t Size>
+   class StackArena {
+     static constexpr size_t stack_size = Size;
+   
+    public:
+     // clang-format off
+     static constexpr bool contexpr_size   = true;
+     static constexpr bool valid_on_device = true;
+     static constexpr bool valid_on_host   = true;
+     // clang-format on
+   
+     using Ptr      = void*;       
+     using ConstPtr = const void*; 
+   
+     ripple_host_device StackArena(size_t size = 0) noexcept {}
+   
+     ripple_nodiscard ripple_host_device auto begin() const noexcept -> ConstPtr {
+       return static_cast<ConstPtr>(&buffer_[0]);
+     }
+   
+     ripple_nodiscard ripple_host_device auto end() const noexcept -> ConstPtr {
+       return static_cast<ConstPtr>(&buffer_[stack_size]);
+     }
+   
+     ripple_nodiscard ripple_host_device constexpr auto
+     size() const noexcept -> size_t {
+       return stack_size;
+     }
+   
+    private:
+     char buffer_[stack_size]; 
+   };
+   
+   struct HeapArena {
+    public:
+     // clang-format off
+     static constexpr bool constexpr_size  = false;
+     static constexpr bool valid_on_device = false;
+     static constexpr bool valid_on_host   = true;
+     // clang-format on
+   
+     using Ptr      = void*; 
+     using ConstPtr = void*; 
+   
+     explicit HeapArena(size_t size = 0) {
+       if (size) {
+         cpu::allocate_host_pinned(&start_, size);
+         end_ = offset_ptr(start_, size);
+       }
+     }
+   
+     ~HeapArena() noexcept {
+       if (start_ != nullptr) {
+         cpu::free_host_pinned(start_);
+         start_ = nullptr;
+         end_   = nullptr;
+       }
+     }
+   
+     // clang-format off
+     HeapArena(const HeapArena&)     = delete;
+     HeapArena(HeapArena&&) noexcept = default;
+   
+     auto operator=(const HeapArena&)                   = delete;
+     auto operator=(HeapArena&&) noexcept -> HeapArena& = default;
+     // clang-format on
+   
+     ripple_nodiscard auto begin() const noexcept -> ConstPtr {
+       return start_;
+     }
+   
+     ripple_nodiscard auto end() const noexcept -> ConstPtr {
+       return end_;
+     }
+   
+     auto resize(size_t new_size) -> void {
+       if (new_size < size()) {
+         return;
+       }
+       void* new_ptr = nullptr;
+       cpu::allocate_host_pinned(&new_ptr, new_size);
+       if (start_) {
+         memcpy(new_ptr, start_, size());
+         cpu::free_host_pinned(start_);
+       }
+       start_ = new_ptr;
+       end_   = offset_ptr(start_, new_size);
+     }
+   
+     ripple_nodiscard auto size() const noexcept -> size_t {
+       return uintptr_t(end_) - uintptr_t(start_);
+     }
+   
+    private:
+     void* start_ = nullptr; 
+     void* end_   = nullptr; 
+   };
+   
+   struct GpuHeapArena {
+    public:
+     // clang-format off
+     static constexpr bool constexpr_size  = false;
+     static constexpr bool valid_on_device = true;
+     static constexpr bool valid_on_host   = false;
+     // clang-format on
+   
+     using Ptr      = void*; 
+     using ConstPtr = void*; 
+   
+     explicit GpuHeapArena(size_t id, size_t size = 0) : id_{id} {
+       if (size) {
+         gpu::set_device(id_);
+         gpu::allocate_device(&start_, size);
+         end_ = offset_ptr(start_, size);
+       }
+     }
+   
+     ~GpuHeapArena() noexcept {
+       cleanup();
+     }
+   
+     // clang-format off
+     GpuHeapArena(const GpuHeapArena&)     = delete;
+     GpuHeapArena(GpuHeapArena&&) noexcept = default;
+   
+     auto operator=(const GpuHeapArena&)                      = delete;
+     auto operator=(GpuHeapArena&&) noexcept -> GpuHeapArena& = default;
+     // clang-format on
+   
+     ripple_nodiscard auto begin() const noexcept -> ConstPtr {
+       return start_;
+     }
+   
+     ripple_nodiscard auto end() const noexcept -> ConstPtr {
+       return end_;
+     }
+   
+     auto resize(size_t new_size) -> void {
+       if (new_size < size()) {
+         return;
+       }
+       void* new_ptr = nullptr;
+       gpu::set_device(id_);
+       gpu::allocate_device(&new_ptr, new_size);
+       if (start_) {
+         gpu::memcpy_device_to_device_async(new_ptr, start_, size());
+         gpu::free_device(start_);
+       }
+       start_ = new_ptr;
+       end_   = offset_ptr(start_, new_size);
+     }
+   
+     ripple_nodiscard auto size() const noexcept -> size_t {
+       return uintptr_t(end_) - uintptr_t(start_);
+     }
+   
+    private:
+     void*  start_ = nullptr; 
+     void*  end_   = nullptr; 
+     size_t id_    = 0;       
+   
+     auto cleanup() noexcept -> void {
+       if (start_) {
+         gpu::set_device(id_);
+         gpu::synchronize_device();
+         gpu::free_device(start_);
+         start_ = nullptr;
+         end_   = nullptr;
+       }
+     }
+   };
+   
+   /*==--- [aliases] ----------------------------------------------------------==*/
+   
+   static constexpr size_t default_stack_arena_size = 1024;
+   
+   using DefaultStackArena = StackArena<default_stack_arena_size>;
+   
+   template <typename Arena>
+   using arena_constexpr_size_enable_t =
+     std::enable_if_t<std::decay_t<Arena>::contexpr_size, int>;
+   
+   template <typename Arena>
+   using arena_non_constexpr_size_enable_t =
+     std::enable_if_t<!std::decay_t<Arena>::contexpr_size, int>;
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_ALLOCATION_ARENA_HPP

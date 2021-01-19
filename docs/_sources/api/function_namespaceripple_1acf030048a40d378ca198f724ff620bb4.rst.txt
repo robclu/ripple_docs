@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1acf030048a40d378ca198f724ff620bb4:
+
+Template Function ripple::range(T)
+==================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::range(T)

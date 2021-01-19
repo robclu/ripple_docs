@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a84809db2dcb9bfb3e6590585096d1e1a:
+
+Typedef ripple::Mat
+===================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::Mat

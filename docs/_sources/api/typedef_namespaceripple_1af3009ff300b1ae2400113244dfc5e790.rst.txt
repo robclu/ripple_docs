@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1af3009ff300b1ae2400113244dfc5e790:
+
+Typedef ripple::nth_element_t
+=============================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::nth_element_t

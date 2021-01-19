@@ -1,0 +1,22 @@
+.. _exhale_struct_structripple_1_1detail_1_1ContigStorageHelper_1_1Vec:
+
+Template Struct ContigStorageHelper::Vec
+========================================
+
+- Defined in :ref:`file_include_ripple_core_storage_storage_element_traits.hpp`
+
+
+Nested Relationships
+--------------------
+
+This struct is a nested type of :ref:`exhale_struct_structripple_1_1detail_1_1ContigStorageHelper`.
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::detail::ContigStorageHelper::Vec
+   :members:
+   :protected-members:
+   :undoc-members:

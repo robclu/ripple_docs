@@ -1,0 +1,54 @@
+
+.. _program_listing_file_include_ripple_core_boundary_const_loader.hpp:
+
+Program Listing for File const_loader.hpp
+=========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_boundary_const_loader.hpp>` (``include/ripple/core/boundary/const_loader.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/boundary/const_loader.hpp -------------- -*- C++ -*- ---==//
+   //
+   //                                Ripple
+   //
+   //                      Copyright (c) 2019, 2020 Rob Clucas.
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_BOUNDARY_CONST_LOADER_HPP
+   #define RIPPLE_BOUNDARY_CONST_LOADER_HPP
+   
+   #include "boundary_loader.hpp"
+   
+   namespace ripple {
+   
+   template <typename T>
+   struct ConstLoader : public BoundaryLoader<ConstLoader<T>> {
+     T value = 0; 
+   
+     ripple_host_device ConstLoader(T v) noexcept : value(v) {}
+   
+     template <typename Iterator, typename Dim>
+     ripple_host_device constexpr auto
+     load_front(Iterator&& it, int index, Dim&& dim) const noexcept -> void {
+       *it = value;
+     }
+   
+     template <typename Iterator, typename Dim>
+     ripple_host_device constexpr auto
+     load_back(Iterator&& it, int index, Dim&& dim) const noexcept -> void {
+       *it = value;
+     }
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_BOUNDARY_CONST_LOADER_HPP

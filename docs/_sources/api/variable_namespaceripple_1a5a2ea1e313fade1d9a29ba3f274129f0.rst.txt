@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1a5a2ea1e313fade1d9a29ba3f274129f0:
+
+Variable ripple::is_iterator_v
+==============================
+
+- Defined in :ref:`file_include_ripple_core_iterator_iterator_traits.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::is_iterator_v

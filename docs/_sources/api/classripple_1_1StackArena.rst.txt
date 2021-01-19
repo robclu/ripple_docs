@@ -1,0 +1,16 @@
+.. _exhale_class_classripple_1_1StackArena:
+
+Template Class StackArena
+=========================
+
+- Defined in :ref:`file_include_ripple_core_allocation_arena.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ripple::StackArena
+   :members:
+   :protected-members:
+   :undoc-members:

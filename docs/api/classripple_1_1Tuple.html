@@ -1,0 +1,541 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Template Class Tuple &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Template Class Tuple&lt;&gt;" href="classripple_1_1Tuple_3_4.html" />
+  <link rel="prev" title="Class ThreadSafeFreelist" href="classripple_1_1ThreadSafeFreelist.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Template Class Tuple</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/classripple_1_1Tuple.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="template-class-tuple">
+<span id="exhale-class-classripple-1-1tuple"></span><h1>Template Class Tuple<a class="headerlink" href="#template-class-tuple" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_container_tuple.hpp.html#file-include-ripple-core-container-tuple-hpp"><span class="std std-ref">File tuple.hpp</span></a></p></li>
+</ul>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4IDpEN6ripple5TupleE">
+<span id="_CPPv3IDpEN6ripple5TupleE"></span><span id="_CPPv2IDpEN6ripple5TupleE"></span>template&lt;typename ...<code class="sig-name descname">Ts</code>&gt;<br /><span class="target" id="classripple_1_1Tuple"></span><em class="property">class </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">Tuple</code><a class="headerlink" href="#_CPPv4IDpEN6ripple5TupleE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Specialization for a non-empty <a class="reference internal" href="#classripple_1_1Tuple"><span class="std std-ref">Tuple</span></a>. </p>
+<p>The <a class="reference internal" href="#classripple_1_1Tuple"><span class="std std-ref">Tuple</span></a> type holds a fixed-size number of heterogenous types.</p>
+<p><p>This implementation of a tuple is similar to std::tuple, but allows the tuple to be used on both the host and the device. We could use thrust::tuple, however, it only supports 9 types (rather than the compiler’s recursion depth limit in the case of this implementation), since it doesn’t use variadic tempates, which is also limiting.</p>
+<dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Ts</span></code>: The types of the <a class="reference internal" href="#classripple_1_1Tuple"><span class="std std-ref">Tuple</span></a> elements.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>It also would then add an external dependency.</p>
+<p>Having a separate implementation also allows for more functionality to be added where required.</p>
+<p>The interface through which a tuple should be created is the <a class="reference internal" href="function_namespaceripple_1a2207921b7b3a28d2b92ef12030889287.html#namespaceripple_1a2207921b7b3a28d2b92ef12030889287"><span class="std std-ref">make_tuple()</span></a> function, i.e:</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span> <span class="n">tuple</span> <span class="o">=</span> <span class="n">make_tuple</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="s">&quot;some value&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</p>
+<p>unless the tuple needs to store reference types. See the documentation for make_tuple for an example.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the tuple stores reference type, and is created on the host, then it will not work correctly on the device.</p>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Ts</span></code>: The types of the elements in the tuple. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple5Tuple5TupleEv">
+<span id="_CPPv3N6ripple5Tuple5TupleEv"></span><span id="_CPPv2N6ripple5Tuple5TupleEv"></span><span id="ripple::Tuple::TupleCE"></span><span class="target" id="classripple_1_1Tuple_1a20c201cf459c2ef06eabdd6d40ca8a8a"></span><em class="property">constexpr</em> <code class="sig-name descname">Tuple</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple5Tuple5TupleEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Performs default initialization of the tuple types. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple5Tuple5TupleEDpRK2Ts">
+<span id="_CPPv3N6ripple5Tuple5TupleEDpRK2Ts"></span><span id="_CPPv2N6ripple5Tuple5TupleEDpRK2Ts"></span><span id="ripple::Tuple::Tuple__TsCRDpCE"></span><span class="target" id="classripple_1_1Tuple_1ab30f07b9fe5a2ff2aded03bae316f956"></span><em class="property">constexpr</em> <code class="sig-name descname">Tuple</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4IDpEN6ripple5TupleE" title="ripple::Tuple::Ts">Ts</a>&amp;... <em>es</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple5Tuple5TupleEDpRK2Ts" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Intializes the tuple with a variadic list of const ref elements. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">es</span></code>: The elements to store in the tuple. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDp_18non_tuple_enable_tIDp5TypesEEN6ripple5Tuple5TupleEDpRR5Types">
+<span id="_CPPv3IDp_18non_tuple_enable_tIDp5TypesEEN6ripple5Tuple5TupleEDpRR5Types"></span><span id="_CPPv2IDp_18non_tuple_enable_tIDp5TypesEEN6ripple5Tuple5TupleEDpRR5Types"></span>template&lt;typename ...<code class="sig-name descname">Types</code>, <a class="reference internal" href="typedef_namespaceripple_1a3b88d28fe8d0f8501f7c77b97fd60128.html#_CPPv4IDpEN6ripple18non_tuple_enable_tE" title="ripple::non_tuple_enable_t">non_tuple_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4IDp_18non_tuple_enable_tIDp5TypesEEN6ripple5Tuple5TupleEDpRR5Types" title="ripple::Tuple::Tuple::Types">Types</a>...&gt; = 0&gt;<br /><span class="target" id="classripple_1_1Tuple_1ad03ddd8820a8112bfcbb4894bf7f2bdf"></span><em class="property">constexpr</em> <code class="sig-name descname">Tuple</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDp_18non_tuple_enable_tIDp5TypesEEN6ripple5Tuple5TupleEDpRR5Types" title="ripple::Tuple::Tuple::Types">Types</a>&amp;&amp;... <em>es</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4IDp_18non_tuple_enable_tIDp5TypesEEN6ripple5Tuple5TupleEDpRR5Types" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initializes the tuple with a variadic list of forwarding reference lements. </p>
+<p>This overload is only selcted if any of the types are not a tuple i.e this is not a copy or move constructor.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">es</span></code>: The elements to store in the <a class="reference internal" href="#classripple_1_1Tuple"><span class="std std-ref">Tuple</span></a>. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Types</span></code>: The types of the elements. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0_14tuple_enable_tI1TEEN6ripple5Tuple5TupleERR1T">
+<span id="_CPPv3I0_14tuple_enable_tI1TEEN6ripple5Tuple5TupleERR1T"></span><span id="_CPPv2I0_14tuple_enable_tI1TEEN6ripple5Tuple5TupleERR1T"></span>template&lt;typename <code class="sig-name descname">T</code>, <a class="reference internal" href="typedef_namespaceripple_1ab0734d274a9f94c217e000d37093c567.html#_CPPv4IDpEN6ripple14tuple_enable_tE" title="ripple::tuple_enable_t">tuple_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I0_14tuple_enable_tI1TEEN6ripple5Tuple5TupleERR1T" title="ripple::Tuple::Tuple::T">T</a>&gt; = 0&gt;<br /><span class="target" id="classripple_1_1Tuple_1a7f3ae617699fda57031b8c830f2baef4"></span><em class="property">constexpr</em> <code class="sig-name descname">Tuple</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0_14tuple_enable_tI1TEEN6ripple5Tuple5TupleERR1T" title="ripple::Tuple::Tuple::T">T</a> &amp;&amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4I0_14tuple_enable_tI1TEEN6ripple5Tuple5TupleERR1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy or move constructs the <a class="reference internal" href="#classripple_1_1Tuple"><span class="std std-ref">Tuple</span></a>, depending on whether T is a rvalue or lvalue reference. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This overload is only enable if the type T is a tuple.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other tuple to copy or move. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the other tuple. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple5Tuple4sizeEv">
+<span id="_CPPv3NK6ripple5Tuple4sizeEv"></span><span id="_CPPv2NK6ripple5Tuple4sizeEv"></span><span id="ripple::Tuple::sizeCCE"></span><span class="target" id="classripple_1_1Tuple_1a98effdcd1877fe913e1503e1517d2f35"></span><em class="property">constexpr</em> auto <code class="sig-name descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple5Tuple4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the number of elements in the tuple. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of elements in the tuple. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple5Tuple4dataEv">
+<span id="_CPPv3N6ripple5Tuple4dataEv"></span><span id="_CPPv2N6ripple5Tuple4dataEv"></span><span id="ripple::Tuple::data"></span><span class="target" id="classripple_1_1Tuple_1a694c97fcc86afe5222ec517199bde8c5"></span>auto <code class="sig-name descname">data</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; Storage&amp;<a class="headerlink" href="#_CPPv4N6ripple5Tuple4dataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets a reference to the underlying storage container which holds the elements. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the data for the tuple. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple5Tuple4dataEv">
+<span id="_CPPv3NK6ripple5Tuple4dataEv"></span><span id="_CPPv2NK6ripple5Tuple4dataEv"></span><span id="ripple::Tuple::dataC"></span><span class="target" id="classripple_1_1Tuple_1ad9c11d4ad272243b86afad206eb74760"></span>auto <code class="sig-name descname">data</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <em class="property">const</em> Storage&amp;<a class="headerlink" href="#_CPPv4NK6ripple5Tuple4dataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets a constant reference to the underlying storage container which holds the elements. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A const reference to the data for the tuple. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classripple_1_1Tuple_3_4.html" class="btn btn-neutral float-right" title="Template Class Tuple&lt;&gt;" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="classripple_1_1ThreadSafeFreelist.html" class="btn btn-neutral" title="Class ThreadSafeFreelist" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Template Class Tuple</a><ul>
+<li><a class="reference internal" href="#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

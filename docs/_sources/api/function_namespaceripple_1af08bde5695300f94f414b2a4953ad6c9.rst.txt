@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1af08bde5695300f94f414b2a4953ad6c9:
+
+Template Function ripple::unwrap_modifiers(ModificationSpecifier<T, M>)
+=======================================================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::unwrap_modifiers(ModificationSpecifier<T, M>)

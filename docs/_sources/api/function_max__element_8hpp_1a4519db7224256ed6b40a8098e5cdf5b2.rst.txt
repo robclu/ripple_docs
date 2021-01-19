@@ -1,0 +1,13 @@
+.. _exhale_function_max__element_8hpp_1a4519db7224256ed6b40a8098e5cdf5b2:
+
+Template Function ripple::detail::max_element_impl(T&&)
+=======================================================
+
+- Defined in :ref:`file_include_ripple_core_algorithm_max_element.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::detail::max_element_impl(T&&)

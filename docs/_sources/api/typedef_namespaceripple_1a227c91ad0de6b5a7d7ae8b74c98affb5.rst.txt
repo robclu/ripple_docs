@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a227c91ad0de6b5a7d7ae8b74c98affb5:
+
+Typedef ripple::CopySpecifierY
+==============================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::CopySpecifierY

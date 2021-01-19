@@ -1,0 +1,13 @@
+.. _exhale_function_gpu__utils_8hpp_1acf245608854f60000a656207ecdb9224:
+
+Function ripple::gpu::create_stream
+===================================
+
+- Defined in :ref:`file_include_ripple_core_arch_gpu_utils.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::gpu::create_stream(GpuStream *)

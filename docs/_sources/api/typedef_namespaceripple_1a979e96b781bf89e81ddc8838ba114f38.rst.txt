@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a979e96b781bf89e81ddc8838ba114f38:
+
+Typedef ripple::block_traits_t
+==============================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::block_traits_t

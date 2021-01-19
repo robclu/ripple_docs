@@ -1,0 +1,13 @@
+.. _exhale_variable_thread__index__impl___8hpp_1ad3aa4e4a3a4b410f2aa37a6501422f8a:
+
+Variable ripple::detail::global_elements_for_device_
+====================================================
+
+- Defined in :ref:`file_include_ripple_core_execution_detail_thread_index_impl_.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::detail::global_elements_for_device_

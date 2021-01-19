@@ -1,0 +1,68 @@
+
+.. _file_include_ripple_core_utility_range.hpp:
+
+File range.hpp
+==============
+
+
+This file defines the implementation of an iterator which allows python like ranges. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/utility/range.hpp``)
+------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_utility_range.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``portability.hpp`` (:ref:`file_include_ripple_core_utility_portability.hpp`)
+
+- ``type_traits.hpp`` (:ref:`file_include_ripple_core_utility_type_traits.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_arch_gpu_info.hpp`
+
+- :ref:`file_include_ripple_core_boundary_detail_load_internal_boundary_impl_.hpp`
+
+- :ref:`file_include_ripple_core_io_vtk_writer.hpp`
+
+- :ref:`file_include_ripple_core_math_lerp.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1Range_1_1Iterator`
+
+- :ref:`exhale_class_classripple_1_1Range`
+

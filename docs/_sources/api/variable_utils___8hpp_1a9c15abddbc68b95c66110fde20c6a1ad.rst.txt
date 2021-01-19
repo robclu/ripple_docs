@@ -1,0 +1,13 @@
+.. _exhale_variable_utils___8hpp_1a9c15abddbc68b95c66110fde20c6a1ad:
+
+Variable ripple::detail::dims_from_block
+========================================
+
+- Defined in :ref:`file_include_ripple_core_graph_detail_utils_.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::detail::dims_from_block

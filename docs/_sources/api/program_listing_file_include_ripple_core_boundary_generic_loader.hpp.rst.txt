@@ -1,0 +1,116 @@
+
+.. _program_listing_file_include_ripple_core_boundary_generic_loader.hpp:
+
+Program Listing for File generic_loader.hpp
+===========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_boundary_generic_loader.hpp>` (``include/ripple/core/boundary/generic_loader.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/boundary/generic_loader.hpp ------------ -*- C++ -*- ---==//
+   //
+   //                                Ripple
+   //
+   //                      Copyright (c) 2019, 2020 Rob Clucas.
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_BOUNDARY_GENERIC_LOADER_HPP
+   #define RIPPLE_BOUNDARY_GENERIC_LOADER_HPP
+   
+   #include "boundary_loader.hpp"
+   
+   namespace ripple {
+   
+   enum class BoundaryLocation : uint8_t {
+     front = 0, 
+     back  = 1  
+   };
+   
+   enum class BoundaryType : uint8_t {
+     transmissive = 0x00,
+     reflective   = 0x01,
+     zero         = 0x02
+   };
+   
+   class GenericLoader : public BoundaryLoader<GenericLoader> {
+     uint64_t config = 0; // Configuration for the loader.
+   
+     // clang-format off
+     static constexpr size_t bits_per_type = 8;
+     static constexpr size_t bits_per_dim  = bits_per_type * 2;
+     // clang-format on
+   
+     template <typename Dim>
+     ripple_host_device auto constexpr get_boundary_type(
+       Dim&& dim, BoundaryLocation location) const noexcept -> BoundaryType {
+       const auto shift_amount = static_cast<size_t>(dim) * bits_per_dim +
+                                 static_cast<size_t>(location) * bits_per_type;
+   
+       return static_cast<BoundaryType>((config >> shift_amount) & 0xFF);
+     }
+   
+    public:
+     template <typename Dim>
+     constexpr auto
+     configure(Dim&& dim, BoundaryLocation location, BoundaryType type) noexcept
+       -> GenericLoader& {
+       const auto shift_amount = static_cast<size_t>(dim) * bits_per_dim +
+                                 static_cast<size_t>(location) * bits_per_type;
+   
+       config |= static_cast<uint8_t>(type) << shift_amount;
+       return *this;
+     }
+   
+     constexpr auto configuration() const noexcept -> uint64_t {
+       return config;
+     }
+   
+     template <typename Iterator, typename Dim>
+     ripple_host_device constexpr auto
+     load_front(Iterator&& it, int index, Dim&& dim) const noexcept -> void {
+       static_assert_iterator(it);
+       *it = *it.offset(ripple_forward(dim), index);
+       switch (get_boundary_type(dim, BoundaryLocation::front)) {
+         case BoundaryType::reflective: {
+           it->set_v(ripple_forward(dim), -1 * it->v(ripple_forward(dim)));
+           return;
+         }
+         case BoundaryType::zero: {
+           it->set_v(ripple_forward(dim), 0);
+           return;
+         }
+         default: return;
+       }
+     }
+   
+     template <typename Iterator, typename Dim>
+     ripple_host_device constexpr auto
+     load_back(Iterator&& it, int index, Dim&& dim) const noexcept -> void {
+       static_assert_iterator(it);
+       *it = *it.offset(ripple_forward(dim), index);
+       switch (get_boundary_type(dim, BoundaryLocation::back)) {
+         case BoundaryType::reflective: {
+           it->set_v(ripple_forward(dim), -1 * it->v(ripple_forward(dim)));
+           return;
+         }
+         case BoundaryType::zero: {
+           it->set_v(ripple_forward(dim), 0);
+           return;
+         }
+         default: return;
+       }
+     }
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_BOUNDARY_GENERIC_LOADER_HPP

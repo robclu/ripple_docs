@@ -1,0 +1,54 @@
+
+.. _file_include_ripple_core_io_printable.hpp:
+
+File printable.hpp
+==================
+
+
+this file defines an interface for a type which is printable. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/io/printable.hpp``)
+-----------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_io_printable.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``printable_element.hpp`` (:ref:`file_include_ripple_core_io_printable_element.hpp`)
+
+- ``ripple/core/utility/portability.hpp`` (:ref:`file_include_ripple_core_utility_portability.hpp`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1Printable`
+

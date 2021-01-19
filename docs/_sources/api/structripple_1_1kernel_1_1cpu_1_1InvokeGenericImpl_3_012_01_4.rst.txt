@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1kernel_1_1cpu_1_1InvokeGenericImpl_3_012_01_4:
+
+Template Struct InvokeGenericImpl< 2 >
+======================================
+
+- Defined in :ref:`file_include_ripple_core_functional_kernel_invoke_generic_impl_.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::kernel::cpu::InvokeGenericImpl< 2 >
+   :members:
+   :protected-members:
+   :undoc-members:

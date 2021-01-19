@@ -1,0 +1,52 @@
+
+.. _file_include_ripple_core_boundary_generic_loader.hpp:
+
+File generic_loader.hpp
+=======================
+
+
+This file defines an implementation of a boundary loader which is generic and can be configured. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/boundary/generic_loader.hpp``)
+----------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_boundary_generic_loader.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``boundary_loader.hpp`` (:ref:`file_include_ripple_core_boundary_boundary_loader.hpp`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1GenericLoader`
+

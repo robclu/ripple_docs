@@ -1,0 +1,62 @@
+
+.. _file_include_ripple_core_boundary_detail_load_internal_boundary_impl_.hpp:
+
+File load_internal_boundary_impl_.hpp
+=====================================
+
+
+This file implements functionality to load internal boundary data from one iterator to another. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/boundary/detail/load_internal_boundary_impl_.hpp``)
+-------------------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_boundary_detail_load_internal_boundary_impl_.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``ripple/core/utility/range.hpp`` (:ref:`file_include_ripple_core_utility_range.hpp`)
+
+- ``ripple/core/utility/type_traits.hpp`` (:ref:`file_include_ripple_core_utility_type_traits.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_boundary_load_boundary.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+- :ref:`namespace_ripple__detail`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_load__internal__boundary__impl___8hpp_1a5320e599c77559d1218f3ab042bdb114`
+

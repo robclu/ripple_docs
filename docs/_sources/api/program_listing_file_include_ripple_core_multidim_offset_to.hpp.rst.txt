@@ -1,0 +1,69 @@
+
+.. _program_listing_file_include_ripple_core_multidim_offset_to.hpp:
+
+Program Listing for File offset_to.hpp
+======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_multidim_offset_to.hpp>` (``include/ripple/core/multidim/offset_to.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/multidim/offset_to.hpp ---------------------- -*- C++ -*- ---==//
+   //            
+   //                                Ripple
+   // 
+   //                      Copyright (c) 2019 Rob Clucas.
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_MULTIDIM_OFFSET_TO_HPP
+   #define RIPPLE_MULTIDIM_OFFSET_TO_HPP
+   
+   #include "multidim_space.hpp"
+   #include <ripple/core/algorithm/unrolled_for.hpp>
+   
+   namespace ripple {
+   
+   template <typename SpatialImpl, typename... Indices>
+   ripple_host_device auto offset_to_soa(
+     const MultidimSpace<SpatialImpl>& space       ,
+     size_t                            element_size,
+     Indices&&...                      indices
+   ) -> size_t {
+     constexpr auto num_indices      = sizeof...(Indices);
+     const size_t   ids[num_indices] = {static_cast<size_t>(indices)...};
+     size_t         offset           = ids[0];
+     unrolled_for<num_indices - 1>([&] (auto i) {
+       constexpr auto dim = static_cast<size_t>(i) + 1;
+       offset += ids[dim] * element_size * space.step(dim); 
+     });
+     return offset;
+   }
+   
+   
+   template <typename SpatialImpl, typename... Indices>
+   ripple_host_device auto offset_to_aos(
+     const MultidimSpace<SpatialImpl>& space       ,
+     size_t                            element_size,
+     Indices&&...                      indices
+   ) -> size_t {
+     constexpr auto num_indices      = sizeof...(Indices);
+     const size_t   ids[num_indices] = {static_cast<size_t>(indices)...};
+     std::size_t    offset           = ids[0] * element_size;
+     unrolled_for<num_indices - 1>([&] (auto i) {
+       constexpr auto dim = static_cast<size_t>(i) + 1;
+       offset += ids[dim] * element_size * space.step(dim);
+     });
+     return offset;
+   }
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_MULTIDIM_OFFSET_TO_HPP

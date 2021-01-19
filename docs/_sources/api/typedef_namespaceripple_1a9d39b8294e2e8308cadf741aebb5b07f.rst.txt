@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a9d39b8294e2e8308cadf741aebb5b07f:
+
+Typedef ripple::shared_mod_enable_t
+===================================
+
+- Defined in :ref:`file_include_ripple_core_graph_modifier.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::shared_mod_enable_t

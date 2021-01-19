@@ -1,0 +1,16 @@
+.. _exhale_class_classripple_1_1BoundaryLoader:
+
+Template Class BoundaryLoader
+=============================
+
+- Defined in :ref:`file_include_ripple_core_boundary_boundary_loader.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ripple::BoundaryLoader
+   :members:
+   :protected-members:
+   :undoc-members:

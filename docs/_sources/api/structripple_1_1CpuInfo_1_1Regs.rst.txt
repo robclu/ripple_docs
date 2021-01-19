@@ -1,0 +1,22 @@
+.. _exhale_struct_structripple_1_1CpuInfo_1_1Regs:
+
+Struct CpuInfo::Regs
+====================
+
+- Defined in :ref:`file_include_ripple_core_arch_cpu_info.hpp`
+
+
+Nested Relationships
+--------------------
+
+This struct is a nested type of :ref:`exhale_struct_structripple_1_1CpuInfo`.
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::CpuInfo::Regs
+   :members:
+   :protected-members:
+   :undoc-members:

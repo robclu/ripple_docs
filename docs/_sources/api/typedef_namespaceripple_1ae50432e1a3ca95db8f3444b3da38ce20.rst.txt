@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1ae50432e1a3ca95db8f3444b3da38ce20:
+
+Typedef ripple::array_size_enable_t
+===================================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::array_size_enable_t

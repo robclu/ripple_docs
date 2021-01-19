@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1HeapArena:
+
+Struct HeapArena
+================
+
+- Defined in :ref:`file_include_ripple_core_allocation_arena.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::HeapArena
+   :members:
+   :protected-members:
+   :undoc-members:

@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1adfd3336cac0719a9edff86dc6025b6ac:
+
+Template Function ripple::block_idx
+===================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::block_idx(Dim&&)

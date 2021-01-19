@@ -1,0 +1,13 @@
+.. _exhale_enum_namespaceripple_1a6827c37ba2831cb05fa636001c11466a:
+
+Enum LogLevel
+=============
+
+- Defined in :ref:`file_include_ripple_core_utility_logger.hpp`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: ripple::LogLevel

@@ -1,0 +1,72 @@
+
+.. _file_include_ripple_core_container_block.hpp:
+
+File block.hpp
+==============
+
+
+This file defines a class for a block which has both host and device data. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/container/block.hpp``)
+--------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_container_block.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``device_block.hpp`` (:ref:`file_include_ripple_core_container_device_block.hpp`)
+
+- ``host_block.hpp`` (:ref:`file_include_ripple_core_container_host_block.hpp`)
+
+- ``memcopy_padding.hpp`` (:ref:`file_include_ripple_core_container_memcopy_padding.hpp`)
+
+- ``ripple/core/algorithm/reduce.hpp`` (:ref:`file_include_ripple_core_algorithm_reduce.hpp`)
+
+- ``ripple/core/arch/topology.hpp`` (:ref:`file_include_ripple_core_arch_topology.hpp`)
+
+- ``ripple/core/iterator/indexed_iterator.hpp`` (:ref:`file_include_ripple_core_iterator_indexed_iterator.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_container_tensor.hpp`
+
+- :ref:`file_include_ripple_core_graph_detail_utils_.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1Block`
+
+- :ref:`exhale_struct_structripple_1_1MultiBlockTraits_3_01Block_3_01T_00_01Dimensions_01_4_01_4`
+

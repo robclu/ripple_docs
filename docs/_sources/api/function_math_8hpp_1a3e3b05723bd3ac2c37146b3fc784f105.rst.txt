@@ -1,0 +1,13 @@
+.. _exhale_function_math_8hpp_1a3e3b05723bd3ac2c37146b3fc784f105:
+
+Function ripple::math::randint
+==============================
+
+- Defined in :ref:`file_include_ripple_core_math_math.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::math::randint(uint32_t, uint32_t)

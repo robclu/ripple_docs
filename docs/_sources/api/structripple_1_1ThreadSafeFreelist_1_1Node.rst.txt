@@ -1,0 +1,22 @@
+.. _exhale_struct_structripple_1_1ThreadSafeFreelist_1_1Node:
+
+Struct ThreadSafeFreelist::Node
+===============================
+
+- Defined in :ref:`file_include_ripple_core_allocation_pool_allocator.hpp`
+
+
+Nested Relationships
+--------------------
+
+This struct is a nested type of :ref:`exhale_class_classripple_1_1ThreadSafeFreelist`.
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::ThreadSafeFreelist::Node
+   :members:
+   :protected-members:
+   :undoc-members:

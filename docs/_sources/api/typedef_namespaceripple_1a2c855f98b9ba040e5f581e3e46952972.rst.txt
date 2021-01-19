@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a2c855f98b9ba040e5f581e3e46952972:
+
+Typedef ripple::StreamMap
+=========================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::StreamMap

@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1a35a5c475484ba8ad89b196603aa84ac0:
+
+Variable ripple::is_polymorphic_layout_v
+========================================
+
+- Defined in :ref:`file_include_ripple_core_storage_storage_traits.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::is_polymorphic_layout_v

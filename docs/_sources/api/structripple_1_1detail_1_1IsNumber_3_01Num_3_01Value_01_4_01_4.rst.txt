@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1detail_1_1IsNumber_3_01Num_3_01Value_01_4_01_4:
+
+Template Struct IsNumber< Num< Value > >
+========================================
+
+- Defined in :ref:`file_include_ripple_core_utility_number.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::detail::IsNumber< Num< Value > >
+   :members:
+   :protected-members:
+   :undoc-members:

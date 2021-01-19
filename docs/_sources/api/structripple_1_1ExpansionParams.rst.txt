@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1ExpansionParams:
+
+Struct ExpansionParams
+======================
+
+- Defined in :ref:`file_include_ripple_core_graph_modifier.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::ExpansionParams
+   :members:
+   :protected-members:
+   :undoc-members:

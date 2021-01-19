@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1ad3f3941294dd9c42d7cf84dbedac7e31:
+
+Typedef ripple::expansion_wrapper_traits_t
+==========================================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::expansion_wrapper_traits_t

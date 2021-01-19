@@ -1,0 +1,72 @@
+
+.. _file_include_ripple_core_storage_strided_storage_view.hpp:
+
+File strided_storage_view.hpp
+=============================
+
+
+This file implements a storage class which views data which is strided (SoA), and which knows how to allocate and offset into such data. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/storage/strided_storage_view.hpp``)
+---------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_storage_strided_storage_view.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``../multidim/offset_to.hpp``
+
+- ``../utility/type_traits.hpp``
+
+- ``storage_accessor.hpp`` (:ref:`file_include_ripple_core_storage_storage_accessor.hpp`)
+
+- ``storage_element_traits.hpp`` (:ref:`file_include_ripple_core_storage_storage_element_traits.hpp`)
+
+- ``storage_traits.hpp`` (:ref:`file_include_ripple_core_storage_storage_traits.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_storage_storage_descriptor.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1StridedStorageView_1_1Allocator`
+
+- :ref:`exhale_struct_structripple_1_1StridedStorageView_3_01Type_01_4_1_1Allocator`
+
+- :ref:`exhale_class_classripple_1_1StridedStorageView`
+
+- :ref:`exhale_class_classripple_1_1StridedStorageView_3_01Type_01_4`
+

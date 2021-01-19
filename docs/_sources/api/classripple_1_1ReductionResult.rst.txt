@@ -1,0 +1,16 @@
+.. _exhale_class_classripple_1_1ReductionResult:
+
+Template Class ReductionResult
+==============================
+
+- Defined in :ref:`file_include_ripple_core_graph_reducer.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ripple::ReductionResult
+   :members:
+   :protected-members:
+   :undoc-members:

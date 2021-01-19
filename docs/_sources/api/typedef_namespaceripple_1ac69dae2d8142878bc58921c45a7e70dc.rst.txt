@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1ac69dae2d8142878bc58921c45a7e70dc:
+
+Typedef ripple::Tensor2d
+========================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::Tensor2d

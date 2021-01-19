@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a430a354c66107d69e4ff62c7f55c565a:
+
+Typedef ripple::multiblock_enable_t
+===================================
+
+- Defined in :ref:`file_include_ripple_core_container_block_traits.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::multiblock_enable_t

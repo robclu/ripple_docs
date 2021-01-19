@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1StorageElementTraits_3_01Vector_3_01T_00_01Size_01_4_01_4:
+
+Template Struct StorageElementTraits< Vector< T, Size > >
+=========================================================
+
+- Defined in :ref:`file_include_ripple_core_storage_storage_element_traits.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::StorageElementTraits< Vector< T, Size > >
+   :members:
+   :protected-members:
+   :undoc-members:

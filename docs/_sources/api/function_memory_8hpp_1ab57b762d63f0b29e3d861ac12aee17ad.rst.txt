@@ -1,0 +1,13 @@
+.. _exhale_function_memory_8hpp_1ab57b762d63f0b29e3d861ac12aee17ad:
+
+Template Function ripple::gpu::memcpy_device_to_host
+====================================================
+
+- Defined in :ref:`file_include_ripple_core_utility_memory.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::gpu::memcpy_device_to_host(HostPtr *, const DevPtr *, size_t)

@@ -1,0 +1,13 @@
+.. _exhale_function_memory_8hpp_1a2f5fb67f3deb7e44e035c058fba7472a:
+
+Template Function ripple::cpu::allocate_host_pinned
+===================================================
+
+- Defined in :ref:`file_include_ripple_core_utility_memory.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::cpu::allocate_host_pinned(Ptr **, size_t)

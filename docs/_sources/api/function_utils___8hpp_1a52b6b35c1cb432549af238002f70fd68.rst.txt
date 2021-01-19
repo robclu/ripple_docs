@@ -1,0 +1,13 @@
+.. _exhale_function_utils___8hpp_1a52b6b35c1cb432549af238002f70fd68:
+
+Template Function ripple::detail::deref_if_iter(T&&)
+====================================================
+
+- Defined in :ref:`file_include_ripple_core_graph_detail_utils_.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::detail::deref_if_iter(T&&)

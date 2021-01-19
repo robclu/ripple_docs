@@ -1,0 +1,33 @@
+.. _dir__home_hiccup_Software_ripple_include_ripple_core:
+
+
+Directory core
+==============
+
+
+|exhale_lsh| :ref:`Parent directory <dir__home_hiccup_Software_ripple_include_ripple>` (``/home/hiccup/Software/ripple/include/ripple``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+*Directory path:* ``/home/hiccup/Software/ripple/include/ripple/core``
+
+Subdirectories
+--------------
+
+- :ref:`dir__home_hiccup_Software_ripple_include_ripple_core_algorithm`
+- :ref:`dir__home_hiccup_Software_ripple_include_ripple_core_allocation`
+- :ref:`dir__home_hiccup_Software_ripple_include_ripple_core_arch`
+- :ref:`dir__home_hiccup_Software_ripple_include_ripple_core_boundary`
+- :ref:`dir__home_hiccup_Software_ripple_include_ripple_core_container`
+- :ref:`dir__home_hiccup_Software_ripple_include_ripple_core_execution`
+- :ref:`dir__home_hiccup_Software_ripple_include_ripple_core_functional`
+- :ref:`dir__home_hiccup_Software_ripple_include_ripple_core_graph`
+- :ref:`dir__home_hiccup_Software_ripple_include_ripple_core_io`
+- :ref:`dir__home_hiccup_Software_ripple_include_ripple_core_iterator`
+- :ref:`dir__home_hiccup_Software_ripple_include_ripple_core_math`
+- :ref:`dir__home_hiccup_Software_ripple_include_ripple_core_multidim`
+- :ref:`dir__home_hiccup_Software_ripple_include_ripple_core_storage`
+- :ref:`dir__home_hiccup_Software_ripple_include_ripple_core_utility`
+
+
+

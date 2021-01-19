@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1detail_1_1Element:
+
+Template Struct Element
+=======================
+
+- Defined in :ref:`file_include_ripple_core_container_detail_basic_tuple_.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::detail::Element
+   :members:
+   :protected-members:
+   :undoc-members:

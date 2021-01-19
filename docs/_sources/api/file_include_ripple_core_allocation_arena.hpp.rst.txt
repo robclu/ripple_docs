@@ -1,0 +1,70 @@
+
+.. _file_include_ripple_core_allocation_arena.hpp:
+
+File arena.hpp
+==============
+
+
+This file defines memory arena implementations. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/allocation/arena.hpp``)
+---------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_allocation_arena.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``../arch/gpu_utils.hpp``
+
+- ``../utility/memory.hpp``
+
+- ``cstring``
+
+- ``type_traits`` (:ref:`file_include_ripple_core_utility_type_traits.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_allocation_multiarch_allocator.hpp`
+
+- :ref:`file_include_ripple_core_allocation_allocator.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1GpuHeapArena`
+
+- :ref:`exhale_struct_structripple_1_1HeapArena`
+
+- :ref:`exhale_class_classripple_1_1StackArena`
+

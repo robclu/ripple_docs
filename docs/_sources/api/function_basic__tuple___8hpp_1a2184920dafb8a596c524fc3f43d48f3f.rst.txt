@@ -1,0 +1,13 @@
+.. _exhale_function_basic__tuple___8hpp_1a2184920dafb8a596c524fc3f43d48f3f:
+
+Template Function ripple::detail::get_impl(Element<I, T>&&)
+===========================================================
+
+- Defined in :ref:`file_include_ripple_core_container_detail_basic_tuple_.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::detail::get_impl(Element<I, T>&&)

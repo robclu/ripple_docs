@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a371e30f9ce18d330ed1637a133640381:
+
+Typedef ripple::iterator_traits_t
+=================================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::iterator_traits_t

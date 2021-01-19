@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1detail_1_1StorageLayoutKind_3_01T_3_01Ts_8_8_8_01_4_01_4:
+
+Template Struct StorageLayoutKind< T< Ts... > >
+===============================================
+
+- Defined in :ref:`file_include_ripple_core_storage_detail_storage_traits_impl_.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::detail::StorageLayoutKind< T< Ts... > >
+   :members:
+   :protected-members:
+   :undoc-members:

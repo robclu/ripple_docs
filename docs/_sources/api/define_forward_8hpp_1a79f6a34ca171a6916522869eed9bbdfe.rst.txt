@@ -1,0 +1,13 @@
+.. _exhale_define_forward_8hpp_1a79f6a34ca171a6916522869eed9bbdfe:
+
+Define ripple_move
+==================
+
+- Defined in :ref:`file_include_ripple_core_utility_forward.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: ripple_move

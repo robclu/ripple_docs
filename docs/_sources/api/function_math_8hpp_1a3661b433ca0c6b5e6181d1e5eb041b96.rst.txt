@@ -1,0 +1,13 @@
+.. _exhale_function_math_8hpp_1a3661b433ca0c6b5e6181d1e5eb041b96:
+
+Template Function ripple::math::div_then_ceil
+=============================================
+
+- Defined in :ref:`file_include_ripple_core_math_math.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::math::div_then_ceil(T, T)

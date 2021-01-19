@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a6dada9e1d4b6a42fd3b45f50efc72811:
+
+Template Function ripple::offset_to_soa
+=======================================
+
+- Defined in :ref:`file_include_ripple_core_multidim_offset_to.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::offset_to_soa(const MultidimSpace<SpatialImpl>&, size_t, Indices&&...)

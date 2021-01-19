@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a01e1ca31bc5234d0395008ca5e1dd96f:
+
+Template Function ripple::get_exec_size
+=======================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::get_exec_size(const Block&, const ExecParams<ExeImpl>&, int)

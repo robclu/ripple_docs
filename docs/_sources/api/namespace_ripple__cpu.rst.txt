@@ -1,0 +1,22 @@
+
+.. _namespace_ripple__cpu:
+
+Namespace ripple::cpu
+=====================
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_memory_8hpp_1a2f5fb67f3deb7e44e035c058fba7472a`
+
+- :ref:`exhale_function_memory_8hpp_1a365cc80baab0b86aaf85326e7b8f7043`

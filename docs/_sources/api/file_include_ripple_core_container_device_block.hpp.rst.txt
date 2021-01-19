@@ -1,0 +1,68 @@
+
+.. _file_include_ripple_core_container_device_block.hpp:
+
+File device_block.hpp
+=====================
+
+
+This file imlements a device side block class which holds some data. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/container/device_block.hpp``)
+---------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_container_device_block.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``../allocation/multiarch_allocator.hpp``
+
+- ``../iterator/block_iterator.hpp``
+
+- ``../utility/memory.hpp``
+
+- ``block_memory_properties.hpp`` (:ref:`file_include_ripple_core_container_block_memory_properties.hpp`)
+
+- ``block_traits.hpp`` (:ref:`file_include_ripple_core_container_block_traits.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_container_block.hpp`
+
+- :ref:`file_include_ripple_core_execution_execution_size.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1DeviceBlock`
+

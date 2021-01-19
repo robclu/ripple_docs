@@ -1,0 +1,13 @@
+.. _exhale_function_math_8hpp_1abf3ba12db3f853d0e4416c5047b687ad:
+
+Template Function ripple::math::abs(T)
+======================================
+
+- Defined in :ref:`file_include_ripple_core_math_math.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::math::abs(T)

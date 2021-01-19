@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1ab697556df32d1edc0ad8ffb0c6a42b7d:
+
+Template Function ripple::make_invocable
+========================================
+
+- Defined in :ref:`file_include_ripple_core_functional_invocable.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::make_invocable(Functor&&)

@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1Memcopy:
+
+Struct Memcopy
+==============
+
+- Defined in :ref:`file_include_ripple_core_graph_memcopy.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::Memcopy
+   :members:
+   :protected-members:
+   :undoc-members:

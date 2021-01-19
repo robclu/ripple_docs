@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a766c9209a6fdc206665983ee203fdd5a:
+
+Typedef ripple::ContiguousView
+==============================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::ContiguousView

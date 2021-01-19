@@ -1,0 +1,13 @@
+.. _exhale_enum_namespaceripple_1abc26ba3863abe12cc573afb0837e43be:
+
+Enum LayoutKind
+===============
+
+.. did not find file this was defined in
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: ripple::LayoutKind

@@ -1,0 +1,16 @@
+.. _exhale_class_classripple_1_1Printable:
+
+Template Class Printable
+========================
+
+- Defined in :ref:`file_include_ripple_core_io_printable.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ripple::Printable
+   :members:
+   :protected-members:
+   :undoc-members:

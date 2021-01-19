@@ -1,0 +1,60 @@
+
+.. _file_include_ripple_core_allocation_linear_allocator.hpp:
+
+File linear_allocator.hpp
+=========================
+
+
+This file defines a linear allocator implementation. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/allocation/linear_allocator.hpp``)
+--------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_allocation_linear_allocator.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``algorithm`` (:ref:`file_include_ripple_core_algorithm_for_each.hpp`)
+
+- ``ripple/core/utility/memory.hpp`` (:ref:`file_include_ripple_core_utility_memory.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_allocation_multiarch_allocator.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1LinearAllocator`
+

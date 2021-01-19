@@ -1,0 +1,13 @@
+.. _exhale_function_invoke__generic__impl___8hpp_1a4b963c2de3ba1b57f9abf9b8f9422dae:
+
+Template Function ripple::kernel::cpu::shift_if_iterator(T&&, Offsets&&...)
+===========================================================================
+
+- Defined in :ref:`file_include_ripple_core_functional_kernel_invoke_generic_impl_.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::kernel::cpu::shift_if_iterator(T&&, Offsets&&...)

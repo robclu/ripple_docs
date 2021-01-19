@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1abf56007f2449697bf983b958f8f2b308:
+
+Template Function ripple::exclusive_padded_access_in_shared(T&)
+===============================================================
+
+- Defined in :ref:`file_include_ripple_core_graph_modifier.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::exclusive_padded_access_in_shared(T&)

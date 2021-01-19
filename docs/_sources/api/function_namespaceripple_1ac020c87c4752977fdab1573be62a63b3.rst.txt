@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1ac020c87c4752977fdab1573be62a63b3:
+
+Template Function ripple::reduce(const DeviceBlock<T, Dims>&, Pred&&)
+=====================================================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::reduce(const DeviceBlock<T, Dims>&, Pred&&)

@@ -1,0 +1,652 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Template Struct GhostIndex &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Struct GpuHeapArena" href="structripple_1_1GpuHeapArena.html" />
+  <link rel="prev" title="Struct Freelist::Node" href="structripple_1_1Freelist_1_1Node.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Template Struct GhostIndex</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/structripple_1_1GhostIndex.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="template-struct-ghostindex">
+<span id="exhale-struct-structripple-1-1ghostindex"></span><h1>Template Struct GhostIndex<a class="headerlink" href="#template-struct-ghostindex" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_boundary_ghost_index.hpp.html#file-include-ripple-core-boundary-ghost-index-hpp"><span class="std std-ref">File ghost_index.hpp</span></a></p></li>
+</ul>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp struct">
+<dt id="_CPPv4I_6size_tEN6ripple10GhostIndexE">
+<span id="_CPPv3I_6size_tEN6ripple10GhostIndexE"></span><span id="_CPPv2I_6size_tEN6ripple10GhostIndexE"></span>template&lt;size_t <code class="sig-name descname">Dimensions</code>&gt;<br /><span class="target" id="structripple_1_1GhostIndex"></span><em class="property">struct </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">GhostIndex</code><a class="headerlink" href="#_CPPv4I_6size_tEN6ripple10GhostIndexE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Forward declaration of the <a class="reference internal" href="#structripple_1_1GhostIndex"><span class="std std-ref">GhostIndex</span></a> struct which stores the index of a ghost cell in a number of dimensions. </p>
+<p>Implementation of the <a class="reference internal" href="#structripple_1_1GhostIndex"><span class="std std-ref">GhostIndex</span></a> struct to store the index of a ghost cell in a number of dimensions.</p>
+<p><p>For any dimension, the index of a ghost cell is the number of cells from which it needs to be offset in the given dimension to reach the first non ghost cell in the dimension. For example, in 2 dimensions, on the following 2 x 2 domain, with 2 padding (ghost) cells, the ghost cell indices would be:</p>
+<dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dimensions</span></code>: The number of dimensions for the ghost indices. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MaxPadding</span></code>: The max padding value.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="o">---------------------------------------------------------</span>
+<span class="o">|</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>  <span class="o">|</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>  <span class="o">|</span>  <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="o">|</span>  <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="o">|</span>  <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="o">|</span>  <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="o">|</span>
+<span class="o">---------------------------------------------------------</span>
+<span class="o">|</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>  <span class="o">|</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>  <span class="o">|</span>  <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">|</span>  <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">|</span>  <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">|</span>  <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">|</span>
+<span class="o">---------------------------------------------------------</span>
+<span class="o">|</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>  <span class="o">|</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>  <span class="o">|</span>    <span class="n">x</span>   <span class="o">|</span>    <span class="n">x</span>   <span class="o">|</span>  <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">|</span>  <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">|</span>
+<span class="o">---------------------------------------------------------</span>
+<span class="o">|</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>  <span class="o">|</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>  <span class="o">|</span>    <span class="n">x</span>   <span class="o">|</span>    <span class="n">x</span>   <span class="o">|</span>  <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">|</span>  <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">|</span>
+<span class="o">---------------------------------------------------------</span>
+<span class="o">|</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">|</span>
+<span class="o">---------------------------------------------------------</span>
+<span class="o">|</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">|</span>
+<span class="o">---------------------------------------------------------</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dimensions</span></code>: The number of dimensions for the ghost indices. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple10GhostIndex7value_tE">
+<span id="_CPPv3N6ripple10GhostIndex7value_tE"></span><span id="_CPPv2N6ripple10GhostIndex7value_tE"></span><span class="target" id="structripple_1_1GhostIndex_1ada4f7fbe90c0c2625be68ba5b2d8d9f0"></span><em class="property">using </em><code class="sig-name descname">value_t</code> = int8_t<a class="headerlink" href="#_CPPv4N6ripple10GhostIndex7value_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type used for the indices. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple10GhostIndex14init_as_globalEbRR8Iterator">
+<span id="_CPPv3I0EN6ripple10GhostIndex14init_as_globalERR8Iterator"></span><span id="_CPPv2I0EN6ripple10GhostIndex14init_as_globalERR8Iterator"></span>template&lt;typename <code class="sig-name descname">Iterator</code>&gt;<br /><span class="target" id="structripple_1_1GhostIndex_1aecfe28683fed179a0db9ec94d1a36a3d"></span><em class="property">constexpr</em> auto <code class="sig-name descname">init_as_global</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN6ripple10GhostIndex14init_as_globalEbRR8Iterator" title="ripple::GhostIndex::init_as_global::Iterator">Iterator</a> &amp;&amp;<em>it</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4I0EN6ripple10GhostIndex14init_as_globalEbRR8Iterator" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initialises the indices from the <code class="docutils literal notranslate"><span class="pre">it</span></code> iterator for the global domain, returning true if one of the indices for a dimension is valid, and hence that the index structure is valid (i.e that it defines a valid index for a ghost cell). </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if one of the indicies for a dimension is valid. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">it</span></code>: The iterator to use to set the ghost cell. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Iterator</span></code>: The type of the iterator. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I00EN6ripple10GhostIndex13init_as_blockEbRR8IteratorRR5Space">
+<span id="_CPPv3I00EN6ripple10GhostIndex13init_as_blockERR8IteratorRR5Space"></span><span id="_CPPv2I00EN6ripple10GhostIndex13init_as_blockERR8IteratorRR5Space"></span>template&lt;typename <code class="sig-name descname">Iterator</code>, typename <code class="sig-name descname">Space</code>&gt;<br /><span class="target" id="structripple_1_1GhostIndex_1a286f31be03059505b05a490ce8014375"></span><em class="property">constexpr</em> auto <code class="sig-name descname">init_as_block</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00EN6ripple10GhostIndex13init_as_blockEbRR8IteratorRR5Space" title="ripple::GhostIndex::init_as_block::Iterator">Iterator</a> &amp;&amp;<em>it</em>, <a class="reference internal" href="#_CPPv4I00EN6ripple10GhostIndex13init_as_blockEbRR8IteratorRR5Space" title="ripple::GhostIndex::init_as_block::Space">Space</a> &amp;&amp;<em>space</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4I00EN6ripple10GhostIndex13init_as_blockEbRR8IteratorRR5Space" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initialises the indices from the <code class="docutils literal notranslate"><span class="pre">it</span></code> iterator for the block level domain, returning true if one of the indices for a dimension is valid, and hence that the index structure is valid (i.e that it defines a valid index for a ghost cell). </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if one of the indicies for a dimension is valid. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">it</span></code>: The iterator to use to set the ghost cell. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">space</span></code>: The space which defines the size of the block. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Iterator</span></code>: The type of the iterator </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple10GhostIndex10dimensionsEv">
+<span id="_CPPv3NK6ripple10GhostIndex10dimensionsEv"></span><span id="_CPPv2NK6ripple10GhostIndex10dimensionsEv"></span><span id="ripple::GhostIndex::dimensionsCCE"></span><span class="target" id="structripple_1_1GhostIndex_1ad101b6eb2a9b2ddc8b7f18af70c47c01"></span><em class="property">constexpr</em> auto <code class="sig-name descname">dimensions</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple10GhostIndex10dimensionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the number of dimensions for the ghost indices. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of dimensions of ghost indices. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple10GhostIndex5indexE7value_tRR3Dim">
+<span id="_CPPv3I0ENK6ripple10GhostIndex5indexERR3Dim"></span><span id="_CPPv2I0ENK6ripple10GhostIndex5indexERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="structripple_1_1GhostIndex_1ad840f4ad3837e6723801fd2f54b9f819"></span><em class="property">constexpr</em> auto <code class="sig-name descname">index</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple10GhostIndex5indexE7value_tRR3Dim" title="ripple::GhostIndex::index::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple10GhostIndex7value_tE" title="ripple::GhostIndex::value_t">value_t</a><a class="headerlink" href="#_CPPv4I0ENK6ripple10GhostIndex5indexE7value_tRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the value of the index in the <code class="docutils literal notranslate"><span class="pre">dim</span></code> dimension. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The index in the dimension dim. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to get the index for. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple10GhostIndex5indexER7value_tRR3Dim">
+<span id="_CPPv3I0EN6ripple10GhostIndex5indexERR3Dim"></span><span id="_CPPv2I0EN6ripple10GhostIndex5indexERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="structripple_1_1GhostIndex_1a9fb9889b1a99d72bb8693a29582b487b"></span><em class="property">constexpr</em> auto <code class="sig-name descname">index</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN6ripple10GhostIndex5indexER7value_tRR3Dim" title="ripple::GhostIndex::index::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple10GhostIndex7value_tE" title="ripple::GhostIndex::value_t">value_t</a>&amp;<a class="headerlink" href="#_CPPv4I0EN6ripple10GhostIndex5indexER7value_tRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets a reference to the value of the index in the <code class="docutils literal notranslate"><span class="pre">dim</span></code> dimension. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>An reference to the index for dimension dim. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to get the index for. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple10GhostIndex9abs_indexE7value_tRR3Dim">
+<span id="_CPPv3I0ENK6ripple10GhostIndex9abs_indexERR3Dim"></span><span id="_CPPv2I0ENK6ripple10GhostIndex9abs_indexERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="structripple_1_1GhostIndex_1aa8d385d2383046b0b86f0bd0f59cfbd0"></span><em class="property">constexpr</em> auto <code class="sig-name descname">abs_index</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple10GhostIndex9abs_indexE7value_tRR3Dim" title="ripple::GhostIndex::abs_index::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple10GhostIndex7value_tE" title="ripple::GhostIndex::value_t">value_t</a><a class="headerlink" href="#_CPPv4I0ENK6ripple10GhostIndex9abs_indexE7value_tRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the absolute value of the index in the <code class="docutils literal notranslate"><span class="pre">dim</span></code> dimension. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The abs value of the index in dimension dim. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to get the index for. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple10GhostIndex8is_frontEbRR3Dim">
+<span id="_CPPv3I0ENK6ripple10GhostIndex8is_frontERR3Dim"></span><span id="_CPPv2I0ENK6ripple10GhostIndex8is_frontERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="structripple_1_1GhostIndex_1aac2ffeb3fc13152ecbe7487d11848533"></span><em class="property">constexpr</em> auto <code class="sig-name descname">is_front</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple10GhostIndex8is_frontEbRR3Dim" title="ripple::GhostIndex::is_front::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4I0ENK6ripple10GhostIndex8is_frontEbRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines if an index is at the from of the domain for dimension dim. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if the index is at the front of the dimension. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to determine if is a front index. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple10GhostIndex7is_backEbRR3Dim">
+<span id="_CPPv3I0ENK6ripple10GhostIndex7is_backERR3Dim"></span><span id="_CPPv2I0ENK6ripple10GhostIndex7is_backERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="structripple_1_1GhostIndex_1ae12193313cf7c7eab6b51979315c10a4"></span><em class="property">constexpr</em> auto <code class="sig-name descname">is_back</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple10GhostIndex7is_backEbRR3Dim" title="ripple::GhostIndex::is_back::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4I0ENK6ripple10GhostIndex7is_backEbRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines if the index is at the back of the domain for dimension dim. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if the index is at the back of the dimension. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to determine if is a front index. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple10GhostIndex7is_voidEbRR3Dim">
+<span id="_CPPv3I0ENK6ripple10GhostIndex7is_voidERR3Dim"></span><span id="_CPPv2I0ENK6ripple10GhostIndex7is_voidERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="structripple_1_1GhostIndex_1a6d1a1ce63755909778d1ff2d5c824c5c"></span><em class="property">constexpr</em> auto <code class="sig-name descname">is_void</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple10GhostIndex7is_voidEbRR3Dim" title="ripple::GhostIndex::is_void::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4I0ENK6ripple10GhostIndex7is_voidEbRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns true if the index is neither back nor front, and therefore should nothing for the dimension. </p>
+<p>Determines if the index is void  it is neither a front nor back index. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if the index is neither front nor back. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to set as void. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple10GhostIndex11set_as_voidEvRR3Dim">
+<span id="_CPPv3I0EN6ripple10GhostIndex11set_as_voidERR3Dim"></span><span id="_CPPv2I0EN6ripple10GhostIndex11set_as_voidERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="structripple_1_1GhostIndex_1a98fb22584dbae203b638a945679a1e8d"></span><em class="property">constexpr</em> auto <code class="sig-name descname">set_as_void</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN6ripple10GhostIndex11set_as_voidEvRR3Dim" title="ripple::GhostIndex::set_as_void::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4I0EN6ripple10GhostIndex11set_as_voidEvRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the index in dimension <code class="docutils literal notranslate"><span class="pre">dim</span></code> as a void index. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to set as a void index. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Attributes</p>
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple10GhostIndex10void_valueE">
+<span id="_CPPv3N6ripple10GhostIndex10void_valueE"></span><span id="_CPPv2N6ripple10GhostIndex10void_valueE"></span><span id="ripple::GhostIndex::void_value__auto"></span><span class="target" id="structripple_1_1GhostIndex_1adc8e3af306695ec41a441a84fcc09cdd"></span><em class="property">constexpr</em> auto <code class="sig-name descname">void_value</code> = <a class="reference internal" href="#_CPPv4N6ripple10GhostIndex7value_tE" title="ripple::GhostIndex::value_t">value_t</a>{0}<a class="headerlink" href="#_CPPv4N6ripple10GhostIndex10void_valueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the value of a void index. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structripple_1_1GpuHeapArena.html" class="btn btn-neutral float-right" title="Struct GpuHeapArena" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="structripple_1_1Freelist_1_1Node.html" class="btn btn-neutral" title="Struct Freelist::Node" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Template Struct GhostIndex</a><ul>
+<li><a class="reference internal" href="#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+.. _exhale_function_invoke__utils_8hpp_1aa76ddfa3130f18ba7f33e73e5b7c77e8:
+
+Template Function ripple::kernel::extract_device_block(SharedWrapper<T>)
+========================================================================
+
+- Defined in :ref:`file_include_ripple_core_functional_kernel_invoke_utils.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::kernel::extract_device_block(SharedWrapper<T>)

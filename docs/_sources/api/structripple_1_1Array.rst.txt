@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1Array:
+
+Template Struct Array
+=====================
+
+- Defined in :ref:`file_include_ripple_core_container_array.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::Array
+   :members:
+   :protected-members:
+   :undoc-members:

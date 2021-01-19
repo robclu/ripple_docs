@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1ab03c3679a82638794098911f964ef7b6:
+
+Template Function ripple::exclusive_padded_access(T&, ExpansionParams)
+======================================================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::exclusive_padded_access(T&, ExpansionParams)

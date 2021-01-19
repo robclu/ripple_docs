@@ -1,0 +1,66 @@
+
+.. _file_include_ripple_core_boundary_boundary_loader.hpp:
+
+File boundary_loader.hpp
+========================
+
+
+This file defines an interface for boundary loading. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/boundary/boundary_loader.hpp``)
+-----------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_boundary_boundary_loader.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``../iterator/iterator_traits.hpp``
+
+- ``../utility/portability.hpp``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_boundary_const_loader.hpp`
+
+- :ref:`file_include_ripple_core_boundary_fo_extrap_loader.hpp`
+
+- :ref:`file_include_ripple_core_boundary_generic_loader.hpp`
+
+- :ref:`file_include_ripple_core_boundary_load_boundary.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1BoundaryLoader`
+

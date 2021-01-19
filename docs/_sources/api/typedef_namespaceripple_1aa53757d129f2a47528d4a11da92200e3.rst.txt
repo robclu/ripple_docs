@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1aa53757d129f2a47528d4a11da92200e3:
+
+Typedef ripple::tuple_traits_t
+==============================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::tuple_traits_t

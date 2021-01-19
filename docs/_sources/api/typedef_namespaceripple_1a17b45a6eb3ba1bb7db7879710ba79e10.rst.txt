@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a17b45a6eb3ba1bb7db7879710ba79e10:
+
+Typedef ripple::unroll_disabled_t
+=================================
+
+- Defined in :ref:`file_include_ripple_core_utility_type_traits.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::unroll_disabled_t

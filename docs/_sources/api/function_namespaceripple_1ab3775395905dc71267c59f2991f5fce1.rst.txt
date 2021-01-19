@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1ab3775395905dc71267c59f2991f5fce1:
+
+Template Function ripple::as_shared(T&, PaddingType, ExpansionParams)
+=====================================================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::as_shared(T&, PaddingType, ExpansionParams)

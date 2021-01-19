@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a76f1f6df4b75be76203f730e34975882:
+
+Function ripple::align_ptr
+==========================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::align_ptr(const void *, size_t)

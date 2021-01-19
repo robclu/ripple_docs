@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a1779acd9719f8fd94ee48a401c013c24:
+
+Typedef ripple::GpuEvent
+========================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::GpuEvent

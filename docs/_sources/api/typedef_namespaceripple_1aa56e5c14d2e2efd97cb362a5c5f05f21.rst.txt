@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1aa56e5c14d2e2efd97cb362a5c5f05f21:
+
+Typedef ripple::ThreadSafeObjectPoolAllocator
+=============================================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::ThreadSafeObjectPoolAllocator

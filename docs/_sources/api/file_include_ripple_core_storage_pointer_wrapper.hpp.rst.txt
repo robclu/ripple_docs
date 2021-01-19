@@ -1,0 +1,58 @@
+
+.. _file_include_ripple_core_storage_pointer_wrapper.hpp:
+
+File pointer_wrapper.hpp
+========================
+
+
+This file defines a wrapper class which can be used to provide pointer like access to a type. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/storage/pointer_wrapper.hpp``)
+----------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_storage_pointer_wrapper.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``../utility/portability.hpp``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_storage_layout_traits.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1PointerWrapper`
+

@@ -1,0 +1,577 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Struct ContiguousStorageView::Allocator &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Struct CopyLoader" href="structripple_1_1CopyLoader.html" />
+  <link rel="prev" title="Template Struct ConstLoader" href="structripple_1_1ConstLoader.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Struct ContiguousStorageView::Allocator</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/structripple_1_1ContiguousStorageView_1_1Allocator.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="struct-contiguousstorageview-allocator">
+<span id="exhale-struct-structripple-1-1contiguousstorageview-1-1allocator"></span><h1>Struct ContiguousStorageView::Allocator<a class="headerlink" href="#struct-contiguousstorageview-allocator" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_storage_contiguous_storage_view.hpp.html#file-include-ripple-core-storage-contiguous-storage-view-hpp"><span class="std std-ref">File contiguous_storage_view.hpp</span></a></p></li>
+</ul>
+<div class="section" id="nested-relationships">
+<h2>Nested Relationships<a class="headerlink" href="#nested-relationships" title="Permalink to this headline">¶</a></h2>
+<p>This struct is a nested type of <a class="reference internal" href="classripple_1_1ContiguousStorageView.html#exhale-class-classripple-1-1contiguousstorageview"><span class="std std-ref">Template Class ContiguousStorageView</span></a>.</p>
+</div>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp struct">
+<dt id="_CPPv4N6ripple21ContiguousStorageView9AllocatorE">
+<span id="_CPPv3N6ripple21ContiguousStorageView9AllocatorE"></span><span id="_CPPv2N6ripple21ContiguousStorageView9AllocatorE"></span><span id="ripple::ContiguousStorageView::Allocator"></span><span class="target" id="structripple_1_1ContiguousStorageView_1_1Allocator"></span><em class="property">struct </em><code class="sig-prename descclassname">ripple::<a class="reference internal" href="classripple_1_1ContiguousStorageView.html#_CPPv4IDpEN6ripple21ContiguousStorageViewE" title="ripple::ContiguousStorageView">ContiguousStorageView</a><code class="sig-prename descclassname">::</code></code><code class="sig-name descname">Allocator</code><a class="headerlink" href="#_CPPv4N6ripple21ContiguousStorageView9AllocatorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference internal" href="classripple_1_1Allocator.html#classripple_1_1Allocator"><span class="std std-ref">Allocator</span></a> for contiguous storage. </p>
+<p>This can be used to determine the memory requirement for the storage for different spatial configurations, as well as to offset ContiguousStorage elements within the allocated space. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple21ContiguousStorageView9Allocator15allocation_sizeE6size_t">
+<span id="_CPPv3N6ripple21ContiguousStorageView9Allocator15allocation_sizeE6size_t"></span><span id="_CPPv2N6ripple21ContiguousStorageView9Allocator15allocation_sizeE6size_t"></span><span id="ripple::ContiguousStorageView::Allocator::allocation_size__sCE"></span><span class="target" id="structripple_1_1ContiguousStorageView_1_1Allocator_1afbbf543fb665a4f04fe091602273c64d"></span><em class="property">constexpr</em> auto <code class="sig-name descname">allocation_size</code><span class="sig-paren">(</span>size_t <em>elements</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4N6ripple21ContiguousStorageView9Allocator15allocation_sizeE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines the number of bytes required to allocate a total of <code class="docutils literal notranslate"><span class="pre">elements</span></code> of the types defined by Ts. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of bytes required to allocate the given number of elements. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">elements</span></code>: The number of elements to allocate. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I_6size_tEN6ripple21ContiguousStorageView9Allocator15allocation_sizeE6size_tv">
+<span id="_CPPv3I_6size_tEN6ripple21ContiguousStorageView9Allocator15allocation_sizeEv"></span><span id="_CPPv2I_6size_tEN6ripple21ContiguousStorageView9Allocator15allocation_sizeEv"></span>template&lt;size_t <code class="sig-name descname">Elements</code>&gt;<br /><span class="target" id="structripple_1_1ContiguousStorageView_1_1Allocator_1a3b92983447cdb4db4eb0f13f3c24eefe"></span><em class="property">constexpr</em> auto <code class="sig-name descname">allocation_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4I_6size_tEN6ripple21ContiguousStorageView9Allocator15allocation_sizeE6size_tv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines the number of bytes required to allocate a total of Elements of the types defined by Ts. </p>
+<p>This overload of the function can be used to allocate static memory when the number of elements in the space is known at compile time. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of bytes required to allocate the given number of elements. </p>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Elements</span></code>: The number of elements to allocate. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple21ContiguousStorageView9Allocator13strided_typesEv">
+<span id="_CPPv3N6ripple21ContiguousStorageView9Allocator13strided_typesEv"></span><span id="_CPPv2N6ripple21ContiguousStorageView9Allocator13strided_typesEv"></span><span id="ripple::ContiguousStorageView::Allocator::strided_typesCE"></span><span class="target" id="structripple_1_1ContiguousStorageView_1_1Allocator_1a26cf3fd54fe4cfcbf157175491e98176"></span><em class="property">constexpr</em> auto <code class="sig-name descname">strided_types</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4N6ripple21ContiguousStorageView9Allocator13strided_typesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the number of types which are stored strided. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of types which are stored strided. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I_6size_tEN6ripple21ContiguousStorageView9Allocator12num_elementsE6size_tv">
+<span id="_CPPv3I_6size_tEN6ripple21ContiguousStorageView9Allocator12num_elementsEv"></span><span id="_CPPv2I_6size_tEN6ripple21ContiguousStorageView9Allocator12num_elementsEv"></span>template&lt;size_t <code class="sig-name descname">I</code>&gt;<br /><span class="target" id="structripple_1_1ContiguousStorageView_1_1Allocator_1a93c41aa698029e24e929d831d1dbac02"></span><em class="property">constexpr</em> auto <code class="sig-name descname">num_elements</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4I_6size_tEN6ripple21ContiguousStorageView9Allocator12num_elementsE6size_tv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the number of elements in the Ith type. </p>
+<p>This is always 1 since the data is not strided, it looks like a single element. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of elements in the ith type. </p>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">I</span></code>: The index of the type. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I_6size_tEN6ripple21ContiguousStorageView9Allocator17element_byte_sizeE6size_tv">
+<span id="_CPPv3I_6size_tEN6ripple21ContiguousStorageView9Allocator17element_byte_sizeEv"></span><span id="_CPPv2I_6size_tEN6ripple21ContiguousStorageView9Allocator17element_byte_sizeEv"></span>template&lt;size_t <code class="sig-name descname">I</code>&gt;<br /><span class="target" id="structripple_1_1ContiguousStorageView_1_1Allocator_1a4e7fcab58c03aa494e527f955466827b"></span><em class="property">constexpr</em> auto <code class="sig-name descname">element_byte_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4I_6size_tEN6ripple21ContiguousStorageView9Allocator17element_byte_sizeE6size_tv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the number of bytes for an element in the Ith type. </p>
+<p>This returns the total size since all data is stored contiguously. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of bytes for an element in the Ith type. </p>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">I</span></code>: The index of the type to get the element size of. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I00_13diff_enable_tI3DimiEEN6ripple21ContiguousStorageView9Allocator6offsetE7StorageRK7StorageRK13MultidimSpaceI9SpaceImplERR3Dimi">
+<span id="_CPPv3I00_13diff_enable_tI3DimiEEN6ripple21ContiguousStorageView9Allocator6offsetERK7StorageRK13MultidimSpaceI9SpaceImplERR3Dimi"></span><span id="_CPPv2I00_13diff_enable_tI3DimiEEN6ripple21ContiguousStorageView9Allocator6offsetERK7StorageRK13MultidimSpaceI9SpaceImplERR3Dimi"></span>template&lt;typename <code class="sig-name descname">SpaceImpl</code>, typename <code class="sig-name descname">Dim</code>, <a class="reference internal" href="typedef_namespaceripple_1addb72415132564e36ecf6439b40a6aef.html#_CPPv4I00EN6ripple13diff_enable_tE" title="ripple::diff_enable_t">diff_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I00_13diff_enable_tI3DimiEEN6ripple21ContiguousStorageView9Allocator6offsetE7StorageRK7StorageRK13MultidimSpaceI9SpaceImplERR3Dimi" title="ripple::ContiguousStorageView::Allocator::offset::Dim">Dim</a>, int&gt; = 0&gt;<br /><span class="target" id="structripple_1_1ContiguousStorageView_1_1Allocator_1a6137fca5399588e551fceee0aa5bacdf"></span>auto <code class="sig-name descname">offset</code><span class="sig-paren">(</span><em class="property">const</em> Storage &amp;<em>storage</em>, <em class="property">const</em> <a class="reference internal" href="structripple_1_1MultidimSpace.html#_CPPv4I0EN6ripple13MultidimSpaceE" title="ripple::MultidimSpace">MultidimSpace</a>&lt;<a class="reference internal" href="#_CPPv4I00_13diff_enable_tI3DimiEEN6ripple21ContiguousStorageView9Allocator6offsetE7StorageRK7StorageRK13MultidimSpaceI9SpaceImplERR3Dimi" title="ripple::ContiguousStorageView::Allocator::offset::SpaceImpl">SpaceImpl</a>&gt; &amp;<em>space</em>, <a class="reference internal" href="#_CPPv4I00_13diff_enable_tI3DimiEEN6ripple21ContiguousStorageView9Allocator6offsetE7StorageRK7StorageRK13MultidimSpaceI9SpaceImplERR3Dimi" title="ripple::ContiguousStorageView::Allocator::offset::Dim">Dim</a> &amp;&amp;<em>dim</em>, int <em>amount</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; Storage<a class="headerlink" href="#_CPPv4I00_13diff_enable_tI3DimiEEN6ripple21ContiguousStorageView9Allocator6offsetE7StorageRK7StorageRK13MultidimSpaceI9SpaceImplERR3Dimi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Offsets the storage by the amount specified by <code class="docutils literal notranslate"><span class="pre">amount</span></code> in the dimension <code class="docutils literal notranslate"><span class="pre">dim</span></code>. </p>
+<p>This returns a new ContiguousStorage, offset to the new indices in the space.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A new <a class="reference internal" href="classripple_1_1ContiguousStorageView.html#classripple_1_1ContiguousStorageView"><span class="std std-ref">ContiguousStorageView</span></a> which points to the offset data. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">storage</span></code>: The storage to offset. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">space</span></code>: The space for which the storage is defined. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to offset in. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SpaceImpl</span></code>: The implementation of the spatial interface. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I00EN6ripple21ContiguousStorageView9Allocator5shiftEvR7StorageRK13MultidimSpaceI9SpaceImplERR3Dimi">
+<span id="_CPPv3I00EN6ripple21ContiguousStorageView9Allocator5shiftER7StorageRK13MultidimSpaceI9SpaceImplERR3Dimi"></span><span id="_CPPv2I00EN6ripple21ContiguousStorageView9Allocator5shiftER7StorageRK13MultidimSpaceI9SpaceImplERR3Dimi"></span>template&lt;typename <code class="sig-name descname">SpaceImpl</code>, typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="structripple_1_1ContiguousStorageView_1_1Allocator_1a1161551d7376122a491b9d1a0e72ccfa"></span>auto <code class="sig-name descname">shift</code><span class="sig-paren">(</span>Storage &amp;<em>storage</em>, <em class="property">const</em> <a class="reference internal" href="structripple_1_1MultidimSpace.html#_CPPv4I0EN6ripple13MultidimSpaceE" title="ripple::MultidimSpace">MultidimSpace</a>&lt;<a class="reference internal" href="#_CPPv4I00EN6ripple21ContiguousStorageView9Allocator5shiftEvR7StorageRK13MultidimSpaceI9SpaceImplERR3Dimi" title="ripple::ContiguousStorageView::Allocator::shift::SpaceImpl">SpaceImpl</a>&gt; &amp;<em>space</em>, <a class="reference internal" href="#_CPPv4I00EN6ripple21ContiguousStorageView9Allocator5shiftEvR7StorageRK13MultidimSpaceI9SpaceImplERR3Dimi" title="ripple::ContiguousStorageView::Allocator::shift::Dim">Dim</a> &amp;&amp;<em>dim</em>, int <em>amount</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4I00EN6ripple21ContiguousStorageView9Allocator5shiftEvR7StorageRK13MultidimSpaceI9SpaceImplERR3Dimi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Shifts the storage by the amount specified by <code class="docutils literal notranslate"><span class="pre">amount</span></code> in the dimension <code class="docutils literal notranslate"><span class="pre">dim</span></code>. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This is essentially an in-place offset which modifies the <code class="docutils literal notranslate"><span class="pre">storage</span></code> to point to the new location.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">storage</span></code>: The storage to offset. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">space</span></code>: The space for which the storage is defined. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to offset in. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SpaceImpl</span></code>: The implementation of the spatial interface. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple21ContiguousStorageView9Allocator6createE7StoragePvRK13MultidimSpaceI9SpaceImplE">
+<span id="_CPPv3I0EN6ripple21ContiguousStorageView9Allocator6createEPvRK13MultidimSpaceI9SpaceImplE"></span><span id="_CPPv2I0EN6ripple21ContiguousStorageView9Allocator6createEPvRK13MultidimSpaceI9SpaceImplE"></span>template&lt;typename <code class="sig-name descname">SpaceImpl</code>&gt;<br /><span class="target" id="structripple_1_1ContiguousStorageView_1_1Allocator_1ad3afcc6d402112d47d7f82e8302259aa"></span>auto <code class="sig-name descname">create</code><span class="sig-paren">(</span>void *<em>ptr</em>, <em class="property">const</em> <a class="reference internal" href="structripple_1_1MultidimSpace.html#_CPPv4I0EN6ripple13MultidimSpaceE" title="ripple::MultidimSpace">MultidimSpace</a>&lt;<a class="reference internal" href="#_CPPv4I0EN6ripple21ContiguousStorageView9Allocator6createE7StoragePvRK13MultidimSpaceI9SpaceImplE" title="ripple::ContiguousStorageView::Allocator::create::SpaceImpl">SpaceImpl</a>&gt; &amp;<em>space</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; Storage<a class="headerlink" href="#_CPPv4I0EN6ripple21ContiguousStorageView9Allocator6createE7StoragePvRK13MultidimSpaceI9SpaceImplE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates the storage, initializing a <a class="reference internal" href="classripple_1_1ContiguousStorageView.html#classripple_1_1ContiguousStorageView"><span class="std std-ref">ContiguousStorageView</span></a> instance which has its data pointer pointing to the <code class="docutils literal notranslate"><span class="pre">ptr</span></code>. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>The memory space should have a size which is returned by the <code class="docutils literal notranslate"><span class="pre">allocation_size()</span></code> method, otherwise this may index into undefined memory.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ptr</span></code>: A pointer to the beginning of the memory space. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">space</span></code>: The multidimensional space which defines the domain. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SpaceImpl</span></code>: The implementation of the spatial interface. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Attributes</p>
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple21ContiguousStorageView9Allocator9alignmentE">
+<span id="_CPPv3N6ripple21ContiguousStorageView9Allocator9alignmentE"></span><span id="_CPPv2N6ripple21ContiguousStorageView9Allocator9alignmentE"></span><span id="ripple::ContiguousStorageView::Allocator::alignment__s"></span><span class="target" id="structripple_1_1ContiguousStorageView_1_1Allocator_1a4b76e2a0d7dc3be1e948e68c0afdbbec"></span><em class="property">constexpr</em> size_t <code class="sig-name descname">alignment</code> = Helper::max_align<a class="headerlink" href="#_CPPv4N6ripple21ContiguousStorageView9Allocator9alignmentE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the alignment required to allocate the storage. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structripple_1_1CopyLoader.html" class="btn btn-neutral float-right" title="Struct CopyLoader" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="structripple_1_1ConstLoader.html" class="btn btn-neutral" title="Template Struct ConstLoader" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Struct ContiguousStorageView::Allocator</a><ul>
+<li><a class="reference internal" href="#nested-relationships">Nested Relationships</a></li>
+<li><a class="reference internal" href="#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

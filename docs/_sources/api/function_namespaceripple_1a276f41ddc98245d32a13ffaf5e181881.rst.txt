@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a276f41ddc98245d32a13ffaf5e181881:
+
+Function ripple::dimz
+=====================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::dimz()

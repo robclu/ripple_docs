@@ -1,0 +1,53 @@
+
+.. _file_include_ripple_core_multidim_offset_to.hpp:
+
+File offset_to.hpp
+==================
+
+
+This file imlements functionality for computing the offset to an index in a multidimensional space based on the layout of the data. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/multidim/offset_to.hpp``)
+-----------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_multidim_offset_to.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``multidim_space.hpp`` (:ref:`file_include_ripple_core_multidim_dynamic_multidim_space.hpp`)
+
+- ``ripple/core/algorithm/unrolled_for.hpp`` (:ref:`file_include_ripple_core_algorithm_unrolled_for.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_storage_strided_storage_view.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+

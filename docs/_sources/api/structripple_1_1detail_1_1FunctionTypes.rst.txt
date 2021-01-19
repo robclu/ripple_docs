@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1detail_1_1FunctionTypes:
+
+Template Struct FunctionTypes
+=============================
+
+- Defined in :ref:`file_include_ripple_core_utility_detail_function_traits_impl_.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::detail::FunctionTypes
+   :members:
+   :protected-members:
+   :undoc-members:

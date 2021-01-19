@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1ae834a380be22e8512a5dded9c6764058:
+
+Variable ripple::is_host_block_v
+================================
+
+- Defined in :ref:`file_include_ripple_core_container_block_traits.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::is_host_block_v

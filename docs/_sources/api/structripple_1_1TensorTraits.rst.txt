@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1TensorTraits:
+
+Template Struct TensorTraits
+============================
+
+- Defined in :ref:`file_include_ripple_core_container_tensor_traits.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::TensorTraits
+   :members:
+   :protected-members:
+   :undoc-members:

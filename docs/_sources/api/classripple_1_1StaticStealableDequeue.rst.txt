@@ -1,0 +1,16 @@
+.. _exhale_class_classripple_1_1StaticStealableDequeue:
+
+Template Class StaticStealableDequeue
+=====================================
+
+- Defined in :ref:`file_include_ripple_core_container_static_stealable_dequeue.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ripple::StaticStealableDequeue
+   :members:
+   :protected-members:
+   :undoc-members:

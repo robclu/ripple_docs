@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1IteratorTraits:
+
+Template Struct IteratorTraits
+==============================
+
+- Defined in :ref:`file_include_ripple_core_iterator_iterator_traits.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::IteratorTraits
+   :members:
+   :protected-members:
+   :undoc-members:

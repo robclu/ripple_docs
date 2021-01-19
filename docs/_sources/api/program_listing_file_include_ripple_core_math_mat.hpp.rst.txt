@@ -1,0 +1,244 @@
+
+.. _program_listing_file_include_ripple_core_math_mat.hpp:
+
+Program Listing for File mat.hpp
+================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_math_mat.hpp>` (``include/ripple/core/math/mat.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/container/mat.hpp ---------------------- -*- C++ -*- ---==//
+   //
+   //                                Ripple
+   //
+   //                      Copyright (c) 2019, 2020 Rob Clucas
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_MATH_MAT_HPP
+   #define RIPPLE_MATH_MAT_HPP
+   
+   #include "../container/array.hpp"
+   #include "../container/tuple.hpp"
+   #include "../storage/polymorphic_layout.hpp"
+   #include "../storage/storage_descriptor.hpp"
+   #include "../storage/storage_traits.hpp"
+   #include "../storage/struct_accessor.hpp"
+   #include "../utility/portability.hpp"
+   
+   namespace ripple {
+   
+   template <typename T, typename Rows, typename Cols, typename Layout>
+   struct MatImpl;
+   
+   template <
+     typename T,
+     size_t Rows,
+     size_t Cols,
+     typename Layout = ContiguousOwned>
+   using Mat = MatImpl<T, Num<Rows>, Num<Cols>, Layout>;
+   
+   template <typename T, typename Rows, typename Cols, typename Layout>
+   struct MatImpl : public PolymorphicLayout<MatImpl<T, Rows, Cols, Layout>> {
+    private:
+     /*==--- [constants] ------------------------------------------------------==*/
+   
+     static constexpr auto elements = size_t{Rows::value * Cols::value};
+   
+     //==--- [aliases] --------------------------------------------------------==//
+   
+     // clang-format off
+     using Descriptor = StorageDescriptor<Layout, Vector<T, elements>>;
+     using Storage    = typename Descriptor::Storage;
+     using Value      = std::decay_t<T>;
+     // clang-format on
+   
+     template <typename OType, typename ORows, typename OCols, typename OLayout>
+     friend struct MatImpl;
+   
+     template <typename Layable, bool IsStridable>
+     friend struct LayoutTraits;
+   
+    public:
+     Storage storage_; 
+   
+     /*==--- [construction] ---------------------------------------------------==*/
+   
+     ripple_host_device constexpr MatImpl() noexcept {}
+   
+     ripple_host_device constexpr MatImpl(T val) noexcept {
+       unrolled_for<elements>(
+         [&](auto i) { storage_.template get<0, i>() = val; });
+     }
+   
+     template <typename... Values, variadic_size_enable_t<elements, Values...> = 0>
+     ripple_host_device constexpr MatImpl(Values&&... values) noexcept {
+       const auto v = Tuple<Values...>{values...};
+       unrolled_for<elements>(
+         [&](auto i) { storage_.template get<0, i>() = get<i>(v); });
+     }
+   
+     ripple_host_device constexpr MatImpl(Storage storage) noexcept
+     : storage_{storage} {}
+   
+     ripple_host_device constexpr MatImpl(const MatImpl& other) noexcept
+     : storage_{other.storage_} {}
+   
+     ripple_host_device constexpr MatImpl(MatImpl&& other) noexcept
+     : storage_{ripple_move(other.storage_)} {}
+   
+     template <typename OtherLayout>
+     ripple_host_device constexpr MatImpl(
+       const MatImpl<T, Rows, Cols, OtherLayout>& other) noexcept
+     : storage_{other.storage_} {}
+   
+     template <typename OtherLayout>
+     ripple_host_device constexpr MatImpl(
+       MatImpl<T, Rows, Cols, OtherLayout>&& other)
+     : storage_{ripple_move(other.storage_)} {}
+   
+     /*==--- [operator overloads] ---------------------------------------------==*/
+   
+     ripple_host_device auto operator=(const MatImpl& other) noexcept -> MatImpl& {
+       storage_ = other.storage_;
+       return *this;
+     }
+   
+     ripple_host_device auto operator=(MatImpl&& other) noexcept -> MatImpl& {
+       storage_ = ripple_move(other.storage_);
+       return *this;
+     }
+   
+     template <typename OtherLayout>
+     ripple_host_device auto
+     operator=(const MatImpl<T, Rows, Cols, OtherLayout>& other) noexcept
+       -> MatImpl& {
+       unrolled_for<elements>([&](auto i) {
+         storage_.template get<0, i>() = other.storage_.template get<0, i>();
+       });
+       return *this;
+     }
+   
+     template <typename OtherLayout>
+     ripple_host_device auto
+     operator=(MatImpl<T, Rows, Cols, OtherLayout>&& other) noexcept -> MatImpl& {
+       storage_ = ripple_move(other.storage_);
+       return *this;
+     }
+   
+     ripple_host_device auto
+     operator()(size_t row, size_t col) noexcept -> Value& {
+       return storage_.template get<0>(to_index(row, col));
+     }
+   
+     ripple_host_device auto
+     operator()(size_t row, size_t col) const noexcept -> const Value& {
+       return storage_.template get<0>(to_index(row, col));
+     }
+   
+     /*==--- [interface] ------------------------------------------------------==*/
+   
+     ripple_host_device constexpr auto columns() const noexcept -> size_t {
+       return Cols::value;
+     }
+   
+     ripple_host_device constexpr auto rows() const noexcept -> size_t {
+       return Rows::value;
+     }
+   
+     template <size_t Row, size_t Col>
+     ripple_host_device constexpr auto at() const noexcept -> const Value& {
+       static_assert((Row < rows()), "Compile time row index out of range!");
+       static_assert((Col < columns()), "Compile time col index out of range!");
+       constexpr size_t i = to_index(Row, Col);
+       return storage_.template get<0, i>();
+     }
+   
+     template <size_t Row, size_t Col>
+     ripple_host_device constexpr auto at() const noexcept -> Value& {
+       static_assert((Row < rows()), "Compile time row index out of range!");
+       static_assert((Col < columns()), "Compile time col index out of range!");
+       constexpr size_t i = to_index(Row, Col);
+       return storage_.template get<0, i>();
+     }
+   
+     ripple_host_device constexpr auto size() const noexcept -> size_t {
+       return elements;
+     }
+   
+    private:
+     ripple_host_device constexpr auto
+     to_index(size_t r, size_t c) const noexcept -> size_t {
+       return r * columns() + c;
+     }
+   };
+   
+   template <typename Vec, size_t Rows>
+   using mat_vec_result_t =
+     typename array_traits_t<Vec>::template ImplType<Rows, ContiguousOwned>;
+   
+   template <typename T, typename R, typename C, typename L, typename Impl>
+   ripple_host_device auto
+   operator*(const MatImpl<T, R, C, L>& m, const Array<Impl>& v) noexcept
+     -> mat_vec_result_t<Impl, R::value> {
+     constexpr size_t rows = R::value;
+     constexpr size_t cols = C::value;
+     using Value           = typename array_traits_t<Impl>::Value;
+     using Result          = mat_vec_result_t<Impl, rows>;
+   
+     static_assert(
+       cols == array_traits_t<Impl>::size,
+       "Invalid configuration for matrix vector multiplication!");
+     static_assert(
+       std::is_convertible_v<T, typename array_traits_t<Impl>::Value>,
+       "Matrix and vector types must be convertible!");
+   
+     Result result;
+     unrolled_for<rows>([&](auto r) {
+       result[r] = 0;
+       unrolled_for<cols>([&](auto c) { result[r] += m(r, c) * v[c]; });
+     });
+     return result;
+   }
+   
+   template <
+     typename T1,
+     typename T2,
+     typename R1,
+     typename C1R2,
+     typename C2,
+     typename L1,
+     typename L2>
+   ripple_host_device auto operator*(
+     const MatImpl<T1, R1, C1R2, L1>& a,
+     const MatImpl<T2, C1R2, C2, L2>& b) noexcept
+     -> MatImpl<T1, R1, C2, ContiguousOwned> {
+     constexpr size_t rows  = R1::value;
+     constexpr size_t cols  = C2::value;
+     constexpr size_t inner = C1R2::value;
+   
+     static_assert(
+       std::is_convertible_v<T1, T2>,
+       "Matrix multiplication requires data types which are convertible!");
+   
+     using Result = MatImpl<T1, R1, C2, ContiguousOwned>;
+     Result res{0};
+     for (size_t r = 0; r < rows; ++r) {
+       for (size_t c = 0; c < cols; ++c) {
+         unrolled_for<inner>([&](auto i) { res(r, c) += a(r, i) * b(i, c); });
+       }
+     }
+     return res;
+   }
+   
+   } // namespace ripple
+   
+   #endif // namespace RIPPLE_MATH_MAT_HPP

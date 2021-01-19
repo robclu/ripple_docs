@@ -1,0 +1,13 @@
+.. _exhale_function_math_8hpp_1a12e1bfae19e0f0e7ffca9c2935a803c2:
+
+Template Function ripple::math::max(const Array<ImplA>&, const Array<ImplB>&)
+=============================================================================
+
+- Defined in :ref:`file_include_ripple_core_math_math.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::math::max(const Array<ImplA>&, const Array<ImplB>&)

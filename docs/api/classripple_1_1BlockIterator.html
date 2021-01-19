@@ -1,0 +1,1087 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Template Class BlockIterator &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Template Class BoundaryLoader" href="classripple_1_1BoundaryLoader.html" />
+  <link rel="prev" title="Template Class Allocator" href="classripple_1_1Allocator.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Template Class BlockIterator</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/classripple_1_1BlockIterator.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="template-class-blockiterator">
+<span id="exhale-class-classripple-1-1blockiterator"></span><h1>Template Class BlockIterator<a class="headerlink" href="#template-class-blockiterator" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_iterator_block_iterator.hpp.html#file-include-ripple-core-iterator-block-iterator-hpp"><span class="std std-ref">File block_iterator.hpp</span></a></p></li>
+</ul>
+<div class="section" id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="derived-type">
+<h3>Derived Type<a class="headerlink" href="#derived-type" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">ripple::IndexedIterator&lt;</span> <span class="pre">T,</span> <span class="pre">Space</span> <span class="pre">&gt;</span></code> (<a class="reference internal" href="classripple_1_1IndexedIterator.html#exhale-class-classripple-1-1indexediterator"><span class="std std-ref">Template Class IndexedIterator</span></a>)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4I00EN6ripple13BlockIteratorE">
+<span id="_CPPv3I00EN6ripple13BlockIteratorE"></span><span id="_CPPv2I00EN6ripple13BlockIteratorE"></span>template&lt;typename <code class="sig-name descname">T</code>, typename <code class="sig-name descname">Space</code>&gt;<br /><span class="target" id="classripple_1_1BlockIterator"></span><em class="property">class </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">BlockIterator</code><a class="headerlink" href="#_CPPv4I00EN6ripple13BlockIteratorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#classripple_1_1BlockIterator"><span class="std std-ref">BlockIterator</span></a> class defines a iterator over a block, for a given space which defines the region of the block. </p>
+<p>The iterator only iterates over the internal space of the block, not over the padding, and does not have any knowledge of the where the block is in the global context, or where the iterator is in the block. It is ideal for cases where such information is not required, and operations are relative to the iterator (i.e stencil-like operations, operations which required neighbour data, and work on shared memory data).</p>
+<p>The type T for the iterator can be either a normal type, or type which implements the StridableLayout interface. Regardless, the use is the same, and the iterator operator as if it was a pointer to T.</p>
+<p><dl class="xrefsect">
+<dt>
+<em>Todo:</em></dt>
+<dd><p>Modify the implementation to take a reference to the space, so that the space can be stored in shared memory due to the iterator requiring a significant number of registers in 3D.</p>
+</dd></dl>
+
+</p>
+<p><p>The iterator only iterates over the internal space of the block, not over the padding, and does not have any knowledge of the where the block is in the global context, or where the iterator is in the block. It is ideal for cases where such information is not required, and operations are relative to the iterator (i.e stencil-like operations, operations which required neighbour data, and work on shared memory data).</p>
+<dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The data type which the iterator will access. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Space</span></code>: The type which defines the iteration space.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>The type T for the iterator can be either a normal type, or type which implements the StridableLayout interface. Regardless, the use is the same, and the iterator operator as if it was a pointer to T.</p>
+<p><dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The data type which the iterator will access. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Space</span></code>: The type which defines the iteration space. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>Subclassed by <a class="reference internal" href="classripple_1_1IndexedIterator.html#classripple_1_1IndexedIterator"><span class="std std-ref">ripple::IndexedIterator&lt; T, Space &gt;</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple13BlockIterator6RawPtrE">
+<span id="_CPPv3N6ripple13BlockIterator6RawPtrE"></span><span id="_CPPv2N6ripple13BlockIterator6RawPtrE"></span><span class="target" id="classripple_1_1BlockIterator_1a6e4e5e4097886519996afb50bb5b3416"></span><em class="property">using </em><code class="sig-name descname">RawPtr</code> = <em class="property">typename</em> <a class="reference internal" href="structripple_1_1LayoutTraits.html#_CPPv4I0_bEN6ripple12LayoutTraitsE" title="ripple::LayoutTraits">LayoutTraits</a>::<a class="reference internal" href="structripple_1_1LayoutTraits.html#_CPPv4N6ripple12LayoutTraits6RawPtrE" title="ripple::LayoutTraits::RawPtr">RawPtr</a><a class="headerlink" href="#_CPPv4N6ripple13BlockIterator6RawPtrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the raw pointer to the data. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple13BlockIterator11ConstRawPtrE">
+<span id="_CPPv3N6ripple13BlockIterator11ConstRawPtrE"></span><span id="_CPPv2N6ripple13BlockIterator11ConstRawPtrE"></span><span class="target" id="classripple_1_1BlockIterator_1ad775b6dd0e6f48664bb1aa106a08d4fe"></span><em class="property">using </em><code class="sig-name descname">ConstRawPtr</code> = <em class="property">typename</em> <a class="reference internal" href="structripple_1_1LayoutTraits.html#_CPPv4I0_bEN6ripple12LayoutTraitsE" title="ripple::LayoutTraits">LayoutTraits</a>::<a class="reference internal" href="structripple_1_1LayoutTraits.html#_CPPv4N6ripple12LayoutTraits11ConstRawPtrE" title="ripple::LayoutTraits::ConstRawPtr">ConstRawPtr</a><a class="headerlink" href="#_CPPv4N6ripple13BlockIterator11ConstRawPtrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of a const raw pointer to the data. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple13BlockIterator13BlockIteratorE7Storage5Space">
+<span id="_CPPv3N6ripple13BlockIterator13BlockIteratorE7Storage5Space"></span><span id="_CPPv2N6ripple13BlockIterator13BlockIteratorE7Storage5Space"></span><span id="ripple::BlockIterator::BlockIterator__Storage.Space"></span><span class="target" id="classripple_1_1BlockIterator_1a1f34d92d1f4401fdf569d155b0e8b19e"></span><code class="sig-name descname">BlockIterator</code><span class="sig-paren">(</span>Storage <em>data_ptr</em>, <a class="reference internal" href="#_CPPv4I00EN6ripple13BlockIteratorE" title="ripple::BlockIterator::Space">Space</a> <em>space</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple13BlockIterator13BlockIteratorE7Storage5Space" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor to create the iterator from the storage type and a space over which the iterator can iterate. </p>
+<p>If the type T is a StridableLayout type, then the storage must be an implementation of the <a class="reference internal" href="structripple_1_1StorageAccessor.html#structripple_1_1StorageAccessor"><span class="std std-ref">StorageAccessor</span></a> interface, otherwise (for regular types) the storage must be a pointer to the type. <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">data_ptr</span></code>: A pointer (or type which points) to the data. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">space</span></code>: The space over which the iterator can iterate. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple13BlockIteratormlEv">
+<span id="_CPPv3N6ripple13BlockIteratormlEv"></span><span id="_CPPv2N6ripple13BlockIteratormlEv"></span><span id="ripple::BlockIterator::mul-operator"></span><span class="target" id="classripple_1_1BlockIterator_1a0ed5aa8e7c3eca47d441977c29083ed7"></span>auto <code class="sig-name descname">operator*</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; Ref<a class="headerlink" href="#_CPPv4N6ripple13BlockIteratormlEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of the dereference operator to access the type T pointed to by the iterator. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the type stored in the iterator. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple13BlockIteratormlEv">
+<span id="_CPPv3NK6ripple13BlockIteratormlEv"></span><span id="_CPPv2NK6ripple13BlockIteratormlEv"></span><span id="ripple::BlockIterator::mul-operatorC"></span><span class="target" id="classripple_1_1BlockIterator_1a390ffb743f91fac7a3760d2a964b1dc6"></span>auto <code class="sig-name descname">operator*</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; ConstRef<a class="headerlink" href="#_CPPv4NK6ripple13BlockIteratormlEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of the dereference operator to access the type T pointed to by the iterator. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A const reference to the type T pointer to by the iterator. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple13BlockIteratorptEv">
+<span id="_CPPv3N6ripple13BlockIteratorptEv"></span><span id="_CPPv2N6ripple13BlockIteratorptEv"></span><span id="ripple::BlockIterator::pointer-operator"></span><span class="target" id="classripple_1_1BlockIterator_1afa46b2aa5ebc74e7ce85ae7b8d00a2e5"></span>auto <code class="sig-name descname">operator-&gt;</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; Ptr<a class="headerlink" href="#_CPPv4N6ripple13BlockIteratorptEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of the access operator to access the underlying data. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A pointer, or pointer-like object for the iterated type. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple13BlockIteratorptEv">
+<span id="_CPPv3NK6ripple13BlockIteratorptEv"></span><span id="_CPPv2NK6ripple13BlockIteratorptEv"></span><span id="ripple::BlockIterator::pointer-operatorC"></span><span class="target" id="classripple_1_1BlockIterator_1a77746e111dd3498f738e6982a349c01c"></span>auto <code class="sig-name descname">operator-&gt;</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; ConstPtr<a class="headerlink" href="#_CPPv4NK6ripple13BlockIteratorptEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of the access operator to access the underlying data. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A pointer, or pointer-like oject to the iterated type. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple13BlockIterator6unwrapEv">
+<span id="_CPPv3NK6ripple13BlockIterator6unwrapEv"></span><span id="_CPPv2NK6ripple13BlockIterator6unwrapEv"></span><span id="ripple::BlockIterator::unwrapC"></span><span class="target" id="classripple_1_1BlockIterator_1a0ecc8ee066fb1353dedebbfe71bd2a77"></span>auto <code class="sig-name descname">unwrap</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; CopyType<a class="headerlink" href="#_CPPv4NK6ripple13BlockIterator6unwrapEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Unwraps the iterated type. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A copy of the data to which the iterator points. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple13BlockIterator6offsetE13BlockIteratorRR3Dimi">
+<span id="_CPPv3I0ENK6ripple13BlockIterator6offsetERR3Dimi"></span><span id="_CPPv2I0ENK6ripple13BlockIterator6offsetERR3Dimi"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1BlockIterator_1aa7550d792883f3e6b89104afee51d639"></span><em class="property">constexpr</em> auto <code class="sig-name descname">offset</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple13BlockIterator6offsetE13BlockIteratorRR3Dimi" title="ripple::BlockIterator::offset::Dim">Dim</a> &amp;&amp;<em>dim</em>, int <em>amount</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I00EN6ripple13BlockIteratorE" title="ripple::BlockIterator">BlockIterator</a><a class="headerlink" href="#_CPPv4I0ENK6ripple13BlockIterator6offsetE13BlockIteratorRR3Dimi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Offsets the iterator by <code class="docutils literal notranslate"><span class="pre">amount</span></code> positions in the block in the <code class="docutils literal notranslate"><span class="pre">dim</span></code> dimension. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A new iterator to the the offset location. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to offset in </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">amount</span></code>: The amount to offset by. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple13BlockIterator5shiftEvRR3Dimi">
+<span id="_CPPv3I0EN6ripple13BlockIterator5shiftERR3Dimi"></span><span id="_CPPv2I0EN6ripple13BlockIterator5shiftERR3Dimi"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1BlockIterator_1a6d79d53788460dd881e5075bbc627f98"></span><em class="property">constexpr</em> auto <code class="sig-name descname">shift</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN6ripple13BlockIterator5shiftEvRR3Dimi" title="ripple::BlockIterator::shift::Dim">Dim</a> &amp;&amp;<em>dim</em>, int <em>amount</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4I0EN6ripple13BlockIterator5shiftEvRR3Dimi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Shifts the iterator by <code class="docutils literal notranslate"><span class="pre">amount</span></code> positions in the block in the <code class="docutils literal notranslate"><span class="pre">dim</span></code> dimension. </p>
+<p>This modifies the iterator to be at the shifted location. <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to offset in </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">amount</span></code>: The amount to offset by. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple13BlockIterator4dataEv">
+<span id="_CPPv3N6ripple13BlockIterator4dataEv"></span><span id="_CPPv2N6ripple13BlockIterator4dataEv"></span><span id="ripple::BlockIterator::data"></span><span class="target" id="classripple_1_1BlockIterator_1aea15b43a963a7e2eee8565025d9c544a"></span>auto <code class="sig-name descname">data</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple13BlockIterator6RawPtrE" title="ripple::BlockIterator::RawPtr">RawPtr</a><a class="headerlink" href="#_CPPv4N6ripple13BlockIterator4dataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Provides access to the underlying data for the iterator. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A pointer to the underlying data. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple13BlockIterator4dataEv">
+<span id="_CPPv3NK6ripple13BlockIterator4dataEv"></span><span id="_CPPv2NK6ripple13BlockIterator4dataEv"></span><span id="ripple::BlockIterator::dataC"></span><span class="target" id="classripple_1_1BlockIterator_1ab58433912773ac4a7d8a050619c0dfbe"></span>auto <code class="sig-name descname">data</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple13BlockIterator11ConstRawPtrE" title="ripple::BlockIterator::ConstRawPtr">ConstRawPtr</a><a class="headerlink" href="#_CPPv4NK6ripple13BlockIterator4dataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Provides const access to the underlying data for the iterator. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A pointer to the underlying data. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple13BlockIterator7storageEv">
+<span id="_CPPv3N6ripple13BlockIterator7storageEv"></span><span id="_CPPv2N6ripple13BlockIterator7storageEv"></span><span id="ripple::BlockIterator::storage"></span><span class="target" id="classripple_1_1BlockIterator_1a44421d44c6e34559f3bfeb0815e2d37a"></span>decltype(auto) <code class="sig-name descname">storage</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple13BlockIterator7storageEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns a reference to the storage type. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple13BlockIterator7storageEv">
+<span id="_CPPv3NK6ripple13BlockIterator7storageEv"></span><span id="_CPPv2NK6ripple13BlockIterator7storageEv"></span><span id="ripple::BlockIterator::storageC"></span><span class="target" id="classripple_1_1BlockIterator_1a46a0c39eefd261d65e1c8dafaf41665b"></span>decltype(auto) <code class="sig-name descname">storage</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK6ripple13BlockIterator7storageEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns a reference to the storage type. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple13BlockIterator8is_validEbRR3Dim">
+<span id="_CPPv3I0ENK6ripple13BlockIterator8is_validERR3Dim"></span><span id="_CPPv2I0ENK6ripple13BlockIterator8is_validERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1BlockIterator_1abc414901b081718d43799d665fe68dfa"></span>auto <code class="sig-name descname">is_valid</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple13BlockIterator8is_validEbRR3Dim" title="ripple::BlockIterator::is_valid::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4I0ENK6ripple13BlockIterator8is_validEbRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines if the iterator is valid in the dimension, that is, its index is less than the size of the global grid. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if the iterator is valid. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to check validity in. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple13BlockIterator10dimensionsEv">
+<span id="_CPPv3NK6ripple13BlockIterator10dimensionsEv"></span><span id="_CPPv2NK6ripple13BlockIterator10dimensionsEv"></span><span id="ripple::BlockIterator::dimensionsCCE"></span><span class="target" id="classripple_1_1BlockIterator_1a1ea4688226bc4c9e0e4d1e0146e3e21d"></span><em class="property">constexpr</em> auto <code class="sig-name descname">dimensions</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple13BlockIterator10dimensionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Provides the number of dimension for the iterator. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of dimensions for the iterator. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple13BlockIterator13backward_diffE8CopyTypeRR3Dimi">
+<span id="_CPPv3I0ENK6ripple13BlockIterator13backward_diffERR3Dimi"></span><span id="_CPPv2I0ENK6ripple13BlockIterator13backward_diffERR3Dimi"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1BlockIterator_1a072e8d2c8bcb58f375d8be232c66a699"></span><em class="property">constexpr</em> auto <code class="sig-name descname">backward_diff</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple13BlockIterator13backward_diffE8CopyTypeRR3Dimi" title="ripple::BlockIterator::backward_diff::Dim">Dim</a> &amp;&amp;<em>dim</em>, int <em>amount</em> = 1<span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; CopyType<a class="headerlink" href="#_CPPv4I0ENK6ripple13BlockIterator13backward_diffE8CopyTypeRR3Dimi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Computes the backward difference between this iterator and the iterator <code class="docutils literal notranslate"><span class="pre">amount</span></code> places from from this iterator in dimension <code class="docutils literal notranslate"><span class="pre">dim</span></code>. </p>
+<p>\begin{equation} \Delta \phi = \phi_{d}(i) - \phi_{d}(i - \textrm{amount}) \end{equation}</p>
+<p>The default is that <code class="docutils literal notranslate"><span class="pre">amount</span></code> is 1, i.e:</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// The following is the same:</span>
+<span class="k">auto</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">it</span><span class="p">.</span><span class="n">backward_diff</span><span class="p">(</span><span class="n">ripple</span><span class="o">::</span><span class="n">dim_x</span><span class="p">);</span>
+<span class="k">auto</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">it</span><span class="p">.</span><span class="n">backward_diff</span><span class="p">(</span><span class="n">ripple</span><span class="o">::</span><span class="n">dim_x</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the iterated data is a vector type, the difference is computed elementwise for each component.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>The backward difference of this iterator and the one behind it in the given dimension. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to offset in. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">amount</span></code>: The amount to offset the iterator by. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple13BlockIterator12forward_diffE8CopyTypeRR3Dimi">
+<span id="_CPPv3I0ENK6ripple13BlockIterator12forward_diffERR3Dimi"></span><span id="_CPPv2I0ENK6ripple13BlockIterator12forward_diffERR3Dimi"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1BlockIterator_1a26ce6745d3cc984db35be3bc798c8bf5"></span><em class="property">constexpr</em> auto <code class="sig-name descname">forward_diff</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple13BlockIterator12forward_diffE8CopyTypeRR3Dimi" title="ripple::BlockIterator::forward_diff::Dim">Dim</a> &amp;&amp;<em>dim</em>, int <em>amount</em> = 1<span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; CopyType<a class="headerlink" href="#_CPPv4I0ENK6ripple13BlockIterator12forward_diffE8CopyTypeRR3Dimi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Computes the forward difference between this iterator and the iterator <code class="docutils literal notranslate"><span class="pre">amount</span></code> places from from this iterator in dimension <code class="docutils literal notranslate"><span class="pre">dim</span></code>. </p>
+<p>\begin{equation} \Delta \phi = \phi_{d}(i + \textrm{amount}) - \phi_{d}(i) \end{equation}</p>
+<p>The default is that <code class="docutils literal notranslate"><span class="pre">amount</span></code> is 1, i.e:</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// The following is the same:</span>
+<span class="k">auto</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">it</span><span class="p">.</span><span class="n">forward_diff</span><span class="p">(</span><span class="n">ripple</span><span class="o">::</span><span class="n">dim_x</span><span class="p">);</span>
+<span class="k">auto</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">it</span><span class="p">.</span><span class="n">forward_diff</span><span class="p">(</span><span class="n">ripple</span><span class="o">::</span><span class="n">dim_x</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the iterated data is a vector type, the difference is computed elementwise for each component.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>The forward difference of the iterator ahead of this iterator and this iterator in the given dimension. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to offset in. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">amount</span></code>: The amount to offset the iterator by. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I00ENK6ripple13BlockIterator12central_diffE14UnderlyingTypeRR3DimRR5Indexi">
+<span id="_CPPv3I00ENK6ripple13BlockIterator12central_diffERR3DimRR5Indexi"></span><span id="_CPPv2I00ENK6ripple13BlockIterator12central_diffERR3DimRR5Indexi"></span>template&lt;typename <code class="sig-name descname">Dim</code>, typename <code class="sig-name descname">Index</code>&gt;<br /><span class="target" id="classripple_1_1BlockIterator_1a2e151ce8b6e6a3d76fd00cf56326684d"></span><em class="property">constexpr</em> auto <code class="sig-name descname">central_diff</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00ENK6ripple13BlockIterator12central_diffE14UnderlyingTypeRR3DimRR5Indexi" title="ripple::BlockIterator::central_diff::Dim">Dim</a> &amp;&amp;<em>dim</em>, <a class="reference internal" href="#_CPPv4I00ENK6ripple13BlockIterator12central_diffE14UnderlyingTypeRR3DimRR5Indexi" title="ripple::BlockIterator::central_diff::Index">Index</a> &amp;&amp;<em>index</em>, int <em>amount</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; UnderlyingType<a class="headerlink" href="#_CPPv4I00ENK6ripple13BlockIterator12central_diffE14UnderlyingTypeRR3DimRR5Indexi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Computes the central difference for the cell pointed to by this iterator, using the iterator <code class="docutils literal notranslate"><span class="pre">amount</span></code> <em>forward</em> and <code class="docutils literal notranslate"><span class="pre">amount</span></code> <em>backward</em> of this iterator in the <code class="docutils literal notranslate"><span class="pre">dim</span></code> dimension. </p>
+<p>\begin{equation} \Delta \phi = \phi_{d}(i + \textrm{amount}) - \phi_{d}(i - \textrm{amount}) \end{equation}</p>
+<p>The default is that <code class="docutils literal notranslate"><span class="pre">amount</span></code> is 1, i.e:</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// The following is the same:</span>
+<span class="k">auto</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">it</span><span class="p">.</span><span class="n">central_diff</span><span class="p">(</span><span class="n">ripple</span><span class="o">::</span><span class="n">dim_x</span><span class="p">);</span>
+<span class="k">auto</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">it</span><span class="p">.</span><span class="n">central_diff</span><span class="p">(</span><span class="n">ripple</span><span class="o">::</span><span class="n">dim_x</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the iterated data is a vector type, the difference is computed elementwise for each component.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>The difference between the underlying data ahead and behind of this iterator in the given dimension. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to offset in. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">amount</span></code>: The amount to offset the iterator by. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple13BlockIterator12central_diffE8CopyTypeRR3Dimi">
+<span id="_CPPv3I0ENK6ripple13BlockIterator12central_diffERR3Dimi"></span><span id="_CPPv2I0ENK6ripple13BlockIterator12central_diffERR3Dimi"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1BlockIterator_1a9e8dab50454fe06dab4c21af0a9862fd"></span><em class="property">constexpr</em> auto <code class="sig-name descname">central_diff</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple13BlockIterator12central_diffE8CopyTypeRR3Dimi" title="ripple::BlockIterator::central_diff::Dim">Dim</a> &amp;&amp;<em>dim</em>, int <em>amount</em> = 1<span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; CopyType<a class="headerlink" href="#_CPPv4I0ENK6ripple13BlockIterator12central_diffE8CopyTypeRR3Dimi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Computes the central difference for the cell pointed to by this iterator, using the iterator <code class="docutils literal notranslate"><span class="pre">amount</span></code> <em>forward</em> and <code class="docutils literal notranslate"><span class="pre">amount</span></code> <em>backward</em> of this iterator in the <code class="docutils literal notranslate"><span class="pre">dim</span></code> dimension. </p>
+<p>\begin{equation} \Delta \phi = \phi_{d}(i + \textrm{amount}) - \phi_{d}(i - \textrm{amount}) \end{equation}</p>
+<p>The default is that <code class="docutils literal notranslate"><span class="pre">amount</span></code> is 1, i.e:</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// The following is the same:</span>
+<span class="k">auto</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">it</span><span class="p">.</span><span class="n">central_diff</span><span class="p">(</span><span class="n">ripple</span><span class="o">::</span><span class="n">dim_x</span><span class="p">);</span>
+<span class="k">auto</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">it</span><span class="p">.</span><span class="n">central_diff</span><span class="p">(</span><span class="n">ripple</span><span class="o">::</span><span class="n">dim_x</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the iterated data is a vector type, the difference is computed elementwise for each component.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>The difference between the underlying data ahead and behind of this iterator in the given dimension. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to offset in. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">amount</span></code>: The amount to offset the iterator by. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple13BlockIterator11second_diffE8CopyTypeRR3Dimi">
+<span id="_CPPv3I0ENK6ripple13BlockIterator11second_diffERR3Dimi"></span><span id="_CPPv2I0ENK6ripple13BlockIterator11second_diffERR3Dimi"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1BlockIterator_1a21e40101d51dbf24122aec0371e1562e"></span><em class="property">constexpr</em> auto <code class="sig-name descname">second_diff</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple13BlockIterator11second_diffE8CopyTypeRR3Dimi" title="ripple::BlockIterator::second_diff::Dim">Dim</a> &amp;&amp;<em>dim</em>, int <em>amount</em> = 1<span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; CopyType<a class="headerlink" href="#_CPPv4I0ENK6ripple13BlockIterator11second_diffE8CopyTypeRR3Dimi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Computes the second derivative with respect to the given dimension. </p>
+<p>\begin{equation} \phi_{dd} = \phi_{d + \textrm{amount}) - 2 \phi_{d} + \phi_{d - \textrm{amount}) \end{equation}</p>
+<p><p>The default is that </p>
+<code class="docutils literal notranslate"><span class="pre">amount</span></code> is 1, i.e:<dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This does not do the divison by $h^2$, as it assumes that it is 1.</p>
+</dd>
+</dl>
+</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// The following is the same:</span>
+<span class="k">auto</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">it</span><span class="p">.</span><span class="n">second_diff</span><span class="p">(</span><span class="n">ripple</span><span class="o">::</span><span class="n">dim_x</span><span class="p">);</span>
+<span class="k">auto</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">it</span><span class="p">.</span><span class="n">second_diff</span><span class="p">(</span><span class="n">ripple</span><span class="o">::</span><span class="n">dim_x</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the iterated data is a vector type, the difference is computed elementwise for each component.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>The second difference in the given dimension. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to offset in. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">amount</span></code>: The amount to offset the iterator by. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I00ENK6ripple13BlockIterator19second_partial_diffE8CopyTypeRR4Dim1RR4Dim2i">
+<span id="_CPPv3I00ENK6ripple13BlockIterator19second_partial_diffERR4Dim1RR4Dim2i"></span><span id="_CPPv2I00ENK6ripple13BlockIterator19second_partial_diffERR4Dim1RR4Dim2i"></span>template&lt;typename <code class="sig-name descname">Dim1</code>, typename <code class="sig-name descname">Dim2</code>&gt;<br /><span class="target" id="classripple_1_1BlockIterator_1a6d4332357da20baa5ac16df27d2cd893"></span><em class="property">constexpr</em> auto <code class="sig-name descname">second_partial_diff</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00ENK6ripple13BlockIterator19second_partial_diffE8CopyTypeRR4Dim1RR4Dim2i" title="ripple::BlockIterator::second_partial_diff::Dim1">Dim1</a> &amp;&amp;<em>dim1</em>, <a class="reference internal" href="#_CPPv4I00ENK6ripple13BlockIterator19second_partial_diffE8CopyTypeRR4Dim1RR4Dim2i" title="ripple::BlockIterator::second_partial_diff::Dim2">Dim2</a> &amp;&amp;<em>dim2</em>, int <em>amount</em> = 1<span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; CopyType<a class="headerlink" href="#_CPPv4I00ENK6ripple13BlockIterator19second_partial_diffE8CopyTypeRR4Dim1RR4Dim2i" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Computes the second partialderivative with respect to the given dimensions: </p>
+<p>\begin{equation} \phi_{dd} = \frac{ \phi_{d1 + \textrm{a}, d2 + \textrm{a}) - \phi_{d1 + \textrm{a}, d2 - \textrm{a}) - \phi_{d1 - \textrm{a}, d2 + \textrm{a}) + \phi_{d1 - \textrm{a}, d2 - \textrm{a}) }{4} \end{equation}</p>
+<p><p>The default is that </p>
+<code class="docutils literal notranslate"><span class="pre">amount</span></code> is 1, i.e:<dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This does not do the divison by $h^2$, as it assumes that it is 1.</p>
+</dd>
+</dl>
+</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// The following is the same:</span>
+<span class="k">auto</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">it</span><span class="p">.</span><span class="n">second_diff</span><span class="p">(</span><span class="n">ripple</span><span class="o">::</span><span class="n">dim_x</span><span class="p">);</span>
+<span class="k">auto</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">it</span><span class="p">.</span><span class="n">second_diff</span><span class="p">(</span><span class="n">ripple</span><span class="o">::</span><span class="n">dim_x</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the iterated data is a vector type, the difference is computed elementwise for each component.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>The second difference in the given dimension. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to offset in. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">amount</span></code>: The amount to offset the iterator by. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple13BlockIterator4gradE3Vec8DataType">
+<span id="_CPPv3I0ENK6ripple13BlockIterator4gradE8DataType"></span><span id="_CPPv2I0ENK6ripple13BlockIterator4gradE8DataType"></span>template&lt;typename <code class="sig-name descname">DataType</code>&gt;<br /><span class="target" id="classripple_1_1BlockIterator_1a5189d90193ef0a3aa5d26d6e5c69ded2"></span><em class="property">constexpr</em> auto <code class="sig-name descname">grad</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple13BlockIterator4gradE3Vec8DataType" title="ripple::BlockIterator::grad::DataType">DataType</a> <em>dh</em> = 1<span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="typedef_namespaceripple_1a802c4dbdd0918625c13cf22d0be1d4af.html#_CPPv4I0_6size_t0EN6ripple3VecE" title="ripple::Vec">Vec</a><a class="headerlink" href="#_CPPv4I0ENK6ripple13BlockIterator4gradE3Vec8DataType" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Computes the gradient of the data iterated over, as: </p>
+<p>\begin{equation} \nabla \phi = \left[ \frac{d}{dx}, .., \frac{d}{dn} \right] \phi \end{equation}</p>
+<p>For a given dimension, the compuatation is:</p>
+<p>\begin{eqution} \frac{d \phi}{dx} = \frac{\phi(x + dh) - \phi(x - dh)}{2 dh} \end{equation}</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>The gradient computation for each deimension uses the central difference, thus the iterator must be valid on both sides in all dimensions, otherwise the resulting behaviour is undefined.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>If the iterated data is a vector type, the gradient is computed elementwise for each component.</p>
+</dd>
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#classripple_1_1BlockIterator_1a689cfe58a69ff1f607bdb8908a57f542"><span class="std std-ref">grad_dim</span></a></p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A vector of N dimensions, with the value in each dimension set to the gradient in the given dimension. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dh</span></code>: The resolution of the grid the iterator iterates over. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DataType</span></code>: The type of the resolution operator. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I00ENK6ripple13BlockIterator8grad_dimE8CopyTypeRR3Dim8DataType">
+<span id="_CPPv3I00ENK6ripple13BlockIterator8grad_dimERR3Dim8DataType"></span><span id="_CPPv2I00ENK6ripple13BlockIterator8grad_dimERR3Dim8DataType"></span>template&lt;typename <code class="sig-name descname">Dim</code>, typename <code class="sig-name descname">DataType</code>&gt;<br /><span class="target" id="classripple_1_1BlockIterator_1a689cfe58a69ff1f607bdb8908a57f542"></span><em class="property">constexpr</em> auto <code class="sig-name descname">grad_dim</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00ENK6ripple13BlockIterator8grad_dimE8CopyTypeRR3Dim8DataType" title="ripple::BlockIterator::grad_dim::Dim">Dim</a> &amp;&amp;<em>dim</em>, <a class="reference internal" href="#_CPPv4I00ENK6ripple13BlockIterator8grad_dimE8CopyTypeRR3Dim8DataType" title="ripple::BlockIterator::grad_dim::DataType">DataType</a> <em>dh</em> = 1<span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; CopyType<a class="headerlink" href="#_CPPv4I00ENK6ripple13BlockIterator8grad_dimE8CopyTypeRR3Dim8DataType" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Computes the gradient of the iterated data in a specific dimension as: </p>
+<p>\begin{eqution} \frac{d \phi}{dx} = \frac{\phi(x + dh) - \phi(x - dh)}{2dh} \end{equation}</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>The gradient computation uses the central difference, so the data on each side of the iterator must be valid, otherwise the resulting behaviour is undefined.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>If the iterated data is a vector type, the gradient is computed elementwise for each component.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>The gradient of the iterated data in the given dimension. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to get the gradient in. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dh</span></code>: The resolution of the grid the iterator iterates over. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DataType</span></code>: The type of the discretization resolution. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple13BlockIterator4normE3Vec8DataType">
+<span id="_CPPv3I0ENK6ripple13BlockIterator4normE8DataType"></span><span id="_CPPv2I0ENK6ripple13BlockIterator4normE8DataType"></span>template&lt;typename <code class="sig-name descname">DataType</code>&gt;<br /><span class="target" id="classripple_1_1BlockIterator_1aef5cb2a7dad5850f39f5aee675ba1899"></span><em class="property">constexpr</em> auto <code class="sig-name descname">norm</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple13BlockIterator4normE3Vec8DataType" title="ripple::BlockIterator::norm::DataType">DataType</a> <em>dh</em> = <a class="reference internal" href="#_CPPv4I0ENK6ripple13BlockIterator4normE3Vec8DataType" title="ripple::BlockIterator::norm::DataType">DataType</a>(1)<span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="typedef_namespaceripple_1a802c4dbdd0918625c13cf22d0be1d4af.html#_CPPv4I0_6size_t0EN6ripple3VecE" title="ripple::Vec">Vec</a><a class="headerlink" href="#_CPPv4I0ENK6ripple13BlockIterator4normE3Vec8DataType" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Computes the norm of the data, which is defined as: </p>
+<p>\begin{equation}<ul class="simple">
+<li><p>\frac{\nabla \phi}{|\nabla \phi|} \end{equation}</p></li>
+</ul>
+</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the iterated data is a vector type the computation is performed elementwise for each component of the vector type.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>This will assert in debug if the division is too close to zero.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>The norm of the iterated data. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dh</span></code>: The resolution of the grid the iterator iterates over. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DataType</span></code>: The type of the discretization resolution. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple13BlockIterator7norm_sdE3Vec8DataType">
+<span id="_CPPv3I0ENK6ripple13BlockIterator7norm_sdE8DataType"></span><span id="_CPPv2I0ENK6ripple13BlockIterator7norm_sdE8DataType"></span>template&lt;typename <code class="sig-name descname">DataType</code>&gt;<br /><span class="target" id="classripple_1_1BlockIterator_1aa0d0eabd0491c405c0f97592552c3ed4"></span><em class="property">constexpr</em> auto <code class="sig-name descname">norm_sd</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple13BlockIterator7norm_sdE3Vec8DataType" title="ripple::BlockIterator::norm_sd::DataType">DataType</a> <em>dh</em> = 1<span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="typedef_namespaceripple_1a802c4dbdd0918625c13cf22d0be1d4af.html#_CPPv4I0_6size_t0EN6ripple3VecE" title="ripple::Vec">Vec</a><a class="headerlink" href="#_CPPv4I0ENK6ripple13BlockIterator7norm_sdE3Vec8DataType" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Computes the norm of the data, which is defined as: </p>
+<p>\begin{equation} -\frac{\nabla \phi}{|\nabla \phi|} \end{equation}</p>
+<p>for the case that it is known that $phi$ is a signed distance function and hence that $|\nabla \phi| = 1$.</p>
+<p>In this case, the computation of the magnitude, and the subsequent division by its square root can be avoided, which is a significant performance improvement.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the iterated data is a vector type the computation is performed elementwise for each component of the vector type.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>The norm of the iterated data. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dh</span></code>: The resolution of the grid the iterator iterates over. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DataType</span></code>: The type of descretization resolution. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple13BlockIterator9curvatureE8DataType8DataType">
+<span id="_CPPv3I0ENK6ripple13BlockIterator9curvatureE8DataType"></span><span id="_CPPv2I0ENK6ripple13BlockIterator9curvatureE8DataType"></span>template&lt;typename <code class="sig-name descname">DataType</code>&gt;<br /><span class="target" id="classripple_1_1BlockIterator_1a28ef45c8bcdb6356a3c21c1716caed36"></span><em class="property">constexpr</em> auto <code class="sig-name descname">curvature</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple13BlockIterator9curvatureE8DataType8DataType" title="ripple::BlockIterator::curvature::DataType">DataType</a> <em>dh</em> = 1<span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I0ENK6ripple13BlockIterator9curvatureE8DataType8DataType" title="ripple::BlockIterator::curvature::DataType">DataType</a><a class="headerlink" href="#_CPPv4I0ENK6ripple13BlockIterator9curvatureE8DataType8DataType" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Computes the curvature for the iterator, which is defined as: </p>
+<p>\begin{equation} \kappa = \nabla \cdot \eft( \frac{\nabla \phi}{|\nabla \phi|} \right) \end{equation}</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A value of the curvature. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dh</span></code>: The resolution of the iteration domain. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DataType</span></code>: The type of the data for the resolution. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple13BlockIterator12curvature_2dE8DataType8DataType">
+<span id="_CPPv3I0ENK6ripple13BlockIterator12curvature_2dE8DataType"></span><span id="_CPPv2I0ENK6ripple13BlockIterator12curvature_2dE8DataType"></span>template&lt;typename <code class="sig-name descname">DataType</code>&gt;<br /><span class="target" id="classripple_1_1BlockIterator_1a9aa6b90ac4d0ac37193301ae50fd1ec3"></span><em class="property">constexpr</em> auto <code class="sig-name descname">curvature_2d</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple13BlockIterator12curvature_2dE8DataType8DataType" title="ripple::BlockIterator::curvature_2d::DataType">DataType</a> <em>dh</em> = 1<span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I0ENK6ripple13BlockIterator12curvature_2dE8DataType8DataType" title="ripple::BlockIterator::curvature_2d::DataType">DataType</a><a class="headerlink" href="#_CPPv4I0ENK6ripple13BlockIterator12curvature_2dE8DataType8DataType" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Computes the curvature for the iterator, which is defined as: </p>
+<p>\begin{equation} \kappa = \nabla \cdot \eft( \frac{\nabla \phi}{|\nabla \phi|} \right) \end{equation}</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A value of the curvature. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dh</span></code>: The resolution of the iteration domain. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DataType</span></code>: The type of the data for the resolution. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple13BlockIterator12curvature_3dE8DataType8DataType">
+<span id="_CPPv3I0ENK6ripple13BlockIterator12curvature_3dE8DataType"></span><span id="_CPPv2I0ENK6ripple13BlockIterator12curvature_3dE8DataType"></span>template&lt;typename <code class="sig-name descname">DataType</code>&gt;<br /><span class="target" id="classripple_1_1BlockIterator_1a41fdb6a74d886b9e41dfef04e52d9a08"></span><em class="property">constexpr</em> auto <code class="sig-name descname">curvature_3d</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple13BlockIterator12curvature_3dE8DataType8DataType" title="ripple::BlockIterator::curvature_3d::DataType">DataType</a> <em>dh</em> = 1<span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I0ENK6ripple13BlockIterator12curvature_3dE8DataType8DataType" title="ripple::BlockIterator::curvature_3d::DataType">DataType</a><a class="headerlink" href="#_CPPv4I0ENK6ripple13BlockIterator12curvature_3dE8DataType8DataType" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Computes the curvature for the iterator, which is defined as: </p>
+<p>\begin{equation} \kappa = \nabla \cdot \eft( \frac{\nabla \phi}{|\nabla \phi|} \right) \end{equation}</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This computes the <em>mean curvature</em>, which for a sphere is equal to $-\frac{1}{R}$, rather than the *Gaussian curvature$ which would be equal to $-\frac{1}{R^2}$.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A value of the curvature. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dh</span></code>: The resolution of the iteration domain. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DataType</span></code>: The type of the data for the resolution. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple13BlockIterator4sizeEv">
+<span id="_CPPv3NK6ripple13BlockIterator4sizeEv"></span><span id="_CPPv2NK6ripple13BlockIterator4sizeEv"></span><span id="ripple::BlockIterator::sizeCCE"></span><span class="target" id="classripple_1_1BlockIterator_1a1506332a49f89b56bf91f9a5c4e7d706"></span><em class="property">constexpr</em> auto <code class="sig-name descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple13BlockIterator4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the total size of the iteration space. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>The size <em>does not</em> include padding elements. </p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>The total number of elements in the iteration space. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple13BlockIterator4sizeE6size_tRR3Dim">
+<span id="_CPPv3I0ENK6ripple13BlockIterator4sizeERR3Dim"></span><span id="_CPPv2I0ENK6ripple13BlockIterator4sizeERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1BlockIterator_1a34933461e674cc3a992c17a0e2e0403e"></span><em class="property">constexpr</em> auto <code class="sig-name descname">size</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple13BlockIterator4sizeE6size_tRR3Dim" title="ripple::BlockIterator::size::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4I0ENK6ripple13BlockIterator4sizeE6size_tRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Getss the size of the iteration space in the given dimension <code class="docutils literal notranslate"><span class="pre">dim</span></code>. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>The size <em>does not</em> include padding elements. </p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>The number of elements in the iteration space for the given dimension. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to get the size of. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple13BlockIterator6resizeEvRR3Dim6size_t">
+<span id="_CPPv3I0EN6ripple13BlockIterator6resizeERR3Dim6size_t"></span><span id="_CPPv2I0EN6ripple13BlockIterator6resizeERR3Dim6size_t"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1BlockIterator_1a23dcf38b5376cdc93ccce81d1458a131"></span><em class="property">constexpr</em> auto <code class="sig-name descname">resize</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN6ripple13BlockIterator6resizeEvRR3Dim6size_t" title="ripple::BlockIterator::resize::Dim">Dim</a> &amp;&amp;<em>dim</em>, size_t <em>size</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4I0EN6ripple13BlockIterator6resizeEvRR3Dim6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Resizes the given dimension to the given number of elements. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple13BlockIterator7paddingEv">
+<span id="_CPPv3NK6ripple13BlockIterator7paddingEv"></span><span id="_CPPv2NK6ripple13BlockIterator7paddingEv"></span><span id="ripple::BlockIterator::paddingCCE"></span><span class="target" id="classripple_1_1BlockIterator_1a25ccff130f6687f1f230855dfe59766a"></span><em class="property">constexpr</em> auto <code class="sig-name descname">padding</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple13BlockIterator7paddingEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the amount of padding for the iteration space. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>All dimensions have this amount of padding on each side of the dimension.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>The amount of padding for a single side of a dimension in the iteration space. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Attributes</p>
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple13BlockIterator4dimsE">
+<span id="_CPPv3N6ripple13BlockIterator4dimsE"></span><span id="_CPPv2N6ripple13BlockIterator4dimsE"></span><span id="ripple::BlockIterator::dims__s"></span><span class="target" id="classripple_1_1BlockIterator_1a9ef4555e87129465af30ce149d4202c0"></span><em class="property">constexpr</em> size_t <code class="sig-name descname">dims</code> = <a class="reference internal" href="typedef_namespaceripple_1a7b5c68430dcb371c6db1dd7e6626c2df.html#_CPPv4I0EN6ripple14space_traits_tE" title="ripple::space_traits_t">space_traits_t</a>&lt;<a class="reference internal" href="#_CPPv4I00EN6ripple13BlockIteratorE" title="ripple::BlockIterator::Space">Space</a>&gt;::dimensions<a class="headerlink" href="#_CPPv4N6ripple13BlockIterator4dimsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The number of dimensions for the iterator. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple13BlockIterator9data_ptr_E">
+<span id="_CPPv3N6ripple13BlockIterator9data_ptr_E"></span><span id="_CPPv2N6ripple13BlockIterator9data_ptr_E"></span><span id="ripple::BlockIterator::data_ptr___Storage"></span><span class="target" id="classripple_1_1BlockIterator_1a64cfc8bceb1e2c0041ed382ee41ac6e9"></span>Storage <code class="sig-name descname">data_ptr_</code><a class="headerlink" href="#_CPPv4N6ripple13BlockIterator9data_ptr_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A pointer to the data. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple13BlockIterator6space_E">
+<span id="_CPPv3N6ripple13BlockIterator6space_E"></span><span id="_CPPv2N6ripple13BlockIterator6space_E"></span><span id="ripple::BlockIterator::space___Space"></span><span class="target" id="classripple_1_1BlockIterator_1a19963b2750326b4024407767b5474353"></span><a class="reference internal" href="#_CPPv4I00EN6ripple13BlockIteratorE" title="ripple::BlockIterator::Space">Space</a> <code class="sig-name descname">space_</code><a class="headerlink" href="#_CPPv4N6ripple13BlockIterator6space_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The space over which to iterate. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classripple_1_1BoundaryLoader.html" class="btn btn-neutral float-right" title="Template Class BoundaryLoader" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="classripple_1_1Allocator.html" class="btn btn-neutral" title="Template Class Allocator" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Template Class BlockIterator</a><ul>
+<li><a class="reference internal" href="#inheritance-relationships">Inheritance Relationships</a><ul>
+<li><a class="reference internal" href="#derived-type">Derived Type</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

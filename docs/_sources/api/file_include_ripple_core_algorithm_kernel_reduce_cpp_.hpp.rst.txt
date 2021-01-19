@@ -1,0 +1,73 @@
+
+.. _file_include_ripple_core_algorithm_kernel_reduce_cpp_.hpp:
+
+File reduce_cpp_.hpp
+====================
+
+
+This file implements functionality to reduce a multi dimensional block on the device. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/algorithm/kernel/reduce_cpp_.hpp``)
+---------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_algorithm_kernel_reduce_cpp_.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``../../iterator/iterator_traits.hpp``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_algorithm_reduce.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+- :ref:`namespace_ripple__kernel`
+
+- :ref:`namespace_ripple__kernel__cpu`
+
+- :ref:`namespace_ripple__kernel__cpu__detail`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1kernel_1_1cpu_1_1detail_1_1Reducer`
+
+- :ref:`exhale_class_classripple_1_1kernel_1_1cpu_1_1detail_1_1Reducer_3_010_01_4`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_reduce__cpp___8hpp_1a54d8ad345d3353e6e291adbcfb79b7cd`
+

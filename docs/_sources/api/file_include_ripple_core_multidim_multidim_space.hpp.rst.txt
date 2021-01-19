@@ -1,0 +1,68 @@
+
+.. _file_include_ripple_core_multidim_multidim_space.hpp:
+
+File multidim_space.hpp
+=======================
+
+
+This file defines a static interface for multidimensional spaces. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/multidim/multidim_space.hpp``)
+----------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_multidim_multidim_space.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``ripple/core/utility/forward.hpp`` (:ref:`file_include_ripple_core_utility_forward.hpp`)
+
+- ``ripple/core/utility/type_traits.hpp`` (:ref:`file_include_ripple_core_utility_type_traits.hpp`)
+
+- ``space_traits.hpp`` (:ref:`file_include_ripple_core_multidim_space_traits.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_storage_default_storage.hpp`
+
+- :ref:`file_include_ripple_core_multidim_offset_to.hpp`
+
+- :ref:`file_include_ripple_core_multidim_dynamic_multidim_space.hpp`
+
+- :ref:`file_include_ripple_core_multidim_static_multidim_space.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1MultidimSpace`
+

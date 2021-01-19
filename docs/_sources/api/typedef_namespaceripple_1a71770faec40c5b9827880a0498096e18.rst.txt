@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a71770faec40c5b9827880a0498096e18:
+
+Typedef ripple::non_dim_enable_t
+================================
+
+- Defined in :ref:`file_include_ripple_core_utility_dim.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::non_dim_enable_t

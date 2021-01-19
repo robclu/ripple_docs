@@ -1,0 +1,81 @@
+
+.. _program_listing_file_include_ripple_core_container_block_extractor.hpp:
+
+Program Listing for File block_extractor.hpp
+============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_container_block_extractor.hpp>` (``include/ripple/core/container/block_extractor.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/container/block_extractor.hpp ---------- -*- C++ -*- ---==//
+   //
+   //                                 Ripple
+   //
+   //                      Copyright (c) 2019, 2020 Rob Clucas
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_CONTAINER_BLOCK_EXTRACTOR_HPP
+   #define RIPPLE_CONTAINER_BLOCK_EXTRACTOR_HPP
+   
+   #include "shared_wrapper.hpp"
+   #include "tensor_traits.hpp"
+   #include "../graph/modifier.hpp"
+   
+   namespace ripple {
+   
+   struct BlockExtractor {
+     template <typename T>
+     using not_modifier_shared_or_tensor_enable_t = std::enable_if_t<
+       !is_modifier_v<T> && !is_shared_wrapper_v<T> && !is_tensor_v<T>,
+       int>;
+   
+     template <typename T, not_modifier_shared_or_tensor_enable_t<T> = 0>
+     static auto extract_blocks_if_tensor(T&& t) noexcept -> T&& {
+       return ripple_forward(t);
+     }
+   
+     template <typename T, tensor_enable_t<T> = 0>
+     static auto extract_blocks_if_tensor(T& t) noexcept
+       -> std::remove_reference_t<decltype(t.blocks_)>& {
+       return t.blocks_;
+     }
+   
+     template <typename T, Modifier M, tensor_enable_t<T> = 0>
+     static auto extract_blocks_if_tensor(
+       const ModificationSpecifier<T, M>& specifier) noexcept {
+       using Spec = ModificationSpecifier<decltype(specifier.wrapped.blocks_)&, M>;
+       return Spec{
+         specifier.wrapped.blocks_, specifier.expansion, specifier.overlap};
+     }
+   
+     template <typename T, tensor_enable_t<T> = 0>
+     static auto
+     extract_blocks_if_tensor(const SharedWrapper<T>& wrapper) noexcept {
+       using Wrapper = SharedWrapper<decltype(wrapper.wrapped.blocks_)&>;
+       return Wrapper{
+         wrapper.wrapped.blocks_,
+         wrapper.padding,
+         wrapper.expansion,
+         wrapper.overlap};
+     }
+   
+     template <typename T, tensor_enable_t<T> = 0>
+     static auto
+     extract_blocks_if_tensor(const ExpansionWrapper<T>& wrapper) noexcept {
+       using Wrapper = ExpansionWrapper<decltype(wrapper.wrapped.blocks_)&>;
+       return Wrapper{wrapper.wrapped.blocks_, wrapper.expansion, wrapper.overlap};
+     }
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_CONTAINER_BLOCK_EXTRACTOR_HPP

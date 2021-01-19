@@ -1,0 +1,22 @@
+.. _exhale_struct_structripple_1_1Range_1_1Iterator:
+
+Template Struct Range::Iterator
+===============================
+
+- Defined in :ref:`file_include_ripple_core_utility_range.hpp`
+
+
+Nested Relationships
+--------------------
+
+This struct is a nested type of :ref:`exhale_class_classripple_1_1Range`.
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::Range::Iterator
+   :members:
+   :protected-members:
+   :undoc-members:

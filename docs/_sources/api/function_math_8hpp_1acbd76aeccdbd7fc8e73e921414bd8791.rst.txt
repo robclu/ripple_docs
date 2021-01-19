@@ -1,0 +1,13 @@
+.. _exhale_function_math_8hpp_1acbd76aeccdbd7fc8e73e921414bd8791:
+
+Template Function ripple::math::tanh
+====================================
+
+- Defined in :ref:`file_include_ripple_core_math_math.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::math::tanh(T)

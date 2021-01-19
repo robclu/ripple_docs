@@ -1,0 +1,73 @@
+
+.. _program_listing_file_include_ripple_core_multidim_space_traits.hpp:
+
+Program Listing for File space_traits.hpp
+=========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_multidim_space_traits.hpp>` (``include/ripple/core/multidim/space_traits.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/multidim/space_traits.hpp -------------- -*- C++ -*- ---==//
+   //
+   //                                Ripple
+   //
+   //                      Copyright (c) 2019, 2020 Rob Clucas.
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_MULTIDIM_SPACE_TRAITS_HPP
+   #define RIPPLE_MULTIDIM_SPACE_TRAITS_HPP
+   
+   #include <ripple/core/utility/portability.hpp>
+   
+   namespace ripple {
+   
+   /*==--- [forward declations] -----------------------------------------------==*/
+   
+   template <typename Impl>
+   struct MultidimSpace;
+   
+   template <size_t Dimensions>
+   struct DynamicMultidimSpace;
+   
+   template <size_t... Sizes>
+   struct StaticMultidimSpace;
+   
+   /*==--- [traits declations] ------------------------------------------------==*/
+   
+   template <typename Space>
+   struct SpaceTraits {
+     static constexpr size_t dimensions = 1;
+   };
+   
+   template <size_t... Sizes>
+   struct SpaceTraits<StaticMultidimSpace<Sizes...>> {
+     static constexpr size_t dimensions = sizeof...(Sizes);
+   };
+   
+   template <size_t Dimensions>
+   struct SpaceTraits<DynamicMultidimSpace<Dimensions>> {
+     static constexpr size_t dimensions = Dimensions;
+   };
+   
+   template <typename SpaceImpl>
+   struct SpaceTraits<MultidimSpace<SpaceImpl>> {
+     static constexpr size_t dimensions = SpaceTraits<SpaceImpl>::dimensions;
+   };
+   
+   /*==--- [aliases] ----------------------------------------------------------==*/
+   
+   template <typename T>
+   using space_traits_t = SpaceTraits<std::decay_t<T>>;
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_MULTIDIM_SPACE_TRAITS_HPP

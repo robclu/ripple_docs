@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1ad2424a8190fcd4b65d097f21fa3ef44d:
+
+Typedef ripple::layout_traits_t
+===============================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::layout_traits_t

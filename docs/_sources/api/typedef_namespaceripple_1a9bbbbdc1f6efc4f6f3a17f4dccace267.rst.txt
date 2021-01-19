@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a9bbbbdc1f6efc4f6f3a17f4dccace267:
+
+Typedef ripple::Coord
+=====================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::Coord

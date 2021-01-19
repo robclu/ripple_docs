@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a5628f49a48d187a91a56065d17e9e661:
+
+Typedef ripple::array_value_enable_t
+====================================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::array_value_enable_t

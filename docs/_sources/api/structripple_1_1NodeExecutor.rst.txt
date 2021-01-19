@@ -1,0 +1,25 @@
+.. _exhale_struct_structripple_1_1NodeExecutor:
+
+Struct NodeExecutor
+===================
+
+- Defined in :ref:`file_include_ripple_core_graph_node.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Type
+************
+
+- ``public ripple::NodeExecutorImpl< Callable, Args >`` (:ref:`exhale_struct_structripple_1_1NodeExecutorImpl`)
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::NodeExecutor
+   :members:
+   :protected-members:
+   :undoc-members:

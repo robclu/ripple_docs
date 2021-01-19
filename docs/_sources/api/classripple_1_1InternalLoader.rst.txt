@@ -1,0 +1,16 @@
+.. _exhale_class_classripple_1_1InternalLoader:
+
+Template Class InternalLoader
+=============================
+
+- Defined in :ref:`file_include_ripple_core_boundary_internal_loader.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ripple::InternalLoader
+   :members:
+   :protected-members:
+   :undoc-members:

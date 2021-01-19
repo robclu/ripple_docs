@@ -1,0 +1,658 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class MultidimWriter &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Template Class Node" href="classripple_1_1Node.html" />
+  <link rel="prev" title="Class MultiarchAllocator" href="classripple_1_1MultiarchAllocator.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Class MultidimWriter</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/classripple_1_1MultidimWriter.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="class-multidimwriter">
+<span id="exhale-class-classripple-1-1multidimwriter"></span><h1>Class MultidimWriter<a class="headerlink" href="#class-multidimwriter" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_io_multidim_writer.hpp.html#file-include-ripple-core-io-multidim-writer-hpp"><span class="std std-ref">File multidim_writer.hpp</span></a></p></li>
+</ul>
+<div class="section" id="nested-relationships">
+<h2>Nested Relationships<a class="headerlink" href="#nested-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="nested-types">
+<h3>Nested Types<a class="headerlink" href="#nested-types" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="structripple_1_1MultidimWriter_1_1DimSizes.html#exhale-struct-structripple-1-1multidimwriter-1-1dimsizes"><span class="std std-ref">Struct MultidimWriter::DimSizes</span></a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="derived-type">
+<h3>Derived Type<a class="headerlink" href="#derived-type" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">ripple::VtkWriter</span></code> (<a class="reference internal" href="classripple_1_1VtkWriter.html#exhale-class-classripple-1-1vtkwriter"><span class="std std-ref">Class VtkWriter</span></a>)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4N6ripple14MultidimWriterE">
+<span id="_CPPv3N6ripple14MultidimWriterE"></span><span id="_CPPv2N6ripple14MultidimWriterE"></span><span id="ripple::MultidimWriter"></span><span class="target" id="classripple_1_1MultidimWriter"></span><em class="property">class </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">MultidimWriter</code><a class="headerlink" href="#_CPPv4N6ripple14MultidimWriterE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#classripple_1_1MultidimWriter"><span class="std std-ref">MultidimWriter</span></a> class defines an interface for writing data to a file for multi dimensional data types. </p>
+<p>Subclassed by <a class="reference internal" href="classripple_1_1VtkWriter.html#classripple_1_1VtkWriter"><span class="std std-ref">ripple::VtkWriter</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple14MultidimWriter12ElementNamesE">
+<span id="_CPPv3N6ripple14MultidimWriter12ElementNamesE"></span><span id="_CPPv2N6ripple14MultidimWriter12ElementNamesE"></span><span class="target" id="classripple_1_1MultidimWriter_1a68df6df31f63dd563145cb35b8895115"></span><em class="property">using </em><code class="sig-name descname">ElementNames</code> = std::vector&lt;std::string&gt;<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter12ElementNamesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The type of the container for the element names. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple14MultidimWriter14MultidimWriterEv">
+<span id="_CPPv3N6ripple14MultidimWriter14MultidimWriterEv"></span><span id="_CPPv2N6ripple14MultidimWriter14MultidimWriterEv"></span><span id="ripple::MultidimWriter::MultidimWriter"></span><span class="target" id="classripple_1_1MultidimWriter_1a00a90cf9c8d7477b04aec50fa3adaae3"></span><code class="sig-name descname">MultidimWriter</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = default<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter14MultidimWriterEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Default constructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple14MultidimWriterD0Ev">
+<span id="_CPPv3N6ripple14MultidimWriterD0Ev"></span><span id="_CPPv2N6ripple14MultidimWriterD0Ev"></span><span id="ripple::MultidimWriter::~MultidimWriter"></span><span class="target" id="classripple_1_1MultidimWriter_1af4ab4565cacc2ad333ef400068f76bff"></span><code class="sig-name descname">~MultidimWriter</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = default<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriterD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Default destructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0_6size_tDpEN6ripple14MultidimWriter5writeEvRK6TensorI1T4DimsERK12ElementNamesDpRR4Args">
+<span id="_CPPv3I0_6size_tDpEN6ripple14MultidimWriter5writeERK6TensorI1T4DimsERK12ElementNamesDpRR4Args"></span><span id="_CPPv2I0_6size_tDpEN6ripple14MultidimWriter5writeERK6TensorI1T4DimsERK12ElementNamesDpRR4Args"></span>template&lt;typename <code class="sig-name descname">T</code>, size_t <code class="sig-name descname">Dims</code>, typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classripple_1_1MultidimWriter_1a3691867e10287c386544e66541a49c44"></span>auto <code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="classripple_1_1Tensor.html#_CPPv4I0_6size_tEN6ripple6TensorE" title="ripple::Tensor">Tensor</a>&lt;<a class="reference internal" href="#_CPPv4I0_6size_tDpEN6ripple14MultidimWriter5writeEvRK6TensorI1T4DimsERK12ElementNamesDpRR4Args" title="ripple::MultidimWriter::write::T">T</a>, <a class="reference internal" href="#_CPPv4I0_6size_tDpEN6ripple14MultidimWriter5writeEvRK6TensorI1T4DimsERK12ElementNamesDpRR4Args" title="ripple::MultidimWriter::write::Dims">Dims</a>&gt; &amp;<em>data</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple14MultidimWriter12ElementNamesE" title="ripple::MultidimWriter::ElementNames">ElementNames</a> &amp;<em>element_names</em>, <a class="reference internal" href="#_CPPv4I0_6size_tDpEN6ripple14MultidimWriter5writeEvRK6TensorI1T4DimsERK12ElementNamesDpRR4Args" title="ripple::MultidimWriter::write::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> -&gt; void<a class="headerlink" href="#_CPPv4I0_6size_tDpEN6ripple14MultidimWriter5writeEvRK6TensorI1T4DimsERK12ElementNamesDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Writes the elements with the given names from the data tensor. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This will cause a compile time error if the data dos not implement the <a class="reference internal" href="classripple_1_1Printable.html#classripple_1_1Printable"><span class="std std-ref">Printable</span></a> interface, or is an arithmetic type.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code>: The data to write. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">element_names</span></code>: The names of the elements to write. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: Additional arguments for getting an element. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the tensor data. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dims</span></code>: The number of dimensions for the tensor. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The type of additional arguments. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple14MultidimWriter8set_nameENSt6stringE">
+<span id="_CPPv3N6ripple14MultidimWriter8set_nameENSt6stringE"></span><span id="_CPPv2N6ripple14MultidimWriter8set_nameENSt6stringE"></span><span id="ripple::MultidimWriter::set_name__ss"></span><span class="target" id="classripple_1_1MultidimWriter_1a73a87ca5f86b3cb1990174a5e30869de"></span>auto <code class="sig-name descname">set_name</code><span class="sig-paren">(</span>std::string <em>name</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void = 0<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter8set_nameENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the name of the data to write. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: The name to set for the data. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple14MultidimWriter14set_resolutionEd">
+<span id="_CPPv3N6ripple14MultidimWriter14set_resolutionEd"></span><span id="_CPPv2N6ripple14MultidimWriter14set_resolutionEd"></span><span id="ripple::MultidimWriter::set_resolution__double"></span><span class="target" id="classripple_1_1MultidimWriter_1ac663e9d460e9e3c1f11830babf285304"></span>auto <code class="sig-name descname">set_resolution</code><span class="sig-paren">(</span>double <em>res</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void = 0<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter14set_resolutionEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the resolution of the data. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">res</span></code>: The resolution for the data. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple14MultidimWriter14write_metadataERK8DimSizes">
+<span id="_CPPv3N6ripple14MultidimWriter14write_metadataERK8DimSizes"></span><span id="_CPPv2N6ripple14MultidimWriter14write_metadataERK8DimSizes"></span><span id="ripple::MultidimWriter::write_metadata__DimSizesCR"></span><span class="target" id="classripple_1_1MultidimWriter_1a488f875b7997467f77eadbfca0ec086f"></span>auto <code class="sig-name descname">write_metadata</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple14MultidimWriter8DimSizesE" title="ripple::MultidimWriter::DimSizes">DimSizes</a> &amp;<em>sizes</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void = 0<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter14write_metadataERK8DimSizes" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Writes the metadata for the writer, if there is any. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sizes</span></code>: The sizes of the dimension to write. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple14MultidimWriter13write_elementERK16PrintableElement">
+<span id="_CPPv3N6ripple14MultidimWriter13write_elementERK16PrintableElement"></span><span id="_CPPv2N6ripple14MultidimWriter13write_elementERK16PrintableElement"></span><span id="ripple::MultidimWriter::write_element__PrintableElementCR"></span><span class="target" id="classripple_1_1MultidimWriter_1aeebcb3c416e1636f1509aa391d1fa566"></span>auto <code class="sig-name descname">write_element</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="classripple_1_1PrintableElement.html#_CPPv4N6ripple16PrintableElementE" title="ripple::PrintableElement">PrintableElement</a> &amp;<em>element</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void = 0<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter13write_elementERK16PrintableElement" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Writes the element to the output file. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">element</span></code>: The printable element to write. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple14MultidimWriter20write_element_headerERK16PrintableElement">
+<span id="_CPPv3N6ripple14MultidimWriter20write_element_headerERK16PrintableElement"></span><span id="_CPPv2N6ripple14MultidimWriter20write_element_headerERK16PrintableElement"></span><span id="ripple::MultidimWriter::write_element_header__PrintableElementCR"></span><span class="target" id="classripple_1_1MultidimWriter_1a9945eb85bfa2b6fe68b84b7125c5349b"></span>auto <code class="sig-name descname">write_element_header</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="classripple_1_1PrintableElement.html#_CPPv4N6ripple16PrintableElementE" title="ripple::PrintableElement">PrintableElement</a> &amp;<em>element</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void = 0<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter20write_element_headerERK16PrintableElement" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Writes any necessary header data for an <code class="docutils literal notranslate"><span class="pre">element</span></code>. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">element</span></code>: The printable element to write the start data </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple14MultidimWriter20write_element_footerEv">
+<span id="_CPPv3N6ripple14MultidimWriter20write_element_footerEv"></span><span id="_CPPv2N6ripple14MultidimWriter20write_element_footerEv"></span><span id="ripple::MultidimWriter::write_element_footer"></span><span class="target" id="classripple_1_1MultidimWriter_1acdf3fbcb7800d844ecb87dfb4835d465"></span>auto <code class="sig-name descname">write_element_footer</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void = 0<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter20write_element_footerEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Writes a footer after all element data has been written. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple14MultidimWriter4openENSt6stringENSt6stringE">
+<span id="_CPPv3N6ripple14MultidimWriter4openENSt6stringENSt6stringE"></span><span id="_CPPv2N6ripple14MultidimWriter4openENSt6stringENSt6stringE"></span><span id="ripple::MultidimWriter::open__ss.ss"></span><span class="target" id="classripple_1_1MultidimWriter_1aa4e83bb00cd456579929d51c15ce6630"></span>auto <code class="sig-name descname">open</code><span class="sig-paren">(</span>std::string <em>path</em> = &quot;&quot;, std::string <em>suffix</em> = &quot;&quot;<span class="sig-paren">)</span> -&gt; void = 0<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter4openENSt6stringENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Opens the file for the writer, using the base filename for the writer, appending the suffix to the base filename. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">path</span></code>: Path to the directory for the file. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">suffix</span></code>: The suffix to append to the base filename. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple14MultidimWriter5closeEv">
+<span id="_CPPv3N6ripple14MultidimWriter5closeEv"></span><span id="_CPPv2N6ripple14MultidimWriter5closeEv"></span><span id="ripple::MultidimWriter::close"></span><span class="target" id="classripple_1_1MultidimWriter_1a5713c7023fcc62823b21446c14ac0bf7"></span>auto <code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span> -&gt; void = 0<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter5closeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Closes the file being written to. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple14MultidimWriter5cloneEv">
+<span id="_CPPv3NK6ripple14MultidimWriter5cloneEv"></span><span id="_CPPv2NK6ripple14MultidimWriter5cloneEv"></span><span id="ripple::MultidimWriter::cloneC"></span><span class="target" id="classripple_1_1MultidimWriter_1a1b932e32c34c30d3eaf792364d113257"></span>auto <code class="sig-name descname">clone</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; std::shared_ptr&lt;<a class="reference internal" href="#_CPPv4N6ripple14MultidimWriterE" title="ripple::MultidimWriter">MultidimWriter</a>&gt; = 0<a class="headerlink" href="#_CPPv4NK6ripple14MultidimWriter5cloneEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clones the writer, returning a copy with the same paramters. </p>
+</dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt id="_CPPv4N6ripple14MultidimWriter8DimSizesE">
+<span id="_CPPv3N6ripple14MultidimWriter8DimSizesE"></span><span id="_CPPv2N6ripple14MultidimWriter8DimSizesE"></span><span id="ripple::MultidimWriter::DimSizes"></span><span class="target" id="structripple_1_1MultidimWriter_1_1DimSizes"></span><em class="property">struct </em><code class="sig-name descname">DimSizes</code><a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter8DimSizesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Struct for the sizes of the dimensions to write. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple14MultidimWriter8DimSizes8elementsEv">
+<span id="_CPPv3NK6ripple14MultidimWriter8DimSizes8elementsEv"></span><span id="_CPPv2NK6ripple14MultidimWriter8DimSizes8elementsEv"></span><span id="ripple::MultidimWriter::DimSizes::elementsC"></span><span class="target" id="structripple_1_1MultidimWriter_1_1DimSizes_1a081420d9eeddf917c05f20445c236a10"></span>auto <code class="sig-name descname">elements</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple14MultidimWriter8DimSizes8elementsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the total number of elements in the grid. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of elements in the grid. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple14MultidimWriter8DimSizes1xE">
+<span id="_CPPv3N6ripple14MultidimWriter8DimSizes1xE"></span><span id="_CPPv2N6ripple14MultidimWriter8DimSizes1xE"></span><span id="ripple::MultidimWriter::DimSizes::x__s"></span><span class="target" id="structripple_1_1MultidimWriter_1_1DimSizes_1a38a317b78014ba68c6bbbff965e095c3"></span>size_t <code class="sig-name descname">x</code> = 1<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter8DimSizes1xE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Size of x dimension. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple14MultidimWriter8DimSizes1yE">
+<span id="_CPPv3N6ripple14MultidimWriter8DimSizes1yE"></span><span id="_CPPv2N6ripple14MultidimWriter8DimSizes1yE"></span><span id="ripple::MultidimWriter::DimSizes::y__s"></span><span class="target" id="structripple_1_1MultidimWriter_1_1DimSizes_1a61d473cbe55ed2717ae322b259c97c03"></span>size_t <code class="sig-name descname">y</code> = 1<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter8DimSizes1yE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Size of x dimension. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple14MultidimWriter8DimSizes1zE">
+<span id="_CPPv3N6ripple14MultidimWriter8DimSizes1zE"></span><span id="_CPPv2N6ripple14MultidimWriter8DimSizes1zE"></span><span id="ripple::MultidimWriter::DimSizes::z__s"></span><span class="target" id="structripple_1_1MultidimWriter_1_1DimSizes_1a8a4caaf8e8a75afb59b6333ebf19dc2a"></span>size_t <code class="sig-name descname">z</code> = 1<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter8DimSizes1zE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Size of x dimension. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4I0_6size_tEN6ripple14MultidimWriter8DimSizes11from_tensorE8DimSizesRK6TensorI1T4DimsE">
+<span id="_CPPv3I0_6size_tEN6ripple14MultidimWriter8DimSizes11from_tensorERK6TensorI1T4DimsE"></span><span id="_CPPv2I0_6size_tEN6ripple14MultidimWriter8DimSizes11from_tensorERK6TensorI1T4DimsE"></span>template&lt;typename <code class="sig-name descname">T</code>, size_t <code class="sig-name descname">Dims</code>&gt;<br /><span class="target" id="structripple_1_1MultidimWriter_1_1DimSizes_1a4f2f2f9f61a75c56d66d0f521096f36a"></span>auto <code class="sig-name descname">from_tensor</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="classripple_1_1Tensor.html#_CPPv4I0_6size_tEN6ripple6TensorE" title="ripple::Tensor">Tensor</a>&lt;<a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple14MultidimWriter8DimSizes11from_tensorE8DimSizesRK6TensorI1T4DimsE" title="ripple::MultidimWriter::DimSizes::from_tensor::T">T</a>, <a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple14MultidimWriter8DimSizes11from_tensorE8DimSizesRK6TensorI1T4DimsE" title="ripple::MultidimWriter::DimSizes::from_tensor::Dims">Dims</a>&gt; &amp;<em>t</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple14MultidimWriter8DimSizesE" title="ripple::MultidimWriter::DimSizes">DimSizes</a><a class="headerlink" href="#_CPPv4I0_6size_tEN6ripple14MultidimWriter8DimSizes11from_tensorE8DimSizesRK6TensorI1T4DimsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates the dim sizes from a tensor. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The sizes of the dimensions from the tensor. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">t</span></code>: The tensor to create the dim sizes from. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the tensor data. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dims</span></code>: The number of dimensions in the tensor. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classripple_1_1Node.html" class="btn btn-neutral float-right" title="Template Class Node" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="classripple_1_1MultiarchAllocator.html" class="btn btn-neutral" title="Class MultiarchAllocator" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Class MultidimWriter</a><ul>
+<li><a class="reference internal" href="#nested-relationships">Nested Relationships</a><ul>
+<li><a class="reference internal" href="#nested-types">Nested Types</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#inheritance-relationships">Inheritance Relationships</a><ul>
+<li><a class="reference internal" href="#derived-type">Derived Type</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

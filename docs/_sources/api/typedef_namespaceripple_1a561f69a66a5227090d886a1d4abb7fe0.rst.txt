@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a561f69a66a5227090d886a1d4abb7fe0:
+
+Typedef ripple::not_dim_1d_enable_t
+===================================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::not_dim_1d_enable_t

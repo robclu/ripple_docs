@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1detail_1_1NthElement_3_01N_01_4:
+
+Template Struct NthElement< N >
+===============================
+
+- Defined in :ref:`file_include_ripple_core_utility_detail_nth_element_impl_.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::detail::NthElement< N >
+   :members:
+   :protected-members:
+   :undoc-members:

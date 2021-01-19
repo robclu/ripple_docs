@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a652da7e596b000b11b7139c96ca2a45a:
+
+Template Function ripple::last_thread_in_block(Dim&&)
+=====================================================
+
+- Defined in :ref:`file_include_ripple_core_execution_thread_index.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::last_thread_in_block(Dim&&)

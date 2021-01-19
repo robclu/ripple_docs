@@ -1,0 +1,128 @@
+
+.. _program_listing_file_include_ripple_core_iterator_iterator_traits.hpp:
+
+Program Listing for File iterator_traits.hpp
+============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_iterator_iterator_traits.hpp>` (``include/ripple/core/iterator/iterator_traits.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/iterator/iterator_traits.hpp ----------- -*- C++ -*- ---==//
+   //
+   //                                Ripple
+   //
+   //                      Copyright (c) 2019, 2020 Rob Clucas.
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_ITERATOR_ITERATOR_TRAITS_HPP
+   #define RIPPLE_ITERATOR_ITERATOR_TRAITS_HPP
+   
+   #include "../container/array_traits.hpp"
+   #include "../multidim/space_traits.hpp"
+   #include "../storage/storage_traits.hpp"
+   
+   namespace ripple {
+   
+   /*==--- [forward declations] -----------------------------------------------==*/
+   
+   template <typename T, typename Space>
+   class BlockIterator;
+   
+   template <typename T, typename Space>
+   class IndexedIterator;
+   
+   template <size_t Dims>
+   using Coord = Vec<uint32_t, Dims>;
+   
+   template <size_t Dims>
+   using Coordf = Vec<float, Dims>;
+   
+   /*==--- [traits declations] ------------------------------------------------==*/
+   
+   template <typename Iterator>
+   struct IteratorTraits {
+     using Value = void*;
+   
+     static constexpr size_t dimensions = 1;
+     static constexpr bool is_iterator = false;
+   };
+   
+   template <typename T, typename Space>
+   struct IteratorTraits<BlockIterator<T, Space>> {
+    private:
+     using LayoutTraits = layout_traits_t<T>;
+   
+    public:
+     // clang-format off
+   
+     static constexpr size_t dimensions = space_traits_t<Space>::dimensions;
+     static constexpr bool is_iterator  = true;
+     static constexpr bool has_indices  = false;
+   
+     using Value = typename LayoutTraits::Value;
+     using Ref   = typename LayoutTraits::IterRef;
+     using CopyType = typename LayoutTraits::IterCopy;
+     using Vec      = Vec<CopyType, dimensions, ContiguousOwned>;
+     // clang-format on
+   };
+   
+   template <typename T, typename Space>
+   struct IteratorTraits<IndexedIterator<T, Space>> {
+    private:
+     using BlockIterTraits = IteratorTraits<BlockIterator<T, Space>>;
+   
+    public:
+     // clang-format off
+     static constexpr size_t dimensions = BlockIterTraits::dimensions;
+     static constexpr bool is_iterator  = true;
+     static constexpr bool has_indices  = true;
+   
+     using Value    = typename BlockIterTraits::Value;
+     using Ref      = typename BlockIterTraits::Ref;
+     using Vec      = typename BlockIterTraits::Vec;
+     using CopyType = typename BlockIterTraits::CopyType;
+     // clang-format on
+   };
+   
+   /*==--- [aliases] ----------------------------------------------------------==*/
+   
+   template <typename T>
+   using iterator_traits_t = IteratorTraits<std::decay_t<T>>;
+   
+   /*==--- [traits] -----------------------------------------------------------==*/
+   
+   template <typename T>
+   static constexpr auto is_iterator_v = iterator_traits_t<T>::is_iterator;
+   
+   /*==--- [enables] ----------------------------------------------------------==*/
+   
+   template <typename T>
+   using iterator_enable_t = std::enable_if_t<is_iterator_v<T>, int>;
+   
+   template <typename T>
+   using non_iterator_enable_t = std::enable_if_t<!is_iterator_v<T>, int>;
+   
+   template <typename T>
+   using it_1d_enable_t = std::
+     enable_if_t<is_iterator_v<T> && iterator_traits_t<T>::dimensions == 1, int>;
+   
+   template <typename T>
+   using it_2d_enable_t = std::
+     enable_if_t<is_iterator_v<T> && iterator_traits_t<T>::dimensions == 2, int>;
+   
+   template <typename T>
+   using it_3d_enable_t = std::
+     enable_if_t<is_iterator_v<T> && iterator_traits_t<T>::dimensions == 3, int>;
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_ITERATOR_ITERATOR_TRAITS_HPP

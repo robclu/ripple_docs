@@ -1,0 +1,13 @@
+.. _exhale_enum_namespaceripple_1a4d5f4cde24de454f2d816f7c9a93e2c4:
+
+Enum NodeKind
+=============
+
+- Defined in :ref:`file_include_ripple_core_graph_node.hpp`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: ripple::NodeKind

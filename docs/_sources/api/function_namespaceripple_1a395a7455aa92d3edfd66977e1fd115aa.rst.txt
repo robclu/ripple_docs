@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a395a7455aa92d3edfd66977e1fd115aa:
+
+Template Function ripple::block_size
+====================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::block_size(Dim&&)

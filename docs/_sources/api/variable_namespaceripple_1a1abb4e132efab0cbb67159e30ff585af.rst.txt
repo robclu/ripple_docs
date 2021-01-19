@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1a1abb4e132efab0cbb67159e30ff585af:
+
+Variable ripple::is_loader_v
+============================
+
+- Defined in :ref:`file_include_ripple_core_boundary_boundary_loader.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::is_loader_v

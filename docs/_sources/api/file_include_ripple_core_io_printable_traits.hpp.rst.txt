@@ -1,0 +1,58 @@
+
+.. _file_include_ripple_core_io_printable_traits.hpp:
+
+File printable_traits.hpp
+=========================
+
+
+This file defines traits for printable types. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/io/printable_traits.hpp``)
+------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_io_printable_traits.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``ripple/core/utility/portability.hpp`` (:ref:`file_include_ripple_core_utility_portability.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_io_printable_element.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1Printable`
+

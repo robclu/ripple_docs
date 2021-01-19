@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a6d487ba60e26b4e4cbb0983aa4f0b191:
+
+Typedef ripple::HostBlock2d
+===========================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::HostBlock2d

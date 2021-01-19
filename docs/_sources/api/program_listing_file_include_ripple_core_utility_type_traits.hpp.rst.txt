@@ -1,0 +1,122 @@
+
+.. _program_listing_file_include_ripple_core_utility_type_traits.hpp:
+
+Program Listing for File type_traits.hpp
+========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_utility_type_traits.hpp>` (``include/ripple/core/utility/type_traits.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/core/utility/type_traits.hpp ----------- -*- C++ -*- ---==//
+   //
+   //                                Ripple
+   //
+   //                      Copyright (c) 2019, 2020 Rob Clucas.
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_UTILITY_TYPE_TRAITS_HPP
+   #define RIPPLE_UTILITY_TYPE_TRAITS_HPP
+   
+   #include "detail/index_of_impl_.hpp"
+   #include "detail/function_traits_impl_.hpp"
+   #include "dim.hpp"
+   #include "number.hpp"
+   #include <type_traits>
+   
+   namespace ripple {
+   
+   /*==--- [traits] -----------------------------------------------------------==*/
+   
+   template <typename T>
+   static constexpr bool is_cx_number_v = is_dimension_v<T> || is_number_v<T>;
+   
+   template <typename... Ts>
+   static constexpr bool all_arithmetic_v =
+     std::conjunction_v<std::is_arithmetic<std::decay_t<Ts>>...>;
+   
+   template <typename... Ts>
+   static constexpr bool any_arithmetic_v =
+     std::disjunction_v<std::is_arithmetic<std::decay_t<Ts>>...>;
+   
+   template <typename T, typename... Ts>
+   static constexpr bool all_same_v = std::conjunction_v<std::is_same<T, Ts>...>;
+   
+   template <typename T, typename... Ts>
+   static constexpr bool any_same_v = std::disjunction_v<std::is_same<T, Ts>...>;
+   
+   template <typename T, typename... Ts>
+   static constexpr bool index_of_v = detail::IndexOf<0, T, Ts...>::value;
+   
+   /*==--- [aliases] ----------------------------------------------------------==*/
+   
+   template <typename T, typename... Ts>
+   using all_same_enable_t = std::enable_if_t<all_same_v<T, Ts...>, int>;
+   
+   template <std::size_t Size, typename... Values>
+   using all_arithmetic_size_enable_t = std::
+     enable_if_t<Size == sizeof...(Values) && all_arithmetic_v<Values...>, int>;
+   
+   template <typename T, typename U>
+   using diff_enable_t =
+     std::enable_if_t<!std::is_same_v<std::decay_t<T>, std::decay_t<U>>, int>;
+   
+   template <size_t Size, typename... Values>
+   using variadic_size_enable_t = std::enable_if_t<Size == sizeof...(Values), int>;
+   
+   template <size_t Size, typename... Values>
+   using variadic_ge_enable_t = std::enable_if_t<(sizeof...(Values) >= Size), int>;
+   
+   template <std::size_t Size, typename... Values>
+   using variadic_lt_enable_t = std::enable_if_t<(sizeof...(Values) < Size), int>;
+   
+   template <typename T>
+   using pointer_enable_t = std::enable_if_t<std::is_pointer_v<T>, int>;
+   
+   template <size_t Size>
+   using unroll_enabled_t =
+     std::enable_if_t<(Size < ripple_max_unroll_depth), int>;
+   
+   template <size_t Size>
+   using unroll_disabled_t =
+     std::enable_if_t<(Size >= ripple_max_unroll_depth), int>;
+   
+   template <size_t N, typename... Ts>
+   using nth_element_t = typename detail::NthElement<N, Ts...>::type;
+   
+   /*==--- [dimension enables] ------------------------------------------------==*/
+   
+   template <size_t Dims>
+   using dim_1d_enable_t = std::enable_if_t<Dims == 1, int>;
+   
+   template <size_t Dims>
+   using not_dim_1d_enable_t = std::enable_if_t<Dims != 1, int>;
+   
+   template <size_t Dims>
+   using dim_2d_enable_t = std::enable_if_t<Dims == 2, int>;
+   
+   template <std::size_t Dims>
+   using not_dim_2d_enable_t = std::enable_if_t<Dims != 2, int>;
+   
+   template <size_t Dims>
+   using dim_3d_enable_t = std::enable_if_t<Dims == 3, int>;
+   
+   template <size_t Dims>
+   using not_dim_3d_enable_t = std::enable_if_t<Dims != 3, int>;
+   
+   /*==--- [function traits] --------------------------------------------------==*/
+   
+   template <typename T>
+   using function_traits_t = detail::FunctionTraits<T>;
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_UTILITY_TYPE_TRAITS_HPP

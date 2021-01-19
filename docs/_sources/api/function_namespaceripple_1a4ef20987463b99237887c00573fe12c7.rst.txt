@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a4ef20987463b99237887c00573fe12c7:
+
+Template Function ripple::create_quat(const Vec3d<T, L1>&, const Vec3d<U, L2>&)
+===============================================================================
+
+- Defined in :ref:`file_include_ripple_core_math_quat.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::create_quat(const Vec3d<T, L1>&, const Vec3d<U, L2>&)

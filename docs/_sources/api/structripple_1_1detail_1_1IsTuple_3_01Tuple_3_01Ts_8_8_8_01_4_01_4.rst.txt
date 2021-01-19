@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1detail_1_1IsTuple_3_01Tuple_3_01Ts_8_8_8_01_4_01_4:
+
+Template Struct IsTuple< Tuple< Ts... > >
+=========================================
+
+- Defined in :ref:`file_include_ripple_core_container_tuple_traits.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::detail::IsTuple< Tuple< Ts... > >
+   :members:
+   :protected-members:
+   :undoc-members:

@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a16e08a61426fc4da46354d74bed053c7:
+
+Template Function ripple::first_thread_in_block(Dim&&)
+======================================================
+
+- Defined in :ref:`file_include_ripple_core_execution_thread_index.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::first_thread_in_block(Dim&&)

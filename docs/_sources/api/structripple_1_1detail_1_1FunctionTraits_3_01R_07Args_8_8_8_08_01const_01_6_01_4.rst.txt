@@ -1,0 +1,25 @@
+.. _exhale_struct_structripple_1_1detail_1_1FunctionTraits_3_01R_07Args_8_8_8_08_01const_01_6_01_4:
+
+Template Struct FunctionTraits< R(Args...) const & >
+====================================================
+
+- Defined in :ref:`file_include_ripple_core_utility_detail_function_traits_impl_.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public ripple::detail::FunctionTypes< R, void, false, false, Args... >`` (:ref:`exhale_struct_structripple_1_1detail_1_1FunctionTypes`)
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::detail::FunctionTraits< R(Args...) const & >
+   :members:
+   :protected-members:
+   :undoc-members:

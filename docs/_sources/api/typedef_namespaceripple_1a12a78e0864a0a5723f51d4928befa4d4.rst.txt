@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a12a78e0864a0a5723f51d4928befa4d4:
+
+Typedef ripple::RandomStealer
+=============================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::RandomStealer

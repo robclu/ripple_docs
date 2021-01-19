@@ -1,0 +1,47 @@
+
+.. _file_include_ripple_core_execution_synchronize.hpp:
+
+File synchronize.hpp
+====================
+
+
+This file implements functionality to synchronize execution. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/execution/synchronize.hpp``)
+--------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_execution_synchronize.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``cooperative_groups.h``
+
+- ``ripple/core/utility/portability.hpp`` (:ref:`file_include_ripple_core_utility_portability.hpp`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+

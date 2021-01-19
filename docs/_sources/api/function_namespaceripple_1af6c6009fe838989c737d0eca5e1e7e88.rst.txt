@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1af6c6009fe838989c737d0eca5e1e7e88:
+
+Template Function ripple::padding
+=================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::padding(SharedWrapper<T>&)

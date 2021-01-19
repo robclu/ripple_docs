@@ -1,0 +1,553 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Struct HeapArena &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Template Struct Int64" href="structripple_1_1Int64.html" />
+  <link rel="prev" title="Struct GpuInfo::Stream" href="structripple_1_1GpuInfo_1_1Stream.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Struct HeapArena</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/structripple_1_1HeapArena.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="struct-heaparena">
+<span id="exhale-struct-structripple-1-1heaparena"></span><h1>Struct HeapArena<a class="headerlink" href="#struct-heaparena" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_allocation_arena.hpp.html#file-include-ripple-core-allocation-arena-hpp"><span class="std std-ref">File arena.hpp</span></a></p></li>
+</ul>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp struct">
+<dt id="_CPPv4N6ripple9HeapArenaE">
+<span id="_CPPv3N6ripple9HeapArenaE"></span><span id="_CPPv2N6ripple9HeapArenaE"></span><span id="ripple::HeapArena"></span><span class="target" id="structripple_1_1HeapArena"></span><em class="property">struct </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">HeapArena</code><a class="headerlink" href="#_CPPv4N6ripple9HeapArenaE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines a heap-based arena for the host. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple9HeapArena3PtrE">
+<span id="_CPPv3N6ripple9HeapArena3PtrE"></span><span id="_CPPv2N6ripple9HeapArena3PtrE"></span><span class="target" id="structripple_1_1HeapArena_1a778b5992025e052dcc9432570579fe25"></span><em class="property">using </em><code class="sig-name descname">Ptr</code> = void*<a class="headerlink" href="#_CPPv4N6ripple9HeapArena3PtrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Pointer type. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple9HeapArena8ConstPtrE">
+<span id="_CPPv3N6ripple9HeapArena8ConstPtrE"></span><span id="_CPPv2N6ripple9HeapArena8ConstPtrE"></span><span class="target" id="structripple_1_1HeapArena_1a2a8ced61f2fcd55dd0cc8744def0cb78"></span><em class="property">using </em><code class="sig-name descname">ConstPtr</code> = void*<a class="headerlink" href="#_CPPv4N6ripple9HeapArena8ConstPtrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Const pointer type. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9HeapArena9HeapArenaE6size_t">
+<span id="_CPPv3N6ripple9HeapArena9HeapArenaE6size_t"></span><span id="_CPPv2N6ripple9HeapArena9HeapArenaE6size_t"></span><span id="ripple::HeapArena::HeapArena__s"></span><span class="target" id="structripple_1_1HeapArena_1aa0b0f069b4b833930c438a98fd129811"></span><code class="sig-name descname">HeapArena</code><span class="sig-paren">(</span>size_t <em>size</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ripple9HeapArena9HeapArenaE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initializes the arena with a specific size. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">size</span></code>: The size of the arena. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9HeapArenaD0Ev">
+<span id="_CPPv3N6ripple9HeapArenaD0Ev"></span><span id="_CPPv2N6ripple9HeapArenaD0Ev"></span><span id="ripple::HeapArena::~HeapArena"></span><span class="target" id="structripple_1_1HeapArena_1a21ccd875f7e89990e55027dcfe5f1726"></span><code class="sig-name descname">~HeapArena</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple9HeapArenaD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Destructor to release the memory. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9HeapArena9HeapArenaERK9HeapArena">
+<span id="_CPPv3N6ripple9HeapArena9HeapArenaERK9HeapArena"></span><span id="_CPPv2N6ripple9HeapArena9HeapArenaERK9HeapArena"></span><span id="ripple::HeapArena::HeapArena__HeapArenaCR"></span><span class="target" id="structripple_1_1HeapArena_1a5a502d718eb472a7f7d50c0809d59eba"></span><code class="sig-name descname">HeapArena</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple9HeapArena9HeapArenaERK9HeapArena" title="ripple::HeapArena::HeapArena">HeapArena</a>&amp;<span class="sig-paren">)</span> = delete<a class="headerlink" href="#_CPPv4N6ripple9HeapArena9HeapArenaERK9HeapArena" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy constructor  deleted. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9HeapArena9HeapArenaERR9HeapArena">
+<span id="_CPPv3N6ripple9HeapArena9HeapArenaERR9HeapArena"></span><span id="_CPPv2N6ripple9HeapArena9HeapArenaERR9HeapArena"></span><span id="ripple::HeapArena::HeapArena__HeapArenaRR"></span><span class="target" id="structripple_1_1HeapArena_1ae314cda08a7c91245cf473eda678f203"></span><code class="sig-name descname">HeapArena</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple9HeapArena9HeapArenaERR9HeapArena" title="ripple::HeapArena::HeapArena">HeapArena</a>&amp;&amp;<span class="sig-paren">)</span> <em class="property">noexcept</em> = default<a class="headerlink" href="#_CPPv4N6ripple9HeapArena9HeapArenaERR9HeapArena" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Move constructor  deleted. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9HeapArenaaSERK9HeapArena">
+<span id="_CPPv3N6ripple9HeapArenaaSERK9HeapArena"></span><span id="_CPPv2N6ripple9HeapArenaaSERK9HeapArena"></span><span id="ripple::HeapArena::assign-operator__HeapArenaCR"></span><span class="target" id="structripple_1_1HeapArena_1ac568738feb22d676de76dda26e2adfeb"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple9HeapArenaE" title="ripple::HeapArena">HeapArena</a>&amp;<span class="sig-paren">)</span> = delete<a class="headerlink" href="#_CPPv4N6ripple9HeapArenaaSERK9HeapArena" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy assignment operator  deleted. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9HeapArenaaSERR9HeapArena">
+<span id="_CPPv3N6ripple9HeapArenaaSERR9HeapArena"></span><span id="_CPPv2N6ripple9HeapArenaaSERR9HeapArena"></span><span id="ripple::HeapArena::assign-operator__HeapArenaRR"></span><span class="target" id="structripple_1_1HeapArena_1ac336e3511ed0b2812323ea39ba7f69d9"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple9HeapArenaE" title="ripple::HeapArena">HeapArena</a>&amp;&amp;<span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple9HeapArenaE" title="ripple::HeapArena">HeapArena</a>&amp; = default<a class="headerlink" href="#_CPPv4N6ripple9HeapArenaaSERR9HeapArena" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Move assignment operator  deleted. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt>
+<span class="target" id="structripple_1_1HeapArena_1a0f708a4361f1880659fb7c7da28b2f00"></span><code class="sig-name descname">ripple_nodiscard auto begin () const noexcept -&gt; ConstPtr</code></dt>
+<dd><p>Gets a pointer to the beginning of the arena. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A pointer to the beginning of the arena. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt>
+<span class="target" id="structripple_1_1HeapArena_1a6e71633604abcadacad6f1e1b80cb264"></span><code class="sig-name descname">ripple_nodiscard auto end () const noexcept -&gt; ConstPtr</code></dt>
+<dd><p>Gets a pointer to the end of the arena. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A pointer to the end of the arena. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9HeapArena6resizeE6size_t">
+<span id="_CPPv3N6ripple9HeapArena6resizeE6size_t"></span><span id="_CPPv2N6ripple9HeapArena6resizeE6size_t"></span><span id="ripple::HeapArena::resize__s"></span><span class="target" id="structripple_1_1HeapArena_1a9a27e04d5913b55a47cc550fbaa279c0"></span>auto <code class="sig-name descname">resize</code><span class="sig-paren">(</span>size_t <em>new_size</em><span class="sig-paren">)</span> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple9HeapArena6resizeE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Resizes the area. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This may be expensive since it needs to copy the already allocated memory in the new space.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">size</span></code>: The new size of the area. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt>
+<span class="target" id="structripple_1_1HeapArena_1a78eb26eef820152fde08ca94e0bc561a"></span><code class="sig-name descname">ripple_nodiscard auto size () const noexcept -&gt; size_t</code></dt>
+<dd><p>Gets the size of the arena. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A size of the arena, in bytes. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Attributes</p>
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple9HeapArena14constexpr_sizeE">
+<span id="_CPPv3N6ripple9HeapArena14constexpr_sizeE"></span><span id="_CPPv2N6ripple9HeapArena14constexpr_sizeE"></span><span id="ripple::HeapArena::constexpr_size__b"></span><span class="target" id="structripple_1_1HeapArena_1aac6ca608f879525a5c660a58da197823"></span><em class="property">constexpr</em> bool <code class="sig-name descname">constexpr_size</code> = false<a class="headerlink" href="#_CPPv4N6ripple9HeapArena14constexpr_sizeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns that the allocator does not have a constexpr size. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple9HeapArena15valid_on_deviceE">
+<span id="_CPPv3N6ripple9HeapArena15valid_on_deviceE"></span><span id="_CPPv2N6ripple9HeapArena15valid_on_deviceE"></span><span id="ripple::HeapArena::valid_on_device__b"></span><span class="target" id="structripple_1_1HeapArena_1ac74ad412562168d001b0a6eb0cfe9c72"></span><em class="property">constexpr</em> bool <code class="sig-name descname">valid_on_device</code> = false<a class="headerlink" href="#_CPPv4N6ripple9HeapArena15valid_on_deviceE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns that the arena is not valid on the device. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple9HeapArena13valid_on_hostE">
+<span id="_CPPv3N6ripple9HeapArena13valid_on_hostE"></span><span id="_CPPv2N6ripple9HeapArena13valid_on_hostE"></span><span id="ripple::HeapArena::valid_on_host__b"></span><span class="target" id="structripple_1_1HeapArena_1a68c8c35a1a9097918ff622104da14e19"></span><em class="property">constexpr</em> bool <code class="sig-name descname">valid_on_host</code> = true<a class="headerlink" href="#_CPPv4N6ripple9HeapArena13valid_on_hostE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns that the arena is valid on the host. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structripple_1_1Int64.html" class="btn btn-neutral float-right" title="Template Struct Int64" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="structripple_1_1GpuInfo_1_1Stream.html" class="btn btn-neutral" title="Struct GpuInfo::Stream" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Struct HeapArena</a><ul>
+<li><a class="reference internal" href="#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

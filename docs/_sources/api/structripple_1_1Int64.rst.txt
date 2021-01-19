@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1Int64:
+
+Template Struct Int64
+=====================
+
+- Defined in :ref:`file_include_ripple_core_utility_number.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::Int64
+   :members:
+   :protected-members:
+   :undoc-members:

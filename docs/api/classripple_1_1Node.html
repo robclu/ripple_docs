@@ -1,0 +1,684 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Template Class Node &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Template Class OwnedStorage" href="classripple_1_1OwnedStorage.html" />
+  <link rel="prev" title="Class MultidimWriter" href="classripple_1_1MultidimWriter.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Template Class Node</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/classripple_1_1Node.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="template-class-node">
+<span id="exhale-class-classripple-1-1node"></span><h1>Template Class Node<a class="headerlink" href="#template-class-node" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_graph_node.hpp.html#file-include-ripple-core-graph-node-hpp"><span class="std std-ref">File node.hpp</span></a></p></li>
+</ul>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4I_6size_t_6size_tEN6ripple4NodeE">
+<span id="_CPPv3I_6size_t_6size_tEN6ripple4NodeE"></span><span id="_CPPv2I_6size_t_6size_tEN6ripple4NodeE"></span>template&lt;size_t <code class="sig-name descname">Alignment</code>, size_t <code class="sig-name descname">MinStorage</code> = 72&gt;<br /><span class="target" id="classripple_1_1Node"></span><em class="property">class </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">Node</code><a class="headerlink" href="#_CPPv4I_6size_t_6size_tEN6ripple4NodeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Implementation type of a node class, which defines an operation a graph which performs work. </p>
+<p>It should be given an alignment which is a multiple of the cache line size so that there is no false sharing of nodes when they are used across threads.</p>
+<p>There is a small amount of overhead in the nodes, but they are still cheap In order for the <a class="reference internal" href="#classripple_1_1Node"><span class="std std-ref">Node</span></a>’s work to be <strong>any</strong> callable object, the abstract base class <a class="reference internal" href="structripple_1_1NodeExecutor.html#structripple_1_1NodeExecutor"><span class="std std-ref">NodeExecutor</span></a> pointer needs to be stores.</p>
+<p>This is not really a problem in terms of storage overhead since ndoes are cache line aligned, and the 8 bytes are usually only a fraction of the cache line size, but it does reduce the available storage for the callable for the executor’s work and more importantly, the arguments for the callable. It is therefore only a problem if the callable has many arguments, or the arguments are large. If this is a problem, a compile time error will be generated, in which case the alignment of the <a class="reference internal" href="#classripple_1_1Node"><span class="std std-ref">Node</span></a> can be increased by the cachline size.</p>
+<p>Executing the <a class="reference internal" href="#classripple_1_1Node"><span class="std std-ref">Node</span></a>’s work then requires invoking the stored callable through the base <a class="reference internal" href="structripple_1_1NodeExecutor.html#structripple_1_1NodeExecutor"><span class="std std-ref">NodeExecutor</span></a> class. Benchmarks have shown that the compiler is usually able to remove the virtual function indirection, and the performance is usually the same as a <strong>non inlined</strong> function call. The major drawback therefore is the loss of the ability for the compiler to inline.</p>
+<p>However, the benchmarking also showed that the the cost is approximately 1.1ns for any body of work executed through the <a class="reference internal" href="structripple_1_1NodeExecutor.html#structripple_1_1NodeExecutor"><span class="std std-ref">NodeExecutor</span></a> vs 0.25ns for an inlined version. This cost is therfore pretty small, and worth the added flexibility of allowing nodes to have any signature.</p>
+<p><p>The above limitations are also not significant, since the </p>
+<em>correct</em> use of nodes in the graph is to perform <em>non trivial</em> workloads. Even a node with a ~30ns workload only incurrs a ~2.5% overhead compared to if the <a class="reference internal" href="#classripple_1_1Node"><span class="std std-ref">Node</span></a>’s work body was executed inline. Most work should be in the us to ms range anyway, making the overhead negligible.<dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>The benchmarks were also on <em>very</em> cheap nodes (with small workloads).</p>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Alignment</span></code>: The aligment for the node. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MinStorage</span></code>: The number of bytes of storage required for a node. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple4Node4NodeEv">
+<span id="_CPPv3N6ripple4Node4NodeEv"></span><span id="_CPPv2N6ripple4Node4NodeEv"></span><span id="ripple::Node::Node"></span><span class="target" id="classripple_1_1Node_1ade245ec72dbae7d4042d0b4c57b23f77"></span><code class="sig-name descname">Node</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> = default<a class="headerlink" href="#_CPPv4N6ripple4Node4NodeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Default constructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple4NodeD0Ev">
+<span id="_CPPv3N6ripple4NodeD0Ev"></span><span id="_CPPv2N6ripple4NodeD0Ev"></span><span id="ripple::Node::~Node"></span><span class="target" id="classripple_1_1Node_1a01b9b29d19dab1efc906f5a423b2c921"></span><code class="sig-name descname">~Node</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> = default<a class="headerlink" href="#_CPPv4N6ripple4NodeD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Default destructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple4Node4NodeERK4Node">
+<span id="_CPPv3N6ripple4Node4NodeERK4Node"></span><span id="_CPPv2N6ripple4Node4NodeERK4Node"></span><span id="ripple::Node::Node__NodeCR"></span><span class="target" id="classripple_1_1Node_1a34ceb7cec111c6310eb6e08aaae47d05"></span><code class="sig-name descname">Node</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple4Node4NodeERK4Node" title="ripple::Node::Node">Node</a> &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple4Node4NodeERK4Node" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy constructor which clones the executor and copies the rest of the node state. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This will check against the executor being a nullptr in debug mode, in release there is not check and a null executor will likely cause a segfault.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>This could be expensive if the node has <em>a lot</em> of successors.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>This does not copy the node’s information. Information for a node is unique and should be allocated and set after copying a noce.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other node to copy into this node. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple4Node4NodeERR4Node">
+<span id="_CPPv3N6ripple4Node4NodeERR4Node"></span><span id="_CPPv2N6ripple4Node4NodeERR4Node"></span><span id="ripple::Node::Node__NodeRR"></span><span class="target" id="classripple_1_1Node_1abf3843e05c19ade88174a6fec3764353"></span><code class="sig-name descname">Node</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple4Node4NodeERR4Node" title="ripple::Node::Node">Node</a> &amp;&amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple4Node4NodeERR4Node" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Move constructor which just calls the copy constructor for most of the node data, but moves the successors of the other node into this node. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other task to move from. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple4Node4NodeERR1FDpRR4Args">
+<span id="_CPPv3I0Dp_17non_node_enable_tI1FEEN6ripple4Node4NodeERR1FDpRR4Args"></span><span id="_CPPv2I0Dp_17non_node_enable_tI1FEEN6ripple4Node4NodeERR1FDpRR4Args"></span>template&lt;typename <code class="sig-name descname">F</code>, typename ...<code class="sig-name descname">Args</code>, non_node_enable_t&lt;<a class="reference internal" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple4Node4NodeERR1FDpRR4Args" title="ripple::Node::Node::F">F</a>&gt; = 0&gt;<br /><span class="target" id="classripple_1_1Node_1a0c5ab763ca6a00d04107683f1db95505"></span><code class="sig-name descname">Node</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple4Node4NodeERR1FDpRR4Args" title="ripple::Node::Node::F">F</a> &amp;&amp;<em>callable</em>, <a class="reference internal" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple4Node4NodeERR1FDpRR4Args" title="ripple::Node::Node::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple4Node4NodeERR1FDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructs the node, creating its executor by storing the callable and the callable’s arguments in the additional storage for the node. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This constructor is only enabled if F is not a <a class="reference internal" href="#classripple_1_1Node"><span class="std std-ref">Node</span></a>.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>If the callable and its arguments will not fit into the node storage then this will fail at compile time and the size of the node will need to be increased.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">callable</span></code>: The callable object to store. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: The arguments to store. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code>: The type of the callable object. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The type of the arguments for the callable. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple4NodeaSERK4Node">
+<span id="_CPPv3N6ripple4NodeaSERK4Node"></span><span id="_CPPv2N6ripple4NodeaSERK4Node"></span><span id="ripple::Node::assign-operator__NodeCR"></span><span class="target" id="classripple_1_1Node_1adeca207b9d41b7ec5c2d64329a72e5c9"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I_6size_t_6size_tEN6ripple4NodeE" title="ripple::Node">Node</a> &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I_6size_t_6size_tEN6ripple4NodeE" title="ripple::Node">Node</a>&amp;<a class="headerlink" href="#_CPPv4N6ripple4NodeaSERK4Node" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy assignment overload which clones the executor and copies the node state. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This will check against the other node’s executor being a nullptr in debug, but will likely cause a segfault in release.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>This does not copy the node information, which should be unique and therefore allocated and then set after copying the node.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A reference to the new node. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other node to copy. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple4NodeaSERR4Node">
+<span id="_CPPv3N6ripple4NodeaSERR4Node"></span><span id="_CPPv2N6ripple4NodeaSERR4Node"></span><span id="ripple::Node::assign-operator__NodeRR"></span><span class="target" id="classripple_1_1Node_1a636123fc799c956845f8317976aca72f"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I_6size_t_6size_tEN6ripple4NodeE" title="ripple::Node">Node</a> &amp;&amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I_6size_t_6size_tEN6ripple4NodeE" title="ripple::Node">Node</a>&amp;<a class="headerlink" href="#_CPPv4N6ripple4NodeaSERR4Node" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Move assignment overload which clones the executor, copies the other node state, moves the other node’s successors, and invalidates the other node. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This will check against the other node’s executor being a nullptr in debug, in release it will likely cause a segfault.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A reference to the new node. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other node to move from. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0DpEN6ripple4Node12set_executorEvRR1FDpRR4Args">
+<span id="_CPPv3I0DpEN6ripple4Node12set_executorERR1FDpRR4Args"></span><span id="_CPPv2I0DpEN6ripple4Node12set_executorERR1FDpRR4Args"></span>template&lt;typename <code class="sig-name descname">F</code>, typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classripple_1_1Node_1aad2e57251428f2594c94d3ab053c1dd5"></span>auto <code class="sig-name descname">set_executor</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0DpEN6ripple4Node12set_executorEvRR1FDpRR4Args" title="ripple::Node::set_executor::F">F</a> &amp;&amp;<em>callable</em>, <a class="reference internal" href="#_CPPv4I0DpEN6ripple4Node12set_executorEvRR1FDpRR4Args" title="ripple::Node::set_executor::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4I0DpEN6ripple4Node12set_executorEvRR1FDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the executor of the node to use the given callable and its args. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This will check that there is enough space in the node storage for the callable and its arguments. If there is not enough space, a compile time error is generated with the required additional number of bytes.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">callable</span></code>: The callable object to store. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: The arguments to store. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code>: The type of the callable object. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The type of the arguments for the callable. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple4Node7try_runEv">
+<span id="_CPPv3N6ripple4Node7try_runEv"></span><span id="_CPPv2N6ripple4Node7try_runEv"></span><span id="ripple::Node::try_run"></span><span class="target" id="classripple_1_1Node_1a22abb07d335724dabb4d7c68e6358d54"></span>auto <code class="sig-name descname">try_run</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4N6ripple4Node7try_runEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Tries to run the node. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if the node has no dependencies and therefore executes, otherwise returns false. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple4Node13add_successorER4Node">
+<span id="_CPPv3N6ripple4Node13add_successorER4Node"></span><span id="_CPPv2N6ripple4Node13add_successorER4Node"></span><span id="ripple::Node::add_successor__NodeR"></span><span class="target" id="classripple_1_1Node_1a408ca020738a5e61d6b36f440b666419"></span>auto <code class="sig-name descname">add_successor</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I_6size_t_6size_tEN6ripple4NodeE" title="ripple::Node">Node</a> &amp;<em>node</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple4Node13add_successorER4Node" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Add sthe given node as a successor for this node. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">node</span></code>: The node to add as a successor to this node. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple4Node10add_friendEN8NodeInfo6IdTypeE">
+<span id="_CPPv3N6ripple4Node10add_friendEN8NodeInfo6IdTypeE"></span><span id="_CPPv2N6ripple4Node10add_friendEN8NodeInfo6IdTypeE"></span><span id="ripple::Node::add_friend__NodeInfo::IdType"></span><span class="target" id="classripple_1_1Node_1a9bd090856bc9e5b2e2d52416e76f97d7"></span>auto <code class="sig-name descname">add_friend</code><span class="sig-paren">(</span><em class="property">typename</em> <a class="reference internal" href="structripple_1_1NodeInfo.html#_CPPv4N6ripple8NodeInfoE" title="ripple::NodeInfo">NodeInfo</a>::<a class="reference internal" href="structripple_1_1NodeInfo.html#_CPPv4N6ripple8NodeInfo6IdTypeE" title="ripple::NodeInfo::IdType">IdType</a> <em>friend_id</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple4Node10add_friendEN8NodeInfo6IdTypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Adds the node with the given id as a friend of this node. </p>
+<p><p>For example, if x is a friend of y, then y </p>
+<em>uses</em> x for an operation, and x cannot be modified by any operations on it until <em>y</em> has performed its operation.<dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>A friend node is a node which can execute in parallel with another node, but which is used by the other node for the other node’s operation, but is not modified by it.</p>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">friend_id</span></code>: The id of the friend to add. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple4Node7friendsEv">
+<span id="_CPPv3NK6ripple4Node7friendsEv"></span><span id="_CPPv2NK6ripple4Node7friendsEv"></span><span id="ripple::Node::friendsC"></span><span class="target" id="classripple_1_1Node_1aee919b9e158181121ee5621a7b75533c"></span>auto <code class="sig-name descname">friends</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <em class="property">typename</em> <a class="reference internal" href="structripple_1_1NodeInfo.html#_CPPv4N6ripple8NodeInfoE" title="ripple::NodeInfo">NodeInfo</a>::<a class="reference internal" href="structripple_1_1NodeInfo.html#_CPPv4N6ripple8NodeInfo7FriendsE" title="ripple::NodeInfo::Friends">Friends</a>&amp;<a class="headerlink" href="#_CPPv4NK6ripple4Node7friendsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets all friends for the node. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A container of all friend node ids. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple4Node24increment_num_dependentsEv">
+<span id="_CPPv3N6ripple4Node24increment_num_dependentsEv"></span><span id="_CPPv2N6ripple4Node24increment_num_dependentsEv"></span><span id="ripple::Node::increment_num_dependents"></span><span class="target" id="classripple_1_1Node_1a5329fc3d304218555eb0d7eccfdb8489"></span>auto <code class="sig-name descname">increment_num_dependents</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple4Node24increment_num_dependentsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Increments the number of dependents for the node. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple4Node4nameEv">
+<span id="_CPPv3NK6ripple4Node4nameEv"></span><span id="_CPPv2NK6ripple4Node4nameEv"></span><span id="ripple::Node::nameC"></span><span class="target" id="classripple_1_1Node_1a453e72caeca3424a531749ce951e7d7c"></span>auto <code class="sig-name descname">name</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <em class="property">typename</em> <a class="reference internal" href="structripple_1_1NodeInfo.html#_CPPv4N6ripple8NodeInfoE" title="ripple::NodeInfo">NodeInfo</a>::<a class="reference internal" href="structripple_1_1NodeInfo.html#_CPPv4N6ripple8NodeInfo4NameE" title="ripple::NodeInfo::Name">Name</a><a class="headerlink" href="#_CPPv4NK6ripple4Node4nameEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the name of the node. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>the name of the node. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple4Node2idEv">
+<span id="_CPPv3NK6ripple4Node2idEv"></span><span id="_CPPv2NK6ripple4Node2idEv"></span><span id="ripple::Node::idC"></span><span class="target" id="classripple_1_1Node_1a91901cf803539f5d04dab4e1443b4bdb"></span>auto <code class="sig-name descname">id</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <em class="property">typename</em> <a class="reference internal" href="structripple_1_1NodeInfo.html#_CPPv4N6ripple8NodeInfoE" title="ripple::NodeInfo">NodeInfo</a>::<a class="reference internal" href="structripple_1_1NodeInfo.html#_CPPv4N6ripple8NodeInfo6IdTypeE" title="ripple::NodeInfo::IdType">IdType</a><a class="headerlink" href="#_CPPv4NK6ripple4Node2idEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the id of the node. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The id of the node. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple4Node4kindEv">
+<span id="_CPPv3NK6ripple4Node4kindEv"></span><span id="_CPPv2NK6ripple4Node4kindEv"></span><span id="ripple::Node::kindC"></span><span class="target" id="classripple_1_1Node_1a9172deda893675c0fe8810ceb502faa2"></span>auto <code class="sig-name descname">kind</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="enum_namespaceripple_1a4d5f4cde24de454f2d816f7c9a93e2c4.html#_CPPv4N6ripple8NodeKindE" title="ripple::NodeKind">NodeKind</a><a class="headerlink" href="#_CPPv4NK6ripple4Node4kindEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the kind of the node. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The kind of the node. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple4Node14execution_kindEv">
+<span id="_CPPv3NK6ripple4Node14execution_kindEv"></span><span id="_CPPv2NK6ripple4Node14execution_kindEv"></span><span id="ripple::Node::execution_kindC"></span><span class="target" id="classripple_1_1Node_1a815c89cfd82955d5e8bf781c75fa093c"></span>auto <code class="sig-name descname">execution_kind</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="enum_namespaceripple_1ae314c8184d85e6da81055513973875a6.html#_CPPv4N6ripple13ExecutionKindE" title="ripple::ExecutionKind">ExecutionKind</a><a class="headerlink" href="#_CPPv4NK6ripple4Node14execution_kindEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the execution target for the node. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The kind of the execution target for the node. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple4Node14num_dependentsEv">
+<span id="_CPPv3NK6ripple4Node14num_dependentsEv"></span><span id="_CPPv2NK6ripple4Node14num_dependentsEv"></span><span id="ripple::Node::num_dependentsC"></span><span class="target" id="classripple_1_1Node_1a04dbbe319dbd6166855df04e016f43cf"></span>auto <code class="sig-name descname">num_dependents</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; CounterValue<a class="headerlink" href="#_CPPv4NK6ripple4Node14num_dependentsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the number of dependents for the node. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of dependents for the node. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classripple_1_1OwnedStorage.html" class="btn btn-neutral float-right" title="Template Class OwnedStorage" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="classripple_1_1MultidimWriter.html" class="btn btn-neutral" title="Class MultidimWriter" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Template Class Node</a><ul>
+<li><a class="reference internal" href="#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

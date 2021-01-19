@@ -1,0 +1,68 @@
+
+.. _file_include_ripple_core_algorithm_max_element.hpp:
+
+File max_element.hpp
+====================
+
+
+This file implements functionality to get the max element from a variadic pack. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/algorithm/max_element.hpp``)
+--------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_algorithm_max_element.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``../utility/forward.hpp``
+
+- ``../utility/portability.hpp``
+
+- ``algorithm`` (:ref:`file_include_ripple_core_algorithm_for_each.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_storage_storage_element_traits.hpp`
+
+- :ref:`file_include_ripple_core_functional_kernel_invoke_generic_impl_.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+- :ref:`namespace_ripple__detail`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_max__element_8hpp_1a4519db7224256ed6b40a8098e5cdf5b2`
+
+- :ref:`exhale_function_max__element_8hpp_1ac83fe20a8c75fac7b16f2f3307212d5c`
+

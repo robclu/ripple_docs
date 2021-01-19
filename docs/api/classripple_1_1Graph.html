@@ -1,0 +1,1198 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class Graph &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Template Class HostBlock" href="classripple_1_1HostBlock.html" />
+  <link rel="prev" title="Class GenericLoader" href="classripple_1_1GenericLoader.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Class Graph</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/classripple_1_1Graph.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="class-graph">
+<span id="exhale-class-classripple-1-1graph"></span><h1>Class Graph<a class="headerlink" href="#class-graph" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_graph_graph.hpp.html#file-include-ripple-core-graph-graph-hpp"><span class="std std-ref">File graph.hpp</span></a></p></li>
+</ul>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4N6ripple5GraphE">
+<span id="_CPPv3N6ripple5GraphE"></span><span id="_CPPv2N6ripple5GraphE"></span><span id="ripple::Graph"></span><span class="target" id="classripple_1_1Graph"></span><em class="property">class </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">Graph</code><a class="headerlink" href="#_CPPv4N6ripple5GraphE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#classripple_1_1Graph"><span class="std std-ref">Graph</span></a> class is a collection of nodes and the connectivity between them. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple5Graph5GraphEv">
+<span id="_CPPv3N6ripple5Graph5GraphEv"></span><span id="_CPPv2N6ripple5Graph5GraphEv"></span><span id="ripple::Graph::Graph"></span><span class="target" id="classripple_1_1Graph_1abad8dab02d7626aecdc5b0c14ced81be"></span><code class="sig-name descname">Graph</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = default<a class="headerlink" href="#_CPPv4N6ripple5Graph5GraphEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a graph. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple5Graph5GraphE13ExecutionKind">
+<span id="_CPPv3N6ripple5Graph5GraphE13ExecutionKind"></span><span id="_CPPv2N6ripple5Graph5GraphE13ExecutionKind"></span><span id="ripple::Graph::Graph__ExecutionKind"></span><span class="target" id="classripple_1_1Graph_1a932b36456c5bd5b5e59e41d9c9017017"></span><code class="sig-name descname">Graph</code><span class="sig-paren">(</span><a class="reference internal" href="enum_namespaceripple_1ae314c8184d85e6da81055513973875a6.html#_CPPv4N6ripple13ExecutionKindE" title="ripple::ExecutionKind">ExecutionKind</a> <em>exec_kind</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple5Graph5GraphE13ExecutionKind" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a graph with all nodes having a default execution kind defined by the given execution kind. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">exec_kind</span></code>: The kind of the execution for the graph nodes. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple5GraphD0Ev">
+<span id="_CPPv3N6ripple5GraphD0Ev"></span><span id="_CPPv2N6ripple5GraphD0Ev"></span><span id="ripple::Graph::~Graph"></span><span class="target" id="classripple_1_1Graph_1a9efbc1503e7665978ee06e29dfeb8ddc"></span><code class="sig-name descname">~Graph</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple5GraphD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Destructor  recycles the nodes into the pool if they are valid. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple5Graph5GraphERR5Graph">
+<span id="_CPPv3N6ripple5Graph5GraphERR5Graph"></span><span id="_CPPv2N6ripple5Graph5GraphERR5Graph"></span><span id="ripple::Graph::Graph__GraphRR"></span><span class="target" id="classripple_1_1Graph_1a0bae1929c89ce256d6e7028c80b29e76"></span><code class="sig-name descname">Graph</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple5Graph5GraphERR5Graph" title="ripple::Graph::Graph">Graph</a> &amp;&amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple5Graph5GraphERR5Graph" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Move constructor which just moves all graph infromation from the other graph into thos one. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other graph to move into this one. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple5Graph5GraphERK5Graph">
+<span id="_CPPv3N6ripple5Graph5GraphERK5Graph"></span><span id="_CPPv2N6ripple5Graph5GraphERK5Graph"></span><span id="ripple::Graph::Graph__GraphCR"></span><span class="target" id="classripple_1_1Graph_1ab8e2abb9771aa39a18a12a5e56faa9f1"></span><code class="sig-name descname">Graph</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple5Graph5GraphERK5Graph" title="ripple::Graph::Graph">Graph</a>&amp;<span class="sig-paren">)</span> = delete<a class="headerlink" href="#_CPPv4N6ripple5Graph5GraphERK5Graph" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy constructor  deleted because graphs can’t be copied. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple5GraphaSERR5Graph">
+<span id="_CPPv3N6ripple5GraphaSERR5Graph"></span><span id="_CPPv2N6ripple5GraphaSERR5Graph"></span><span id="ripple::Graph::assign-operator__GraphRR"></span><span class="target" id="classripple_1_1Graph_1a74612b920782c7e305c0e1956f23082d"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a> &amp;&amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4N6ripple5GraphaSERR5Graph" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of move assignment operator to move the other graph into this one. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the newly created graph. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other graph to move into this one. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple5GraphaSERK5Graph">
+<span id="_CPPv3N6ripple5GraphaSERK5Graph"></span><span id="_CPPv2N6ripple5GraphaSERK5Graph"></span><span id="ripple::Graph::assign-operator__GraphCR"></span><span class="target" id="classripple_1_1Graph_1a5fa36163879d48bf3aa5841c9471009a"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a> &amp;<em>other</em><span class="sig-paren">)</span> = delete<a class="headerlink" href="#_CPPv4N6ripple5GraphaSERK5Graph" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy assignment operator  deleted because graphs can’t be copied. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple5Graph5resetEv">
+<span id="_CPPv3N6ripple5Graph5resetEv"></span><span id="_CPPv2N6ripple5Graph5resetEv"></span><span id="ripple::Graph::reset"></span><span class="target" id="classripple_1_1Graph_1a06fa37b853c97d0b08798b224c7a9c60"></span>auto <code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple5Graph5resetEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Resets the graph, returning all allocated nodes to the allocator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple5Graph5cloneEv">
+<span id="_CPPv3NK6ripple5Graph5cloneEv"></span><span id="_CPPv2NK6ripple5Graph5cloneEv"></span><span id="ripple::Graph::cloneC"></span><span class="target" id="classripple_1_1Graph_1abc3022a737ad71132e5613d5cb129c36"></span>auto <code class="sig-name descname">clone</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a><a class="headerlink" href="#_CPPv4NK6ripple5Graph5cloneEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clones the graph by allocates new nodes for the new graph and then copying the others into it. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This is not designed to be fast, and it is <em>not</em> thread safe.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>The new graph. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple5Graph4sizeEv">
+<span id="_CPPv3NK6ripple5Graph4sizeEv"></span><span id="_CPPv2NK6ripple5Graph4sizeEv"></span><span id="ripple::Graph::sizeC"></span><span class="target" id="classripple_1_1Graph_1a06f30ab61406ce6b7c534299414ab9e1"></span>auto <code class="sig-name descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple5Graph4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the number of nodes in the graph. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of nodes in the graph. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple5Graph20allocation_pool_sizeEv">
+<span id="_CPPv3NK6ripple5Graph20allocation_pool_sizeEv"></span><span id="_CPPv2NK6ripple5Graph20allocation_pool_sizeEv"></span><span id="ripple::Graph::allocation_pool_sizeC"></span><span class="target" id="classripple_1_1Graph_1ad93bcbdd14fb9e1490a7fb7b4a42623f"></span>auto <code class="sig-name descname">allocation_pool_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple5Graph20allocation_pool_sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the maximum number of nodes which can be allocated for <em>all</em> graphs. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The size of the allocation pool. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple5Graph4findENSt6stringE">
+<span id="_CPPv3N6ripple5Graph4findENSt6stringE"></span><span id="_CPPv2N6ripple5Graph4findENSt6stringE"></span><span id="ripple::Graph::find__ss"></span><span class="target" id="classripple_1_1Graph_1a8522f08ba1ae7a5e955fc9a968438cc8"></span>auto <code class="sig-name descname">find</code><span class="sig-paren">(</span>std::string <em>name</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; std::optional&lt;NodeType*&gt;<a class="headerlink" href="#_CPPv4N6ripple5Graph4findENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets an optional type which may point to the node with the given name. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A valid pointer wrapped in an optional on success. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: The name of the node to find. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple5Graph12find_last_ofENSt6stringE">
+<span id="_CPPv3N6ripple5Graph12find_last_ofENSt6stringE"></span><span id="_CPPv2N6ripple5Graph12find_last_ofENSt6stringE"></span><span id="ripple::Graph::find_last_of__ss"></span><span class="target" id="classripple_1_1Graph_1a0dbe86b6619750e3f722c911e57aae9f"></span>auto <code class="sig-name descname">find_last_of</code><span class="sig-paren">(</span>std::string <em>name</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; std::optional&lt;NodeType*&gt;<a class="headerlink" href="#_CPPv4N6ripple5Graph12find_last_ofENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Finds the last instance of a node with the given name. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A valid optional if the node was found. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: The name of the node to find. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph7emplaceER5GraphRR1FDpRR4Args">
+<span id="_CPPv3I0Dp_17non_node_enable_tI1FEEN6ripple5Graph7emplaceERR1FDpRR4Args"></span><span id="_CPPv2I0Dp_17non_node_enable_tI1FEEN6ripple5Graph7emplaceERR1FDpRR4Args"></span>template&lt;typename <code class="sig-name descname">F</code>, typename ...<code class="sig-name descname">Args</code>, non_node_enable_t&lt;<a class="reference internal" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph7emplaceER5GraphRR1FDpRR4Args" title="ripple::Graph::emplace::F">F</a>&gt; = 0&gt;<br /><span class="target" id="classripple_1_1Graph_1a85e34dc6db5db6ab99354647da1b38dd"></span>auto <code class="sig-name descname">emplace</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph7emplaceER5GraphRR1FDpRR4Args" title="ripple::Graph::emplace::F">F</a> &amp;&amp;<em>callable</em>, <a class="reference internal" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph7emplaceER5GraphRR1FDpRR4Args" title="ripple::Graph::emplace::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph7emplaceER5GraphRR1FDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Emplaces a node onto the graph, returning a reference to the modified graph. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified graph. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">callable</span></code>: The callable which defines the node’s operation. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: Arguments for the callable. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code>: The type of the callable. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The types of the arguments. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph13emplace_namedER5Graph8NodeInfoRR1FDpRR4Args">
+<span id="_CPPv3I0Dp_17non_node_enable_tI1FEEN6ripple5Graph13emplace_namedE8NodeInfoRR1FDpRR4Args"></span><span id="_CPPv2I0Dp_17non_node_enable_tI1FEEN6ripple5Graph13emplace_namedE8NodeInfoRR1FDpRR4Args"></span>template&lt;typename <code class="sig-name descname">F</code>, typename ...<code class="sig-name descname">Args</code>, non_node_enable_t&lt;<a class="reference internal" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph13emplace_namedER5Graph8NodeInfoRR1FDpRR4Args" title="ripple::Graph::emplace_named::F">F</a>&gt; = 0&gt;<br /><span class="target" id="classripple_1_1Graph_1ab46d55c3d02cc62335f265eadaab1ffe"></span>auto <code class="sig-name descname">emplace_named</code><span class="sig-paren">(</span><a class="reference internal" href="structripple_1_1NodeInfo.html#_CPPv4N6ripple8NodeInfoE" title="ripple::NodeInfo">NodeInfo</a> <em>info</em>, <a class="reference internal" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph13emplace_namedER5Graph8NodeInfoRR1FDpRR4Args" title="ripple::Graph::emplace_named::F">F</a> &amp;&amp;<em>callable</em>, <a class="reference internal" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph13emplace_namedER5Graph8NodeInfoRR1FDpRR4Args" title="ripple::Graph::emplace_named::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph13emplace_namedER5Graph8NodeInfoRR1FDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Emplaces a node onto the graph using the given info, returning a reference to the modified graph. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified graph. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">info</span></code>: The info for the node. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">callable</span></code>: The callable which defines the node’s operation. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: Arguments for the callable. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code>: The type of the callable. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The types of the arguments. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDp_17all_same_enable_tI8NodeTypeDpNSt7decay_tI5NodesEEEEN6ripple5Graph7emplaceER5GraphDpRR5Nodes">
+<span id="_CPPv3IDp_17all_same_enable_tI8NodeTypeDpNSt7decay_tI5NodesEEEEN6ripple5Graph7emplaceEDpRR5Nodes"></span><span id="_CPPv2IDp_17all_same_enable_tI8NodeTypeDpNSt7decay_tI5NodesEEEEN6ripple5Graph7emplaceEDpRR5Nodes"></span>template&lt;typename ...<code class="sig-name descname">Nodes</code>, <a class="reference internal" href="typedef_namespaceripple_1a3470aefb1ca07481691c45171ba073d5.html#_CPPv4I0DpEN6ripple17all_same_enable_tE" title="ripple::all_same_enable_t">all_same_enable_t</a>&lt;NodeType, std::decay_t&lt;<a class="reference internal" href="#_CPPv4IDp_17all_same_enable_tI8NodeTypeDpNSt7decay_tI5NodesEEEEN6ripple5Graph7emplaceER5GraphDpRR5Nodes" title="ripple::Graph::emplace::Nodes">Nodes</a>&gt;...&gt; = 0&gt;<br /><span class="target" id="classripple_1_1Graph_1a347b8fe060d054ede813f6b786caf5cc"></span>auto <code class="sig-name descname">emplace</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDp_17all_same_enable_tI8NodeTypeDpNSt7decay_tI5NodesEEEEN6ripple5Graph7emplaceER5GraphDpRR5Nodes" title="ripple::Graph::emplace::Nodes">Nodes</a>&amp;&amp;... <em>nodes</em><span class="sig-paren">)</span> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4IDp_17all_same_enable_tI8NodeTypeDpNSt7decay_tI5NodesEEEEN6ripple5Graph7emplaceER5GraphDpRR5Nodes" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Emplaces all the nodes onto the graph at the same level such that they can execute in parallel. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified graph. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">nodes</span></code>: The nodes to emplace. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Nodes</span></code>: The types of the nodes. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple5Graph7emplaceER5Graph">
+<span id="_CPPv3N6ripple5Graph7emplaceER5Graph"></span><span id="_CPPv2N6ripple5Graph7emplaceER5Graph"></span><span id="ripple::Graph::emplace__GraphR"></span><span class="target" id="classripple_1_1Graph_1afcf3c50df9afba578e9c6e8a42ba65c6"></span>auto <code class="sig-name descname">emplace</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a> &amp;<em>graph</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4N6ripple5Graph7emplaceER5Graph" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Emplaces the given graph as a subgraph in this graph, which executes <em>after</em> any nodes currently in the graph. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified graph. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">graph</span></code>: The graph to emplace as a subgraph in this graph. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph4syncER5GraphRR1FDpRR4Args">
+<span id="_CPPv3I0Dp_17non_node_enable_tI1FEEN6ripple5Graph4syncERR1FDpRR4Args"></span><span id="_CPPv2I0Dp_17non_node_enable_tI1FEEN6ripple5Graph4syncERR1FDpRR4Args"></span>template&lt;typename <code class="sig-name descname">F</code>, typename ...<code class="sig-name descname">Args</code>, non_node_enable_t&lt;<a class="reference internal" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph4syncER5GraphRR1FDpRR4Args" title="ripple::Graph::sync::F">F</a>&gt; = 0&gt;<br /><span class="target" id="classripple_1_1Graph_1a3142bf2ddedde2a42b6c53c9f2f07914"></span>auto <code class="sig-name descname">sync</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph4syncER5GraphRR1FDpRR4Args" title="ripple::Graph::sync::F">F</a> &amp;&amp;<em>callable</em>, <a class="reference internal" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph4syncER5GraphRR1FDpRR4Args" title="ripple::Graph::sync::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph4syncER5GraphRR1FDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Emplaces a node into the graph which creates a sync point in the graph. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This does not flush all gpu work, it simply ensures that all GPU work is submitted by this point, to flush and wait for all GPU work to finish, </p>
+</dd>
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#classripple_1_1Graph_1a580d39eb336ea80ee777906699d49016"><span class="std std-ref">sync_gpus</span></a>.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified graph. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">callable</span></code>: The callable which defines the node’s operation. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: Arguments for the callable. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code>: The type of the callable. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The types of the arguments. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph9sync_gpusER5GraphRR1FDpRR4Args">
+<span id="_CPPv3I0Dp_17non_node_enable_tI1FEEN6ripple5Graph9sync_gpusERR1FDpRR4Args"></span><span id="_CPPv2I0Dp_17non_node_enable_tI1FEEN6ripple5Graph9sync_gpusERR1FDpRR4Args"></span>template&lt;typename <code class="sig-name descname">F</code>, typename ...<code class="sig-name descname">Args</code>, non_node_enable_t&lt;<a class="reference internal" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph9sync_gpusER5GraphRR1FDpRR4Args" title="ripple::Graph::sync_gpus::F">F</a>&gt; = 0&gt;<br /><span class="target" id="classripple_1_1Graph_1a580d39eb336ea80ee777906699d49016"></span>auto <code class="sig-name descname">sync_gpus</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph9sync_gpusER5GraphRR1FDpRR4Args" title="ripple::Graph::sync_gpus::F">F</a> &amp;&amp;<em>callable</em>, <a class="reference internal" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph9sync_gpusER5GraphRR1FDpRR4Args" title="ripple::Graph::sync_gpus::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph9sync_gpusER5GraphRR1FDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Emplaces a node into the graph which creates a sync point in the graph which synchronizes <em>all</em> streams on <em>all</em> GPUs. </p>
+<p>To create only a submission synchronization point, <dl class="simple">
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#classripple_1_1Graph_1a3142bf2ddedde2a42b6c53c9f2f07914"><span class="std std-ref">sync</span></a>.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">callable</span></code>: The callable which defines the node’s operation. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: Arguments for the callable. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code>: The type of the callable. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The types of the arguments. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple5Graph9gpu_fenceEv">
+<span id="_CPPv3N6ripple5Graph9gpu_fenceEv"></span><span id="_CPPv2N6ripple5Graph9gpu_fenceEv"></span><span id="ripple::Graph::gpu_fence"></span><span class="target" id="classripple_1_1Graph_1a6e32759969c0ca53cb8ebcfb1f4f8156"></span>auto <code class="sig-name descname">gpu_fence</code><span class="sig-paren">(</span><span class="sig-paren">)</span> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4N6ripple5Graph9gpu_fenceEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Emplaces a node into the graph which creates a fence for each gpu, which will block until all gpus have finished their currently submitted work. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">callable</span></code>: The callable which defines the node’s operation. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: Arguments for the callable. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code>: The type of the callable. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The types of the arguments. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph4thenER5GraphRR1FDpRR4Args">
+<span id="_CPPv3I0Dp_17non_node_enable_tI1FEEN6ripple5Graph4thenERR1FDpRR4Args"></span><span id="_CPPv2I0Dp_17non_node_enable_tI1FEEN6ripple5Graph4thenERR1FDpRR4Args"></span>template&lt;typename <code class="sig-name descname">F</code>, typename ...<code class="sig-name descname">Args</code>, non_node_enable_t&lt;<a class="reference internal" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph4thenER5GraphRR1FDpRR4Args" title="ripple::Graph::then::F">F</a>&gt; = 0&gt;<br /><span class="target" id="classripple_1_1Graph_1a390e29b201ab54f3b9362c34e3f7e575"></span>auto <code class="sig-name descname">then</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph4thenER5GraphRR1FDpRR4Args" title="ripple::Graph::then::F">F</a> &amp;&amp;<em>callable</em>, <a class="reference internal" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph4thenER5GraphRR1FDpRR4Args" title="ripple::Graph::then::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph4thenER5GraphRR1FDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Emplaces a node onto the graph which runs after all currently emplaced nodes, i.e the operations being emplaced run synchronously with the previously emplaced nodes. </p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Graph</span> <span class="n">g</span><span class="p">;</span>
+<span class="n">g</span><span class="p">.</span><span class="n">emplace</span><span class="p">([]</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">&quot;A</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span> <span class="p">})</span>
+ <span class="p">.</span><span class="n">then</span><span class="p">([]</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">&quot;B</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span> <span class="p">});</span>
+</pre></div>
+</div>
+</p>
+<p>This will run B <em>after</em> A finishes.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified graph. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">callable</span></code>: The callable which defines the node’s operation. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: Arguments for the callable. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code>: The type of the callable. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The types of the arguments. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDp_17all_same_enable_tI8NodeTypeDpNSt7decay_tI5NodesEEEEN6ripple5Graph4thenER5GraphDpRR5Nodes">
+<span id="_CPPv3IDp_17all_same_enable_tI8NodeTypeDpNSt7decay_tI5NodesEEEEN6ripple5Graph4thenEDpRR5Nodes"></span><span id="_CPPv2IDp_17all_same_enable_tI8NodeTypeDpNSt7decay_tI5NodesEEEEN6ripple5Graph4thenEDpRR5Nodes"></span>template&lt;typename ...<code class="sig-name descname">Nodes</code>, <a class="reference internal" href="typedef_namespaceripple_1a3470aefb1ca07481691c45171ba073d5.html#_CPPv4I0DpEN6ripple17all_same_enable_tE" title="ripple::all_same_enable_t">all_same_enable_t</a>&lt;NodeType, std::decay_t&lt;<a class="reference internal" href="#_CPPv4IDp_17all_same_enable_tI8NodeTypeDpNSt7decay_tI5NodesEEEEN6ripple5Graph4thenER5GraphDpRR5Nodes" title="ripple::Graph::then::Nodes">Nodes</a>&gt;...&gt; = 0&gt;<br /><span class="target" id="classripple_1_1Graph_1aaa81917b85c5ab4bb8378a9f102a69ae"></span>auto <code class="sig-name descname">then</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDp_17all_same_enable_tI8NodeTypeDpNSt7decay_tI5NodesEEEEN6ripple5Graph4thenER5GraphDpRR5Nodes" title="ripple::Graph::then::Nodes">Nodes</a>&amp;&amp;... <em>nodes</em><span class="sig-paren">)</span> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4IDp_17all_same_enable_tI8NodeTypeDpNSt7decay_tI5NodesEEEEN6ripple5Graph4thenER5GraphDpRR5Nodes" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Emplaces nodes onto the graph which run asynchronously with each other, but synchronously with all previous nodes. </p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Graph</span> <span class="n">g</span><span class="p">;</span>
+<span class="n">g</span><span class="p">.</span><span class="n">emplace</span><span class="p">([]</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">&quot;A</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span> <span class="p">})</span>
+ <span class="p">.</span><span class="n">then</span><span class="p">(</span>
+   <span class="n">Graph</span><span class="o">::</span><span class="n">make_node</span><span class="p">([]</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">&quot;B</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span> <span class="p">}),</span>
+   <span class="n">Graph</span><span class="o">::</span><span class="n">make_node</span><span class="p">([]</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">&quot;C</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span> <span class="p">}),</span>
+   <span class="n">Graph</span><span class="o">::</span><span class="n">make_node</span><span class="p">([]</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">&quot;D</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span> <span class="p">}));</span>
+</pre></div>
+</div>
+</p>
+<p>This will run A, and then B, C, and D will run <em>after</em> A, but may run in parallel with each other.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This is only enabled when all the template types are the same and are <a class="reference internal" href="classripple_1_1Node.html#classripple_1_1Node"><span class="std std-ref">Node</span></a> types.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified graph. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">nodes</span></code>: The nodes to emplace. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Nodes</span></code>: The types of the nodes. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple5Graph4thenER5Graph">
+<span id="_CPPv3N6ripple5Graph4thenER5Graph"></span><span id="_CPPv2N6ripple5Graph4thenER5Graph"></span><span id="ripple::Graph::then__GraphR"></span><span class="target" id="classripple_1_1Graph_1a264e1173a722edff3fb60bb04db9b80f"></span>auto <code class="sig-name descname">then</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a> &amp;<em>graph</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4N6ripple5Graph4thenER5Graph" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Emplaces the given graph as a subgraph in this graph, which executes after any nodes currently in the graph. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>Any changes to the given graph before this node executes will be reflected during execution.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified graph. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">graph</span></code>: The graph to emplace as a subgraph in this graph. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0DpEN6ripple5Graph11conditionalER5GraphRR4PredDpRR4Args">
+<span id="_CPPv3I0DpEN6ripple5Graph11conditionalERR4PredDpRR4Args"></span><span id="_CPPv2I0DpEN6ripple5Graph11conditionalERR4PredDpRR4Args"></span>template&lt;typename <code class="sig-name descname">Pred</code>, typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classripple_1_1Graph_1a13f8adb3557337cbcedefcf59eaad1eb"></span>auto <code class="sig-name descname">conditional</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0DpEN6ripple5Graph11conditionalER5GraphRR4PredDpRR4Args" title="ripple::Graph::conditional::Pred">Pred</a> &amp;&amp;<em>pred</em>, <a class="reference internal" href="#_CPPv4I0DpEN6ripple5Graph11conditionalER5GraphRR4PredDpRR4Args" title="ripple::Graph::conditional::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4I0DpEN6ripple5Graph11conditionalER5GraphRR4PredDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Adds a conditional node to the graph, where execution depends on the predicate. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified graph. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pred</span></code>: The predicate which returns if the execution must end. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: The arguments for the predicate. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Pred</span></code>: The type of the predicate. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The type of the predicate arguments. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0DpEN6ripple5Graph5splitER5GraphRR1FDpRR4Args">
+<span id="_CPPv3I0DpEN6ripple5Graph5splitERR1FDpRR4Args"></span><span id="_CPPv2I0DpEN6ripple5Graph5splitERR1FDpRR4Args"></span>template&lt;typename <code class="sig-name descname">F</code>, typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classripple_1_1Graph_1a88072910e1d0560d7621060324bc03b2"></span>auto <code class="sig-name descname">split</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0DpEN6ripple5Graph5splitER5GraphRR1FDpRR4Args" title="ripple::Graph::split::F">F</a> &amp;&amp;<em>callable</em>, <a class="reference internal" href="#_CPPv4I0DpEN6ripple5Graph5splitER5GraphRR1FDpRR4Args" title="ripple::Graph::split::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4I0DpEN6ripple5Graph5splitER5GraphRR1FDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a split in the graph by parallelising the callable over the args. </p>
+<p>For any of the args which are tensors, this creates a node per partition in the tensor. Additionally, if any of the modifiers are used, this may place additional nodes into the graph for data transfer of padding data for neighbouring tensor partitions.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This uses the default execution kind of the graph, so the nodes will be executed on the CPU or GPU based on the graph execution kind.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified graph. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">callable</span></code>: The operations for each node in the split. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: The arguments to the callable. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code>: The type of the callable. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The types of the arguments for the callable. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0DpEN6ripple5Graph5splitER5Graph13ExecutionKindRR1FDpRR4Args">
+<span id="_CPPv3I0DpEN6ripple5Graph5splitE13ExecutionKindRR1FDpRR4Args"></span><span id="_CPPv2I0DpEN6ripple5Graph5splitE13ExecutionKindRR1FDpRR4Args"></span>template&lt;typename <code class="sig-name descname">F</code>, typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classripple_1_1Graph_1a4e1d454e04bec090e42357814965126d"></span>auto <code class="sig-name descname">split</code><span class="sig-paren">(</span><a class="reference internal" href="enum_namespaceripple_1ae314c8184d85e6da81055513973875a6.html#_CPPv4N6ripple13ExecutionKindE" title="ripple::ExecutionKind">ExecutionKind</a> <em>exec_kind</em>, <a class="reference internal" href="#_CPPv4I0DpEN6ripple5Graph5splitER5Graph13ExecutionKindRR1FDpRR4Args" title="ripple::Graph::split::F">F</a> &amp;&amp;<em>callable</em>, <a class="reference internal" href="#_CPPv4I0DpEN6ripple5Graph5splitER5Graph13ExecutionKindRR1FDpRR4Args" title="ripple::Graph::split::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4I0DpEN6ripple5Graph5splitER5Graph13ExecutionKindRR1FDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a split in the graph by parallelising the callable over the args. </p>
+<p>For any of the args which are tensors, this creates a node per partition in the tensor. Additionally, if any of the modifiers are used, this may place additional nodes into the graph for data transfer of padding data for neighbouring tensor partitions.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified graph. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">exec_kind</span></code>: The kind of execution for the nodes. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">callable</span></code>: The operations for each node in the split. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: The arguments to the callable. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code>: The type of the callable. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The types of the arguments for the callable. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0DpEN6ripple5Graph10then_splitER5GraphRR1FDpRR4Args">
+<span id="_CPPv3I0DpEN6ripple5Graph10then_splitERR1FDpRR4Args"></span><span id="_CPPv2I0DpEN6ripple5Graph10then_splitERR1FDpRR4Args"></span>template&lt;typename <code class="sig-name descname">F</code>, typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classripple_1_1Graph_1a91495d4b7edbbb7cc99fa9dc74f2a481"></span>auto <code class="sig-name descname">then_split</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0DpEN6ripple5Graph10then_splitER5GraphRR1FDpRR4Args" title="ripple::Graph::then_split::F">F</a> &amp;&amp;<em>callable</em>, <a class="reference internal" href="#_CPPv4I0DpEN6ripple5Graph10then_splitER5GraphRR1FDpRR4Args" title="ripple::Graph::then_split::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4I0DpEN6ripple5Graph10then_splitER5GraphRR1FDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a split in the graph by parallelising the callable over the args. </p>
+<p>For any of the args which are tensors, this creates a node per partition in the tensor. Additionally, if any of the modifiers are used, this may place additional nodes into the graph for data transfer of padding data for neighbouring tensor partitions.</p>
+<p>This will add all emplaced nodes such that they are only executed <em>after</em> any nodes in the previous levels.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>Nodes assosciated with <em>the same</em> partition are the <em>only</em> nodes with dependencies, for example, nodes associated with paritions 0 and 1 will not have any dependencies, and can run in parallel, <em>unless</em> there are padding data transfers required.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>This uses the default execution kind of the graph, so the nodes will be executed on the CPU or GPU based on the graph execution kind.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified graph. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">callable</span></code>: The operations for each node in the split. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: The arguments to the callable. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code>: The type of the callable. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The types of the arguments for the callable. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0DpEN6ripple5Graph10then_splitER5Graph13ExecutionKindRR1FDpRR4Args">
+<span id="_CPPv3I0DpEN6ripple5Graph10then_splitE13ExecutionKindRR1FDpRR4Args"></span><span id="_CPPv2I0DpEN6ripple5Graph10then_splitE13ExecutionKindRR1FDpRR4Args"></span>template&lt;typename <code class="sig-name descname">F</code>, typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classripple_1_1Graph_1a898f57d876bb6a9ba76330c7533f26d3"></span>auto <code class="sig-name descname">then_split</code><span class="sig-paren">(</span><a class="reference internal" href="enum_namespaceripple_1ae314c8184d85e6da81055513973875a6.html#_CPPv4N6ripple13ExecutionKindE" title="ripple::ExecutionKind">ExecutionKind</a> <em>exec_kind</em>, <a class="reference internal" href="#_CPPv4I0DpEN6ripple5Graph10then_splitER5Graph13ExecutionKindRR1FDpRR4Args" title="ripple::Graph::then_split::F">F</a> &amp;&amp;<em>callable</em>, <a class="reference internal" href="#_CPPv4I0DpEN6ripple5Graph10then_splitER5Graph13ExecutionKindRR1FDpRR4Args" title="ripple::Graph::then_split::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4I0DpEN6ripple5Graph10then_splitER5Graph13ExecutionKindRR1FDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a split in the graph by parallelising the callable over the args. </p>
+<p>For any of the args which are tensors, this creates a node per partition in the tensor. Additionally, if any of the modifiers are used, this may place additional nodes into the graph for data transfer of padding data for neighbouring tensor partitions.</p>
+<p>This will add all emplaced nodes such that they are only executed <em>after</em> any nodes in the previous levels.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>Nodes assosciated with <em>the same</em> partition are the <em>only</em> nodes with dependencies, for example, nodes associated with paritions 0 and 1 will not have any dependencies, and can run in parallel, <em>unless</em> there are padding data transfers required.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified graph. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">exec_kind</span></code>: The kind of the execution for the operations. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">callable</span></code>: The operations for each node in the split. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: The arguments to the callable. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code>: The type of the callable. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The types of the arguments for the callable. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDpEN6ripple5Graph15memcopy_paddingER5GraphDpRR4Args">
+<span id="_CPPv3IDpEN6ripple5Graph15memcopy_paddingEDpRR4Args"></span><span id="_CPPv2IDpEN6ripple5Graph15memcopy_paddingEDpRR4Args"></span>template&lt;typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classripple_1_1Graph_1a02218a66042d4e34cab07c78603246cf"></span>auto <code class="sig-name descname">memcopy_padding</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDpEN6ripple5Graph15memcopy_paddingER5GraphDpRR4Args" title="ripple::Graph::memcopy_padding::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4IDpEN6ripple5Graph15memcopy_paddingER5GraphDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Performs a copy of the data between the partitions of the data, if the data is a tensor and has partitions, otherwise does not emplace any nodes into the graph. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the tensor is wrapped in any modifiers, these are applied as well to ensure that the dependencies between nodes are created.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>This uses the default execution kind of the graph.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified graph. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: The arguments to the apply the memcopies to. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The types of the arguments. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDpEN6ripple5Graph20then_memcopy_paddingER5GraphDpRR4Args">
+<span id="_CPPv3IDpEN6ripple5Graph20then_memcopy_paddingEDpRR4Args"></span><span id="_CPPv2IDpEN6ripple5Graph20then_memcopy_paddingEDpRR4Args"></span>template&lt;typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classripple_1_1Graph_1add4b12c75faf23e8a5df933d0a465eee"></span>auto <code class="sig-name descname">then_memcopy_padding</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDpEN6ripple5Graph20then_memcopy_paddingER5GraphDpRR4Args" title="ripple::Graph::then_memcopy_padding::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4IDpEN6ripple5Graph20then_memcopy_paddingER5GraphDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Performs a copy of the data between the partitions of the data, if the data is a tensor and has partitions, otherwise does not emplace any nodes into the graph. </p>
+<p>This operation will only perform the call to start the memcopy operations once all previosuly submitted operations have been executed.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the tensor is wrapped in any modifiers, these are applied as well to ensure that the dependencies between nodes are created.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>This uses the default execution kind of the graph.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified graph. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: The arguments to the apply the memcopies to. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The types of the arguments. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDpEN6ripple5Graph15memcopy_paddingER5Graph13ExecutionKindDpRR4Args">
+<span id="_CPPv3IDpEN6ripple5Graph15memcopy_paddingE13ExecutionKindDpRR4Args"></span><span id="_CPPv2IDpEN6ripple5Graph15memcopy_paddingE13ExecutionKindDpRR4Args"></span>template&lt;typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classripple_1_1Graph_1a49a651341a6148ba2a93725063e53f5b"></span>auto <code class="sig-name descname">memcopy_padding</code><span class="sig-paren">(</span><a class="reference internal" href="enum_namespaceripple_1ae314c8184d85e6da81055513973875a6.html#_CPPv4N6ripple13ExecutionKindE" title="ripple::ExecutionKind">ExecutionKind</a> <em>exec</em>, <a class="reference internal" href="#_CPPv4IDpEN6ripple5Graph15memcopy_paddingER5Graph13ExecutionKindDpRR4Args" title="ripple::Graph::memcopy_padding::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4IDpEN6ripple5Graph15memcopy_paddingER5Graph13ExecutionKindDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Performs a copy of the data between the partitions of the data, if the data is a tensor and has partitions, otherwise does not emplace any nodes into the graph. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the tensor is wrapped in any modifiers, these are applied as well to ensure that the dependencies between nodes are created.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified graph. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: The arguments to the apply the memcopies to. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">exec</span></code>: The kind of the execution of the memory copying, i.e, if the memcopy is required for the host or device data. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The types of the arguments. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDpEN6ripple5Graph20then_memcopy_paddingER5Graph13ExecutionKindDpRR4Args">
+<span id="_CPPv3IDpEN6ripple5Graph20then_memcopy_paddingE13ExecutionKindDpRR4Args"></span><span id="_CPPv2IDpEN6ripple5Graph20then_memcopy_paddingE13ExecutionKindDpRR4Args"></span>template&lt;typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classripple_1_1Graph_1a512e4b3f6cd36620d4633240c3548a4f"></span>auto <code class="sig-name descname">then_memcopy_padding</code><span class="sig-paren">(</span><a class="reference internal" href="enum_namespaceripple_1ae314c8184d85e6da81055513973875a6.html#_CPPv4N6ripple13ExecutionKindE" title="ripple::ExecutionKind">ExecutionKind</a> <em>exec</em>, <a class="reference internal" href="#_CPPv4IDpEN6ripple5Graph20then_memcopy_paddingER5Graph13ExecutionKindDpRR4Args" title="ripple::Graph::then_memcopy_padding::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4IDpEN6ripple5Graph20then_memcopy_paddingER5Graph13ExecutionKindDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Performs a copy of the data between the partitions of the data, if the data is a tensor and has partitions, otherwise does not emplace any nodes into the graph. </p>
+<p>This operation will only perform the call to start the memcopy operations once all previosuly submitted operations have been executed.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the tensor is wrapped in any modifiers, these are applied as well to ensure that the dependencies between nodes are created.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified graph. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: The arguments to the apply the memcopies to. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">exec</span></code>: The kind of the execution of the memory copying, i.e, if the memcopy is required for the host or device data. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The types of the arguments. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0_6size_t0DpEN6ripple5Graph6reduceER5GraphR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args">
+<span id="_CPPv3I0_6size_t0DpEN6ripple5Graph6reduceER6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args"></span><span id="_CPPv2I0_6size_t0DpEN6ripple5Graph6reduceER6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args"></span>template&lt;typename <code class="sig-name descname">T</code>, size_t <code class="sig-name descname">Dims</code>, typename <code class="sig-name descname">Pred</code>, typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classripple_1_1Graph_1a403654667d89a67034d2cbabf71d97e2"></span>auto <code class="sig-name descname">reduce</code><span class="sig-paren">(</span><a class="reference internal" href="classripple_1_1Tensor.html#_CPPv4I0_6size_tEN6ripple6TensorE" title="ripple::Tensor">Tensor</a>&lt;<a class="reference internal" href="#_CPPv4I0_6size_t0DpEN6ripple5Graph6reduceER5GraphR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args" title="ripple::Graph::reduce::T">T</a>, <a class="reference internal" href="#_CPPv4I0_6size_t0DpEN6ripple5Graph6reduceER5GraphR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args" title="ripple::Graph::reduce::Dims">Dims</a>&gt; &amp;<em>data</em>, <a class="reference internal" href="classripple_1_1ReductionResult.html#_CPPv4I0EN6ripple15ReductionResultE" title="ripple::ReductionResult">ReductionResult</a>&lt;<a class="reference internal" href="#_CPPv4I0_6size_t0DpEN6ripple5Graph6reduceER5GraphR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args" title="ripple::Graph::reduce::T">T</a>&gt; &amp;<em>result</em>, <a class="reference internal" href="#_CPPv4I0_6size_t0DpEN6ripple5Graph6reduceER5GraphR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args" title="ripple::Graph::reduce::Pred">Pred</a> &amp;&amp;<em>pred</em>, <a class="reference internal" href="#_CPPv4I0_6size_t0DpEN6ripple5Graph6reduceER5GraphR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args" title="ripple::Graph::reduce::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4I0_6size_t0DpEN6ripple5Graph6reduceER5GraphR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Performs a reduction of the data using the given predicate. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This performs a reduction per partition of the tensor, and then accumulates the result in the given reduction result.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>This uses the execution kind of the graph as the execution kind of the reduction operations.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified graph. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code>: The data to reduce. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">result</span></code>: The result to place the final value into. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pred</span></code>: The predicate for the reduction. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: Additional arguments for the predicate. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The data type for the tensor. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dims</span></code>: The number of dimensions for the tensor. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Pred</span></code>: The type of the predicate. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The type of the arguments for the predicate. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0_6size_t0DpEN6ripple5Graph6reduceER5Graph13ExecutionKindR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args">
+<span id="_CPPv3I0_6size_t0DpEN6ripple5Graph6reduceE13ExecutionKindR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args"></span><span id="_CPPv2I0_6size_t0DpEN6ripple5Graph6reduceE13ExecutionKindR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args"></span>template&lt;typename <code class="sig-name descname">T</code>, size_t <code class="sig-name descname">Dims</code>, typename <code class="sig-name descname">Pred</code>, typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classripple_1_1Graph_1ad6ad94c0cc0eb906a5524690827d9f81"></span>auto <code class="sig-name descname">reduce</code><span class="sig-paren">(</span><a class="reference internal" href="enum_namespaceripple_1ae314c8184d85e6da81055513973875a6.html#_CPPv4N6ripple13ExecutionKindE" title="ripple::ExecutionKind">ExecutionKind</a> <em>exec_kind</em>, <a class="reference internal" href="classripple_1_1Tensor.html#_CPPv4I0_6size_tEN6ripple6TensorE" title="ripple::Tensor">Tensor</a>&lt;<a class="reference internal" href="#_CPPv4I0_6size_t0DpEN6ripple5Graph6reduceER5Graph13ExecutionKindR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args" title="ripple::Graph::reduce::T">T</a>, <a class="reference internal" href="#_CPPv4I0_6size_t0DpEN6ripple5Graph6reduceER5Graph13ExecutionKindR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args" title="ripple::Graph::reduce::Dims">Dims</a>&gt; &amp;<em>data</em>, <a class="reference internal" href="classripple_1_1ReductionResult.html#_CPPv4I0EN6ripple15ReductionResultE" title="ripple::ReductionResult">ReductionResult</a>&lt;<a class="reference internal" href="#_CPPv4I0_6size_t0DpEN6ripple5Graph6reduceER5Graph13ExecutionKindR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args" title="ripple::Graph::reduce::T">T</a>&gt; &amp;<em>result</em>, <a class="reference internal" href="#_CPPv4I0_6size_t0DpEN6ripple5Graph6reduceER5Graph13ExecutionKindR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args" title="ripple::Graph::reduce::Pred">Pred</a> &amp;&amp;<em>pred</em>, <a class="reference internal" href="#_CPPv4I0_6size_t0DpEN6ripple5Graph6reduceER5Graph13ExecutionKindR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args" title="ripple::Graph::reduce::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4I0_6size_t0DpEN6ripple5Graph6reduceER5Graph13ExecutionKindR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Performs a reduction of the data using the given predicate. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This performs a reduction per partition of the tensor, and then accumulates the result in the given reduction result.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified graph. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">exec_kind</span></code>: The kind of the execution of the operations. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code>: The data to reduce. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">result</span></code>: The result to place the final value into. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pred</span></code>: The predicate for the reduction. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: Additional arguments for the predicate. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The data type for the tensor. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dims</span></code>: The number of dimensions for the tensor. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Pred</span></code>: The type of the predicate. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The type of the arguments for the predicate. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0_6size_t0DpEN6ripple5Graph11then_reduceER5GraphR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args">
+<span id="_CPPv3I0_6size_t0DpEN6ripple5Graph11then_reduceER6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args"></span><span id="_CPPv2I0_6size_t0DpEN6ripple5Graph11then_reduceER6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args"></span>template&lt;typename <code class="sig-name descname">T</code>, size_t <code class="sig-name descname">Dims</code>, typename <code class="sig-name descname">Pred</code>, typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classripple_1_1Graph_1a690a5cede0a6a96e1982c84b704e9e7e"></span>auto <code class="sig-name descname">then_reduce</code><span class="sig-paren">(</span><a class="reference internal" href="classripple_1_1Tensor.html#_CPPv4I0_6size_tEN6ripple6TensorE" title="ripple::Tensor">Tensor</a>&lt;<a class="reference internal" href="#_CPPv4I0_6size_t0DpEN6ripple5Graph11then_reduceER5GraphR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args" title="ripple::Graph::then_reduce::T">T</a>, <a class="reference internal" href="#_CPPv4I0_6size_t0DpEN6ripple5Graph11then_reduceER5GraphR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args" title="ripple::Graph::then_reduce::Dims">Dims</a>&gt; &amp;<em>data</em>, <a class="reference internal" href="classripple_1_1ReductionResult.html#_CPPv4I0EN6ripple15ReductionResultE" title="ripple::ReductionResult">ReductionResult</a>&lt;<a class="reference internal" href="#_CPPv4I0_6size_t0DpEN6ripple5Graph11then_reduceER5GraphR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args" title="ripple::Graph::then_reduce::T">T</a>&gt; &amp;<em>result</em>, <a class="reference internal" href="#_CPPv4I0_6size_t0DpEN6ripple5Graph11then_reduceER5GraphR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args" title="ripple::Graph::then_reduce::Pred">Pred</a> &amp;&amp;<em>pred</em>, <a class="reference internal" href="#_CPPv4I0_6size_t0DpEN6ripple5Graph11then_reduceER5GraphR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args" title="ripple::Graph::then_reduce::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4I0_6size_t0DpEN6ripple5Graph11then_reduceER5GraphR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Performs a reduction of the data using the given predicate. </p>
+<p>This emplces the reduction onto the graph such that it executes <em>after</em> any previously emplaced nodes.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This performs a reduction per partition of the tensor, and then accumulates the result in the given reduction result.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>This uses the execution kind of the graph as the execution kind of the reduction operations.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified graph. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code>: The data to reduce. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">result</span></code>: The result to place the final value into. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pred</span></code>: The predicate for the reduction. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: Additional arguments for the predicate. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The data type for the tensor. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dims</span></code>: The number of dimensions for the tensor. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Pred</span></code>: The type of the predicate. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The type of the arguments for the predicate. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0_6size_t0DpEN6ripple5Graph11then_reduceER5Graph13ExecutionKindR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args">
+<span id="_CPPv3I0_6size_t0DpEN6ripple5Graph11then_reduceE13ExecutionKindR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args"></span><span id="_CPPv2I0_6size_t0DpEN6ripple5Graph11then_reduceE13ExecutionKindR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args"></span>template&lt;typename <code class="sig-name descname">T</code>, size_t <code class="sig-name descname">Dims</code>, typename <code class="sig-name descname">Pred</code>, typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classripple_1_1Graph_1a23612f8cb9f0b78ebc4622ebeaec7e59"></span>auto <code class="sig-name descname">then_reduce</code><span class="sig-paren">(</span><a class="reference internal" href="enum_namespaceripple_1ae314c8184d85e6da81055513973875a6.html#_CPPv4N6ripple13ExecutionKindE" title="ripple::ExecutionKind">ExecutionKind</a> <em>exec_kind</em>, <a class="reference internal" href="classripple_1_1Tensor.html#_CPPv4I0_6size_tEN6ripple6TensorE" title="ripple::Tensor">Tensor</a>&lt;<a class="reference internal" href="#_CPPv4I0_6size_t0DpEN6ripple5Graph11then_reduceER5Graph13ExecutionKindR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args" title="ripple::Graph::then_reduce::T">T</a>, <a class="reference internal" href="#_CPPv4I0_6size_t0DpEN6ripple5Graph11then_reduceER5Graph13ExecutionKindR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args" title="ripple::Graph::then_reduce::Dims">Dims</a>&gt; &amp;<em>data</em>, <a class="reference internal" href="classripple_1_1ReductionResult.html#_CPPv4I0EN6ripple15ReductionResultE" title="ripple::ReductionResult">ReductionResult</a>&lt;<a class="reference internal" href="#_CPPv4I0_6size_t0DpEN6ripple5Graph11then_reduceER5Graph13ExecutionKindR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args" title="ripple::Graph::then_reduce::T">T</a>&gt; &amp;<em>result</em>, <a class="reference internal" href="#_CPPv4I0_6size_t0DpEN6ripple5Graph11then_reduceER5Graph13ExecutionKindR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args" title="ripple::Graph::then_reduce::Pred">Pred</a> &amp;&amp;<em>pred</em>, <a class="reference internal" href="#_CPPv4I0_6size_t0DpEN6ripple5Graph11then_reduceER5Graph13ExecutionKindR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args" title="ripple::Graph::then_reduce::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4I0_6size_t0DpEN6ripple5Graph11then_reduceER5Graph13ExecutionKindR6TensorI1T4DimsER15ReductionResultI1TERR4PredDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Performs a reduction of the data using the given predicate. </p>
+<p>This emplces the reduction onto the graph such that it executes <em>after</em> any previously emplaced nodes.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This performs a reduction per partition of the tensor, and then accumulates the result in the given reduction result.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>This uses the execution kind of the graph as the execution kind of the reduction operations.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified graph. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">exec_kind</span></code>: The kind of execution for the operations. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code>: The data to reduce. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">result</span></code>: The result to place the final value into. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pred</span></code>: The predicate for the reduction. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: Additional arguments for the predicate. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The data type for the tensor. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dims</span></code>: The number of dimensions for the tensor. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Pred</span></code>: The type of the predicate. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The type of the arguments for the predicate. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple5Graph14num_executionsEv">
+<span id="_CPPv3NK6ripple5Graph14num_executionsEv"></span><span id="_CPPv2NK6ripple5Graph14num_executionsEv"></span><span id="ripple::Graph::num_executionsC"></span><span class="target" id="classripple_1_1Graph_1a9c336a60e3228493e8846490dc59a0f6"></span>auto <code class="sig-name descname">num_executions</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple5Graph14num_executionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the number of times the graph has been executed. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of times the graph has been executed. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple5Graph24set_allocation_pool_sizeE6size_t">
+<span id="_CPPv3N6ripple5Graph24set_allocation_pool_sizeE6size_t"></span><span id="_CPPv2N6ripple5Graph24set_allocation_pool_sizeE6size_t"></span><span id="ripple::Graph::set_allocation_pool_size__s"></span><span class="target" id="classripple_1_1Graph_1ab2827d2605d13119fe56fa72daacfb0b"></span>auto <code class="sig-name descname">set_allocation_pool_size</code><span class="sig-paren">(</span>size_t <em>nodes</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4N6ripple5Graph24set_allocation_pool_sizeE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the size of the allocation pool for all grphs combined. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true when called for the first time, false otherwise. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">nodes</span></code>: The number of nodes for the allocation pool. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0DpEN6ripple5Graph9make_nodeER8NodeTypeRR1FDpRR4Args">
+<span id="_CPPv3I0DpEN6ripple5Graph9make_nodeERR1FDpRR4Args"></span><span id="_CPPv2I0DpEN6ripple5Graph9make_nodeERR1FDpRR4Args"></span>template&lt;typename <code class="sig-name descname">F</code>, typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classripple_1_1Graph_1a1dddbc042bac09876bae7db15b972346"></span>auto <code class="sig-name descname">make_node</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0DpEN6ripple5Graph9make_nodeER8NodeTypeRR1FDpRR4Args" title="ripple::Graph::make_node::F">F</a> &amp;&amp;<em>callable</em>, <a class="reference internal" href="#_CPPv4I0DpEN6ripple5Graph9make_nodeER8NodeTypeRR1FDpRR4Args" title="ripple::Graph::make_node::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> -&gt; NodeType&amp;<a class="headerlink" href="#_CPPv4I0DpEN6ripple5Graph9make_nodeER8NodeTypeRR1FDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Makes a node with the given callable and args. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the new node. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">callable</span></code>: The callable which defines the node’s operation. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: The args for the callable. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code>: The type of the callable. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The type of the args. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0DpEN6ripple5Graph9make_nodeER8NodeTypeRR1F13ExecutionKindDpRR4Args">
+<span id="_CPPv3I0DpEN6ripple5Graph9make_nodeERR1F13ExecutionKindDpRR4Args"></span><span id="_CPPv2I0DpEN6ripple5Graph9make_nodeERR1F13ExecutionKindDpRR4Args"></span>template&lt;typename <code class="sig-name descname">F</code>, typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classripple_1_1Graph_1abfb8572144da8f169252ba905796ed1c"></span>auto <code class="sig-name descname">make_node</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0DpEN6ripple5Graph9make_nodeER8NodeTypeRR1F13ExecutionKindDpRR4Args" title="ripple::Graph::make_node::F">F</a> &amp;&amp;<em>callable</em>, <a class="reference internal" href="enum_namespaceripple_1ae314c8184d85e6da81055513973875a6.html#_CPPv4N6ripple13ExecutionKindE" title="ripple::ExecutionKind">ExecutionKind</a> <em>exec_kind</em>, <a class="reference internal" href="#_CPPv4I0DpEN6ripple5Graph9make_nodeER8NodeTypeRR1F13ExecutionKindDpRR4Args" title="ripple::Graph::make_node::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> -&gt; NodeType&amp;<a class="headerlink" href="#_CPPv4I0DpEN6ripple5Graph9make_nodeER8NodeTypeRR1F13ExecutionKindDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Makes a node with the given callable and args, with a specific execution kind. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the new node. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">callable</span></code>: The callable which defines the node’s operation. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">exec_kind</span></code>: The kind of the execution for the node. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: The args for the callable. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code>: The type of the callable. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The type of the args. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Attributes</p>
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple5Graph13default_nodesE">
+<span id="_CPPv3N6ripple5Graph13default_nodesE"></span><span id="_CPPv2N6ripple5Graph13default_nodesE"></span><span id="ripple::Graph::default_nodes__s"></span><span class="target" id="classripple_1_1Graph_1aa72bd92a627226fb78c248b5f910d04e"></span><em class="property">constexpr</em> size_t <code class="sig-name descname">default_nodes</code> = 1024<a class="headerlink" href="#_CPPv4N6ripple5Graph13default_nodesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The default number of nodes per thread. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple5Graph10default_idE">
+<span id="_CPPv3N6ripple5Graph10default_idE"></span><span id="_CPPv2N6ripple5Graph10default_idE"></span><span id="ripple::Graph::default_id__auto"></span><span class="target" id="classripple_1_1Graph_1ae87c481c600a6637f07be36a14a17176"></span><em class="property">constexpr</em> auto <code class="sig-name descname">default_id</code> = <a class="reference internal" href="structripple_1_1NodeInfo.html#_CPPv4N6ripple8NodeInfoE" title="ripple::NodeInfo">NodeInfo</a>::<a class="reference internal" href="structripple_1_1NodeInfo.html#_CPPv4N6ripple8NodeInfo10default_idE" title="ripple::NodeInfo::default_id">default_id</a><a class="headerlink" href="#_CPPv4N6ripple5Graph10default_idE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Default id for a node. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classripple_1_1HostBlock.html" class="btn btn-neutral float-right" title="Template Class HostBlock" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="classripple_1_1GenericLoader.html" class="btn btn-neutral" title="Class GenericLoader" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Class Graph</a><ul>
+<li><a class="reference internal" href="#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

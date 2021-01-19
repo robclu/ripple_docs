@@ -1,0 +1,13 @@
+.. _exhale_function_invoke__utils_8hpp_1aab414f967586d27e2a09dc835ef34636:
+
+Template Function ripple::kernel::gpu::util::block_iter_or_same(const SharedWrapper<T>&)
+========================================================================================
+
+- Defined in :ref:`file_include_ripple_core_functional_kernel_invoke_utils.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::kernel::gpu::util::block_iter_or_same(const SharedWrapper<T>&)

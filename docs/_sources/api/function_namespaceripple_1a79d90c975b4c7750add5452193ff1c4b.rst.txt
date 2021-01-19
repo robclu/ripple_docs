@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a79d90c975b4c7750add5452193ff1c4b:
+
+Function ripple::with_overlap
+=============================
+
+- Defined in :ref:`file_include_ripple_core_graph_modifier.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::with_overlap(ExpType)

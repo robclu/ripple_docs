@@ -1,0 +1,612 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Template Class StaticStealableDequeue &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Template Class StridedStorageView" href="classripple_1_1StridedStorageView.html" />
+  <link rel="prev" title="Template Class StackArena" href="classripple_1_1StackArena.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Template Class StaticStealableDequeue</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/classripple_1_1StaticStealableDequeue.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="template-class-staticstealabledequeue">
+<span id="exhale-class-classripple-1-1staticstealabledequeue"></span><h1>Template Class StaticStealableDequeue<a class="headerlink" href="#template-class-staticstealabledequeue" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_container_static_stealable_dequeue.hpp.html#file-include-ripple-core-container-static-stealable-dequeue-hpp"><span class="std std-ref">File static_stealable_dequeue.hpp</span></a></p></li>
+</ul>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4I0_8uint32_tEN6ripple22StaticStealableDequeueE">
+<span id="_CPPv3I0_8uint32_tEN6ripple22StaticStealableDequeueE"></span><span id="_CPPv2I0_8uint32_tEN6ripple22StaticStealableDequeueE"></span>template&lt;typename <code class="sig-name descname">Object</code>, uint32_t <code class="sig-name descname">MaxObjects</code>&gt;<br /><span class="target" id="classripple_1_1StaticStealableDequeue"></span><em class="property">class </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">StaticStealableDequeue</code><a class="headerlink" href="#_CPPv4I0_8uint32_tEN6ripple22StaticStealableDequeueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#classripple_1_1StaticStealableDequeue"><span class="std std-ref">StaticStealableDequeue</span></a> is a fixed-size, concurrent, lock-free stealable double-ended queue implementation. </p>
+<p>It is designed for a single thread to push and pop onto and from the bottom of the queue, respectively, and any number of threads to steal from the top of the queue.</p>
+<p>The API provides by try_push, push, pop, steal, and size.</p>
+<p>The push function will push an object onto the queue regardless of whether the queue is full or not, and since the queue is circular, will therefore overwrite the oldest object which was pushed onto the queue. It is faster than try_push, but must only be used when it’s known that the queue is not full. In debug mode, push will notify if an overwrite happens.</p>
+<p>The try_push function calls push if the queue is not full.</p>
+<p>pop and steal will return a nullopt if the queue is empty, or if another thread stole the last element before they got to it. Otherwise they will return a pointer to the object.</p>
+<p>To provide an API that does not easily introduce bugs, all returned objects are <strong>copies</strong>, thus the queue is not suitable for large objects. This is because providing a reference or pointer to an element introduces a potential race between the use of that element and a push to the queue.</p>
+<p>Consider if the queue is full. Calling <code class="docutils literal notranslate"><span class="pre">try_push</span></code> returns false, as one would expect, and calling <code class="docutils literal notranslate"><span class="pre">steal</span></code> returns the oldest element (say at index 0) then increments top (to 1). Another call to <code class="docutils literal notranslate"><span class="pre">try_push</span></code> then succeeds because the queue is not at capacity, but it creates the new element in the same memory location as the element just stolen. Therefore, if a pointer is returned, there is a race between the stealing thread to use the element pointed to, and the pushing thread overwriting the memory. Such a scenario is too tricky to use correctly to include in the API. Therefore, benchmark the queue for the required data type, or run in debug mode to determine a good size for the queue. This queue is not dynamically sized to improve performance.</p>
+<p>Also note that due to the multi-threaded nature of the queue, a call to size only returns the size of the queue at that point in time, and it’s possible that other threads may have stolen from the queue between the time at which size was called and then next operation.</p>
+<p>This imlementation is based on the original paper by Chase and Lev:</p>
+<p><a class="reference external" href="http://dl.acm.org/citation.cfm?id=1073974">Dynamic circular work-stealing deque</a></p>
+<p>without the dynamic resizing.</p>
+<p><strong>Note:</strong> This class is aligned to avoid false sharing. Even though the objects in the queue are stored on the stack, it’s possible that the last cache line isn’t full, so we need to avoid other members of the class being put on the cacheline.</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nf">alignas</span><span class="p">(</span><span class="n">avoid_false_sharing_size</span><span class="p">)</span> <span class="n">SomeClass</span> <span class="p">{</span>
+  <span class="n">StaticStealableQueue</span><span class="o">&lt;</span><span class="n">SomeType</span><span class="p">,</span> <span class="mi">1024</span><span class="o">&gt;</span> <span class="n">queue</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Object</span></code>: The type of the data in the queue. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MaxObjects</span></code>: The maximum number of objects for the queue. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple22StaticStealableDequeue9size_typeE">
+<span id="_CPPv3N6ripple22StaticStealableDequeue9size_typeE"></span><span id="_CPPv2N6ripple22StaticStealableDequeue9size_typeE"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1a8a2ea6963c17611aa3299033d1215ba0"></span><em class="property">using </em><code class="sig-name descname">size_type</code> = uint32_t<a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue9size_typeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>== [aliases] —————————————————-==// </p>
+<p>Defines the size type of for the indices. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple22StaticStealableDequeue8atomic_tE">
+<span id="_CPPv3N6ripple22StaticStealableDequeue8atomic_tE"></span><span id="_CPPv2N6ripple22StaticStealableDequeue8atomic_tE"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1a2cb5c77804f759b31ec60421ceb43511"></span><em class="property">using </em><code class="sig-name descname">atomic_t</code> = std::atomic&lt;<a class="reference internal" href="#_CPPv4N6ripple22StaticStealableDequeue9size_typeE" title="ripple::StaticStealableDequeue::size_type">size_type</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue8atomic_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the atomic type used for the index pointers. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple22StaticStealableDequeue8object_tE">
+<span id="_CPPv3N6ripple22StaticStealableDequeue8object_tE"></span><span id="_CPPv2N6ripple22StaticStealableDequeue8object_tE"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1aa58b667de12d736b776093589ed3539b"></span><em class="property">using </em><code class="sig-name descname">object_t</code> = <a class="reference internal" href="#_CPPv4I0_8uint32_tEN6ripple22StaticStealableDequeueE" title="ripple::StaticStealableDequeue::Object">Object</a><a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue8object_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the objects in the queue. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple22StaticStealableDequeue10optional_tE">
+<span id="_CPPv3N6ripple22StaticStealableDequeue10optional_tE"></span><span id="_CPPv2N6ripple22StaticStealableDequeue10optional_tE"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1a45ee1f1a3dac787688d40a7cc73df1a3"></span><em class="property">using </em><code class="sig-name descname">optional_t</code> = std::optional&lt;<a class="reference internal" href="#_CPPv4N6ripple22StaticStealableDequeue8object_tE" title="ripple::StaticStealableDequeue::object_t">object_t</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue10optional_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines an optional typeto use when returning value types. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple22StaticStealableDequeue11container_tE">
+<span id="_CPPv3N6ripple22StaticStealableDequeue11container_tE"></span><span id="_CPPv2N6ripple22StaticStealableDequeue11container_tE"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1a0aaa9629a3c21e956d2cfd95a6c7025b"></span><em class="property">using </em><code class="sig-name descname">container_t</code> = std::vector&lt;<a class="reference internal" href="#_CPPv4N6ripple22StaticStealableDequeue8object_tE" title="ripple::StaticStealableDequeue::object_t">object_t</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue11container_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of container used to store the queue’s objects. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple22StaticStealableDequeue22StaticStealableDequeueEv">
+<span id="_CPPv3N6ripple22StaticStealableDequeue22StaticStealableDequeueEv"></span><span id="_CPPv2N6ripple22StaticStealableDequeue22StaticStealableDequeueEv"></span><span id="ripple::StaticStealableDequeue::StaticStealableDequeue"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1a75a9c3e08a773b32299f31da82e510f4"></span><code class="sig-name descname">StaticStealableDequeue</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = default<a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue22StaticStealableDequeueEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Default constructor for the queue. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple22StaticStealableDequeue22StaticStealableDequeueERR22StaticStealableDequeue">
+<span id="_CPPv3N6ripple22StaticStealableDequeue22StaticStealableDequeueERR22StaticStealableDequeue"></span><span id="_CPPv2N6ripple22StaticStealableDequeue22StaticStealableDequeueERR22StaticStealableDequeue"></span><span id="ripple::StaticStealableDequeue::StaticStealableDequeue__StaticStealableDequeueRR"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1adc5c48b6ba14d2531f57c8972c289de8"></span><code class="sig-name descname">StaticStealableDequeue</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple22StaticStealableDequeue22StaticStealableDequeueERR22StaticStealableDequeue" title="ripple::StaticStealableDequeue::StaticStealableDequeue">StaticStealableDequeue</a> &amp;&amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue22StaticStealableDequeueERR22StaticStealableDequeue" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Move constructor to move the <code class="docutils literal notranslate"><span class="pre">other</span></code> queue into this one. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other queue to move into this one. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple22StaticStealableDequeue22StaticStealableDequeueERK22StaticStealableDequeue">
+<span id="_CPPv3N6ripple22StaticStealableDequeue22StaticStealableDequeueERK22StaticStealableDequeue"></span><span id="_CPPv2N6ripple22StaticStealableDequeue22StaticStealableDequeueERK22StaticStealableDequeue"></span><span id="ripple::StaticStealableDequeue::StaticStealableDequeue__StaticStealableDequeueCR"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1a889bdc80b65f7cb0d13fba1d4e2a0c9a"></span><code class="sig-name descname">StaticStealableDequeue</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple22StaticStealableDequeue22StaticStealableDequeueERK22StaticStealableDequeue" title="ripple::StaticStealableDequeue::StaticStealableDequeue">StaticStealableDequeue</a>&amp;<span class="sig-paren">)</span> = delete<a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue22StaticStealableDequeueERK22StaticStealableDequeue" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy constructor  deleted. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0_16pointer_enable_tI1TEEN6ripple22StaticStealableDequeue4pushEv1T">
+<span id="_CPPv3I0_16pointer_enable_tI1TEEN6ripple22StaticStealableDequeue4pushE1T"></span><span id="_CPPv2I0_16pointer_enable_tI1TEEN6ripple22StaticStealableDequeue4pushE1T"></span>template&lt;typename <code class="sig-name descname">T</code>, <a class="reference internal" href="typedef_namespaceripple_1a1222a6f8279a47c6e153bd72a1bfcded.html#_CPPv4I0EN6ripple16pointer_enable_tE" title="ripple::pointer_enable_t">pointer_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I0_16pointer_enable_tI1TEEN6ripple22StaticStealableDequeue4pushEv1T" title="ripple::StaticStealableDequeue::push::T">T</a>&gt; = 0&gt;<br /><span class="target" id="classripple_1_1StaticStealableDequeue_1ad87a019702c46dba8d13af78ae84b575"></span>auto <code class="sig-name descname">push</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0_16pointer_enable_tI1TEEN6ripple22StaticStealableDequeue4pushEv1T" title="ripple::StaticStealableDequeue::push::T">T</a> <em>ptr</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4I0_16pointer_enable_tI1TEEN6ripple22StaticStealableDequeue4pushEv1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Pushes an object onto the front of the queue, when the object is an rvalue reference type. </p>
+<p>This does not check if the queue is full, and hence it <strong>will overwrite</strong> the least recently added element if the queue is full. <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: The arguments used to construct the object. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The type of the arguments for object construction. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDp_20non_pointer_enable_tIDp4ArgsEEN6ripple22StaticStealableDequeue4pushEvDpRR4Args">
+<span id="_CPPv3IDp_20non_pointer_enable_tIDp4ArgsEEN6ripple22StaticStealableDequeue4pushEDpRR4Args"></span><span id="_CPPv2IDp_20non_pointer_enable_tIDp4ArgsEEN6ripple22StaticStealableDequeue4pushEDpRR4Args"></span>template&lt;typename ...<code class="sig-name descname">Args</code>, non_pointer_enable_t&lt;<a class="reference internal" href="#_CPPv4IDp_20non_pointer_enable_tIDp4ArgsEEN6ripple22StaticStealableDequeue4pushEvDpRR4Args" title="ripple::StaticStealableDequeue::push::Args">Args</a>...&gt; = 0&gt;<br /><span class="target" id="classripple_1_1StaticStealableDequeue_1a7740cb2f6ad309678bec086a9c5898a4"></span>auto <code class="sig-name descname">push</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDp_20non_pointer_enable_tIDp4ArgsEEN6ripple22StaticStealableDequeue4pushEvDpRR4Args" title="ripple::StaticStealableDequeue::push::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4IDp_20non_pointer_enable_tIDp4ArgsEEN6ripple22StaticStealableDequeue4pushEvDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Pushes an object onto the front of the queue, when the object is an rvalue reference type. </p>
+<p>This does not check if the queue is full, and hence it <strong>will overwrite</strong> the least recently added element if the queue is full. <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: The arguments used to construct the object. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The type of the arguments for object construction. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDpEN6ripple22StaticStealableDequeue8try_pushEbDpRR4Args">
+<span id="_CPPv3IDpEN6ripple22StaticStealableDequeue8try_pushEDpRR4Args"></span><span id="_CPPv2IDpEN6ripple22StaticStealableDequeue8try_pushEDpRR4Args"></span>template&lt;typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classripple_1_1StaticStealableDequeue_1abd46ec817a161a051b168629e7e569e3"></span>auto <code class="sig-name descname">try_push</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDpEN6ripple22StaticStealableDequeue8try_pushEbDpRR4Args" title="ripple::StaticStealableDequeue::try_push::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4IDpEN6ripple22StaticStealableDequeue8try_pushEbDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Tries to push an object onto the front of the queue. </p>
+<p>Returns true if the push was successful, otherwise returns false. <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: The arguments used to construct the object. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The type of the arguments for object construction. Returns true if a new object was pushed onto the queue. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple22StaticStealableDequeue3popEv">
+<span id="_CPPv3N6ripple22StaticStealableDequeue3popEv"></span><span id="_CPPv2N6ripple22StaticStealableDequeue3popEv"></span><span id="ripple::StaticStealableDequeue::pop"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1aac08b290ddc0d8775d9b0f6cd115fbed"></span>auto <code class="sig-name descname">pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple22StaticStealableDequeue10optional_tE" title="ripple::StaticStealableDequeue::optional_t">optional_t</a><a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue3popEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Pops an object from the front of the queue. </p>
+<p>This returns an optional type which holds either the object at the bottom of the queue (the most recently added object) or an invalid optional.</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// If using the object directly:</span>
+<span class="k">if</span> <span class="p">(</span><span class="k">auto</span> <span class="n">object</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">pop</span><span class="p">())</span> <span class="p">{</span>
+  <span class="n">object</span><span class="o">-&gt;</span><span class="n">invoke_oject_member_function</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// If using the object for a call:</span>
+<span class="k">if</span> <span class="p">(</span><span class="k">auto</span> <span class="n">object</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">pop</span><span class="p">())</span> <span class="p">{</span>
+  <span class="c1">// Passes object by reference:</span>
+  <span class="n">function_using_bject</span><span class="p">(</span><span class="o">*</span><span class="n">object</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p>Returns an optional type which is in a valid state if the queue is not empty. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple22StaticStealableDequeue5stealEv">
+<span id="_CPPv3N6ripple22StaticStealableDequeue5stealEv"></span><span id="_CPPv2N6ripple22StaticStealableDequeue5stealEv"></span><span id="ripple::StaticStealableDequeue::steal"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1a9da6569d7ca9630861763c2a2a4ee51c"></span>auto <code class="sig-name descname">steal</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple22StaticStealableDequeue10optional_tE" title="ripple::StaticStealableDequeue::optional_t">optional_t</a><a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue5stealEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Steals an object from the top of the queue. </p>
+<p>This returns an optional type which is the object if the steal was successful, or a default constructed optional if not.</p>
+<p>Example usage is:</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// If using the object directly:</span>
+<span class="k">if</span> <span class="p">(</span><span class="k">auto</span> <span class="n">object</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">steal</span><span class="p">())</span> <span class="p">{</span>
+  <span class="n">object</span><span class="o">-&gt;</span><span class="n">invoke_object_member_function</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// If using the object for a call:</span>
+<span class="k">if</span> <span class="p">(</span><span class="k">auto</span> <span class="n">object</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">steal</span><span class="p">())</span> <span class="p">{</span>
+  <span class="c1">// Passes object by reference:</span>
+  <span class="n">function_using_object</span><span class="p">(</span><span class="o">*</span><span class="n">object</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p>Returns a pointer to the top (oldest) element in the queue, or nullptr. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple22StaticStealableDequeue4sizeEv">
+<span id="_CPPv3NK6ripple22StaticStealableDequeue4sizeEv"></span><span id="_CPPv2NK6ripple22StaticStealableDequeue4sizeEv"></span><span id="ripple::StaticStealableDequeue::sizeC"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1aecaef29a9cf071a22a0e4733c8a38da2"></span>auto <code class="sig-name descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple22StaticStealableDequeue9size_typeE" title="ripple::StaticStealableDequeue::size_type">size_type</a><a class="headerlink" href="#_CPPv4NK6ripple22StaticStealableDequeue4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the number of elements in the queue. </p>
+<p>This <strong>does not</strong> always return the actual size, but an approximation of the size since top can be modified by another thread which steals. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classripple_1_1StridedStorageView.html" class="btn btn-neutral float-right" title="Template Class StridedStorageView" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="classripple_1_1StackArena.html" class="btn btn-neutral" title="Template Class StackArena" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Template Class StaticStealableDequeue</a><ul>
+<li><a class="reference internal" href="#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

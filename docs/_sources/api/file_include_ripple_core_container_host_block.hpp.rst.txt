@@ -1,0 +1,72 @@
+
+.. _file_include_ripple_core_container_host_block.hpp:
+
+File host_block.hpp
+===================
+
+
+This file imlements a host side block class which holds some data. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/container/host_block.hpp``)
+-------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_container_host_block.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``../allocation/multiarch_allocator.hpp``
+
+- ``../iterator/block_iterator.hpp``
+
+- ``../utility/memory.hpp``
+
+- ``block_memory_properties.hpp`` (:ref:`file_include_ripple_core_container_block_memory_properties.hpp`)
+
+- ``block_traits.hpp`` (:ref:`file_include_ripple_core_container_block_traits.hpp`)
+
+- ``cstring``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_functional_kernel_invoke_cpp_.hpp`
+
+- :ref:`file_include_ripple_core_algorithm_reduce.hpp`
+
+- :ref:`file_include_ripple_core_container_block.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1HostBlock`
+

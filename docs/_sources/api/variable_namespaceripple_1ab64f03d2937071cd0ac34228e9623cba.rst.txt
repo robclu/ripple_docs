@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1ab64f03d2937071cd0ac34228e9623cba:
+
+Variable ripple::is_cx_number_v
+===============================
+
+- Defined in :ref:`file_include_ripple_core_utility_type_traits.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::is_cx_number_v

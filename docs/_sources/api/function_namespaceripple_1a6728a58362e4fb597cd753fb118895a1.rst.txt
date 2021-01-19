@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a6728a58362e4fb597cd753fb118895a1:
+
+Template Function ripple::operator-
+===================================
+
+- Defined in :ref:`file_include_ripple_core_container_array.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::operator-(T, const Array<Impl>&)

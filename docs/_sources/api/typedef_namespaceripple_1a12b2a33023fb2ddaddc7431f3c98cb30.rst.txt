@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a12b2a33023fb2ddaddc7431f3c98cb30:
+
+Typedef ripple::arena_constexpr_size_enable_t
+=============================================
+
+- Defined in :ref:`file_include_ripple_core_allocation_arena.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::arena_constexpr_size_enable_t

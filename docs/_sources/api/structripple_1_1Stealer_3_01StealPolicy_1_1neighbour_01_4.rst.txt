@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1Stealer_3_01StealPolicy_1_1neighbour_01_4:
+
+Template Struct Stealer< StealPolicy::neighbour >
+=================================================
+
+- Defined in :ref:`file_include_ripple_core_graph_stealer.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::Stealer< StealPolicy::neighbour >
+   :members:
+   :protected-members:
+   :undoc-members:

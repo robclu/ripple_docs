@@ -1,0 +1,13 @@
+.. _exhale_enum_namespaceripple_1a4ec397f4549f779f188aa0580cb735ca:
+
+Enum BoundaryType
+=================
+
+- Defined in :ref:`file_include_ripple_core_boundary_generic_loader.hpp`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: ripple::BoundaryType

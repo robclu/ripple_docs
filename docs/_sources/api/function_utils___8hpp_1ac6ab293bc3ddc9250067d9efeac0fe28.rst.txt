@@ -1,0 +1,13 @@
+.. _exhale_function_utils___8hpp_1ac6ab293bc3ddc9250067d9efeac0fe28:
+
+Template Function ripple::detail::copy_face_padding
+===================================================
+
+- Defined in :ref:`file_include_ripple_core_graph_detail_utils_.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::detail::copy_face_padding(ExecutionKind, TransferKind, Iterator&&)

@@ -1,0 +1,13 @@
+.. _exhale_function_thread__index__impl___8hpp_1a5015d50d58a91ebe0e9a9322faca1c83:
+
+Function ripple::detail::block_size(DimY)
+=========================================
+
+- Defined in :ref:`file_include_ripple_core_execution_detail_thread_index_impl_.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::detail::block_size(DimY)

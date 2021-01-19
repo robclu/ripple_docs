@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1a51530aaa9e33c74d14f6f56a8319b626:
+
+Variable ripple::is_contig_owned_v
+==================================
+
+- Defined in :ref:`file_include_ripple_core_storage_storage_layout.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::is_contig_owned_v

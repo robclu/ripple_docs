@@ -1,0 +1,88 @@
+
+.. _file_include_ripple_core_functional_kernel_invoke_utils.hpp:
+
+File invoke_utils.hpp
+=====================
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/functional/kernel/invoke_utils.hpp``)
+-----------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_functional_kernel_invoke_utils.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``ripple/core/container/shared_wrapper.hpp`` (:ref:`file_include_ripple_core_container_shared_wrapper.hpp`)
+
+- ``ripple/core/execution/execution_size.hpp`` (:ref:`file_include_ripple_core_execution_execution_size.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_functional_kernel_invoke_generic_impl_.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+- :ref:`namespace_ripple__kernel`
+
+- :ref:`namespace_ripple__kernel__gpu`
+
+- :ref:`namespace_ripple__kernel__gpu__util`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_invoke__utils_8hpp_1aa76ddfa3130f18ba7f33e73e5b7c77e8`
+
+- :ref:`exhale_function_invoke__utils_8hpp_1a86450e8789e389e2cb2382e425722748`
+
+- :ref:`exhale_function_invoke__utils_8hpp_1a7dace31c06cfa04136639d2827cdf458`
+
+- :ref:`exhale_function_invoke__utils_8hpp_1ad386b61b19913cf8fae89f0dca4f7526`
+
+- :ref:`exhale_function_invoke__utils_8hpp_1a5aadd9683a92460f256e7274b5b4c74a`
+
+- :ref:`exhale_function_invoke__utils_8hpp_1ac0f64c8e9de179bd5e446054f250e8c7`
+
+- :ref:`exhale_function_invoke__utils_8hpp_1a1854725ae69813d898e82d2d45f8a7da`
+
+- :ref:`exhale_function_invoke__utils_8hpp_1a212b158e79ca3ee5536acf79977df2f4`
+
+- :ref:`exhale_function_invoke__utils_8hpp_1a723a5a530445ed68082b939c3acab623`
+
+- :ref:`exhale_function_invoke__utils_8hpp_1a557e722ac274eea29d9c4cb9d228cb80`
+
+- :ref:`exhale_function_invoke__utils_8hpp_1aab414f967586d27e2a09dc835ef34636`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_invoke__utils_8hpp_1a361de60b93138975cdbde330471c89fc`
+

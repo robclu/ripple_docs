@@ -1,0 +1,13 @@
+.. _exhale_function_basic__tuple___8hpp_1aa37ce41270659211c2078034a2546c92:
+
+Template Function ripple::detail::type_extractor
+================================================
+
+- Defined in :ref:`file_include_ripple_core_container_detail_basic_tuple_.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::detail::type_extractor(Element<I, T>)

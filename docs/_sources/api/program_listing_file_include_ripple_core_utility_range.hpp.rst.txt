@@ -1,0 +1,129 @@
+
+.. _program_listing_file_include_ripple_core_utility_range.hpp:
+
+Program Listing for File range.hpp
+==================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_utility_range.hpp>` (``include/ripple/core/utility/range.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/utility/range.hpp --------------------------- -*- C++ -*- ---==//
+   //
+   //                                Ripple
+   //                                
+   //                      Copyright (c) 2019 Rob Clucas.
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_UTILITY_RANGE_HPP
+   #define RIPPLE_UTILITY_RANGE_HPP
+   
+   #include "portability.hpp"
+   #include "type_traits.hpp"
+   
+   namespace ripple {
+   
+   template <typename T>
+   class Range {
+     using value_t = std::decay_t<T>;
+   
+     template <bool IsConst>
+     struct Iterator {
+       using self_t      = Iterator<IsConst>;
+       using value_t     = std::decay_t<T>;
+       using reference_t = std::conditional_t<IsConst, const T&, T&>;
+       using pointer_t   = std::conditional_t<IsConst, const T*, T*>;
+   
+       //==--- [construction] -------------------------------------------------==//
+   
+       ripple_host_device constexpr Iterator(value_t value, value_t step)
+       : _value(value), _step(step) {}
+   
+       //==--- [operator overloads] -------------------------------------------==//
+   
+       ripple_host_device constexpr self_t operator++() { 
+         self_t i = *this; _value += _step; return i;
+       }
+   
+       ripple_host_device constexpr self_t operator++(int) {
+         _value += _step; return *this;
+       }
+   
+       ripple_host_device constexpr reference_t operator*() {
+         return _value;
+       }
+   
+       ripple_host_device constexpr pointer_t operator->() {
+         return &_value;
+       }
+   
+       ripple_host_device constexpr bool operator==(const self_t& other) {
+         return _value >= other._value;
+       }
+   
+       ripple_host_device constexpr bool operator!=(const self_t& other) {
+         return _value < other._value;
+       }
+   
+      private:
+       value_t _value; 
+       value_t _step;  
+     };
+   
+     value_t _min;  
+     value_t _max;  
+     value_t _step; 
+   
+    public:
+     //==--- [aliases] --------------------------------------------------------==//
+     
+     using const_iterator_t = Iterator<true>;
+     using iterator_t       = Iterator<false>;
+   
+     //==--- [construction] ---------------------------------------------------==//
+     
+     ripple_host_device constexpr Range(value_t min, value_t max, value_t step)
+     : _min(min), _max(max), _step(step) {}
+   
+     ripple_host_device auto begin() {
+       return iterator_t{_min, _step};
+     }
+     
+     ripple_host_device auto end() {
+      return iterator_t{_max, _step};   
+     }
+   
+     ripple_host_device auto begin() const {
+       return const_iterator_t(_min, _step);
+     }
+     
+     ripple_host_device auto end() const {
+      return const_iterator_t(_max, _step);   
+     }
+   };
+   
+   //==--- [functions] --------------------------------------------------------==//
+   
+   template <typename T>
+   ripple_host_device constexpr inline auto range(T end) -> Range<T> {
+     return Range<T>(T{0}, static_cast<T>(end), T{1});
+   }
+   
+   template <typename T>
+   ripple_host_device constexpr inline auto range(
+     T start, T end, T step = T{1}
+   ) -> Range<T> {
+     return Range<T>(start, end, step);
+   }
+   
+   } // namespace ripple
+   
+   #endif // RIPPPLE_UTILITY_RANGE_HPP

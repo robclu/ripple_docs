@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1ad1aa794b3791c5d368932acc30b849ff:
+
+Typedef ripple::NeighbourStealer
+================================
+
+- Defined in :ref:`file_include_ripple_core_execution_executor.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::NeighbourStealer

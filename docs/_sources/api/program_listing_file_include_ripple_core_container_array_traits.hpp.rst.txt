@@ -1,0 +1,152 @@
+
+.. _program_listing_file_include_ripple_core_container_array_traits.hpp:
+
+Program Listing for File array_traits.hpp
+=========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_container_array_traits.hpp>` (``include/ripple/core/container/array_traits.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/container/array_traits.hpp ------------- -*- C++ -*- ---==//
+   //
+   //                                Ripple
+   //
+   //                      Copyright (c) 2019, 2020 Rob Clucas.
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_CONTAINER_ARRAY_TRAITS_HPP
+   #define RIPPLE_CONTAINER_ARRAY_TRAITS_HPP
+   
+   #include "../storage/storage_layout.hpp"
+   #include "../utility/number.hpp"
+   
+   namespace ripple {
+   
+   /*==--- [forward declarations] ---------------------------------------------==*/
+   
+   template <typename Impl>
+   struct Array;
+   
+   template <typename T, typename Size, typename Layout = ContiguousOwned>
+   struct VecImpl;
+   
+   /*==--- [traits] -----------------------------------------------------------==*/
+   
+   template <typename T>
+   struct ArrayTraits {
+     // clang-format off
+     using Value  = std::decay_t<T>;
+     using Layout = ContiguousOwned;
+     using Array  = VecImpl<Value, Num<1>, Layout>;
+   
+     template <size_t Elements, typename L = ContiguousOwned>
+     using ImplType = VecImpl<Value, Num<Elements>, L>;
+   
+     static constexpr auto size = 1;
+     // clang-format on
+   };
+   
+   template <typename T, typename Size, typename LayoutType>
+   struct ArrayTraits<VecImpl<T, Size, LayoutType>> {
+     // clang-format off
+     using Value  = std::decay_t<T>;
+     using Layout = LayoutType;
+     using Array  = VecImpl<Value, Size, Layout>;
+   
+     template <size_t Elements, typename L = ContiguousOwned>
+     using ImplType = VecImpl<Value, Num<Elements>, L>;
+   
+     static constexpr auto size = Size::value;
+     // clang-format on
+   };
+   
+   template <typename Impl>
+   struct ArrayTraits<Array<Impl>> {
+    private:
+     using Traits = ArrayTraits<Impl>;
+   
+    public:
+     // clang-format off
+     using Value  = typename Traits::Value;
+     using Layout = typename Traits::Layout;
+     using Array  = typename Traits::Array;
+   
+     template <size_t Elements, typename L = ContiguousOwned>
+     using ImplType = typename Traits::template ImplType<Elements, L>;
+   
+     static constexpr auto size = Traits::size;
+     // clang-format on
+   };
+   
+   /*==--- [aliases & constants] ----------------------------------------------==*/
+   
+   template <typename T, size_t Size, typename Layout = ContiguousOwned>
+   using Vec = VecImpl<T, Num<Size>, Layout>;
+   
+   template <typename T, typename Layout = ContiguousOwned>
+   using Vec1d = VecImpl<T, Num<1>, Layout>;
+   
+   template <typename T, typename Layout = ContiguousOwned>
+   using Vec2d = VecImpl<T, Num<2>, Layout>;
+   
+   template <typename T, typename Layout = ContiguousOwned>
+   using Vec3d = VecImpl<T, Num<3>, Layout>;
+   
+   template <typename T>
+   using array_traits_t = ArrayTraits<std::decay_t<T>>;
+   
+   template <typename T>
+   static constexpr bool is_array_v =
+     std::is_base_of_v<Array<std::decay_t<T>>, std::decay_t<T>>;
+   
+   template <typename T, typename Traits = array_traits_t<T>>
+   using VecFallback =
+     VecImpl<typename Traits::Value, Num<Traits::size>, ContiguousOwned>;
+   
+   template <
+     typename ImplA,
+     typename ImplB,
+     typename LayoutA  = typename array_traits_t<ImplA>::Layout,
+     typename LayoutB  = typename array_traits_t<ImplB>::Layout,
+     bool ValidityA    = std::is_same_v<LayoutA, ContiguousOwned>,
+     bool ValidityB    = std::is_same_v<LayoutB, ContiguousOwned>,
+     typename Fallback = VecFallback<ImplA>>
+   using array_impl_t = std::conditional_t<
+     ValidityA,
+     ImplA,
+     std::conditional_t<ValidityB, ImplB, Fallback>>;
+   
+   /*==--- [enables] ----------------------------------------------------------==*/
+   
+   template <
+     typename T,
+     typename Impl,
+     typename Type  = std::decay_t<T>,
+     typename Value = typename ArrayTraits<Impl>::Value>
+   using array_value_enable_t = std::enable_if_t<
+     (std::is_same_v<Type, Value> ||
+      std::is_convertible_v<Type, Value>)&&!is_array_v<Type>,
+     int>;
+   
+   template <typename T>
+   using array_enable_t = std::enable_if_t<is_array_v<T>, int>;
+   
+   template <typename T>
+   using non_array_enable_t = std::enable_if_t<!is_array_v<T>, int>;
+   
+   template <typename T, size_t Size>
+   using array_size_enable_t =
+     std::enable_if_t<is_array_v<T> && (array_traits_t<T>::size == Size), int>;
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_CONTAINER_ARRAY_TRAITS_HPP

@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a4bace5bb9388178920e5305b6b536688:
+
+Template Function ripple::unrolled_for
+======================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::unrolled_for(Functor&&, Args&&...)

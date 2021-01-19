@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1ab8008cc23ef048b199d8a4a410501ac0:
+
+Template Function ripple::make_writer
+=====================================
+
+- Defined in :ref:`file_include_ripple_core_io_multidim_writer.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::make_writer(Args&&...)

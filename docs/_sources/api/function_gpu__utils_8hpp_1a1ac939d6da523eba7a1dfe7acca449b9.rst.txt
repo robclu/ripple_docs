@@ -1,0 +1,13 @@
+.. _exhale_function_gpu__utils_8hpp_1a1ac939d6da523eba7a1dfe7acca449b9:
+
+Function ripple::gpu::check_last_error
+======================================
+
+- Defined in :ref:`file_include_ripple_core_arch_gpu_utils.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::gpu::check_last_error()

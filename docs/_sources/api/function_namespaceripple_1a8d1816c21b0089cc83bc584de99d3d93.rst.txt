@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a8d1816c21b0089cc83bc584de99d3d93:
+
+Template Function ripple::to_mat2x2
+===================================
+
+- Defined in :ref:`file_include_ripple_core_math_quat.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::to_mat2x2(const Quat<T, L>&)

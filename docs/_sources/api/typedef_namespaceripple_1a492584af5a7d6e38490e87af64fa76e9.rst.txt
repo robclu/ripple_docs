@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a492584af5a7d6e38490e87af64fa76e9:
+
+Typedef ripple::StridedView
+===========================
+
+- Defined in :ref:`file_include_ripple_core_storage_layout_traits.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::StridedView

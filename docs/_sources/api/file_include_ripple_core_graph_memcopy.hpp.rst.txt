@@ -1,0 +1,79 @@
+
+.. _file_include_ripple_core_graph_memcopy.hpp:
+
+File memcopy.hpp
+================
+
+
+== ripple/core/graph/memcpy.hpp ------------------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/graph/memcopy.hpp``)
+------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_graph_memcopy.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                            Ripple
+
+             Copyright (c) 2019 - 2021 Rob Clucas
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file implements functionality for copying padding data between partitions of a tensor and adding the necessary operations to a graph.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``../container/block_extractor.hpp``
+
+- ``../functional/invoke.hpp``
+
+- ``detail/utils_.hpp`` (:ref:`file_include_ripple_core_graph_detail_utils_.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_graph_graph.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1Memcopy`
+

@@ -1,0 +1,70 @@
+
+.. _file_include_ripple_core_allocation_pool_allocator.hpp:
+
+File pool_allocator.hpp
+=======================
+
+
+This file defines a pool allocator implementation. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/allocation/pool_allocator.hpp``)
+------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_allocation_pool_allocator.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``atomic``
+
+- ``cstddef``
+
+- ``freelist.hpp`` (:ref:`file_include_ripple_core_allocation_freelist.hpp`)
+
+- ``ripple/core/utility/memory.hpp`` (:ref:`file_include_ripple_core_utility_memory.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_allocation_allocator.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1ThreadSafeFreelist_1_1HeadPtr`
+
+- :ref:`exhale_struct_structripple_1_1ThreadSafeFreelist_1_1Node`
+
+- :ref:`exhale_class_classripple_1_1PoolAllocator`
+
+- :ref:`exhale_class_classripple_1_1ThreadSafeFreelist`
+

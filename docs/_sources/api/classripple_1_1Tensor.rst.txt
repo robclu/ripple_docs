@@ -1,0 +1,16 @@
+.. _exhale_class_classripple_1_1Tensor:
+
+Template Class Tensor
+=====================
+
+- Defined in :ref:`file_include_ripple_core_container_tensor.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ripple::Tensor
+   :members:
+   :protected-members:
+   :undoc-members:

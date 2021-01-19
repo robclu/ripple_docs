@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1ArrayTraits_3_01Array_3_01Impl_01_4_01_4:
+
+Template Struct ArrayTraits< Array< Impl > >
+============================================
+
+- Defined in :ref:`file_include_ripple_core_container_array_traits.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::ArrayTraits< Array< Impl > >
+   :members:
+   :protected-members:
+   :undoc-members:

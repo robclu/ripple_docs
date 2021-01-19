@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1PolyLayoutOverloader:
+
+Template Struct PolyLayoutOverloader
+====================================
+
+- Defined in :ref:`file_include_ripple_core_storage_storage_traits.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::PolyLayoutOverloader
+   :members:
+   :protected-members:
+   :undoc-members:

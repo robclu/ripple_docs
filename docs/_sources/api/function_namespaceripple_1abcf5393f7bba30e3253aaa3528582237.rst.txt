@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1abcf5393f7bba30e3253aaa3528582237:
+
+Function ripple::topology
+=========================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::topology()

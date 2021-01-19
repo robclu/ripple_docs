@@ -1,0 +1,63 @@
+
+.. _file_include_ripple_core_functional_invoke.hpp:
+
+File invoke.hpp
+===============
+
+
+This file implements functionality to invoke a functor on a block. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/functional/invoke.hpp``)
+----------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_functional_invoke.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``kernel/invoke_block_impl_.cuh``
+
+- ``kernel/invoke_cpp_.hpp`` (:ref:`file_include_ripple_core_functional_kernel_invoke_cpp_.hpp`)
+
+- ``kernel/invoke_generic_impl_.cuh``
+
+- ``kernel/invoke_generic_impl_.hpp`` (:ref:`file_include_ripple_core_functional_kernel_invoke_generic_impl_.hpp`)
+
+- ``ripple/core/execution/execution_traits.hpp`` (:ref:`file_include_ripple_core_execution_execution_traits.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_container_tensor.hpp`
+
+- :ref:`file_include_ripple_core_graph_memcopy.hpp`
+
+- :ref:`file_include_ripple_core_graph_splitter.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+

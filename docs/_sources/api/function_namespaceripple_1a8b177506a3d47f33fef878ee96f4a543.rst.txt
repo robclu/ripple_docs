@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a8b177506a3d47f33fef878ee96f4a543:
+
+Template Function ripple::bits
+==============================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::bits(T, int, int)

@@ -1,0 +1,692 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Program Listing for File memcopy_padding.hpp &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+      <li>Program Listing for File memcopy_padding.hpp</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/program_listing_file_include_ripple_core_container_memcopy_padding.hpp.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="program-listing-for-file-memcopy-padding-hpp">
+<span id="program-listing-file-include-ripple-core-container-memcopy-padding-hpp"></span><h1>Program Listing for File memcopy_padding.hpp<a class="headerlink" href="#program-listing-for-file-memcopy-padding-hpp" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="file_include_ripple_core_container_memcopy_padding.hpp.html#file-include-ripple-core-container-memcopy-padding-hpp"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">include/ripple/core/container/memcopy_padding.hpp</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//==--- ripple/core/container/memcpy_padding.hpp ----------- -*- C++ -*- ---==//</span>
+<span class="c1">//</span>
+<span class="c1">//                                Ripple</span>
+<span class="c1">//</span>
+<span class="c1">//                      Copyright (c) 2020 Rob Clucas</span>
+<span class="c1">//</span>
+<span class="c1">//  This file is distributed under the MIT License. See LICENSE for details.</span>
+<span class="c1">//</span>
+<span class="c1">//==------------------------------------------------------------------------==//</span>
+<span class="c1">//</span>
+<span class="c1">//</span>
+<span class="c1">//==------------------------------------------------------------------------==//</span>
+
+<span class="cp">#ifndef RIPPLE_CONTAINER_MEMCOPY_PADDING_HPP</span>
+<span class="cp">#define RIPPLE_CONTAINER_MEMCOPY_PADDING_HPP</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;block_traits.hpp&quot;</span><span class="cp"></span>
+
+<span class="k">namespace</span> <span class="n">ripple</span> <span class="p">{</span>
+
+<span class="cm">/*==--- [faces between blocks] ---------------------------------------------==*/</span>
+
+<span class="k">enum</span> <span class="k">class</span> <span class="nc">FaceLocation</span> <span class="o">:</span> <span class="kt">uint8_t</span> <span class="p">{</span>
+  <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="c1">//&lt; Face at the start of the domain.</span>
+  <span class="n">end</span>   <span class="o">=</span> <span class="mi">1</span>
+<span class="p">};</span>
+
+<span class="k">enum</span> <span class="k">class</span> <span class="nc">Mapping</span> <span class="o">:</span> <span class="kt">int</span> <span class="p">{</span>
+  <span class="n">domain</span>  <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="n">padding</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="p">};</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="kt">size_t</span> <span class="n">Dim</span><span class="p">,</span> <span class="n">FaceLocation</span> <span class="n">Location</span><span class="p">,</span> <span class="n">Mapping</span> <span class="n">Map</span> <span class="o">=</span> <span class="n">Mapping</span><span class="o">::</span><span class="n">domain</span><span class="o">&gt;</span>
+<span class="k">struct</span> <span class="n">CopySpecifier</span> <span class="p">{};</span>
+
+<span class="cm">/*==--- [copy specifier aliases] -------------------------------------------==*/</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="n">FaceLocation</span> <span class="n">Location</span><span class="o">&gt;</span>
+<span class="k">using</span> <span class="n">CopySpecifierX</span> <span class="o">=</span> <span class="n">CopySpecifier</span><span class="o">&lt;</span><span class="n">DimX</span><span class="o">::</span><span class="n">value</span><span class="p">,</span> <span class="n">Location</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="n">FaceLocation</span> <span class="n">Location</span><span class="o">&gt;</span>
+<span class="k">using</span> <span class="n">CopySpecifierY</span> <span class="o">=</span> <span class="n">CopySpecifier</span><span class="o">&lt;</span><span class="n">DimY</span><span class="o">::</span><span class="n">value</span><span class="p">,</span> <span class="n">Location</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="cm">/*==--- [padding utilites] -------------------------------------------------==*/</span>
+
+<span class="k">struct</span> <span class="n">OffsetParam</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">dimension</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">amount</span>    <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Block</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">Dim</span><span class="p">,</span> <span class="n">FaceLocation</span> <span class="n">Location</span><span class="p">,</span> <span class="n">Mapping</span> <span class="n">Map</span><span class="o">&gt;</span>
+<span class="k">auto</span> <span class="n">storage_ptr</span><span class="p">(</span>
+  <span class="n">Block</span><span class="o">&amp;</span> <span class="n">block</span><span class="p">,</span>
+  <span class="n">CopySpecifier</span><span class="o">&lt;</span><span class="n">Dim</span><span class="p">,</span> <span class="n">Location</span><span class="p">,</span> <span class="n">Map</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="n">OffsetParam</span> <span class="n">offset</span> <span class="o">=</span> <span class="n">OffsetParam</span><span class="p">())</span> <span class="k">noexcept</span> <span class="p">{</span>
+  <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">dim</span>   <span class="o">=</span> <span class="n">Dimension</span><span class="o">&lt;</span><span class="n">Dim</span><span class="o">&gt;</span><span class="p">();</span>
+  <span class="k">constexpr</span> <span class="kt">bool</span> <span class="n">pad</span>   <span class="o">=</span> <span class="n">Map</span> <span class="o">==</span> <span class="n">Mapping</span><span class="o">::</span><span class="n">padding</span><span class="p">;</span>
+  <span class="kt">int</span>            <span class="n">shift</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">if</span> <span class="nf">constexpr</span> <span class="p">(</span><span class="n">Location</span> <span class="o">==</span> <span class="n">FaceLocation</span><span class="o">::</span><span class="n">start</span><span class="p">)</span> <span class="p">{</span>
+    <span class="cm">/* If a pointer into the padding is required then we need to offset by the</span>
+<span class="cm">     * amount of the padding, since the iterator points to the first valid cell.</span>
+<span class="cm">     */</span>
+    <span class="n">shift</span> <span class="o">=</span> <span class="p">(</span><span class="n">pad</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="n">block</span><span class="p">.</span><span class="n">padding</span><span class="p">();</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="cm">/* If a pointer into the domain is required then we need to subtract the</span>
+<span class="cm">     * padding amount from the size of the domain, since the size of the block</span>
+<span class="cm">     * given the end of the domain (or start of the padding):</span>
+<span class="cm">     */</span>
+    <span class="n">shift</span> <span class="o">=</span> <span class="n">block</span><span class="p">.</span><span class="n">size</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span> <span class="o">-</span> <span class="n">block</span><span class="p">.</span><span class="n">padding</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="n">pad</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">block</span><span class="p">.</span><span class="n">begin</span><span class="p">().</span><span class="n">offset</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="n">shift</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">offset</span><span class="p">.</span><span class="n">dimension</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">it</span><span class="p">.</span><span class="n">shift</span><span class="p">(</span><span class="n">offset</span><span class="p">.</span><span class="n">dimension</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="n">dimx</span><span class="p">()</span> <span class="o">:</span> <span class="n">dimy</span><span class="p">(),</span> <span class="n">offset</span><span class="p">.</span><span class="n">amount</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="k">constexpr</span> <span class="p">(</span><span class="n">is_storage_accessor_v</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">it</span><span class="p">.</span><span class="n">storage</span><span class="p">())</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">it</span><span class="p">.</span><span class="n">storage</span><span class="p">();</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">it</span><span class="p">.</span><span class="n">data</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/*==--- [1D face padding copy] ---------------------------------------------==*/</span>
+
+<span class="k">template</span> <span class="o">&lt;</span>
+  <span class="k">typename</span> <span class="n">SrcBlock</span><span class="p">,</span>
+  <span class="k">typename</span> <span class="n">DstBlock</span><span class="p">,</span>
+  <span class="n">FaceLocation</span> <span class="n">SrcLocation</span><span class="p">,</span>
+  <span class="n">FaceLocation</span> <span class="n">DstLocation</span><span class="p">,</span>
+  <span class="n">block_1d_enable_t</span><span class="o">&lt;</span><span class="n">SrcBlock</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
+<span class="k">auto</span> <span class="n">memcopy_padding</span><span class="p">(</span>
+  <span class="k">const</span> <span class="n">SrcBlock</span><span class="o">&amp;</span>             <span class="n">src_block</span><span class="p">,</span>
+  <span class="n">DstBlock</span><span class="o">&amp;</span>                   <span class="n">dst_block</span><span class="p">,</span>
+  <span class="n">CopySpecifierX</span><span class="o">&lt;</span><span class="n">SrcLocation</span><span class="o">&gt;</span> <span class="n">src_specifier</span><span class="p">,</span>
+  <span class="n">CopySpecifierX</span><span class="o">&lt;</span><span class="n">DstLocation</span><span class="o">&gt;</span> <span class="n">dst_specifier</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">dst_block</span><span class="p">.</span><span class="n">padding</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">using</span> <span class="n">Allocator</span> <span class="o">=</span> <span class="k">typename</span> <span class="n">block_traits_t</span><span class="o">&lt;</span><span class="n">SrcBlock</span><span class="o">&gt;::</span><span class="n">Allocator</span><span class="p">;</span>
+
+  <span class="k">const</span> <span class="k">auto</span>  <span class="n">copy_type</span> <span class="o">=</span> <span class="n">src_block</span><span class="p">.</span><span class="k">template</span> <span class="n">get_copy_type</span><span class="o">&lt;</span><span class="n">DstBlock</span><span class="o">&gt;</span><span class="p">();</span>
+  <span class="k">const</span> <span class="k">auto</span>  <span class="n">copy_size</span> <span class="o">=</span> <span class="n">Allocator</span><span class="o">::</span><span class="n">allocation_size</span><span class="p">(</span><span class="n">dst_block</span><span class="p">.</span><span class="n">padding</span><span class="p">());</span>
+  <span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">src_ptr</span>   <span class="o">=</span> <span class="n">padding_ptr</span><span class="p">(</span><span class="n">src_block</span><span class="p">,</span> <span class="n">src_specifier</span><span class="p">);</span>
+  <span class="kt">void</span><span class="o">*</span>       <span class="n">dst_ptr</span>   <span class="o">=</span> <span class="n">padding_ptr</span><span class="p">(</span><span class="n">dst_block</span><span class="p">,</span> <span class="n">dst_specifier</span><span class="p">);</span>
+
+  <span class="c1">// TODO: Add implmentation when there is no cuda ...</span>
+  <span class="n">ripple_check_cuda_result</span><span class="p">(</span><span class="n">cudaMemcpyAsync</span><span class="p">(</span>
+    <span class="n">dst_ptr</span><span class="p">,</span>
+    <span class="n">src_ptr</span><span class="p">,</span>
+    <span class="n">copy_size</span><span class="p">,</span>
+    <span class="n">copy_type</span><span class="p">,</span>
+    <span class="n">is_device_block_v</span><span class="o">&lt;</span><span class="n">SrcBlock</span><span class="o">&gt;</span>   <span class="o">?</span> <span class="n">src_block</span><span class="p">.</span><span class="n">stream</span><span class="p">()</span>
+    <span class="o">:</span> <span class="n">is_device_block_v</span><span class="o">&lt;</span><span class="n">DstBlock</span><span class="o">&gt;</span> <span class="o">?</span> <span class="n">dst_block</span><span class="p">.</span><span class="n">stream</span><span class="p">()</span>
+                                  <span class="o">:</span> <span class="mi">0</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="cm">/*==--- [2D face padding copy] ---------------------------------------------==*/</span>
+
+<span class="k">template</span> <span class="o">&lt;</span>
+  <span class="k">typename</span> <span class="n">SrcBlock</span><span class="p">,</span>
+  <span class="k">typename</span> <span class="n">DstBlock</span><span class="p">,</span>
+  <span class="kt">size_t</span>       <span class="n">Dim</span><span class="p">,</span>
+  <span class="n">FaceLocation</span> <span class="n">SrcLocation</span><span class="p">,</span>
+  <span class="n">FaceLocation</span> <span class="n">DstLocation</span><span class="p">,</span>
+  <span class="n">Mapping</span>      <span class="n">SrcMapping</span><span class="p">,</span>
+  <span class="n">Mapping</span>      <span class="n">DstMapping</span><span class="p">,</span>
+  <span class="n">block_2d_enable_t</span><span class="o">&lt;</span><span class="n">SrcBlock</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
+<span class="k">auto</span> <span class="n">memcopy_padding</span><span class="p">(</span>
+  <span class="k">const</span> <span class="n">SrcBlock</span><span class="o">&amp;</span>                             <span class="n">src_block</span><span class="p">,</span>
+  <span class="n">DstBlock</span><span class="o">&amp;</span>                                   <span class="n">dst_block</span><span class="p">,</span>
+  <span class="n">CopySpecifier</span><span class="o">&lt;</span><span class="n">Dim</span><span class="p">,</span> <span class="n">SrcLocation</span><span class="p">,</span> <span class="n">SrcMapping</span><span class="o">&gt;</span> <span class="n">src_specifier</span><span class="p">,</span>
+  <span class="n">CopySpecifier</span><span class="o">&lt;</span><span class="n">Dim</span><span class="p">,</span> <span class="n">DstLocation</span><span class="p">,</span> <span class="n">DstMapping</span><span class="o">&gt;</span> <span class="n">dst_specifier</span><span class="p">,</span>
+  <span class="n">GpuStream</span>                                   <span class="n">stream</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
+  <span class="k">using</span> <span class="n">Allocator</span> <span class="o">=</span> <span class="k">typename</span> <span class="n">block_traits_t</span><span class="o">&lt;</span><span class="n">SrcBlock</span><span class="o">&gt;::</span><span class="n">Allocator</span><span class="p">;</span>
+  <span class="k">static_assert</span><span class="p">(</span><span class="n">Dim</span> <span class="o">&lt;=</span> <span class="n">DimY</span><span class="o">::</span><span class="n">value</span><span class="p">,</span> <span class="s">&quot;Invalid dimension!&quot;</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">dst_block</span><span class="p">.</span><span class="n">padding</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">OffsetParam</span> <span class="n">p</span><span class="p">{</span>
+    <span class="n">Dim</span> <span class="o">==</span> <span class="n">dimx</span><span class="p">()</span> <span class="o">?</span> <span class="n">DimY</span><span class="o">::</span><span class="nl">value</span> <span class="p">:</span> <span class="n">DimX</span><span class="o">::</span><span class="n">value</span><span class="p">,</span>
+    <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">src_block</span><span class="p">.</span><span class="n">padding</span><span class="p">())};</span>
+
+  <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">num_types</span> <span class="o">=</span> <span class="n">Allocator</span><span class="o">::</span><span class="n">strided_types</span><span class="p">();</span>
+  <span class="k">constexpr</span> <span class="kt">bool</span>   <span class="n">is_accessor</span> <span class="o">=</span>
+    <span class="n">is_storage_accessor_v</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">storage_ptr</span><span class="p">(</span><span class="n">src_block</span><span class="p">,</span> <span class="n">src_specifier</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span><span class="o">&gt;</span><span class="p">;</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">void</span><span class="o">*&gt;</span> <span class="n">src_ptrs</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">*&gt;</span>       <span class="n">dst_ptrs</span><span class="p">;</span>
+  <span class="cm">/* If the storage is a storage accessor then it may be strided and have</span>
+<span class="cm">   * multiple types for which the memory needs to be copied, so here we create</span>
+<span class="cm">   * vector of all the pointers to copy, from which we can then do the generic</span>
+<span class="cm">   * implementation. */</span>
+  <span class="k">if</span> <span class="nf">constexpr</span> <span class="p">(</span><span class="n">is_accessor</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">*</span> <span class="nl">p</span> <span class="p">:</span> <span class="n">storage_ptr</span><span class="p">(</span><span class="n">src_block</span><span class="p">,</span> <span class="n">src_specifier</span><span class="p">,</span> <span class="n">p</span><span class="p">).</span><span class="n">data_ptrs</span><span class="p">())</span> <span class="p">{</span>
+      <span class="n">src_ptrs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">*</span> <span class="nl">p</span> <span class="p">:</span> <span class="n">storage_ptr</span><span class="p">(</span><span class="n">dst_block</span><span class="p">,</span> <span class="n">dst_specifier</span><span class="p">,</span> <span class="n">p</span><span class="p">).</span><span class="n">data_ptrs</span><span class="p">())</span> <span class="p">{</span>
+      <span class="n">dst_ptrs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">src_ptrs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">storage_ptr</span><span class="p">(</span><span class="n">src_block</span><span class="p">,</span> <span class="n">src_specifier</span><span class="p">,</span> <span class="n">p</span><span class="p">));</span>
+    <span class="n">dst_ptrs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">storage_ptr</span><span class="p">(</span><span class="n">dst_block</span><span class="p">,</span> <span class="n">dst_specifier</span><span class="p">,</span> <span class="n">p</span><span class="p">));</span>
+  <span class="p">}</span>
+
+  <span class="k">const</span> <span class="k">auto</span> <span class="n">type</span> <span class="o">=</span> <span class="n">src_block</span><span class="p">.</span><span class="k">template</span> <span class="n">get_copy_type</span><span class="o">&lt;</span><span class="n">DstBlock</span><span class="o">&gt;</span><span class="p">();</span>
+  <span class="n">unrolled_for</span><span class="o">&lt;</span><span class="n">num_types</span><span class="o">&gt;</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">bytes</span> <span class="o">=</span> <span class="n">Allocator</span><span class="o">::</span><span class="k">template</span> <span class="n">element_byte_size</span><span class="o">&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">elems</span> <span class="o">=</span> <span class="n">Allocator</span><span class="o">::</span><span class="k">template</span> <span class="n">num_elements</span><span class="o">&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="p">();</span>
+
+    <span class="cm">/* Pitch is always the number of elements (including padding elements)</span>
+<span class="cm">     * multiplied by the number of bytes. */</span>
+    <span class="k">const</span> <span class="kt">size_t</span> <span class="n">pitch</span> <span class="o">=</span> <span class="n">bytes</span> <span class="o">*</span> <span class="n">src_block</span><span class="p">.</span><span class="n">pitch</span><span class="p">(</span><span class="n">dimx</span><span class="p">());</span>
+
+    <span class="cm">/* If copying in x dimension, we just need to copy the padding width,</span>
+<span class="cm">     * otherwise if in the y dimension, we need to copy the whole width of</span>
+<span class="cm">     * the x dimension: */</span>
+    <span class="k">const</span> <span class="kt">size_t</span> <span class="n">width</span> <span class="o">=</span>
+      <span class="n">bytes</span> <span class="o">*</span> <span class="p">(</span><span class="n">Dim</span> <span class="o">==</span> <span class="n">dimx</span><span class="p">()</span> <span class="o">?</span> <span class="n">src_block</span><span class="p">.</span><span class="n">padding</span><span class="p">()</span> <span class="o">:</span> <span class="n">src_block</span><span class="p">.</span><span class="n">pitch</span><span class="p">(</span><span class="n">dimx</span><span class="p">()));</span>
+
+    <span class="cm">/* If copying in the y dimension it is the opposite as above. We need to</span>
+<span class="cm">     * copy the whole size of the y dimension for the height if the face is</span>
+<span class="cm">     * in the x dimension, otherwise the height is the amount of padding.</span>
+<span class="cm">     *</span>
+<span class="cm">     * For the case that the data is strided, then we are using the pitch for</span>
+<span class="cm">     * a single element, so we need to multiply by the number of elements to</span>
+<span class="cm">     * copy all the data. */</span>
+    <span class="k">const</span> <span class="kt">size_t</span> <span class="n">height</span> <span class="o">=</span>
+      <span class="p">(</span><span class="n">Dim</span> <span class="o">==</span> <span class="n">dimx</span><span class="p">()</span> <span class="o">?</span> <span class="n">src_block</span><span class="p">.</span><span class="n">pitch</span><span class="p">(</span><span class="n">dimy</span><span class="p">())</span> <span class="o">:</span> <span class="n">src_block</span><span class="p">.</span><span class="n">padding</span><span class="p">())</span> <span class="o">*</span> <span class="n">elems</span><span class="p">;</span>
+
+    <span class="n">ripple_check_cuda_result</span><span class="p">(</span><span class="n">cudaMemcpy2DAsync</span><span class="p">(</span>
+      <span class="n">dst_ptrs</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">src_ptrs</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">type</span><span class="p">,</span> <span class="n">stream</span><span class="p">));</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span>
+  <span class="k">typename</span> <span class="n">SrcBlock</span><span class="p">,</span>
+  <span class="k">typename</span> <span class="n">DstBlock</span><span class="p">,</span>
+  <span class="kt">size_t</span>       <span class="n">Dim</span><span class="p">,</span>
+  <span class="n">FaceLocation</span> <span class="n">SrcLocation</span><span class="p">,</span>
+  <span class="n">FaceLocation</span> <span class="n">DstLocation</span><span class="p">,</span>
+  <span class="n">Mapping</span>      <span class="n">SrcMapping</span><span class="p">,</span>
+  <span class="n">Mapping</span>      <span class="n">DstMapping</span><span class="p">,</span>
+  <span class="n">block_3d_enable_t</span><span class="o">&lt;</span><span class="n">SrcBlock</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
+<span class="k">auto</span> <span class="n">memcopy_padding</span><span class="p">(</span>
+  <span class="k">const</span> <span class="n">SrcBlock</span><span class="o">&amp;</span>                             <span class="n">src_block</span><span class="p">,</span>
+  <span class="n">DstBlock</span><span class="o">&amp;</span>                                   <span class="n">dst_block</span><span class="p">,</span>
+  <span class="n">CopySpecifier</span><span class="o">&lt;</span><span class="n">Dim</span><span class="p">,</span> <span class="n">SrcLocation</span><span class="p">,</span> <span class="n">SrcMapping</span><span class="o">&gt;</span> <span class="n">src_specifier</span><span class="p">,</span>
+  <span class="n">CopySpecifier</span><span class="o">&lt;</span><span class="n">Dim</span><span class="p">,</span> <span class="n">DstLocation</span><span class="p">,</span> <span class="n">DstMapping</span><span class="o">&gt;</span> <span class="n">dst_specifier</span><span class="p">,</span>
+  <span class="n">GpuStream</span>                                   <span class="n">stream</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
+  <span class="k">using</span> <span class="n">Allocator</span> <span class="o">=</span> <span class="k">typename</span> <span class="n">block_traits_t</span><span class="o">&lt;</span><span class="n">SrcBlock</span><span class="o">&gt;::</span><span class="n">Allocator</span><span class="p">;</span>
+  <span class="k">static_assert</span><span class="p">(</span><span class="n">Dim</span> <span class="o">&lt;=</span> <span class="n">DimZ</span><span class="o">::</span><span class="n">value</span><span class="p">,</span> <span class="s">&quot;Invalid dimension!&quot;</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">dst_block</span><span class="p">.</span><span class="n">padding</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">OffsetParam</span> <span class="n">p</span><span class="p">{</span>
+    <span class="n">Dim</span> <span class="o">==</span> <span class="n">dimx</span><span class="p">()</span> <span class="o">?</span> <span class="n">DimY</span><span class="o">::</span><span class="nl">value</span> <span class="p">:</span> <span class="n">DimX</span><span class="o">::</span><span class="n">value</span><span class="p">,</span>
+    <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">src_block</span><span class="p">.</span><span class="n">padding</span><span class="p">())};</span>
+
+  <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">num_types</span> <span class="o">=</span> <span class="n">Allocator</span><span class="o">::</span><span class="n">strided_types</span><span class="p">();</span>
+  <span class="k">constexpr</span> <span class="kt">bool</span>   <span class="n">is_accessor</span> <span class="o">=</span>
+    <span class="n">is_storage_accessor_v</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">storage_ptr</span><span class="p">(</span><span class="n">src_block</span><span class="p">,</span> <span class="n">src_specifier</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span><span class="o">&gt;</span><span class="p">;</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">void</span><span class="o">*&gt;</span> <span class="n">src_ptrs</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">*&gt;</span>       <span class="n">dst_ptrs</span><span class="p">;</span>
+  <span class="cm">/* If the storage is a storage accessor then it may be strided and have</span>
+<span class="cm">   * multiple types for which the memory needs to be copied, so here we create</span>
+<span class="cm">   * vector of all the pointers to copy, from which we can then do the generic</span>
+<span class="cm">   * implementation. */</span>
+  <span class="k">if</span> <span class="nf">constexpr</span> <span class="p">(</span><span class="n">is_accessor</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">*</span> <span class="nl">p</span> <span class="p">:</span> <span class="n">storage_ptr</span><span class="p">(</span><span class="n">src_block</span><span class="p">,</span> <span class="n">src_specifier</span><span class="p">,</span> <span class="n">p</span><span class="p">).</span><span class="n">data_ptrs</span><span class="p">())</span> <span class="p">{</span>
+      <span class="n">src_ptrs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">*</span> <span class="nl">p</span> <span class="p">:</span> <span class="n">storage_ptr</span><span class="p">(</span><span class="n">dst_block</span><span class="p">,</span> <span class="n">dst_specifier</span><span class="p">,</span> <span class="n">p</span><span class="p">).</span><span class="n">data_ptrs</span><span class="p">())</span> <span class="p">{</span>
+      <span class="n">dst_ptrs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">src_ptrs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">storage_ptr</span><span class="p">(</span><span class="n">src_block</span><span class="p">,</span> <span class="n">src_specifier</span><span class="p">,</span> <span class="n">p</span><span class="p">));</span>
+    <span class="n">dst_ptrs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">storage_ptr</span><span class="p">(</span><span class="n">dst_block</span><span class="p">,</span> <span class="n">dst_specifier</span><span class="p">,</span> <span class="n">p</span><span class="p">));</span>
+  <span class="p">}</span>
+
+  <span class="k">const</span> <span class="k">auto</span> <span class="n">type</span> <span class="o">=</span> <span class="n">src_block</span><span class="p">.</span><span class="k">template</span> <span class="n">get_copy_type</span><span class="o">&lt;</span><span class="n">DstBlock</span><span class="o">&gt;</span><span class="p">();</span>
+  <span class="n">unrolled_for</span><span class="o">&lt;</span><span class="n">num_types</span><span class="o">&gt;</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">bytes</span> <span class="o">=</span> <span class="n">Allocator</span><span class="o">::</span><span class="k">template</span> <span class="n">element_byte_size</span><span class="o">&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">elems</span> <span class="o">=</span> <span class="n">Allocator</span><span class="o">::</span><span class="k">template</span> <span class="n">num_elements</span><span class="o">&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="p">();</span>
+
+    <span class="cm">/* Pitch is always the number of elements (including padding elements)</span>
+<span class="cm">     * multiplied by the number of bytes. */</span>
+
+    <span class="cm">/* This pitch here is tricky. At the very least, the pich is:</span>
+<span class="cm">     *</span>
+<span class="cm">     *  - bytes per element * elements in dim x</span>
+<span class="cm">     *</span>
+<span class="cm">     * then, if we are copying in y or z, we multiply by the number of elements</span>
+<span class="cm">     * for the strided case.</span>
+<span class="cm">     *</span>
+<span class="cm">     * Lastly, for the z-case, we want to copy padding number of x-y planes,</span>
+<span class="cm">     * for which the data in the plane is contiguous, and each plane for the</span>
+<span class="cm">     * padding is also contiguous, so we can just set the pitch to be the</span>
+<span class="cm">     * entire region to copy, which is better for performance.</span>
+<span class="cm">     */</span>
+    <span class="k">const</span> <span class="kt">size_t</span> <span class="n">pitch</span> <span class="o">=</span> <span class="n">bytes</span> <span class="o">*</span> <span class="n">src_block</span><span class="p">.</span><span class="n">pitch</span><span class="p">(</span><span class="n">dimx</span><span class="p">())</span> <span class="o">*</span>
+                         <span class="p">(</span><span class="n">Dim</span> <span class="o">==</span> <span class="n">dimx</span><span class="p">()</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="n">elems</span><span class="p">)</span> <span class="o">*</span>
+                         <span class="p">(</span><span class="n">Dim</span> <span class="o">==</span> <span class="n">dimz</span><span class="p">()</span> <span class="o">?</span> <span class="n">src_block</span><span class="p">.</span><span class="n">padding</span><span class="p">()</span> <span class="o">:</span> <span class="mi">1</span><span class="p">);</span>
+
+    <span class="cm">/* If copying in x dimension, we just need to copy the padding width,</span>
+<span class="cm">     * otherwise if in the y dimension, we need to copy the whole width of</span>
+<span class="cm">     * the x dimension: */</span>
+    <span class="k">const</span> <span class="kt">size_t</span> <span class="n">width</span> <span class="o">=</span>
+      <span class="n">Dim</span> <span class="o">==</span> <span class="n">dimz</span><span class="p">()</span> <span class="o">?</span> <span class="nl">pitch</span>
+                    <span class="p">:</span> <span class="n">bytes</span> <span class="o">*</span> <span class="p">(</span><span class="n">Dim</span> <span class="o">==</span> <span class="n">dimx</span><span class="p">()</span> <span class="o">?</span> <span class="n">src_block</span><span class="p">.</span><span class="n">padding</span><span class="p">()</span>
+                                             <span class="o">:</span> <span class="n">src_block</span><span class="p">.</span><span class="n">pitch</span><span class="p">(</span><span class="n">dimx</span><span class="p">())</span> <span class="o">*</span> <span class="n">elems</span><span class="p">);</span>
+
+    <span class="cm">/* If copying in the y dimension it is the opposite as above. We need to</span>
+<span class="cm">     * copy the whole size of the y dimension for the height if the face is</span>
+<span class="cm">     * in the x dimension, otherwise the height is the amount of padding.</span>
+<span class="cm">     *</span>
+<span class="cm">     * For the case that the data is strided, then we are using the pitch for</span>
+<span class="cm">     * a single element, so we need to multiply by the number of elements to</span>
+<span class="cm">     * copy all the data. */</span>
+    <span class="k">const</span> <span class="kt">size_t</span> <span class="n">height</span> <span class="o">=</span>
+      <span class="n">Dim</span> <span class="o">==</span> <span class="n">dimz</span><span class="p">()</span> <span class="o">?</span> <span class="mi">1</span>
+                    <span class="o">:</span> <span class="n">src_block</span><span class="p">.</span><span class="n">pitch</span><span class="p">(</span><span class="n">dimz</span><span class="p">())</span> <span class="o">*</span>
+                        <span class="p">(</span><span class="n">Dim</span> <span class="o">!=</span> <span class="n">dimx</span><span class="p">()</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="n">src_block</span><span class="p">.</span><span class="n">pitch</span><span class="p">(</span><span class="n">dimy</span><span class="p">())</span> <span class="o">*</span> <span class="n">elems</span><span class="p">);</span>
+
+    <span class="n">ripple_check_cuda_result</span><span class="p">(</span><span class="n">ripple_if_cuda</span><span class="p">(</span><span class="n">cudaMemcpy2DAsync</span><span class="p">(</span>
+      <span class="n">dst_ptrs</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">src_ptrs</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">type</span><span class="p">,</span> <span class="n">stream</span><span class="p">)));</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="p">}</span> <span class="c1">// namespace ripple</span>
+
+<span class="cp">#endif </span><span class="c1">// RIPPLE_CONTAINER_MEMCOPY_PADDING_HPP</span>
+</pre></div>
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Program Listing for File memcopy_padding.hpp</a></li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

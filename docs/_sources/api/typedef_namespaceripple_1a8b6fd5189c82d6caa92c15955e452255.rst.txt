@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a8b6fd5189c82d6caa92c15955e452255:
+
+Typedef ripple::DimX
+====================
+
+- Defined in :ref:`file_include_ripple_core_execution_detail_thread_index_impl_.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::DimX

@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a170f5e335f5e56f46cd1d9148835270d:
+
+Template Function ripple::in_shared
+===================================
+
+- Defined in :ref:`file_include_ripple_core_graph_modifier.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::in_shared(T&)

@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1a024e7262dd2d8d9e249ddd5fca80ced4:
+
+Variable ripple::logfile_prefix
+===============================
+
+- Defined in :ref:`file_include_ripple_core_utility_logger.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::logfile_prefix

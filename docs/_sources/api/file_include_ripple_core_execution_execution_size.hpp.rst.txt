@@ -1,0 +1,59 @@
+
+.. _file_include_ripple_core_execution_execution_size.hpp:
+
+File execution_size.hpp
+=======================
+
+
+This file contains functionality for computing the size of an execution space for a kernel. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/execution/execution_size.hpp``)
+-----------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_execution_execution_size.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``cmath``
+
+- ``ripple/core/container/device_block.hpp`` (:ref:`file_include_ripple_core_container_device_block.hpp`)
+
+- ``ripple/core/utility/dim.hpp`` (:ref:`file_include_ripple_core_utility_dim.hpp`)
+
+- ``ripple/core/utility/type_traits.hpp`` (:ref:`file_include_ripple_core_utility_type_traits.hpp`)
+
+- ``tuple`` (:ref:`file_include_ripple_core_container_detail_basic_tuple_.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_functional_kernel_invoke_utils.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+

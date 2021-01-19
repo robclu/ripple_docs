@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a1222a6f8279a47c6e153bd72a1bfcded:
+
+Typedef ripple::pointer_enable_t
+================================
+
+- Defined in :ref:`file_include_ripple_core_utility_type_traits.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::pointer_enable_t

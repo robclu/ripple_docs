@@ -1,0 +1,109 @@
+
+.. _program_listing_file_include_ripple_core_storage_storage_traits.hpp:
+
+Program Listing for File storage_traits.hpp
+===========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_storage_storage_traits.hpp>` (``include/ripple/core/storage/storage_traits.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/storage/storage_traits.hpp ------------- -*- C++ -*- ---==//
+   //
+   //                                Ripple
+   //
+   //                      Copyright (c) 2019, 2020 Rob Clucas.
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_STORAGE_STORAGE_TRAITS_HPP
+   #define RIPPLE_STORAGE_STORAGE_TRAITS_HPP
+   
+   #include "detail/storage_traits_impl_.hpp"
+   #include "layout_traits.hpp"
+   
+   namespace ripple {
+   
+   /*==--- [forward declarations] ---------------------------------------------==*/
+   
+   template <typename... Ts>
+   class ContiguousStorageView;
+   
+   template <typename... Ts>
+   class OwnedStorage;
+   
+   template <typename... Ts>
+   class StridedStorageView;
+   
+   template <typename Impl>
+   struct PolymorphicLayout;
+   
+   template <typename Impl>
+   struct StorageAccessor;
+   
+   /*==--- [traits] -----------------------------------------------------------==*/
+   
+   template <typename T>
+   static constexpr auto is_polymorphic_layout_v =
+     std::is_base_of_v<PolymorphicLayout<std::decay_t<T>>, std::decay_t<T>>;
+   
+   template <typename T>
+   static constexpr auto is_storage_layout_v =
+     detail::IsStorageLayout<std::decay_t<T>>::value;
+   
+   template <typename T>
+   static constexpr auto is_storage_accessor_v =
+     std::is_base_of_v<StorageAccessor<std::decay_t<T>>, std::decay_t<T>>;
+   
+   template <typename T>
+   static constexpr auto has_storage_layout_v =
+     detail::HasStorageLayout<std::decay_t<T>>::value;
+   
+   template <typename T>
+   static constexpr auto storage_layout_kind_v =
+     detail::StorageLayoutKind<T>::value;
+   
+   template <typename T, typename Kind>
+   static constexpr auto storage_layout_kind_is_v =
+     storage_layout_kind_v<std::decay_t<T>> == Kind::value;
+   
+   /*==-- [aliases] -----------------------------------------------------------==*/
+   
+   template <typename T>
+   using layout_traits_t = LayoutTraits<
+     std::decay_t<T>,
+     is_polymorphic_layout_v<std::decay_t<T>> &&
+       !storage_layout_kind_is_v<T, ContiguousOwned>>;
+   
+   template <typename T>
+   using as_contiguous_owned_t =
+     typename detail::StorageAs<ContiguousOwned, std::decay_t<T>>::Type;
+   
+   template <typename T>
+   using as_contiguous_view_t =
+     typename detail::StorageAs<ContiguousView, std::decay_t<T>>::Type;
+   
+   template <typename T>
+   using as_strided_view_t =
+     typename detail::StorageAs<StridedView, std::decay_t<T>>::Type;
+   
+   /*==--- [overloading] ------------------------------------------------------==*/
+   
+   template <bool IsPolymorphicLayout>
+   struct PolyLayoutOverloader {};
+   
+   // clang-format off
+   using PolyLayoutOverload    = PolyLayoutOverloader<true>;
+   using NonPolyLayoutOverload = PolyLayoutOverloader<false>;
+   // clang-format off
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_STORAGE_STORAGE_TRAITS_HPP

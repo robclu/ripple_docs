@@ -1,0 +1,87 @@
+
+.. _file_include_ripple_core_utility_type_traits.hpp:
+
+File type_traits.hpp
+====================
+
+
+This file defines generic trait related functionality. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/utility/type_traits.hpp``)
+------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_utility_type_traits.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``detail/function_traits_impl_.hpp`` (:ref:`file_include_ripple_core_utility_detail_function_traits_impl_.hpp`)
+
+- ``detail/index_of_impl_.hpp`` (:ref:`file_include_ripple_core_utility_detail_index_of_impl_.hpp`)
+
+- ``dim.hpp`` (:ref:`file_include_ripple_core_utility_dim.hpp`)
+
+- ``number.hpp`` (:ref:`file_include_ripple_core_utility_number.hpp`)
+
+- ``type_traits`` (:ref:`file_include_ripple_core_utility_type_traits.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_algorithm_unrolled_for.hpp`
+
+- :ref:`file_include_ripple_core_container_tuple_traits.hpp`
+
+- :ref:`file_include_ripple_core_storage_detail_storage_traits_impl_.hpp`
+
+- :ref:`file_include_ripple_core_multidim_multidim_space.hpp`
+
+- :ref:`file_include_ripple_core_execution_execution_traits.hpp`
+
+- :ref:`file_include_ripple_core_utility_range.hpp`
+
+- :ref:`file_include_ripple_core_boundary_detail_load_internal_boundary_impl_.hpp`
+
+- :ref:`file_include_ripple_core_graph_modifier.hpp`
+
+- :ref:`file_include_ripple_core_container_tensor_traits.hpp`
+
+- :ref:`file_include_ripple_core_execution_execution_size.hpp`
+
+- :ref:`file_include_ripple_core_functional_invocable.hpp`
+
+- :ref:`file_include_ripple_core_graph_graph.hpp`
+
+- :ref:`file_include_ripple_core_storage_owned_storage.hpp`
+
+- :ref:`file_include_ripple_core_storage_strided_storage_view.hpp`
+
+- :ref:`file_include_ripple_core_multidim_dynamic_multidim_space.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+

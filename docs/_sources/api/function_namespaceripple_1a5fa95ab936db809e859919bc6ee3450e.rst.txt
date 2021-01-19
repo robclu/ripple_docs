@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a5fa95ab936db809e859919bc6ee3450e:
+
+Template Function ripple::load_boundary
+=======================================
+
+- Defined in :ref:`file_include_ripple_core_boundary_load_boundary.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::load_boundary(Iterator&&, Loader&&, Args&&...)

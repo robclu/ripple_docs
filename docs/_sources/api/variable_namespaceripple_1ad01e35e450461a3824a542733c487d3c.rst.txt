@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1ad01e35e450461a3824a542733c487d3c:
+
+Variable ripple::max_cache_subleaves
+====================================
+
+- Defined in :ref:`file_include_ripple_core_arch_cpu_info.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::max_cache_subleaves

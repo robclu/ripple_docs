@@ -1,0 +1,531 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Struct Cache &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Template Struct ConstLoader" href="structripple_1_1ConstLoader.html" />
+  <link rel="prev" title="Template Struct BlockTraits&lt; HostBlock&lt; T, Dimensions &gt; &gt;" href="structripple_1_1BlockTraits_3_01HostBlock_3_01T_00_01Dimensions_01_4_01_4.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Struct Cache</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/structripple_1_1Cache.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="struct-cache">
+<span id="exhale-struct-structripple-1-1cache"></span><h1>Struct Cache<a class="headerlink" href="#struct-cache" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_arch_cache.hpp.html#file-include-ripple-core-arch-cache-hpp"><span class="std std-ref">File cache.hpp</span></a></p></li>
+</ul>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp struct">
+<dt id="_CPPv4N6ripple5CacheE">
+<span id="_CPPv3N6ripple5CacheE"></span><span id="_CPPv2N6ripple5CacheE"></span><span id="ripple::Cache"></span><span class="target" id="structripple_1_1Cache"></span><em class="property">struct </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">Cache</code><a class="headerlink" href="#_CPPv4N6ripple5CacheE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Stores information for a cache. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="cpp enum">
+<dt id="_CPPv4N6ripple5Cache4TypeE">
+<span id="_CPPv3N6ripple5Cache4TypeE"></span><span id="_CPPv2N6ripple5Cache4TypeE"></span><span class="target" id="structripple_1_1Cache_1ab5099fb2d483f1e98d855ce42bb4b1b1"></span><em class="property">enum </em><code class="sig-name descname">Type</code><a class="headerlink" href="#_CPPv4N6ripple5Cache4TypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the cache, as per the Intel spec. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N6ripple5Cache4Type4NullE">
+<span id="_CPPv3N6ripple5Cache4Type4NullE"></span><span id="_CPPv2N6ripple5Cache4Type4NullE"></span><span class="target" id="structripple_1_1Cache_1ab5099fb2d483f1e98d855ce42bb4b1b1a0fd8c76568fedb2d64b6a952c260b36b"></span><em class="property">enumerator </em><code class="sig-name descname">Null</code><a class="headerlink" href="#_CPPv4N6ripple5Cache4Type4NullE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Null or invalid cache. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N6ripple5Cache4Type4DataE">
+<span id="_CPPv3N6ripple5Cache4Type4DataE"></span><span id="_CPPv2N6ripple5Cache4Type4DataE"></span><span class="target" id="structripple_1_1Cache_1ab5099fb2d483f1e98d855ce42bb4b1b1a3b9d9fb353be7e683b9e5d34441bb07b"></span><em class="property">enumerator </em><code class="sig-name descname">Data</code><a class="headerlink" href="#_CPPv4N6ripple5Cache4Type4DataE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Data cache. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N6ripple5Cache4Type11InstructionE">
+<span id="_CPPv3N6ripple5Cache4Type11InstructionE"></span><span id="_CPPv2N6ripple5Cache4Type11InstructionE"></span><span class="target" id="structripple_1_1Cache_1ab5099fb2d483f1e98d855ce42bb4b1b1a07137ea95e6d94aeb55652f32f015bdc"></span><em class="property">enumerator </em><code class="sig-name descname">Instruction</code><a class="headerlink" href="#_CPPv4N6ripple5Cache4Type11InstructionE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Instruction cache. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N6ripple5Cache4Type7UnifiedE">
+<span id="_CPPv3N6ripple5Cache4Type7UnifiedE"></span><span id="_CPPv2N6ripple5Cache4Type7UnifiedE"></span><span class="target" id="structripple_1_1Cache_1ab5099fb2d483f1e98d855ce42bb4b1b1ae34292140c8b67241df424955b4022d3"></span><em class="property">enumerator </em><code class="sig-name descname">Unified</code><a class="headerlink" href="#_CPPv4N6ripple5Cache4Type7UnifiedE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Unified cache. </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple5Cache4sizeEv">
+<span id="_CPPv3NK6ripple5Cache4sizeEv"></span><span id="_CPPv2NK6ripple5Cache4sizeEv"></span><span id="ripple::Cache::sizeC"></span><span class="target" id="structripple_1_1Cache_1a64d4d3094099c56ff191ce616f8179af"></span>auto <code class="sig-name descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> -&gt; uint32_t<a class="headerlink" href="#_CPPv4NK6ripple5Cache4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the size of the cache. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The size of the cache in kB. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple5Cache4typeE">
+<span id="_CPPv3N6ripple5Cache4typeE"></span><span id="_CPPv2N6ripple5Cache4typeE"></span><span id="ripple::Cache::type__Type"></span><span class="target" id="structripple_1_1Cache_1ab57a05724542d170dacbe686e567000c"></span><a class="reference internal" href="#_CPPv4N6ripple5Cache4TypeE" title="ripple::Cache::Type">Type</a> <code class="sig-name descname">type</code> = <a class="reference internal" href="#_CPPv4N6ripple5Cache4TypeE" title="ripple::Cache::Type">Type</a>::<a class="reference internal" href="#_CPPv4N6ripple5Cache4Type4NullE" title="ripple::Cache::Type::Null">Null</a><a class="headerlink" href="#_CPPv4N6ripple5Cache4typeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple5Cache5levelE">
+<span id="_CPPv3N6ripple5Cache5levelE"></span><span id="_CPPv2N6ripple5Cache5levelE"></span><span id="ripple::Cache::level__uint32_t"></span><span class="target" id="structripple_1_1Cache_1aa0199cd2f04e97db2088dcc7b97806da"></span>uint32_t <code class="sig-name descname">level</code> = 0<a class="headerlink" href="#_CPPv4N6ripple5Cache5levelE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p></p>
+<p>Level of the cache </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple5Cache8linesizeE">
+<span id="_CPPv3N6ripple5Cache8linesizeE"></span><span id="_CPPv2N6ripple5Cache8linesizeE"></span><span id="ripple::Cache::linesize__uint32_t"></span><span class="target" id="structripple_1_1Cache_1ac5cb4d9e58c96338cddd27d155f41e7e"></span>uint32_t <code class="sig-name descname">linesize</code> = 0<a class="headerlink" href="#_CPPv4N6ripple5Cache8linesizeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference internal" href="#structripple_1_1Cache"><span class="std std-ref">Cache</span></a> line size in bytes. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple5Cache10partitionsE">
+<span id="_CPPv3N6ripple5Cache10partitionsE"></span><span id="_CPPv2N6ripple5Cache10partitionsE"></span><span id="ripple::Cache::partitions__uint32_t"></span><span class="target" id="structripple_1_1Cache_1a61b28c1d296fbc84c78dd2ce5b5412d2"></span>uint32_t <code class="sig-name descname">partitions</code> = 0<a class="headerlink" href="#_CPPv4N6ripple5Cache10partitionsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Number of partitions. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple5Cache14assosciativityE">
+<span id="_CPPv3N6ripple5Cache14assosciativityE"></span><span id="_CPPv2N6ripple5Cache14assosciativityE"></span><span id="ripple::Cache::assosciativity__uint32_t"></span><span class="target" id="structripple_1_1Cache_1aa4dce20e71fc4fe66d6a89d1aa6193f4"></span>uint32_t <code class="sig-name descname">assosciativity</code> = 0<a class="headerlink" href="#_CPPv4N6ripple5Cache14assosciativityE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Ways of assosciativity. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple5Cache9shared_byE">
+<span id="_CPPv3N6ripple5Cache9shared_byE"></span><span id="_CPPv2N6ripple5Cache9shared_byE"></span><span id="ripple::Cache::shared_by__uint32_t"></span><span class="target" id="structripple_1_1Cache_1a379e5e1fefe717a42c475fe075f06d19"></span>uint32_t <code class="sig-name descname">shared_by</code> = 0<a class="headerlink" href="#_CPPv4N6ripple5Cache9shared_byE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Max threads sharing this cache. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple5Cache4setsE">
+<span id="_CPPv3N6ripple5Cache4setsE"></span><span id="_CPPv2N6ripple5Cache4setsE"></span><span id="ripple::Cache::sets__uint32_t"></span><span class="target" id="structripple_1_1Cache_1a20d74bb90013af8c5203ddc33e5d1a08"></span>uint32_t <code class="sig-name descname">sets</code> = 0<a class="headerlink" href="#_CPPv4N6ripple5Cache4setsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Number of sets. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple5Cache4maskE">
+<span id="_CPPv3N6ripple5Cache4maskE"></span><span id="_CPPv2N6ripple5Cache4maskE"></span><span id="ripple::Cache::mask__uint32_t"></span><span class="target" id="structripple_1_1Cache_1a9af78c627cdabe0b3e230ccac3a2d595"></span>uint32_t <code class="sig-name descname">mask</code> = 0<a class="headerlink" href="#_CPPv4N6ripple5Cache4maskE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Mask to determine cache sharing. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Attributes</p>
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple5Cache11bytes_in_kbE">
+<span id="_CPPv3N6ripple5Cache11bytes_in_kbE"></span><span id="_CPPv2N6ripple5Cache11bytes_in_kbE"></span><span id="ripple::Cache::bytes_in_kb__uint32_t"></span><span class="target" id="structripple_1_1Cache_1a795f7f77069886396a38556d788ab357"></span><em class="property">constexpr</em> uint32_t <code class="sig-name descname">bytes_in_kb</code> = 1024<a class="headerlink" href="#_CPPv4N6ripple5Cache11bytes_in_kbE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constant to convert bytes to kb. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structripple_1_1ConstLoader.html" class="btn btn-neutral float-right" title="Template Struct ConstLoader" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="structripple_1_1BlockTraits_3_01HostBlock_3_01T_00_01Dimensions_01_4_01_4.html" class="btn btn-neutral" title="Template Struct BlockTraits&lt; HostBlock&lt; T, Dimensions &gt; &gt;" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Struct Cache</a><ul>
+<li><a class="reference internal" href="#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

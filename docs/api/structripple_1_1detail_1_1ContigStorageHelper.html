@@ -1,0 +1,601 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Template Struct ContigStorageHelper &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Template Struct ContigStorageHelper::Vec" href="structripple_1_1detail_1_1ContigStorageHelper_1_1Vec.html" />
+  <link rel="prev" title="Template Struct BasicTuple" href="structripple_1_1detail_1_1BasicTuple.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Template Struct ContigStorageHelper</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/structripple_1_1detail_1_1ContigStorageHelper.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="template-struct-contigstoragehelper">
+<span id="exhale-struct-structripple-1-1detail-1-1contigstoragehelper"></span><h1>Template Struct ContigStorageHelper<a class="headerlink" href="#template-struct-contigstoragehelper" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_storage_storage_element_traits.hpp.html#file-include-ripple-core-storage-storage-element-traits-hpp"><span class="std std-ref">File storage_element_traits.hpp</span></a></p></li>
+</ul>
+<div class="section" id="nested-relationships">
+<h2>Nested Relationships<a class="headerlink" href="#nested-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="nested-types">
+<h3>Nested Types<a class="headerlink" href="#nested-types" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="structripple_1_1detail_1_1ContigStorageHelper_1_1Vec.html#exhale-struct-structripple-1-1detail-1-1contigstoragehelper-1-1vec"><span class="std std-ref">Template Struct ContigStorageHelper::Vec</span></a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp struct">
+<dt id="_CPPv4IDpEN6ripple6detail19ContigStorageHelperE">
+<span id="_CPPv3IDpEN6ripple6detail19ContigStorageHelperE"></span><span id="_CPPv2IDpEN6ripple6detail19ContigStorageHelperE"></span>template&lt;typename ...<code class="sig-name descname">Ts</code>&gt;<br /><span class="target" id="structripple_1_1detail_1_1ContigStorageHelper"></span><em class="property">struct </em><code class="sig-prename descclassname">ripple::detail<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">ContigStorageHelper</code><a class="headerlink" href="#_CPPv4IDpEN6ripple6detail19ContigStorageHelperE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Helper class for contiguous storage of multiple type. </p>
+<p><dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Ts</span></code>: the types to store contiguously. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple6detail19ContigStorageHelper17storage_byte_sizeEv">
+<span id="_CPPv3N6ripple6detail19ContigStorageHelper17storage_byte_sizeEv"></span><span id="_CPPv2N6ripple6detail19ContigStorageHelper17storage_byte_sizeEv"></span><span id="ripple::detail::ContigStorageHelper::storage_byte_sizeCE"></span><span class="target" id="structripple_1_1detail_1_1ContigStorageHelper_1a05c32788ec449462a78ed2d59dee9ba0"></span><em class="property">constexpr</em> auto <code class="sig-name descname">storage_byte_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4N6ripple6detail19ContigStorageHelper17storage_byte_sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines the effective byte size of all elements to store, including any required padding. </p>
+<p>This should not be called, other than to define byte_size_v, since it is expensive to compile. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of bytes required for the storage. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I_6size_tEN6ripple6detail19ContigStorageHelper9offset_toEDav">
+<span id="_CPPv3I_6size_tEN6ripple6detail19ContigStorageHelper9offset_toEv"></span><span id="_CPPv2I_6size_tEN6ripple6detail19ContigStorageHelper9offset_toEv"></span>template&lt;size_t <code class="sig-name descname">I</code>&gt;<br /><span class="target" id="structripple_1_1detail_1_1ContigStorageHelper_1ac48628d2c5beb66dbc7879ddb996794c"></span><em class="property">constexpr</em> auto <code class="sig-name descname">offset_to</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_6size_tEN6ripple6detail19ContigStorageHelper9offset_toEDav" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines the offset, in bytes, to the index I in the type list, accounting for any required padding due to <em>badly specified</em> data layout. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The offset, in bytes, to the Ith element. </p>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">I</span></code>: The index of the type to get the offset to. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple6detail19ContigStorageHelper7offsetsEv">
+<span id="_CPPv3N6ripple6detail19ContigStorageHelper7offsetsEv"></span><span id="_CPPv2N6ripple6detail19ContigStorageHelper7offsetsEv"></span><span id="ripple::detail::ContigStorageHelper::offsetsCE"></span><span class="target" id="structripple_1_1detail_1_1ContigStorageHelper_1aae56f051f18d90fc65b6e7d9e6b00df0"></span><em class="property">constexpr</em> auto <code class="sig-name descname">offsets</code><span class="sig-paren">(</span><span class="sig-paren">)</span> -&gt; <a class="reference internal" href="#_CPPv4I_6size_tEN6ripple6detail19ContigStorageHelper3VecE" title="ripple::detail::ContigStorageHelper::Vec">Vec</a>&lt;<a class="reference internal" href="#_CPPv4N6ripple6detail19ContigStorageHelper9num_typesE" title="ripple::detail::ContigStorageHelper::num_types">num_types</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple6detail19ContigStorageHelper7offsetsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets an array of offsets for each of the types. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>An array for which each element in the offset in bytes to the Ith type. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I_Dp6size_tEN6ripple6detail19ContigStorageHelper12make_offsetsEDaNSt14index_sequenceIDp2IsEE">
+<span id="_CPPv3I_Dp6size_tEN6ripple6detail19ContigStorageHelper12make_offsetsENSt14index_sequenceIDp2IsEE"></span><span id="_CPPv2I_Dp6size_tEN6ripple6detail19ContigStorageHelper12make_offsetsENSt14index_sequenceIDp2IsEE"></span>template&lt;size_t... <code class="sig-name descname">Is</code>&gt;<br /><span class="target" id="structripple_1_1detail_1_1ContigStorageHelper_1a84ade1f0a209412e2e9810407194d1ef"></span><em class="property">constexpr</em> auto <code class="sig-name descname">make_offsets</code><span class="sig-paren">(</span>std::index_sequence&lt;<a class="reference internal" href="#_CPPv4I_Dp6size_tEN6ripple6detail19ContigStorageHelper12make_offsetsEDaNSt14index_sequenceIDp2IsEE" title="ripple::detail::ContigStorageHelper::make_offsets::Is">Is</a>...&gt;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_Dp6size_tEN6ripple6detail19ContigStorageHelper12make_offsetsEDaNSt14index_sequenceIDp2IsEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Implementation of offset helper to make the offsets. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>An array for which each element is the offfset in bytes to the Ith type. </p>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Is</span></code>: The indices to use to make the offsets. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Attributes</p>
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple6detail19ContigStorageHelper9num_typesE">
+<span id="_CPPv3N6ripple6detail19ContigStorageHelper9num_typesE"></span><span id="_CPPv2N6ripple6detail19ContigStorageHelper9num_typesE"></span><span id="ripple::detail::ContigStorageHelper::num_types__s"></span><span class="target" id="structripple_1_1detail_1_1ContigStorageHelper_1a5312ad06ad1851640ff693bd1013f7cb"></span><em class="property">constexpr</em> size_t <code class="sig-name descname">num_types</code> = sizeof...(<a class="reference internal" href="#_CPPv4IDpEN6ripple6detail19ContigStorageHelperE" title="ripple::detail::ContigStorageHelper::Ts">Ts</a>)<a class="headerlink" href="#_CPPv4N6ripple6detail19ContigStorageHelper9num_typesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the number of different types. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4I0EN6ripple6detail19ContigStorageHelper20element_components_vE">
+<span id="_CPPv3I0EN6ripple6detail19ContigStorageHelper20element_components_vE"></span><span id="_CPPv2I0EN6ripple6detail19ContigStorageHelper20element_components_vE"></span>template&lt;typename <code class="sig-name descname">T</code>&gt;<br /><span class="target" id="structripple_1_1detail_1_1ContigStorageHelper_1ad884f4408cbb6adb9d3bc21326bd0a43"></span><em class="property">constexpr</em> size_t <code class="sig-name descname">element_components_v</code> = <a class="reference internal" href="typedef_namespaceripple_1aa66805191689c1b021031835ee6ff6fe.html#_CPPv4I0EN6ripple24storage_element_traits_tE" title="ripple::storage_element_traits_t">storage_element_traits_t</a>&lt;<a class="reference internal" href="#_CPPv4I0EN6ripple6detail19ContigStorageHelper20element_components_vE" title="ripple::detail::ContigStorageHelper::element_components_v::T">T</a>&gt;::num_elements<a class="headerlink" href="#_CPPv4I0EN6ripple6detail19ContigStorageHelper20element_components_vE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the number of components for the storage element. </p>
+<p><dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type to get the size of. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple6detail19ContigStorageHelper10byte_sizesE">
+<span id="_CPPv3N6ripple6detail19ContigStorageHelper10byte_sizesE"></span><span id="_CPPv2N6ripple6detail19ContigStorageHelper10byte_sizesE"></span><span id="ripple::detail::ContigStorageHelper::byte_sizes__sA"></span><span class="target" id="structripple_1_1detail_1_1ContigStorageHelper_1a50f2ad99b64bf31fb335593f74685a07"></span><em class="property">constexpr</em> size_t <code class="sig-name descname">byte_sizes</code>[<code class="sig-name descname">num_types</code>] = {<a class="reference internal" href="typedef_namespaceripple_1aa66805191689c1b021031835ee6ff6fe.html#_CPPv4I0EN6ripple24storage_element_traits_tE" title="ripple::storage_element_traits_t">storage_element_traits_t</a>&lt;<a class="reference internal" href="#_CPPv4IDpEN6ripple6detail19ContigStorageHelperE" title="ripple::detail::ContigStorageHelper::Ts">Ts</a>&gt;::byte_size...}<a class="headerlink" href="#_CPPv4N6ripple6detail19ContigStorageHelper10byte_sizesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the sizes of each of the types. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple6detail19ContigStorageHelper11align_sizesE">
+<span id="_CPPv3N6ripple6detail19ContigStorageHelper11align_sizesE"></span><span id="_CPPv2N6ripple6detail19ContigStorageHelper11align_sizesE"></span><span id="ripple::detail::ContigStorageHelper::align_sizes__sA"></span><span class="target" id="structripple_1_1detail_1_1ContigStorageHelper_1a7ee728c96f3af5bf0701d9fdbbb17485"></span><em class="property">constexpr</em> size_t <code class="sig-name descname">align_sizes</code>[<code class="sig-name descname">num_types</code>] = {<a class="reference internal" href="typedef_namespaceripple_1aa66805191689c1b021031835ee6ff6fe.html#_CPPv4I0EN6ripple24storage_element_traits_tE" title="ripple::storage_element_traits_t">storage_element_traits_t</a>&lt;<a class="reference internal" href="#_CPPv4IDpEN6ripple6detail19ContigStorageHelperE" title="ripple::detail::ContigStorageHelper::Ts">Ts</a>&gt;::align_size...}<a class="headerlink" href="#_CPPv4N6ripple6detail19ContigStorageHelper11align_sizesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the alignment sizes of each of the types. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple6detail19ContigStorageHelper10componentsE">
+<span id="_CPPv3N6ripple6detail19ContigStorageHelper10componentsE"></span><span id="_CPPv2N6ripple6detail19ContigStorageHelper10componentsE"></span><span id="ripple::detail::ContigStorageHelper::components__sA"></span><span class="target" id="structripple_1_1detail_1_1ContigStorageHelper_1a0487b4e14fc05a76ec59b17049d9a422"></span><em class="property">constexpr</em> size_t <code class="sig-name descname">components</code>[<code class="sig-name descname">num_types</code>] = {<a class="reference internal" href="#_CPPv4I0EN6ripple6detail19ContigStorageHelper20element_components_vE" title="ripple::detail::ContigStorageHelper::element_components_v">element_components_v</a>&lt;<a class="reference internal" href="#_CPPv4IDpEN6ripple6detail19ContigStorageHelperE" title="ripple::detail::ContigStorageHelper::Ts">Ts</a>&gt;...}<a class="headerlink" href="#_CPPv4N6ripple6detail19ContigStorageHelper10componentsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the number of components in each of the types. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple6detail19ContigStorageHelper9max_alignE">
+<span id="_CPPv3N6ripple6detail19ContigStorageHelper9max_alignE"></span><span id="_CPPv2N6ripple6detail19ContigStorageHelper9max_alignE"></span><span id="ripple::detail::ContigStorageHelper::max_align__s"></span><span class="target" id="structripple_1_1detail_1_1ContigStorageHelper_1a97770647b8d560734ae2735ccc518aaa"></span><em class="property">constexpr</em> size_t <code class="sig-name descname">max_align</code> = <a class="reference internal" href="function_namespaceripple_1af40d7d3c9cb56f5947d995c55eb3e8ef.html#_CPPv4I0DpEN6ripple11max_elementEDcRR1TDpRR2Ts" title="ripple::max_element">max_element</a>(<a class="reference internal" href="typedef_namespaceripple_1aa66805191689c1b021031835ee6ff6fe.html#_CPPv4I0EN6ripple24storage_element_traits_tE" title="ripple::storage_element_traits_t">storage_element_traits_t</a>&lt;<a class="reference internal" href="#_CPPv4IDpEN6ripple6detail19ContigStorageHelperE" title="ripple::detail::ContigStorageHelper::Ts">Ts</a>&gt;::align_size...)<a class="headerlink" href="#_CPPv4N6ripple6detail19ContigStorageHelper9max_alignE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the max alignment of the types. </p>
+</dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt id="_CPPv4I_6size_tEN6ripple6detail19ContigStorageHelper3VecE">
+<span id="_CPPv3I_6size_tEN6ripple6detail19ContigStorageHelper3VecE"></span><span id="_CPPv2I_6size_tEN6ripple6detail19ContigStorageHelper3VecE"></span>template&lt;size_t <code class="sig-name descname">N</code>&gt;<br /><span class="target" id="structripple_1_1detail_1_1ContigStorageHelper_1_1Vec"></span><em class="property">struct </em><code class="sig-name descname">Vec</code><a class="headerlink" href="#_CPPv4I_6size_tEN6ripple6detail19ContigStorageHelper3VecE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Small vector type for constexpr constexts which can be used on both the host and the device to get the offset to the types at compile time. </p>
+<p><dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">N</span></code>: The number of elements for the vector. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4IDpEN6ripple6detail19ContigStorageHelper3Vec3VecEDpRR2As">
+<span id="_CPPv3IDpEN6ripple6detail19ContigStorageHelper3Vec3VecEDpRR2As"></span><span id="_CPPv2IDpEN6ripple6detail19ContigStorageHelper3Vec3VecEDpRR2As"></span>template&lt;typename ...<code class="sig-name descname">As</code>&gt;<br /><span class="target" id="structripple_1_1detail_1_1ContigStorageHelper_1_1Vec_1a915b959add9f06c4f2f27aa1ce4fe11a"></span><em class="property">constexpr</em> <code class="sig-name descname">Vec</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDpEN6ripple6detail19ContigStorageHelper3Vec3VecEDpRR2As" title="ripple::detail::ContigStorageHelper::Vec::Vec::As">As</a>&amp;&amp;... <em>as</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4IDpEN6ripple6detail19ContigStorageHelper3Vec3VecEDpRR2As" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor to set the values of the vector elements. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">as</span></code>: The values for the vector. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">As</span></code>: The type of the elements. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple6detail19ContigStorageHelper3VecixE6size_t">
+<span id="_CPPv3NK6ripple6detail19ContigStorageHelper3VecixE6size_t"></span><span id="_CPPv2NK6ripple6detail19ContigStorageHelper3VecixE6size_t"></span><span id="ripple::detail::ContigStorageHelper::Vec::subscript-operator__sCCE"></span><span class="target" id="structripple_1_1detail_1_1ContigStorageHelper_1_1Vec_1afc879110405cdbf169706162272631d2"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator[]</code><span class="sig-paren">(</span>size_t <em>i</em><span class="sig-paren">)</span> <em class="property">const</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple6detail19ContigStorageHelper3VecixE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of subscript operator to get the ith value. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The value of the ith element. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>: The index of the element to get. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple6detail19ContigStorageHelper3Vec4dataE">
+<span id="_CPPv3N6ripple6detail19ContigStorageHelper3Vec4dataE"></span><span id="_CPPv2N6ripple6detail19ContigStorageHelper3Vec4dataE"></span><span id="ripple::detail::ContigStorageHelper::Vec::data__sA"></span><span class="target" id="structripple_1_1detail_1_1ContigStorageHelper_1_1Vec_1a8fe03858a3173bd89c233b6eefb3e1ff"></span>size_t <code class="sig-name descname">data</code>[<code class="sig-name descname">N</code>] = {}<a class="headerlink" href="#_CPPv4N6ripple6detail19ContigStorageHelper3Vec4dataE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Data for the vector. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structripple_1_1detail_1_1ContigStorageHelper_1_1Vec.html" class="btn btn-neutral float-right" title="Template Struct ContigStorageHelper::Vec" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="structripple_1_1detail_1_1BasicTuple.html" class="btn btn-neutral" title="Template Struct BasicTuple" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Template Struct ContigStorageHelper</a><ul>
+<li><a class="reference internal" href="#nested-relationships">Nested Relationships</a><ul>
+<li><a class="reference internal" href="#nested-types">Nested Types</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

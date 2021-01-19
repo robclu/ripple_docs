@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a4ad54b4162e2a049ba42f1e4a496e156:
+
+Function ripple::multiarch_allocator
+====================================
+
+- Defined in :ref:`file_include_ripple_core_allocation_multiarch_allocator.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::multiarch_allocator()

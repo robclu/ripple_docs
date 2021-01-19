@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1Cache:
+
+Struct Cache
+============
+
+- Defined in :ref:`file_include_ripple_core_arch_cache.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::Cache
+   :members:
+   :protected-members:
+   :undoc-members:

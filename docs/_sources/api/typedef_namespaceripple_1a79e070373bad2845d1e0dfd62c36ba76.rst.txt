@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a79e070373bad2845d1e0dfd62c36ba76:
+
+Typedef ripple::make_invocable_t
+================================
+
+- Defined in :ref:`file_include_ripple_core_functional_functional_traits.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::make_invocable_t

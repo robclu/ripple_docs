@@ -1,0 +1,70 @@
+
+.. _file_include_ripple_core_io_printable_element.hpp:
+
+File printable_element.hpp
+==========================
+
+
+This file defines a class to represent a printable element. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/io/printable_element.hpp``)
+-------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_io_printable_element.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``../utility/forward.hpp``
+
+- ``cstring``
+
+- ``printable_traits.hpp`` (:ref:`file_include_ripple_core_io_printable_traits.hpp`)
+
+- ``string``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_io_multidim_writer.hpp`
+
+- :ref:`file_include_ripple_core_io_printable.hpp`
+
+- :ref:`file_include_ripple_core_io_vtk_writer.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1PrintableElement`
+

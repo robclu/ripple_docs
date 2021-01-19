@@ -1,0 +1,22 @@
+.. _exhale_struct_structripple_1_1detail_1_1StorageAs_3_01Storage_00_01T_3_01Ts_8_8_8_01_4_01_4_1_1MakeStorageType:
+
+Template Struct StorageAs< Storage, T< Ts... > >::StorageAs< Storage, T< Ts... > >
+==================================================================================
+
+- Defined in :ref:`file_include_ripple_core_storage_detail_storage_traits_impl_.hpp`
+
+
+Nested Relationships
+--------------------
+
+This struct is a nested type of :ref:`exhale_struct_structripple_1_1detail_1_1StorageAs_3_01Storage_00_01T_3_01Ts_8_8_8_01_4_01_4`.
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::detail::StorageAs< Storage, T< Ts... > >::MakeStorageType
+   :members:
+   :protected-members:
+   :undoc-members:

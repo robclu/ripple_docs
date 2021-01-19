@@ -1,0 +1,35 @@
+.. _exhale_class_classripple_1_1ContiguousStorageView:
+
+Template Class ContiguousStorageView
+====================================
+
+- Defined in :ref:`file_include_ripple_core_storage_contiguous_storage_view.hpp`
+
+
+Nested Relationships
+--------------------
+
+
+Nested Types
+************
+
+- :ref:`exhale_struct_structripple_1_1ContiguousStorageView_1_1Allocator`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public ripple::StorageAccessor< ContiguousStorageView< Ts... > >`` (:ref:`exhale_struct_structripple_1_1StorageAccessor`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ripple::ContiguousStorageView
+   :members:
+   :protected-members:
+   :undoc-members:

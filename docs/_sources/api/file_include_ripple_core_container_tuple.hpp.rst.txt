@@ -1,0 +1,72 @@
+
+.. _file_include_ripple_core_container_tuple.hpp:
+
+File tuple.hpp
+==============
+
+
+This file implements a tuple class which can be used on both the host and the device. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/container/tuple.hpp``)
+--------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_container_tuple.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``detail/basic_tuple_.hpp`` (:ref:`file_include_ripple_core_container_detail_basic_tuple_.hpp`)
+
+- ``tuple_traits.hpp`` (:ref:`file_include_ripple_core_container_tuple_traits.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_algorithm_for_each.hpp`
+
+- :ref:`file_include_ripple_core_container_vec.hpp`
+
+- :ref:`file_include_ripple_core_graph_node.hpp`
+
+- :ref:`file_include_ripple_core_functional_invocable.hpp`
+
+- :ref:`file_include_ripple_core_math_mat.hpp`
+
+- :ref:`file_include_ripple_core_math_quat.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1Tuple`
+
+- :ref:`exhale_class_classripple_1_1Tuple_3_4`
+

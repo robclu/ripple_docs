@@ -1,0 +1,95 @@
+
+.. _program_listing_file_include_ripple_core_functional_invocable.hpp:
+
+Program Listing for File invocable.hpp
+======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_functional_invocable.hpp>` (``include/ripple/core/functional/invocable.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/functional/invocable.hpp -------------------- -*- C++ -*-
+   //---==//
+   //
+   //                                Ripple
+   //
+   //                      Copyright (c) 2020 Ripple.
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_FUNCTIONAL_INVOCABLE_HPP
+   #define RIPPLE_FUNCTIONAL_INVOCABLE_HPP
+   
+   #include "functional_traits.hpp"
+   #include <ripple/core/container/tuple.hpp>
+   #include <ripple/core/utility/forward.hpp>
+   #include <ripple/core/utility/type_traits.hpp>
+   
+   namespace ripple {
+   
+   template <typename FunctorType>
+   class Invocable {
+     using Functor = FunctorType;
+   
+    public:
+     /*==--- [construction] ---------------------------------------------------==*/
+   
+     template <typename F>
+     ripple_host_device Invocable(F&& functor) noexcept
+     : functor_{ripple_forward(functor)} {}
+   
+     ripple_host_device Invocable(const Functor& functor) noexcept
+     : functor_{functor} {}
+   
+     ripple_host_device Invocable(const Invocable& other) noexcept
+     : functor_{other.functor_} {}
+   
+     ripple_host_device Invocable(Invocable&& other) noexcept
+     : functor_{ripple_move(other._functor)} {}
+   
+     ripple_host_device auto
+     operator=(const Invocable& other) noexcept -> Invocable& {
+       functor_ = other.functor_;
+       return *this;
+     }
+   
+     ripple_host_device auto operator=(Invocable&& other) noexcept -> Invocable& {
+       if (&other != this) {
+         functor_ = ripple_move(other.functor_);
+       }
+       return *this;
+     }
+   
+     /*==--- [interface] ------------------------------------------------------==*/
+   
+     template <typename... Args>
+     ripple_host_device auto operator()(Args&&... args) const noexcept -> void {
+       functor_(ripple_forward(args)...);
+     }
+   
+     template <typename... Args>
+     ripple_host_device auto operator()(Args&&... args) noexcept -> void {
+       functor_(ripple_forward(args)...);
+     }
+   
+    private:
+     Functor functor_; 
+   };
+   
+   /*==--- [functions] -------------------------------------------------------==*/
+   
+   template <typename Functor>
+   ripple_host_device decltype(auto) make_invocable(Functor&& functor) noexcept {
+     return Invocable<std::decay_t<Functor>>{ripple_forward(functor)};
+   }
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_FUNCTIONAL_INVOCABLE_HPP

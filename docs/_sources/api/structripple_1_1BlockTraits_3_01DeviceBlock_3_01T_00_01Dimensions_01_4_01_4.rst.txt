@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1BlockTraits_3_01DeviceBlock_3_01T_00_01Dimensions_01_4_01_4:
+
+Template Struct BlockTraits< DeviceBlock< T, Dimensions > >
+===========================================================
+
+- Defined in :ref:`file_include_ripple_core_container_block_traits.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::BlockTraits< DeviceBlock< T, Dimensions > >
+   :members:
+   :protected-members:
+   :undoc-members:

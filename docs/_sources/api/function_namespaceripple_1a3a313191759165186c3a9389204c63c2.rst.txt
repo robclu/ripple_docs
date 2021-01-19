@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a3a313191759165186c3a9389204c63c2:
+
+Template Function ripple::log_warn
+==================================
+
+- Defined in :ref:`file_include_ripple_core_utility_logger.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::log_warn(Fmt&&, FmtArgs&&...)

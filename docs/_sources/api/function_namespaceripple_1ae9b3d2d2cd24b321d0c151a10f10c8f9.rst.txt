@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1ae9b3d2d2cd24b321d0c151a10f10c8f9:
+
+Template Function ripple::log_info
+==================================
+
+- Defined in :ref:`file_include_ripple_core_utility_logger.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::log_info(Fmt&&, FmtArgs&&...)

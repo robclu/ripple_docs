@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1a549d8359be92d2ee7c7062a303930c70:
+
+Variable ripple::is_dimension_v
+===============================
+
+- Defined in :ref:`file_include_ripple_core_utility_dim.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::is_dimension_v

@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1afaa8609939b5a8ad7377106ed1623305:
+
+Variable ripple::any_arithmetic_v
+=================================
+
+- Defined in :ref:`file_include_ripple_core_utility_type_traits.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::any_arithmetic_v

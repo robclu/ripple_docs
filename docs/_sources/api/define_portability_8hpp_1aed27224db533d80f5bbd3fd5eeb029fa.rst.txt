@@ -1,0 +1,13 @@
+.. _exhale_define_portability_8hpp_1aed27224db533d80f5bbd3fd5eeb029fa:
+
+Define ripple_device
+====================
+
+- Defined in :ref:`file_include_ripple_core_utility_portability.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: ripple_device

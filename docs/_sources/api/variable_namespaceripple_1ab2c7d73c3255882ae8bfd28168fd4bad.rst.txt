@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1ab2c7d73c3255882ae8bfd28168fd4bad:
+
+Variable ripple::is_device_block_v
+==================================
+
+- Defined in :ref:`file_include_ripple_core_container_block_traits.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::is_device_block_v

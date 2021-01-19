@@ -1,0 +1,33 @@
+
+.. _program_listing_file_include_ripple_core_utility_forward.hpp:
+
+Program Listing for File forward.hpp
+====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_utility_forward.hpp>` (``include/ripple/core/utility/forward.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   /*
+    * std::forward and std::move require utility, which along with the need to do
+    * name lookup, overload resolution, and template instantiation, and the compile
+    * time effects are significant.
+    *
+    * When modules are supported by nvcc, we can remove these macros and use
+    * std::forward and std::move.
+    */
+   
+   #ifndef RIPPLE_UTILITY_FORWARD_HPP
+   #define RIPPLE_UTILITY_FORWARD_HPP
+   
+   #include <type_traits>
+   
+   #define ripple_move(...) \
+     static_cast<std::remove_reference_t<decltype(__VA_ARGS__)>&&>(__VA_ARGS__)
+   
+   #define ripple_forward(...) static_cast<decltype(__VA_ARGS__)&&>(__VA_ARGS__)
+   
+   #endif // RIPPLE_UTILITY_FORWARD_HPP

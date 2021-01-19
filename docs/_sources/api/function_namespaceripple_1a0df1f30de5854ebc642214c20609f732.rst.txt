@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a0df1f30de5854ebc642214c20609f732:
+
+Template Function ripple::invoke(HostBlock<T, Dims>&, Callable&&, Args&&...)
+============================================================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::invoke(HostBlock<T, Dims>&, Callable&&, Args&&...)

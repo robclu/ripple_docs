@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1ExpansionWrapperTraits_3_01ExpansionWrapper_3_01T_01_4_01_4:
+
+Template Struct ExpansionWrapperTraits< ExpansionWrapper< T > >
+===============================================================
+
+- Defined in :ref:`file_include_ripple_core_container_shared_wrapper.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::ExpansionWrapperTraits< ExpansionWrapper< T > >
+   :members:
+   :protected-members:
+   :undoc-members:

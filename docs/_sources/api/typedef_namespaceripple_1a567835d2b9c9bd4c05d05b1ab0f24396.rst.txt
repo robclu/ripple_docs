@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a567835d2b9c9bd4c05d05b1ab0f24396:
+
+Typedef ripple::modifier_enable_t
+=================================
+
+- Defined in :ref:`file_include_ripple_core_graph_modifier.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::modifier_enable_t

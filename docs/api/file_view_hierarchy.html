@@ -1,0 +1,401 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>File Hierarchy &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+      <li>File Hierarchy</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/file_view_hierarchy.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="file-hierarchy">
+<h1>File Hierarchy<a class="headerlink" href="#file-hierarchy" title="Permalink to this headline">¶</a></h1>
+<ul class="treeView" id="file-treeView">
+  <li>
+    <ul class="collapsibleList">
+      <li>File <a href="file_include_ripple_core_allocation_aligned_heap_allocator.hpp.html#file-include-ripple-core-allocation-aligned-heap-allocator.hpp">aligned_heap_allocator.hpp</a></li><li>File <a href="file_include_ripple_core_allocation_allocator.hpp.html#file-include-ripple-core-allocation-allocator.hpp">allocator.hpp</a></li><li>File <a href="file_include_ripple_core_allocation_arena.hpp.html#file-include-ripple-core-allocation-arena.hpp">arena.hpp</a></li><li>File <a href="file_include_ripple_core_container_array.hpp.html#file-include-ripple-core-container-array.hpp">array.hpp</a></li><li>File <a href="file_include_ripple_core_container_array_traits.hpp.html#file-include-ripple-core-container-array-traits.hpp">array_traits.hpp</a></li><li>File <a href="file_include_ripple_core_container_detail_basic_tuple_.hpp.html#file-include-ripple-core-container-detail-basic-tuple-.hpp">basic_tuple_.hpp</a></li><li>File <a href="file_include_ripple_core_utility_bitops.hpp.html#file-include-ripple-core-utility-bitops.hpp">bitops.hpp</a></li><li>File <a href="file_include_ripple_core_container_block.hpp.html#file-include-ripple-core-container-block.hpp">block.hpp</a></li><li>File <a href="file_include_ripple_core_container_block_extractor.hpp.html#file-include-ripple-core-container-block-extractor.hpp">block_extractor.hpp</a></li><li>File <a href="file_include_ripple_core_iterator_block_iterator.hpp.html#file-include-ripple-core-iterator-block-iterator.hpp">block_iterator.hpp</a></li><li>File <a href="file_include_ripple_core_container_block_memory_properties.hpp.html#file-include-ripple-core-container-block-memory-properties.hpp">block_memory_properties.hpp</a></li><li>File <a href="file_include_ripple_core_container_block_traits.hpp.html#file-include-ripple-core-container-block-traits.hpp">block_traits.hpp</a></li><li>File <a href="file_include_ripple_core_boundary_boundary_loader.hpp.html#file-include-ripple-core-boundary-boundary-loader.hpp">boundary_loader.hpp</a></li><li>File <a href="file_include_ripple_core_arch_cache.hpp.html#file-include-ripple-core-arch-cache.hpp">cache.hpp</a></li><li>File <a href="file_include_ripple_core_boundary_const_loader.hpp.html#file-include-ripple-core-boundary-const-loader.hpp">const_loader.hpp</a></li><li>File <a href="file_include_ripple_core_storage_contiguous_storage_view.hpp.html#file-include-ripple-core-storage-contiguous-storage-view.hpp">contiguous_storage_view.hpp</a></li><li>File <a href="file_include_ripple_core_boundary_copy_loader.hpp.html#file-include-ripple-core-boundary-copy-loader.hpp">copy_loader.hpp</a></li><li>File <a href="file_include_ripple_core_arch_cpu_info.hpp.html#file-include-ripple-core-arch-cpu-info.hpp">cpu_info.hpp</a></li><li>File <a href="file_include_ripple_core_arch_cpu_utils.hpp.html#file-include-ripple-core-arch-cpu-utils.hpp">cpu_utils.hpp</a></li><li>File <a href="file_include_ripple_core_storage_default_storage.hpp.html#file-include-ripple-core-storage-default-storage.hpp">default_storage.hpp</a></li><li>File <a href="file_include_ripple_core_container_device_block.hpp.html#file-include-ripple-core-container-device-block.hpp">device_block.hpp</a></li><li>File <a href="file_include_ripple_core_utility_dim.hpp.html#file-include-ripple-core-utility-dim.hpp">dim.hpp</a></li><li>File <a href="file_include_ripple_core_execution_dynamic_execution_params.hpp.html#file-include-ripple-core-execution-dynamic-execution-params.hpp">dynamic_execution_params.hpp</a></li><li>File <a href="file_include_ripple_core_multidim_dynamic_multidim_space.hpp.html#file-include-ripple-core-multidim-dynamic-multidim-space.hpp">dynamic_multidim_space.hpp</a></li><li>File <a href="file_include_ripple_core_execution_execution_params.hpp.html#file-include-ripple-core-execution-execution-params.hpp">execution_params.hpp</a></li><li>File <a href="file_include_ripple_core_execution_execution_size.hpp.html#file-include-ripple-core-execution-execution-size.hpp">execution_size.hpp</a></li><li>File <a href="file_include_ripple_core_execution_execution_traits.hpp.html#file-include-ripple-core-execution-execution-traits.hpp">execution_traits.hpp</a></li><li>File <a href="file_include_ripple_core_execution_executor.hpp.html#file-include-ripple-core-execution-executor.hpp">executor.hpp</a></li><li>File <a href="file_include_ripple_core_boundary_fo_extrap_loader.hpp.html#file-include-ripple-core-boundary-fo-extrap-loader.hpp">fo_extrap_loader.hpp</a></li><li>File <a href="file_include_ripple_core_algorithm_for_each.hpp.html#file-include-ripple-core-algorithm-for-each.hpp">for_each.hpp</a></li><li>File <a href="file_include_ripple_core_utility_forward.hpp.html#file-include-ripple-core-utility-forward.hpp">forward.hpp</a></li><li>File <a href="file_include_ripple_core_allocation_freelist.hpp.html#file-include-ripple-core-allocation-freelist.hpp">freelist.hpp</a></li><li>File <a href="file_include_ripple_core_utility_detail_function_traits_impl_.hpp.html#file-include-ripple-core-utility-detail-function-traits-impl-.hpp">function_traits_impl_.hpp</a></li><li>File <a href="file_include_ripple_core_functional_functional_traits.hpp.html#file-include-ripple-core-functional-functional-traits.hpp">functional_traits.hpp</a></li><li>File <a href="file_include_ripple_core_boundary_generic_loader.hpp.html#file-include-ripple-core-boundary-generic-loader.hpp">generic_loader.hpp</a></li><li>File <a href="file_include_ripple_core_boundary_ghost_index.hpp.html#file-include-ripple-core-boundary-ghost-index.hpp">ghost_index.hpp</a></li><li>File <a href="file_include_ripple_core_arch_gpu_info.hpp.html#file-include-ripple-core-arch-gpu-info.hpp">gpu_info.hpp</a></li><li>File <a href="file_include_ripple_core_arch_gpu_utils.hpp.html#file-include-ripple-core-arch-gpu-utils.hpp">gpu_utils.hpp</a></li><li>File <a href="file_include_ripple_core_graph_graph.hpp.html#file-include-ripple-core-graph-graph.hpp">graph.hpp</a></li><li>File <a href="file_include_ripple_core_container_host_block.hpp.html#file-include-ripple-core-container-host-block.hpp">host_block.hpp</a></li><li>File <a href="file_include_ripple_core_utility_detail_index_of_impl_.hpp.html#file-include-ripple-core-utility-detail-index-of-impl-.hpp">index_of_impl_.hpp</a></li><li>File <a href="file_include_ripple_core_iterator_indexed_iterator.hpp.html#file-include-ripple-core-iterator-indexed-iterator.hpp">indexed_iterator.hpp</a></li><li>File <a href="file_include_ripple_core_boundary_internal_loader.hpp.html#file-include-ripple-core-boundary-internal-loader.hpp">internal_loader.hpp</a></li><li>File <a href="file_include_ripple_core_functional_invocable.hpp.html#file-include-ripple-core-functional-invocable.hpp">invocable.hpp</a></li><li>File <a href="file_include_ripple_core_functional_invoke.hpp.html#file-include-ripple-core-functional-invoke.hpp">invoke.hpp</a></li><li>File <a href="file_include_ripple_core_functional_kernel_invoke_cpp_.hpp.html#file-include-ripple-core-functional-kernel-invoke-cpp-.hpp">invoke_cpp_.hpp</a></li><li>File <a href="file_include_ripple_core_functional_kernel_invoke_generic_impl_.hpp.html#file-include-ripple-core-functional-kernel-invoke-generic-impl-.hpp">invoke_generic_impl_.hpp</a></li><li>File <a href="file_include_ripple_core_functional_kernel_invoke_utils.hpp.html#file-include-ripple-core-functional-kernel-invoke-utils.hpp">invoke_utils.hpp</a></li><li>File <a href="file_include_ripple_core_iterator_iterator_traits.hpp.html#file-include-ripple-core-iterator-iterator-traits.hpp">iterator_traits.hpp</a></li><li>File <a href="file_include_ripple_core_storage_layout_traits.hpp.html#file-include-ripple-core-storage-layout-traits.hpp">layout_traits.hpp</a></li><li>File <a href="file_include_ripple_core_math_lerp.hpp.html#file-include-ripple-core-math-lerp.hpp">lerp.hpp</a></li><li>File <a href="file_include_ripple_core_allocation_linear_allocator.hpp.html#file-include-ripple-core-allocation-linear-allocator.hpp">linear_allocator.hpp</a></li><li>File <a href="file_include_ripple_core_boundary_load_boundary.hpp.html#file-include-ripple-core-boundary-load-boundary.hpp">load_boundary.hpp</a></li><li>File <a href="file_include_ripple_core_boundary_detail_load_global_boundary_impl_.hpp.html#file-include-ripple-core-boundary-detail-load-global-boundary-impl-.hpp">load_global_boundary_impl_.hpp</a></li><li>File <a href="file_include_ripple_core_boundary_detail_load_internal_boundary_impl_.hpp.html#file-include-ripple-core-boundary-detail-load-internal-boundary-impl-.hpp">load_internal_boundary_impl_.hpp</a></li><li>File <a href="file_include_ripple_core_utility_logger.hpp.html#file-include-ripple-core-utility-logger.hpp">logger.hpp</a></li><li>File <a href="file_include_ripple_core_math_mat.hpp.html#file-include-ripple-core-math-mat.hpp">mat.hpp</a></li><li>File <a href="file_include_ripple_core_math_math.hpp.html#file-include-ripple-core-math-math.hpp">math.hpp</a></li><li>File <a href="file_include_ripple_core_algorithm_max_element.hpp.html#file-include-ripple-core-algorithm-max-element.hpp">max_element.hpp</a></li><li>File <a href="file_include_ripple_core_graph_memcopy.hpp.html#file-include-ripple-core-graph-memcopy.hpp">memcopy.hpp</a></li><li>File <a href="file_include_ripple_core_container_memcopy_padding.hpp.html#file-include-ripple-core-container-memcopy-padding.hpp">memcopy_padding.hpp</a></li><li>File <a href="file_include_ripple_core_utility_memory.hpp.html#file-include-ripple-core-utility-memory.hpp">memory.hpp</a></li><li>File <a href="file_include_ripple_core_graph_modifier.hpp.html#file-include-ripple-core-graph-modifier.hpp">modifier.hpp</a></li><li>File <a href="file_include_ripple_core_allocation_multiarch_allocator.hpp.html#file-include-ripple-core-allocation-multiarch-allocator.hpp">multiarch_allocator.hpp</a></li><li>File <a href="file_include_ripple_core_multidim_multidim_space.hpp.html#file-include-ripple-core-multidim-multidim-space.hpp">multidim_space.hpp</a></li><li>File <a href="file_include_ripple_core_io_multidim_writer.hpp.html#file-include-ripple-core-io-multidim-writer.hpp">multidim_writer.hpp</a></li><li>File <a href="file_include_ripple_core_graph_node.hpp.html#file-include-ripple-core-graph-node.hpp">node.hpp</a></li><li>File <a href="file_include_ripple_core_utility_detail_nth_element_impl_.hpp.html#file-include-ripple-core-utility-detail-nth-element-impl-.hpp">nth_element_impl_.hpp</a></li><li>File <a href="file_include_ripple_core_utility_number.hpp.html#file-include-ripple-core-utility-number.hpp">number.hpp</a></li><li>File <a href="file_include_ripple_core_multidim_offset_to.hpp.html#file-include-ripple-core-multidim-offset-to.hpp">offset_to.hpp</a></li><li>File <a href="file_include_ripple_core_storage_owned_storage.hpp.html#file-include-ripple-core-storage-owned-storage.hpp">owned_storage.hpp</a></li><li>File <a href="file_include_ripple_core_storage_pointer_wrapper.hpp.html#file-include-ripple-core-storage-pointer-wrapper.hpp">pointer_wrapper.hpp</a></li><li>File <a href="file_include_ripple_core_storage_polymorphic_layout.hpp.html#file-include-ripple-core-storage-polymorphic-layout.hpp">polymorphic_layout.hpp</a></li><li>File <a href="file_include_ripple_core_allocation_pool_allocator.hpp.html#file-include-ripple-core-allocation-pool-allocator.hpp">pool_allocator.hpp</a></li><li>File <a href="file_include_ripple_core_utility_portability.hpp.html#file-include-ripple-core-utility-portability.hpp">portability.hpp</a></li><li>File <a href="file_include_ripple_core_io_printable.hpp.html#file-include-ripple-core-io-printable.hpp">printable.hpp</a></li><li>File <a href="file_include_ripple_core_io_printable_element.hpp.html#file-include-ripple-core-io-printable-element.hpp">printable_element.hpp</a></li><li>File <a href="file_include_ripple_core_io_printable_traits.hpp.html#file-include-ripple-core-io-printable-traits.hpp">printable_traits.hpp</a></li><li>File <a href="file_include_ripple_core_arch_proc_info.hpp.html#file-include-ripple-core-arch-proc-info.hpp">proc_info.hpp</a></li><li>File <a href="file_include_ripple_core_math_quat.hpp.html#file-include-ripple-core-math-quat.hpp">quat.hpp</a></li><li>File <a href="file_include_ripple_core_utility_range.hpp.html#file-include-ripple-core-utility-range.hpp">range.hpp</a></li><li>File <a href="file_include_ripple_core_algorithm_reduce.hpp.html#file-include-ripple-core-algorithm-reduce.hpp">reduce.hpp</a></li><li>File <a href="file_include_ripple_core_algorithm_kernel_reduce_cpp_.hpp.html#file-include-ripple-core-algorithm-kernel-reduce-cpp-.hpp">reduce_cpp_.hpp</a></li><li>File <a href="file_include_ripple_core_graph_reducer.hpp.html#file-include-ripple-core-graph-reducer.hpp">reducer.hpp</a></li><li>File <a href="file_include_ripple_core_container_shared_wrapper.hpp.html#file-include-ripple-core-container-shared-wrapper.hpp">shared_wrapper.hpp</a></li><li>File <a href="file_include_ripple_core_multidim_space_traits.hpp.html#file-include-ripple-core-multidim-space-traits.hpp">space_traits.hpp</a></li><li>File <a href="file_include_ripple_core_utility_spinlock.hpp.html#file-include-ripple-core-utility-spinlock.hpp">spinlock.hpp</a></li><li>File <a href="file_include_ripple_core_graph_splitter.hpp.html#file-include-ripple-core-graph-splitter.hpp">splitter.hpp</a></li><li>File <a href="file_include_ripple_core_execution_static_execution_params.hpp.html#file-include-ripple-core-execution-static-execution-params.hpp">static_execution_params.hpp</a></li><li>File <a href="file_include_ripple_core_multidim_static_multidim_space.hpp.html#file-include-ripple-core-multidim-static-multidim-space.hpp">static_multidim_space.hpp</a></li><li>File <a href="file_include_ripple_core_container_static_stealable_dequeue.hpp.html#file-include-ripple-core-container-static-stealable-dequeue.hpp">static_stealable_dequeue.hpp</a></li><li>File <a href="file_include_ripple_core_graph_stealer.hpp.html#file-include-ripple-core-graph-stealer.hpp">stealer.hpp</a></li><li>File <a href="file_include_ripple_core_storage_storage_accessor.hpp.html#file-include-ripple-core-storage-storage-accessor.hpp">storage_accessor.hpp</a></li><li>File <a href="file_include_ripple_core_storage_storage_descriptor.hpp.html#file-include-ripple-core-storage-storage-descriptor.hpp">storage_descriptor.hpp</a></li><li>File <a href="file_include_ripple_core_storage_storage_element_traits.hpp.html#file-include-ripple-core-storage-storage-element-traits.hpp">storage_element_traits.hpp</a></li><li>File <a href="file_include_ripple_core_storage_storage_layout.hpp.html#file-include-ripple-core-storage-storage-layout.hpp">storage_layout.hpp</a></li><li>File <a href="file_include_ripple_core_storage_storage_traits.hpp.html#file-include-ripple-core-storage-storage-traits.hpp">storage_traits.hpp</a></li><li>File <a href="file_include_ripple_core_storage_detail_storage_traits_impl_.hpp.html#file-include-ripple-core-storage-detail-storage-traits-impl-.hpp">storage_traits_impl_.hpp</a></li><li>File <a href="file_include_ripple_core_storage_strided_storage_view.hpp.html#file-include-ripple-core-storage-strided-storage-view.hpp">strided_storage_view.hpp</a></li><li>File <a href="file_include_ripple_core_storage_struct_accessor.hpp.html#file-include-ripple-core-storage-struct-accessor.hpp">struct_accessor.hpp</a></li><li>File <a href="file_include_ripple_core_execution_synchronize.hpp.html#file-include-ripple-core-execution-synchronize.hpp">synchronize.hpp</a></li><li>File <a href="file_include_ripple_core_container_tensor.hpp.html#file-include-ripple-core-container-tensor.hpp">tensor.hpp</a></li><li>File <a href="file_include_ripple_core_container_tensor_traits.hpp.html#file-include-ripple-core-container-tensor-traits.hpp">tensor_traits.hpp</a></li><li>File <a href="file_include_ripple_core_execution_thread_index.hpp.html#file-include-ripple-core-execution-thread-index.hpp">thread_index.hpp</a></li><li>File <a href="file_include_ripple_core_execution_detail_thread_index_impl_.hpp.html#file-include-ripple-core-execution-detail-thread-index-impl-.hpp">thread_index_impl_.hpp</a></li><li>File <a href="file_include_ripple_core_utility_timer.hpp.html#file-include-ripple-core-utility-timer.hpp">timer.hpp</a></li><li>File <a href="file_include_ripple_core_arch_topology.hpp.html#file-include-ripple-core-arch-topology.hpp">topology.hpp</a></li><li>File <a href="file_include_ripple_core_container_tuple.hpp.html#file-include-ripple-core-container-tuple.hpp">tuple.hpp</a></li><li>File <a href="file_include_ripple_core_container_tuple_traits.hpp.html#file-include-ripple-core-container-tuple-traits.hpp">tuple_traits.hpp</a></li><li>File <a href="file_include_ripple_core_utility_type_traits.hpp.html#file-include-ripple-core-utility-type-traits.hpp">type_traits.hpp</a></li><li>File <a href="file_include_ripple_core_algorithm_unrolled_for.hpp.html#file-include-ripple-core-algorithm-unrolled-for.hpp">unrolled_for.hpp</a></li><li>File <a href="file_include_ripple_core_algorithm_detail_unrolled_for_impl_.hpp.html#file-include-ripple-core-algorithm-detail-unrolled-for-impl-.hpp">unrolled_for_impl_.hpp</a></li><li>File <a href="file_include_ripple_core_graph_detail_utils_.hpp.html#file-include-ripple-core-graph-detail-utils-.hpp">utils_.hpp</a></li><li>File <a href="file_include_ripple_core_container_vec.hpp.html#file-include-ripple-core-container-vec.hpp">vec.hpp</a></li><li class="lastChild">File <a href="file_include_ripple_core_io_vtk_writer.hpp.html#file-include-ripple-core-io-vtk-writer.hpp">vtk_writer.hpp</a></li>
+    </ul>
+  </li><!-- only tree view element -->
+</ul><!-- /treeView file-treeView --></div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">File Hierarchy</a></li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

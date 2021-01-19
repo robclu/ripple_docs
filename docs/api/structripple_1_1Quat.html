@@ -1,0 +1,804 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Template Struct Quat &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Template Struct Range::Iterator" href="structripple_1_1Range_1_1Iterator.html" />
+  <link rel="prev" title="Struct ProcInfo" href="structripple_1_1ProcInfo.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Template Struct Quat</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/structripple_1_1Quat.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="template-struct-quat">
+<span id="exhale-struct-structripple-1-1quat"></span><h1>Template Struct Quat<a class="headerlink" href="#template-struct-quat" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_math_quat.hpp.html#file-include-ripple-core-math-quat-hpp"><span class="std std-ref">File quat.hpp</span></a></p></li>
+</ul>
+<div class="section" id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="base-type">
+<h3>Base Type<a class="headerlink" href="#base-type" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">ripple::PolymorphicLayout&lt;</span> <span class="pre">Quat&lt;</span> <span class="pre">T,</span> <span class="pre">ContiguousOwned</span> <span class="pre">&gt;</span> <span class="pre">&gt;</span></code> (<a class="reference internal" href="structripple_1_1PolymorphicLayout.html#exhale-struct-structripple-1-1polymorphiclayout"><span class="std std-ref">Template Struct PolymorphicLayout</span></a>)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp struct">
+<dt id="_CPPv4I00EN6ripple4QuatE">
+<span id="_CPPv3I00EN6ripple4QuatE"></span><span id="_CPPv2I00EN6ripple4QuatE"></span>template&lt;typename <code class="sig-name descname">T</code>, typename <code class="sig-name descname">Layout</code> = <a class="reference internal" href="typedef_namespaceripple_1a80bd7d5345b7cf27fa786731a34d9cf2.html#_CPPv4N6ripple15ContiguousOwnedE" title="ripple::ContiguousOwned">ContiguousOwned</a>&gt;<br /><span class="target" id="structripple_1_1Quat"></span><em class="property">struct </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">Quat</code> : <em class="property">public</em> ripple::<a class="reference internal" href="structripple_1_1PolymorphicLayout.html#_CPPv4I0EN6ripple17PolymorphicLayoutE" title="ripple::PolymorphicLayout">PolymorphicLayout</a>&lt;<a class="reference internal" href="#_CPPv4I00EN6ripple4QuatE" title="ripple::Quat">Quat</a>&lt;<a class="reference internal" href="#_CPPv4I00EN6ripple4QuatE" title="ripple::Quat::T">T</a>, <a class="reference internal" href="typedef_namespaceripple_1a80bd7d5345b7cf27fa786731a34d9cf2.html#_CPPv4N6ripple15ContiguousOwnedE" title="ripple::ContiguousOwned">ContiguousOwned</a>&gt;&gt;<a class="headerlink" href="#_CPPv4I00EN6ripple4QuatE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#structripple_1_1Quat"><span class="std std-ref">Quat</span></a> class implements a quaternion class with polymorphic data layout. </p>
+<p>The data for the elements is allocated according to the layout, and can be contiguous, owned, or strided.</p>
+<p><dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the elements in the quaternion </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Layout</span></code>: The type of the storage layout for the quaternion </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple4Quat4QuatEv">
+<span id="_CPPv3N6ripple4Quat4QuatEv"></span><span id="_CPPv2N6ripple4Quat4QuatEv"></span><span id="ripple::Quat::QuatCE"></span><span class="target" id="structripple_1_1Quat_1aa10d7f3563e846dab93cc8401d2a46f6"></span><em class="property">constexpr</em> <code class="sig-name descname">Quat</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple4Quat4QuatEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Default constructor for the quaternion, value of initialization for elements in undefined. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple4Quat4QuatE1T">
+<span id="_CPPv3N6ripple4Quat4QuatE1T"></span><span id="_CPPv2N6ripple4Quat4QuatE1T"></span><span id="ripple::Quat::Quat__TCE"></span><span class="target" id="structripple_1_1Quat_1a90bce5d9537883a0f121593159208147"></span><em class="property">constexpr</em> <code class="sig-name descname">Quat</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00EN6ripple4QuatE" title="ripple::Quat::T">T</a> <em>val</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple4Quat4QuatE1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets all elements of the quaternion to the given value. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">val</span></code>: The value to set all elements to. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDp_20variadic_ge_enable_tIXL2EEDp6ValuesEEN6ripple4Quat4QuatEDpRR6Values">
+<span id="_CPPv3IDp_20variadic_ge_enable_tIXL2EEDp6ValuesEEN6ripple4Quat4QuatEDpRR6Values"></span><span id="_CPPv2IDp_20variadic_ge_enable_tIX2EDp6ValuesEEN6ripple4Quat4QuatEDpRR6Values"></span>template&lt;typename ...<code class="sig-name descname">Values</code>, <a class="reference internal" href="typedef_namespaceripple_1adcea58c792c05678778f93f8bc1ef667.html#_CPPv4I_6size_tDpEN6ripple20variadic_ge_enable_tE" title="ripple::variadic_ge_enable_t">variadic_ge_enable_t</a>&lt;2, <a class="reference internal" href="#_CPPv4IDp_20variadic_ge_enable_tIXL2EEDp6ValuesEEN6ripple4Quat4QuatEDpRR6Values" title="ripple::Quat::Quat::Values">Values</a>...&gt; = 0&gt;<br /><span class="target" id="structripple_1_1Quat_1a689500aab46019e4518fc4b9ffcb8f02"></span><em class="property">constexpr</em> <code class="sig-name descname">Quat</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDp_20variadic_ge_enable_tIXL2EEDp6ValuesEEN6ripple4Quat4QuatEDpRR6Values" title="ripple::Quat::Quat::Values">Values</a>&amp;&amp;... <em>values</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4IDp_20variadic_ge_enable_tIXL2EEDp6ValuesEEN6ripple4Quat4QuatEDpRR6Values" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor to create the quaternion from a list of values. </p>
+<p>The first value is the scalar component, the rest are the vector component.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>The order of initialization is {scalar, vx, vy, vz}, and elements which are not specified are set to zero, i.e if 1, 1 are specified then the quaternion is initialized to <code class="docutils literal notranslate"><span class="pre">{1,</span> <span class="pre">[1</span> <span class="pre">0</span> <span class="pre">0]}</span></code>.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>This overload is only enabled when the number of elements in the variadic parameter is two or more.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>The types of the values must be convertible to T.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">values</span></code>: The values to set the elements to. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Values</span></code>: The types of the values for setting. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple4Quat4QuatE7Storage">
+<span id="_CPPv3N6ripple4Quat4QuatE7Storage"></span><span id="_CPPv2N6ripple4Quat4QuatE7Storage"></span><span id="ripple::Quat::Quat__StorageCE"></span><span class="target" id="structripple_1_1Quat_1a33d3d23c0d1ec9fd8c23686554259c3e"></span><em class="property">constexpr</em> <code class="sig-name descname">Quat</code><span class="sig-paren">(</span>Storage <em>storage</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple4Quat4QuatE7Storage" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor to set the quaternion from the other storage. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other storage to use to set the quaternion. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple4Quat4QuatERK4Quat">
+<span id="_CPPv3N6ripple4Quat4QuatERK4Quat"></span><span id="_CPPv2N6ripple4Quat4QuatERK4Quat"></span><span id="ripple::Quat::Quat__QuatCRCE"></span><span class="target" id="structripple_1_1Quat_1a9ae58876c0262c06814feb1969cb520e"></span><em class="property">constexpr</em> <code class="sig-name descname">Quat</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple4Quat4QuatERK4Quat" title="ripple::Quat::Quat">Quat</a> &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple4Quat4QuatERK4Quat" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy constructor to set the quaternion from another quaternion. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other quaternion to use to initialize this one. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple4Quat4QuatERR4Quat">
+<span id="_CPPv3N6ripple4Quat4QuatERR4Quat"></span><span id="_CPPv2N6ripple4Quat4QuatERR4Quat"></span><span id="ripple::Quat::Quat__QuatRRCE"></span><span class="target" id="structripple_1_1Quat_1a30b379c7191e4e9786030241e808b927"></span><em class="property">constexpr</em> <code class="sig-name descname">Quat</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple4Quat4QuatERR4Quat" title="ripple::Quat::Quat">Quat</a> &amp;&amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple4Quat4QuatERR4Quat" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Move constructor to set the quaternion from another quaternion. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other quaternion to use to initialize this one. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple4Quat4QuatERK4QuatI1T11OtherLayoutE">
+<span id="_CPPv3I0EN6ripple4Quat4QuatERK4QuatI1T11OtherLayoutE"></span><span id="_CPPv2I0EN6ripple4Quat4QuatERK4QuatI1T11OtherLayoutE"></span>template&lt;typename <code class="sig-name descname">OtherLayout</code>&gt;<br /><span class="target" id="structripple_1_1Quat_1a6aedd2d6eb605aa25a8d98f4f733c39f"></span><em class="property">constexpr</em> <code class="sig-name descname">Quat</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN6ripple4Quat4QuatERK4QuatI1T11OtherLayoutE" title="ripple::Quat::Quat">Quat</a>&lt;<a class="reference internal" href="#_CPPv4I00EN6ripple4QuatE" title="ripple::Quat::T">T</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple4Quat4QuatERK4QuatI1T11OtherLayoutE" title="ripple::Quat::Quat::OtherLayout">OtherLayout</a>&gt; &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4I0EN6ripple4Quat4QuatERK4QuatI1T11OtherLayoutE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy constructor to set the quaternion from another quaternion with different storage layout. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other quaternion to use to initialize this one. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">OtherLayout</span></code>: The layout of the other storage. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple4Quat4QuatERR4QuatI1T11OtherLayoutE">
+<span id="_CPPv3I0EN6ripple4Quat4QuatERR4QuatI1T11OtherLayoutE"></span><span id="_CPPv2I0EN6ripple4Quat4QuatERR4QuatI1T11OtherLayoutE"></span>template&lt;typename <code class="sig-name descname">OtherLayout</code>&gt;<br /><span class="target" id="structripple_1_1Quat_1a4ce7917ce567ac00a7615922ac062983"></span><em class="property">constexpr</em> <code class="sig-name descname">Quat</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN6ripple4Quat4QuatERR4QuatI1T11OtherLayoutE" title="ripple::Quat::Quat">Quat</a>&lt;<a class="reference internal" href="#_CPPv4I00EN6ripple4QuatE" title="ripple::Quat::T">T</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple4Quat4QuatERR4QuatI1T11OtherLayoutE" title="ripple::Quat::Quat::OtherLayout">OtherLayout</a>&gt; &amp;&amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4I0EN6ripple4Quat4QuatERR4QuatI1T11OtherLayoutE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Move constructor to set the quaternion from another quaternion with a different storage layout. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other quaternion to use to initialize this one. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">OtherLayout</span></code>: The layout of the other storage. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple4QuataSERK4Quat">
+<span id="_CPPv3N6ripple4QuataSERK4Quat"></span><span id="_CPPv2N6ripple4QuataSERK4Quat"></span><span id="ripple::Quat::assign-operator__QuatCR"></span><span class="target" id="structripple_1_1Quat_1a7afd60d9b9f2564d034a39370a431c5c"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I00EN6ripple4QuatE" title="ripple::Quat">Quat</a> &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I00EN6ripple4QuatE" title="ripple::Quat">Quat</a>&amp;<a class="headerlink" href="#_CPPv4N6ripple4QuataSERK4Quat" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of copy assignment overload to copy the elements from another quaternion to this matrix. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A references to the modified quaternion. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other quaternion to copy from. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple4QuataSERR4Quat">
+<span id="_CPPv3N6ripple4QuataSERR4Quat"></span><span id="_CPPv2N6ripple4QuataSERR4Quat"></span><span id="ripple::Quat::assign-operator__QuatRR"></span><span class="target" id="structripple_1_1Quat_1a9e2f7ca699588cb4a9c41a197fba6794"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00EN6ripple4QuatE" title="ripple::Quat">Quat</a> &amp;&amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I00EN6ripple4QuatE" title="ripple::Quat">Quat</a>&amp;<a class="headerlink" href="#_CPPv4N6ripple4QuataSERR4Quat" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of move assignment overload to move the elements from another quaternion to this quaternion. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified quaternion. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other quaternion to move. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple4QuataSER4QuatRK4QuatI1T11OtherLayoutE">
+<span id="_CPPv3I0EN6ripple4QuataSERK4QuatI1T11OtherLayoutE"></span><span id="_CPPv2I0EN6ripple4QuataSERK4QuatI1T11OtherLayoutE"></span>template&lt;typename <code class="sig-name descname">OtherLayout</code>&gt;<br /><span class="target" id="structripple_1_1Quat_1a8b7d5328eccef0d44b6d2a6ebadfcbaa"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I00EN6ripple4QuatE" title="ripple::Quat">Quat</a>&lt;<a class="reference internal" href="#_CPPv4I00EN6ripple4QuatE" title="ripple::Quat::T">T</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple4QuataSER4QuatRK4QuatI1T11OtherLayoutE" title="ripple::Quat::operator=::OtherLayout">OtherLayout</a>&gt; &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I00EN6ripple4QuatE" title="ripple::Quat">Quat</a>&amp;<a class="headerlink" href="#_CPPv4I0EN6ripple4QuataSER4QuatRK4QuatI1T11OtherLayoutE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of copy assignment overload to copy the elements from another quaternion with a different storage layout to this quaternion. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified quaternion. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other quaternion to copy from. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">OtherLayout</span></code>: The layout of the other quaternion. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple4QuataSER4QuatRR4QuatI1T11OtherLayoutE">
+<span id="_CPPv3I0EN6ripple4QuataSERR4QuatI1T11OtherLayoutE"></span><span id="_CPPv2I0EN6ripple4QuataSERR4QuatI1T11OtherLayoutE"></span>template&lt;typename <code class="sig-name descname">OtherLayout</code>&gt;<br /><span class="target" id="structripple_1_1Quat_1a5535a9766956129fb7b7f74f84667ab1"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00EN6ripple4QuatE" title="ripple::Quat">Quat</a>&lt;<a class="reference internal" href="#_CPPv4I00EN6ripple4QuatE" title="ripple::Quat::T">T</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple4QuataSER4QuatRR4QuatI1T11OtherLayoutE" title="ripple::Quat::operator=::OtherLayout">OtherLayout</a>&gt; &amp;&amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I00EN6ripple4QuatE" title="ripple::Quat">Quat</a>&amp;<a class="headerlink" href="#_CPPv4I0EN6ripple4QuataSER4QuatRR4QuatI1T11OtherLayoutE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of move assignment overload to copy the elements from another quaternion to this quaternion. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified quaternion. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other quaternion to move. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">OtherLayout</span></code>: The layout of the other quaternion. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple4QuatixE6size_t">
+<span id="_CPPv3N6ripple4QuatixE6size_t"></span><span id="_CPPv2N6ripple4QuatixE6size_t"></span><span id="ripple::Quat::subscript-operator__s"></span><span class="target" id="structripple_1_1Quat_1a00a340e8ad14fb3452786ac1f38475fc"></span>auto <code class="sig-name descname">operator[]</code><span class="sig-paren">(</span>size_t <em>i</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; Value&amp;<a class="headerlink" href="#_CPPv4N6ripple4QuatixE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of access operator to get the element at the given index. </p>
+<p>The access pattern is [scalar, vx, vy, vz]. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the element. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>: The index of the element to get. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple4Quat6scalarEv">
+<span id="_CPPv3N6ripple4Quat6scalarEv"></span><span id="_CPPv2N6ripple4Quat6scalarEv"></span><span id="ripple::Quat::scalar"></span><span class="target" id="structripple_1_1Quat_1a5055db7c613bdc759489cc50f6ce4fa3"></span>auto <code class="sig-name descname">scalar</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; Value&amp;<a class="headerlink" href="#_CPPv4N6ripple4Quat6scalarEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the scalar part of the quaternion. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the scalar part of the quaternion. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple4Quat6scalarEv">
+<span id="_CPPv3NK6ripple4Quat6scalarEv"></span><span id="_CPPv2NK6ripple4Quat6scalarEv"></span><span id="ripple::Quat::scalarC"></span><span class="target" id="structripple_1_1Quat_1aeef2116ed8e2b591841c73b1d143c1ce"></span>auto <code class="sig-name descname">scalar</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <em class="property">const</em> Value&amp;<a class="headerlink" href="#_CPPv4NK6ripple4Quat6scalarEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the scalar part of the quaternion. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A const reference to the scalar part of the quaternion. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I_6size_tEN6ripple4Quat13vec_componentER5Valuev">
+<span id="_CPPv3I_6size_tEN6ripple4Quat13vec_componentEv"></span><span id="_CPPv2I_6size_tEN6ripple4Quat13vec_componentEv"></span>template&lt;size_t <code class="sig-name descname">I</code>&gt;<br /><span class="target" id="structripple_1_1Quat_1a1e7b1ea02966a3b30d87f25aeaf92c06"></span>auto <code class="sig-name descname">vec_component</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; Value&amp;<a class="headerlink" href="#_CPPv4I_6size_tEN6ripple4Quat13vec_componentER5Valuev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the Ith vector component from the quaternion. </p>
+<p><dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">I</span></code>: The index of the vector component to get. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I_6size_tENK6ripple4Quat13vec_componentERK5Valuev">
+<span id="_CPPv3I_6size_tENK6ripple4Quat13vec_componentEv"></span><span id="_CPPv2I_6size_tENK6ripple4Quat13vec_componentEv"></span>template&lt;size_t <code class="sig-name descname">I</code>&gt;<br /><span class="target" id="structripple_1_1Quat_1a322649264bc4b8d4b85968f6472c1783"></span>auto <code class="sig-name descname">vec_component</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <em class="property">const</em> Value&amp;<a class="headerlink" href="#_CPPv4I_6size_tENK6ripple4Quat13vec_componentERK5Valuev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the Ith vector component from the quaternion. </p>
+<p><dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">I</span></code>: The index of the vector component to get. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple4Quat13vec_componentE6size_t">
+<span id="_CPPv3N6ripple4Quat13vec_componentE6size_t"></span><span id="_CPPv2N6ripple4Quat13vec_componentE6size_t"></span><span id="ripple::Quat::vec_component__s"></span><span class="target" id="structripple_1_1Quat_1a16b6a6f54ce15e7a9107aa14925da92a"></span>auto <code class="sig-name descname">vec_component</code><span class="sig-paren">(</span>size_t <em>i</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; Value&amp;<a class="headerlink" href="#_CPPv4N6ripple4Quat13vec_componentE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the Ith vector component from the quaternion. </p>
+<p><dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>: The index of the vector component to get. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple4Quat13vec_componentE6size_t">
+<span id="_CPPv3NK6ripple4Quat13vec_componentE6size_t"></span><span id="_CPPv2NK6ripple4Quat13vec_componentE6size_t"></span><span id="ripple::Quat::vec_component__sC"></span><span class="target" id="structripple_1_1Quat_1a5c1e0090a4dd070051ede49a76627e3b"></span>auto <code class="sig-name descname">vec_component</code><span class="sig-paren">(</span>size_t <em>i</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <em class="property">const</em> Value&amp;<a class="headerlink" href="#_CPPv4NK6ripple4Quat13vec_componentE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the Ith vector component from the quaternion. </p>
+<p><dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">I</span></code>: The index of the vector component to get. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple4Quat14length_squaredEv">
+<span id="_CPPv3NK6ripple4Quat14length_squaredEv"></span><span id="_CPPv2NK6ripple4Quat14length_squaredEv"></span><span id="ripple::Quat::length_squaredC"></span><span class="target" id="structripple_1_1Quat_1a70fca1f6251e4211776505b19ef92da2"></span>auto <code class="sig-name descname">length_squared</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; Value<a class="headerlink" href="#_CPPv4NK6ripple4Quat14length_squaredEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the length squared of the quaternion. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The squared length of the quaternion. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple4Quat6lengthEv">
+<span id="_CPPv3NK6ripple4Quat6lengthEv"></span><span id="_CPPv2NK6ripple4Quat6lengthEv"></span><span id="ripple::Quat::lengthC"></span><span class="target" id="structripple_1_1Quat_1a2e61e02bb3df12ca27f1c90fec87926a"></span>auto <code class="sig-name descname">length</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; Value<a class="headerlink" href="#_CPPv4NK6ripple4Quat6lengthEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the length of the quaternion. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The length of the quaternion. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple4Quat9normalizeEv">
+<span id="_CPPv3N6ripple4Quat9normalizeEv"></span><span id="_CPPv2N6ripple4Quat9normalizeEv"></span><span id="ripple::Quat::normalize"></span><span class="target" id="structripple_1_1Quat_1a0f5ac9c33033a1fc39e9b64872f3245a"></span>auto <code class="sig-name descname">normalize</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple4Quat9normalizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Normalizes the quaternion. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple4Quat6invertEv">
+<span id="_CPPv3N6ripple4Quat6invertEv"></span><span id="_CPPv2N6ripple4Quat6invertEv"></span><span id="ripple::Quat::invert"></span><span class="target" id="structripple_1_1Quat_1ad61c4496db1611fd54f8e78be9069b67"></span>auto <code class="sig-name descname">invert</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple4Quat6invertEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Inverts the quaternion. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple4Quat7inverseEv">
+<span id="_CPPv3NK6ripple4Quat7inverseEv"></span><span id="_CPPv2NK6ripple4Quat7inverseEv"></span><span id="ripple::Quat::inverseC"></span><span class="target" id="structripple_1_1Quat_1aca4f70839380321eb6a479a4c19a5608"></span>auto <code class="sig-name descname">inverse</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I00EN6ripple4QuatE" title="ripple::Quat">Quat</a>&lt;<a class="reference internal" href="#_CPPv4I00EN6ripple4QuatE" title="ripple::Quat::T">T</a>, <a class="reference internal" href="typedef_namespaceripple_1a80bd7d5345b7cf27fa786731a34d9cf2.html#_CPPv4N6ripple15ContiguousOwnedE" title="ripple::ContiguousOwned">ContiguousOwned</a>&gt;<a class="headerlink" href="#_CPPv4NK6ripple4Quat7inverseEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the inverse of the quaternion. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I00ENK6ripple4QuatmlE4QuatI1T15ContiguousOwnedERK4QuatI1U1LE">
+<span id="_CPPv3I00ENK6ripple4QuatmlERK4QuatI1U1LE"></span><span id="_CPPv2I00ENK6ripple4QuatmlERK4QuatI1U1LE"></span>template&lt;typename <code class="sig-name descname">U</code>, typename <code class="sig-name descname">L</code>&gt;<br /><span class="target" id="structripple_1_1Quat_1ad4dfdd6c746ce693b281d75b97b4dbdc"></span>auto <code class="sig-name descname">operator*</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I00EN6ripple4QuatE" title="ripple::Quat">Quat</a>&lt;<a class="reference internal" href="#_CPPv4I00ENK6ripple4QuatmlE4QuatI1T15ContiguousOwnedERK4QuatI1U1LE" title="ripple::Quat::operator*::U">U</a>, <a class="reference internal" href="#_CPPv4I00ENK6ripple4QuatmlE4QuatI1T15ContiguousOwnedERK4QuatI1U1LE" title="ripple::Quat::operator*::L">L</a>&gt; &amp;<em>q</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I00EN6ripple4QuatE" title="ripple::Quat">Quat</a>&lt;<a class="reference internal" href="#_CPPv4I00EN6ripple4QuatE" title="ripple::Quat::T">T</a>, <a class="reference internal" href="typedef_namespaceripple_1a80bd7d5345b7cf27fa786731a34d9cf2.html#_CPPv4N6ripple15ContiguousOwnedE" title="ripple::ContiguousOwned">ContiguousOwned</a>&gt;<a class="headerlink" href="#_CPPv4I00ENK6ripple4QuatmlE4QuatI1T15ContiguousOwnedERK4QuatI1U1LE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple4Quat7storageE">
+<span id="_CPPv3N6ripple4Quat7storageE"></span><span id="_CPPv2N6ripple4Quat7storageE"></span><span id="ripple::Quat::storage__Storage"></span><span class="target" id="structripple_1_1Quat_1a521aba1f0f0efb01f989b33cadbe40c6"></span>Storage <code class="sig-name descname">storage</code><a class="headerlink" href="#_CPPv4N6ripple4Quat7storageE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The storage for the quaternion. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple4Quat1wE">
+<span id="_CPPv3N6ripple4Quat1wE"></span><span id="_CPPv2N6ripple4Quat1wE"></span><span id="ripple::Quat::w__WAccessor"></span><span class="target" id="structripple_1_1Quat_1ac624d526f443b64c34782fb18b7f810b"></span>WAccessor <code class="sig-name descname">w</code><a class="headerlink" href="#_CPPv4N6ripple4Quat1wE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Scalar component of the quaternion. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple4Quat1xE">
+<span id="_CPPv3N6ripple4Quat1xE"></span><span id="_CPPv2N6ripple4Quat1xE"></span><span id="ripple::Quat::x__XAccessor"></span><span class="target" id="structripple_1_1Quat_1a37b111f9cf32287ae9d1f68e5b593721"></span>XAccessor <code class="sig-name descname">x</code><a class="headerlink" href="#_CPPv4N6ripple4Quat1xE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>X vector component of the quaternion. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple4Quat1yE">
+<span id="_CPPv3N6ripple4Quat1yE"></span><span id="_CPPv2N6ripple4Quat1yE"></span><span id="ripple::Quat::y__YAccessor"></span><span class="target" id="structripple_1_1Quat_1a9477a0894bc699e33911e472bba87788"></span>YAccessor <code class="sig-name descname">y</code><a class="headerlink" href="#_CPPv4N6ripple4Quat1yE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Y vector component of the quaternion. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple4Quat1zE">
+<span id="_CPPv3N6ripple4Quat1zE"></span><span id="_CPPv2N6ripple4Quat1zE"></span><span id="ripple::Quat::z__ZAccessor"></span><span class="target" id="structripple_1_1Quat_1a623a5acd90b57b1dbcefb818733ec01e"></span>ZAccessor <code class="sig-name descname">z</code><a class="headerlink" href="#_CPPv4N6ripple4Quat1zE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Z vector component of the quaternion. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple4QuatUt1_3E">
+<span id="_CPPv3N6ripple4QuatUt1_3E"></span><span class="target" id="structripple_1_1Quat_1acac9af753849fd63516562f407cc124a"></span><em class="property">union</em> ripple::<a class="reference internal" href="#_CPPv4I00EN6ripple4QuatE" title="ripple::Quat">Quat</a>::<strong>[anonymous]</strong> <strong>[anonymous]</strong><a class="headerlink" href="#_CPPv4N6ripple4QuatUt1_3E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structripple_1_1Range_1_1Iterator.html" class="btn btn-neutral float-right" title="Template Struct Range::Iterator" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="structripple_1_1ProcInfo.html" class="btn btn-neutral" title="Struct ProcInfo" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Template Struct Quat</a><ul>
+<li><a class="reference internal" href="#inheritance-relationships">Inheritance Relationships</a><ul>
+<li><a class="reference internal" href="#base-type">Base Type</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

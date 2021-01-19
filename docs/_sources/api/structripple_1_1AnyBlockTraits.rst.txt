@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1AnyBlockTraits:
+
+Template Struct AnyBlockTraits
+==============================
+
+- Defined in :ref:`file_include_ripple_core_container_block_traits.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::AnyBlockTraits
+   :members:
+   :protected-members:
+   :undoc-members:

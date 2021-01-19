@@ -1,0 +1,13 @@
+.. _exhale_function_memory_8hpp_1a5c2fbadf3bd64bc52dd4a9eaf35b5898:
+
+Template Function ripple::gpu::free_device
+==========================================
+
+- Defined in :ref:`file_include_ripple_core_utility_memory.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::gpu::free_device(Ptr *)

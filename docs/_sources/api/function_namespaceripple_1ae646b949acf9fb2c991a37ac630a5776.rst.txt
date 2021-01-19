@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1ae646b949acf9fb2c991a37ac630a5776:
+
+Template Function ripple::reduce(const HostBlock<T, Dims>&, Pred&&)
+===================================================================
+
+- Defined in :ref:`file_include_ripple_core_algorithm_reduce.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::reduce(const HostBlock<T, Dims>&, Pred&&)

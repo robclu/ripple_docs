@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a90d5d92add78bcbf00616ce78e90d4ea:
+
+Template Function ripple::storage_ptr
+=====================================
+
+- Defined in :ref:`file_include_ripple_core_container_memcopy_padding.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::storage_ptr(Block&, CopySpecifier<Dim, Location, Map>, OffsetParam)

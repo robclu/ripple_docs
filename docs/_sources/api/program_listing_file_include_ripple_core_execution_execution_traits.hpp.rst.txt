@@ -1,0 +1,176 @@
+
+.. _program_listing_file_include_ripple_core_execution_execution_traits.hpp:
+
+Program Listing for File execution_traits.hpp
+=============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_execution_execution_traits.hpp>` (``include/ripple/core/execution/execution_traits.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/execution/execution_traits.hpp --------- -*- C++ -*- ---==//
+   //
+   //                                Ripple
+   //
+   //                      Copyright (c) 2019, 2020 Rob Clucas.
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_EXECUTION_EXECUTION_TRAITS_HPP
+   #define RIPPLE_EXECUTION_EXECUTION_TRAITS_HPP
+   
+   #include <ripple/core/utility/portability.hpp>
+   #include <ripple/core/utility/type_traits.hpp>
+   #include <utility>
+   
+   namespace ripple {
+   
+   enum class ExecutionKind : uint8_t {
+     gpu = 0, 
+     cpu = 1  
+   };
+   
+   enum class TransferKind : uint8_t {
+     synchronous  = 0, 
+     asynchronous = 1  
+   };
+   
+   template <ExecutionKind Kind>
+   struct Execution {
+     static constexpr ExecutionKind value = Kind;
+   };
+   
+   using CpuExecutor = Execution<ExecutionKind::cpu>;
+   
+   using GpuExecutor = Execution<ExecutionKind::gpu>;
+   
+   static constexpr ExecutionKind default_execution_kind = ExecutionKind::gpu;
+   
+   /*==--- [forward declarations] ---------------------------------------------==*/
+   
+   struct VoidShared {};
+   
+   template <typename Impl>
+   struct ExecParams;
+   
+   template <
+     size_t SizeX,
+     size_t SizeY    = 1,
+     size_t SizeZ    = 1,
+     size_t Padding  = 0,
+     typename Shared = VoidShared>
+   struct StaticExecParams;
+   
+   template <typename Shared = VoidShared>
+   struct DynamicExecParams;
+   
+   /*==--- [traits] -----------------------------------------------------------==*/
+   
+   template <typename T>
+   struct ExecTraits {
+     static constexpr bool is_static = false;
+     static constexpr bool uses_shared = false;
+   
+     using SharedType = VoidShared;
+   };
+   
+   template <size_t X, size_t Y, size_t Z, size_t Padding, typename Shared>
+   struct ExecTraits<StaticExecParams<X, Y, Z, Padding, Shared>> {
+     using SharedType = Shared;
+   
+     static constexpr bool is_static = true;
+     static constexpr bool uses_shared = !std::is_same_v<SharedType, VoidShared>;
+   };
+   
+   template <typename Shared>
+   struct ExecTraits<DynamicExecParams<Shared>> {
+     using SharedType = Shared;
+   
+     static constexpr bool is_static = false;
+     static constexpr bool uses_shared = !std::is_same_v<SharedType, VoidShared>;
+   };
+   
+   template <typename ExecImpl>
+   struct ExecTraits<ExecParams<ExecImpl>> {
+    private:
+     using Traits = ExecTraits<ExecImpl>;
+   
+    public:
+     using SharedType = typename Traits::SharedType;
+   
+     static constexpr bool is_static = Traits::is_static;
+     static constexpr bool uses_shared = Traits::uses_shared;
+   };
+   
+   template <typename T>
+   static constexpr bool is_exec_param_v =
+     std::is_base_of_v<ExecParams<std::decay_t<T>>, std::decay_t<T>>;
+   
+   /*==--- [aliases] ----------------------------------------------------------==*/
+   
+   using exec_params_1d_t = StaticExecParams<1024>;
+   
+   using exec_params_2d_t = StaticExecParams<32, 16>;
+   
+   using exec_params_3d_t = StaticExecParams<8, 8, 8>;
+   
+   template <size_t Dims>
+   using default_exec_params_t = std::conditional_t<
+     Dims == 1,
+     exec_params_1d_t,
+     std::conditional_t<Dims == 2, exec_params_2d_t, exec_params_3d_t>>;
+   
+   template <typename T, size_t Pad = 0>
+   using shared_exec_params_1d_t = StaticExecParams<512, 1, 1, Pad, T>;
+   
+   template <typename T, size_t Pad = 0>
+   using shared_exec_params_2d_t = StaticExecParams<32, 16, 1, Pad, T>;
+   
+   template <typename T, size_t Pad = 0>
+   using shared_exec_params_3d_t = StaticExecParams<8, 8, 8, Pad, T>;
+   
+   template <size_t Dims, typename T, size_t Pad = 0>
+   using default_shared_exec_params_t = std::conditional_t<
+     Dims == 1,
+     shared_exec_params_1d_t<T, Pad>,
+     std::conditional_t<
+       Dims == 2,
+       shared_exec_params_2d_t<T, Pad>,
+       shared_exec_params_3d_t<T, Pad>>>;
+   
+   /*==--- [enables] ----------------------------------------------------------==*/
+   
+   template <typename ExecImpl, typename Exec = std::decay_t<ExecImpl>>
+   using dynamic_shared_enable_t = std::enable_if_t<
+     (is_exec_param_v<Exec> && !ExecTraits<Exec>::is_static &&
+      ExecTraits<Exec>::uses_shared),
+     int>;
+   
+   template <typename ExecImpl, typename Exec = std::decay_t<ExecImpl>>
+   using static_shared_enable_t = std::enable_if_t<
+     (is_exec_param_v<Exec> && ExecTraits<Exec>::is_static &&
+      ExecTraits<Exec>::uses_shared),
+     int>;
+   
+   template <typename ExecImpl, typename Exec = std::decay_t<ExecImpl>>
+   using non_shared_enable_t = std::
+     enable_if_t<(is_exec_param_v<Exec> && !ExecTraits<Exec>::uses_shared), int>;
+   
+   template <typename T>
+   using exec_param_enable_t =
+     std::enable_if_t<is_exec_param_v<std::decay_t<T>>, int>;
+   
+   template <typename T>
+   using non_exec_param_enable_t =
+     std::enable_if_t<!is_exec_param_v<std::decay_t<T>>, int>;
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_EXECUTION_EXECUTION_TRAITS_HPP

@@ -1,0 +1,22 @@
+.. _exhale_struct_structripple_1_1ContiguousStorageView_1_1Allocator:
+
+Struct ContiguousStorageView::Allocator
+=======================================
+
+- Defined in :ref:`file_include_ripple_core_storage_contiguous_storage_view.hpp`
+
+
+Nested Relationships
+--------------------
+
+This struct is a nested type of :ref:`exhale_class_classripple_1_1ContiguousStorageView`.
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::ContiguousStorageView::Allocator
+   :members:
+   :protected-members:
+   :undoc-members:

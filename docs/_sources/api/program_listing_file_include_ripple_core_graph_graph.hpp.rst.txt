@@ -1,0 +1,479 @@
+
+.. _program_listing_file_include_ripple_core_graph_graph.hpp:
+
+Program Listing for File graph.hpp
+==================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_graph_graph.hpp>` (``include/ripple/core/graph/graph.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/graph/graph.hpp ------------------------ -*- C++ -*- ---==//
+   //
+   //                                 Ripple
+   //
+   //                      Copyright (c) 2019, 2020 Rob Clucas
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_GRAPH_GRAPH_HPP
+   #define RIPPLE_GRAPH_GRAPH_HPP
+   
+   #include "memcopy.hpp"
+   #include "node.hpp"
+   #include "splitter.hpp"
+   #include "reducer.hpp"
+   #include "../algorithm/unrolled_for.hpp"
+   #include "../allocation/allocator.hpp"
+   #include "../arch/cache.hpp"
+   #include "../utility/spinlock.hpp"
+   #include "../utility/type_traits.hpp"
+   #include <memory>
+   #include <mutex>
+   #include <optional>
+   #include <unordered_map>
+   #include <unordered_set>
+   
+   namespace ripple {
+   
+   /*==--- [forward declarations] ---------------------------------------------==*/
+   
+   /* Forward declaration of the Graph class. */
+   class Graph;
+   
+   /* Forward declaration of the executor for the graph. */
+   class Executor;
+   
+   /* Forward declaration of the execution function for a graph. */
+   auto execute(Graph& graph) noexcept -> void;
+   
+   class Graph {
+     friend class Executor;
+     friend struct Splitter;
+     friend struct Memcopy;
+   
+     // clang-format off
+     static constexpr size_t node_alignment   = avoid_false_sharing_size;
+     static constexpr size_t node_min_storage = 2 * 72;
+   
+     using ArenaType     = HeapArena;
+     using NodeType       = Node<node_alignment, node_min_storage>;
+     using NodeAllocator = ThreadSafeObjectPoolAllocator<NodeType, ArenaType>;
+     using InfoAllocator = ThreadSafeObjectPoolAllocator<NodeInfo, ArenaType>;
+     using NodeContainer = std::vector<NodeType*>;
+     using Connections   = std::vector<int>;
+     using Lock          = Spinlock;
+     using Guard         = std::lock_guard<Lock>;
+     // clang-format on
+   
+     template <typename T>
+     using non_node_enable_t =
+       std::enable_if_t<!std::is_same_v<NodeType, std::decay_t<T>>, int>;
+   
+    public:
+     // clang-format off
+     static constexpr size_t default_nodes = 1024;
+     static constexpr auto   default_id    = NodeInfo::default_id;
+     // clang-format on
+   
+     /*==--- [construction] ---------------------------------------------------==*/
+   
+     Graph() = default;
+   
+     Graph(ExecutionKind exec_kind) noexcept : execution_{exec_kind} {}
+   
+     ~Graph() noexcept {
+       reset();
+     }
+   
+     Graph(Graph&& other) noexcept
+     : nodes_{ripple_move(other.nodes_)},
+       join_ids_{ripple_move(other.join_ids_)},
+       split_ids_{ripple_move(other.split_ids_)},
+       exec_count_{other.exec_count_},
+       execution_{other.execution_} {
+       other.exec_count_ = 0;
+     }
+   
+     Graph(const Graph&) = delete;
+   
+     /*==--- [operator overloads] ---------------------------------------------==*/
+   
+     auto operator=(Graph&& other) noexcept -> Graph& {
+       if (this != &other) {
+         nodes_            = ripple_move(other.nodes_);
+         join_ids_         = ripple_move(other.join_ids_);
+         split_ids_        = ripple_move(other.split_ids_);
+         exec_count_       = other.exec_count_;
+         execution_        = other.execution_;
+         other.exec_count_ = 0;
+       }
+       return *this;
+     }
+   
+     auto operator=(const Graph& other) = delete;
+   
+     /*==--- [interface] ------------------------------------------------------==*/
+   
+     static auto set_allocation_pool_size(size_t nodes) noexcept -> bool;
+   
+     template <typename F, typename... Args>
+     static auto make_node(F&& callable, Args&&... args) -> NodeType& {
+       return *node_allocator().create<NodeType>(
+         ripple_forward(callable), ripple_forward(args)...);
+     }
+   
+     template <typename F, typename... Args>
+     static auto make_node(F&& callable, ExecutionKind exec_kind, Args&&... args)
+       -> NodeType& {
+       NodeType& node = *node_allocator().create<NodeType>(
+         ripple_forward(callable), ripple_forward(args)...);
+       node.info_ = info_allocator().create<NodeInfo>(exec_kind);
+       return node;
+     }
+   
+     auto reset() noexcept -> void;
+   
+     auto clone() const noexcept -> Graph;
+   
+     auto size() const -> size_t {
+       return nodes_.size();
+     }
+   
+     auto allocation_pool_size() const noexcept -> size_t {
+       return allocation_pool_nodes();
+     }
+   
+     /*==--- [find] -----------------------------------------------------------==*/
+   
+     auto find(std::string name) noexcept -> std::optional<NodeType*>;
+   
+     auto find_last_of(std::string name) noexcept -> std::optional<NodeType*>;
+   
+     /*==--- [emplace] --------------------------------------------------------==*/
+   
+     template <typename F, typename... Args, non_node_enable_t<F> = 0>
+     auto emplace(F&& callable, Args&&... args) -> Graph& {
+       const auto no_name = std::string("");
+       return emplace_named(
+         no_name, ripple_forward(callable), ripple_forward(args)...);
+     }
+   
+     template <typename F, typename... Args, non_node_enable_t<F> = 0>
+     auto emplace_named(NodeInfo info, F&& callable, Args&&... args) -> Graph& {
+       auto& node = *nodes_.emplace_back(node_allocator().create<NodeType>(
+         ripple_forward(callable), ripple_forward(args)...));
+       node.info_ = info_allocator().create<NodeInfo>(
+         info.name, info.id, info.kind, info.exec);
+       setup_node(node);
+       return *this;
+     }
+   
+     template <
+       typename... Nodes,
+       all_same_enable_t<NodeType, std::decay_t<Nodes>...> = 0>
+     auto emplace(Nodes&&... nodes) -> Graph& {
+       constexpr size_t node_count = sizeof...(Nodes);
+   
+       // Make sure that we have a tuple of __references__:
+       auto node_tuple =
+         std::tuple<std::decay_t<Nodes>&...>{ripple_forward(nodes)...};
+       unrolled_for<node_count>([&](auto i) {
+         setup_node(*nodes_.emplace_back(&std::get<i>(node_tuple)));
+       });
+       return *this;
+     }
+   
+     auto emplace(Graph& graph) noexcept -> Graph& {
+       connect(graph);
+       return emplace([&graph] { execute(graph); });
+     }
+   
+     /*==--- [sync] -----------------------------------------------------------==*/
+   
+     template <typename F, typename... Args, non_node_enable_t<F> = 0>
+     auto sync(F&& callable, Args&&... args) -> Graph& {
+       join_ids_.emplace_back(nodes_.size());
+       NodeInfo info{NodeKind::sync, execution_};
+       return emplace_named(
+         info, ripple_forward(callable), ripple_forward(args)...);
+     }
+   
+     /*
+      * \note These synchronization functions need to be implemented here, to
+      *       ensure that the cuda functions are called when device functionality
+      *       is required.
+      *
+      *       If in a cpp file, then if compiled as c++ code and linked against
+      *       a cuda executable, the cuda synchronization won't run.
+      */
+   
+     template <typename F, typename... Args, non_node_enable_t<F> = 0>
+     auto sync_gpus(F&& callable, Args&&... args) -> Graph& {
+       join_ids_.emplace_back(nodes_.size());
+   
+       NodeInfo info{NodeKind::normal, ExecutionKind::gpu};
+       for (const auto& gpu : topology().gpus) {
+         emplace_named(info, [&gpu] { gpu.synchronize(); });
+       }
+   
+       join_ids_.emplace_back(nodes_.size());
+       info.kind = NodeKind::sync;
+       return emplace_named(
+         info, ripple_forward(callable), ripple_forward(args)...);
+     }
+   
+     auto gpu_fence() -> Graph& {
+       join_ids_.emplace_back(nodes_.size());
+   
+       NodeInfo info{NodeKind::normal, ExecutionKind::gpu};
+       for (auto& gpu : topology().gpus) {
+         gpu.prepare_fence();
+         emplace_named(info, [&gpu] { gpu.execute_fence(); });
+       }
+   
+       join_ids_.emplace_back(nodes_.size());
+       info.kind = NodeKind::sync;
+       return emplace_named(info, [] {
+         size_t count = topology().num_gpus();
+         while (count > 0) {
+           for (const auto& gpu : topology().gpus) {
+             if (gpu.is_fence_down()) {
+               count--;
+             }
+           }
+         }
+       });
+     }
+   
+     /*==--- [then] -----------------------------------------------------------==*/
+   
+     template <typename F, typename... Args, non_node_enable_t<F> = 0>
+     auto then(F&& callable, Args&&... args) -> Graph& {
+       join_ids_.emplace_back(nodes_.size());
+       return emplace(ripple_forward(callable), ripple_forward(args)...);
+     }
+   
+     template <
+       typename... Nodes,
+       all_same_enable_t<NodeType, std::decay_t<Nodes>...> = 0>
+     auto then(Nodes&&... nodes) -> Graph& {
+       join_ids_.emplace_back(nodes_.size());
+       return emplace(ripple_forward(nodes)...);
+     }
+   
+     auto then(Graph& graph) noexcept -> Graph& {
+       return then([&graph] { execute(graph); });
+     }
+   
+     /*==--- [split] ----------------------------------------------------------==*/
+   
+     template <typename Pred, typename... Args>
+     auto conditional(Pred&& pred, Args&&... args) -> Graph& {
+       return sync(
+         [this](auto&& predicate, auto&&... as) {
+           if (predicate(ripple_forward(as)...)) {
+             execute(*this);
+           }
+         },
+         ripple_forward(pred),
+         ripple_forward(args)...);
+     }
+   
+     template <typename F, typename... Args>
+     auto split(F&& callable, Args&&... args) noexcept -> Graph& {
+       Splitter::split(
+         *this, execution_, ripple_forward(callable), ripple_forward(args)...);
+       return *this;
+     }
+   
+     template <typename F, typename... Args>
+     auto split(ExecutionKind exec_kind, F&& callable, Args&&... args) noexcept
+       -> Graph& {
+       Splitter::split(
+         *this, exec_kind, ripple_forward(callable), ripple_forward(args)...);
+       return *this;
+     }
+   
+     template <typename F, typename... Args>
+     auto then_split(F&& callable, Args&&... args) noexcept -> Graph& {
+       join_ids_.emplace_back(nodes_.size());
+       split_ids_.emplace_back(nodes_.size());
+       Splitter::split(
+         *this, execution_, ripple_forward(callable), ripple_forward(args)...);
+       return *this;
+     }
+   
+     template <typename F, typename... Args>
+     auto
+     then_split(ExecutionKind exec_kind, F&& callable, Args&&... args) noexcept
+       -> Graph& {
+       join_ids_.emplace_back(nodes_.size());
+       split_ids_.emplace_back(nodes_.size());
+       Splitter::split(
+         *this, exec_kind, ripple_forward(callable), ripple_forward(args)...);
+       return *this;
+     }
+   
+     /*==--- [memcpy] ---------------------------------------------------------==*/
+   
+     template <typename... Args>
+     auto memcopy_padding(Args&&... args) noexcept -> Graph& {
+       Memcopy::memcopy(
+         *this, execution_, TransferKind::asynchronous, ripple_forward(args)...);
+       return *this;
+     }
+   
+     template <typename... Args>
+     auto then_memcopy_padding(Args&&... args) noexcept -> Graph& {
+       // join_ids_.emplace_back(nodes_.size());
+       // split_ids_.emplace_back(nodes_.size());
+       Memcopy::memcopy(
+         *this, execution_, TransferKind::synchronous, ripple_forward(args)...);
+       return *this;
+     }
+   
+     template <typename... Args>
+     auto memcopy_padding(ExecutionKind exec, Args&&... args) noexcept -> Graph& {
+       Memcopy::memcopy(*this, exec, ripple_forward(args)...);
+       return *this;
+     }
+   
+     template <typename... Args>
+     auto
+     then_memcopy_padding(ExecutionKind exec, Args&&... args) noexcept -> Graph& {
+       join_ids_.emplace_back(nodes_.size());
+       split_ids_.emplace_back(nodes_.size());
+       Memcopy::memcopy(*this, exec, ripple_forward(args)...);
+       return *this;
+     }
+   
+     /*==--- [reduction] ------------------------------------------------------==*/
+   
+     // clang-format off
+     template <typename T, size_t Dims, typename Pred, typename... Args>
+     auto reduce(
+       Tensor<T, Dims>&    data,
+       ReductionResult<T>& result,
+       Pred&&              pred,
+       Args&&...           args) noexcept -> Graph& {
+       Reducer::reduce(
+         *this,
+         execution_,
+         data,
+         result,
+         ripple_forward(pred),
+         ripple_forward(args)...);
+   
+       // Add a synchronization which sets that the reduction is complete.
+       return sync([&result] { result.set_finished(); });
+     }
+   
+     template <typename T, size_t Dims, typename Pred, typename... Args>
+     auto reduce(
+       ExecutionKind       exec_kind,
+       Tensor<T, Dims>&    data,
+       ReductionResult<T>& result,
+       Pred&&              pred,
+       Args&&...           args) noexcept -> Graph& {
+       Reducer::reduce(
+         *this,
+         exec_kind,
+         data,
+         result,
+         ripple_forward(pred),
+         ripple_forward(args)...);
+   
+       // Add a synchronization which sets that the reduction is complete.
+       return sync([&result] { result.set_finished(); });
+     }
+   
+     template <typename T, size_t Dims, typename Pred, typename... Args>
+     auto then_reduce(
+       Tensor<T, Dims>&    data,
+       ReductionResult<T>& result,
+       Pred&&              pred,
+       Args&&...           args) noexcept -> Graph& {
+       join_ids_.emplace_back(nodes_.size());
+       split_ids_.emplace_back(nodes_.size());
+       return this->reduce(
+         data, result, ripple_forward(pred), ripple_forward(args)...);
+     }
+   
+     template <typename T, size_t Dims, typename Pred, typename... Args>
+     auto then_reduce(
+       ExecutionKind       exec_kind,
+       Tensor<T, Dims>&    data,
+       ReductionResult<T>& result,
+       Pred&&              pred,
+       Args&&...           args) noexcept -> Graph& {
+       join_ids_.emplace_back(nodes_.size());
+       split_ids_.emplace_back(nodes_.size());
+       return this->reduce(
+         exec_kind, data, result, ripple_forward(pred), ripple_forward(args)...);
+     }
+     // clang-format on
+   
+     auto num_executions() const noexcept -> size_t {
+       return exec_count_;
+     }
+   
+    private:
+     NodeContainer nodes_      = {};                 
+     Connections   join_ids_   = {1, 0};             
+     Connections   split_ids_  = {1, 0};             
+     size_t        exec_count_ = 0;                  
+     ExecutionKind execution_  = ExecutionKind::gpu; 
+   
+     auto connect(Graph& graph) noexcept -> void;
+   
+     auto find_in_last_split(typename NodeInfo::IdType id) noexcept
+       -> std::optional<NodeType*>;
+   
+     auto setup_node(NodeType& node) noexcept -> void {
+       setup_split_node(node);
+       setup_nonsplit_node(node);
+     }
+   
+     auto setup_split_node(NodeType& node) noexcept -> void;
+   
+     auto setup_nonsplit_node(NodeType& node) noexcept -> void;
+   
+     /*==--- [static methods] -------------------------------------------------==*/
+   
+     static auto node_allocator() noexcept -> NodeAllocator& {
+       static NodeAllocator allocator(allocation_pool_nodes() * sizeof(NodeType));
+       return allocator;
+     }
+   
+     static auto info_allocator() noexcept -> InfoAllocator& {
+       static InfoAllocator allocator(allocation_pool_nodes() * sizeof(NodeInfo));
+       return allocator;
+     }
+   
+     static auto allocation_pool_nodes() noexcept -> size_t& {
+       static size_t nodes_in_pool{default_nodes};
+       return nodes_in_pool;
+     }
+   
+     static auto is_initialized() noexcept -> bool& {
+       static bool initialized{false};
+       return initialized;
+     }
+   
+     static auto initialization_lock() noexcept -> Lock& {
+       static Lock lock;
+       return lock;
+     }
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_GRAPH_GRAPH_HPP

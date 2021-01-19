@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a5b7b40b56aea3381efb35a5ea0144fbe:
+
+Template Function ripple::unrolled_for_bounded
+==============================================
+
+- Defined in :ref:`file_include_ripple_core_algorithm_unrolled_for.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::unrolled_for_bounded(Functor&&, Args&&...)

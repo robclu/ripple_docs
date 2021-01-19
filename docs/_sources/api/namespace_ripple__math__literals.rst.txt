@@ -1,0 +1,20 @@
+
+.. _namespace_ripple__math__literals:
+
+Namespace ripple::math::literals
+================================
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_math_8hpp_1a35353336e8f6f2b1ccb15a7f7c6c5f6c`

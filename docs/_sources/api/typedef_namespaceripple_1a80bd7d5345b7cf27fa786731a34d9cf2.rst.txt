@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a80bd7d5345b7cf27fa786731a34d9cf2:
+
+Typedef ripple::ContiguousOwned
+===============================
+
+- Defined in :ref:`file_include_ripple_core_container_array_traits.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::ContiguousOwned

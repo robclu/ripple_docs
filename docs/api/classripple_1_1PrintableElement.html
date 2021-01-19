@@ -1,0 +1,596 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class PrintableElement &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Template Class Range" href="classripple_1_1Range.html" />
+  <link rel="prev" title="Template Class Printable" href="classripple_1_1Printable.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Class PrintableElement</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/classripple_1_1PrintableElement.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="class-printableelement">
+<span id="exhale-class-classripple-1-1printableelement"></span><h1>Class PrintableElement<a class="headerlink" href="#class-printableelement" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_io_printable_element.hpp.html#file-include-ripple-core-io-printable-element-hpp"><span class="std std-ref">File printable_element.hpp</span></a></p></li>
+</ul>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4N6ripple16PrintableElementE">
+<span id="_CPPv3N6ripple16PrintableElementE"></span><span id="_CPPv2N6ripple16PrintableElementE"></span><span id="ripple::PrintableElement"></span><span class="target" id="classripple_1_1PrintableElement"></span><em class="property">class </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">PrintableElement</code><a class="headerlink" href="#_CPPv4N6ripple16PrintableElementE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#classripple_1_1PrintableElement"><span class="std std-ref">PrintableElement</span></a> type holdes a name and values for an element which can be printed. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="cpp enum">
+<dt id="_CPPv4N6ripple16PrintableElement13AttributeKindE">
+<span id="_CPPv3N6ripple16PrintableElement13AttributeKindE"></span><span id="_CPPv2N6ripple16PrintableElement13AttributeKindE"></span><span class="target" id="classripple_1_1PrintableElement_1a7553c037039aabe4e36fbcaeb2b29ca8"></span><em class="property">enum </em><code class="sig-name descname">AttributeKind</code><a class="headerlink" href="#_CPPv4N6ripple16PrintableElement13AttributeKindE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the possible kinds of attributes. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N6ripple16PrintableElement13AttributeKind6scalarE">
+<span id="_CPPv3N6ripple16PrintableElement13AttributeKind6scalarE"></span><span id="_CPPv2N6ripple16PrintableElement13AttributeKind6scalarE"></span><span class="target" id="classripple_1_1PrintableElement_1a7553c037039aabe4e36fbcaeb2b29ca8a266b6edaff273437a14ab5ba8acd5027"></span><em class="property">enumerator </em><code class="sig-name descname">scalar</code><a class="headerlink" href="#_CPPv4N6ripple16PrintableElement13AttributeKind6scalarE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Scalar data. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N6ripple16PrintableElement13AttributeKind6vectorE">
+<span id="_CPPv3N6ripple16PrintableElement13AttributeKind6vectorE"></span><span id="_CPPv2N6ripple16PrintableElement13AttributeKind6vectorE"></span><span class="target" id="classripple_1_1PrintableElement_1a7553c037039aabe4e36fbcaeb2b29ca8a55920fd101a3e8dd1c1925002f7fb02b"></span><em class="property">enumerator </em><code class="sig-name descname">vector</code><a class="headerlink" href="#_CPPv4N6ripple16PrintableElement13AttributeKind6vectorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference internal" href="structripple_1_1Vector.html#structripple_1_1Vector"><span class="std std-ref">Vector</span></a> data. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N6ripple16PrintableElement13AttributeKind7invalidE">
+<span id="_CPPv3N6ripple16PrintableElement13AttributeKind7invalidE"></span><span id="_CPPv2N6ripple16PrintableElement13AttributeKind7invalidE"></span><span class="target" id="classripple_1_1PrintableElement_1a7553c037039aabe4e36fbcaeb2b29ca8a4d30dc1418041cfcef8826e88d97fcc3"></span><em class="property">enumerator </em><code class="sig-name descname">invalid</code><a class="headerlink" href="#_CPPv4N6ripple16PrintableElement13AttributeKind7invalidE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Invalid data. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple16PrintableElement5ValueE">
+<span id="_CPPv3N6ripple16PrintableElement5ValueE"></span><span id="_CPPv2N6ripple16PrintableElement5ValueE"></span><span class="target" id="classripple_1_1PrintableElement_1adc359631b47f2951228a063ac5747430"></span><em class="property">using </em><code class="sig-name descname">Value</code> = double<a class="headerlink" href="#_CPPv4N6ripple16PrintableElement5ValueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the values for the element. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple16PrintableElement14ValueContainerE">
+<span id="_CPPv3N6ripple16PrintableElement14ValueContainerE"></span><span id="_CPPv2N6ripple16PrintableElement14ValueContainerE"></span><span class="target" id="classripple_1_1PrintableElement_1a88df9ddd3470906f1bdf2784f8e31fdb"></span><em class="property">using </em><code class="sig-name descname">ValueContainer</code> = std::vector&lt;<a class="reference internal" href="#_CPPv4N6ripple16PrintableElement5ValueE" title="ripple::PrintableElement::Value">Value</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple16PrintableElement14ValueContainerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the container used to store the element values. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple16PrintableElement16PrintableElementEv">
+<span id="_CPPv3N6ripple16PrintableElement16PrintableElementEv"></span><span id="_CPPv2N6ripple16PrintableElement16PrintableElementEv"></span><span id="ripple::PrintableElement::PrintableElement"></span><span class="target" id="classripple_1_1PrintableElement_1afed026dd73cbe5cc8d5638efb44d6043"></span><code class="sig-name descname">PrintableElement</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> = default<a class="headerlink" href="#_CPPv4N6ripple16PrintableElement16PrintableElementEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Default constructor which creates an empty element. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDpEN6ripple16PrintableElement16PrintableElementENSt6stringE13AttributeKindDpRR6Values">
+<span id="_CPPv3IDpEN6ripple16PrintableElement16PrintableElementENSt6stringE13AttributeKindDpRR6Values"></span><span id="_CPPv2IDpEN6ripple16PrintableElement16PrintableElementENSt6stringE13AttributeKindDpRR6Values"></span>template&lt;typename ...<code class="sig-name descname">Values</code>&gt;<br /><span class="target" id="classripple_1_1PrintableElement_1a6617d63c37f08341505ee463be11c853"></span><code class="sig-name descname">PrintableElement</code><span class="sig-paren">(</span>std::string <em>name</em>, <a class="reference internal" href="#_CPPv4N6ripple16PrintableElement13AttributeKindE" title="ripple::PrintableElement::AttributeKind">AttributeKind</a> <em>kind</em>, <a class="reference internal" href="#_CPPv4IDpEN6ripple16PrintableElement16PrintableElementENSt6stringE13AttributeKindDpRR6Values" title="ripple::PrintableElement::PrintableElement::Values">Values</a>&amp;&amp;... <em>values</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4IDpEN6ripple16PrintableElement16PrintableElementENSt6stringE13AttributeKindDpRR6Values" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a printable element with the given name, kind, and values. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: The name of the element. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kind</span></code>: The kind of the element. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">values</span></code>: Values for the element. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Values</span></code>: The types of the values. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple16PrintableElementeqERK16PrintableElement">
+<span id="_CPPv3NK6ripple16PrintableElementeqERK16PrintableElement"></span><span id="_CPPv2NK6ripple16PrintableElementeqERK16PrintableElement"></span><span id="ripple::PrintableElement::eq-operator__PrintableElementCRC"></span><span class="target" id="classripple_1_1PrintableElement_1abc18d09d8ed5af3e2207688114b35228"></span>auto <code class="sig-name descname">operator==</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple16PrintableElementE" title="ripple::PrintableElement">PrintableElement</a> &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4NK6ripple16PrintableElementeqERK16PrintableElement" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Compares this element against another element. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if the elements are equal. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other element to compare against. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple16PrintableElementneERK16PrintableElement">
+<span id="_CPPv3NK6ripple16PrintableElementneERK16PrintableElement"></span><span id="_CPPv2NK6ripple16PrintableElementneERK16PrintableElement"></span><span id="ripple::PrintableElement::neq-operator__PrintableElementCRC"></span><span class="target" id="classripple_1_1PrintableElement_1a6a84cacea61bab19b8ca179391750b8d"></span>auto <code class="sig-name descname">operator!=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple16PrintableElementE" title="ripple::PrintableElement">PrintableElement</a> &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4NK6ripple16PrintableElementneERK16PrintableElement" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Compares this element against another element. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if the eleements are not the same. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other element to compare against. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple16PrintableElement9add_valueERK5Value">
+<span id="_CPPv3N6ripple16PrintableElement9add_valueERK5Value"></span><span id="_CPPv2N6ripple16PrintableElement9add_valueERK5Value"></span><span id="ripple::PrintableElement::add_value__ValueCR"></span><span class="target" id="classripple_1_1PrintableElement_1ad94399bb82c9a6214aabb8a55cb15d79"></span>auto <code class="sig-name descname">add_value</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple16PrintableElement5ValueE" title="ripple::PrintableElement::Value">Value</a> &amp;<em>value</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple16PrintableElement9add_valueERK5Value" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Adds a value to the printable element. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: The value to add to the element. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple16PrintableElement6valuesEv">
+<span id="_CPPv3NK6ripple16PrintableElement6valuesEv"></span><span id="_CPPv2NK6ripple16PrintableElement6valuesEv"></span><span id="ripple::PrintableElement::valuesC"></span><span class="target" id="classripple_1_1PrintableElement_1ae01f798afbf0a5ab53322329cd7c7df0"></span>auto <code class="sig-name descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple16PrintableElement14ValueContainerE" title="ripple::PrintableElement::ValueContainer">ValueContainer</a>&amp;<a class="headerlink" href="#_CPPv4NK6ripple16PrintableElement6valuesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets a reference to the values to print. </p>
+<p>If the kind is a vector, then the vector requires 3 elements, which will be default added as zero components if there are not enough components. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A container of values. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple16PrintableElement11first_valueEv">
+<span id="_CPPv3NK6ripple16PrintableElement11first_valueEv"></span><span id="_CPPv2NK6ripple16PrintableElement11first_valueEv"></span><span id="ripple::PrintableElement::first_valueC"></span><span class="target" id="classripple_1_1PrintableElement_1adef904077ea403b09e116f580d22dc18"></span>auto <code class="sig-name descname">first_value</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple16PrintableElement5ValueE" title="ripple::PrintableElement::Value">Value</a><a class="headerlink" href="#_CPPv4NK6ripple16PrintableElement11first_valueEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the first value from the values, or the only value if there is only one. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The first value. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple16PrintableElement10is_invalidEv">
+<span id="_CPPv3NK6ripple16PrintableElement10is_invalidEv"></span><span id="_CPPv2NK6ripple16PrintableElement10is_invalidEv"></span><span id="ripple::PrintableElement::is_invalidC"></span><span class="target" id="classripple_1_1PrintableElement_1a14d52750550f3e8152ead07c18980382"></span>auto <code class="sig-name descname">is_invalid</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4NK6ripple16PrintableElement10is_invalidEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines if the attribute is invalid. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if the element is invalid. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple16PrintableElement4nameE">
+<span id="_CPPv3N6ripple16PrintableElement4nameE"></span><span id="_CPPv2N6ripple16PrintableElement4nameE"></span><span id="ripple::PrintableElement::name__ss"></span><span class="target" id="classripple_1_1PrintableElement_1a108dd5aae51d6b417d570348d73d895e"></span>std::string <code class="sig-name descname">name</code> = &quot;&quot;<a class="headerlink" href="#_CPPv4N6ripple16PrintableElement4nameE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Element name. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple16PrintableElement4kindE">
+<span id="_CPPv3N6ripple16PrintableElement4kindE"></span><span id="_CPPv2N6ripple16PrintableElement4kindE"></span><span id="ripple::PrintableElement::kind__AttributeKind"></span><span class="target" id="classripple_1_1PrintableElement_1aaf13a883d1b5dd2f03b5e34712108aa6"></span><a class="reference internal" href="#_CPPv4N6ripple16PrintableElement13AttributeKindE" title="ripple::PrintableElement::AttributeKind">AttributeKind</a> <code class="sig-name descname">kind</code> = <a class="reference internal" href="#_CPPv4N6ripple16PrintableElement13AttributeKindE" title="ripple::PrintableElement::AttributeKind">AttributeKind</a>::<a class="reference internal" href="#_CPPv4N6ripple16PrintableElement13AttributeKind7invalidE" title="ripple::PrintableElement::AttributeKind::invalid">invalid</a><a class="headerlink" href="#_CPPv4N6ripple16PrintableElement4kindE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Element kind. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple16PrintableElement9not_foundEv">
+<span id="_CPPv3N6ripple16PrintableElement9not_foundEv"></span><span id="_CPPv2N6ripple16PrintableElement9not_foundEv"></span><span id="ripple::PrintableElement::not_found"></span><span class="target" id="classripple_1_1PrintableElement_1a0455bdd959d7b3c7f3b72dde4eb3e3d0"></span>auto <code class="sig-name descname">not_found</code><span class="sig-paren">(</span><span class="sig-paren">)</span> -&gt; <a class="reference internal" href="#_CPPv4N6ripple16PrintableElementE" title="ripple::PrintableElement">PrintableElement</a><a class="headerlink" href="#_CPPv4N6ripple16PrintableElement9not_foundEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets a <a class="reference internal" href="#classripple_1_1PrintableElement"><span class="std std-ref">PrintableElement</span></a> with the name ‘not found’ and an invalid kind. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>An invalid printable element. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classripple_1_1Range.html" class="btn btn-neutral float-right" title="Template Class Range" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="classripple_1_1Printable.html" class="btn btn-neutral" title="Template Class Printable" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Class PrintableElement</a><ul>
+<li><a class="reference internal" href="#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

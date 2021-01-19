@@ -1,0 +1,13 @@
+.. _exhale_function_thread__index__impl___8hpp_1a0467cdceba58a62a0fecd89a49452f5a:
+
+Function ripple::detail::grid_size(DimY)
+========================================
+
+- Defined in :ref:`file_include_ripple_core_execution_detail_thread_index_impl_.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::detail::grid_size(DimY)

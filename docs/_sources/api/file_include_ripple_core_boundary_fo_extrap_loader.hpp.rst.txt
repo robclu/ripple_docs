@@ -1,0 +1,52 @@
+
+.. _file_include_ripple_core_boundary_fo_extrap_loader.hpp:
+
+File fo_extrap_loader.hpp
+=========================
+
+
+This file defines an implementation of a boundary loader which performs a first order (constant) extrapolation fromt the last cell inside the domain to all boundary cells. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/boundary/fo_extrap_loader.hpp``)
+------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_boundary_fo_extrap_loader.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``boundary_loader.hpp`` (:ref:`file_include_ripple_core_boundary_boundary_loader.hpp`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1FOExtrapLoader`
+

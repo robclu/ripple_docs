@@ -1,0 +1,13 @@
+.. _exhale_define_portability_8hpp_1a36bbb4cc9c6826d0928548f40ce8c423:
+
+Define ripple_nodiscard
+=======================
+
+- Defined in :ref:`file_include_ripple_core_utility_portability.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: ripple_nodiscard

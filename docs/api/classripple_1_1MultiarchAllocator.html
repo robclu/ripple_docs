@@ -1,0 +1,542 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class MultiarchAllocator &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Class MultidimWriter" href="classripple_1_1MultidimWriter.html" />
+  <link rel="prev" title="Template Class Logger" href="classripple_1_1Logger.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Class MultiarchAllocator</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/classripple_1_1MultiarchAllocator.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="class-multiarchallocator">
+<span id="exhale-class-classripple-1-1multiarchallocator"></span><h1>Class MultiarchAllocator<a class="headerlink" href="#class-multiarchallocator" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_allocation_multiarch_allocator.hpp.html#file-include-ripple-core-allocation-multiarch-allocator-hpp"><span class="std std-ref">File multiarch_allocator.hpp</span></a></p></li>
+</ul>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4N6ripple18MultiarchAllocatorE">
+<span id="_CPPv3N6ripple18MultiarchAllocatorE"></span><span id="_CPPv2N6ripple18MultiarchAllocatorE"></span><span id="ripple::MultiarchAllocator"></span><span class="target" id="classripple_1_1MultiarchAllocator"></span><em class="property">class </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">MultiarchAllocator</code><a class="headerlink" href="#_CPPv4N6ripple18MultiarchAllocatorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference internal" href="#classripple_1_1MultiarchAllocator"><span class="std std-ref">MultiarchAllocator</span></a> which allows for allocations on the host and multiple devices. </p>
+<p>Each allocation is done per thread or per device, and is thread-safe.</p>
+<p>Each allocator is simply a linear allocator, which should be reset once the memory must be freed. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple18MultiarchAllocator12GpuAllocatorE">
+<span id="_CPPv3N6ripple18MultiarchAllocator12GpuAllocatorE"></span><span id="_CPPv2N6ripple18MultiarchAllocator12GpuAllocatorE"></span><span class="target" id="classripple_1_1MultiarchAllocator_1a301a3859d8d92eb581ef2d5ede6541e2"></span><em class="property">using </em><code class="sig-name descname">GpuAllocator</code> = <a class="reference internal" href="classripple_1_1SimpleAllocator.html#_CPPv4I_9AllocArch0EN6ripple15SimpleAllocatorE" title="ripple::SimpleAllocator">SimpleAllocator</a>&lt;<a class="reference internal" href="enum_namespaceripple_1adfb7267df8924979597b053026d4e492.html#_CPPv4N6ripple9AllocArchE" title="ripple::AllocArch">AllocArch</a>::<a class="reference internal" href="enum_namespaceripple_1adfb7267df8924979597b053026d4e492.html#_CPPv4N6ripple9AllocArch3gpuE" title="ripple::AllocArch::gpu">gpu</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple18MultiarchAllocator12GpuAllocatorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the gpu allocator. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple18MultiarchAllocator12CpuAllocatorE">
+<span id="_CPPv3N6ripple18MultiarchAllocator12CpuAllocatorE"></span><span id="_CPPv2N6ripple18MultiarchAllocator12CpuAllocatorE"></span><span class="target" id="classripple_1_1MultiarchAllocator_1a93741057f819a4dc0d0fd7dd57a2256d"></span><em class="property">using </em><code class="sig-name descname">CpuAllocator</code> = <a class="reference internal" href="classripple_1_1SimpleAllocator.html#_CPPv4I_9AllocArch0EN6ripple15SimpleAllocatorE" title="ripple::SimpleAllocator">SimpleAllocator</a>&lt;<a class="reference internal" href="enum_namespaceripple_1adfb7267df8924979597b053026d4e492.html#_CPPv4N6ripple9AllocArchE" title="ripple::AllocArch">AllocArch</a>::<a class="reference internal" href="enum_namespaceripple_1adfb7267df8924979597b053026d4e492.html#_CPPv4N6ripple9AllocArch3cpuE" title="ripple::AllocArch::cpu">cpu</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple18MultiarchAllocator12CpuAllocatorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the cpu allocator. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple18MultiarchAllocator13GpuAllocatorsE">
+<span id="_CPPv3N6ripple18MultiarchAllocator13GpuAllocatorsE"></span><span id="_CPPv2N6ripple18MultiarchAllocator13GpuAllocatorsE"></span><span class="target" id="classripple_1_1MultiarchAllocator_1a3cb2b70348337b1844163fa1fc04e46b"></span><em class="property">using </em><code class="sig-name descname">GpuAllocators</code> = std::vector&lt;<a class="reference internal" href="#_CPPv4N6ripple18MultiarchAllocator12GpuAllocatorE" title="ripple::MultiarchAllocator::GpuAllocator">GpuAllocator</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple18MultiarchAllocator13GpuAllocatorsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the container for per gpu allocators. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple18MultiarchAllocator18MultiarchAllocatorE6size_t">
+<span id="_CPPv3N6ripple18MultiarchAllocator18MultiarchAllocatorE6size_t"></span><span id="_CPPv2N6ripple18MultiarchAllocator18MultiarchAllocatorE6size_t"></span><span id="ripple::MultiarchAllocator::MultiarchAllocator__s"></span><span class="target" id="classripple_1_1MultiarchAllocator_1a906643cf72f70eea0e394b10fc0aa448"></span><code class="sig-name descname">MultiarchAllocator</code><span class="sig-paren">(</span>size_t <em>num_gpus</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ripple18MultiarchAllocator18MultiarchAllocatorE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor to set the number of allocators and the area for each of the allocators. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">num_gpus</span></code>: The number of gpu allocators to create. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple18MultiarchAllocatorD0Ev">
+<span id="_CPPv3N6ripple18MultiarchAllocatorD0Ev"></span><span id="_CPPv2N6ripple18MultiarchAllocatorD0Ev"></span><span id="ripple::MultiarchAllocator::~MultiarchAllocator"></span><span class="target" id="classripple_1_1MultiarchAllocator_1ad4fce78b9b0f4416a70fbd2a9a3adcde"></span><code class="sig-name descname">~MultiarchAllocator</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple18MultiarchAllocatorD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Destructor, frees all the allocated memory for the device. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple18MultiarchAllocator13gpu_allocatorE6size_t">
+<span id="_CPPv3N6ripple18MultiarchAllocator13gpu_allocatorE6size_t"></span><span id="_CPPv2N6ripple18MultiarchAllocator13gpu_allocatorE6size_t"></span><span id="ripple::MultiarchAllocator::gpu_allocator__s"></span><span class="target" id="classripple_1_1MultiarchAllocator_1aa34ffd138199cea4e25b3b12d007ae4c"></span>auto <code class="sig-name descname">gpu_allocator</code><span class="sig-paren">(</span>size_t <em>gpu_id</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple18MultiarchAllocator12GpuAllocatorE" title="ripple::MultiarchAllocator::GpuAllocator">GpuAllocator</a>&amp;<a class="headerlink" href="#_CPPv4N6ripple18MultiarchAllocator13gpu_allocatorE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets a reference to the allocator with the given gpu id. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the allocator for the gpu. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">device_id</span></code>: The id of the device to get the allocator for. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple18MultiarchAllocator13cpu_allocatorEv">
+<span id="_CPPv3N6ripple18MultiarchAllocator13cpu_allocatorEv"></span><span id="_CPPv2N6ripple18MultiarchAllocator13cpu_allocatorEv"></span><span id="ripple::MultiarchAllocator::cpu_allocator"></span><span class="target" id="classripple_1_1MultiarchAllocator_1a5c83c5e7c3a2a949dd0924789bb56474"></span>auto <code class="sig-name descname">cpu_allocator</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple18MultiarchAllocator12CpuAllocatorE" title="ripple::MultiarchAllocator::CpuAllocator">CpuAllocator</a>&amp;<a class="headerlink" href="#_CPPv4N6ripple18MultiarchAllocator13cpu_allocatorEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets a reference to the allocator with the given thread id. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the allocator for the gpu. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">thread_id</span></code>: The id of the thread to get the allocator for. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple18MultiarchAllocator11reserve_gpuE6size_t">
+<span id="_CPPv3N6ripple18MultiarchAllocator11reserve_gpuE6size_t"></span><span id="_CPPv2N6ripple18MultiarchAllocator11reserve_gpuE6size_t"></span><span id="ripple::MultiarchAllocator::reserve_gpu__s"></span><span class="target" id="classripple_1_1MultiarchAllocator_1a70ffcd6e977eec6bb581f1bdb2c730a5"></span>auto <code class="sig-name descname">reserve_gpu</code><span class="sig-paren">(</span>size_t <em>bytes_per_gpu</em><span class="sig-paren">)</span> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple18MultiarchAllocator11reserve_gpuE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reserves the given number of bytes for each of the gpu allocators. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bytes_per_gpu</span></code>: The amount of memory to reserve for each gpu allocator. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple18MultiarchAllocator11reserve_cpuE6size_t">
+<span id="_CPPv3N6ripple18MultiarchAllocator11reserve_cpuE6size_t"></span><span id="_CPPv2N6ripple18MultiarchAllocator11reserve_cpuE6size_t"></span><span id="ripple::MultiarchAllocator::reserve_cpu__s"></span><span class="target" id="classripple_1_1MultiarchAllocator_1a09fdf3b95a83c25d2e633b6b96d926fd"></span>auto <code class="sig-name descname">reserve_cpu</code><span class="sig-paren">(</span>size_t <em>bytes</em><span class="sig-paren">)</span> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple18MultiarchAllocator11reserve_cpuE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reserves the given number of bytes for the cpu allocator. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bytes</span></code>: The amount of memory to reserve for the cpu allocator. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple18MultiarchAllocator9reset_gpuEv">
+<span id="_CPPv3N6ripple18MultiarchAllocator9reset_gpuEv"></span><span id="_CPPv2N6ripple18MultiarchAllocator9reset_gpuEv"></span><span id="ripple::MultiarchAllocator::reset_gpu"></span><span class="target" id="classripple_1_1MultiarchAllocator_1a1b011932fcf21b0f8ed31db8e7c342e1"></span>auto <code class="sig-name descname">reset_gpu</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple18MultiarchAllocator9reset_gpuEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Resets all the allocators for each gpu. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple18MultiarchAllocator9reset_cpuEv">
+<span id="_CPPv3N6ripple18MultiarchAllocator9reset_cpuEv"></span><span id="_CPPv2N6ripple18MultiarchAllocator9reset_cpuEv"></span><span id="ripple::MultiarchAllocator::reset_cpu"></span><span class="target" id="classripple_1_1MultiarchAllocator_1aa8125a8b8c3bf7c28e283ecb5f4a93a0"></span>auto <code class="sig-name descname">reset_cpu</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple18MultiarchAllocator9reset_cpuEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Resets all the allocators for each cpu. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple18MultiarchAllocator5resetEv">
+<span id="_CPPv3N6ripple18MultiarchAllocator5resetEv"></span><span id="_CPPv2N6ripple18MultiarchAllocator5resetEv"></span><span id="ripple::MultiarchAllocator::reset"></span><span class="target" id="classripple_1_1MultiarchAllocator_1a408158320ff8e725f1c7b143d085882a"></span>auto <code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple18MultiarchAllocator5resetEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Resets all gpu and cpu allocators. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classripple_1_1MultidimWriter.html" class="btn btn-neutral float-right" title="Class MultidimWriter" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="classripple_1_1Logger.html" class="btn btn-neutral" title="Template Class Logger" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Class MultiarchAllocator</a><ul>
+<li><a class="reference internal" href="#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

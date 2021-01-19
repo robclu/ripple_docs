@@ -1,0 +1,85 @@
+
+.. _file_include_ripple_core_container_detail_basic_tuple_.hpp:
+
+File basic_tuple_.hpp
+=====================
+
+
+This file implements the lowest level functionality for a tuple class. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/container/detail/basic_tuple_.hpp``)
+----------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_container_detail_basic_tuple_.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``../../utility/portability.hpp``
+
+- ``utility`` (:ref:`file_include_ripple_core_utility_bitops.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_container_tuple_traits.hpp`
+
+- :ref:`file_include_ripple_core_container_tuple.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+- :ref:`namespace_ripple__detail`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1detail_1_1BasicTuple`
+
+- :ref:`exhale_struct_structripple_1_1detail_1_1Element`
+
+- :ref:`exhale_struct_structripple_1_1detail_1_1TupleStorage`
+
+- :ref:`exhale_struct_structripple_1_1detail_1_1TupleStorage_3_01std_1_1index__sequence_3_01Is_8_8_8_01_4_00_01Ts_8_8_8_01_4`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_basic__tuple___8hpp_1a502c6e60b809c6f9d34b253a2e4c128f`
+
+- :ref:`exhale_function_basic__tuple___8hpp_1ae9e9531cce1cbff386e8af9a50f8d2be`
+
+- :ref:`exhale_function_basic__tuple___8hpp_1a2fd64c4f3e2ea3ea5e330d232e702cee`
+
+- :ref:`exhale_function_basic__tuple___8hpp_1a2184920dafb8a596c524fc3f43d48f3f`
+
+- :ref:`exhale_function_basic__tuple___8hpp_1aa37ce41270659211c2078034a2546c92`
+

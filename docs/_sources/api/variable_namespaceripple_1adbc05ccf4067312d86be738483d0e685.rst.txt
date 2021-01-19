@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1adbc05ccf4067312d86be738483d0e685:
+
+Variable ripple::is_invocable_v
+===============================
+
+- Defined in :ref:`file_include_ripple_core_functional_functional_traits.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::is_invocable_v

@@ -1,0 +1,863 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Template Struct Block &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Struct BlockExtractor" href="structripple_1_1BlockExtractor.html" />
+  <link rel="prev" title="Template Struct ArrayTraits&lt; VecImpl&lt; T, Size, LayoutType &gt; &gt;" href="structripple_1_1ArrayTraits_3_01VecImpl_3_01T_00_01Size_00_01LayoutType_01_4_01_4.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Template Struct Block</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/structripple_1_1Block.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="template-struct-block">
+<span id="exhale-struct-structripple-1-1block"></span><h1>Template Struct Block<a class="headerlink" href="#template-struct-block" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_container_block.hpp.html#file-include-ripple-core-container-block-hpp"><span class="std std-ref">File block.hpp</span></a></p></li>
+</ul>
+<div class="section" id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="base-type">
+<h3>Base Type<a class="headerlink" href="#base-type" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">ripple::MultiBlock&lt;</span> <span class="pre">Block&lt;</span> <span class="pre">T,</span> <span class="pre">Dimensions</span> <span class="pre">&gt;</span> <span class="pre">&gt;</span></code> (<a class="reference internal" href="structripple_1_1MultiBlock.html#exhale-struct-structripple-1-1multiblock"><span class="std std-ref">Template Struct MultiBlock</span></a>)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp struct">
+<dt id="_CPPv4I0_6size_tEN6ripple5BlockE">
+<span id="_CPPv3I0_6size_tEN6ripple5BlockE"></span><span id="_CPPv2I0_6size_tEN6ripple5BlockE"></span>template&lt;typename <code class="sig-name descname">T</code>, size_t <code class="sig-name descname">Dimensions</code>&gt;<br /><span class="target" id="structripple_1_1Block"></span><em class="property">struct </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">Block</code> : <em class="property">public</em> ripple::<a class="reference internal" href="structripple_1_1MultiBlock.html#_CPPv4I0EN6ripple10MultiBlockE" title="ripple::MultiBlock">MultiBlock</a>&lt;<a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple5BlockE" title="ripple::Block">Block</a>&lt;<a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple5BlockE" title="ripple::Block::T">T</a>, <a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple5BlockE" title="ripple::Block::Dimensions">Dimensions</a>&gt;&gt;<a class="headerlink" href="#_CPPv4I0_6size_tEN6ripple5BlockE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines a type which wraps a host and device block into a single type, and which has a state for the different regions of data in the parition. </p>
+<p>This class is designed to partition both the computational space as well as the memory spaces, and to be used as a building block for the <a class="reference internal" href="classripple_1_1Tensor.html#classripple_1_1Tensor"><span class="std std-ref">Tensor</span></a> class.</p>
+<p><dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the data for the block. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dimensions</span></code>: The number of dimensions for the block. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple5Block6TraitsE">
+<span id="_CPPv3N6ripple5Block6TraitsE"></span><span id="_CPPv2N6ripple5Block6TraitsE"></span><span class="target" id="structripple_1_1Block_1aceb12c3617ff044aa97e186b2729c1a2"></span><em class="property">using </em><code class="sig-name descname">Traits</code> = <a class="reference internal" href="structripple_1_1MultiBlockTraits.html#_CPPv4I0EN6ripple16MultiBlockTraitsE" title="ripple::MultiBlockTraits">MultiBlockTraits</a>&lt;<a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple5BlockE" title="ripple::Block">Block</a>&lt;<a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple5BlockE" title="ripple::Block::T">T</a>, <a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple5BlockE" title="ripple::Block::Dimensions">Dimensions</a>&gt;&gt;<a class="headerlink" href="#_CPPv4N6ripple5Block6TraitsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the traits for the block. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple5Block5IndexE">
+<span id="_CPPv3N6ripple5Block5IndexE"></span><span id="_CPPv2N6ripple5Block5IndexE"></span><span class="target" id="structripple_1_1Block_1a93536a467130d744e520f91e9eedc912"></span><em class="property">using </em><code class="sig-name descname">Index</code> = std::array&lt;uint32_t, <a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple5BlockE" title="ripple::Block::Dimensions">Dimensions</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple5Block5IndexE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the type for the block index. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple5Block9HostBlockE">
+<span id="_CPPv3N6ripple5Block9HostBlockE"></span><span id="_CPPv2N6ripple5Block9HostBlockE"></span><span class="target" id="structripple_1_1Block_1a365bcd7e55590f2ce2f137e6d585f993"></span><em class="property">using </em><code class="sig-name descname">HostBlock</code> = <a class="reference internal" href="#_CPPv4N6ripple5Block9HostBlockE" title="ripple::Block::HostBlock">HostBlock</a>&lt;<a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple5BlockE" title="ripple::Block::T">T</a>, <a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple5BlockE" title="ripple::Block::Dimensions">Dimensions</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple5Block9HostBlockE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the host block for the block. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple5Block11DeviceBlockE">
+<span id="_CPPv3N6ripple5Block11DeviceBlockE"></span><span id="_CPPv2N6ripple5Block11DeviceBlockE"></span><span class="target" id="structripple_1_1Block_1afa09e3ad0670a438478eefbd1317f56f"></span><em class="property">using </em><code class="sig-name descname">DeviceBlock</code> = <a class="reference internal" href="#_CPPv4N6ripple5Block11DeviceBlockE" title="ripple::Block::DeviceBlock">DeviceBlock</a>&lt;<a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple5BlockE" title="ripple::Block::T">T</a>, <a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple5BlockE" title="ripple::Block::Dimensions">Dimensions</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple5Block11DeviceBlockE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the device block for the block. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple5Block8IteratorE">
+<span id="_CPPv3N6ripple5Block8IteratorE"></span><span id="_CPPv2N6ripple5Block8IteratorE"></span><span class="target" id="structripple_1_1Block_1a068ae6bef9d1445a1621b3e3721c81c8"></span><em class="property">using </em><code class="sig-name descname">Iterator</code> = <em class="property">typename</em> <a class="reference internal" href="#_CPPv4N6ripple5Block6TraitsE" title="ripple::Block::Traits">Traits</a>::Iterator<a class="headerlink" href="#_CPPv4N6ripple5Block8IteratorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the host iterator. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple5Block14SharedIteratorE">
+<span id="_CPPv3N6ripple5Block14SharedIteratorE"></span><span id="_CPPv2N6ripple5Block14SharedIteratorE"></span><span class="target" id="structripple_1_1Block_1a38081e6988adf4a2f812afab1d78c1ea"></span><em class="property">using </em><code class="sig-name descname">SharedIterator</code> = <em class="property">typename</em> <a class="reference internal" href="#_CPPv4N6ripple5Block6TraitsE" title="ripple::Block::Traits">Traits</a>::SharedIterator<a class="headerlink" href="#_CPPv4N6ripple5Block14SharedIteratorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the iterator over shared memory. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple5Block6StreamE">
+<span id="_CPPv3N6ripple5Block6StreamE"></span><span id="_CPPv2N6ripple5Block6StreamE"></span><span class="target" id="structripple_1_1Block_1a7cf9a4386ba7037f42f3a6ba8fc42add"></span><em class="property">using </em><code class="sig-name descname">Stream</code> = <em class="property">typename</em> <a class="reference internal" href="#_CPPv4N6ripple5Block11DeviceBlockE" title="ripple::Block::DeviceBlock">DeviceBlock</a>::Stream<a class="headerlink" href="#_CPPv4N6ripple5Block6StreamE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the stream. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple5Block5BlockEv">
+<span id="_CPPv3N6ripple5Block5BlockEv"></span><span id="_CPPv2N6ripple5Block5BlockEv"></span><span id="ripple::Block::Block"></span><span class="target" id="structripple_1_1Block_1afb72dda4cb31f45fcdc972f36bbfa5f1"></span><code class="sig-name descname">Block</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = default<a class="headerlink" href="#_CPPv4N6ripple5Block5BlockEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Default constructor for the block. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple5BlockD0Ev">
+<span id="_CPPv3N6ripple5BlockD0Ev"></span><span id="_CPPv2N6ripple5BlockD0Ev"></span><span id="ripple::Block::~Block"></span><span class="target" id="structripple_1_1Block_1a86c803fa0a7c810113cbb97a17630435"></span><code class="sig-name descname">~Block</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = default<a class="headerlink" href="#_CPPv4N6ripple5BlockD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Destructor  defaulted. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple5Block28ensure_device_data_availableEv">
+<span id="_CPPv3N6ripple5Block28ensure_device_data_availableEv"></span><span id="_CPPv2N6ripple5Block28ensure_device_data_availableEv"></span><span id="ripple::Block::ensure_device_data_available"></span><span class="target" id="structripple_1_1Block_1a9c36d311a30ed1f592cef74b874640fc"></span>auto <code class="sig-name descname">ensure_device_data_available</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple5Block28ensure_device_data_availableEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Ensures that the data is available on the device. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This will make a copy from the host to the device if the data is not already on the device. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple5Block26ensure_host_data_availableEv">
+<span id="_CPPv3N6ripple5Block26ensure_host_data_availableEv"></span><span id="_CPPv2N6ripple5Block26ensure_host_data_availableEv"></span><span id="ripple::Block::ensure_host_data_available"></span><span class="target" id="structripple_1_1Block_1a99880d850e5fcd796ad00d0619e4046d"></span>auto <code class="sig-name descname">ensure_host_data_available</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple5Block26ensure_host_data_availableEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Ensures that the data is available on the host. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This will make a copy from the device to the host if the data is not already on the host. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple5Block11has_paddingEv">
+<span id="_CPPv3NK6ripple5Block11has_paddingEv"></span><span id="_CPPv2NK6ripple5Block11has_paddingEv"></span><span id="ripple::Block::has_paddingC"></span><span class="target" id="structripple_1_1Block_1a7569663dcbec94c6484868f2588eff47"></span>auto <code class="sig-name descname">has_padding</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4NK6ripple5Block11has_paddingEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines if the block has padding. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if the block has padding, otherwise false. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple5Block11set_paddingE6size_t">
+<span id="_CPPv3N6ripple5Block11set_paddingE6size_t"></span><span id="_CPPv2N6ripple5Block11set_paddingE6size_t"></span><span id="ripple::Block::set_padding__s"></span><span class="target" id="structripple_1_1Block_1a3e2a35f6da0d5490b1d0bd45a9870d45"></span>auto <code class="sig-name descname">set_padding</code><span class="sig-paren">(</span>size_t <em>amount</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple5Block11set_paddingE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the padding for the block to be the given amount. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>The amount here is the number of elements of a single side of a single dimension, which will be applied to all sides of all dimensions.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">amount</span></code>: The amount of padding. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple5Block7paddingEv">
+<span id="_CPPv3NK6ripple5Block7paddingEv"></span><span id="_CPPv2NK6ripple5Block7paddingEv"></span><span id="ripple::Block::paddingC"></span><span class="target" id="structripple_1_1Block_1aa0c4a64468d3cee9e0cbdce4d1f3768e"></span>auto <code class="sig-name descname">padding</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple5Block7paddingEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the amount of padding for a single side of a single dimension for the block. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The amount of padding for the block. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple5Block13set_device_idE8uint32_t">
+<span id="_CPPv3N6ripple5Block13set_device_idE8uint32_t"></span><span id="_CPPv2N6ripple5Block13set_device_idE8uint32_t"></span><span id="ripple::Block::set_device_id__uint32_t"></span><span class="target" id="structripple_1_1Block_1a9e1c2ec8df0a76b5ed035cfdcdd4dec1"></span>auto <code class="sig-name descname">set_device_id</code><span class="sig-paren">(</span>uint32_t <em>device_id</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple5Block13set_device_idE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the device id for the block. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">device_id</span></code>: The id of the device for the block. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple5Block15device_iteratorEi">
+<span id="_CPPv3NK6ripple5Block15device_iteratorEi"></span><span id="_CPPv2NK6ripple5Block15device_iteratorEi"></span><span id="ripple::Block::device_iterator__iC"></span><span class="target" id="structripple_1_1Block_1aaf37fdfc4c57fbc6f1e00355d622a558"></span>auto <code class="sig-name descname">device_iterator</code><span class="sig-paren">(</span>int <em>padding_mod</em> = 0<span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5Block8IteratorE" title="ripple::Block::Iterator">Iterator</a><a class="headerlink" href="#_CPPv4NK6ripple5Block15device_iteratorEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets an iterator to the device data for the block. </p>
+<p>This creates an interator which points to the first valid cell (i.e not in the padding), unless padding_mod is not zero, in which case the iterator points to the element offset by padding_mod amount in each dimension.</p>
+<p>For example, padding_mod = 1 will return an iterator to what is effectively cell (-1, -1, -1).</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>An iterator to the first valid (non-padding) element in the block. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">padding_mod</span></code>: Amount of padding to offset into. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple5Block13host_iteratorEv">
+<span id="_CPPv3NK6ripple5Block13host_iteratorEv"></span><span id="_CPPv2NK6ripple5Block13host_iteratorEv"></span><span id="ripple::Block::host_iteratorC"></span><span class="target" id="structripple_1_1Block_1a0eaba2c0401c9527dfe0d546266e2a6b"></span>auto <code class="sig-name descname">host_iterator</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5Block8IteratorE" title="ripple::Block::Iterator">Iterator</a><a class="headerlink" href="#_CPPv4NK6ripple5Block13host_iteratorEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets an iterator to the host data. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>An iterator to the first valid (non-padding) element in the block. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple5Block6streamEv">
+<span id="_CPPv3NK6ripple5Block6streamEv"></span><span id="_CPPv2NK6ripple5Block6streamEv"></span><span id="ripple::Block::streamC"></span><span class="target" id="structripple_1_1Block_1afa9c54b8ab387902d707ab872723fcd7"></span>auto <code class="sig-name descname">stream</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5Block6StreamE" title="ripple::Block::Stream">Stream</a><a class="headerlink" href="#_CPPv4NK6ripple5Block6streamEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the stream for this block, which is used for compute operations. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The stream for the block. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple5Block15transfer_streamEv">
+<span id="_CPPv3NK6ripple5Block15transfer_streamEv"></span><span id="_CPPv2NK6ripple5Block15transfer_streamEv"></span><span id="ripple::Block::transfer_streamC"></span><span class="target" id="structripple_1_1Block_1a773e951ce1d35db880a70b12f48b913a"></span>auto <code class="sig-name descname">transfer_stream</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5Block6StreamE" title="ripple::Block::Stream">Stream</a><a class="headerlink" href="#_CPPv4NK6ripple5Block15transfer_streamEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the stream for this block, which is used for transfer operations. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the transfer stream has not been set, this returns the compute stream.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>The transfer stream for the block. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple5Block19set_transfer_streamE6Stream">
+<span id="_CPPv3N6ripple5Block19set_transfer_streamE6Stream"></span><span id="_CPPv2N6ripple5Block19set_transfer_streamE6Stream"></span><span id="ripple::Block::set_transfer_stream__Stream"></span><span class="target" id="structripple_1_1Block_1a69effa8f25b5ecc648a3122437abe72d"></span>auto <code class="sig-name descname">set_transfer_stream</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple5Block6StreamE" title="ripple::Block::Stream">Stream</a> <em>stream</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple5Block19set_transfer_streamE6Stream" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the transfer stream to the given stream. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">stream</span></code>: The stream to set the transfer stream to. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple5Block11synchronizeEv">
+<span id="_CPPv3N6ripple5Block11synchronizeEv"></span><span id="_CPPv2N6ripple5Block11synchronizeEv"></span><span id="ripple::Block::synchronize"></span><span class="target" id="structripple_1_1Block_1af239ee7226b16e19a4238df8e018928a"></span>auto <code class="sig-name descname">synchronize</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple5Block11synchronizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Synchronizes the block’s stream. </p>
+<p><dl class="xrefsect">
+<dt>
+<em>Todo:</em></dt>
+<dd><p>Change this to sync both compute and copy streams. </p>
+</dd></dl>
+
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple5Block4sizeE6size_tRR3Dim">
+<span id="_CPPv3I0ENK6ripple5Block4sizeERR3Dim"></span><span id="_CPPv2I0ENK6ripple5Block4sizeERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="structripple_1_1Block_1a782084abf251e0f61925a02da755e654"></span>auto <code class="sig-name descname">size</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple5Block4sizeE6size_tRR3Dim" title="ripple::Block::size::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4I0ENK6ripple5Block4sizeE6size_tRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the total number of elements in the given dimension. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of elements in teh given dimenion, <em>excluding</em> padding for the dimsnion </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to get the size of. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple5Block11last_in_dimEbRR3Dim">
+<span id="_CPPv3I0ENK6ripple5Block11last_in_dimERR3Dim"></span><span id="_CPPv2I0ENK6ripple5Block11last_in_dimERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="structripple_1_1Block_1a81854f73fa1f80f868d7a9c699177183"></span>auto <code class="sig-name descname">last_in_dim</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple5Block11last_in_dimEbRR3Dim" title="ripple::Block::last_in_dim::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4I0ENK6ripple5Block11last_in_dimEbRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines if the block is the last block in the given dimension. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if this block is the last block in the dimension. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to check if this is the last block in. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple5Block12first_in_dimEbRR3Dim">
+<span id="_CPPv3I0ENK6ripple5Block12first_in_dimERR3Dim"></span><span id="_CPPv2I0ENK6ripple5Block12first_in_dimERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="structripple_1_1Block_1a5bd216da35f68e55c2368dfa1b69dcc1"></span>auto <code class="sig-name descname">first_in_dim</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple5Block12first_in_dimEbRR3Dim" title="ripple::Block::first_in_dim::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4I0ENK6ripple5Block12first_in_dimEbRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns true if the block is the first block in the given dimension. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if this block is the first block in the dimension. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to check if this is the last block in. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I_6size_t_12FaceLocation_7MappingEN6ripple5Block12fill_paddingEvR5Block13CopySpecifierI3Dim8Location3MapE13ExecutionKind12TransferKind">
+<span id="_CPPv3I_6size_t_12FaceLocation_7MappingEN6ripple5Block12fill_paddingER5Block13CopySpecifierI3Dim8Location3MapE13ExecutionKind12TransferKind"></span><span id="_CPPv2I_6size_t_12FaceLocation_7MappingEN6ripple5Block12fill_paddingER5Block13CopySpecifierI3Dim8Location3MapE13ExecutionKind12TransferKind"></span>template&lt;size_t <code class="sig-name descname">Dim</code>, <a class="reference internal" href="enum_namespaceripple_1afcacaeaac884e2155329d73c22784666.html#_CPPv4N6ripple12FaceLocationE" title="ripple::FaceLocation">FaceLocation</a> <code class="sig-name descname">Location</code>, <a class="reference internal" href="enum_namespaceripple_1a445bb0c7771b0f161cd63a10d143520e.html#_CPPv4N6ripple7MappingE" title="ripple::Mapping">Mapping</a> <code class="sig-name descname">Map</code>&gt;<br /><span class="target" id="structripple_1_1Block_1a7740b9c2629ecbf12ca3c55e695e9e3d"></span>auto <code class="sig-name descname">fill_padding</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple5BlockE" title="ripple::Block">Block</a> &amp;<em>other</em>, <a class="reference internal" href="structripple_1_1CopySpecifier.html#_CPPv4I_6size_t_12FaceLocation_7MappingEN6ripple13CopySpecifierE" title="ripple::CopySpecifier">CopySpecifier</a>&lt;<a class="reference internal" href="#_CPPv4I_6size_t_12FaceLocation_7MappingEN6ripple5Block12fill_paddingEvR5Block13CopySpecifierI3Dim8Location3MapE13ExecutionKind12TransferKind" title="ripple::Block::fill_padding::Dim">Dim</a>, <a class="reference internal" href="#_CPPv4I_6size_t_12FaceLocation_7MappingEN6ripple5Block12fill_paddingEvR5Block13CopySpecifierI3Dim8Location3MapE13ExecutionKind12TransferKind" title="ripple::Block::fill_padding::Location">Location</a>, <a class="reference internal" href="#_CPPv4I_6size_t_12FaceLocation_7MappingEN6ripple5Block12fill_paddingEvR5Block13CopySpecifierI3Dim8Location3MapE13ExecutionKind12TransferKind" title="ripple::Block::fill_padding::Map">Map</a>&gt; <em>dst_face</em>, <a class="reference internal" href="enum_namespaceripple_1ae314c8184d85e6da81055513973875a6.html#_CPPv4N6ripple13ExecutionKindE" title="ripple::ExecutionKind">ExecutionKind</a> <em>exec_kind</em>, <a class="reference internal" href="enum_namespaceripple_1a8b0646762847e52176939cd3d2003fdd.html#_CPPv4N6ripple12TransferKindE" title="ripple::TransferKind">TransferKind</a> <em>transfer_kind</em> = <a class="reference internal" href="enum_namespaceripple_1a8b0646762847e52176939cd3d2003fdd.html#_CPPv4N6ripple12TransferKindE" title="ripple::TransferKind">TransferKind</a>::<a class="reference internal" href="enum_namespaceripple_1a8b0646762847e52176939cd3d2003fdd.html#_CPPv4N6ripple12TransferKind11synchronousE" title="ripple::TransferKind::synchronous">synchronous</a><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4I_6size_t_12FaceLocation_7MappingEN6ripple5Block12fill_paddingEvR5Block13CopySpecifierI3Dim8Location3MapE13ExecutionKind12TransferKind" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Fills the padding for this block using the other block, for the specified face. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>Whether this copies the data from the inside of the domain or from the padding of the other block depending on the mapping.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>When the exec_kind specifies gpu, ie the transfer is between gpus or between a gpu and the host, then transfer_kind specifies if the operations are placed on the same stream as compute operations (i.e they are synchronous with respect to compute) or the transfer stream and can happen asynchronously with respect to compute.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other block to use to fill the padding. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dst_face</span></code>: The destination face to fill. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">exec_kind</span></code>: The kind of the execution to fill the padding. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">transfer_kind</span></code>: The kind of the transfer operation. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The dimension of the destination face. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Location</span></code>: The location of the face to fill the padding for. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Map</span></code>: The padding for the face. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0DpEN6ripple5Block6reduceE1T13ExecutionKindRR4PredDpRR2As">
+<span id="_CPPv3I0DpEN6ripple5Block6reduceE13ExecutionKindRR4PredDpRR2As"></span><span id="_CPPv2I0DpEN6ripple5Block6reduceE13ExecutionKindRR4PredDpRR2As"></span>template&lt;typename <code class="sig-name descname">Pred</code>, typename ...<code class="sig-name descname">As</code>&gt;<br /><span class="target" id="structripple_1_1Block_1a9d67fd7f60d29f9f11965b52ce694ee8"></span>auto <code class="sig-name descname">reduce</code><span class="sig-paren">(</span><a class="reference internal" href="enum_namespaceripple_1ae314c8184d85e6da81055513973875a6.html#_CPPv4N6ripple13ExecutionKindE" title="ripple::ExecutionKind">ExecutionKind</a> <em>exec</em>, <a class="reference internal" href="#_CPPv4I0DpEN6ripple5Block6reduceE1T13ExecutionKindRR4PredDpRR2As" title="ripple::Block::reduce::Pred">Pred</a> &amp;&amp;<em>pred</em>, <a class="reference internal" href="#_CPPv4I0DpEN6ripple5Block6reduceE1T13ExecutionKindRR4PredDpRR2As" title="ripple::Block::reduce::As">As</a>&amp;&amp;... <em>as</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple5BlockE" title="ripple::Block::T">T</a><a class="headerlink" href="#_CPPv4I0DpEN6ripple5Block6reduceE1T13ExecutionKindRR4PredDpRR2As" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Performs a reduction on either the host or the device, depending on the kind of the exection. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The results of the reduction of the data. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">exe</span></code>: The kind of the execution. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pred</span></code>: The predicate for the reduction. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">as</span></code>: Arguments for the predicate. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Pred</span></code>: The type of the predicate. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">As</span></code>: The type of the predicate arguments. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0DpEN6ripple5Block16reduce_on_deviceE1TRR4PredDpRR4Args">
+<span id="_CPPv3I0DpEN6ripple5Block16reduce_on_deviceERR4PredDpRR4Args"></span><span id="_CPPv2I0DpEN6ripple5Block16reduce_on_deviceERR4PredDpRR4Args"></span>template&lt;typename <code class="sig-name descname">Pred</code>, typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="structripple_1_1Block_1ad3bc82e33c08e4bb8c978689fbbbff1e"></span>auto <code class="sig-name descname">reduce_on_device</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0DpEN6ripple5Block16reduce_on_deviceE1TRR4PredDpRR4Args" title="ripple::Block::reduce_on_device::Pred">Pred</a> &amp;&amp;<em>pred</em>, <a class="reference internal" href="#_CPPv4I0DpEN6ripple5Block16reduce_on_deviceE1TRR4PredDpRR4Args" title="ripple::Block::reduce_on_device::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple5BlockE" title="ripple::Block::T">T</a><a class="headerlink" href="#_CPPv4I0DpEN6ripple5Block16reduce_on_deviceE1TRR4PredDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Performs a reduction of the block device data, returning the result. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the data is currently on the host then this will first copy the data to the device.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>The result of the reduction of the data. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pred</span></code>: The predicate for the reduction. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: Arguments for the predicate. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Pred</span></code>: The type of the predicate. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The type of the predicate arguments. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0DpEN6ripple5Block14reduce_on_hostE1TRR4PredDpRR4Args">
+<span id="_CPPv3I0DpEN6ripple5Block14reduce_on_hostERR4PredDpRR4Args"></span><span id="_CPPv2I0DpEN6ripple5Block14reduce_on_hostERR4PredDpRR4Args"></span>template&lt;typename <code class="sig-name descname">Pred</code>, typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="structripple_1_1Block_1ac1adf7c2e19bdbe501795d8d6ed8344d"></span>auto <code class="sig-name descname">reduce_on_host</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0DpEN6ripple5Block14reduce_on_hostE1TRR4PredDpRR4Args" title="ripple::Block::reduce_on_host::Pred">Pred</a> &amp;&amp;<em>pred</em>, <a class="reference internal" href="#_CPPv4I0DpEN6ripple5Block14reduce_on_hostE1TRR4PredDpRR4Args" title="ripple::Block::reduce_on_host::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple5BlockE" title="ripple::Block::T">T</a><a class="headerlink" href="#_CPPv4I0DpEN6ripple5Block14reduce_on_hostE1TRR4PredDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Performs a reduction of the host device data, returning the result. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If the data is curently on the device then this will first copy the data to the host.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>The result of the reduction of the data. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pred</span></code>: The predicate for the reduction. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: Arguments for the predicate. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Pred</span></code>: The type of the predicate. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The type of the predicate arguments. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple5Block9host_dataE">
+<span id="_CPPv3N6ripple5Block9host_dataE"></span><span id="_CPPv2N6ripple5Block9host_dataE"></span><span id="ripple::Block::host_data__HostBlock"></span><span class="target" id="structripple_1_1Block_1a596333875d754146f2a170ff70db4c74"></span><a class="reference internal" href="#_CPPv4N6ripple5Block9HostBlockE" title="ripple::Block::HostBlock">HostBlock</a> <code class="sig-name descname">host_data</code><a class="headerlink" href="#_CPPv4N6ripple5Block9host_dataE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Host block data. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple5Block11device_dataE">
+<span id="_CPPv3N6ripple5Block11device_dataE"></span><span id="_CPPv2N6ripple5Block11device_dataE"></span><span id="ripple::Block::device_data__DeviceBlock"></span><span class="target" id="structripple_1_1Block_1a44ed08f852c503721ba46d9175d5df5e"></span><a class="reference internal" href="#_CPPv4N6ripple5Block11DeviceBlockE" title="ripple::Block::DeviceBlock">DeviceBlock</a> <code class="sig-name descname">device_data</code><a class="headerlink" href="#_CPPv4N6ripple5Block11device_dataE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Device block data. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple5Block7indicesE">
+<span id="_CPPv3N6ripple5Block7indicesE"></span><span id="_CPPv2N6ripple5Block7indicesE"></span><span id="ripple::Block::indices__Index"></span><span class="target" id="structripple_1_1Block_1ac0619a4fccb6fb42e2c92d20da7ef499"></span><a class="reference internal" href="#_CPPv4N6ripple5Block5IndexE" title="ripple::Block::Index">Index</a> <code class="sig-name descname">indices</code> = {}<a class="headerlink" href="#_CPPv4N6ripple5Block7indicesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Indices of the block. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple5Block11block_sizesE">
+<span id="_CPPv3N6ripple5Block11block_sizesE"></span><span id="_CPPv2N6ripple5Block11block_sizesE"></span><span id="ripple::Block::block_sizes__Index"></span><span class="target" id="structripple_1_1Block_1a19aed4f245e14d6b745888450a28c963"></span><a class="reference internal" href="#_CPPv4N6ripple5Block5IndexE" title="ripple::Block::Index">Index</a> <code class="sig-name descname">block_sizes</code> = {}<a class="headerlink" href="#_CPPv4N6ripple5Block11block_sizesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sizes of the blocks. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple5Block12global_sizesE">
+<span id="_CPPv3N6ripple5Block12global_sizesE"></span><span id="_CPPv2N6ripple5Block12global_sizesE"></span><span id="ripple::Block::global_sizes__Index"></span><span class="target" id="structripple_1_1Block_1a1f58a077eb23e62973b14ad22bf98e01"></span><a class="reference internal" href="#_CPPv4N6ripple5Block5IndexE" title="ripple::Block::Index">Index</a> <code class="sig-name descname">global_sizes</code> = {}<a class="headerlink" href="#_CPPv4N6ripple5Block12global_sizesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Global sizes. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple5Block11max_indicesE">
+<span id="_CPPv3N6ripple5Block11max_indicesE"></span><span id="_CPPv2N6ripple5Block11max_indicesE"></span><span id="ripple::Block::max_indices__Index"></span><span class="target" id="structripple_1_1Block_1adda7e873fddcdbc0ec684ce10449b202"></span><a class="reference internal" href="#_CPPv4N6ripple5Block5IndexE" title="ripple::Block::Index">Index</a> <code class="sig-name descname">max_indices</code> = {}<a class="headerlink" href="#_CPPv4N6ripple5Block11max_indicesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Max indices for each dimension. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple5Block6gpu_idE">
+<span id="_CPPv3N6ripple5Block6gpu_idE"></span><span id="_CPPv2N6ripple5Block6gpu_idE"></span><span id="ripple::Block::gpu_id__uint32_t"></span><span class="target" id="structripple_1_1Block_1a94c8b91c3a8b0c25ac9e2c0847ce50e4"></span>uint32_t <code class="sig-name descname">gpu_id</code> = 0<a class="headerlink" href="#_CPPv4N6ripple5Block6gpu_idE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Device index. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple5Block10data_stateE">
+<span id="_CPPv3N6ripple5Block10data_stateE"></span><span id="_CPPv2N6ripple5Block10data_stateE"></span><span id="ripple::Block::data_state__DataState"></span><span class="target" id="structripple_1_1Block_1af3a57e50c20da18b9d654f12459fb059"></span><a class="reference internal" href="enum_namespaceripple_1a0c2d39511c6a3ff234ce9c2a7885d528.html#_CPPv4N6ripple9DataStateE" title="ripple::DataState">DataState</a> <code class="sig-name descname">data_state</code> = <a class="reference internal" href="enum_namespaceripple_1a0c2d39511c6a3ff234ce9c2a7885d528.html#_CPPv4N6ripple9DataStateE" title="ripple::DataState">DataState</a>::<a class="reference internal" href="enum_namespaceripple_1a0c2d39511c6a3ff234ce9c2a7885d528.html#_CPPv4N6ripple9DataState7invalidE" title="ripple::DataState::invalid">invalid</a><a class="headerlink" href="#_CPPv4N6ripple5Block10data_stateE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Data state. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Attributes</p>
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple5Block4dimsE">
+<span id="_CPPv3N6ripple5Block4dimsE"></span><span id="_CPPv2N6ripple5Block4dimsE"></span><span id="ripple::Block::dims__s"></span><span class="target" id="structripple_1_1Block_1a1a51e5905e39e759c2a9d8e14c40bf3f"></span><em class="property">constexpr</em> size_t <code class="sig-name descname">dims</code> = <a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple5BlockE" title="ripple::Block::Dimensions">Dimensions</a><a class="headerlink" href="#_CPPv4N6ripple5Block4dimsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the number of dimension for the block. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structripple_1_1BlockExtractor.html" class="btn btn-neutral float-right" title="Struct BlockExtractor" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="structripple_1_1ArrayTraits_3_01VecImpl_3_01T_00_01Size_00_01LayoutType_01_4_01_4.html" class="btn btn-neutral" title="Template Struct ArrayTraits&lt; VecImpl&lt; T, Size, LayoutType &gt; &gt;" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Template Struct Block</a><ul>
+<li><a class="reference internal" href="#inheritance-relationships">Inheritance Relationships</a><ul>
+<li><a class="reference internal" href="#base-type">Base Type</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

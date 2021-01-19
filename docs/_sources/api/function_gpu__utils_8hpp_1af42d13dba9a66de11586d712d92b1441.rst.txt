@@ -1,0 +1,13 @@
+.. _exhale_function_gpu__utils_8hpp_1af42d13dba9a66de11586d712d92b1441:
+
+Function ripple::gpu::set_device
+================================
+
+- Defined in :ref:`file_include_ripple_core_arch_gpu_utils.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::gpu::set_device(uint32_t)

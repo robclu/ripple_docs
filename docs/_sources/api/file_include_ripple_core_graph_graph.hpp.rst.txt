@@ -1,0 +1,84 @@
+
+.. _file_include_ripple_core_graph_graph.hpp:
+
+File graph.hpp
+==============
+
+
+This file implements a Graph class, which is simply a collection of nodes with a specifier for where to allocate the nodes. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/graph/graph.hpp``)
+----------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_graph_graph.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``../algorithm/unrolled_for.hpp``
+
+- ``../allocation/allocator.hpp``
+
+- ``../arch/cache.hpp``
+
+- ``../utility/spinlock.hpp``
+
+- ``../utility/type_traits.hpp``
+
+- ``memcopy.hpp`` (:ref:`file_include_ripple_core_graph_memcopy.hpp`)
+
+- ``memory`` (:ref:`file_include_ripple_core_container_block_memory_properties.hpp`)
+
+- ``mutex``
+
+- ``node.hpp`` (:ref:`file_include_ripple_core_graph_node.hpp`)
+
+- ``optional``
+
+- ``reducer.hpp`` (:ref:`file_include_ripple_core_graph_reducer.hpp`)
+
+- ``splitter.hpp`` (:ref:`file_include_ripple_core_graph_splitter.hpp`)
+
+- ``unordered_map``
+
+- ``unordered_set``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_execution_executor.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1Graph`
+

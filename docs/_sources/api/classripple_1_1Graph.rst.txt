@@ -1,0 +1,16 @@
+.. _exhale_class_classripple_1_1Graph:
+
+Class Graph
+===========
+
+- Defined in :ref:`file_include_ripple_core_graph_graph.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ripple::Graph
+   :members:
+   :protected-members:
+   :undoc-members:

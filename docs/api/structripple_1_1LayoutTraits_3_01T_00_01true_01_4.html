@@ -1,0 +1,528 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Template Struct LayoutTraits&lt; T, true &gt; &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Struct LoadBoundary" href="structripple_1_1LoadBoundary.html" />
+  <link rel="prev" title="Template Struct LayoutTraits" href="structripple_1_1LayoutTraits.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Template Struct LayoutTraits&lt; T, true &gt;</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/structripple_1_1LayoutTraits_3_01T_00_01true_01_4.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="template-struct-layouttraits-t-true">
+<span id="exhale-struct-structripple-1-1layouttraits-3-01t-00-01true-01-4"></span><h1>Template Struct LayoutTraits&lt; T, true &gt;<a class="headerlink" href="#template-struct-layouttraits-t-true" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_storage_layout_traits.hpp.html#file-include-ripple-core-storage-layout-traits-hpp"><span class="std std-ref">File layout_traits.hpp</span></a></p></li>
+</ul>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp struct">
+<dt id="_CPPv4I0EN6ripple12LayoutTraitsI1TXL1EEEE">
+<span id="_CPPv3I0EN6ripple12LayoutTraitsI1TXL1EEEE"></span><span id="_CPPv2I0EN6ripple12LayoutTraitsI1TXtrueEEE"></span>template&lt;typename <code class="sig-name descname">T</code>&gt;<br /><span class="target" id="structripple_1_1LayoutTraits_3_01T_00_01true_01_4"></span><em class="property">struct </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">LayoutTraits</code>&lt;<a class="reference internal" href="#_CPPv4I0EN6ripple12LayoutTraitsI1TXL1EEEE" title="ripple::LayoutTraits&lt;T, true&gt;::T">T</a>, true&gt;<a class="headerlink" href="#_CPPv4I0EN6ripple12LayoutTraitsI1TXL1EEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Specialization of the layout traits for caset that the template type T implements the <a class="reference internal" href="structripple_1_1PolymorphicLayout.html#structripple_1_1PolymorphicLayout"><span class="std std-ref">PolymorphicLayout</span></a> interface, and when the layout kind for the type is a view type, which means that it <em>does not</em> own the data, and the data is therefore allocated somewhere else the the storage points to it. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This should be used as layout_traits_t&lt;T&gt;, since that aliases the correct specializtion.</p>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type to get the layout traits for. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple12LayoutTraitsI1TXL1EEE11IterStorageE">
+<span id="_CPPv3N6ripple12LayoutTraitsI1TXL1EEE11IterStorageE"></span><span id="_CPPv2N6ripple12LayoutTraitsI1TXtrueEE11IterStorageE"></span><span class="target" id="structripple_1_1LayoutTraits_3_01T_00_01true_01_4_1ac102031079231d6430c573e28951cc96"></span><em class="property">using </em><code class="sig-name descname">IterStorage</code> = std::conditional_t&lt;<a class="reference internal" href="#_CPPv4N6ripple12LayoutTraitsI1TXL1EEE15is_strided_viewE" title="ripple::LayoutTraits&lt;T, true&gt;::is_strided_view">is_strided_view</a>, <a class="reference internal" href="typedef_namespaceripple_1a492584af5a7d6e38490e87af64fa76e9.html#_CPPv4N6ripple11StridedViewE" title="ripple::StridedView">StridedView</a>, ContigView&gt;<a class="headerlink" href="#_CPPv4N6ripple12LayoutTraitsI1TXL1EEE11IterStorageE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type to use when storing in an iterator. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple12LayoutTraitsI1TXL1EEE9AllocatorE">
+<span id="_CPPv3N6ripple12LayoutTraitsI1TXL1EEE9AllocatorE"></span><span id="_CPPv2N6ripple12LayoutTraitsI1TXtrueEE9AllocatorE"></span><span class="target" id="structripple_1_1LayoutTraits_3_01T_00_01true_01_4_1a13fcdc4e43ad6b0b136db79db0ab2ed5"></span><em class="property">using </em><code class="sig-name descname">Allocator</code> = <em class="property">typename</em> <a class="reference internal" href="#_CPPv4N6ripple12LayoutTraitsI1TXL1EEE11IterStorageE" title="ripple::LayoutTraits&lt;T, true&gt;::IterStorage">IterStorage</a>::Allocator<a class="headerlink" href="#_CPPv4N6ripple12LayoutTraitsI1TXL1EEE9AllocatorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the allocator for type T. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple12LayoutTraitsI1TXL1EEE5ValueE">
+<span id="_CPPv3N6ripple12LayoutTraitsI1TXL1EEE5ValueE"></span><span id="_CPPv2N6ripple12LayoutTraitsI1TXtrueEE5ValueE"></span><span class="target" id="structripple_1_1LayoutTraits_3_01T_00_01true_01_4_1a60e592a18c8b9fb494e0c107f474c3c4"></span><em class="property">using </em><code class="sig-name descname">Value</code> = std::decay_t&lt;<a class="reference internal" href="#_CPPv4I0EN6ripple12LayoutTraitsI1TXL1EEEE" title="ripple::LayoutTraits&lt;T, true&gt;::T">T</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple12LayoutTraitsI1TXL1EEE5ValueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the value type for the layout. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple12LayoutTraitsI1TXL1EEE8IterCopyE">
+<span id="_CPPv3N6ripple12LayoutTraitsI1TXL1EEE8IterCopyE"></span><span id="_CPPv2N6ripple12LayoutTraitsI1TXtrueEE8IterCopyE"></span><span class="target" id="structripple_1_1LayoutTraits_3_01T_00_01true_01_4_1a948be54f497e82378eb8b2efef5c7d17"></span><em class="property">using </em><code class="sig-name descname">IterCopy</code> = <em class="property">typename</em> AsContigOwned::Type<a class="headerlink" href="#_CPPv4N6ripple12LayoutTraitsI1TXL1EEE8IterCopyE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type T with owned storage for copying. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple12LayoutTraitsI1TXL1EEE7IterRefE">
+<span id="_CPPv3N6ripple12LayoutTraitsI1TXL1EEE7IterRefE"></span><span id="_CPPv2N6ripple12LayoutTraitsI1TXtrueEE7IterRefE"></span><span class="target" id="structripple_1_1LayoutTraits_3_01T_00_01true_01_4_1afb29f643ab9b7ab71f3ac579410f1a52"></span><em class="property">using </em><code class="sig-name descname">IterRef</code> = <a class="reference internal" href="#_CPPv4N6ripple12LayoutTraitsI1TXL1EEE5ValueE" title="ripple::LayoutTraits&lt;T, true&gt;::Value">Value</a><a class="headerlink" href="#_CPPv4N6ripple12LayoutTraitsI1TXL1EEE7IterRefE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type when referencing from an iterator. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple12LayoutTraitsI1TXL1EEE12IterConstRefE">
+<span id="_CPPv3N6ripple12LayoutTraitsI1TXL1EEE12IterConstRefE"></span><span id="_CPPv2N6ripple12LayoutTraitsI1TXtrueEE12IterConstRefE"></span><span class="target" id="structripple_1_1LayoutTraits_3_01T_00_01true_01_4_1af9cad2ce14c72d95c13acf0d060f97bb"></span><em class="property">using </em><code class="sig-name descname">IterConstRef</code> = <em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple12LayoutTraitsI1TXL1EEE5ValueE" title="ripple::LayoutTraits&lt;T, true&gt;::Value">Value</a><a class="headerlink" href="#_CPPv4N6ripple12LayoutTraitsI1TXL1EEE12IterConstRefE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of a const reference for an iterator. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple12LayoutTraitsI1TXL1EEE7IterPtrE">
+<span id="_CPPv3N6ripple12LayoutTraitsI1TXL1EEE7IterPtrE"></span><span id="_CPPv2N6ripple12LayoutTraitsI1TXtrueEE7IterPtrE"></span><span class="target" id="structripple_1_1LayoutTraits_3_01T_00_01true_01_4_1a3ed3bfb0995c40de6178b480ea22e64d"></span><em class="property">using </em><code class="sig-name descname">IterPtr</code> = <a class="reference internal" href="structripple_1_1PointerWrapper.html#_CPPv4I0EN6ripple14PointerWrapperE" title="ripple::PointerWrapper">PointerWrapper</a>&lt;<a class="reference internal" href="#_CPPv4N6ripple12LayoutTraitsI1TXL1EEE5ValueE" title="ripple::LayoutTraits&lt;T, true&gt;::Value">Value</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple12LayoutTraitsI1TXL1EEE7IterPtrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of a pointer for an iterator. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple12LayoutTraitsI1TXL1EEE12IterConstPtrE">
+<span id="_CPPv3N6ripple12LayoutTraitsI1TXL1EEE12IterConstPtrE"></span><span id="_CPPv2N6ripple12LayoutTraitsI1TXtrueEE12IterConstPtrE"></span><span class="target" id="structripple_1_1LayoutTraits_3_01T_00_01true_01_4_1ae9e255bdab487c284a8f91b4c147a1b6"></span><em class="property">using </em><code class="sig-name descname">IterConstPtr</code> = <em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple12LayoutTraitsI1TXL1EEE7IterPtrE" title="ripple::LayoutTraits&lt;T, true&gt;::IterPtr">IterPtr</a><a class="headerlink" href="#_CPPv4N6ripple12LayoutTraitsI1TXL1EEE12IterConstPtrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines thet type of a const pointer for an iterator. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple12LayoutTraitsI1TXL1EEE6RawPtrE">
+<span id="_CPPv3N6ripple12LayoutTraitsI1TXL1EEE6RawPtrE"></span><span id="_CPPv2N6ripple12LayoutTraitsI1TXtrueEE6RawPtrE"></span><span class="target" id="structripple_1_1LayoutTraits_3_01T_00_01true_01_4_1a679fa0cf5a9742359a963f3f2873ae78"></span><em class="property">using </em><code class="sig-name descname">RawPtr</code> = void*<a class="headerlink" href="#_CPPv4N6ripple12LayoutTraitsI1TXL1EEE6RawPtrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the raw pointer to the data. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple12LayoutTraitsI1TXL1EEE11ConstRawPtrE">
+<span id="_CPPv3N6ripple12LayoutTraitsI1TXL1EEE11ConstRawPtrE"></span><span id="_CPPv2N6ripple12LayoutTraitsI1TXtrueEE11ConstRawPtrE"></span><span class="target" id="structripple_1_1LayoutTraits_3_01T_00_01true_01_4_1a36d75ef63359650ef8ebab1c52061a0f"></span><em class="property">using </em><code class="sig-name descname">ConstRawPtr</code> = <em class="property">const</em> void*<a class="headerlink" href="#_CPPv4N6ripple12LayoutTraitsI1TXL1EEE11ConstRawPtrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the const raw pointer to the data. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Attributes</p>
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple12LayoutTraitsI1TXL1EEE11layout_kindE">
+<span id="_CPPv3N6ripple12LayoutTraitsI1TXL1EEE11layout_kindE"></span><span id="_CPPv2N6ripple12LayoutTraitsI1TXtrueEE11layout_kindE"></span><span id="ripple::LayoutTraits:T.true:::layout_kind__LayoutKind"></span><span class="target" id="structripple_1_1LayoutTraits_3_01T_00_01true_01_4_1ad13b8988ab1795bbd97dd4785350a65f"></span><em class="property">constexpr</em> <a class="reference internal" href="enum_namespaceripple_1abc26ba3863abe12cc573afb0837e43be.html#_CPPv4N6ripple10LayoutKindE" title="ripple::LayoutKind">LayoutKind</a> <code class="sig-name descname">layout_kind</code> = detail::<a class="reference internal" href="structripple_1_1detail_1_1StorageLayoutKind.html#_CPPv4I0EN6ripple6detail17StorageLayoutKindE" title="ripple::detail::StorageLayoutKind">StorageLayoutKind</a>&lt;<a class="reference internal" href="#_CPPv4I0EN6ripple12LayoutTraitsI1TXL1EEEE" title="ripple::LayoutTraits&lt;T, true&gt;::T">T</a>&gt;::value<a class="headerlink" href="#_CPPv4N6ripple12LayoutTraitsI1TXL1EEE11layout_kindE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the layout for T. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple12LayoutTraitsI1TXL1EEE15is_strided_viewE">
+<span id="_CPPv3N6ripple12LayoutTraitsI1TXL1EEE15is_strided_viewE"></span><span id="_CPPv2N6ripple12LayoutTraitsI1TXtrueEE15is_strided_viewE"></span><span id="ripple::LayoutTraits:T.true:::is_strided_view__b"></span><span class="target" id="structripple_1_1LayoutTraits_3_01T_00_01true_01_4_1aba7d5460d19ce50f4f1467fe62c7bbfa"></span><em class="property">constexpr</em> bool <code class="sig-name descname">is_strided_view</code> = <a class="reference internal" href="variable_namespaceripple_1a082fa1e501ff70c30d3b37c37a3f0402.html#_CPPv4I_10LayoutKindEN6ripple17is_strided_view_vE" title="ripple::is_strided_view_v">is_strided_view_v</a>&lt;<a class="reference internal" href="#_CPPv4N6ripple12LayoutTraitsI1TXL1EEE11layout_kindE" title="ripple::LayoutTraits&lt;T, true&gt;::layout_kind">layout_kind</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple12LayoutTraitsI1TXL1EEE15is_strided_viewE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>True if the Layout is a strided view kind. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple12LayoutTraitsI1TXL1EEE18is_contiguous_viewE">
+<span id="_CPPv3N6ripple12LayoutTraitsI1TXL1EEE18is_contiguous_viewE"></span><span id="_CPPv2N6ripple12LayoutTraitsI1TXtrueEE18is_contiguous_viewE"></span><span id="ripple::LayoutTraits:T.true:::is_contiguous_view__b"></span><span class="target" id="structripple_1_1LayoutTraits_3_01T_00_01true_01_4_1af14d30168acf742c3cfaff23bce539f3"></span><em class="property">constexpr</em> bool <code class="sig-name descname">is_contiguous_view</code> = <a class="reference internal" href="variable_namespaceripple_1a6a55aec032cf5376c32c93c668c45994.html#_CPPv4I_10LayoutKindEN6ripple16is_contig_view_vE" title="ripple::is_contig_view_v">is_contig_view_v</a>&lt;<a class="reference internal" href="#_CPPv4N6ripple12LayoutTraitsI1TXL1EEE11layout_kindE" title="ripple::LayoutTraits&lt;T, true&gt;::layout_kind">layout_kind</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple12LayoutTraitsI1TXL1EEE18is_contiguous_viewE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>True if the Layout is a contiguous view kind. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple12LayoutTraitsI1TXL1EEE21is_polymorphic_layoutE">
+<span id="_CPPv3N6ripple12LayoutTraitsI1TXL1EEE21is_polymorphic_layoutE"></span><span id="_CPPv2N6ripple12LayoutTraitsI1TXtrueEE21is_polymorphic_layoutE"></span><span id="ripple::LayoutTraits:T.true:::is_polymorphic_layout__b"></span><span class="target" id="structripple_1_1LayoutTraits_3_01T_00_01true_01_4_1a3458b19e83c21041fa51e66dd37c86c0"></span><em class="property">constexpr</em> bool <code class="sig-name descname">is_polymorphic_layout</code> = true<a class="headerlink" href="#_CPPv4N6ripple12LayoutTraitsI1TXL1EEE21is_polymorphic_layoutE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines if the type T is a <a class="reference internal" href="structripple_1_1PolymorphicLayout.html#structripple_1_1PolymorphicLayout"><span class="std std-ref">PolymorphicLayout</span></a> type. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple12LayoutTraitsI1TXL1EEE9alignmentE">
+<span id="_CPPv3N6ripple12LayoutTraitsI1TXL1EEE9alignmentE"></span><span id="_CPPv2N6ripple12LayoutTraitsI1TXtrueEE9alignmentE"></span><span id="ripple::LayoutTraits:T.true:::alignment__s"></span><span class="target" id="structripple_1_1LayoutTraits_3_01T_00_01true_01_4_1aa88be41bd8881f7367ad1a5e29d8a203"></span><em class="property">constexpr</em> size_t <code class="sig-name descname">alignment</code> = <a class="reference internal" href="#_CPPv4N6ripple12LayoutTraitsI1TXL1EEE9AllocatorE" title="ripple::LayoutTraits&lt;T, true&gt;::Allocator">Allocator</a>::alignment<a class="headerlink" href="#_CPPv4N6ripple12LayoutTraitsI1TXL1EEE9alignmentE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the alignment required for allocation of the type. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structripple_1_1LoadBoundary.html" class="btn btn-neutral float-right" title="Struct LoadBoundary" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="structripple_1_1LayoutTraits.html" class="btn btn-neutral" title="Template Struct LayoutTraits" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Template Struct LayoutTraits&lt; T, true &gt;</a><ul>
+<li><a class="reference internal" href="#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

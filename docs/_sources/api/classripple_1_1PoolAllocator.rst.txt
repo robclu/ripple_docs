@@ -1,0 +1,16 @@
+.. _exhale_class_classripple_1_1PoolAllocator:
+
+Template Class PoolAllocator
+============================
+
+- Defined in :ref:`file_include_ripple_core_allocation_pool_allocator.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ripple::PoolAllocator
+   :members:
+   :protected-members:
+   :undoc-members:

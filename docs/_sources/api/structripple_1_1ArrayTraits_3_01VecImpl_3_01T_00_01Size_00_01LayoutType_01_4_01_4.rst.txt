@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1ArrayTraits_3_01VecImpl_3_01T_00_01Size_00_01LayoutType_01_4_01_4:
+
+Template Struct ArrayTraits< VecImpl< T, Size, LayoutType > >
+=============================================================
+
+- Defined in :ref:`file_include_ripple_core_container_array_traits.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::ArrayTraits< VecImpl< T, Size, LayoutType > >
+   :members:
+   :protected-members:
+   :undoc-members:

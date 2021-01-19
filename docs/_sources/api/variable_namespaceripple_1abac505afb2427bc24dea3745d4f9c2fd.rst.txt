@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1abac505afb2427bc24dea3745d4f9c2fd:
+
+Variable ripple::is_any_block_v
+===============================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::is_any_block_v

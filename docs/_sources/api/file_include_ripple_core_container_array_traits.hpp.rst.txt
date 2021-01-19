@@ -1,0 +1,74 @@
+
+.. _file_include_ripple_core_container_array_traits.hpp:
+
+File array_traits.hpp
+=====================
+
+
+This file defines forward declarations and traits for arrays. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/container/array_traits.hpp``)
+---------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_container_array_traits.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``../storage/storage_layout.hpp``
+
+- ``../utility/number.hpp``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_iterator_iterator_traits.hpp`
+
+- :ref:`file_include_ripple_core_iterator_block_iterator.hpp`
+
+- :ref:`file_include_ripple_core_container_array.hpp`
+
+- :ref:`file_include_ripple_core_container_vec.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1Array`
+
+- :ref:`exhale_struct_structripple_1_1ArrayTraits`
+
+- :ref:`exhale_struct_structripple_1_1ArrayTraits_3_01Array_3_01Impl_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1ArrayTraits_3_01VecImpl_3_01T_00_01Size_00_01LayoutType_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1VecImpl`
+

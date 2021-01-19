@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1abbdefb645bb879c1f2677922f6f8520d:
+
+Template Function ripple::get(const Tuple<Ts...>&&)
+===================================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::get(const Tuple<Ts...>&&)

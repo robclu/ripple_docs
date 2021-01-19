@@ -1,0 +1,58 @@
+
+.. _file_include_ripple_core_allocation_aligned_heap_allocator.hpp:
+
+File aligned_heap_allocator.hpp
+===============================
+
+
+This file defines an allocator which uses aligned_alloc for allocation. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/allocation/aligned_heap_allocator.hpp``)
+--------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_allocation_aligned_heap_allocator.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``cstdlib``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_allocation_allocator.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1AlignedHeapAllocator`
+

@@ -1,0 +1,13 @@
+.. _exhale_function_utils___8hpp_1a7a1777a7046a5d462240adb5983da811:
+
+Template Function ripple::detail::add_friend_nodes
+==================================================
+
+- Defined in :ref:`file_include_ripple_core_graph_detail_utils_.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::detail::add_friend_nodes(Node<Align, MinStorage>&, Iterator&&)

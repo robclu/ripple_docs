@@ -1,0 +1,808 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Template Struct VecImpl &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Template Struct Vector" href="structripple_1_1Vector.html" />
+  <link rel="prev" title="Struct Topology" href="structripple_1_1Topology.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Template Struct VecImpl</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/structripple_1_1VecImpl.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="template-struct-vecimpl">
+<span id="exhale-struct-structripple-1-1vecimpl"></span><h1>Template Struct VecImpl<a class="headerlink" href="#template-struct-vecimpl" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_container_array_traits.hpp.html#file-include-ripple-core-container-array-traits-hpp"><span class="std std-ref">File array_traits.hpp</span></a></p></li>
+</ul>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp struct">
+<dt id="_CPPv4I000EN6ripple7VecImplE">
+<span id="_CPPv3I000EN6ripple7VecImplE"></span><span id="_CPPv2I000EN6ripple7VecImplE"></span>template&lt;typename <code class="sig-name descname">T</code>, typename <code class="sig-name descname">Size</code>, typename <code class="sig-name descname">Layout</code>&gt;<br /><span class="target" id="structripple_1_1VecImpl"></span><em class="property">struct </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">VecImpl</code><a class="headerlink" href="#_CPPv4I000EN6ripple7VecImplE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This is an implementation class for a statically sized vector class with a flexible storage layout. </p>
+<p>The <a class="reference internal" href="#structripple_1_1VecImpl"><span class="std std-ref">VecImpl</span></a> class implements the <a class="reference internal" href="structripple_1_1Array.html#structripple_1_1Array"><span class="std std-ref">Array</span></a> interface for a vector with a fixed type and known compile time size.</p>
+<p><p>The data for the elements is allocated according to the layout, and can be contiguous, owned, or strided.</p>
+<dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This is an implementation class, there are aliases for vectors, </p>
+</dd>
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="structripple_1_1Vector.html#structripple_1_1Vector"><span class="std std-ref">Vector</span></a>, </p>
+</dd>
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="typedef_namespaceripple_1a802c4dbdd0918625c13cf22d0be1d4af.html#namespaceripple_1a802c4dbdd0918625c13cf22d0be1d4af"><span class="std std-ref">Vec</span></a>.</p>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the data for the vector. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Size</span></code>: The size of the vector. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Layout</span></code>: The storage layout of the vector.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This class should not be used directly, use the Vec aliases.</p>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the elements in the vector. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Size</span></code>: The size of the vector. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Layout</span></code>: The type of the storage layout for the vector. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7VecImpl7VecImplEv">
+<span id="_CPPv3N6ripple7VecImpl7VecImplEv"></span><span id="_CPPv2N6ripple7VecImpl7VecImplEv"></span><span id="ripple::VecImpl::VecImplCE"></span><span class="target" id="structripple_1_1VecImpl_1ab41276d17d64181a808d43d0d98b4c59"></span><em class="property">constexpr</em> <code class="sig-name descname">VecImpl</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple7VecImpl7VecImplEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Default constructor for the vector. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7VecImpl7VecImplE1T">
+<span id="_CPPv3N6ripple7VecImpl7VecImplE1T"></span><span id="_CPPv2N6ripple7VecImpl7VecImplE1T"></span><span id="ripple::VecImpl::VecImpl__TCE"></span><span class="target" id="structripple_1_1VecImpl_1ae7e3c9b91e3f94e826715fe7abdc38b6"></span><em class="property">constexpr</em> <code class="sig-name descname">VecImpl</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I000EN6ripple7VecImplE" title="ripple::VecImpl::T">T</a> <em>val</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple7VecImpl7VecImplE1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets all elements of the vector to the value <code class="docutils literal notranslate"><span class="pre">val</span></code>. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">val</span></code>: The value to set all elements to. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDp_22variadic_size_enable_tI8elementsDp6ValuesEEN6ripple7VecImpl7VecImplEDpRR6Values">
+<span id="_CPPv3IDp_22variadic_size_enable_tI8elementsDp6ValuesEEN6ripple7VecImpl7VecImplEDpRR6Values"></span><span id="_CPPv2IDp_22variadic_size_enable_tI8elementsDp6ValuesEEN6ripple7VecImpl7VecImplEDpRR6Values"></span>template&lt;typename ...<code class="sig-name descname">Values</code>, <a class="reference internal" href="typedef_namespaceripple_1a7c175fd219d67505dbd1af37b87b166c.html#_CPPv4I_6size_tDpEN6ripple22variadic_size_enable_tE" title="ripple::variadic_size_enable_t">variadic_size_enable_t</a>&lt;elements, <a class="reference internal" href="#_CPPv4IDp_22variadic_size_enable_tI8elementsDp6ValuesEEN6ripple7VecImpl7VecImplEDpRR6Values" title="ripple::VecImpl::VecImpl::Values">Values</a>...&gt; = 0&gt;<br /><span class="target" id="structripple_1_1VecImpl_1a100403a3d246d64751333d6d6dfbbad5"></span><em class="property">constexpr</em> <code class="sig-name descname">VecImpl</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDp_22variadic_size_enable_tI8elementsDp6ValuesEEN6ripple7VecImpl7VecImplEDpRR6Values" title="ripple::VecImpl::VecImpl::Values">Values</a>&amp;&amp;... <em>values</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4IDp_22variadic_size_enable_tI8elementsDp6ValuesEEN6ripple7VecImpl7VecImplEDpRR6Values" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor to create the vector from a list of values. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This overload is only enabled when the number of elements in the variadic parameter pack matches the number of elements in the vector.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>The types of the values must be convertible to T.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">values</span></code>: The values to set the elements to. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Values</span></code>: The types of the values for setting. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7VecImpl7VecImplE7Storage">
+<span id="_CPPv3N6ripple7VecImpl7VecImplE7Storage"></span><span id="_CPPv2N6ripple7VecImpl7VecImplE7Storage"></span><span id="ripple::VecImpl::VecImpl__StorageCE"></span><span class="target" id="structripple_1_1VecImpl_1a26c4f66c76ab342505d154658d2cb99f"></span><em class="property">constexpr</em> <code class="sig-name descname">VecImpl</code><span class="sig-paren">(</span>Storage <em>storage</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple7VecImpl7VecImplE7Storage" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor to set the vector from other <code class="docutils literal notranslate"><span class="pre">storage</span></code>. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other storage to use to set the vector. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7VecImpl7VecImplERK7VecImpl">
+<span id="_CPPv3N6ripple7VecImpl7VecImplERK7VecImpl"></span><span id="_CPPv2N6ripple7VecImpl7VecImplERK7VecImpl"></span><span id="ripple::VecImpl::VecImpl__VecImplCRCE"></span><span class="target" id="structripple_1_1VecImpl_1aa8fe44f69a074424d3223019db3a8a7a"></span><em class="property">constexpr</em> <code class="sig-name descname">VecImpl</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple7VecImpl7VecImplERK7VecImpl" title="ripple::VecImpl::VecImpl">VecImpl</a> &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple7VecImpl7VecImplERK7VecImpl" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy constructor to set the vector from another vector. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other vector to use to initialize this one. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7VecImpl7VecImplERR7VecImpl">
+<span id="_CPPv3N6ripple7VecImpl7VecImplERR7VecImpl"></span><span id="_CPPv2N6ripple7VecImpl7VecImplERR7VecImpl"></span><span id="ripple::VecImpl::VecImpl__VecImplRRCE"></span><span class="target" id="structripple_1_1VecImpl_1a315ea6d5a569be1732399076c5ad6061"></span><em class="property">constexpr</em> <code class="sig-name descname">VecImpl</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple7VecImpl7VecImplERR7VecImpl" title="ripple::VecImpl::VecImpl">VecImpl</a> &amp;&amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple7VecImpl7VecImplERR7VecImpl" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Move constructor to set the vector from another vector. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other vector to use to initialize this one. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple7VecImpl7VecImplERK7VecImplI1T4Size11OtherLayoutE">
+<span id="_CPPv3I0EN6ripple7VecImpl7VecImplERK7VecImplI1T4Size11OtherLayoutE"></span><span id="_CPPv2I0EN6ripple7VecImpl7VecImplERK7VecImplI1T4Size11OtherLayoutE"></span>template&lt;typename <code class="sig-name descname">OtherLayout</code>&gt;<br /><span class="target" id="structripple_1_1VecImpl_1a2f3b46612a01b5e7c72f9291901db8d5"></span><em class="property">constexpr</em> <code class="sig-name descname">VecImpl</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN6ripple7VecImpl7VecImplERK7VecImplI1T4Size11OtherLayoutE" title="ripple::VecImpl::VecImpl">VecImpl</a>&lt;<a class="reference internal" href="#_CPPv4I000EN6ripple7VecImplE" title="ripple::VecImpl::T">T</a>, <a class="reference internal" href="#_CPPv4I000EN6ripple7VecImplE" title="ripple::VecImpl::Size">Size</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple7VecImpl7VecImplERK7VecImplI1T4Size11OtherLayoutE" title="ripple::VecImpl::VecImpl::OtherLayout">OtherLayout</a>&gt; &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4I0EN6ripple7VecImpl7VecImplERK7VecImplI1T4Size11OtherLayoutE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy constructor to set the vector from another vector with a different storage layout. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other vector to use to initialize this one. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">OtherLayout</span></code>: The layout of the other storage. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple7VecImpl7VecImplERR7VecImplI1T4Size11OtherLayoutE">
+<span id="_CPPv3I0EN6ripple7VecImpl7VecImplERR7VecImplI1T4Size11OtherLayoutE"></span><span id="_CPPv2I0EN6ripple7VecImpl7VecImplERR7VecImplI1T4Size11OtherLayoutE"></span>template&lt;typename <code class="sig-name descname">OtherLayout</code>&gt;<br /><span class="target" id="structripple_1_1VecImpl_1aa253d0999f4fb62852e6aab7dab56d9e"></span><em class="property">constexpr</em> <code class="sig-name descname">VecImpl</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN6ripple7VecImpl7VecImplERR7VecImplI1T4Size11OtherLayoutE" title="ripple::VecImpl::VecImpl">VecImpl</a>&lt;<a class="reference internal" href="#_CPPv4I000EN6ripple7VecImplE" title="ripple::VecImpl::T">T</a>, <a class="reference internal" href="#_CPPv4I000EN6ripple7VecImplE" title="ripple::VecImpl::Size">Size</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple7VecImpl7VecImplERR7VecImplI1T4Size11OtherLayoutE" title="ripple::VecImpl::VecImpl::OtherLayout">OtherLayout</a>&gt; &amp;&amp;<em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN6ripple7VecImpl7VecImplERR7VecImplI1T4Size11OtherLayoutE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Move constructor to set the vector from another vector with a different storage layout. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other vector to use to initialize this one. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">OtherLayout</span></code>: The layout of the other storage. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple7VecImpl7VecImplERK5ArrayI4ImplE">
+<span id="_CPPv3I0EN6ripple7VecImpl7VecImplERK5ArrayI4ImplE"></span><span id="_CPPv2I0EN6ripple7VecImpl7VecImplERK5ArrayI4ImplE"></span>template&lt;typename <code class="sig-name descname">Impl</code>&gt;<br /><span class="target" id="structripple_1_1VecImpl_1a8796fef00c9d70fbb870c41ba8586b1a"></span><em class="property">constexpr</em> <code class="sig-name descname">VecImpl</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="structripple_1_1Array.html#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array">Array</a>&lt;<a class="reference internal" href="#_CPPv4I0EN6ripple7VecImpl7VecImplERK5ArrayI4ImplE" title="ripple::VecImpl::VecImpl::Impl">Impl</a>&gt; &amp;<em>arr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN6ripple7VecImpl7VecImplERK5ArrayI4ImplE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor to create the vector from an array of the same type and size. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">arr</span></code>: The array to use to create this one. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Impl</span></code>: The implementation of the array interface. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7VecImplaSERK7VecImpl">
+<span id="_CPPv3N6ripple7VecImplaSERK7VecImpl"></span><span id="_CPPv2N6ripple7VecImplaSERK7VecImpl"></span><span id="ripple::VecImpl::assign-operator__VecImplCR"></span><span class="target" id="structripple_1_1VecImpl_1ad0230df4970fb0d9fd447039647e89c8"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I000EN6ripple7VecImplE" title="ripple::VecImpl">VecImpl</a> &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I000EN6ripple7VecImplE" title="ripple::VecImpl">VecImpl</a>&amp;<a class="headerlink" href="#_CPPv4N6ripple7VecImplaSERK7VecImpl" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of copy assignment overload to copy the elements from another vector to this vector. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A references to the modified vector. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other vector to copy from. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7VecImplaSERR7VecImpl">
+<span id="_CPPv3N6ripple7VecImplaSERR7VecImpl"></span><span id="_CPPv2N6ripple7VecImplaSERR7VecImpl"></span><span id="ripple::VecImpl::assign-operator__VecImplRR"></span><span class="target" id="structripple_1_1VecImpl_1af34cb48cfa17a41a3161646bc9583472"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I000EN6ripple7VecImplE" title="ripple::VecImpl">VecImpl</a> &amp;&amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I000EN6ripple7VecImplE" title="ripple::VecImpl">VecImpl</a>&amp;<a class="headerlink" href="#_CPPv4N6ripple7VecImplaSERR7VecImpl" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of move assignment overload to move the elements from another vector to this vector. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A references to the modified vector. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other vector to move. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple7VecImplaSER7VecImplRK7VecImplI1T4Size11OtherLayoutE">
+<span id="_CPPv3I0EN6ripple7VecImplaSERK7VecImplI1T4Size11OtherLayoutE"></span><span id="_CPPv2I0EN6ripple7VecImplaSERK7VecImplI1T4Size11OtherLayoutE"></span>template&lt;typename <code class="sig-name descname">OtherLayout</code>&gt;<br /><span class="target" id="structripple_1_1VecImpl_1a0e16d0b03782f8ec656ebe6bb36ceb08"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I000EN6ripple7VecImplE" title="ripple::VecImpl">VecImpl</a>&lt;<a class="reference internal" href="#_CPPv4I000EN6ripple7VecImplE" title="ripple::VecImpl::T">T</a>, <a class="reference internal" href="#_CPPv4I000EN6ripple7VecImplE" title="ripple::VecImpl::Size">Size</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple7VecImplaSER7VecImplRK7VecImplI1T4Size11OtherLayoutE" title="ripple::VecImpl::operator=::OtherLayout">OtherLayout</a>&gt; &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I000EN6ripple7VecImplE" title="ripple::VecImpl">VecImpl</a>&amp;<a class="headerlink" href="#_CPPv4I0EN6ripple7VecImplaSER7VecImplRK7VecImplI1T4Size11OtherLayoutE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of copy assignment overload to copy the elements from another vector with a different storage layout to this vector. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A references to the modified vector. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other vector to copy from. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">OtherLayout</span></code>: The layout of the other vector. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple7VecImplaSER7VecImplRK5ArrayI4ImplE">
+<span id="_CPPv3I0EN6ripple7VecImplaSERK5ArrayI4ImplE"></span><span id="_CPPv2I0EN6ripple7VecImplaSERK5ArrayI4ImplE"></span>template&lt;typename <code class="sig-name descname">Impl</code>&gt;<br /><span class="target" id="structripple_1_1VecImpl_1ac1d0a38bd87fd3b7eb173dc4be63923a"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="structripple_1_1Array.html#_CPPv4I0EN6ripple5ArrayE" title="ripple::Array">Array</a>&lt;<a class="reference internal" href="#_CPPv4I0EN6ripple7VecImplaSER7VecImplRK5ArrayI4ImplE" title="ripple::VecImpl::operator=::Impl">Impl</a>&gt; &amp;<em>arr</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I000EN6ripple7VecImplE" title="ripple::VecImpl">VecImpl</a>&amp;<a class="headerlink" href="#_CPPv4I0EN6ripple7VecImplaSER7VecImplRK5ArrayI4ImplE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of copy assignment overload to copy the elements from an array into this vector. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A references to the modified vector. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">arr</span></code>: The array to copy. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Impl</span></code>: The type of the array implementation. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple7VecImplaSER7VecImplRR7VecImplI1T4Size11OtherLayoutE">
+<span id="_CPPv3I0EN6ripple7VecImplaSERR7VecImplI1T4Size11OtherLayoutE"></span><span id="_CPPv2I0EN6ripple7VecImplaSERR7VecImplI1T4Size11OtherLayoutE"></span>template&lt;typename <code class="sig-name descname">OtherLayout</code>&gt;<br /><span class="target" id="structripple_1_1VecImpl_1ad352401103b0faf854d6571dccac3468"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I000EN6ripple7VecImplE" title="ripple::VecImpl">VecImpl</a>&lt;<a class="reference internal" href="#_CPPv4I000EN6ripple7VecImplE" title="ripple::VecImpl::T">T</a>, <a class="reference internal" href="#_CPPv4I000EN6ripple7VecImplE" title="ripple::VecImpl::Size">Size</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple7VecImplaSER7VecImplRR7VecImplI1T4Size11OtherLayoutE" title="ripple::VecImpl::operator=::OtherLayout">OtherLayout</a>&gt; &amp;&amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I000EN6ripple7VecImplE" title="ripple::VecImpl">VecImpl</a>&amp;<a class="headerlink" href="#_CPPv4I0EN6ripple7VecImplaSER7VecImplRR7VecImplI1T4Size11OtherLayoutE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of move assignment overload to copy the elements from another vector to this vector. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A references to the modified vector. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other vector to move. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">OtherLayout</span></code>: The layout of the other vector. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple7VecImplixE6size_t">
+<span id="_CPPv3NK6ripple7VecImplixE6size_t"></span><span id="_CPPv2NK6ripple7VecImplixE6size_t"></span><span id="ripple::VecImpl::subscript-operator__sCCE"></span><span class="target" id="structripple_1_1VecImpl_1a9e5da5ac346b8611f8d8a1bedfbace18"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator[]</code><span class="sig-paren">(</span>size_t <em>i</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <em class="property">const</em> Value&amp;<a class="headerlink" href="#_CPPv4NK6ripple7VecImplixE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets a constant reference to the element at position i. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A const reference to the element at position i. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>: The index of the element to get. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7VecImplixE6size_t">
+<span id="_CPPv3N6ripple7VecImplixE6size_t"></span><span id="_CPPv2N6ripple7VecImplixE6size_t"></span><span id="ripple::VecImpl::subscript-operator__sCE"></span><span class="target" id="structripple_1_1VecImpl_1a5e8763c1cc1ff4a2c475db41f7d7e7ff"></span><em class="property">constexpr</em> auto <code class="sig-name descname">operator[]</code><span class="sig-paren">(</span>size_t <em>i</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; Value&amp;<a class="headerlink" href="#_CPPv4N6ripple7VecImplixE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets a reference to the element at position i. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the element at position i. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>: The index of the element to get. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple7VecImpl9componentER5ValueRR5Index">
+<span id="_CPPv3I0EN6ripple7VecImpl9componentERR5Index"></span><span id="_CPPv2I0EN6ripple7VecImpl9componentERR5Index"></span>template&lt;typename <code class="sig-name descname">Index</code>&gt;<br /><span class="target" id="structripple_1_1VecImpl_1a6db70d9a59d4dad288de8445d17825bf"></span>auto <code class="sig-name descname">component</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN6ripple7VecImpl9componentER5ValueRR5Index" title="ripple::VecImpl::component::Index">Index</a> &amp;&amp;<em>i</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; Value&amp;<a class="headerlink" href="#_CPPv4I0EN6ripple7VecImpl9componentER5ValueRR5Index" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets a reference to the ith component of the state. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the component to get. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>: The index of the component to get. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple7VecImpl9componentERK5ValueRR5Index">
+<span id="_CPPv3I0ENK6ripple7VecImpl9componentERR5Index"></span><span id="_CPPv2I0ENK6ripple7VecImpl9componentERR5Index"></span>template&lt;typename <code class="sig-name descname">Index</code>&gt;<br /><span class="target" id="structripple_1_1VecImpl_1ac96095f6c9b3e49b802904ef66a1043b"></span>auto <code class="sig-name descname">component</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple7VecImpl9componentERK5ValueRR5Index" title="ripple::VecImpl::component::Index">Index</a> &amp;&amp;<em>i</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <em class="property">const</em> Value&amp;<a class="headerlink" href="#_CPPv4I0ENK6ripple7VecImpl9componentERK5ValueRR5Index" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets a const reference to the ith component of the state. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A const reference to the component to get. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>: The index of the component to get. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple7VecImpl4sizeEv">
+<span id="_CPPv3NK6ripple7VecImpl4sizeEv"></span><span id="_CPPv2NK6ripple7VecImpl4sizeEv"></span><span id="ripple::VecImpl::sizeCCE"></span><span class="target" id="structripple_1_1VecImpl_1a4623fe9de587671b11f35aaf3112d174"></span><em class="property">constexpr</em> auto <code class="sig-name descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple7VecImpl4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the number of elements in the vector. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of elements in the vector. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple7VecImpl14length_squaredEv">
+<span id="_CPPv3NK6ripple7VecImpl14length_squaredEv"></span><span id="_CPPv2NK6ripple7VecImpl14length_squaredEv"></span><span id="ripple::VecImpl::length_squaredCCE"></span><span class="target" id="structripple_1_1VecImpl_1a769fff782a3ade699ef70b57b909c596"></span><em class="property">constexpr</em> auto <code class="sig-name descname">length_squared</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; Value<a class="headerlink" href="#_CPPv4NK6ripple7VecImpl14length_squaredEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the squared length of the vector. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The squared length of the vector. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple7VecImpl6lengthEv">
+<span id="_CPPv3NK6ripple7VecImpl6lengthEv"></span><span id="_CPPv2NK6ripple7VecImpl6lengthEv"></span><span id="ripple::VecImpl::lengthCCE"></span><span class="target" id="structripple_1_1VecImpl_1aacbeac6547f7703050ca008db6e9a97c"></span><em class="property">constexpr</em> auto <code class="sig-name descname">length</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; Value<a class="headerlink" href="#_CPPv4NK6ripple7VecImpl6lengthEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the length of the vector (L2 norm). </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The length of the vector. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7VecImpl9normalizeEv">
+<span id="_CPPv3N6ripple7VecImpl9normalizeEv"></span><span id="_CPPv2N6ripple7VecImpl9normalizeEv"></span><span id="ripple::VecImpl::normalizeCE"></span><span class="target" id="structripple_1_1VecImpl_1a4f8d9dfd733c661f8b18aeeabce6136c"></span><em class="property">constexpr</em> auto <code class="sig-name descname">normalize</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple7VecImpl9normalizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Normalizes the vector. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple7VecImpl8storage_E">
+<span id="_CPPv3N6ripple7VecImpl8storage_E"></span><span id="_CPPv2N6ripple7VecImpl8storage_E"></span><span id="ripple::VecImpl::storage___Storage"></span><span class="target" id="structripple_1_1VecImpl_1a0afbb2a1ad340c788f83143c6d183dc2"></span>Storage <code class="sig-name descname">storage_</code><a class="headerlink" href="#_CPPv4N6ripple7VecImpl8storage_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The storage for the vector. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple7VecImpl1xE">
+<span id="_CPPv3N6ripple7VecImpl1xE"></span><span id="_CPPv2N6ripple7VecImpl1xE"></span><span id="ripple::VecImpl::x__ZerothAccessor"></span><span class="target" id="structripple_1_1VecImpl_1ae303c4bdfa143c46cae8187690d39cb7"></span>ZerothAccessor <code class="sig-name descname">x</code><a class="headerlink" href="#_CPPv4N6ripple7VecImpl1xE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>X component of vector. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple7VecImpl1yE">
+<span id="_CPPv3N6ripple7VecImpl1yE"></span><span id="_CPPv2N6ripple7VecImpl1yE"></span><span id="ripple::VecImpl::y__FirstAccessor"></span><span class="target" id="structripple_1_1VecImpl_1a84f1541f697ad858f2850b9bc4b4218e"></span>FirstAccessor <code class="sig-name descname">y</code><a class="headerlink" href="#_CPPv4N6ripple7VecImpl1yE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Y component of vector. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple7VecImpl1zE">
+<span id="_CPPv3N6ripple7VecImpl1zE"></span><span id="_CPPv2N6ripple7VecImpl1zE"></span><span id="ripple::VecImpl::z__SecondAccessor"></span><span class="target" id="structripple_1_1VecImpl_1ac586849eb76865b9898ae2aa3126811e"></span>SecondAccessor <code class="sig-name descname">z</code><a class="headerlink" href="#_CPPv4N6ripple7VecImpl1zE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Z component of vector. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple7VecImpl1wE">
+<span id="_CPPv3N6ripple7VecImpl1wE"></span><span id="_CPPv2N6ripple7VecImpl1wE"></span><span id="ripple::VecImpl::w__ThirdAccessor"></span><span class="target" id="structripple_1_1VecImpl_1a75002bfb85d74832442b06cfc3792c6b"></span>ThirdAccessor <code class="sig-name descname">w</code><a class="headerlink" href="#_CPPv4N6ripple7VecImpl1wE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>W component of vector. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple7VecImplUt1_1E">
+<span id="_CPPv3N6ripple7VecImplUt1_1E"></span><span class="target" id="structripple_1_1VecImpl_1a83eb5cf8dfda2b8c6b69db646c95f4d0"></span><em class="property">union</em> ripple::<a class="reference internal" href="#_CPPv4I000EN6ripple7VecImplE" title="ripple::VecImpl">VecImpl</a>::<strong>[anonymous]</strong> <strong>[anonymous]</strong><a class="headerlink" href="#_CPPv4N6ripple7VecImplUt1_1E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structripple_1_1Vector.html" class="btn btn-neutral float-right" title="Template Struct Vector" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="structripple_1_1Topology.html" class="btn btn-neutral" title="Struct Topology" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Template Struct VecImpl</a><ul>
+<li><a class="reference internal" href="#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+.. _exhale_function_memory_8hpp_1a898c0d505b5694503b6416a9e2fe5dae:
+
+Template Function ripple::gpu::allocate_device
+==============================================
+
+- Defined in :ref:`file_include_ripple_core_utility_memory.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::gpu::allocate_device(Ptr **, size_t)

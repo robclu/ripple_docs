@@ -1,0 +1,13 @@
+.. _exhale_function_invoke__generic__impl___8hpp_1a7a03f8368f8ad7a390cd221d20de8a30:
+
+Template Function ripple::kernel::cpu::get_iterator
+===================================================
+
+- Defined in :ref:`file_include_ripple_core_functional_kernel_invoke_generic_impl_.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::kernel::cpu::get_iterator(T&&)

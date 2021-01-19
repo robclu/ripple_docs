@@ -1,0 +1,45 @@
+
+.. _program_listing_file_include_ripple_core_boundary_copy_loader.hpp:
+
+Program Listing for File copy_loader.hpp
+========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_boundary_copy_loader.hpp>` (``include/ripple/core/boundary/copy_loader.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/boundary/copy_loader.hpp --------------- -*- C++ -*- ---==//
+   //
+   //                                Ripple
+   //
+   //                      Copyright (c) 2019, 2020 Rob Clucas.
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_BOUNDARY_COPY_LOADER_HPP
+   #define RIPPLE_BOUNDARY_COPY_LOADER_HPP
+   
+   #include "internal_loader.hpp"
+   
+   namespace ripple {
+   
+   struct CopyLoader : public InternalLoader<CopyLoader> {
+     template <typename IteratorFrom, typename IteratorTo>
+     ripple_host_device constexpr auto
+     load(IteratorFrom&& it_from, IteratorTo&& it_to) const noexcept -> void {
+       static_assert_iterator(it_to);
+       static_assert_iterator(it_from);
+       *it_to = *it_from;
+     }
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_BOUNDARY_COPY_LOADER_HPP

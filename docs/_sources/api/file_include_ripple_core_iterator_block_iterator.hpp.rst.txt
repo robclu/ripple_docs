@@ -1,0 +1,78 @@
+
+.. _file_include_ripple_core_iterator_block_iterator.hpp:
+
+File block_iterator.hpp
+=======================
+
+
+This file implements an iterator over a block. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/iterator/block_iterator.hpp``)
+----------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_iterator_block_iterator.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``../container/array_traits.hpp``
+
+- ``../execution/thread_index.hpp``
+
+- ``../math/math.hpp``
+
+- ``../storage/storage_traits.hpp``
+
+- ``cassert``
+
+- ``iterator_traits.hpp`` (:ref:`file_include_ripple_core_iterator_iterator_traits.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_container_block_traits.hpp`
+
+- :ref:`file_include_ripple_core_container_host_block.hpp`
+
+- :ref:`file_include_ripple_core_container_device_block.hpp`
+
+- :ref:`file_include_ripple_core_execution_dynamic_execution_params.hpp`
+
+- :ref:`file_include_ripple_core_execution_static_execution_params.hpp`
+
+- :ref:`file_include_ripple_core_iterator_indexed_iterator.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1BlockIterator`
+

@@ -1,0 +1,62 @@
+
+.. _file_include_ripple_core_storage_storage_accessor.hpp:
+
+File storage_accessor.hpp
+=========================
+
+
+This file implements defines an interface for accessing storage with compile time indices. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/storage/storage_accessor.hpp``)
+-----------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_storage_storage_accessor.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``storage_traits.hpp`` (:ref:`file_include_ripple_core_storage_storage_traits.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_storage_owned_storage.hpp`
+
+- :ref:`file_include_ripple_core_storage_contiguous_storage_view.hpp`
+
+- :ref:`file_include_ripple_core_storage_strided_storage_view.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1StorageAccessor`
+

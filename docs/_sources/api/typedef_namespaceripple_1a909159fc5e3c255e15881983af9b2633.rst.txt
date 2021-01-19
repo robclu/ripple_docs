@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a909159fc5e3c255e15881983af9b2633:
+
+Typedef ripple::as_contiguous_owned_t
+=====================================
+
+- Defined in :ref:`file_include_ripple_core_storage_storage_traits.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::as_contiguous_owned_t

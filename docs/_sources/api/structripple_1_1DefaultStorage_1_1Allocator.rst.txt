@@ -1,0 +1,22 @@
+.. _exhale_struct_structripple_1_1DefaultStorage_1_1Allocator:
+
+Struct DefaultStorage::Allocator
+================================
+
+- Defined in :ref:`file_include_ripple_core_storage_default_storage.hpp`
+
+
+Nested Relationships
+--------------------
+
+This struct is a nested type of :ref:`exhale_struct_structripple_1_1DefaultStorage`.
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::DefaultStorage::Allocator
+   :members:
+   :protected-members:
+   :undoc-members:

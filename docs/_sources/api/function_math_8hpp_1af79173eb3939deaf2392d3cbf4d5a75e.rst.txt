@@ -1,0 +1,13 @@
+.. _exhale_function_math_8hpp_1af79173eb3939deaf2392d3cbf4d5a75e:
+
+Template Function ripple::math::min(const Array<ImplA>&, const Array<ImplB>&)
+=============================================================================
+
+- Defined in :ref:`file_include_ripple_core_math_math.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::math::min(const Array<ImplA>&, const Array<ImplB>&)

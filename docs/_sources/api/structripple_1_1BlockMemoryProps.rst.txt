@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1BlockMemoryProps:
+
+Struct BlockMemoryProps
+=======================
+
+- Defined in :ref:`file_include_ripple_core_container_block_memory_properties.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::BlockMemoryProps
+   :members:
+   :protected-members:
+   :undoc-members:

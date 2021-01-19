@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a23fab5c83909c1e9c0d38adfcd0b75d0:
+
+Typedef ripple::non_vec_element_enable_t
+========================================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::non_vec_element_enable_t

@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1addb72415132564e36ecf6439b40a6aef:
+
+Typedef ripple::diff_enable_t
+=============================
+
+- Defined in :ref:`file_include_ripple_core_utility_type_traits.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::diff_enable_t

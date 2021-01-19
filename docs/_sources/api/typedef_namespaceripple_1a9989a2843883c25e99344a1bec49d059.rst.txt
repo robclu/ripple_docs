@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a9989a2843883c25e99344a1bec49d059:
+
+Typedef ripple::non_array_enable_t
+==================================
+
+- Defined in :ref:`file_include_ripple_core_container_array_traits.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::non_array_enable_t

@@ -1,0 +1,62 @@
+
+.. _file_include_ripple_core_iterator_indexed_iterator.hpp:
+
+File indexed_iterator.hpp
+=========================
+
+
+This file implements an iterator over a block, which has knowledge of the block's relative location in the global space to which it is a subregion of. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/iterator/indexed_iterator.hpp``)
+------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_iterator_indexed_iterator.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``block_iterator.hpp`` (:ref:`file_include_ripple_core_iterator_block_iterator.hpp`)
+
+- ``ripple/core/container/vec.hpp`` (:ref:`file_include_ripple_core_container_vec.hpp`)
+
+- ``ripple/core/execution/thread_index.hpp`` (:ref:`file_include_ripple_core_execution_thread_index.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_container_block.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1IndexedIterator`
+

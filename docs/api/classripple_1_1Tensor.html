@@ -1,0 +1,849 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Template Class Tensor &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Class ThreadSafeFreelist" href="classripple_1_1ThreadSafeFreelist.html" />
+  <link rel="prev" title="Template Class StridedStorageView&lt; Type &gt;" href="classripple_1_1StridedStorageView_3_01Type_01_4.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Template Class Tensor</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/classripple_1_1Tensor.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="template-class-tensor">
+<span id="exhale-class-classripple-1-1tensor"></span><h1>Template Class Tensor<a class="headerlink" href="#template-class-tensor" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_container_tensor.hpp.html#file-include-ripple-core-container-tensor-hpp"><span class="std std-ref">File tensor.hpp</span></a></p></li>
+</ul>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4I0_6size_tEN6ripple6TensorE">
+<span id="_CPPv3I0_6size_tEN6ripple6TensorE"></span><span id="_CPPv2I0_6size_tEN6ripple6TensorE"></span>template&lt;typename <code class="sig-name descname">T</code>, size_t <code class="sig-name descname">Dimensions</code>&gt;<br /><span class="target" id="classripple_1_1Tensor"></span><em class="property">class </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">Tensor</code><a class="headerlink" href="#_CPPv4I0_6size_tEN6ripple6TensorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Implementation of a tensor class for an N-dimensional container for which the data resides on both the host and the device. </p>
+<p>Forward declaration of a tensor class for an N-dimensional container.</p>
+<p><dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the data for the grid. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dimensions</span></code>: The number of dimensions for the grid</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The data type for the <a class="reference internal" href="#classripple_1_1Tensor"><span class="std std-ref">Tensor</span></a>. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dimensions</span></code>: The number of dimensions for the <a class="reference internal" href="#classripple_1_1Tensor"><span class="std std-ref">Tensor</span></a> data. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple6Tensor4SizeE">
+<span id="_CPPv3N6ripple6Tensor4SizeE"></span><span id="_CPPv2N6ripple6Tensor4SizeE"></span><span class="target" id="classripple_1_1Tensor_1a2c86862934b889bc89ded5764583b3d7"></span><em class="property">using </em><code class="sig-name descname">Size</code> = uint32_t<a class="headerlink" href="#_CPPv4N6ripple6Tensor4SizeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the size type used. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple6Tensor10BlockSplitE">
+<span id="_CPPv3N6ripple6Tensor10BlockSplitE"></span><span id="_CPPv2N6ripple6Tensor10BlockSplitE"></span><span class="target" id="classripple_1_1Tensor_1ad58f4094b0c0afa0300fcc0814f52055"></span><em class="property">using </em><code class="sig-name descname">BlockSplit</code> = std::array&lt;<a class="reference internal" href="#_CPPv4N6ripple6Tensor4SizeE" title="ripple::Tensor::Size">Size</a>, dims&gt;<a class="headerlink" href="#_CPPv4N6ripple6Tensor10BlockSplitE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the block split specifier. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple6Tensor10PartitionsE">
+<span id="_CPPv3N6ripple6Tensor10PartitionsE"></span><span id="_CPPv2N6ripple6Tensor10PartitionsE"></span><span class="target" id="classripple_1_1Tensor_1a0595fbaf952c8eb95b6606cc3f56e36b"></span><em class="property">using </em><code class="sig-name descname">Partitions</code> = std::array&lt;<a class="reference internal" href="#_CPPv4N6ripple6Tensor4SizeE" title="ripple::Tensor::Size">Size</a>, dims&gt;<a class="headerlink" href="#_CPPv4N6ripple6Tensor10PartitionsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type to store partition information. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple6Tensor8ElementsE">
+<span id="_CPPv3N6ripple6Tensor8ElementsE"></span><span id="_CPPv2N6ripple6Tensor8ElementsE"></span><span class="target" id="classripple_1_1Tensor_1a630eb76e1dc912e2c390511da46207a3"></span><em class="property">using </em><code class="sig-name descname">Elements</code> = std::array&lt;<a class="reference internal" href="#_CPPv4N6ripple6Tensor4SizeE" title="ripple::Tensor::Size">Size</a>, dims&gt;<a class="headerlink" href="#_CPPv4N6ripple6Tensor8ElementsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Container to hold a number of elements. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple6Tensor9BlockIterE">
+<span id="_CPPv3N6ripple6Tensor9BlockIterE"></span><span id="_CPPv2N6ripple6Tensor9BlockIterE"></span><span class="target" id="classripple_1_1Tensor_1afde09bc13394f824ce3e9e61885d079a"></span><em class="property">using </em><code class="sig-name descname">BlockIter</code> = <em class="property">typename</em> <a class="reference internal" href="typedef_namespaceripple_1a979e96b781bf89e81ddc8838ba114f38.html#_CPPv4I0EN6ripple14block_traits_tE" title="ripple::block_traits_t">block_traits_t</a>&lt;Blocks&gt;::Iter<a class="headerlink" href="#_CPPv4N6ripple6Tensor9BlockIterE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of an iterator over the blocks. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple6Tensor6TensorEv">
+<span id="_CPPv3N6ripple6Tensor6TensorEv"></span><span id="_CPPv2N6ripple6Tensor6TensorEv"></span><span id="ripple::Tensor::Tensor"></span><span class="target" id="classripple_1_1Tensor_1afe5d92799b61f6ff3b84e57fd6b073bb"></span><code class="sig-name descname">Tensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple6Tensor6TensorEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Default constructor. </p>
+<p>This does not initialize or allocate any data for the tensor. This constructor allows the tensor to be sized dynamically and then allocated, for cases where the sizes of the dimensions are not know beforehand. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDp_28all_arithmetic_size_enable_tI4dimsDp5SizesEEN6ripple6Tensor6TensorEDpRR5Sizes">
+<span id="_CPPv3IDp_28all_arithmetic_size_enable_tI4dimsDp5SizesEEN6ripple6Tensor6TensorEDpRR5Sizes"></span><span id="_CPPv2IDp_28all_arithmetic_size_enable_tI4dimsDp5SizesEEN6ripple6Tensor6TensorEDpRR5Sizes"></span>template&lt;typename ...<code class="sig-name descname">Sizes</code>, <a class="reference internal" href="typedef_namespaceripple_1a1f453940eb7985996e657de7903a3898.html#_CPPv4I_NSt6size_tEDpEN6ripple28all_arithmetic_size_enable_tE" title="ripple::all_arithmetic_size_enable_t">all_arithmetic_size_enable_t</a>&lt;dims, <a class="reference internal" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI4dimsDp5SizesEEN6ripple6Tensor6TensorEDpRR5Sizes" title="ripple::Tensor::Tensor::Sizes">Sizes</a>...&gt; = 0&gt;<br /><span class="target" id="classripple_1_1Tensor_1a9b00e3d43786212622acfb1e60d808ff"></span><code class="sig-name descname">Tensor</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI4dimsDp5SizesEEN6ripple6Tensor6TensorEDpRR5Sizes" title="ripple::Tensor::Tensor::Sizes">Sizes</a>&amp;&amp;... <em>sizes</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI4dimsDp5SizesEEN6ripple6Tensor6TensorEDpRR5Sizes" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Contructor to intialize the tensor from only the dimension sizes. </p>
+<p>This will parition across the largest dimension. <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sizes</span></code>: The sizes of the dimensions for the tensor. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDp_28all_arithmetic_size_enable_tI4dimsDp5SizesEEN6ripple6Tensor6TensorE10PartitionsDpRR5Sizes">
+<span id="_CPPv3IDp_28all_arithmetic_size_enable_tI4dimsDp5SizesEEN6ripple6Tensor6TensorE10PartitionsDpRR5Sizes"></span><span id="_CPPv2IDp_28all_arithmetic_size_enable_tI4dimsDp5SizesEEN6ripple6Tensor6TensorE10PartitionsDpRR5Sizes"></span>template&lt;typename ...<code class="sig-name descname">Sizes</code>, <a class="reference internal" href="typedef_namespaceripple_1a1f453940eb7985996e657de7903a3898.html#_CPPv4I_NSt6size_tEDpEN6ripple28all_arithmetic_size_enable_tE" title="ripple::all_arithmetic_size_enable_t">all_arithmetic_size_enable_t</a>&lt;dims, <a class="reference internal" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI4dimsDp5SizesEEN6ripple6Tensor6TensorE10PartitionsDpRR5Sizes" title="ripple::Tensor::Tensor::Sizes">Sizes</a>...&gt; = 0&gt;<br /><span class="target" id="classripple_1_1Tensor_1acbca44bd88dc9c5aed6d773ca5cef82b"></span><code class="sig-name descname">Tensor</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple6Tensor10PartitionsE" title="ripple::Tensor::Partitions">Partitions</a> <em>partitions_per_dim</em>, <a class="reference internal" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI4dimsDp5SizesEEN6ripple6Tensor6TensorE10PartitionsDpRR5Sizes" title="ripple::Tensor::Tensor::Sizes">Sizes</a>&amp;&amp;... <em>sizes</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI4dimsDp5SizesEEN6ripple6Tensor6TensorE10PartitionsDpRR5Sizes" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constuctor to create the tensor with size specification and number of partitions per dimension. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This is only enabled if the number of dimension sizes match the number of dimensions.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">partitions_per_dim</span></code>: Partitions pus per dimension. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sizes</span></code>: The sizes for each dimension. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Sizes</span></code>: The types of the sizes of the dimensions. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple6Tensor6TensorE10Partitions8uint32_tDpRR5Sizes">
+<span id="_CPPv3IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple6Tensor6TensorE10Partitions8uint32_tDpRR5Sizes"></span><span id="_CPPv2IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple6Tensor6TensorE10Partitions8uint32_tDpRR5Sizes"></span>template&lt;typename ...<code class="sig-name descname">Sizes</code>, <a class="reference internal" href="typedef_namespaceripple_1a1f453940eb7985996e657de7903a3898.html#_CPPv4I_NSt6size_tEDpEN6ripple28all_arithmetic_size_enable_tE" title="ripple::all_arithmetic_size_enable_t">all_arithmetic_size_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple6TensorE" title="ripple::Tensor::Dimensions">Dimensions</a>, <a class="reference internal" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple6Tensor6TensorE10Partitions8uint32_tDpRR5Sizes" title="ripple::Tensor::Tensor::Sizes">Sizes</a>...&gt; = 0&gt;<br /><span class="target" id="classripple_1_1Tensor_1a78511403946a2805d57fb33dd6c83420"></span><code class="sig-name descname">Tensor</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple6Tensor10PartitionsE" title="ripple::Tensor::Partitions">Partitions</a> <em>partitions_per_dim</em>, uint32_t <em>padding</em>, <a class="reference internal" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple6Tensor6TensorE10Partitions8uint32_tDpRR5Sizes" title="ripple::Tensor::Tensor::Sizes">Sizes</a>&amp;&amp;... <em>sizes</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple6Tensor6TensorE10Partitions8uint32_tDpRR5Sizes" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constuctor to create the tensor with a size specification, the number of partitiosn per dimension, and a padding amount. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This is only enabled if the number of dimension sizes match the number of dimensions.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">partitions_per_dim</span></code>: Partitions pus per dimension. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">padding</span></code>: The amount of padding for the tensor. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sizes</span></code>: The sizes for each dimension. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Sizes</span></code>: The types of the sizes of the dimensions. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple6Tensor6TensorE10Partitions10BlockSplitDpRR5Sizes">
+<span id="_CPPv3IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple6Tensor6TensorE10Partitions10BlockSplitDpRR5Sizes"></span><span id="_CPPv2IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple6Tensor6TensorE10Partitions10BlockSplitDpRR5Sizes"></span>template&lt;typename ...<code class="sig-name descname">Sizes</code>, <a class="reference internal" href="typedef_namespaceripple_1a1f453940eb7985996e657de7903a3898.html#_CPPv4I_NSt6size_tEDpEN6ripple28all_arithmetic_size_enable_tE" title="ripple::all_arithmetic_size_enable_t">all_arithmetic_size_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple6TensorE" title="ripple::Tensor::Dimensions">Dimensions</a>, <a class="reference internal" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple6Tensor6TensorE10Partitions10BlockSplitDpRR5Sizes" title="ripple::Tensor::Tensor::Sizes">Sizes</a>...&gt; = 0&gt;<br /><span class="target" id="classripple_1_1Tensor_1ab815d0a2623f07c7d50065c2914e67e2"></span><code class="sig-name descname">Tensor</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple6Tensor10PartitionsE" title="ripple::Tensor::Partitions">Partitions</a> <em>partitions_per_dim</em>, <a class="reference internal" href="#_CPPv4N6ripple6Tensor10BlockSplitE" title="ripple::Tensor::BlockSplit">BlockSplit</a> <em>blocks_per_partition</em>, <a class="reference internal" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple6Tensor6TensorE10Partitions10BlockSplitDpRR5Sizes" title="ripple::Tensor::Tensor::Sizes">Sizes</a>&amp;&amp;... <em>sizes</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple6Tensor6TensorE10Partitions10BlockSplitDpRR5Sizes" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constuctor to create the tensor with size specification, the number of partitions per dimension, and the number of blocks per partition. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This is only enabled if the number of dimension sizes match the number of dimensions.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">gpus_per_partition</span></code>: The number of partitions per dimension. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">blocks_per_partition</span></code>: Blocks per partition for each dimension. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sizes</span></code>: The sizes for each dimension. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Sizes</span></code>: The types of the sizes of the dimensions. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple6Tensor6TensorE10Partitions10BlockSplit8uint32_tDpRR5Sizes">
+<span id="_CPPv3IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple6Tensor6TensorE10Partitions10BlockSplit8uint32_tDpRR5Sizes"></span><span id="_CPPv2IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple6Tensor6TensorE10Partitions10BlockSplit8uint32_tDpRR5Sizes"></span>template&lt;typename ...<code class="sig-name descname">Sizes</code>, <a class="reference internal" href="typedef_namespaceripple_1a1f453940eb7985996e657de7903a3898.html#_CPPv4I_NSt6size_tEDpEN6ripple28all_arithmetic_size_enable_tE" title="ripple::all_arithmetic_size_enable_t">all_arithmetic_size_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple6TensorE" title="ripple::Tensor::Dimensions">Dimensions</a>, <a class="reference internal" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple6Tensor6TensorE10Partitions10BlockSplit8uint32_tDpRR5Sizes" title="ripple::Tensor::Tensor::Sizes">Sizes</a>...&gt; = 0&gt;<br /><span class="target" id="classripple_1_1Tensor_1a3fbb37c6be999badb9b8a8ebe77e9590"></span><code class="sig-name descname">Tensor</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple6Tensor10PartitionsE" title="ripple::Tensor::Partitions">Partitions</a> <em>partitions_per_dim</em>, <a class="reference internal" href="#_CPPv4N6ripple6Tensor10BlockSplitE" title="ripple::Tensor::BlockSplit">BlockSplit</a> <em>blocks_per_partition</em>, uint32_t <em>padding</em>, <a class="reference internal" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple6Tensor6TensorE10Partitions10BlockSplit8uint32_tDpRR5Sizes" title="ripple::Tensor::Tensor::Sizes">Sizes</a>&amp;&amp;... <em>sizes</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple6Tensor6TensorE10Partitions10BlockSplit8uint32_tDpRR5Sizes" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constuctor to create the tensor with size specification, the number of gpus per dimension, and the number of blocks per gpu, and an amount of padding for the tensor. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This is only enabled if the number of dimension sizes match the number of dimensions.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">gpus_per_partition</span></code>: The number of partitions per dimension. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">blocks_per_partition</span></code>: Blocks per partition for each dimension </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">padding</span></code>: The amount of padding for the tensor. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sizes</span></code>: The sizes for each dimension. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Sizes</span></code>: The types of the sizes of the dimensions. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDpENK6ripple6TensorclE13HostBlockIterDpRR7Indices">
+<span id="_CPPv3IDpENK6ripple6TensorclEDpRR7Indices"></span><span id="_CPPv2IDpENK6ripple6TensorclEDpRR7Indices"></span>template&lt;typename ...<code class="sig-name descname">Indices</code>&gt;<br /><span class="target" id="classripple_1_1Tensor_1ab71df79e3bd7290f0ee804747105f2b5"></span>auto <code class="sig-name descname">operator()</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDpENK6ripple6TensorclE13HostBlockIterDpRR7Indices" title="ripple::Tensor::operator()::Indices">Indices</a>&amp;&amp;... <em>indices</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; HostBlockIter<a class="headerlink" href="#_CPPv4IDpENK6ripple6TensorclE13HostBlockIterDpRR7Indices" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets a host iterator to an element at the given location. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>Since the tensor data is divided into blocks, the iterator is only valid for the block in which the elements exists.</p>
+</dd>
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="classripple_1_1IndexedIterator.html#classripple_1_1IndexedIterator"><span class="std std-ref">IndexedIterator</span></a>, <a class="reference internal" href="classripple_1_1BlockIterator.html#classripple_1_1BlockIterator"><span class="std std-ref">BlockIterator</span></a></p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>This may be a slow operation if the data is on the device, since the block data will then need to be copied to the host before returning the value.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>This function is provided mainly for validation of tensor data.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>An iterator to the block in which the element resides, pointing to the element. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">indices</span></code>: The indices of the element to get. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Indices</span></code>: The types of teh indices. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple6Tensor4sizeE6size_tRR3Dim">
+<span id="_CPPv3I0ENK6ripple6Tensor4sizeERR3Dim"></span><span id="_CPPv2I0ENK6ripple6Tensor4sizeERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1Tensor_1adbb7e07c245c2cf69adcb42b23d86428"></span>auto <code class="sig-name descname">size</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple6Tensor4sizeE6size_tRR3Dim" title="ripple::Tensor::size::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4I0ENK6ripple6Tensor4sizeE6size_tRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the size of the tensor in the given dimension. </p>
+<p>This size is the number of elements in the dimension <em>excluding</em> padding.</p>
+<p><dl class="simple">
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#classripple_1_1Tensor_1a15b292a49e4dc86d37e7f7778fea282b"><span class="std std-ref">pitch</span></a></p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>The number of elements for the given dimension. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to get the size of. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple6Tensor5pitchE6size_tRR3Dim">
+<span id="_CPPv3I0ENK6ripple6Tensor5pitchERR3Dim"></span><span id="_CPPv2I0ENK6ripple6Tensor5pitchERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1Tensor_1a15b292a49e4dc86d37e7f7778fea282b"></span>auto <code class="sig-name descname">pitch</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple6Tensor5pitchE6size_tRR3Dim" title="ripple::Tensor::pitch::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4I0ENK6ripple6Tensor5pitchE6size_tRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the pitch of the tensor in the given dimension. </p>
+<p>This pitch is the number of elements in the dimension <em>including</em> padding.</p>
+<p><dl class="simple">
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#classripple_1_1Tensor_1adbb7e07c245c2cf69adcb42b23d86428"><span class="std std-ref">size</span></a></p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>The number of elements for the given dimension including padding. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to get the pitch of. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple6Tensor7paddingEv">
+<span id="_CPPv3NK6ripple6Tensor7paddingEv"></span><span id="_CPPv2NK6ripple6Tensor7paddingEv"></span><span id="ripple::Tensor::paddingC"></span><span class="target" id="classripple_1_1Tensor_1ab0d3a0df6e0e61e88290880147092c09"></span>auto <code class="sig-name descname">padding</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple6Tensor7paddingEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the amount of padding for the tensor. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The amount of padding for the tensor. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple6Tensor14set_partitionsEvRR3Dim6size_t">
+<span id="_CPPv3I0EN6ripple6Tensor14set_partitionsERR3Dim6size_t"></span><span id="_CPPv2I0EN6ripple6Tensor14set_partitionsERR3Dim6size_t"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1Tensor_1a32c99889f44408b077ad791dcc43f6ae"></span>auto <code class="sig-name descname">set_partitions</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN6ripple6Tensor14set_partitionsEvRR3Dim6size_t" title="ripple::Tensor::set_partitions::Dim">Dim</a> &amp;&amp;<em>dim</em>, size_t <em>partitions</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4I0EN6ripple6Tensor14set_partitionsEvRR3Dim6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the number of partitions for the given dimension. </p>
+<p>This will divide the tensor in the dimension into the given number of partitions.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to set the number of partitions for. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">partitions</span></code>: The number of partitions for the dimension. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The dimension type. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple6Tensor18set_sub_partitionsEvRR3Dim6size_t">
+<span id="_CPPv3I0EN6ripple6Tensor18set_sub_partitionsERR3Dim6size_t"></span><span id="_CPPv2I0EN6ripple6Tensor18set_sub_partitionsERR3Dim6size_t"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1Tensor_1a94564207c215011da0c3c7600d4615d5"></span>auto <code class="sig-name descname">set_sub_partitions</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN6ripple6Tensor18set_sub_partitionsEvRR3Dim6size_t" title="ripple::Tensor::set_sub_partitions::Dim">Dim</a> &amp;&amp;<em>dim</em>, size_t <em>sub_partitions</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4I0EN6ripple6Tensor18set_sub_partitionsEvRR3Dim6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the number of sub partitions for the dimension, which is the number of blocks per partitions for the dimension. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to set the sub partitions for. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sub_partitions</span></code>: The number of sub partitions. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple6Tensor10resize_dimEvRR3Dim6size_t">
+<span id="_CPPv3I0EN6ripple6Tensor10resize_dimERR3Dim6size_t"></span><span id="_CPPv2I0EN6ripple6Tensor10resize_dimERR3Dim6size_t"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1Tensor_1adea25ea6414fa453c3c427173239f808"></span>auto <code class="sig-name descname">resize_dim</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN6ripple6Tensor10resize_dimEvRR3Dim6size_t" title="ripple::Tensor::resize_dim::Dim">Dim</a> &amp;&amp;<em>dim</em>, size_t <em>size</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4I0EN6ripple6Tensor10resize_dimEvRR3Dim6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Resizes the dimension to contain the given number of elements in the dimension. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This excludes the padding.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to resize. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">size</span></code>: The size for the dimension (number of elements). </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple6Tensor11set_paddingE6size_t">
+<span id="_CPPv3N6ripple6Tensor11set_paddingE6size_t"></span><span id="_CPPv2N6ripple6Tensor11set_paddingE6size_t"></span><span id="ripple::Tensor::set_padding__s"></span><span class="target" id="classripple_1_1Tensor_1a47a6038c18c5cd66db94d822fd5e6d50"></span>auto <code class="sig-name descname">set_padding</code><span class="sig-paren">(</span>size_t <em>padding</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple6Tensor11set_paddingE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the padding for the tensor to the given amount. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This amount is the amount of padding per side of each dimension, and is applied to each side of each dimension.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">padding</span></code>: The amount of padding for the tensor. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple6Tensor10reallocateERKN6ripple9StreamMapE">
+<span id="_CPPv3N6ripple6Tensor10reallocateERKN6ripple9StreamMapE"></span><span id="_CPPv2N6ripple6Tensor10reallocateERKN6ripple9StreamMapE"></span><span id="ripple::Tensor::reallocate__ripple::StreamMapCR"></span><span class="target" id="classripple_1_1Tensor_1a08e9e550e4ae9c2fa4bdd29f45c0eeaf"></span>auto <code class="sig-name descname">reallocate</code><span class="sig-paren">(</span><em class="property">const</em> ripple::<a class="reference internal" href="typedef_namespaceripple_1a2c855f98b9ba040e5f581e3e46952972.html#_CPPv4N6ripple9StreamMapE" title="ripple::StreamMap">StreamMap</a> &amp;<em>stream_map</em> = ripple::<a class="reference internal" href="typedef_namespaceripple_1a2c855f98b9ba040e5f581e3e46952972.html#_CPPv4N6ripple9StreamMapE" title="ripple::StreamMap">StreamMap</a>()<span class="sig-paren">)</span> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple6Tensor10reallocateERKN6ripple9StreamMapE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reallocates (or allocates if unallocated) the data for the tensor. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">stream_map</span></code>: A map of gpu indicies to stream inidices which specifies which streams to use for which gpu. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple6Tensor10partitionsEv">
+<span id="_CPPv3NK6ripple6Tensor10partitionsEv"></span><span id="_CPPv2NK6ripple6Tensor10partitionsEv"></span><span id="ripple::Tensor::partitionsC"></span><span class="target" id="classripple_1_1Tensor_1a000f0b873a8c454826f0704e3a52b5f1"></span>auto <code class="sig-name descname">partitions</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple6Tensor4SizeE" title="ripple::Tensor::Size">Size</a><a class="headerlink" href="#_CPPv4NK6ripple6Tensor10partitionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Computes the number of partitions for the tensor. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>The tensor will maps partitions to gpus, so this can also be used to determine the number of gpus.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>The total number of partitions for the tensor. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple6Tensor14partition_sizeEv">
+<span id="_CPPv3NK6ripple6Tensor14partition_sizeEv"></span><span id="_CPPv2NK6ripple6Tensor14partition_sizeEv"></span><span id="ripple::Tensor::partition_sizeC"></span><span class="target" id="classripple_1_1Tensor_1ac0c27815ad140d4abae0c33ad089ebfa"></span>auto <code class="sig-name descname">partition_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple6Tensor4SizeE" title="ripple::Tensor::Size">Size</a><a class="headerlink" href="#_CPPv4NK6ripple6Tensor14partition_sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Computes the total number of elements per partition. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The total number of elements per partition. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple6Tensor13blocks_in_dimE6size_tRR3Dim">
+<span id="_CPPv3I0ENK6ripple6Tensor13blocks_in_dimERR3Dim"></span><span id="_CPPv2I0ENK6ripple6Tensor13blocks_in_dimERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1Tensor_1a53bee2b2923c6faab37445cb0b1c560c"></span>auto <code class="sig-name descname">blocks_in_dim</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple6Tensor13blocks_in_dimE6size_tRR3Dim" title="ripple::Tensor::blocks_in_dim::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4I0ENK6ripple6Tensor13blocks_in_dimE6size_tRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Computes the number of blocks in the given dimension. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of blocks in the dimension. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to get the number of blocks for. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple6Tensor5beginEv">
+<span id="_CPPv3N6ripple6Tensor5beginEv"></span><span id="_CPPv2N6ripple6Tensor5beginEv"></span><span id="ripple::Tensor::begin"></span><span class="target" id="classripple_1_1Tensor_1a35cb09925eddd925bec4fad457005f51"></span>auto <code class="sig-name descname">begin</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple6Tensor9BlockIterE" title="ripple::Tensor::BlockIter">BlockIter</a><a class="headerlink" href="#_CPPv4N6ripple6Tensor5beginEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets an iterator to the blocks for the tensor. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A multi-dimensional iterator over the blocks for the tensor. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple6Tensor15diagonal_blocksEv">
+<span id="_CPPv3NK6ripple6Tensor15diagonal_blocksEv"></span><span id="_CPPv2NK6ripple6Tensor15diagonal_blocksEv"></span><span id="ripple::Tensor::diagonal_blocksC"></span><span class="target" id="classripple_1_1Tensor_1af4b9c4c9762d1ea82877584b4fbca602"></span>auto <code class="sig-name descname">diagonal_blocks</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple6Tensor15diagonal_blocksEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Computes the number of blocks <em>diagonally</em> across the tensor, i.e, the hypotenuse of the computational space which the tensor defines. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of blocks diagonally for the tensor. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple6Tensor19diagonal_block_sizeEv">
+<span id="_CPPv3NK6ripple6Tensor19diagonal_block_sizeEv"></span><span id="_CPPv2NK6ripple6Tensor19diagonal_block_sizeEv"></span><span id="ripple::Tensor::diagonal_block_sizeC"></span><span class="target" id="classripple_1_1Tensor_1a317bd9a23c54167d7aca112114ae9285"></span>auto <code class="sig-name descname">diagonal_block_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple6Tensor19diagonal_block_sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Computes the number of elements per block diagonally. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of elements in each block of the tensor, diagonally. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple6Tensor13diagonal_sizeEv">
+<span id="_CPPv3NK6ripple6Tensor13diagonal_sizeEv"></span><span id="_CPPv2NK6ripple6Tensor13diagonal_sizeEv"></span><span id="ripple::Tensor::diagonal_sizeC"></span><span class="target" id="classripple_1_1Tensor_1a094d1e8942a2bbda89f1782b1a2530ed"></span>auto <code class="sig-name descname">diagonal_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple6Tensor13diagonal_sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Computes the number of cells in the tensor, diagonally. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This <em>excludes</em> padding data.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>The number of elements in the tensor, diagonally. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Friends</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple6Tensor4swapER6TensorR6Tensor">
+<span id="_CPPv3N6ripple6Tensor4swapER6TensorR6Tensor"></span><span id="_CPPv2N6ripple6Tensor4swapER6TensorR6Tensor"></span><span id="ripple::Tensor::swap__TensorR.TensorR"></span><span class="target" id="classripple_1_1Tensor_1af93147c70c5421aee9e626ab4491434c"></span><em class="property">friend</em> auto <code class="sig-name descname">swap</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple6TensorE" title="ripple::Tensor">Tensor</a> &amp;<em>lhs</em>, <a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple6TensorE" title="ripple::Tensor">Tensor</a> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple6Tensor4swapER6TensorR6Tensor" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Swaps the two tensors. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>this goes through each block and swaps the data for each block.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lhs</span></code>: The left tensor to swap. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rhs</span></code>: The right tensor to swap. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classripple_1_1ThreadSafeFreelist.html" class="btn btn-neutral float-right" title="Class ThreadSafeFreelist" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="classripple_1_1StridedStorageView_3_01Type_01_4.html" class="btn btn-neutral" title="Template Class StridedStorageView&lt; Type &gt;" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Template Class Tensor</a><ul>
+<li><a class="reference internal" href="#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

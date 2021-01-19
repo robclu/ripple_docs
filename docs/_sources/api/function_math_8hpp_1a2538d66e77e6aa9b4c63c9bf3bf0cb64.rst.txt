@@ -1,0 +1,13 @@
+.. _exhale_function_math_8hpp_1a2538d66e77e6aa9b4c63c9bf3bf0cb64:
+
+Template Function ripple::math::abs(const Array<Impl>&)
+=======================================================
+
+- Defined in :ref:`file_include_ripple_core_math_math.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::math::abs(const Array<Impl>&)

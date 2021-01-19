@@ -1,0 +1,52 @@
+
+.. _program_listing_file_include_ripple_core_storage_pointer_wrapper.hpp:
+
+Program Listing for File pointer_wrapper.hpp
+============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_storage_pointer_wrapper.hpp>` (``include/ripple/core/storage/pointer_wrapper.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/storage/pointer_wrapper.hpp ------------ -*- C++ -*- ---==//
+   //
+   //                                Ripple
+   //
+   //                      Copyright (c) 2019, 2020 Rob Clucas
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_STORAGE_POINTER_WRAPPER_HPP
+   #define RIPPLE_STORAGE_POINTER_WRAPPER_HPP
+   
+   #include "../utility/portability.hpp"
+   
+   namespace ripple {
+   
+   template <typename T>
+   struct PointerWrapper {
+     ripple_host_device PointerWrapper(T data) noexcept : data_{data} {}
+   
+     // clang-format off
+     ripple_host_device auto operator->() noexcept -> T* {
+       return &data_;
+     }
+   
+     ripple_host_device auto operator->() const noexcept -> const T* {
+       return &data_;
+     }
+   
+    private:
+     T data_; 
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_STORAGE_POINTER_WRAPPER_HPP

@@ -1,0 +1,64 @@
+
+.. _file_include_ripple_core_boundary_ghost_index.hpp:
+
+File ghost_index.hpp
+====================
+
+
+This file defines a simple class to represent an index of a ghost cell. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/boundary/ghost_index.hpp``)
+-------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_boundary_ghost_index.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``ripple/core/algorithm/unrolled_for.hpp`` (:ref:`file_include_ripple_core_algorithm_unrolled_for.hpp`)
+
+- ``ripple/core/execution/thread_index.hpp`` (:ref:`file_include_ripple_core_execution_thread_index.hpp`)
+
+- ``ripple/core/math/math.hpp`` (:ref:`file_include_ripple_core_math_math.hpp`)
+
+- ``ripple/core/utility/dim.hpp`` (:ref:`file_include_ripple_core_utility_dim.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_boundary_detail_load_global_boundary_impl_.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1GhostIndex`
+

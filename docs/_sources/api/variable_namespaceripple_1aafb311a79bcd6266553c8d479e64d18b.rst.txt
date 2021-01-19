@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1aafb311a79bcd6266553c8d479e64d18b:
+
+Variable ripple::default_gpu_stream
+===================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::default_gpu_stream

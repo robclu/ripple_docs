@@ -1,0 +1,16 @@
+.. _exhale_class_classripple_1_1AlignedHeapAllocator:
+
+Class AlignedHeapAllocator
+==========================
+
+- Defined in :ref:`file_include_ripple_core_allocation_aligned_heap_allocator.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ripple::AlignedHeapAllocator
+   :members:
+   :protected-members:
+   :undoc-members:

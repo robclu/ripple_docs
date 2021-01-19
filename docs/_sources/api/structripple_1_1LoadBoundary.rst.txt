@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1LoadBoundary:
+
+Struct LoadBoundary
+===================
+
+- Defined in :ref:`file_include_ripple_core_boundary_load_boundary.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::LoadBoundary
+   :members:
+   :protected-members:
+   :undoc-members:

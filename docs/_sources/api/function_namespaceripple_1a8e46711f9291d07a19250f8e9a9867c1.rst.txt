@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a8e46711f9291d07a19250f8e9a9867c1:
+
+Template Function ripple::offset_to_aos
+=======================================
+
+- Defined in :ref:`file_include_ripple_core_multidim_offset_to.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::offset_to_aos(const MultidimSpace<SpatialImpl>&, size_t, Indices&&...)

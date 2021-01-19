@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1aebc92eb8931c609d32f6a21f22ed34e9:
+
+Variable ripple::storage_layout_kind_v
+======================================
+
+- Defined in :ref:`file_include_ripple_core_storage_storage_traits.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::storage_layout_kind_v

@@ -1,0 +1,88 @@
+
+.. _file_include_ripple_core_execution_execution_traits.hpp:
+
+File execution_traits.hpp
+=========================
+
+
+This file defines traits for execution. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/execution/execution_traits.hpp``)
+-------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_execution_execution_traits.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``ripple/core/utility/portability.hpp`` (:ref:`file_include_ripple_core_utility_portability.hpp`)
+
+- ``ripple/core/utility/type_traits.hpp`` (:ref:`file_include_ripple_core_utility_type_traits.hpp`)
+
+- ``utility`` (:ref:`file_include_ripple_core_utility_bitops.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_execution_detail_thread_index_impl_.hpp`
+
+- :ref:`file_include_ripple_core_functional_invoke.hpp`
+
+- :ref:`file_include_ripple_core_boundary_load_boundary.hpp`
+
+- :ref:`file_include_ripple_core_execution_execution_params.hpp`
+
+- :ref:`file_include_ripple_core_graph_node.hpp`
+
+- :ref:`file_include_ripple_core_graph_splitter.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1DynamicExecParams`
+
+- :ref:`exhale_struct_structripple_1_1ExecParams`
+
+- :ref:`exhale_struct_structripple_1_1ExecTraits`
+
+- :ref:`exhale_struct_structripple_1_1ExecTraits_3_01DynamicExecParams_3_01Shared_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1ExecTraits_3_01ExecParams_3_01ExecImpl_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1ExecTraits_3_01StaticExecParams_3_01X_00_01Y_00_01Z_00_01Padding_00_01Shared_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1Execution`
+
+- :ref:`exhale_struct_structripple_1_1StaticExecParams`
+
+- :ref:`exhale_struct_structripple_1_1VoidShared`
+

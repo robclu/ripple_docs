@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a212854f3f54b09bc7d742616dfc9d52d:
+
+Template Function ripple::global_idx
+====================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::global_idx(Dim&&)

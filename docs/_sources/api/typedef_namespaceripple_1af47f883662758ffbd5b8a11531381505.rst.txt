@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1af47f883662758ffbd5b8a11531381505:
+
+Typedef ripple::non_shared_wrapper_enable_t
+===========================================
+
+- Defined in :ref:`file_include_ripple_core_container_shared_wrapper.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::non_shared_wrapper_enable_t

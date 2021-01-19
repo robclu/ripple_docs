@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1a945396380c44eae8e0116540a3fcabf9:
+
+Variable ripple::is_multiblock_v
+================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::is_multiblock_v

@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a78c56f114f6d3bf83c0574c73e17bf2d:
+
+Typedef ripple::ObjectPoolAllocator
+===================================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::ObjectPoolAllocator

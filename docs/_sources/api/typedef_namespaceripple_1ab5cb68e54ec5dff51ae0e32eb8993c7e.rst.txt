@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1ab5cb68e54ec5dff51ae0e32eb8993c7e:
+
+Typedef ripple::non_any_block_enable_t
+======================================
+
+- Defined in :ref:`file_include_ripple_core_container_block_traits.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::non_any_block_enable_t

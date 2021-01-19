@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1ab0734d274a9f94c217e000d37093c567:
+
+Typedef ripple::tuple_enable_t
+==============================
+
+- Defined in :ref:`file_include_ripple_core_container_tuple_traits.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::tuple_enable_t

@@ -1,0 +1,13 @@
+.. _exhale_enum_namespaceripple_1ad242b598ccd7062fe54ff42b2f8212c7:
+
+Enum BoundaryLocation
+=====================
+
+- Defined in :ref:`file_include_ripple_core_boundary_generic_loader.hpp`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: ripple::BoundaryLocation

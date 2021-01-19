@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1VoidShared:
+
+Struct VoidShared
+=================
+
+- Defined in :ref:`file_include_ripple_core_execution_execution_traits.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::VoidShared
+   :members:
+   :protected-members:
+   :undoc-members:

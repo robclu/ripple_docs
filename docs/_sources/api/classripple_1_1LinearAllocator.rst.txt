@@ -1,0 +1,16 @@
+.. _exhale_class_classripple_1_1LinearAllocator:
+
+Class LinearAllocator
+=====================
+
+- Defined in :ref:`file_include_ripple_core_allocation_linear_allocator.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ripple::LinearAllocator
+   :members:
+   :protected-members:
+   :undoc-members:

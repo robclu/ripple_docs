@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1af18cfe441f61f22e2e38f811492e0e07:
+
+Typedef ripple::it_1d_enable_t
+==============================
+
+- Defined in :ref:`file_include_ripple_core_iterator_iterator_traits.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::it_1d_enable_t

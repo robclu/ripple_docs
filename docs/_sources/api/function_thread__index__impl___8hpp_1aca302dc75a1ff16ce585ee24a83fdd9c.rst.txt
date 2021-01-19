@@ -1,0 +1,13 @@
+.. _exhale_function_thread__index__impl___8hpp_1aca302dc75a1ff16ce585ee24a83fdd9c:
+
+Function ripple::detail::global_idx(DimY)
+=========================================
+
+- Defined in :ref:`file_include_ripple_core_execution_detail_thread_index_impl_.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::detail::global_idx(DimY)

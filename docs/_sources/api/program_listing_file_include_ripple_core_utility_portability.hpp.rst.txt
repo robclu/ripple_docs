@@ -1,0 +1,167 @@
+
+.. _program_listing_file_include_ripple_core_utility_portability.hpp:
+
+Program Listing for File portability.hpp
+========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_utility_portability.hpp>` (``include/ripple/core/utility/portability.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/utility/portability.hpp ---------------- -*- C++ -*- ---==//
+   //
+   //                                Ripple
+   //
+   //                      Copyright (c) 2019, 2020 Rob Clucas.
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_UTILITY_PORTABILITY_HPP
+   #define RIPPLE_UTILITY_PORTABILITY_HPP
+   
+   #include <cstddef>
+   #include <cstdio>
+   #include <cuda.h>
+   #include <cuda_runtime_api.h>
+   #include <cuda_runtime.h>
+   #include <exception>
+   
+   #if defined(__clang__) && defined(RIPPLE_SM_80)
+     #pragma clang diagnostic push
+     #pragma clang diagnostic ignored "-W#warnings"
+     #pragma clang diagnostic ignored "-Wpedantic"
+     #include <crt/sm_80_rt.h>
+     #pragma clang diagnostic pop
+   #endif
+   
+   // clang-format off
+   #if defined(__CUDACC__) || (defined(__clang__) && defined(__CUDA__)) 
+   
+     #define ripple_gpu_available  true
+   
+     #define ripple_cuda_available true
+   
+     #define ripple_host           __host__
+   
+     #define ripple_device         __device__
+   
+     #define ripple_host_device    __host__ __device__
+   
+     #define ripple_global         __global__
+     /* Defines valid code if cuda is available. */
+     #define ripple_if_cuda(...)   __VA_ARGS__
+   
+     #if defined(__CUDA_ARCH__)
+   
+       #define ripple_gpu_compile
+     #else
+   
+       #define ripple_cpu_compile
+     #endif 
+   #else
+   
+     #define ripple_gpu_available  false
+   
+     #define ripple_cuda_available false
+   
+     #define ripple_host
+   
+     #define ripple_device
+   
+     #define ripple_host_device
+   
+     #define ripple_global
+   
+     #define ripple_if_cuda(...) 
+   
+     #define ripple_cpu_compile
+   #endif
+   // clang-format on
+   
+   /*==--- [compiler] ---------------------------------------------------------==*/
+   
+   #define ripple_clang __clang__
+   
+   #define riplple_gcc __GNUC__ && !(__clang__) && !(__CUDACC__)
+   
+   #define ripple_nvcc __CUDACC__ && !(__clang__)
+   
+   #ifndef RIPPLE_MAX_UNROLL_DEPTH
+   
+     #define ripple_max_unroll_depth 8
+   #else
+   
+     #define ripple_max_unroll_depth RIPPLE_MAX_UNROLL_DEPTH
+   #endif
+   
+   #if __cplusplus >= 201703L
+   
+     #define ripple_nodiscard [[nodiscard]]
+   #else
+   
+     #define ripple_nodiscard
+   #endif
+   
+   namespace ripple {
+   
+   using GpuStream =
+   #if defined(ripple_cuda_available)
+     cudaStream_t;
+   #else
+     int;
+   #endif
+   
+   using GpuError =
+   #if defined(ripple_cuda_available)
+     cudaError_t;
+   #else
+     int;
+   #endif
+   
+   using GpuEvent =
+   #if defined(ripple_cuda_available)
+     cudaEvent_t;
+   #else
+     int;
+   #endif
+   
+   static constexpr GpuStream default_gpu_stream = 0;
+   
+   } // namespace ripple
+   
+   namespace ripple::gpu::debug {
+   
+   inline auto
+   check_cuda_error(GpuError err_code, const char* file, int line) -> void {
+   #if defined(ripple_cuda_available)
+     if (err_code != cudaSuccess) {
+       printf(
+         "\nCuda Error : %s\nFile       : %s\nLine       :  %i\n\n",
+         cudaGetErrorString(err_code),
+         file,
+         line);
+       std::terminate();
+     }
+   #endif
+   }
+   
+   } // namespace ripple::gpu::debug
+   
+   #if defined(NDEBUG)
+   
+     #define ripple_check_cuda_result(result) ripple_if_cuda(result)
+   #else
+   
+     #define ripple_check_cuda_result(result) \
+       ripple_if_cuda(                        \
+         ::ripple::gpu::debug::check_cuda_error((result), __FILE__, __LINE__))
+   #endif // NDEBUG
+   
+   #endif // RIPPLE_UTILITY_PORTABILITY_HPP

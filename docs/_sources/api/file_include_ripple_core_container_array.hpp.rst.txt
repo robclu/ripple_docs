@@ -1,0 +1,66 @@
+
+.. _file_include_ripple_core_container_array.hpp:
+
+File array.hpp
+==============
+
+
+This file defines an interface for arrays. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/container/array.hpp``)
+--------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_container_array.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``array_traits.hpp`` (:ref:`file_include_ripple_core_container_array_traits.hpp`)
+
+- ``ripple/core/algorithm/unrolled_for.hpp`` (:ref:`file_include_ripple_core_algorithm_unrolled_for.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_math_math.hpp`
+
+- :ref:`file_include_ripple_core_container_vec.hpp`
+
+- :ref:`file_include_ripple_core_math_mat.hpp`
+
+- :ref:`file_include_ripple_core_math_quat.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1Array`
+

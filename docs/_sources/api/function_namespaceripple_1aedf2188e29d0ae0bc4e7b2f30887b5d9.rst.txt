@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1aedf2188e29d0ae0bc4e7b2f30887b5d9:
+
+Template Function ripple::operator\*(const MatImpl<T, R, C, L>&, const Array<Impl>&)
+====================================================================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::operator*(const MatImpl<T, R, C, L>&, const Array<Impl>&)

@@ -1,0 +1,22 @@
+
+.. _namespace_ripple__kernel__cpu__detail:
+
+Namespace ripple::kernel::cpu::detail
+=====================================
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1kernel_1_1cpu_1_1detail_1_1Reducer`
+
+- :ref:`exhale_class_classripple_1_1kernel_1_1cpu_1_1detail_1_1Reducer_3_010_01_4`

@@ -1,0 +1,84 @@
+
+.. _file_include_ripple_core_graph_node.hpp:
+
+File node.hpp
+=============
+
+
+This file implements a Node class for a graph. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/graph/node.hpp``)
+---------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_graph_node.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``../container/tuple.hpp``
+
+- ``../execution/execution_traits.hpp``
+
+- ``../functional/invocable.hpp``
+
+- ``../math/math.hpp``
+
+- ``../utility/forward.hpp``
+
+- ``array`` (:ref:`file_include_ripple_core_container_array.hpp`)
+
+- ``atomic``
+
+- ``cassert``
+
+- ``string``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_graph_detail_utils_.hpp`
+
+- :ref:`file_include_ripple_core_graph_graph.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1NodeExecutor`
+
+- :ref:`exhale_struct_structripple_1_1NodeExecutorImpl`
+
+- :ref:`exhale_struct_structripple_1_1NodeInfo`
+
+- :ref:`exhale_class_classripple_1_1Node`
+

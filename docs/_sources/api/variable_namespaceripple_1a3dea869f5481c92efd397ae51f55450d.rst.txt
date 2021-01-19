@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1a3dea869f5481c92efd397ae51f55450d:
+
+Variable ripple::is_expansion_wrapper_v
+=======================================
+
+- Defined in :ref:`file_include_ripple_core_container_shared_wrapper.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::is_expansion_wrapper_v

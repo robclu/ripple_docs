@@ -1,0 +1,13 @@
+.. _exhale_enum_namespaceripple_1a0c2d39511c6a3ff234ce9c2a7885d528:
+
+Enum DataState
+==============
+
+- Defined in :ref:`file_include_ripple_core_container_block.hpp`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: ripple::DataState

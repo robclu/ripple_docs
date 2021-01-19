@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a9178fa6f89f12add17e38a775c6fe857:
+
+Typedef ripple::non_tensor_enable_t
+===================================
+
+- Defined in :ref:`file_include_ripple_core_container_tensor_traits.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::non_tensor_enable_t

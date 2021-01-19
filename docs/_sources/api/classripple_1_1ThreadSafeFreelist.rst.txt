@@ -1,0 +1,27 @@
+.. _exhale_class_classripple_1_1ThreadSafeFreelist:
+
+Class ThreadSafeFreelist
+========================
+
+- Defined in :ref:`file_include_ripple_core_allocation_pool_allocator.hpp`
+
+
+Nested Relationships
+--------------------
+
+
+Nested Types
+************
+
+- :ref:`exhale_struct_structripple_1_1ThreadSafeFreelist_1_1HeadPtr`
+- :ref:`exhale_struct_structripple_1_1ThreadSafeFreelist_1_1Node`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ripple::ThreadSafeFreelist
+   :members:
+   :protected-members:
+   :undoc-members:

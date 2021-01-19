@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1aa39574debe62d112daa8bd9d5aec723f:
+
+Typedef ripple::ExpType
+=======================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::ExpType

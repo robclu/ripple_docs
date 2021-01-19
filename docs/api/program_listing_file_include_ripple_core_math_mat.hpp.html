@@ -1,0 +1,630 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Program Listing for File mat.hpp &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+      <li>Program Listing for File mat.hpp</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/program_listing_file_include_ripple_core_math_mat.hpp.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="program-listing-for-file-mat-hpp">
+<span id="program-listing-file-include-ripple-core-math-mat-hpp"></span><h1>Program Listing for File mat.hpp<a class="headerlink" href="#program-listing-for-file-mat-hpp" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="file_include_ripple_core_math_mat.hpp.html#file-include-ripple-core-math-mat-hpp"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">include/ripple/core/math/mat.hpp</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//==--- ripple/core/container/mat.hpp ---------------------- -*- C++ -*- ---==//</span>
+<span class="c1">//</span>
+<span class="c1">//                                Ripple</span>
+<span class="c1">//</span>
+<span class="c1">//                      Copyright (c) 2019, 2020 Rob Clucas</span>
+<span class="c1">//</span>
+<span class="c1">//  This file is distributed under the MIT License. See LICENSE for details.</span>
+<span class="c1">//</span>
+<span class="c1">//==------------------------------------------------------------------------==//</span>
+<span class="c1">//</span>
+<span class="c1">//</span>
+<span class="c1">//==------------------------------------------------------------------------==//</span>
+
+<span class="cp">#ifndef RIPPLE_MATH_MAT_HPP</span>
+<span class="cp">#define RIPPLE_MATH_MAT_HPP</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;../container/array.hpp&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;../container/tuple.hpp&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;../storage/polymorphic_layout.hpp&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;../storage/storage_descriptor.hpp&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;../storage/storage_traits.hpp&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;../storage/struct_accessor.hpp&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;../utility/portability.hpp&quot;</span><span class="cp"></span>
+
+<span class="k">namespace</span> <span class="n">ripple</span> <span class="p">{</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Rows</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Cols</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Layout</span><span class="o">&gt;</span>
+<span class="k">struct</span> <span class="n">MatImpl</span><span class="p">;</span>
+
+<span class="k">template</span> <span class="o">&lt;</span>
+  <span class="k">typename</span> <span class="n">T</span><span class="p">,</span>
+  <span class="kt">size_t</span> <span class="n">Rows</span><span class="p">,</span>
+  <span class="kt">size_t</span> <span class="n">Cols</span><span class="p">,</span>
+  <span class="k">typename</span> <span class="n">Layout</span> <span class="o">=</span> <span class="n">ContiguousOwned</span><span class="o">&gt;</span>
+<span class="k">using</span> <span class="n">Mat</span> <span class="o">=</span> <span class="n">MatImpl</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Num</span><span class="o">&lt;</span><span class="n">Rows</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">Num</span><span class="o">&lt;</span><span class="n">Cols</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">Layout</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Rows</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Cols</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Layout</span><span class="o">&gt;</span>
+<span class="k">struct</span> <span class="nl">MatImpl</span> <span class="p">:</span> <span class="k">public</span> <span class="n">PolymorphicLayout</span><span class="o">&lt;</span><span class="n">MatImpl</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Rows</span><span class="p">,</span> <span class="n">Cols</span><span class="p">,</span> <span class="n">Layout</span><span class="o">&gt;&gt;</span> <span class="p">{</span>
+ <span class="k">private</span><span class="o">:</span>
+  <span class="cm">/*==--- [constants] ------------------------------------------------------==*/</span>
+
+  <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">elements</span> <span class="o">=</span> <span class="kt">size_t</span><span class="p">{</span><span class="n">Rows</span><span class="o">::</span><span class="n">value</span> <span class="o">*</span> <span class="n">Cols</span><span class="o">::</span><span class="n">value</span><span class="p">};</span>
+
+  <span class="c1">//==--- [aliases] --------------------------------------------------------==//</span>
+
+  <span class="c1">// clang-format off</span>
+  <span class="k">using</span> <span class="n">Descriptor</span> <span class="o">=</span> <span class="n">StorageDescriptor</span><span class="o">&lt;</span><span class="n">Layout</span><span class="p">,</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">elements</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+  <span class="k">using</span> <span class="n">Storage</span>    <span class="o">=</span> <span class="k">typename</span> <span class="n">Descriptor</span><span class="o">::</span><span class="n">Storage</span><span class="p">;</span>
+  <span class="k">using</span> <span class="n">Value</span>      <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">decay_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="c1">// clang-format on</span>
+
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">OType</span><span class="p">,</span> <span class="k">typename</span> <span class="n">ORows</span><span class="p">,</span> <span class="k">typename</span> <span class="n">OCols</span><span class="p">,</span> <span class="k">typename</span> <span class="n">OLayout</span><span class="o">&gt;</span>
+  <span class="k">friend</span> <span class="k">struct</span> <span class="n">MatImpl</span><span class="p">;</span>
+
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Layable</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">IsStridable</span><span class="o">&gt;</span>
+  <span class="k">friend</span> <span class="k">struct</span> <span class="n">LayoutTraits</span><span class="p">;</span>
+
+ <span class="k">public</span><span class="o">:</span>
+  <span class="n">Storage</span> <span class="n">storage_</span><span class="p">;</span>
+
+  <span class="cm">/*==--- [construction] ---------------------------------------------------==*/</span>
+
+  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="nf">MatImpl</span><span class="p">()</span> <span class="k">noexcept</span> <span class="p">{}</span>
+
+  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="nf">MatImpl</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span>
+    <span class="n">unrolled_for</span><span class="o">&lt;</span><span class="n">elements</span><span class="o">&gt;</span><span class="p">(</span>
+      <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="n">storage_</span><span class="p">.</span><span class="k">template</span> <span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="o">&gt;</span><span class="p">()</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span> <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Values</span><span class="p">,</span> <span class="n">variadic_size_enable_t</span><span class="o">&lt;</span><span class="n">elements</span><span class="p">,</span> <span class="n">Values</span><span class="p">...</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
+  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="n">MatImpl</span><span class="p">(</span><span class="n">Values</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">values</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">v</span> <span class="o">=</span> <span class="n">Tuple</span><span class="o">&lt;</span><span class="n">Values</span><span class="p">...</span><span class="o">&gt;</span><span class="p">{</span><span class="n">values</span><span class="p">...};</span>
+    <span class="n">unrolled_for</span><span class="o">&lt;</span><span class="n">elements</span><span class="o">&gt;</span><span class="p">(</span>
+      <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="n">storage_</span><span class="p">.</span><span class="k">template</span> <span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="o">&gt;</span><span class="p">()</span> <span class="o">=</span> <span class="n">get</span><span class="o">&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="p">(</span><span class="n">v</span><span class="p">);</span> <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="n">MatImpl</span><span class="p">(</span><span class="n">Storage</span> <span class="n">storage</span><span class="p">)</span> <span class="k">noexcept</span>
+  <span class="o">:</span> <span class="n">storage_</span><span class="p">{</span><span class="n">storage</span><span class="p">}</span> <span class="p">{}</span>
+
+  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="n">MatImpl</span><span class="p">(</span><span class="k">const</span> <span class="n">MatImpl</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span>
+  <span class="o">:</span> <span class="n">storage_</span><span class="p">{</span><span class="n">other</span><span class="p">.</span><span class="n">storage_</span><span class="p">}</span> <span class="p">{}</span>
+
+  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="n">MatImpl</span><span class="p">(</span><span class="n">MatImpl</span><span class="o">&amp;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span>
+  <span class="o">:</span> <span class="n">storage_</span><span class="p">{</span><span class="n">ripple_move</span><span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">storage_</span><span class="p">)}</span> <span class="p">{}</span>
+
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">OtherLayout</span><span class="o">&gt;</span>
+  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="n">MatImpl</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">MatImpl</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Rows</span><span class="p">,</span> <span class="n">Cols</span><span class="p">,</span> <span class="n">OtherLayout</span><span class="o">&gt;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span>
+  <span class="o">:</span> <span class="n">storage_</span><span class="p">{</span><span class="n">other</span><span class="p">.</span><span class="n">storage_</span><span class="p">}</span> <span class="p">{}</span>
+
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">OtherLayout</span><span class="o">&gt;</span>
+  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="n">MatImpl</span><span class="p">(</span>
+    <span class="n">MatImpl</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Rows</span><span class="p">,</span> <span class="n">Cols</span><span class="p">,</span> <span class="n">OtherLayout</span><span class="o">&gt;&amp;&amp;</span> <span class="n">other</span><span class="p">)</span>
+  <span class="o">:</span> <span class="n">storage_</span><span class="p">{</span><span class="n">ripple_move</span><span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">storage_</span><span class="p">)}</span> <span class="p">{}</span>
+
+  <span class="cm">/*==--- [operator overloads] ---------------------------------------------==*/</span>
+
+  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">MatImpl</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">MatImpl</span><span class="o">&amp;</span> <span class="p">{</span>
+    <span class="n">storage_</span> <span class="o">=</span> <span class="n">other</span><span class="p">.</span><span class="n">storage_</span><span class="p">;</span>
+    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">MatImpl</span><span class="o">&amp;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">MatImpl</span><span class="o">&amp;</span> <span class="p">{</span>
+    <span class="n">storage_</span> <span class="o">=</span> <span class="n">ripple_move</span><span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">storage_</span><span class="p">);</span>
+    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">OtherLayout</span><span class="o">&gt;</span>
+  <span class="n">ripple_host_device</span> <span class="k">auto</span>
+  <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">MatImpl</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Rows</span><span class="p">,</span> <span class="n">Cols</span><span class="p">,</span> <span class="n">OtherLayout</span><span class="o">&gt;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span>
+    <span class="o">-&gt;</span> <span class="n">MatImpl</span><span class="o">&amp;</span> <span class="p">{</span>
+    <span class="n">unrolled_for</span><span class="o">&lt;</span><span class="n">elements</span><span class="o">&gt;</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">storage_</span><span class="p">.</span><span class="k">template</span> <span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="o">&gt;</span><span class="p">()</span> <span class="o">=</span> <span class="n">other</span><span class="p">.</span><span class="n">storage_</span><span class="p">.</span><span class="k">template</span> <span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="p">});</span>
+    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">OtherLayout</span><span class="o">&gt;</span>
+  <span class="n">ripple_host_device</span> <span class="k">auto</span>
+  <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">MatImpl</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Rows</span><span class="p">,</span> <span class="n">Cols</span><span class="p">,</span> <span class="n">OtherLayout</span><span class="o">&gt;&amp;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">MatImpl</span><span class="o">&amp;</span> <span class="p">{</span>
+    <span class="n">storage_</span> <span class="o">=</span> <span class="n">ripple_move</span><span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">storage_</span><span class="p">);</span>
+    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">ripple_host_device</span> <span class="k">auto</span>
+  <span class="k">operator</span><span class="p">()(</span><span class="kt">size_t</span> <span class="n">row</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">col</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Value</span><span class="o">&amp;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">storage_</span><span class="p">.</span><span class="k">template</span> <span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">to_index</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">));</span>
+  <span class="p">}</span>
+
+  <span class="n">ripple_host_device</span> <span class="k">auto</span>
+  <span class="k">operator</span><span class="p">()(</span><span class="kt">size_t</span> <span class="n">row</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">col</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">Value</span><span class="o">&amp;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">storage_</span><span class="p">.</span><span class="k">template</span> <span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">to_index</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">));</span>
+  <span class="p">}</span>
+
+  <span class="cm">/*==--- [interface] ------------------------------------------------------==*/</span>
+
+  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">columns</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">Cols</span><span class="o">::</span><span class="n">value</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">rows</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">Rows</span><span class="o">::</span><span class="n">value</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">template</span> <span class="o">&lt;</span><span class="kt">size_t</span> <span class="n">Row</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">Col</span><span class="o">&gt;</span>
+  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">at</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">Value</span><span class="o">&amp;</span> <span class="p">{</span>
+    <span class="k">static_assert</span><span class="p">((</span><span class="n">Row</span> <span class="o">&lt;</span> <span class="n">rows</span><span class="p">()),</span> <span class="s">&quot;Compile time row index out of range!&quot;</span><span class="p">);</span>
+    <span class="k">static_assert</span><span class="p">((</span><span class="n">Col</span> <span class="o">&lt;</span> <span class="n">columns</span><span class="p">()),</span> <span class="s">&quot;Compile time col index out of range!&quot;</span><span class="p">);</span>
+    <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="n">to_index</span><span class="p">(</span><span class="n">Row</span><span class="p">,</span> <span class="n">Col</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">storage_</span><span class="p">.</span><span class="k">template</span> <span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="o">&gt;</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="k">template</span> <span class="o">&lt;</span><span class="kt">size_t</span> <span class="n">Row</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">Col</span><span class="o">&gt;</span>
+  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">at</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Value</span><span class="o">&amp;</span> <span class="p">{</span>
+    <span class="k">static_assert</span><span class="p">((</span><span class="n">Row</span> <span class="o">&lt;</span> <span class="n">rows</span><span class="p">()),</span> <span class="s">&quot;Compile time row index out of range!&quot;</span><span class="p">);</span>
+    <span class="k">static_assert</span><span class="p">((</span><span class="n">Col</span> <span class="o">&lt;</span> <span class="n">columns</span><span class="p">()),</span> <span class="s">&quot;Compile time col index out of range!&quot;</span><span class="p">);</span>
+    <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="n">to_index</span><span class="p">(</span><span class="n">Row</span><span class="p">,</span> <span class="n">Col</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">storage_</span><span class="p">.</span><span class="k">template</span> <span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="o">&gt;</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">size</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">elements</span><span class="p">;</span>
+  <span class="p">}</span>
+
+ <span class="k">private</span><span class="o">:</span>
+  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+  <span class="n">to_index</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">r</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">c</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">r</span> <span class="o">*</span> <span class="n">columns</span><span class="p">()</span> <span class="o">+</span> <span class="n">c</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Vec</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">Rows</span><span class="o">&gt;</span>
+<span class="k">using</span> <span class="n">mat_vec_result_t</span> <span class="o">=</span>
+  <span class="k">typename</span> <span class="n">array_traits_t</span><span class="o">&lt;</span><span class="n">Vec</span><span class="o">&gt;::</span><span class="k">template</span> <span class="n">ImplType</span><span class="o">&lt;</span><span class="n">Rows</span><span class="p">,</span> <span class="n">ContiguousOwned</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">R</span><span class="p">,</span> <span class="k">typename</span> <span class="n">C</span><span class="p">,</span> <span class="k">typename</span> <span class="n">L</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Impl</span><span class="o">&gt;</span>
+<span class="n">ripple_host_device</span> <span class="k">auto</span>
+<span class="k">operator</span><span class="o">*</span><span class="p">(</span><span class="k">const</span> <span class="n">MatImpl</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">L</span><span class="o">&gt;&amp;</span> <span class="n">m</span><span class="p">,</span> <span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;&amp;</span> <span class="n">v</span><span class="p">)</span> <span class="k">noexcept</span>
+  <span class="o">-&gt;</span> <span class="n">mat_vec_result_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="p">,</span> <span class="n">R</span><span class="o">::</span><span class="n">value</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">rows</span> <span class="o">=</span> <span class="n">R</span><span class="o">::</span><span class="n">value</span><span class="p">;</span>
+  <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">cols</span> <span class="o">=</span> <span class="n">C</span><span class="o">::</span><span class="n">value</span><span class="p">;</span>
+  <span class="k">using</span> <span class="n">Value</span>           <span class="o">=</span> <span class="k">typename</span> <span class="n">array_traits_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;::</span><span class="n">Value</span><span class="p">;</span>
+  <span class="k">using</span> <span class="n">Result</span>          <span class="o">=</span> <span class="n">mat_vec_result_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="p">,</span> <span class="n">rows</span><span class="o">&gt;</span><span class="p">;</span>
+
+  <span class="k">static_assert</span><span class="p">(</span>
+    <span class="n">cols</span> <span class="o">==</span> <span class="n">array_traits_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;::</span><span class="n">size</span><span class="p">,</span>
+    <span class="s">&quot;Invalid configuration for matrix vector multiplication!&quot;</span><span class="p">);</span>
+  <span class="k">static_assert</span><span class="p">(</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">is_convertible_v</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">array_traits_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;::</span><span class="n">Value</span><span class="o">&gt;</span><span class="p">,</span>
+    <span class="s">&quot;Matrix and vector types must be convertible!&quot;</span><span class="p">);</span>
+
+  <span class="n">Result</span> <span class="n">result</span><span class="p">;</span>
+  <span class="n">unrolled_for</span><span class="o">&lt;</span><span class="n">rows</span><span class="o">&gt;</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">result</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">unrolled_for</span><span class="o">&lt;</span><span class="n">cols</span><span class="o">&gt;</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span> <span class="n">result</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">+=</span> <span class="n">m</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="o">*</span> <span class="n">v</span><span class="p">[</span><span class="n">c</span><span class="p">];</span> <span class="p">});</span>
+  <span class="p">});</span>
+  <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span>
+  <span class="k">typename</span> <span class="n">T1</span><span class="p">,</span>
+  <span class="k">typename</span> <span class="n">T2</span><span class="p">,</span>
+  <span class="k">typename</span> <span class="n">R1</span><span class="p">,</span>
+  <span class="k">typename</span> <span class="n">C1R2</span><span class="p">,</span>
+  <span class="k">typename</span> <span class="n">C2</span><span class="p">,</span>
+  <span class="k">typename</span> <span class="n">L1</span><span class="p">,</span>
+  <span class="k">typename</span> <span class="n">L2</span><span class="o">&gt;</span>
+<span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">*</span><span class="p">(</span>
+  <span class="k">const</span> <span class="n">MatImpl</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">C1R2</span><span class="p">,</span> <span class="n">L1</span><span class="o">&gt;&amp;</span> <span class="n">a</span><span class="p">,</span>
+  <span class="k">const</span> <span class="n">MatImpl</span><span class="o">&lt;</span><span class="n">T2</span><span class="p">,</span> <span class="n">C1R2</span><span class="p">,</span> <span class="n">C2</span><span class="p">,</span> <span class="n">L2</span><span class="o">&gt;&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="k">noexcept</span>
+  <span class="o">-&gt;</span> <span class="n">MatImpl</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">C2</span><span class="p">,</span> <span class="n">ContiguousOwned</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">rows</span>  <span class="o">=</span> <span class="n">R1</span><span class="o">::</span><span class="n">value</span><span class="p">;</span>
+  <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">cols</span>  <span class="o">=</span> <span class="n">C2</span><span class="o">::</span><span class="n">value</span><span class="p">;</span>
+  <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">inner</span> <span class="o">=</span> <span class="n">C1R2</span><span class="o">::</span><span class="n">value</span><span class="p">;</span>
+
+  <span class="k">static_assert</span><span class="p">(</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">is_convertible_v</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span> <span class="n">T2</span><span class="o">&gt;</span><span class="p">,</span>
+    <span class="s">&quot;Matrix multiplication requires data types which are convertible!&quot;</span><span class="p">);</span>
+
+  <span class="k">using</span> <span class="n">Result</span> <span class="o">=</span> <span class="n">MatImpl</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">C2</span><span class="p">,</span> <span class="n">ContiguousOwned</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="n">Result</span> <span class="n">res</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">rows</span><span class="p">;</span> <span class="o">++</span><span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">cols</span><span class="p">;</span> <span class="o">++</span><span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">unrolled_for</span><span class="o">&lt;</span><span class="n">inner</span><span class="o">&gt;</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="n">res</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="o">+=</span> <span class="n">a</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">b</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span> <span class="p">});</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">}</span> <span class="c1">// namespace ripple</span>
+
+<span class="cp">#endif </span><span class="c1">// namespace RIPPLE_MATH_MAT_HPP</span>
+</pre></div>
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Program Listing for File mat.hpp</a></li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

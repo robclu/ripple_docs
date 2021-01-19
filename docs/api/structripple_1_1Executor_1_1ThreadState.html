@@ -1,0 +1,667 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Struct Executor::ThreadState &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Struct ExpansionParams" href="structripple_1_1ExpansionParams.html" />
+  <link rel="prev" title="Template Struct Execution" href="structripple_1_1Execution.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Struct Executor::ThreadState</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/structripple_1_1Executor_1_1ThreadState.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="struct-executor-threadstate">
+<span id="exhale-struct-structripple-1-1executor-1-1threadstate"></span><h1>Struct Executor::ThreadState<a class="headerlink" href="#struct-executor-threadstate" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_execution_executor.hpp.html#file-include-ripple-core-execution-executor-hpp"><span class="std std-ref">File executor.hpp</span></a></p></li>
+</ul>
+<div class="section" id="nested-relationships">
+<h2>Nested Relationships<a class="headerlink" href="#nested-relationships" title="Permalink to this headline">¶</a></h2>
+<p>This struct is a nested type of <a class="reference internal" href="classripple_1_1Executor.html#exhale-class-classripple-1-1executor"><span class="std std-ref">Class Executor</span></a>.</p>
+</div>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp struct">
+<dt id="_CPPv4N6ripple8Executor11ThreadStateE">
+<span id="_CPPv3N6ripple8Executor11ThreadStateE"></span><span id="_CPPv2N6ripple8Executor11ThreadStateE"></span><span id="ripple::Executor::ThreadState"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState"></span><em class="property">struct </em><code class="sig-prename descclassname">ripple::<a class="reference internal" href="classripple_1_1Executor.html#_CPPv4N6ripple8ExecutorE" title="ripple::Executor">Executor</a><code class="sig-prename descclassname">::</code></code><code class="sig-name descname">ThreadState</code><a class="headerlink" href="#_CPPv4N6ripple8Executor11ThreadStateE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the state for threads in the executor. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="cpp enum">
+<dt id="_CPPv4N6ripple8Executor11ThreadState8RunStateE">
+<span id="_CPPv3N6ripple8Executor11ThreadState8RunStateE"></span><span id="_CPPv2N6ripple8Executor11ThreadState8RunStateE"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1a96eb64720b90053ef380bc5bfe79b31b"></span><em class="property">enum </em><code class="sig-name descname">RunState</code><a class="headerlink" href="#_CPPv4N6ripple8Executor11ThreadState8RunStateE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the running state of the thread. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N6ripple8Executor11ThreadState8RunState8shutdownE">
+<span id="_CPPv3N6ripple8Executor11ThreadState8RunState8shutdownE"></span><span id="_CPPv2N6ripple8Executor11ThreadState8RunState8shutdownE"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1a96eb64720b90053ef380bc5bfe79b31ba5924f03a95ee6f7277e5bdd1e81b8fdc"></span><em class="property">enumerator </em><code class="sig-name descname">shutdown</code><a class="headerlink" href="#_CPPv4N6ripple8Executor11ThreadState8RunState8shutdownE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Thread is shutdown. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N6ripple8Executor11ThreadState8RunState6pausedE">
+<span id="_CPPv3N6ripple8Executor11ThreadState8RunState6pausedE"></span><span id="_CPPv2N6ripple8Executor11ThreadState8RunState6pausedE"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1a96eb64720b90053ef380bc5bfe79b31bad13c3f7baed576768b11a714ef4d90e2"></span><em class="property">enumerator </em><code class="sig-name descname">paused</code><a class="headerlink" href="#_CPPv4N6ripple8Executor11ThreadState8RunState6pausedE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Thread is paused. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N6ripple8Executor11ThreadState8RunState7runningE">
+<span id="_CPPv3N6ripple8Executor11ThreadState8RunState7runningE"></span><span id="_CPPv2N6ripple8Executor11ThreadState8RunState7runningE"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1a96eb64720b90053ef380bc5bfe79b31ba75101dcdfc88455bcafc9e53e0b06689"></span><em class="property">enumerator </em><code class="sig-name descname">running</code><a class="headerlink" href="#_CPPv4N6ripple8Executor11ThreadState8RunState7runningE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Thread is running. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple8Executor11ThreadState12SafeRunStateE">
+<span id="_CPPv3N6ripple8Executor11ThreadState12SafeRunStateE"></span><span id="_CPPv2N6ripple8Executor11ThreadState12SafeRunStateE"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1a038e7bd39343df7034cea0a1648dabdc"></span><em class="property">using </em><code class="sig-name descname">SafeRunState</code> = std::atomic&lt;<a class="reference internal" href="#_CPPv4N6ripple8Executor11ThreadState8RunStateE" title="ripple::Executor::ThreadState::RunState">RunState</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple8Executor11ThreadState12SafeRunStateE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the thread safe variable for the thread run state. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple8Executor11ThreadState11ThreadStateE8uint32_t8uint32_t8uint32_t8RunState13ExecutionKind">
+<span id="_CPPv3N6ripple8Executor11ThreadState11ThreadStateE8uint32_t8uint32_t8uint32_t8RunState13ExecutionKind"></span><span id="_CPPv2N6ripple8Executor11ThreadState11ThreadStateE8uint32_t8uint32_t8uint32_t8RunState13ExecutionKind"></span><span id="ripple::Executor::ThreadState::ThreadState__uint32_t.uint32_t.uint32_t.RunState.ExecutionKind"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1a5dbfbeacbb0a1b63116c6acbe8403a6e"></span><code class="sig-name descname">ThreadState</code><span class="sig-paren">(</span>uint32_t <em>index</em>, uint32_t <em>cpu_threads</em>, uint32_t <em>gpu_threads</em>, <a class="reference internal" href="#_CPPv4N6ripple8Executor11ThreadState8RunStateE" title="ripple::Executor::ThreadState::RunState">RunState</a> <em>state</em>, <a class="reference internal" href="enum_namespaceripple_1ae314c8184d85e6da81055513973875a6.html#_CPPv4N6ripple13ExecutionKindE" title="ripple::ExecutionKind">ExecutionKind</a> <em>p</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple8Executor11ThreadState11ThreadStateE8uint32_t8uint32_t8uint32_t8RunState13ExecutionKind" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor to create the state. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">index</span></code>: The index of the thread. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cpu_threads</span></code>: The total number of cpu threads. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gpu_thread</span></code>: The totla number of gpu threads. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">state</span></code>: The initial run state for the thread. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p</span></code>: The threads priority. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple8Executor11ThreadState11ThreadStateERR11ThreadState">
+<span id="_CPPv3N6ripple8Executor11ThreadState11ThreadStateERR11ThreadState"></span><span id="_CPPv2N6ripple8Executor11ThreadState11ThreadStateERR11ThreadState"></span><span id="ripple::Executor::ThreadState::ThreadState__ThreadStateRR"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1ab90b6efd44911a23b45390f1a151bb9d"></span><code class="sig-name descname">ThreadState</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple8Executor11ThreadState11ThreadStateERR11ThreadState" title="ripple::Executor::ThreadState::ThreadState">ThreadState</a> &amp;&amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple8Executor11ThreadState11ThreadStateERR11ThreadState" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Move constructor to move the other state to this one. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other state to move. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple8Executor11ThreadState11ThreadStateERK11ThreadState">
+<span id="_CPPv3N6ripple8Executor11ThreadState11ThreadStateERK11ThreadState"></span><span id="_CPPv2N6ripple8Executor11ThreadState11ThreadStateERK11ThreadState"></span><span id="ripple::Executor::ThreadState::ThreadState__ThreadStateCR"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1a8c7f06f9fa250fffbd4c8a938e6a08d2"></span><code class="sig-name descname">ThreadState</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple8Executor11ThreadState11ThreadStateERK11ThreadState" title="ripple::Executor::ThreadState::ThreadState">ThreadState</a>&amp;<span class="sig-paren">)</span> = delete<a class="headerlink" href="#_CPPv4N6ripple8Executor11ThreadState11ThreadStateERK11ThreadState" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy constructor  deleted. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple8Executor11ThreadState15processed_nodesEv">
+<span id="_CPPv3NK6ripple8Executor11ThreadState15processed_nodesEv"></span><span id="_CPPv2NK6ripple8Executor11ThreadState15processed_nodesEv"></span><span id="ripple::Executor::ThreadState::processed_nodesC"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1aa69d724eaa9af34110665d2a35aac96e"></span>auto <code class="sig-name descname">processed_nodes</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; uint32_t<a class="headerlink" href="#_CPPv4NK6ripple8Executor11ThreadState15processed_nodesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the number of nodes processed by the threads. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of threads processed by the thread. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple8Executor11ThreadState19inc_processed_nodesEv">
+<span id="_CPPv3N6ripple8Executor11ThreadState19inc_processed_nodesEv"></span><span id="_CPPv2N6ripple8Executor11ThreadState19inc_processed_nodesEv"></span><span id="ripple::Executor::ThreadState::inc_processed_nodes"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1a94898d328f123c738ae692bd25f88247"></span>auto <code class="sig-name descname">inc_processed_nodes</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple8Executor11ThreadState19inc_processed_nodesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Increments the number of processed nodes by one. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple8Executor11ThreadState11max_threadsE13ExecutionKind">
+<span id="_CPPv3N6ripple8Executor11ThreadState11max_threadsE13ExecutionKind"></span><span id="_CPPv2N6ripple8Executor11ThreadState11max_threadsE13ExecutionKind"></span><span id="ripple::Executor::ThreadState::max_threads__ExecutionKind"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1a9aca725592b75acbe83a8146175767b7"></span>auto <code class="sig-name descname">max_threads</code><span class="sig-paren">(</span><a class="reference internal" href="enum_namespaceripple_1ae314c8184d85e6da81055513973875a6.html#_CPPv4N6ripple13ExecutionKindE" title="ripple::ExecutionKind">ExecutionKind</a> <em>kind</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; uint32_t<a class="headerlink" href="#_CPPv4N6ripple8Executor11ThreadState11max_threadsE13ExecutionKind" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the max number of threads of the given execution kind. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The max number of threads for the given execution kind. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">kind</span></code>: The kind of the execution. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple8Executor11ThreadState16has_cpu_priorityEv">
+<span id="_CPPv3NK6ripple8Executor11ThreadState16has_cpu_priorityEv"></span><span id="_CPPv2NK6ripple8Executor11ThreadState16has_cpu_priorityEv"></span><span id="ripple::Executor::ThreadState::has_cpu_priorityC"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1a513ad1f9542094ceb17948d908729e15"></span>auto <code class="sig-name descname">has_cpu_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4NK6ripple8Executor11ThreadState16has_cpu_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines if the thread has cpu priority. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if the thread has cpu priority. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple8Executor11ThreadState16has_gpu_priorityEv">
+<span id="_CPPv3NK6ripple8Executor11ThreadState16has_gpu_priorityEv"></span><span id="_CPPv2NK6ripple8Executor11ThreadState16has_gpu_priorityEv"></span><span id="ripple::Executor::ThreadState::has_gpu_priorityC"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1ad65e80db619799ccbb532b6bc39b2e76"></span>auto <code class="sig-name descname">has_gpu_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4NK6ripple8Executor11ThreadState16has_gpu_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines if the thread has gpu priority. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if the thread has gpu priority. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple8Executor11ThreadState14first_priorityEv">
+<span id="_CPPv3NK6ripple8Executor11ThreadState14first_priorityEv"></span><span id="_CPPv2NK6ripple8Executor11ThreadState14first_priorityEv"></span><span id="ripple::Executor::ThreadState::first_priorityC"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1aa720d0f0821d92e5c580560d445439a3"></span>auto <code class="sig-name descname">first_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="enum_namespaceripple_1ae314c8184d85e6da81055513973875a6.html#_CPPv4N6ripple13ExecutionKindE" title="ripple::ExecutionKind">ExecutionKind</a><a class="headerlink" href="#_CPPv4NK6ripple8Executor11ThreadState14first_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the first priority type for the thread. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The first priority execution kind for the thread. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple8Executor11ThreadState15second_priorityEv">
+<span id="_CPPv3NK6ripple8Executor11ThreadState15second_priorityEv"></span><span id="_CPPv2NK6ripple8Executor11ThreadState15second_priorityEv"></span><span id="ripple::Executor::ThreadState::second_priorityC"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1a11725ada0089519dad4bc82621091d28"></span>auto <code class="sig-name descname">second_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="enum_namespaceripple_1ae314c8184d85e6da81055513973875a6.html#_CPPv4N6ripple13ExecutionKindE" title="ripple::ExecutionKind">ExecutionKind</a><a class="headerlink" href="#_CPPv4NK6ripple8Executor11ThreadState15second_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the second priority type for the thread. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The second priortity execution kind for the thread. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple8Executor11ThreadState11is_shutdownEv">
+<span id="_CPPv3NK6ripple8Executor11ThreadState11is_shutdownEv"></span><span id="_CPPv2NK6ripple8Executor11ThreadState11is_shutdownEv"></span><span id="ripple::Executor::ThreadState::is_shutdownC"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1aee7ead879249851a5a29e5cbe4c01d9a"></span>auto <code class="sig-name descname">is_shutdown</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4NK6ripple8Executor11ThreadState11is_shutdownEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines if the thread is shutdown. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if the thread is shutdown. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple8Executor11ThreadState9is_pausedEv">
+<span id="_CPPv3NK6ripple8Executor11ThreadState9is_pausedEv"></span><span id="_CPPv2NK6ripple8Executor11ThreadState9is_pausedEv"></span><span id="ripple::Executor::ThreadState::is_pausedC"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1ada5c3be5850ffef7ea906d50fec14fd2"></span>auto <code class="sig-name descname">is_paused</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4NK6ripple8Executor11ThreadState9is_pausedEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines if the thread is paused. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if the thread is paused. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple8Executor11ThreadState10is_runningEv">
+<span id="_CPPv3NK6ripple8Executor11ThreadState10is_runningEv"></span><span id="_CPPv2NK6ripple8Executor11ThreadState10is_runningEv"></span><span id="ripple::Executor::ThreadState::is_runningC"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1adc54ae5f9c285e5bcf3dee5cba8ad379"></span>auto <code class="sig-name descname">is_running</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4NK6ripple8Executor11ThreadState10is_runningEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines if the thread is running. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if the thread is running, </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple8Executor11ThreadState8shutdownEv">
+<span id="_CPPv3N6ripple8Executor11ThreadState8shutdownEv"></span><span id="_CPPv2N6ripple8Executor11ThreadState8shutdownEv"></span><span id="ripple::Executor::ThreadState::shutdown"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1a54e290b82adca4112ee3feef171b1ae5"></span>auto <code class="sig-name descname">shutdown</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple8Executor11ThreadState8shutdownEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Shuts down the thread. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple8Executor11ThreadState5pauseEv">
+<span id="_CPPv3N6ripple8Executor11ThreadState5pauseEv"></span><span id="_CPPv2N6ripple8Executor11ThreadState5pauseEv"></span><span id="ripple::Executor::ThreadState::pause"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1a4743e6632ca800733e81d3ddfd37fa86"></span>auto <code class="sig-name descname">pause</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple8Executor11ThreadState5pauseEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the thread state to paused. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple8Executor11ThreadState3runEv">
+<span id="_CPPv3N6ripple8Executor11ThreadState3runEv"></span><span id="_CPPv2N6ripple8Executor11ThreadState3runEv"></span><span id="ripple::Executor::ThreadState::run"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1a222ee2efcdd34da61ba7fcc6670c4ab3"></span>auto <code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple8Executor11ThreadState3runEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the thread state to run. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple8Executor11ThreadState2idE">
+<span id="_CPPv3N6ripple8Executor11ThreadState2idE"></span><span id="_CPPv2N6ripple8Executor11ThreadState2idE"></span><span id="ripple::Executor::ThreadState::id__uint32_t"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1acbeb75b3950f62180d9b26643b3d891b"></span>uint32_t <code class="sig-name descname">id</code> = 0<a class="headerlink" href="#_CPPv4N6ripple8Executor11ThreadState2idE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Thread’s id. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple8Executor11ThreadState15max_cpu_threadsE">
+<span id="_CPPv3N6ripple8Executor11ThreadState15max_cpu_threadsE"></span><span id="_CPPv2N6ripple8Executor11ThreadState15max_cpu_threadsE"></span><span id="ripple::Executor::ThreadState::max_cpu_threads__uint32_t"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1a4fde272c8275c0560505957e0067fa99"></span>uint32_t <code class="sig-name descname">max_cpu_threads</code> = 0<a class="headerlink" href="#_CPPv4N6ripple8Executor11ThreadState15max_cpu_threadsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Max cpu threads. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple8Executor11ThreadState15max_gpu_threadsE">
+<span id="_CPPv3N6ripple8Executor11ThreadState15max_gpu_threadsE"></span><span id="_CPPv2N6ripple8Executor11ThreadState15max_gpu_threadsE"></span><span id="ripple::Executor::ThreadState::max_gpu_threads__uint32_t"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1a7b72e9c64bb0f7ba9abae38b087c297e"></span>uint32_t <code class="sig-name descname">max_gpu_threads</code> = 0<a class="headerlink" href="#_CPPv4N6ripple8Executor11ThreadState15max_gpu_threadsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Max gpu threads. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple8Executor11ThreadState9processedE">
+<span id="_CPPv3N6ripple8Executor11ThreadState9processedE"></span><span id="_CPPv2N6ripple8Executor11ThreadState9processedE"></span><span id="ripple::Executor::ThreadState::processed__NodeCounter"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1a8bf6852662742fb701e0360bf7a958c3"></span>NodeCounter <code class="sig-name descname">processed</code> = 0<a class="headerlink" href="#_CPPv4N6ripple8Executor11ThreadState9processedE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Nodes process. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple8Executor11ThreadState9run_stateE">
+<span id="_CPPv3N6ripple8Executor11ThreadState9run_stateE"></span><span id="_CPPv2N6ripple8Executor11ThreadState9run_stateE"></span><span id="ripple::Executor::ThreadState::run_state__SafeRunState"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1a126c78ca148f009b0bd22baab708f1d5"></span><a class="reference internal" href="#_CPPv4N6ripple8Executor11ThreadState12SafeRunStateE" title="ripple::Executor::ThreadState::SafeRunState">SafeRunState</a> <code class="sig-name descname">run_state</code> = <a class="reference internal" href="#_CPPv4N6ripple8Executor11ThreadState8RunStateE" title="ripple::Executor::ThreadState::RunState">RunState</a>::<a class="reference internal" href="#_CPPv4N6ripple8Executor11ThreadState8RunState6pausedE" title="ripple::Executor::ThreadState::RunState::paused">paused</a><a class="headerlink" href="#_CPPv4N6ripple8Executor11ThreadState9run_stateE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Thread’s run state. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple8Executor11ThreadState8priorityE">
+<span id="_CPPv3N6ripple8Executor11ThreadState8priorityE"></span><span id="_CPPv2N6ripple8Executor11ThreadState8priorityE"></span><span id="ripple::Executor::ThreadState::priority__ExecutionKind"></span><span class="target" id="structripple_1_1Executor_1_1ThreadState_1a41b86fdc34026bb8401b743a8c558e89"></span><a class="reference internal" href="enum_namespaceripple_1ae314c8184d85e6da81055513973875a6.html#_CPPv4N6ripple13ExecutionKindE" title="ripple::ExecutionKind">ExecutionKind</a> <code class="sig-name descname">priority</code> = <a class="reference internal" href="enum_namespaceripple_1ae314c8184d85e6da81055513973875a6.html#_CPPv4N6ripple13ExecutionKindE" title="ripple::ExecutionKind">ExecutionKind</a>::<a class="reference internal" href="enum_namespaceripple_1ae314c8184d85e6da81055513973875a6.html#_CPPv4N6ripple13ExecutionKind3gpuE" title="ripple::ExecutionKind::gpu">gpu</a><a class="headerlink" href="#_CPPv4N6ripple8Executor11ThreadState8priorityE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Priority. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structripple_1_1ExpansionParams.html" class="btn btn-neutral float-right" title="Struct ExpansionParams" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="structripple_1_1Execution.html" class="btn btn-neutral" title="Template Struct Execution" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Struct Executor::ThreadState</a><ul>
+<li><a class="reference internal" href="#nested-relationships">Nested Relationships</a></li>
+<li><a class="reference internal" href="#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

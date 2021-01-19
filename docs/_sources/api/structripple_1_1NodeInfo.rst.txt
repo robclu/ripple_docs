@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1NodeInfo:
+
+Struct NodeInfo
+===============
+
+- Defined in :ref:`file_include_ripple_core_graph_node.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::NodeInfo
+   :members:
+   :protected-members:
+   :undoc-members:

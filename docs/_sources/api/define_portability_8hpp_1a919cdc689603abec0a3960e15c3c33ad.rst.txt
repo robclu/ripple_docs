@@ -1,0 +1,13 @@
+.. _exhale_define_portability_8hpp_1a919cdc689603abec0a3960e15c3c33ad:
+
+Define ripple_gpu_available
+===========================
+
+- Defined in :ref:`file_include_ripple_core_utility_portability.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: ripple_gpu_available

@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1acd8c7c1a915eb737eb65e5c8f26c4f89:
+
+Template Function ripple::memcopy_padding(const SrcBlock&, DstBlock&, CopySpecifier<Dim, SrcLocation, SrcMapping>, CopySpecifier<Dim, DstLocation, DstMapping>, GpuStream)
+==========================================================================================================================================================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::memcopy_padding(const SrcBlock&, DstBlock&, CopySpecifier<Dim, SrcLocation, SrcMapping>, CopySpecifier<Dim, DstLocation, DstMapping>, GpuStream)

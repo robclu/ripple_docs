@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1Vector:
+
+Template Struct Vector
+======================
+
+- Defined in :ref:`file_include_ripple_core_storage_storage_layout.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::Vector
+   :members:
+   :protected-members:
+   :undoc-members:

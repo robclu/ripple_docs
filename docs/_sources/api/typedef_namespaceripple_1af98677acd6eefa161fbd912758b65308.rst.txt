@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1af98677acd6eefa161fbd912758b65308:
+
+Typedef ripple::Vec3d
+=====================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::Vec3d

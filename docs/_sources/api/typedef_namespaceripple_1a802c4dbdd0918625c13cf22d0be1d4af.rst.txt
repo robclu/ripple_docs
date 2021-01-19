@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a802c4dbdd0918625c13cf22d0be1d4af:
+
+Typedef ripple::Vec
+===================
+
+- Defined in :ref:`file_include_ripple_core_iterator_iterator_traits.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::Vec

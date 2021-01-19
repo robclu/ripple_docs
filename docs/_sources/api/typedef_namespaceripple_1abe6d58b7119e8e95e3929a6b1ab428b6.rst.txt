@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1abe6d58b7119e8e95e3929a6b1ab428b6:
+
+Typedef ripple::GpuError
+========================
+
+- Defined in :ref:`file_include_ripple_core_utility_portability.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::GpuError

@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1ab7672c32dcda26ca7de4da2491519234:
+
+Typedef ripple::static_shared_enable_t
+======================================
+
+- Defined in :ref:`file_include_ripple_core_execution_execution_traits.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::static_shared_enable_t

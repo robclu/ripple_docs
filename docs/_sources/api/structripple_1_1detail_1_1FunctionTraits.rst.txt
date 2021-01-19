@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1detail_1_1FunctionTraits:
+
+Template Struct FunctionTraits
+==============================
+
+- Defined in :ref:`file_include_ripple_core_utility_detail_function_traits_impl_.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::detail::FunctionTraits
+   :members:
+   :protected-members:
+   :undoc-members:

@@ -1,0 +1,13 @@
+.. _exhale_function_math_8hpp_1aa75ffc5e348d31d24596c27e762dacdd:
+
+Template Function ripple::math::sqrt(const T&)
+==============================================
+
+- Defined in :ref:`file_include_ripple_core_math_math.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::math::sqrt(const T&)

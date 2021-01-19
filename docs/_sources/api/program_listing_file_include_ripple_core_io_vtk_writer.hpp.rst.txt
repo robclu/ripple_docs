@@ -1,0 +1,91 @@
+
+.. _program_listing_file_include_ripple_core_io_vtk_writer.hpp:
+
+Program Listing for File vtk_writer.hpp
+=======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_io_vtk_writer.hpp>` (``include/ripple/core/io/vtk_writer.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/io/vtk_writer.hpp --------------------------- -*- C++ -*- ---==//
+   //
+   //                                Ripple
+   //
+   //                      Copyright (c) 2020 Rob Clucas.
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_IO_VTK_WRITER_HPP
+   #define RIPPLE_IO_VTK_WRITER_HPP
+   
+   #include "multidim_writer.hpp"
+   #include "printable_element.hpp"
+   #include "../utility/range.hpp"
+   #include <array>
+   #include <fstream>
+   #include <vector>
+   
+   namespace ripple {
+   
+   class VtkWriter final : public MultidimWriter {
+    public:
+     using DimSizes = MultidimWriter::DimSizes;
+   
+     VtkWriter(std::string base_filename, std::string data_name = "");
+   
+     ~VtkWriter();
+   
+     VtkWriter(const VtkWriter& other) noexcept;
+   
+     auto clone() const noexcept -> std::shared_ptr<MultidimWriter> final override;
+   
+     auto set_name(std::string name) noexcept -> void final override;
+   
+     auto set_resolution(double res) noexcept -> void final override;
+   
+     auto write_metadata(const DimSizes& dims) noexcept -> void final override;
+   
+     auto write_element(const PrintableElement& element) noexcept
+       -> void final override;
+   
+     auto write_element_header(const PrintableElement& element) noexcept
+       -> void final override;
+   
+     auto write_element_footer() noexcept -> void final override;
+   
+     auto
+     open(std::string path = "", std::string suffix = "") -> void final override;
+   
+     auto close() -> void final override;
+   
+    private:
+     std::ofstream ofstream_;              
+     std::string   base_filename_ = "";    
+     std::string   name_          = "";    
+     double        res_           = 1.0;   
+     bool          ids_done_      = false; 
+     bool          header_done_   = false; 
+   
+     auto num_points(const DimSizes& dims) const -> size_t;
+   
+     auto num_cells(const DimSizes& dims) const -> size_t;
+   
+     auto
+     get_kind_string(PrintableElement::AttributeKind kind) const -> std::string;
+   
+     auto write_header() -> void;
+   
+     auto write_indices(const DimSizes& dims) -> void;
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_VIZ_IO_VTK_WRITER_HPP

@@ -1,0 +1,312 @@
+
+.. _program_listing_file_include_ripple_core_container_block.hpp:
+
+Program Listing for File block.hpp
+==================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_container_block.hpp>` (``include/ripple/core/container/block.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/container/block.hpp -------------------- -*- C++ -*- ---==//
+   //
+   //                                  Ripple
+   //
+   //                      Copyright (c) 2019, 2020 Rob Clucas
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_CONTAINER_BLOCK_HPP
+   #define RIPPLE_CONTAINER_BLOCK_HPP
+   
+   #include "device_block.hpp"
+   #include "host_block.hpp"
+   #include "memcopy_padding.hpp"
+   #include <ripple/core/algorithm/reduce.hpp>
+   #include <ripple/core/arch/topology.hpp>
+   #include <ripple/core/iterator/indexed_iterator.hpp>
+   
+   namespace ripple {
+   
+   /*==--- [Multiblock traits specialization] ---------------------------------==*/
+   
+   /*
+    * Specialization of the block enabled traits for a block.
+    * \param  T          The type of the data in the block.
+    * \tparam Dimensions The number of dimensions in the block.
+    */
+   template <typename T, size_t Dimensions>
+   struct MultiBlockTraits<Block<T, Dimensions>> {
+    private:
+     // clang-format off
+     using LayoutTraits = layout_traits_t<T>;
+     using IterValue    = typename LayoutTraits::Value;
+     using Space        = DynamicMultidimSpace<Dimensions>;
+   
+    public:
+     static constexpr size_t dimensions = Dimensions;
+   
+     // clang-format off
+     using Value          = T;
+     using Iterator       = IndexedIterator<IterValue, Space>;
+     using SharedIterator = BlockIterator<IterValue, Space>;
+   };
+   
+   enum class DataState : uint8_t {
+     invalid          = 0, 
+     updated_host     = 1, 
+     submitted_host   = 2, 
+     updated_device   = 3, 
+     submitted_device = 4  
+   };
+   
+   template <typename T, size_t Dimensions>
+   struct Block : MultiBlock<Block<T, Dimensions>> {
+     using Traits = MultiBlockTraits<Block<T, Dimensions>>;
+    public:
+     // clang-format off
+     using Index          = std::array<uint32_t, Dimensions>;
+     using HostBlock      = HostBlock<T, Dimensions>;
+     using DeviceBlock    = DeviceBlock<T, Dimensions>;
+     using Iterator       = typename Traits::Iterator;
+     using SharedIterator = typename Traits::SharedIterator;
+     using Stream         = typename DeviceBlock::Stream;
+     // clang-format on
+   
+     static constexpr size_t dims = Dimensions;
+   
+     /*==--- [construction] ---------------------------------------------------==*/
+   
+     Block() = default;
+   
+     ~Block() = default;
+   
+     /*==--- [interface] ------------------------------------------------------==*/
+   
+     auto ensure_device_data_available() noexcept -> void {
+       if (data_state == DataState::updated_host) {
+         device_data.copy_data(host_data);
+         data_state = DataState::updated_device;
+       }
+     }
+   
+     auto ensure_host_data_available() noexcept -> void {
+       if (data_state == DataState::updated_device) {
+         host_data.copy_data(device_data);
+         data_state = DataState::updated_host;
+       }
+     }
+   
+     auto has_padding() const noexcept -> bool {
+       return host_data.padding() > 0;
+     }
+   
+     auto set_padding(size_t amount) noexcept -> void {
+       host_data.set_padding(amount);
+       device_data.set_padding(amount);
+     }
+   
+     auto padding() const noexcept -> size_t {
+       return device_data.padding();
+     }
+   
+     auto set_device_id(uint32_t device_id) noexcept -> void {
+       gpu_id = device_id;
+       device_data.set_device_id(device_id);
+     }
+   
+     auto device_iterator(int padding_mod = 0) const noexcept -> Iterator {
+       auto iter = Iterator{device_data.begin(padding_mod)};
+       set_iter_properties(iter, padding_mod);
+       return iter;
+     }
+   
+     auto host_iterator() const noexcept -> Iterator {
+       auto iter = Iterator{host_data.begin()};
+       set_iter_properties(iter);
+       return iter;
+     }
+   
+     auto stream() const noexcept -> Stream {
+       return device_data.stream();
+     }
+   
+     auto transfer_stream() const noexcept -> Stream {
+       return transfer_stream_ != nullptr ? transfer_stream_ : stream();
+     }
+   
+     auto set_transfer_stream(Stream stream) noexcept -> void {
+       transfer_stream_ = stream;
+     }
+   
+     auto synchronize() noexcept -> void {
+       gpu::set_device(gpu_id);
+       gpu::synchronize_stream(stream());
+     }
+   
+     template <typename Dim>
+     auto size(Dim&& dim) const noexcept -> size_t {
+       return device_data.size(ripple_forward(dim));
+     }
+   
+     template <typename Dim>
+     auto last_in_dim(Dim&& dim) const noexcept -> bool {
+       return indices[dim] == max_indices[dim];
+     }
+   
+     template <typename Dim>
+     auto first_in_dim(Dim&& dim) const noexcept -> bool {
+       return indices[dim] == 0;
+     }
+   
+     /*==--- [padding copying] ------------------------------------------------==*/
+   
+     template <size_t Dim, FaceLocation Location, Mapping Map>
+     auto fill_padding(
+       Block&                            other,
+       CopySpecifier<Dim, Location, Map> dst_face,
+       ExecutionKind                     exec_kind,
+       TransferKind transfer_kind = TransferKind::synchronous) noexcept -> void {
+       if (exec_kind == ExecutionKind::gpu) {
+         fill_padding_device(other, dst_face, transfer_kind);
+         return;
+       }
+       fill_padding_host(other, dst_face);
+     }
+   
+     /*==--- [reduction] ------------------------------------------------------==*/
+   
+     template <typename Pred, typename... As>
+     auto reduce(ExecutionKind exec, Pred&& pred, As&&... as) noexcept -> T {
+       // clang-format off
+       return exec == ExecutionKind::gpu
+         ? reduce_on_device(ripple_forward(pred), ripple_forward(as)...)
+         : reduce_on_host(ripple_forward(pred), ripple_forward(as)...);
+       // clang-format on
+     }
+   
+     template <typename Pred, typename... Args>
+     auto reduce_on_device(Pred&& pred, Args&&... args) noexcept -> T {
+       ensure_device_data_available();
+       return ::ripple::reduce(
+         device_data, ripple_forward(pred), ripple_forward(args)...);
+     }
+   
+     template <typename Pred, typename... Args>
+     auto reduce_on_host(Pred&& pred, Args&&... args) noexcept -> T {
+       ensure_host_data_available();
+       return ::ripple::reduce(
+         host_data, ripple_forward(pred), ripple_forward(args)...);
+     }
+   
+     //==--- [members] --------------------------------------------------------==//
+   
+     HostBlock   host_data;         
+     DeviceBlock device_data;       
+     Index       indices      = {}; 
+     Index       block_sizes  = {}; 
+     Index       global_sizes = {}; 
+     Index       max_indices  = {}; 
+     uint32_t    gpu_id       = 0;  
+     DataState   data_state   = DataState::invalid; 
+   
+    private:
+     Stream transfer_stream_ = nullptr; 
+   
+     template <size_t Dim, FaceLocation Location, Mapping Map>
+     static constexpr auto
+     opp_face_for_src(CopySpecifier<Dim, Location, Map>) noexcept {
+       constexpr auto location =
+         Location == FaceLocation::start ? FaceLocation::end : FaceLocation::start;
+       return CopySpecifier<Dim, location, Mapping::domain>{};
+     }
+   
+     template <size_t Dim, FaceLocation Location, Mapping Map>
+     static constexpr auto
+     same_face_for_dst(CopySpecifier<Dim, Location, Map>) noexcept {
+       return CopySpecifier<Dim, Location, Mapping::padding>{};
+     }
+   
+     template <typename Iterator>
+     auto set_iter_properties(Iterator& it, int padding_mod = 0) const noexcept
+       -> void {
+       unrolled_for<dims>([&](auto dim) {
+         // it.set_block_start_index(
+         //  dim, indices[dim] * (block_sizes[dim] + 2 * padding_mod));
+         // it.set_global_size(dim, global_sizes[dim] + 2 * padding_mod);
+   
+         it.set_block_start_index(
+           dim, indices[dim] * block_sizes[dim] - padding_mod);
+         it.set_global_size(dim, global_sizes[dim] + padding_mod);
+       });
+     }
+   
+     template <size_t Dim, FaceLocation Location, Mapping Map>
+     auto fill_padding_device(
+       Block&                            other,
+       CopySpecifier<Dim, Location, Map> dest_face,
+       TransferKind                      transfer_kind) noexcept -> void {
+       constexpr auto src_face = opp_face_for_src(dest_face);
+       constexpr auto dst_face = same_face_for_dst(dest_face);
+   
+       const bool async_transfer = transfer_kind == TransferKind::asynchronous;
+   
+       // If we are on the same gpu, then we can do the device to device copy,
+       // otherwise we need to go through the host:
+       if (topology().device_to_device_available(gpu_id, other.gpu_id)) {
+         gpu::set_device(other.gpu_id);
+         auto stream = async_transfer ? other.transfer_stream() : other.stream();
+         memcopy_padding(
+           other.device_data, device_data, src_face, dst_face, stream);
+         gpu::synchronize_stream(stream);
+         return;
+       }
+   
+       auto this_stream  = async_transfer ? transfer_stream() : stream();
+       auto other_stream = async_transfer ? other.transfer_stream()
+                                          : other.stream();
+   
+       // Here we can't do a device -> device copy, so go
+       // through the host: First copy from the other block's
+       // device data to this block's host data, and wait for the
+       // transfer to complete.
+       gpu::set_device(other.gpu_id);
+       memcopy_padding(
+         other.device_data, host_data, src_face, src_face, other_stream);
+       gpu::synchronize_stream(other_stream);
+   
+       // Then copy from this block's host data to this blocks device data:
+       gpu::set_device(gpu_id);
+       memcopy_padding(host_data, device_data, src_face, dst_face, this_stream);
+     }
+   
+     template <size_t Dim, FaceLocation Location, Mapping Map>
+     auto fill_padding_host(
+       Block& other, CopySpecifier<Dim, Location, Map> dest_face) noexcept
+       -> void {
+       constexpr auto src_face = opp_face_for_src(dest_face);
+       constexpr auto dst_face = same_face_for_dst(dest_face);
+   
+       // Here we know that we have to go through the host.
+       // First make sure that the host data is up to date. We start both copies
+       // and then wait for both copies:
+       other.ensure_host_data_available();
+       ensure_device_data_available();
+       other.synchronize();
+       synchronize();
+   
+       // Then copy from this block's host data to this blocks device data:
+       memcopy_padding(host_data, device_data, src_face, dst_face);
+     }
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_CONTAINER_BLOCK_HPP

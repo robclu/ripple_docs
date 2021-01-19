@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a59474903e1e2ddd833e8859fba1b217c:
+
+Typedef ripple::mat_vec_result_t
+================================
+
+- Defined in :ref:`file_include_ripple_core_math_mat.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::mat_vec_result_t

@@ -1,0 +1,88 @@
+
+.. _program_listing_file_include_ripple_core_utility_dim.hpp:
+
+Program Listing for File dim.hpp
+================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_utility_dim.hpp>` (``include/ripple/core/utility/dim.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/utility/dim.hpp ------------------------ -*- C++ -*- ---==//
+   //
+   //                                Ripple
+   //
+   //                      Copyright (c) 2019, 2020 Rob Clucas.
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_UTILITY_DIM_HPP
+   #define RIPPLE_UTILITY_DIM_HPP
+   
+   #include "portability.hpp"
+   
+   namespace ripple {
+   
+   template <size_t Value>
+   struct Dimension {
+     static constexpr size_t value = Value;
+   
+     ripple_host_device constexpr operator size_t() const {
+       return static_cast<size_t>(Value);
+     }
+   };
+   
+   namespace detail {
+   
+   template <typename T>
+   struct IsDimension {
+     static constexpr bool value = false;
+   };
+   
+   template <size_t Value>
+   struct IsDimension<Dimension<Value>> {
+     static constexpr bool value = true;
+   };
+   
+   } // namespace detail
+   
+   /*==--- [aliases] ----------------------------------------------------------==*/
+   
+   using DimX = Dimension<0>;
+   using DimY = Dimension<1>;
+   using DimZ = Dimension<2>;
+   
+   /*==--- [constants] --------------------------------------------------------==*/
+   
+   static constexpr inline DimX dimx() {
+     return DimX{};
+   }
+   
+   static constexpr inline DimY dimy() {
+     return DimY{};
+   }
+   
+   static constexpr inline DimZ dimz() {
+     return DimZ{};
+   }
+   
+   template <typename T>
+   static constexpr size_t is_dimension_v =
+     detail::IsDimension<std::decay_t<T>>::value;
+   
+   template <typename T>
+   using dim_enable_t = std::enable_if_t<is_dimension_v<T>, int>;
+   
+   template <typename T>
+   using non_dim_enable_t = std::enable_if_t<!is_dimension_v<T>, int>;
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_UTILITY_DIM_HPP

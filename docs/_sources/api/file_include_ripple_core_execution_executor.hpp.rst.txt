@@ -1,0 +1,66 @@
+
+.. _file_include_ripple_core_execution_executor.hpp:
+
+File executor.hpp
+=================
+
+
+This file implements an executor class. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/execution/executor.hpp``)
+-----------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_execution_executor.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``../arch/topology.hpp``
+
+- ``../container/static_stealable_dequeue.hpp``
+
+- ``../graph/graph.hpp``
+
+- ``../graph/stealer.hpp``
+
+- ``chrono``
+
+- ``thread`` (:ref:`file_include_ripple_core_execution_thread_index.hpp`)
+
+- ``variant``
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1Executor_1_1ThreadState`
+
+- :ref:`exhale_class_classripple_1_1Executor`
+

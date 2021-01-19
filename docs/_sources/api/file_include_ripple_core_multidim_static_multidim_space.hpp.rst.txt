@@ -1,0 +1,58 @@
+
+.. _file_include_ripple_core_multidim_static_multidim_space.hpp:
+
+File static_multidim_space.hpp
+==============================
+
+
+This file imlements a class which defines a statically sized multi dimensional space. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/multidim/static_multidim_space.hpp``)
+-----------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_multidim_static_multidim_space.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``multidim_space.hpp`` (:ref:`file_include_ripple_core_multidim_dynamic_multidim_space.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_execution_static_execution_params.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1StaticMultidimSpace`
+

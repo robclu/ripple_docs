@@ -1,0 +1,68 @@
+
+.. _file_include_ripple_core_graph_modifier.hpp:
+
+File modifier.hpp
+=================
+
+
+This file defines a modifier class which is essentially a wrapped which allows the specification for how data is modified. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/graph/modifier.hpp``)
+-------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_graph_modifier.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``ripple/core/utility/type_traits.hpp`` (:ref:`file_include_ripple_core_utility_type_traits.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_container_shared_wrapper.hpp`
+
+- :ref:`file_include_ripple_core_container_block_extractor.hpp`
+
+- :ref:`file_include_ripple_core_graph_splitter.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1ExpansionParams`
+
+- :ref:`exhale_struct_structripple_1_1ModificationSpecifier`
+
+- :ref:`exhale_struct_structripple_1_1ModificationTraits`
+
+- :ref:`exhale_struct_structripple_1_1ModificationTraits_3_01ModificationSpecifier_3_01T_00_01Modification_01_4_01_4`
+

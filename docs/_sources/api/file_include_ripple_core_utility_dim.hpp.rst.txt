@@ -1,0 +1,76 @@
+
+.. _file_include_ripple_core_utility_dim.hpp:
+
+File dim.hpp
+============
+
+
+This file defines a class which represents a dimension which can be evaluated at compile time or as a size type at runtime. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/utility/dim.hpp``)
+----------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_utility_dim.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``portability.hpp`` (:ref:`file_include_ripple_core_utility_portability.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_utility_type_traits.hpp`
+
+- :ref:`file_include_ripple_core_execution_detail_thread_index_impl_.hpp`
+
+- :ref:`file_include_ripple_core_functional_kernel_invoke_cpp_.hpp`
+
+- :ref:`file_include_ripple_core_boundary_ghost_index.hpp`
+
+- :ref:`file_include_ripple_core_container_tensor.hpp`
+
+- :ref:`file_include_ripple_core_execution_execution_params.hpp`
+
+- :ref:`file_include_ripple_core_execution_execution_size.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+- :ref:`namespace_ripple__detail`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1detail_1_1IsDimension`
+
+- :ref:`exhale_struct_structripple_1_1detail_1_1IsDimension_3_01Dimension_3_01Value_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1Dimension`
+

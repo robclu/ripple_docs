@@ -1,0 +1,68 @@
+
+.. _program_listing_file_include_ripple_core_arch_cache.hpp:
+
+Program Listing for File cache.hpp
+==================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_arch_cache.hpp>` (``include/ripple/core/arch/cache.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/arch/cache.hpp ------------------------- -*- C++ -*- ---==//
+   //
+   //                                Ripple
+   //
+   //                      Copyright (c) 2019 Rob Clucas.
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_ARCH_CACHE_HPP
+   #define RIPPLE_ARCH_CACHE_HPP
+   
+   #include <cstdint>
+   #include <new>
+   
+   namespace ripple {
+   
+   static constexpr size_t avoid_false_sharing_size =
+   #if defined(RIPPLE_AVOID_FALSE_SHARING_SIZE)
+     RIPPLE_AVOID_FALSE_SHARING_SIZE;
+   #else
+     // Not yet implemented, so just use the most cache line size.
+     64;
+   #endif
+   
+   struct Cache {
+     static constexpr uint32_t bytes_in_kb = 1024;
+   
+     enum Type : uint32_t {
+       Null        = 0x0, 
+       Data        = 0x1, 
+       Instruction = 0x2, 
+       Unified     = 0x3  
+     };
+   
+     auto size() const -> uint32_t {
+       return assosciativity * partitions * linesize * sets / bytes_in_kb;
+     }
+   
+     Type     type           = Type::Null; 
+     uint32_t level          = 0;          
+     uint32_t linesize       = 0;          
+     uint32_t partitions     = 0;          
+     uint32_t assosciativity = 0;          
+     uint32_t shared_by      = 0;          
+     uint32_t sets           = 0;          
+     uint32_t mask           = 0;          
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_ARCH_CACHE_HPP

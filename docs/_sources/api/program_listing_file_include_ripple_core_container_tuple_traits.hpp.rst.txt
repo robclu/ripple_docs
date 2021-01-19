@@ -1,0 +1,103 @@
+
+.. _program_listing_file_include_ripple_core_container_tuple_traits.hpp:
+
+Program Listing for File tuple_traits.hpp
+=========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_container_tuple_traits.hpp>` (``include/ripple/core/container/tuple_traits.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/container/tuple_traits.hpp ------------- -*- C++ -*- ---==//
+   //
+   //                                Ripple
+   //
+   //                      Copyright (c) 2019, 2020 Rob Clucas
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_CONTAINER_TUPLE_TRAITS_HPP
+   #define RIPPLE_CONTAINER_TUPLE_TRAITS_HPP
+   
+   #include "detail/basic_tuple_.hpp"
+   #include "../utility/type_traits.hpp"
+   
+   namespace ripple {
+   
+   /*==--- [forward declarations] ---------------------------------------------==*/
+   
+   template <typename... Types>
+   class Tuple;
+   
+   /*==--- [traits] -----------------------------------------------------------==*/
+   
+   namespace detail {
+   
+   template <typename T>
+   struct TupleTraits {
+     static constexpr size_t size = 0;
+   };
+   
+   template <typename... Ts>
+   struct TupleTraits<Tuple<Ts...>> {
+     static constexpr size_t size = sizeof...(Ts);
+   };
+   
+   template <typename T>
+   struct IsTuple {
+     static constexpr bool value = false;
+   };
+   
+   template <typename... Ts>
+   struct IsTuple<Tuple<Ts...>> {
+     static constexpr bool value = true;
+   };
+   
+   template <size_t I, typename T>
+   struct TupleElement {
+     using DataType = decltype(std::declval<T>().data());
+   
+     using Type =
+       decltype(type_extractor<I>(static_cast<std::remove_reference_t<DataType>&&>(
+         std::declval<T>().data())));
+   };
+   
+   template <size_t I>
+   struct TupleElement<I, Tuple<>> {
+     using Type = void;
+   };
+   
+   } // namespace detail
+   
+   template <typename T>
+   using tuple_traits_t = detail::TupleTraits<std::decay_t<T>>;
+   
+   template <size_t I, typename T>
+   using tuple_element_t = typename detail::TupleElement<I, T>::Type;
+   
+   template <typename T>
+   static constexpr bool is_tuple_v = detail::IsTuple<std::decay_t<T>>::value;
+   
+   template <typename T>
+   static constexpr size_t tuple_size_v = tuple_traits_t<T>::size;
+   
+   /*==--- [enables] ----------------------------------------------------------==*/
+   
+   template <typename... Ts>
+   using tuple_enable_t =
+     std::enable_if_t<is_tuple_v<nth_element_t<0, Ts...>>, int>;
+   
+   template <typename... Ts>
+   using non_tuple_enable_t =
+     std::enable_if_t<!is_tuple_v<nth_element_t<0, Ts...>>, int>;
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_CONTAINER_TUPLE_HPP

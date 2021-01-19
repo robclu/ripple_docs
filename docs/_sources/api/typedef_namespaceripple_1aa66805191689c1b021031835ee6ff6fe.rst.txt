@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1aa66805191689c1b021031835ee6ff6fe:
+
+Typedef ripple::storage_element_traits_t
+========================================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::storage_element_traits_t

@@ -1,0 +1,13 @@
+.. _exhale_function_utils___8hpp_1aa73d908187fa1daa439daea7f786c140:
+
+Template Function ripple::detail::add_padding_op_nodes_expanded
+===============================================================
+
+- Defined in :ref:`file_include_ripple_core_graph_detail_utils_.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::detail::add_padding_op_nodes_expanded(GraphType&, ExecutionKind, TransferKind, std::index_sequence<I...>, Args&&...)

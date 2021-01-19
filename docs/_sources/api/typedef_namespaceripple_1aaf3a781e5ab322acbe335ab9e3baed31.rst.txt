@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1aaf3a781e5ab322acbe335ab9e3baed31:
+
+Typedef ripple::PaddingType
+===========================
+
+- Defined in :ref:`file_include_ripple_core_container_shared_wrapper.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::PaddingType

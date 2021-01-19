@@ -1,0 +1,62 @@
+
+.. _file_include_ripple_core_storage_default_storage.hpp:
+
+File default_storage.hpp
+========================
+
+
+This file defines a class for defauly storage. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/storage/default_storage.hpp``)
+----------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_storage_default_storage.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``../multidim/multidim_space.hpp``
+
+- ``../utility/portability.hpp``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_storage_layout_traits.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1DefaultStorage`
+
+- :ref:`exhale_struct_structripple_1_1DefaultStorage_1_1Allocator`
+

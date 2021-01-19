@@ -1,0 +1,13 @@
+.. _exhale_function_math_8hpp_1a85fdbe1dc8da5ece06e3f21343695e8a:
+
+Template Function ripple::math::sqrt(const Array<Impl>&)
+========================================================
+
+- Defined in :ref:`file_include_ripple_core_math_math.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::math::sqrt(const Array<Impl>&)

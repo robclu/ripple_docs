@@ -1,0 +1,13 @@
+.. _exhale_function_math_8hpp_1a2e635a75df5c0aff26f4fd4c247c29b6:
+
+Template Function ripple::math::detail::sign(T, std::false_type)
+================================================================
+
+- Defined in :ref:`file_include_ripple_core_math_math.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::math::detail::sign(T, std::false_type)

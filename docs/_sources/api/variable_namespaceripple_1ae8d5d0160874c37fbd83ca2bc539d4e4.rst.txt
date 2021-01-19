@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1ae8d5d0160874c37fbd83ca2bc539d4e4:
+
+Variable ripple::is_storage_accessor_v
+======================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::is_storage_accessor_v

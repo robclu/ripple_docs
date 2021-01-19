@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a8a498ae3a1ed631468b36339a962bd41:
+
+Typedef ripple::modification_traits_t
+=====================================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::modification_traits_t

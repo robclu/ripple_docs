@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1IteratorTraits_3_01IndexedIterator_3_01T_00_01Space_01_4_01_4:
+
+Template Struct IteratorTraits< IndexedIterator< T, Space > >
+=============================================================
+
+- Defined in :ref:`file_include_ripple_core_iterator_iterator_traits.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::IteratorTraits< IndexedIterator< T, Space > >
+   :members:
+   :protected-members:
+   :undoc-members:

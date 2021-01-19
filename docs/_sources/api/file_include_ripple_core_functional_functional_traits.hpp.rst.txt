@@ -1,0 +1,64 @@
+
+.. _file_include_ripple_core_functional_functional_traits.hpp:
+
+File functional_traits.hpp
+==========================
+
+
+This file defines traits for functional functionality. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/functional/functional_traits.hpp``)
+---------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_functional_functional_traits.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``ripple/core/utility/portability.hpp`` (:ref:`file_include_ripple_core_utility_portability.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_functional_invocable.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+- :ref:`namespace_ripple__detail`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1detail_1_1IsInvocable`
+
+- :ref:`exhale_struct_structripple_1_1detail_1_1IsInvocable_3_01Invocable_3_01F_01_4_01_4`
+
+- :ref:`exhale_class_classripple_1_1Invocable`
+

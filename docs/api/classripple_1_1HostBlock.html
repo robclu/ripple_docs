@@ -1,0 +1,957 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Template Class HostBlock &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Template Class IndexedIterator" href="classripple_1_1IndexedIterator.html" />
+  <link rel="prev" title="Class Graph" href="classripple_1_1Graph.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Template Class HostBlock</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/classripple_1_1HostBlock.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="template-class-hostblock">
+<span id="exhale-class-classripple-1-1hostblock"></span><h1>Template Class HostBlock<a class="headerlink" href="#template-class-hostblock" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_container_block_traits.hpp.html#file-include-ripple-core-container-block-traits-hpp"><span class="std std-ref">File block_traits.hpp</span></a></p></li>
+</ul>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4I0_6size_tEN6ripple9HostBlockE">
+<span id="_CPPv3I0_6size_tEN6ripple9HostBlockE"></span><span id="_CPPv2I0_6size_tEN6ripple9HostBlockE"></span>template&lt;typename <code class="sig-name descname">T</code>, size_t <code class="sig-name descname">Dimensions</code>&gt;<br /><span class="target" id="classripple_1_1HostBlock"></span><em class="property">class </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">HostBlock</code><a class="headerlink" href="#_CPPv4I0_6size_tEN6ripple9HostBlockE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Definition of a host block class which stores multidimensional data on the host. </p>
+<p>Implementation of a host block class which stores multidimensional data on the host.</p>
+<p>This will store the data in a strided format if the type T implements the StridableLayout interface and the descriptor for the storage for the type has a StorageLayout::StridedView type, otherwise this will store the data in a contiguous format.</p>
+<p><p>This will store the data in a strided format if the type T implements the StriableLayout interface and the descriptor for the storage for the type has a StorageLayout::strided_view type, otherwise this will store the data in a contiguous format.</p>
+<dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the data stored in the tensor. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dimensions</span></code>: The number of dimensions in the tensor.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the data stored in the tensor. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dimensions</span></code>: The number of dimensions in the tensor. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple9HostBlock7PaddingE">
+<span id="_CPPv3N6ripple9HostBlock7PaddingE"></span><span id="_CPPv2N6ripple9HostBlock7PaddingE"></span><span class="target" id="classripple_1_1HostBlock_1ab2dafdd1debec6a0aea7af9749322db4"></span><em class="property">using </em><code class="sig-name descname">Padding</code> = <em class="property">typename</em> Space::Padding<a class="headerlink" href="#_CPPv4N6ripple9HostBlock7PaddingE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the padding. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple9HostBlock12AllocatorPtrE">
+<span id="_CPPv3N6ripple9HostBlock12AllocatorPtrE"></span><span id="_CPPv2N6ripple9HostBlock12AllocatorPtrE"></span><span class="target" id="classripple_1_1HostBlock_1adfd4dba757437f6369009e5bf8132f2b"></span><em class="property">using </em><code class="sig-name descname">AllocatorPtr</code> = <a class="reference internal" href="classripple_1_1MultiarchAllocator.html#_CPPv4N6ripple18MultiarchAllocatorE" title="ripple::MultiarchAllocator">MultiarchAllocator</a>*<a class="headerlink" href="#_CPPv4N6ripple9HostBlock12AllocatorPtrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the pointer to the allocator. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9HostBlock9HostBlockEv">
+<span id="_CPPv3N6ripple9HostBlock9HostBlockEv"></span><span id="_CPPv2N6ripple9HostBlock9HostBlockEv"></span><span id="ripple::HostBlock::HostBlock"></span><span class="target" id="classripple_1_1HostBlock_1aedc9c7067bd846d97212d5fd1ef2e0e9"></span><code class="sig-name descname">HostBlock</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> = default<a class="headerlink" href="#_CPPv4N6ripple9HostBlock9HostBlockEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Default constructor.This constructor is available so that an unsized block can be instanciated and then resized at runtime. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9HostBlock9HostBlockEP18MultiarchAllocator">
+<span id="_CPPv3N6ripple9HostBlock9HostBlockEP18MultiarchAllocator"></span><span id="_CPPv2N6ripple9HostBlock9HostBlockEP18MultiarchAllocator"></span><span id="ripple::HostBlock::HostBlock__MultiarchAllocatorP"></span><span class="target" id="classripple_1_1HostBlock_1a5c2e8697cf785ab0a5a48d34475ed293"></span><code class="sig-name descname">HostBlock</code><span class="sig-paren">(</span><a class="reference internal" href="classripple_1_1MultiarchAllocator.html#_CPPv4N6ripple18MultiarchAllocatorE" title="ripple::MultiarchAllocator">MultiarchAllocator</a> *<em>allocator</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple9HostBlock9HostBlockEP18MultiarchAllocator" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor to set the allocator for the block. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9HostBlockD0Ev">
+<span id="_CPPv3N6ripple9HostBlockD0Ev"></span><span id="_CPPv2N6ripple9HostBlockD0Ev"></span><span id="ripple::HostBlock::~HostBlock"></span><span class="target" id="classripple_1_1HostBlock_1a66c720119176225f71a444068de1b9e6"></span><code class="sig-name descname">~HostBlock</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple9HostBlockD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Destructor for the block, which cleans up the block resources. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple9HostBlock9HostBlockEDpRR5Sizes">
+<span id="_CPPv3IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple9HostBlock9HostBlockEDpRR5Sizes"></span><span id="_CPPv2IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple9HostBlock9HostBlockEDpRR5Sizes"></span>template&lt;typename ...<code class="sig-name descname">Sizes</code>, <a class="reference internal" href="typedef_namespaceripple_1a1f453940eb7985996e657de7903a3898.html#_CPPv4I_NSt6size_tEDpEN6ripple28all_arithmetic_size_enable_tE" title="ripple::all_arithmetic_size_enable_t">all_arithmetic_size_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple9HostBlockE" title="ripple::HostBlock::Dimensions">Dimensions</a>, <a class="reference internal" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple9HostBlock9HostBlockEDpRR5Sizes" title="ripple::HostBlock::HostBlock::Sizes">Sizes</a>...&gt; = 0&gt;<br /><span class="target" id="classripple_1_1HostBlock_1ad50bce3de17f8540d3d13b98124dc33d"></span><code class="sig-name descname">HostBlock</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple9HostBlock9HostBlockEDpRR5Sizes" title="ripple::HostBlock::HostBlock::Sizes">Sizes</a>&amp;&amp;... <em>sizes</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple9HostBlock9HostBlockEDpRR5Sizes" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initializes the size of each of the dimensions of the block. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This is only enabled when the number of arguments matches the dimensionality of the block and the sizes are arithmetic types.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>This also allocated the data for the block.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sizes</span></code>: The sizes of the dimensions for the block. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Sizes</span></code>: The types of other dimension sizes. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple9HostBlock9HostBlockE7PaddingDpRR5Sizes">
+<span id="_CPPv3IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple9HostBlock9HostBlockE7PaddingDpRR5Sizes"></span><span id="_CPPv2IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple9HostBlock9HostBlockE7PaddingDpRR5Sizes"></span>template&lt;typename ...<code class="sig-name descname">Sizes</code>, <a class="reference internal" href="typedef_namespaceripple_1a1f453940eb7985996e657de7903a3898.html#_CPPv4I_NSt6size_tEDpEN6ripple28all_arithmetic_size_enable_tE" title="ripple::all_arithmetic_size_enable_t">all_arithmetic_size_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple9HostBlockE" title="ripple::HostBlock::Dimensions">Dimensions</a>, <a class="reference internal" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple9HostBlock9HostBlockE7PaddingDpRR5Sizes" title="ripple::HostBlock::HostBlock::Sizes">Sizes</a>...&gt; = 0&gt;<br /><span class="target" id="classripple_1_1HostBlock_1aaaf17140df035311cd97d745e153bf9d"></span><code class="sig-name descname">HostBlock</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple9HostBlock7PaddingE" title="ripple::HostBlock::Padding">Padding</a> <em>padding</em>, <a class="reference internal" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple9HostBlock9HostBlockE7PaddingDpRR5Sizes" title="ripple::HostBlock::HostBlock::Sizes">Sizes</a>&amp;&amp;... <em>sizes</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple9HostBlock9HostBlockE7PaddingDpRR5Sizes" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initializes the size of each of the dimensions of the block, as well as the padding for the block. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This is only enabled when the number of size arguments matches the dimensionality of the block and the sizes are arithmetic types.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>This also allocates data for the block.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>The amount of padding specified adds the given amount to each side of each dimension.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">padding</span></code>: The amount of padding for the block. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sizes</span></code>: The sizes of the dimensions for the block. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Sizes</span></code>: The types of other dimension sizes. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9HostBlock9HostBlockERK9HostBlock">
+<span id="_CPPv3N6ripple9HostBlock9HostBlockERK9HostBlock"></span><span id="_CPPv2N6ripple9HostBlock9HostBlockERK9HostBlock"></span><span id="ripple::HostBlock::HostBlock__HostBlockCR"></span><span class="target" id="classripple_1_1HostBlock_1ae1d3b9bf2cdc1d5f6d19ed73e9ca1d1d"></span><code class="sig-name descname">HostBlock</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple9HostBlock9HostBlockERK9HostBlock" title="ripple::HostBlock::HostBlock">HostBlock</a> &amp;<em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ripple9HostBlock9HostBlockERK9HostBlock" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy constructor to create the block from another block. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other block to create this block from. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9HostBlock9HostBlockERR9HostBlock">
+<span id="_CPPv3N6ripple9HostBlock9HostBlockERR9HostBlock"></span><span id="_CPPv2N6ripple9HostBlock9HostBlockERR9HostBlock"></span><span id="ripple::HostBlock::HostBlock__HostBlockRR"></span><span class="target" id="classripple_1_1HostBlock_1abac1793e6c8b6fe53462dffbf24f1809"></span><code class="sig-name descname">HostBlock</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple9HostBlock9HostBlockERR9HostBlock" title="ripple::HostBlock::HostBlock">HostBlock</a> &amp;&amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple9HostBlock9HostBlockERR9HostBlock" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor to move the other block into this one. </p>
+<p>The other block will no longer have valid data, and it’s size is meaningless. <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other block to move to this one. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9HostBlock9HostBlockERK11DeviceBlock11BlockOpKind">
+<span id="_CPPv3N6ripple9HostBlock9HostBlockERK11DeviceBlock11BlockOpKind"></span><span id="_CPPv2N6ripple9HostBlock9HostBlockERK11DeviceBlock11BlockOpKind"></span><span id="ripple::HostBlock::HostBlock__DeviceBlockCR.BlockOpKind"></span><span class="target" id="classripple_1_1HostBlock_1aac436279a951fac9b6479333203b5c07"></span><code class="sig-name descname">HostBlock</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="classripple_1_1DeviceBlock.html#_CPPv4I0_6size_tEN6ripple11DeviceBlockE" title="ripple::DeviceBlock">DeviceBlock</a> &amp;<em>other</em>, <a class="reference internal" href="enum_namespaceripple_1a8eab3f289abb7f4b625ec7525b54ce4c.html#_CPPv4N6ripple11BlockOpKindE" title="ripple::BlockOpKind">BlockOpKind</a> <em>op_kind</em> = <a class="reference internal" href="enum_namespaceripple_1a8eab3f289abb7f4b625ec7525b54ce4c.html#_CPPv4N6ripple11BlockOpKindE" title="ripple::BlockOpKind">BlockOpKind</a>::<a class="reference internal" href="enum_namespaceripple_1a8eab3f289abb7f4b625ec7525b54ce4c.html#_CPPv4N6ripple11BlockOpKind11synchronousE" title="ripple::BlockOpKind::synchronous">synchronous</a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ripple9HostBlock9HostBlockERK11DeviceBlock11BlockOpKind" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor to create the block from a device block. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other block to create this block from. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">op_kind</span></code>: The kind of the memory operations for the block. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple9HostBlock9HostBlockE11BlockOpKindDpRR5Sizes">
+<span id="_CPPv3IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple9HostBlock9HostBlockE11BlockOpKindDpRR5Sizes"></span><span id="_CPPv2IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple9HostBlock9HostBlockE11BlockOpKindDpRR5Sizes"></span>template&lt;typename ...<code class="sig-name descname">Sizes</code>, <a class="reference internal" href="typedef_namespaceripple_1a1f453940eb7985996e657de7903a3898.html#_CPPv4I_NSt6size_tEDpEN6ripple28all_arithmetic_size_enable_tE" title="ripple::all_arithmetic_size_enable_t">all_arithmetic_size_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple9HostBlockE" title="ripple::HostBlock::Dimensions">Dimensions</a>, <a class="reference internal" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple9HostBlock9HostBlockE11BlockOpKindDpRR5Sizes" title="ripple::HostBlock::HostBlock::Sizes">Sizes</a>...&gt; = 0&gt;<br /><span class="target" id="classripple_1_1HostBlock_1acf35451e3d79a842181521b5d17930fb"></span><code class="sig-name descname">HostBlock</code><span class="sig-paren">(</span><a class="reference internal" href="enum_namespaceripple_1a8eab3f289abb7f4b625ec7525b54ce4c.html#_CPPv4N6ripple11BlockOpKindE" title="ripple::BlockOpKind">BlockOpKind</a> <em>op_kind</em>, <a class="reference internal" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple9HostBlock9HostBlockE11BlockOpKindDpRR5Sizes" title="ripple::HostBlock::HostBlock::Sizes">Sizes</a>&amp;&amp;... <em>sizes</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple9HostBlock9HostBlockE11BlockOpKindDpRR5Sizes" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initializes the size of each of the dimensions of the block, as well as providing an option to enable asynchronous functionality for the block. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This is only enabled when the number of size arguments matches the dimensionality of the tensor, and the sizes are arithmetic types.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">op_kind</span></code>: The kind of operation for the block. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sizes</span></code>: The sizes of the dimensions for the tensor. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Sizes</span></code>: The types of other dimension sizes. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple9HostBlock9HostBlockE11BlockOpKind6size_tDpRR5Sizes">
+<span id="_CPPv3IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple9HostBlock9HostBlockE11BlockOpKind6size_tDpRR5Sizes"></span><span id="_CPPv2IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple9HostBlock9HostBlockE11BlockOpKind6size_tDpRR5Sizes"></span>template&lt;typename ...<code class="sig-name descname">Sizes</code>, <a class="reference internal" href="typedef_namespaceripple_1a1f453940eb7985996e657de7903a3898.html#_CPPv4I_NSt6size_tEDpEN6ripple28all_arithmetic_size_enable_tE" title="ripple::all_arithmetic_size_enable_t">all_arithmetic_size_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple9HostBlockE" title="ripple::HostBlock::Dimensions">Dimensions</a>, <a class="reference internal" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple9HostBlock9HostBlockE11BlockOpKind6size_tDpRR5Sizes" title="ripple::HostBlock::HostBlock::Sizes">Sizes</a>...&gt; = 0&gt;<br /><span class="target" id="classripple_1_1HostBlock_1a62acc4bf3363ec807454edaef5ee6990"></span><code class="sig-name descname">HostBlock</code><span class="sig-paren">(</span><a class="reference internal" href="enum_namespaceripple_1a8eab3f289abb7f4b625ec7525b54ce4c.html#_CPPv4N6ripple11BlockOpKindE" title="ripple::BlockOpKind">BlockOpKind</a> <em>op_kind</em>, size_t <em>padding</em>, <a class="reference internal" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple9HostBlock9HostBlockE11BlockOpKind6size_tDpRR5Sizes" title="ripple::HostBlock::HostBlock::Sizes">Sizes</a>&amp;&amp;... <em>sizes</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IDp_28all_arithmetic_size_enable_tI10DimensionsDp5SizesEEN6ripple9HostBlock9HostBlockE11BlockOpKind6size_tDpRR5Sizes" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initializes the size of each of the dimensions of the block, the padding for the block, and provides an option to enable asynchronous functionality for the block. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This is only enabled when the number of size arguments matches the dimensionality of the block, and the izes are arithmetic types.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">op_kind</span></code>: The operation kind for the block. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">padding</span></code>: The amount of padding for the tensor. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sizes</span></code>: The sizes of the dimensions for the tensor. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Sizes</span></code>: The types of other dimension sizes. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9HostBlockaSERK9HostBlock">
+<span id="_CPPv3N6ripple9HostBlockaSERK9HostBlock"></span><span id="_CPPv2N6ripple9HostBlockaSERK9HostBlock"></span><span id="ripple::HostBlock::assign-operator__HostBlockCR"></span><span class="target" id="classripple_1_1HostBlock_1a6e758595cc6392d4ef918fa9a950873b"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple9HostBlockE" title="ripple::HostBlock">HostBlock</a> &amp;<em>other</em><span class="sig-paren">)</span> -&gt; <a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple9HostBlockE" title="ripple::HostBlock">HostBlock</a>&amp;<a class="headerlink" href="#_CPPv4N6ripple9HostBlockaSERK9HostBlock" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of copy assignment operator to create this block from another. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the created block. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other block to create this block from. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9HostBlockaSERR9HostBlock">
+<span id="_CPPv3N6ripple9HostBlockaSERR9HostBlock"></span><span id="_CPPv2N6ripple9HostBlockaSERR9HostBlock"></span><span id="ripple::HostBlock::assign-operator__HostBlockRR"></span><span class="target" id="classripple_1_1HostBlock_1a0bb03347baee8bc8ac561a791b379b12"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple9HostBlockE" title="ripple::HostBlock">HostBlock</a> &amp;&amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple9HostBlockE" title="ripple::HostBlock">HostBlock</a>&amp;<a class="headerlink" href="#_CPPv4N6ripple9HostBlockaSERR9HostBlock" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of move assignment operator to move another block into this block. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the created block. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other block to create this block from. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9HostBlockaSERK11DeviceBlock">
+<span id="_CPPv3N6ripple9HostBlockaSERK11DeviceBlock"></span><span id="_CPPv2N6ripple9HostBlockaSERK11DeviceBlock"></span><span id="ripple::HostBlock::assign-operator__DeviceBlockCR"></span><span class="target" id="classripple_1_1HostBlock_1a19902cebda6491cb808bea26be148b31"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="classripple_1_1DeviceBlock.html#_CPPv4I0_6size_tEN6ripple11DeviceBlockE" title="ripple::DeviceBlock">DeviceBlock</a> &amp;<em>other</em><span class="sig-paren">)</span> -&gt; <a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple9HostBlockE" title="ripple::HostBlock">HostBlock</a>&amp;<a class="headerlink" href="#_CPPv4N6ripple9HostBlockaSERK11DeviceBlock" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of copy assignment operator to create this block from the other block. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the created block. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other block to create this block from. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">op_kind</span></code>: The kind of the memory operations for the block. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDpEN6ripple9HostBlockclE4IterDpRR7Indices">
+<span id="_CPPv3IDpEN6ripple9HostBlockclEDpRR7Indices"></span><span id="_CPPv2IDpEN6ripple9HostBlockclEDpRR7Indices"></span>template&lt;typename ...<code class="sig-name descname">Indices</code>&gt;<br /><span class="target" id="classripple_1_1HostBlock_1a5fafdec1ee9d4308b0ce2855fec2ebdc"></span>auto <code class="sig-name descname">operator()</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDpEN6ripple9HostBlockclE4IterDpRR7Indices" title="ripple::HostBlock::operator()::Indices">Indices</a>&amp;&amp;... <em>is</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; Iter<a class="headerlink" href="#_CPPv4IDpEN6ripple9HostBlockclE4IterDpRR7Indices" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of operator() to get an iterator to the element at the location specified by the indices. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>An iterator pointing to the element defined by the indices. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">is</span></code>: The indices to get the element at. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Indices</span></code>: The types of the indices. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDpENK6ripple9HostBlockclE9ConstIterDpRR7Indices">
+<span id="_CPPv3IDpENK6ripple9HostBlockclEDpRR7Indices"></span><span id="_CPPv2IDpENK6ripple9HostBlockclEDpRR7Indices"></span>template&lt;typename ...<code class="sig-name descname">Indices</code>&gt;<br /><span class="target" id="classripple_1_1HostBlock_1a5efa92343fdfb9495303c39932851d48"></span>auto <code class="sig-name descname">operator()</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDpENK6ripple9HostBlockclE9ConstIterDpRR7Indices" title="ripple::HostBlock::operator()::Indices">Indices</a>&amp;&amp;... <em>is</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; ConstIter<a class="headerlink" href="#_CPPv4IDpENK6ripple9HostBlockclE9ConstIterDpRR7Indices" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of operator() to get a constant iterator to the element at the location specified by the indices. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A const iterator pointing to the element defined by the indices. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">is</span></code>: The indices to get the element at. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Indices</span></code>: The types of the indices. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple9HostBlock9as_deviceEv">
+<span id="_CPPv3NK6ripple9HostBlock9as_deviceEv"></span><span id="_CPPv2NK6ripple9HostBlock9as_deviceEv"></span><span id="ripple::HostBlock::as_deviceC"></span><span class="target" id="classripple_1_1HostBlock_1aa84a6c9e7f34fbbe62090e9996f74e83"></span>auto <code class="sig-name descname">as_device</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> -&gt; <a class="reference internal" href="classripple_1_1DeviceBlock.html#_CPPv4I0_6size_tEN6ripple11DeviceBlockE" title="ripple::DeviceBlock">DeviceBlock</a><a class="headerlink" href="#_CPPv4NK6ripple9HostBlock9as_deviceEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a device block with the data from this host block. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A device block with the data and properties of this block. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9HostBlock9copy_dataERK11DeviceBlock">
+<span id="_CPPv3N6ripple9HostBlock9copy_dataERK11DeviceBlock"></span><span id="_CPPv2N6ripple9HostBlock9copy_dataERK11DeviceBlock"></span><span id="ripple::HostBlock::copy_data__DeviceBlockCR"></span><span class="target" id="classripple_1_1HostBlock_1aede8e3e887d7fc4418d6b570ed7f139c"></span>auto <code class="sig-name descname">copy_data</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="classripple_1_1DeviceBlock.html#_CPPv4I0_6size_tEN6ripple11DeviceBlockE" title="ripple::DeviceBlock">DeviceBlock</a> &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple9HostBlock9copy_dataERK11DeviceBlock" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copies the data from the device block into this block. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other block to copy the data from. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9HostBlock5beginEv">
+<span id="_CPPv3N6ripple9HostBlock5beginEv"></span><span id="_CPPv2N6ripple9HostBlock5beginEv"></span><span id="ripple::HostBlock::begin"></span><span class="target" id="classripple_1_1HostBlock_1a424f828710f44e1f90a192dffe0470ab"></span>auto <code class="sig-name descname">begin</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; Iter<a class="headerlink" href="#_CPPv4N6ripple9HostBlock5beginEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets an iterator to the beginning of the block. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>The returned iterator points to the first valid cell (i.e is is offset over the padding).</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>An iterator to the first element in the block. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple9HostBlock5beginEv">
+<span id="_CPPv3NK6ripple9HostBlock5beginEv"></span><span id="_CPPv2NK6ripple9HostBlock5beginEv"></span><span id="ripple::HostBlock::beginC"></span><span class="target" id="classripple_1_1HostBlock_1a570f7797d3fdefc8536e83c29724da02"></span>auto <code class="sig-name descname">begin</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> -&gt; ConstIter<a class="headerlink" href="#_CPPv4NK6ripple9HostBlock5beginEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets a constant iterator to the beginning of the block. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>The returned iterator points to the first valid cell (i.e is is offset over the padding).</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>A constant iterator to the first element in the block. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9HostBlock10reallocateEv">
+<span id="_CPPv3N6ripple9HostBlock10reallocateEv"></span><span id="_CPPv2N6ripple9HostBlock10reallocateEv"></span><span id="ripple::HostBlock::reallocate"></span><span class="target" id="classripple_1_1HostBlock_1a1892fb819db04456d7aa340bb7c47938"></span>auto <code class="sig-name descname">reallocate</code><span class="sig-paren">(</span><span class="sig-paren">)</span> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple9HostBlock10reallocateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reallocates the data for the block. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDpEN6ripple9HostBlock19reallocate_and_initEvDpRR4Args">
+<span id="_CPPv3IDpEN6ripple9HostBlock19reallocate_and_initEDpRR4Args"></span><span id="_CPPv2IDpEN6ripple9HostBlock19reallocate_and_initEDpRR4Args"></span>template&lt;typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classripple_1_1HostBlock_1a7e496d60b23c55168790fe58f44d1e6e"></span>auto <code class="sig-name descname">reallocate_and_init</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDpEN6ripple9HostBlock19reallocate_and_initEvDpRR4Args" title="ripple::HostBlock::reallocate_and_init::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> -&gt; void<a class="headerlink" href="#_CPPv4IDpEN6ripple9HostBlock19reallocate_and_initEvDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reallocates the data and initializes the data using the givenargs for the construction of the elements. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: The arguments for the constructor. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The type of the arguments. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple9HostBlock10resize_dimEvRR3Dim6size_t">
+<span id="_CPPv3I0EN6ripple9HostBlock10resize_dimERR3Dim6size_t"></span><span id="_CPPv2I0EN6ripple9HostBlock10resize_dimERR3Dim6size_t"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1HostBlock_1a17f5320f61663253ebda3a949d81b9a4"></span>auto <code class="sig-name descname">resize_dim</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN6ripple9HostBlock10resize_dimEvRR3Dim6size_t" title="ripple::HostBlock::resize_dim::Dim">Dim</a> &amp;&amp;<em>dim</em>, size_t <em>size</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4I0EN6ripple9HostBlock10resize_dimEvRR3Dim6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Resizes the dimension to the given size. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This <em>does not</em> reallocate, since multiple resizings would then then make multiple allocations. Call reallocate to reallocate after resizing.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>The resize <em>does not</em> include padding, padding for the dimension is <em>in addition to</em> this size.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to resize. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">size</span></code>: The size to resize the dimension to. \tparm Dim The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDpEN6ripple9HostBlock6resizeEvDpRR5Sizes">
+<span id="_CPPv3IDpEN6ripple9HostBlock6resizeEDpRR5Sizes"></span><span id="_CPPv2IDpEN6ripple9HostBlock6resizeEDpRR5Sizes"></span>template&lt;typename ...<code class="sig-name descname">Sizes</code>&gt;<br /><span class="target" id="classripple_1_1HostBlock_1a684a40e38dec32f98d86bc44e99a7d0f"></span>auto <code class="sig-name descname">resize</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDpEN6ripple9HostBlock6resizeEvDpRR5Sizes" title="ripple::HostBlock::resize::Sizes">Sizes</a>&amp;&amp;... <em>sizes</em><span class="sig-paren">)</span> -&gt; void<a class="headerlink" href="#_CPPv4IDpEN6ripple9HostBlock6resizeEvDpRR5Sizes" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Resizes each of the dimensions specified to the given size. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This <em>does</em> reallocate the data after the resize, since it is assumed that no further resizing is necessary since all dimension sizes are specified in this call.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>If less sizes are provided than there are dimensions in the block, the the first sizeof…(Sizes) dimensions will be resized.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sizes</span></code>: The sizes to resize the dimensions to. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Sizes</span></code>: The type of the sizes. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple9HostBlock4sizeEv">
+<span id="_CPPv3NK6ripple9HostBlock4sizeEv"></span><span id="_CPPv2NK6ripple9HostBlock4sizeEv"></span><span id="ripple::HostBlock::sizeC"></span><span class="target" id="classripple_1_1HostBlock_1a62eedd23e7aa7493bf2335082fa7bebc"></span>auto <code class="sig-name descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple9HostBlock4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the total number of * valid* elements in the block, therefore this size <em>excludes</em> padding elements. </p>
+<p><dl class="simple">
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#classripple_1_1HostBlock_1a9b44556c50f6ae881ff0ab3eb095ee06"><span class="std std-ref">pitch</span></a></p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>The total number of valid elements in the block. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple9HostBlock4sizeE6size_tRR3Dim">
+<span id="_CPPv3I0ENK6ripple9HostBlock4sizeERR3Dim"></span><span id="_CPPv2I0ENK6ripple9HostBlock4sizeERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1HostBlock_1aa3eee498dc469b6fd0eeed132b087182"></span>auto <code class="sig-name descname">size</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple9HostBlock4sizeE6size_tRR3Dim" title="ripple::HostBlock::size::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4I0ENK6ripple9HostBlock4sizeE6size_tRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the total number of <em>valid</em> elements in the dimension, therefore this <em>excludes</em> the padding elements for the dimension. </p>
+<p><dl class="simple">
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#classripple_1_1HostBlock_1a9b44556c50f6ae881ff0ab3eb095ee06"><span class="std std-ref">pitch</span></a></p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>The number of valid elements in the dimension. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to get the size of. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple9HostBlock5pitchE6size_tRR3Dim">
+<span id="_CPPv3I0ENK6ripple9HostBlock5pitchERR3Dim"></span><span id="_CPPv2I0ENK6ripple9HostBlock5pitchERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1HostBlock_1a9b44556c50f6ae881ff0ab3eb095ee06"></span><em class="property">constexpr</em> auto <code class="sig-name descname">pitch</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple9HostBlock5pitchE6size_tRR3Dim" title="ripple::HostBlock::pitch::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4I0ENK6ripple9HostBlock5pitchE6size_tRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the pitch of the block in the given dimension, which is the total number of elements in the dimension <em>including</em> padding. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The total number of elements for the dimension <em>including</em> padding elements. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to get the pitch for. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple9HostBlock10dimensionsEv">
+<span id="_CPPv3NK6ripple9HostBlock10dimensionsEv"></span><span id="_CPPv2NK6ripple9HostBlock10dimensionsEv"></span><span id="ripple::HostBlock::dimensionsCCE"></span><span class="target" id="classripple_1_1HostBlock_1aa7e50a76979946005a6331d57d6bcdd9"></span><em class="property">constexpr</em> auto <code class="sig-name descname">dimensions</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple9HostBlock10dimensionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the number of dimensions for the block. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of dimensions for the block. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9HostBlock11set_op_kindE11BlockOpKind">
+<span id="_CPPv3N6ripple9HostBlock11set_op_kindE11BlockOpKind"></span><span id="_CPPv2N6ripple9HostBlock11set_op_kindE11BlockOpKind"></span><span id="ripple::HostBlock::set_op_kind__BlockOpKind"></span><span class="target" id="classripple_1_1HostBlock_1ada480e56e611619d4c8717549bfaea93"></span>auto <code class="sig-name descname">set_op_kind</code><span class="sig-paren">(</span><a class="reference internal" href="enum_namespaceripple_1a8eab3f289abb7f4b625ec7525b54ce4c.html#_CPPv4N6ripple11BlockOpKindE" title="ripple::BlockOpKind">BlockOpKind</a> <em>op_kind</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple9HostBlock11set_op_kindE11BlockOpKind" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the operation kind of the block to either synchronous or asynchronous. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">op_kind</span></code>: The type of operation for the block. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9HostBlock11set_paddingE7Padding">
+<span id="_CPPv3N6ripple9HostBlock11set_paddingE7Padding"></span><span id="_CPPv2N6ripple9HostBlock11set_paddingE7Padding"></span><span id="ripple::HostBlock::set_padding__Padding"></span><span class="target" id="classripple_1_1HostBlock_1abfb50d561f0fcd115528d093178e4079"></span>auto <code class="sig-name descname">set_padding</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple9HostBlock7PaddingE" title="ripple::HostBlock::Padding">Padding</a> <em>padding</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple9HostBlock11set_paddingE7Padding" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the amount of padding for a single side of a single dimension for the block. </p>
+<p>This padding amount will be applied to all sides of all dimensions.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This does not reallocate the memory for the block, so a call to reallocate should be made when the data should be reallocated.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">padding</span></code>: The amount of padding. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple9HostBlock7paddingEv">
+<span id="_CPPv3NK6ripple9HostBlock7paddingEv"></span><span id="_CPPv2NK6ripple9HostBlock7paddingEv"></span><span id="ripple::HostBlock::paddingC"></span><span class="target" id="classripple_1_1HostBlock_1a1356c663cb0071d7c22c78a4432a6342"></span>auto <code class="sig-name descname">padding</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple9HostBlock7PaddingE" title="ripple::HostBlock::Padding">Padding</a><a class="headerlink" href="#_CPPv4NK6ripple9HostBlock7paddingEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the amount of padding for the block. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This padding amount is for a single side of a single dimension of the block.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>The amount of padding for the block. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple9HostBlock15mem_requirementEv">
+<span id="_CPPv3NK6ripple9HostBlock15mem_requirementEv"></span><span id="_CPPv2NK6ripple9HostBlock15mem_requirementEv"></span><span id="ripple::HostBlock::mem_requirementC"></span><span class="target" id="classripple_1_1HostBlock_1a27a8bfd526b54e83e248b01295a2a3e9"></span>auto <code class="sig-name descname">mem_requirement</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple9HostBlock15mem_requirementEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the number of bytes required to allocate memory to hold all data for the block. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of bytes required for the block. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple9HostBlock6streamEv">
+<span id="_CPPv3NK6ripple9HostBlock6streamEv"></span><span id="_CPPv2NK6ripple9HostBlock6streamEv"></span><span id="ripple::HostBlock::streamC"></span><span class="target" id="classripple_1_1HostBlock_1aa7a0ed645d443bb8684e5f7ddfddb791"></span>auto <code class="sig-name descname">stream</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> -&gt; <a class="reference internal" href="typedef_namespaceripple_1a4c98e494714abd18f11c98e13e8c5467.html#_CPPv4N6ripple9GpuStreamE" title="ripple::GpuStream">GpuStream</a><a class="headerlink" href="#_CPPv4NK6ripple9HostBlock6streamEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the stream used by the block. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The stream for the block. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple9HostBlock13get_copy_typeE14cudaMemcpyKindv">
+<span id="_CPPv3I0ENK6ripple9HostBlock13get_copy_typeEv"></span><span id="_CPPv2I0ENK6ripple9HostBlock13get_copy_typeEv"></span>template&lt;typename <code class="sig-name descname">Block</code>&gt;<br /><span class="target" id="classripple_1_1HostBlock_1a738a56068471d96d57caf999df15460b"></span><em class="property">constexpr</em> auto <code class="sig-name descname">get_copy_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> -&gt; cudaMemcpyKind<a class="headerlink" href="#_CPPv4I0ENK6ripple9HostBlock13get_copy_typeE14cudaMemcpyKindv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the copy type required to copy from this block to another block with type <a class="reference internal" href="structripple_1_1Block.html#structripple_1_1Block"><span class="std std-ref">Block</span></a>. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The type of the copy required to copy from this block. </p>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><a class="reference internal" href="structripple_1_1Block.html#structripple_1_1Block"><span class="std std-ref"><span class="pre">Block</span></span></a></code>: The block to determine the copy type from. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Friends</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple9HostBlock4swapER9HostBlockR9HostBlock">
+<span id="_CPPv3N6ripple9HostBlock4swapER9HostBlockR9HostBlock"></span><span id="_CPPv2N6ripple9HostBlock4swapER9HostBlockR9HostBlock"></span><span id="ripple::HostBlock::swap__HostBlockR.HostBlockR"></span><span class="target" id="classripple_1_1HostBlock_1a331bd48d045eacb30f4504673ece3de2"></span><em class="property">friend</em> auto <code class="sig-name descname">swap</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple9HostBlockE" title="ripple::HostBlock">HostBlock</a> &amp;<em>lhs</em>, <a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple9HostBlockE" title="ripple::HostBlock">HostBlock</a> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple9HostBlock4swapER9HostBlockR9HostBlock" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Swaps the blocks lhs and rhs blocks. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lhs</span></code>: The left block to swap. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rhs</span></code>: The right block to swap. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classripple_1_1IndexedIterator.html" class="btn btn-neutral float-right" title="Template Class IndexedIterator" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="classripple_1_1Graph.html" class="btn btn-neutral" title="Class Graph" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Template Class HostBlock</a><ul>
+<li><a class="reference internal" href="#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a847af6c41b71d9d5df33eacc03a20346:
+
+Typedef ripple::non_shared_enable_t
+===================================
+
+- Defined in :ref:`file_include_ripple_core_execution_execution_traits.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::non_shared_enable_t

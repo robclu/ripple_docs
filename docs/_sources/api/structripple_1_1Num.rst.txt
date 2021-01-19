@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1Num:
+
+Template Struct Num
+===================
+
+- Defined in :ref:`file_include_ripple_core_utility_number.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::Num
+   :members:
+   :protected-members:
+   :undoc-members:

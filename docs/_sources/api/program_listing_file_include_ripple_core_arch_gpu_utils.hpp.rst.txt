@@ -1,0 +1,72 @@
+
+.. _program_listing_file_include_ripple_core_arch_gpu_utils.hpp:
+
+Program Listing for File gpu_utils.hpp
+======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_arch_gpu_utils.hpp>` (``include/ripple/core/arch/gpu_utils.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_ARCH_GPU_UTILS_HPP
+   #define RIPPLE_ARCH_GPU_UTILS_HPP
+   
+   #include "../utility/portability.hpp"
+   
+   namespace ripple::gpu {
+   
+   inline auto set_device(uint32_t device_id) noexcept -> void {
+     ripple_check_cuda_result(cudaSetDevice(device_id));
+   }
+   
+   inline auto create_stream(GpuStream* stream) noexcept -> void {
+     ripple_check_cuda_result(cudaStreamCreate(stream));
+   }
+   
+   inline auto create_nonblocking_stream(GpuStream* stream) noexcept -> void {
+     ripple_check_cuda_result(
+       cudaStreamCreateWithFlags(stream, cudaStreamNonBlocking));
+   }
+   
+   inline auto destroy_stream(GpuStream stream) noexcept -> void {
+     ripple_check_cuda_result(cudaStreamDestroy(stream));
+   }
+   
+   inline auto create_event(GpuStream stream) noexcept -> GpuEvent {
+     GpuEvent event = nullptr;
+     ripple_check_cuda_result(cudaEventCreate(&event));
+     ripple_check_cuda_result(cudaEventRecord(event, stream));
+     return event;
+   }
+   
+   inline auto record_event(GpuEvent event, GpuStream stream) noexcept -> void {
+     ripple_check_cuda_result(cudaEventRecord(event, stream));
+   }
+   
+   inline auto destroy_event(GpuEvent event) noexcept -> void {
+     ripple_check_cuda_result(cudaEventDestroy(event));
+   }
+   
+   inline auto synchronize_stream(GpuStream stream) noexcept -> void {
+     ripple_check_cuda_result(cudaStreamSynchronize(stream));
+   }
+   
+   inline auto
+   synchronize_stream(GpuStream stream, GpuEvent event) noexcept -> void {
+     ripple_check_cuda_result(cudaStreamWaitEvent(stream, event));
+   }
+   
+   inline auto synchronize_device() noexcept -> void {
+     ripple_check_cuda_result(cudaDeviceSynchronize());
+   }
+   
+   inline auto check_last_error() noexcept -> void {
+     ripple_check_cuda_result(cudaGetLastError());
+   }
+   
+   } // namespace ripple::gpu
+   
+   #endif // RIPPLE_ARCH_GPU_UTILS_HPP

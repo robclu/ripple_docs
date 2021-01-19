@@ -1,0 +1,22 @@
+.. _exhale_struct_structripple_1_1Executor_1_1ThreadState:
+
+Struct Executor::ThreadState
+============================
+
+- Defined in :ref:`file_include_ripple_core_execution_executor.hpp`
+
+
+Nested Relationships
+--------------------
+
+This struct is a nested type of :ref:`exhale_class_classripple_1_1Executor`.
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::Executor::ThreadState
+   :members:
+   :protected-members:
+   :undoc-members:

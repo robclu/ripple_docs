@@ -1,0 +1,16 @@
+.. _exhale_class_classripple_1_1SimpleAllocator:
+
+Template Class SimpleAllocator
+==============================
+
+- Defined in :ref:`file_include_ripple_core_allocation_multiarch_allocator.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ripple::SimpleAllocator
+   :members:
+   :protected-members:
+   :undoc-members:

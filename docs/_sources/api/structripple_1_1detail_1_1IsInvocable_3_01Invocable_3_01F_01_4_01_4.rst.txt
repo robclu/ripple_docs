@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1detail_1_1IsInvocable_3_01Invocable_3_01F_01_4_01_4:
+
+Template Struct IsInvocable< Invocable< F > >
+=============================================
+
+- Defined in :ref:`file_include_ripple_core_functional_functional_traits.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::detail::IsInvocable< Invocable< F > >
+   :members:
+   :protected-members:
+   :undoc-members:

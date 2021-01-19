@@ -1,0 +1,15 @@
+.. _dir__home_hiccup_Software_ripple_include_ripple_core_multidim:
+
+
+Directory multidim
+==================
+
+
+|exhale_lsh| :ref:`Parent directory <dir__home_hiccup_Software_ripple_include_ripple_core>` (``/home/hiccup/Software/ripple/include/ripple/core``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+*Directory path:* ``/home/hiccup/Software/ripple/include/ripple/core/multidim``
+
+
+

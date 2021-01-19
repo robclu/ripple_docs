@@ -1,0 +1,25 @@
+.. _exhale_class_classripple_1_1GenericLoader:
+
+Class GenericLoader
+===================
+
+- Defined in :ref:`file_include_ripple_core_boundary_generic_loader.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public ripple::BoundaryLoader< GenericLoader >`` (:ref:`exhale_class_classripple_1_1BoundaryLoader`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ripple::GenericLoader
+   :members:
+   :protected-members:
+   :undoc-members:

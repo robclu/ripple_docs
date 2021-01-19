@@ -1,0 +1,25 @@
+.. _exhale_struct_structripple_1_1StructAccessor:
+
+Template Struct StructAccessor
+==============================
+
+- Defined in :ref:`file_include_ripple_core_storage_struct_accessor.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public Storage``
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::StructAccessor
+   :members:
+   :protected-members:
+   :undoc-members:

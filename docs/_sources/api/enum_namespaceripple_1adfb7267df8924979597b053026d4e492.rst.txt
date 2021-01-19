@@ -1,0 +1,13 @@
+.. _exhale_enum_namespaceripple_1adfb7267df8924979597b053026d4e492:
+
+Enum AllocArch
+==============
+
+- Defined in :ref:`file_include_ripple_core_allocation_multiarch_allocator.hpp`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: ripple::AllocArch

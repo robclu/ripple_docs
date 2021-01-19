@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a7c17217456a18cc635203738a85ba922:
+
+Typedef ripple::NoLayout
+========================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::NoLayout

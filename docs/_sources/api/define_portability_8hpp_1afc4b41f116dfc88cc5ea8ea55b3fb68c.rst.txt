@@ -1,0 +1,13 @@
+.. _exhale_define_portability_8hpp_1afc4b41f116dfc88cc5ea8ea55b3fb68c:
+
+Define ripple_check_cuda_result
+===============================
+
+- Defined in :ref:`file_include_ripple_core_utility_portability.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: ripple_check_cuda_result

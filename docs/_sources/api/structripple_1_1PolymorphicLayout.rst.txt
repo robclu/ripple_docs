@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1PolymorphicLayout:
+
+Template Struct PolymorphicLayout
+=================================
+
+- Defined in :ref:`file_include_ripple_core_storage_polymorphic_layout.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::PolymorphicLayout
+   :members:
+   :protected-members:
+   :undoc-members:

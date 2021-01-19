@@ -1,0 +1,26 @@
+.. _exhale_class_classripple_1_1StridedStorageView:
+
+Template Class StridedStorageView
+=================================
+
+- Defined in :ref:`file_include_ripple_core_storage_storage_traits.hpp`
+
+
+Nested Relationships
+--------------------
+
+
+Nested Types
+************
+
+- :ref:`exhale_struct_structripple_1_1StridedStorageView_1_1Allocator`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ripple::StridedStorageView
+   :members:
+   :protected-members:
+   :undoc-members:

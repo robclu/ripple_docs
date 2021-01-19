@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a63aa950627b43c44fff0f08e866af175:
+
+Typedef ripple::DimY
+====================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::DimY

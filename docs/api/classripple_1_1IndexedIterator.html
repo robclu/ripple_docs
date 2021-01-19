@@ -1,0 +1,750 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Template Class IndexedIterator &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Template Class InternalLoader" href="classripple_1_1InternalLoader.html" />
+  <link rel="prev" title="Template Class HostBlock" href="classripple_1_1HostBlock.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Template Class IndexedIterator</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/classripple_1_1IndexedIterator.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="template-class-indexediterator">
+<span id="exhale-class-classripple-1-1indexediterator"></span><h1>Template Class IndexedIterator<a class="headerlink" href="#template-class-indexediterator" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_iterator_indexed_iterator.hpp.html#file-include-ripple-core-iterator-indexed-iterator-hpp"><span class="std std-ref">File indexed_iterator.hpp</span></a></p></li>
+</ul>
+<div class="section" id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="base-type">
+<h3>Base Type<a class="headerlink" href="#base-type" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">ripple::BlockIterator&lt;</span> <span class="pre">T,</span> <span class="pre">Space</span> <span class="pre">&gt;</span></code> (<a class="reference internal" href="classripple_1_1BlockIterator.html#exhale-class-classripple-1-1blockiterator"><span class="std std-ref">Template Class BlockIterator</span></a>)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4I00EN6ripple15IndexedIteratorE">
+<span id="_CPPv3I00EN6ripple15IndexedIteratorE"></span><span id="_CPPv2I00EN6ripple15IndexedIteratorE"></span>template&lt;typename <code class="sig-name descname">T</code>, typename <code class="sig-name descname">Space</code>&gt;<br /><span class="target" id="classripple_1_1IndexedIterator"></span><em class="property">class </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">IndexedIterator</code> : <em class="property">public</em> ripple::<a class="reference internal" href="classripple_1_1BlockIterator.html#_CPPv4I00EN6ripple13BlockIteratorE" title="ripple::BlockIterator">BlockIterator</a>&lt;<a class="reference internal" href="#_CPPv4I00EN6ripple15IndexedIteratorE" title="ripple::IndexedIterator::T">T</a>, <a class="reference internal" href="#_CPPv4I00EN6ripple15IndexedIteratorE" title="ripple::IndexedIterator::Space">Space</a>&gt;<a class="headerlink" href="#_CPPv4I00EN6ripple15IndexedIteratorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#classripple_1_1IndexedIterator"><span class="std std-ref">IndexedIterator</span></a> class is an extended <a class="reference internal" href="classripple_1_1BlockIterator.html#classripple_1_1BlockIterator"><span class="std std-ref">BlockIterator</span></a>, with additional information which provides it with context for where the block is relative to the global space to which it belongs. </p>
+<p>It also allows the thread indidces to be determined.</p>
+<p>For this iterator, the global size and index data allow the iterator to be used to implement consistent interfaces for iteration across a global space which is split across multiple devices, which is the primary purpose of the class.</p>
+<p>The type T for the iterator can be either a normal type, or a type which implements the StridableLayout interface, which allows the data to be stored and iterated as SoA instead of AoS. Regardless, the use is the same, and the iterator semantics are as if it was a poitner to T.</p>
+<p><dl class="xrefsect">
+<dt>
+<em>Todo:</em></dt>
+<dd><p>The storage of the additional index and size data for the iterator increases the register usage in device code, which needs to be improved.</p>
+</dd></dl>
+
+</p>
+<p><p>It also allows the thread indidces to be determined.</p>
+<dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The data type which the iterator will access. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Space</span></code>: The type which defines the iteration space.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>For this iterator, the global size and index data allow the iterator to be used to implement consistent interfaces for iteration across a global space which is split across multiple devices, which is the primary purpose of the class.</p>
+<p>The type T for the iterator can be either a normal type, or a type which implements the StridableLayout interface, which allows the data to be stored and iterated as SoA instead of AoS. Regardless, the use is the same, and the iterator semantics are as if it was a poitner to T.</p>
+<p><dl class="simple">
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The data type which the iterator will access. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Space</span></code>: The type which defines the iteration space. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple15IndexedIterator9BlockIterE">
+<span id="_CPPv3N6ripple15IndexedIterator9BlockIterE"></span><span id="_CPPv2N6ripple15IndexedIterator9BlockIterE"></span><span class="target" id="classripple_1_1IndexedIterator_1a50387f173eb6f7f314859365da90030f"></span><em class="property">using </em><code class="sig-name descname">BlockIter</code> = <a class="reference internal" href="classripple_1_1BlockIterator.html#_CPPv4I00EN6ripple13BlockIteratorE" title="ripple::BlockIterator">BlockIterator</a>&lt;<a class="reference internal" href="#_CPPv4I00EN6ripple15IndexedIteratorE" title="ripple::IndexedIterator::T">T</a>, <a class="reference internal" href="#_CPPv4I00EN6ripple15IndexedIteratorE" title="ripple::IndexedIterator::Space">Space</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple15IndexedIterator9BlockIterE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the base class. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple15IndexedIterator5IndexE">
+<span id="_CPPv3N6ripple15IndexedIterator5IndexE"></span><span id="_CPPv2N6ripple15IndexedIterator5IndexE"></span><span class="target" id="classripple_1_1IndexedIterator_1a11f2a5f227fd257551d03d93340dfe2b"></span><em class="property">using </em><code class="sig-name descname">Index</code> = int32_t<a class="headerlink" href="#_CPPv4N6ripple15IndexedIterator5IndexE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the index type used for the iterator. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple15IndexedIterator7IndicesE">
+<span id="_CPPv3N6ripple15IndexedIterator7IndicesE"></span><span id="_CPPv2N6ripple15IndexedIterator7IndicesE"></span><span class="target" id="classripple_1_1IndexedIterator_1ac14a9cb0cacc574f1164bc2414b6d1dd"></span><em class="property">using </em><code class="sig-name descname">Indices</code> = <a class="reference internal" href="typedef_namespaceripple_1a802c4dbdd0918625c13cf22d0be1d4af.html#_CPPv4I0_6size_t0EN6ripple3VecE" title="ripple::Vec">Vec</a>&lt;<a class="reference internal" href="#_CPPv4N6ripple15IndexedIterator5IndexE" title="ripple::IndexedIterator::Index">Index</a>, <a class="reference internal" href="#_CPPv4N6ripple15IndexedIterator9BlockIterE" title="ripple::IndexedIterator::BlockIter">BlockIter</a>::dims&gt;<a class="headerlink" href="#_CPPv4N6ripple15IndexedIterator7IndicesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the contianer used to store the indices. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple15IndexedIterator10CoordinateE">
+<span id="_CPPv3N6ripple15IndexedIterator10CoordinateE"></span><span id="_CPPv2N6ripple15IndexedIterator10CoordinateE"></span><span class="target" id="classripple_1_1IndexedIterator_1a76632710c3af5beb11582a40287ed924"></span><em class="property">using </em><code class="sig-name descname">Coordinate</code> = <a class="reference internal" href="typedef_namespaceripple_1a9bbbbdc1f6efc4f6f3a17f4dccace267.html#_CPPv4I_6size_tEN6ripple5CoordE" title="ripple::Coord">Coord</a>&lt;<a class="reference internal" href="#_CPPv4N6ripple15IndexedIterator4dimsE" title="ripple::IndexedIterator::dims">dims</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple15IndexedIterator10CoordinateE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type for the coordinates of the iterator. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N6ripple15IndexedIterator11CoordinatefE">
+<span id="_CPPv3N6ripple15IndexedIterator11CoordinatefE"></span><span id="_CPPv2N6ripple15IndexedIterator11CoordinatefE"></span><span class="target" id="classripple_1_1IndexedIterator_1a2231ac0ad4b98dc4d1e44da2f9b3e5a1"></span><em class="property">using </em><code class="sig-name descname">Coordinatef</code> = <a class="reference internal" href="typedef_namespaceripple_1a802c4dbdd0918625c13cf22d0be1d4af.html#_CPPv4I0_6size_t0EN6ripple3VecE" title="ripple::Vec">Vec</a>&lt;Value, <a class="reference internal" href="#_CPPv4N6ripple15IndexedIterator4dimsE" title="ripple::IndexedIterator::dims">dims</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple15IndexedIterator11CoordinatefE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type for the normalized coordinates of the iterator. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple15IndexedIterator15IndexedIteratorE9BlockIter">
+<span id="_CPPv3N6ripple15IndexedIterator15IndexedIteratorE9BlockIter"></span><span id="_CPPv2N6ripple15IndexedIterator15IndexedIteratorE9BlockIter"></span><span id="ripple::IndexedIterator::IndexedIterator__BlockIter"></span><span class="target" id="classripple_1_1IndexedIterator_1a2dde72ddd41c68f0395adffdb8eebca6"></span><code class="sig-name descname">IndexedIterator</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple15IndexedIterator9BlockIterE" title="ripple::IndexedIterator::BlockIter">BlockIter</a> <em>block_iter</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple15IndexedIterator15IndexedIteratorE9BlockIter" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constuctor to copy a <a class="reference internal" href="classripple_1_1BlockIterator.html#classripple_1_1BlockIterator"><span class="std std-ref">BlockIterator</span></a> <code class="docutils literal notranslate"><span class="pre">block_iter</span></code> into this iterator. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">block_iter</span></code>: The block iterator to use to set this iterator. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple15IndexedIterator6offsetE15IndexedIteratorRR3Dimi">
+<span id="_CPPv3I0ENK6ripple15IndexedIterator6offsetERR3Dimi"></span><span id="_CPPv2I0ENK6ripple15IndexedIterator6offsetERR3Dimi"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1IndexedIterator_1a180feab5a8427714410ae930c284f8d0"></span><em class="property">constexpr</em> auto <code class="sig-name descname">offset</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple15IndexedIterator6offsetE15IndexedIteratorRR3Dimi" title="ripple::IndexedIterator::offset::Dim">Dim</a> &amp;&amp;<em>dim</em>, int <em>amount</em> = 1<span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I00EN6ripple15IndexedIteratorE" title="ripple::IndexedIterator">IndexedIterator</a><a class="headerlink" href="#_CPPv4I0ENK6ripple15IndexedIterator6offsetE15IndexedIteratorRR3Dimi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Offsets the iterator by <code class="docutils literal notranslate"><span class="pre">amount</span></code> positions in the block in the <code class="docutils literal notranslate"><span class="pre">dim</span></code> dimension. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A new iterator to the offset location. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to offset in </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">amount</span></code>: The amount to offset by. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple15IndexedIterator17block_start_indexE5IndexRR3Dim">
+<span id="_CPPv3I0ENK6ripple15IndexedIterator17block_start_indexERR3Dim"></span><span id="_CPPv2I0ENK6ripple15IndexedIterator17block_start_indexERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1IndexedIterator_1a78bc6a1d92e6f06b67dd3f4992fa35b5"></span>auto <code class="sig-name descname">block_start_index</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple15IndexedIterator17block_start_indexE5IndexRR3Dim" title="ripple::IndexedIterator::block_start_index::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple15IndexedIterator5IndexE" title="ripple::IndexedIterator::Index">Index</a><a class="headerlink" href="#_CPPv4I0ENK6ripple15IndexedIterator17block_start_indexE5IndexRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the thread index of the start of the block which this iterator can iterate over. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The first thread index in the dimension which this iterator can iterate from. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to get the block start index for. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple15IndexedIterator21set_block_start_indexEvRR3Dim5Index">
+<span id="_CPPv3I0EN6ripple15IndexedIterator21set_block_start_indexERR3Dim5Index"></span><span id="_CPPv2I0EN6ripple15IndexedIterator21set_block_start_indexERR3Dim5Index"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1IndexedIterator_1a56748a61fc5fd4910d3924836484bdb0"></span>auto <code class="sig-name descname">set_block_start_index</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN6ripple15IndexedIterator21set_block_start_indexEvRR3Dim5Index" title="ripple::IndexedIterator::set_block_start_index::Dim">Dim</a> &amp;&amp;<em>dim</em>, <a class="reference internal" href="#_CPPv4N6ripple15IndexedIterator5IndexE" title="ripple::IndexedIterator::Index">Index</a> <em>index</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4I0EN6ripple15IndexedIterator21set_block_start_indexEvRR3Dim5Index" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the index of the first thread which this iterator can iterate from in the iteration space for the given dimension. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to set the block index for. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">index</span></code>: The index to set the start of the block to. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple15IndexedIterator11global_sizeE5IndexRR3Dim">
+<span id="_CPPv3I0ENK6ripple15IndexedIterator11global_sizeERR3Dim"></span><span id="_CPPv2I0ENK6ripple15IndexedIterator11global_sizeERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1IndexedIterator_1a5e2d497f47c1ecdda396e5b04ecd6ef0"></span>auto <code class="sig-name descname">global_size</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple15IndexedIterator11global_sizeE5IndexRR3Dim" title="ripple::IndexedIterator::global_size::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple15IndexedIterator5IndexE" title="ripple::IndexedIterator::Index">Index</a><a class="headerlink" href="#_CPPv4I0ENK6ripple15IndexedIterator11global_sizeE5IndexRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the size of the global space to which the block which can be iterated over can belongs for a given dimension (the total number of threads). </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of elements in the dimension in the global space to which this iterator belongs. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to get the global size for. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple15IndexedIterator15set_global_sizeEvRR3Dim5Index">
+<span id="_CPPv3I0EN6ripple15IndexedIterator15set_global_sizeERR3Dim5Index"></span><span id="_CPPv2I0EN6ripple15IndexedIterator15set_global_sizeERR3Dim5Index"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1IndexedIterator_1a75420cbfb7492f067e8b65fc51f10e79"></span>auto <code class="sig-name descname">set_global_size</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN6ripple15IndexedIterator15set_global_sizeEvRR3Dim5Index" title="ripple::IndexedIterator::set_global_size::Dim">Dim</a> &amp;&amp;<em>dim</em>, <a class="reference internal" href="#_CPPv4N6ripple15IndexedIterator5IndexE" title="ripple::IndexedIterator::Index">Index</a> <em>size</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4I0EN6ripple15IndexedIterator15set_global_sizeEvRR3Dim5Index" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the size of the global space to which the block belongs for dimension <code class="docutils literal notranslate"><span class="pre">dim</span></code> to <code class="docutils literal notranslate"><span class="pre">size</span></code>. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to set the size for. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">size</span></code>: The size for the dimension. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple15IndexedIterator10global_idxE6size_tRR3Dim">
+<span id="_CPPv3I0ENK6ripple15IndexedIterator10global_idxERR3Dim"></span><span id="_CPPv2I0ENK6ripple15IndexedIterator10global_idxERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1IndexedIterator_1a2cabf5293e6db1d70dfb671fc3483827"></span>auto <code class="sig-name descname">global_idx</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple15IndexedIterator10global_idxE6size_tRR3Dim" title="ripple::IndexedIterator::global_idx::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4I0ENK6ripple15IndexedIterator10global_idxE6size_tRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the global index of the data to which this iterator points, in the global space for which this iterator can iterate a sub region. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The index of this iterator in the global space. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to get the global index for. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple15IndexedIterator14normalized_idxEdRR3Dim">
+<span id="_CPPv3I0ENK6ripple15IndexedIterator14normalized_idxERR3Dim"></span><span id="_CPPv2I0ENK6ripple15IndexedIterator14normalized_idxERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1IndexedIterator_1a6115fae1cdff1720343aa151683cc487"></span>auto <code class="sig-name descname">normalized_idx</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple15IndexedIterator14normalized_idxEdRR3Dim" title="ripple::IndexedIterator::normalized_idx::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; double<a class="headerlink" href="#_CPPv4I0ENK6ripple15IndexedIterator14normalized_idxEdRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the global normalized index of the pointed to element for the iterator in the <code class="docutils literal notranslate"><span class="pre">dim</span></code> dimension. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The global normalized index of the iterator in the global iteration space. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to get the global normalzies index for. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple15IndexedIterator8is_validEbRR3Dim">
+<span id="_CPPv3I0ENK6ripple15IndexedIterator8is_validERR3Dim"></span><span id="_CPPv2I0ENK6ripple15IndexedIterator8is_validERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1IndexedIterator_1a704c1761ff7ec103ae6e745fdc3ecc6e"></span>auto <code class="sig-name descname">is_valid</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple15IndexedIterator8is_validEbRR3Dim" title="ripple::IndexedIterator::is_valid::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4I0ENK6ripple15IndexedIterator8is_validEbRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines if the iterator is valid for the <code class="docutils literal notranslate"><span class="pre">dim</span></code> dimension. </p>
+<p>It is valid if its index is less than the number of elements in the dimension. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if the iterator is valid for the dimension. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to check validity in. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0ENK6ripple15IndexedIterator8is_validEbRR3Dim5Index">
+<span id="_CPPv3I0ENK6ripple15IndexedIterator8is_validERR3Dim5Index"></span><span id="_CPPv2I0ENK6ripple15IndexedIterator8is_validERR3Dim5Index"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1IndexedIterator_1abe4257086aa3fe9505cf29b3db30b9ff"></span>auto <code class="sig-name descname">is_valid</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple15IndexedIterator8is_validEbRR3Dim5Index" title="ripple::IndexedIterator::is_valid::Dim">Dim</a> &amp;&amp;<em>dim</em>, <a class="reference internal" href="#_CPPv4N6ripple15IndexedIterator5IndexE" title="ripple::IndexedIterator::Index">Index</a> <em>extra</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4I0ENK6ripple15IndexedIterator8is_validEbRR3Dim5Index" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines if the iterator is valid for the <code class="docutils literal notranslate"><span class="pre">dim</span></code> dimension. </p>
+<p>It is valid if its index is less than the number of elements in the dimension. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if the iterator is valid for the dimension. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to check validity in. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple15IndexedIterator5coordEv">
+<span id="_CPPv3N6ripple15IndexedIterator5coordEv"></span><span id="_CPPv2N6ripple15IndexedIterator5coordEv"></span><span id="ripple::IndexedIterator::coord"></span><span class="target" id="classripple_1_1IndexedIterator_1a25f5dbe77bd697bac8130fda4c7d5907"></span>auto <code class="sig-name descname">coord</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple15IndexedIterator10CoordinateE" title="ripple::IndexedIterator::Coordinate">Coordinate</a><a class="headerlink" href="#_CPPv4N6ripple15IndexedIterator5coordEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the co-ordinates of the iterator in the global space. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The co-ordinates of the iterator in the global space. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple15IndexedIterator10norm_coordEv">
+<span id="_CPPv3N6ripple15IndexedIterator10norm_coordEv"></span><span id="_CPPv2N6ripple15IndexedIterator10norm_coordEv"></span><span id="ripple::IndexedIterator::norm_coord"></span><span class="target" id="classripple_1_1IndexedIterator_1a0fa85fb7abc132908e74780cff0adc0e"></span>auto <code class="sig-name descname">norm_coord</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple15IndexedIterator11CoordinatefE" title="ripple::IndexedIterator::Coordinatef">Coordinatef</a><a class="headerlink" href="#_CPPv4N6ripple15IndexedIterator10norm_coordEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the co-ordinates of the iterator in the global space normalized to the 0 -&gt; 1 range. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The co-ordinates of the iterator in the global space. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple15IndexedIterator17scaled_norm_coordE11Coordinatef">
+<span id="_CPPv3N6ripple15IndexedIterator17scaled_norm_coordE11Coordinatef"></span><span id="_CPPv2N6ripple15IndexedIterator17scaled_norm_coordE11Coordinatef"></span><span id="ripple::IndexedIterator::scaled_norm_coord__Coordinatef"></span><span class="target" id="classripple_1_1IndexedIterator_1ac7c6b58bf333a325f2d13f1682c12bd4"></span>auto <code class="sig-name descname">scaled_norm_coord</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple15IndexedIterator11CoordinatefE" title="ripple::IndexedIterator::Coordinatef">Coordinatef</a> <em>sizes</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple15IndexedIterator11CoordinatefE" title="ripple::IndexedIterator::Coordinatef">Coordinatef</a><a class="headerlink" href="#_CPPv4N6ripple15IndexedIterator17scaled_norm_coordE11Coordinatef" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the scaled coordinated for a domain with absolute sizes specified by the <code class="docutils literal notranslate"><span class="pre">sizes</span></code>. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sizes</span></code>: The sizes of the dimensions for the iteration space. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple15IndexedIterator21first_in_global_spaceEv">
+<span id="_CPPv3NK6ripple15IndexedIterator21first_in_global_spaceEv"></span><span id="_CPPv2NK6ripple15IndexedIterator21first_in_global_spaceEv"></span><span id="ripple::IndexedIterator::first_in_global_spaceC"></span><span class="target" id="classripple_1_1IndexedIterator_1ae636b7ca3e7620cd7650aa764fb524fd"></span>auto <code class="sig-name descname">first_in_global_space</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4NK6ripple15IndexedIterator21first_in_global_spaceEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines if this is the first iterator in the global space, that is, it’s the first valid iterator in each dimensions of the space. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if this is the first iterator in the global space. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple15IndexedIterator20last_in_global_spaceEv">
+<span id="_CPPv3NK6ripple15IndexedIterator20last_in_global_spaceEv"></span><span id="_CPPv2NK6ripple15IndexedIterator20last_in_global_spaceEv"></span><span id="ripple::IndexedIterator::last_in_global_spaceC"></span><span class="target" id="classripple_1_1IndexedIterator_1a7b25939d9eb2bef15357b6b2308b5ce0"></span>auto <code class="sig-name descname">last_in_global_space</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4NK6ripple15IndexedIterator20last_in_global_spaceEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines if this is the last iterator in the global space, that is, it’s the last valid iterator in each dimensions of the space. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if this is the last iterator in the global space. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Attributes</p>
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple15IndexedIterator4dimsE">
+<span id="_CPPv3N6ripple15IndexedIterator4dimsE"></span><span id="_CPPv2N6ripple15IndexedIterator4dimsE"></span><span id="ripple::IndexedIterator::dims__s"></span><span class="target" id="classripple_1_1IndexedIterator_1a96b7a4ba9564638fee5eebfb9301e8ce"></span><em class="property">constexpr</em> size_t <code class="sig-name descname">dims</code> = <a class="reference internal" href="#_CPPv4N6ripple15IndexedIterator9BlockIterE" title="ripple::IndexedIterator::BlockIter">BlockIter</a>::dims<a class="headerlink" href="#_CPPv4N6ripple15IndexedIterator4dimsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The number of dimensions for the iterator. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classripple_1_1InternalLoader.html" class="btn btn-neutral float-right" title="Template Class InternalLoader" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="classripple_1_1HostBlock.html" class="btn btn-neutral" title="Template Class HostBlock" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Template Class IndexedIterator</a><ul>
+<li><a class="reference internal" href="#inheritance-relationships">Inheritance Relationships</a><ul>
+<li><a class="reference internal" href="#base-type">Base Type</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

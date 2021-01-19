@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1a1de6d6e3049ccdf6cb079a03bc9a6ae1:
+
+Variable ripple::is_tuple_v
+===========================
+
+- Defined in :ref:`file_include_ripple_core_container_tuple_traits.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::is_tuple_v

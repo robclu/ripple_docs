@@ -1,0 +1,956 @@
+
+.. _namespace_ripple:
+
+Namespace ripple
+================
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+Detailed Description
+--------------------
+
+TodoAdd windows support.
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple__cpu`
+
+- :ref:`namespace_ripple__detail`
+
+- :ref:`namespace_ripple__gpu`
+
+- :ref:`namespace_ripple__kernel`
+
+- :ref:`namespace_ripple__math`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1AnyBlockTraits`
+
+- :ref:`exhale_struct_structripple_1_1Array`
+
+- :ref:`exhale_struct_structripple_1_1ArrayTraits`
+
+- :ref:`exhale_struct_structripple_1_1ArrayTraits_3_01Array_3_01Impl_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1ArrayTraits_3_01VecImpl_3_01T_00_01Size_00_01LayoutType_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1Block`
+
+- :ref:`exhale_struct_structripple_1_1BlockExtractor`
+
+- :ref:`exhale_struct_structripple_1_1BlockMemoryProps`
+
+- :ref:`exhale_struct_structripple_1_1BlockTraits`
+
+- :ref:`exhale_struct_structripple_1_1BlockTraits_3_01DeviceBlock_3_01T_00_01Dimensions_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1BlockTraits_3_01HostBlock_3_01T_00_01Dimensions_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1Cache`
+
+- :ref:`exhale_struct_structripple_1_1ConstLoader`
+
+- :ref:`exhale_struct_structripple_1_1ContiguousStorageView_1_1Allocator`
+
+- :ref:`exhale_struct_structripple_1_1CopyLoader`
+
+- :ref:`exhale_struct_structripple_1_1CopySpecifier`
+
+- :ref:`exhale_struct_structripple_1_1CpuInfo`
+
+- :ref:`exhale_struct_structripple_1_1CpuInfo_1_1Regs`
+
+- :ref:`exhale_struct_structripple_1_1DefaultStorage`
+
+- :ref:`exhale_struct_structripple_1_1DefaultStorage_1_1Allocator`
+
+- :ref:`exhale_struct_structripple_1_1Dimension`
+
+- :ref:`exhale_struct_structripple_1_1DynamicExecParams`
+
+- :ref:`exhale_struct_structripple_1_1DynamicMultidimSpace`
+
+- :ref:`exhale_struct_structripple_1_1ExecParams`
+
+- :ref:`exhale_struct_structripple_1_1ExecTraits`
+
+- :ref:`exhale_struct_structripple_1_1ExecTraits_3_01DynamicExecParams_3_01Shared_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1ExecTraits_3_01ExecParams_3_01ExecImpl_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1ExecTraits_3_01StaticExecParams_3_01X_00_01Y_00_01Z_00_01Padding_00_01Shared_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1Execution`
+
+- :ref:`exhale_struct_structripple_1_1Executor_1_1ThreadState`
+
+- :ref:`exhale_struct_structripple_1_1ExpansionParams`
+
+- :ref:`exhale_struct_structripple_1_1ExpansionWrapper`
+
+- :ref:`exhale_struct_structripple_1_1ExpansionWrapperTraits`
+
+- :ref:`exhale_struct_structripple_1_1ExpansionWrapperTraits_3_01ExpansionWrapper_3_01T_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1FOExtrapLoader`
+
+- :ref:`exhale_struct_structripple_1_1Freelist_1_1Node`
+
+- :ref:`exhale_struct_structripple_1_1GhostIndex`
+
+- :ref:`exhale_struct_structripple_1_1GpuHeapArena`
+
+- :ref:`exhale_struct_structripple_1_1GpuInfo`
+
+- :ref:`exhale_struct_structripple_1_1GpuInfo_1_1Stream`
+
+- :ref:`exhale_struct_structripple_1_1HeapArena`
+
+- :ref:`exhale_struct_structripple_1_1Int64`
+
+- :ref:`exhale_struct_structripple_1_1IteratorTraits`
+
+- :ref:`exhale_struct_structripple_1_1IteratorTraits_3_01BlockIterator_3_01T_00_01Space_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1IteratorTraits_3_01IndexedIterator_3_01T_00_01Space_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1LayoutTraits`
+
+- :ref:`exhale_struct_structripple_1_1LayoutTraits_3_01T_00_01true_01_4`
+
+- :ref:`exhale_struct_structripple_1_1LoadBoundary`
+
+- :ref:`exhale_struct_structripple_1_1LoadMultiBoundary`
+
+- :ref:`exhale_struct_structripple_1_1MatImpl`
+
+- :ref:`exhale_struct_structripple_1_1MaxReducer`
+
+- :ref:`exhale_struct_structripple_1_1Memcopy`
+
+- :ref:`exhale_struct_structripple_1_1MinReducer`
+
+- :ref:`exhale_struct_structripple_1_1ModificationSpecifier`
+
+- :ref:`exhale_struct_structripple_1_1ModificationTraits`
+
+- :ref:`exhale_struct_structripple_1_1ModificationTraits_3_01ModificationSpecifier_3_01T_00_01Modification_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1MultiBlock`
+
+- :ref:`exhale_struct_structripple_1_1MultiBlockTraits`
+
+- :ref:`exhale_struct_structripple_1_1MultiBlockTraits_3_01Block_3_01T_00_01Dimensions_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1MultiBlockTraits_3_01ExpansionWrapper_3_01T_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1MultiBlockTraits_3_01SharedWrapper_3_01T_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1MultidimSpace`
+
+- :ref:`exhale_struct_structripple_1_1MultidimWriter_1_1DimSizes`
+
+- :ref:`exhale_struct_structripple_1_1NodeExecutor`
+
+- :ref:`exhale_struct_structripple_1_1NodeExecutorImpl`
+
+- :ref:`exhale_struct_structripple_1_1NodeInfo`
+
+- :ref:`exhale_struct_structripple_1_1Num`
+
+- :ref:`exhale_struct_structripple_1_1OffsetParam`
+
+- :ref:`exhale_struct_structripple_1_1PointerWrapper`
+
+- :ref:`exhale_struct_structripple_1_1PolyLayoutOverloader`
+
+- :ref:`exhale_struct_structripple_1_1PolymorphicLayout`
+
+- :ref:`exhale_struct_structripple_1_1ProcInfo`
+
+- :ref:`exhale_struct_structripple_1_1Quat`
+
+- :ref:`exhale_struct_structripple_1_1Range_1_1Iterator`
+
+- :ref:`exhale_struct_structripple_1_1Reducer`
+
+- :ref:`exhale_struct_structripple_1_1SharedWrapper`
+
+- :ref:`exhale_struct_structripple_1_1SharedWrapperTraits`
+
+- :ref:`exhale_struct_structripple_1_1SharedWrapperTraits_3_01SharedWrapper_3_01T_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1SpaceTraits`
+
+- :ref:`exhale_struct_structripple_1_1SpaceTraits_3_01DynamicMultidimSpace_3_01Dimensions_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1SpaceTraits_3_01MultidimSpace_3_01SpaceImpl_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1SpaceTraits_3_01StaticMultidimSpace_3_01Sizes_8_8_8_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1Spinlock`
+
+- :ref:`exhale_struct_structripple_1_1Spinlock_1_1Sleeper`
+
+- :ref:`exhale_struct_structripple_1_1Splitter`
+
+- :ref:`exhale_struct_structripple_1_1StaticExecParams`
+
+- :ref:`exhale_struct_structripple_1_1StaticMultidimSpace`
+
+- :ref:`exhale_struct_structripple_1_1Stealer`
+
+- :ref:`exhale_struct_structripple_1_1Stealer_3_01StealPolicy_1_1neighbour_01_4`
+
+- :ref:`exhale_struct_structripple_1_1Stealer_3_01StealPolicy_1_1random_01_4`
+
+- :ref:`exhale_struct_structripple_1_1Stealer_3_01StealPolicy_1_1topological_01_4`
+
+- :ref:`exhale_struct_structripple_1_1StorageAccessor`
+
+- :ref:`exhale_struct_structripple_1_1StorageDescriptor`
+
+- :ref:`exhale_struct_structripple_1_1StorageElementTraits`
+
+- :ref:`exhale_struct_structripple_1_1StorageElementTraits_3_01Vector_3_01T_00_01Size_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1StorageLayout`
+
+- :ref:`exhale_struct_structripple_1_1StridedStorageView_1_1Allocator`
+
+- :ref:`exhale_struct_structripple_1_1StridedStorageView_3_01Type_01_4_1_1Allocator`
+
+- :ref:`exhale_struct_structripple_1_1StructAccessor`
+
+- :ref:`exhale_struct_structripple_1_1SubtractionReducer`
+
+- :ref:`exhale_struct_structripple_1_1SumReducer`
+
+- :ref:`exhale_struct_structripple_1_1TensorTraits`
+
+- :ref:`exhale_struct_structripple_1_1TensorTraits_3_01Tensor_3_01T_00_01Dimensions_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1ThreadSafeFreelist_1_1HeadPtr`
+
+- :ref:`exhale_struct_structripple_1_1ThreadSafeFreelist_1_1Node`
+
+- :ref:`exhale_struct_structripple_1_1Timer`
+
+- :ref:`exhale_struct_structripple_1_1Topology`
+
+- :ref:`exhale_struct_structripple_1_1VecImpl`
+
+- :ref:`exhale_struct_structripple_1_1Vector`
+
+- :ref:`exhale_struct_structripple_1_1VoidLock`
+
+- :ref:`exhale_struct_structripple_1_1VoidShared`
+
+- :ref:`exhale_class_classripple_1_1AlignedHeapAllocator`
+
+- :ref:`exhale_class_classripple_1_1Allocator`
+
+- :ref:`exhale_class_classripple_1_1BlockIterator`
+
+- :ref:`exhale_class_classripple_1_1BoundaryLoader`
+
+- :ref:`exhale_class_classripple_1_1ContiguousStorageView`
+
+- :ref:`exhale_class_classripple_1_1DeviceBlock`
+
+- :ref:`exhale_class_classripple_1_1Executor`
+
+- :ref:`exhale_class_classripple_1_1Freelist`
+
+- :ref:`exhale_class_classripple_1_1GenericLoader`
+
+- :ref:`exhale_class_classripple_1_1Graph`
+
+- :ref:`exhale_class_classripple_1_1HostBlock`
+
+- :ref:`exhale_class_classripple_1_1IndexedIterator`
+
+- :ref:`exhale_class_classripple_1_1InternalLoader`
+
+- :ref:`exhale_class_classripple_1_1Invocable`
+
+- :ref:`exhale_class_classripple_1_1LinearAllocator`
+
+- :ref:`exhale_class_classripple_1_1Logger`
+
+- :ref:`exhale_class_classripple_1_1MultiarchAllocator`
+
+- :ref:`exhale_class_classripple_1_1MultidimWriter`
+
+- :ref:`exhale_class_classripple_1_1Node`
+
+- :ref:`exhale_class_classripple_1_1OwnedStorage`
+
+- :ref:`exhale_class_classripple_1_1PoolAllocator`
+
+- :ref:`exhale_class_classripple_1_1Printable`
+
+- :ref:`exhale_class_classripple_1_1PrintableElement`
+
+- :ref:`exhale_class_classripple_1_1Range`
+
+- :ref:`exhale_class_classripple_1_1ReductionResult`
+
+- :ref:`exhale_class_classripple_1_1SimpleAllocator`
+
+- :ref:`exhale_class_classripple_1_1StackArena`
+
+- :ref:`exhale_class_classripple_1_1StaticStealableDequeue`
+
+- :ref:`exhale_class_classripple_1_1StridedStorageView`
+
+- :ref:`exhale_class_classripple_1_1StridedStorageView_3_01Type_01_4`
+
+- :ref:`exhale_class_classripple_1_1Tensor`
+
+- :ref:`exhale_class_classripple_1_1ThreadSafeFreelist`
+
+- :ref:`exhale_class_classripple_1_1Tuple`
+
+- :ref:`exhale_class_classripple_1_1Tuple_3_4`
+
+- :ref:`exhale_class_classripple_1_1VtkWriter`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_namespaceripple_1adfb7267df8924979597b053026d4e492`
+
+- :ref:`exhale_enum_namespaceripple_1a8eab3f289abb7f4b625ec7525b54ce4c`
+
+- :ref:`exhale_enum_namespaceripple_1ad242b598ccd7062fe54ff42b2f8212c7`
+
+- :ref:`exhale_enum_namespaceripple_1a4ec397f4549f779f188aa0580cb735ca`
+
+- :ref:`exhale_enum_namespaceripple_1a0c2d39511c6a3ff234ce9c2a7885d528`
+
+- :ref:`exhale_enum_namespaceripple_1ae314c8184d85e6da81055513973875a6`
+
+- :ref:`exhale_enum_namespaceripple_1afcacaeaac884e2155329d73c22784666`
+
+- :ref:`exhale_enum_namespaceripple_1abc26ba3863abe12cc573afb0837e43be`
+
+- :ref:`exhale_enum_namespaceripple_1a6827c37ba2831cb05fa636001c11466a`
+
+- :ref:`exhale_enum_namespaceripple_1a445bb0c7771b0f161cd63a10d143520e`
+
+- :ref:`exhale_enum_namespaceripple_1a7eef7cf214950b4136439721c17fcf34`
+
+- :ref:`exhale_enum_namespaceripple_1a4d5f4cde24de454f2d816f7c9a93e2c4`
+
+- :ref:`exhale_enum_namespaceripple_1a93491499f875b4fe958a34f7a38defbe`
+
+- :ref:`exhale_enum_namespaceripple_1a8b0646762847e52176939cd3d2003fdd`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespaceripple_1a76f1f6df4b75be76203f730e34975882`
+
+- :ref:`exhale_function_namespaceripple_1a458a391981df8299959704d61b31d914`
+
+- :ref:`exhale_function_namespaceripple_1aca38c2dad5d17e1163e75dfe20404bca`
+
+- :ref:`exhale_function_namespaceripple_1ab58354a30803bf822cf2f27c2660653d`
+
+- :ref:`exhale_function_namespaceripple_1a9a091f36e3531210a00668cbb556423e`
+
+- :ref:`exhale_function_namespaceripple_1a07068b0cf3b74162ddb6029793e31867`
+
+- :ref:`exhale_function_namespaceripple_1a2ddc1ced47fa8a4f4badff8956222ca2`
+
+- :ref:`exhale_function_namespaceripple_1ab3775395905dc71267c59f2991f5fce1`
+
+- :ref:`exhale_function_namespaceripple_1aa475bdfab10cae63294c90b5a2f6c773`
+
+- :ref:`exhale_function_namespaceripple_1a8b177506a3d47f33fef878ee96f4a543`
+
+- :ref:`exhale_function_namespaceripple_1adfd3336cac0719a9edff86dc6025b6ac`
+
+- :ref:`exhale_function_namespaceripple_1ade76cd7fec5f670be9642e6c7385d3a3`
+
+- :ref:`exhale_function_namespaceripple_1a395a7455aa92d3edfd66977e1fd115aa`
+
+- :ref:`exhale_function_namespaceripple_1aa9cb3be01d720001123c51a36cfac64d`
+
+- :ref:`exhale_function_namespaceripple_1aa41e82e8080c8a9c2a845623ba7611fd`
+
+- :ref:`exhale_function_namespaceripple_1a0f28f17c082dccb597174acc0b3ccf7e`
+
+- :ref:`exhale_function_namespaceripple_1a0ca02e3ae43db731d0a821fb1f9fe7c6`
+
+- :ref:`exhale_function_namespaceripple_1a8f3d24f17264cda27de08911162af0b0`
+
+- :ref:`exhale_function_namespaceripple_1a4ef20987463b99237887c00573fe12c7`
+
+- :ref:`exhale_function_namespaceripple_1a66ac58f3e0fd94102647c3a962655d7c`
+
+- :ref:`exhale_function_namespaceripple_1aba8ca62bbc1cc629ca45f580cb709e89`
+
+- :ref:`exhale_function_namespaceripple_1a68aa4323670f88603815a87b83e7e4d0`
+
+- :ref:`exhale_function_namespaceripple_1a276f41ddc98245d32a13ffaf5e181881`
+
+- :ref:`exhale_function_namespaceripple_1ab8c903b6e615092964a3296da1d732a8`
+
+- :ref:`exhale_function_namespaceripple_1ad7fa946ec4d1a259da3046572c3f6ce6`
+
+- :ref:`exhale_function_namespaceripple_1ab03c3679a82638794098911f964ef7b6`
+
+- :ref:`exhale_function_namespaceripple_1abf56007f2449697bf983b958f8f2b308`
+
+- :ref:`exhale_function_namespaceripple_1a21986d1b8309cd3788d25fbea33c5b37`
+
+- :ref:`exhale_function_namespaceripple_1a6bebac1e656d7a18362f9ed7c93ea804`
+
+- :ref:`exhale_function_namespaceripple_1a7dccab0993d0f9ad2ffc1808fb066d10`
+
+- :ref:`exhale_function_namespaceripple_1a8915f12289c0bbfb75a26ae35c78537d`
+
+- :ref:`exhale_function_namespaceripple_1a2ef4c82e3550bee83d8875cba14ea3c1`
+
+- :ref:`exhale_function_namespaceripple_1a9732e57a11011675124cd641a69ef898`
+
+- :ref:`exhale_function_namespaceripple_1a5ff614c29f9e07c7ee6f1a18c1cfc0c7`
+
+- :ref:`exhale_function_namespaceripple_1a16e08a61426fc4da46354d74bed053c7`
+
+- :ref:`exhale_function_namespaceripple_1a8931f87a0b37e21bf794c14cb87320c2`
+
+- :ref:`exhale_function_namespaceripple_1a4ceef4d10cff43b914eac51531b2585b`
+
+- :ref:`exhale_function_namespaceripple_1acda214fc8d18ab6b9e6440f63f1b4fbf`
+
+- :ref:`exhale_function_namespaceripple_1a0260bf93efe366265ecf03cf9e517f4a`
+
+- :ref:`exhale_function_namespaceripple_1a11d06d72e22cbe7341196f6ae01e2d2d`
+
+- :ref:`exhale_function_namespaceripple_1ac25c9b942ab9a99cfd28e25d343f4ebf`
+
+- :ref:`exhale_function_namespaceripple_1afed2d28d71bbdb325b5b513c63213ee1`
+
+- :ref:`exhale_function_namespaceripple_1aa8d240cd770e61a07d53c3db91ff3aa6`
+
+- :ref:`exhale_function_namespaceripple_1a31bbc3daadc82366d42fddf81281ae84`
+
+- :ref:`exhale_function_namespaceripple_1abc6dcd505dab8a86b6c52c781c71d3b6`
+
+- :ref:`exhale_function_namespaceripple_1abbdefb645bb879c1f2677922f6f8520d`
+
+- :ref:`exhale_function_namespaceripple_1ae25708507b6fd36a647a7cdb9cc44176`
+
+- :ref:`exhale_function_namespaceripple_1a0f710867b83e78267db7e1cc544e30da`
+
+- :ref:`exhale_function_namespaceripple_1a01e1ca31bc5234d0395008ca5e1dd96f`
+
+- :ref:`exhale_function_namespaceripple_1accb8748d711f97b5d2f68f55b387e389`
+
+- :ref:`exhale_function_namespaceripple_1a212854f3f54b09bc7d742616dfc9d52d`
+
+- :ref:`exhale_function_namespaceripple_1ad4b68964dc3588f6dec0186ff2c154ba`
+
+- :ref:`exhale_function_namespaceripple_1af15933e1d9d8e790e4d411c9ca752646`
+
+- :ref:`exhale_function_namespaceripple_1a26777e86444685afc67f5238e7b1a18d`
+
+- :ref:`exhale_function_namespaceripple_1a170f5e335f5e56f46cd1d9148835270d`
+
+- :ref:`exhale_function_namespaceripple_1a0df1f30de5854ebc642214c20609f732`
+
+- :ref:`exhale_function_namespaceripple_1a0b35b974f859045b41ff3882fc3444f6`
+
+- :ref:`exhale_function_namespaceripple_1a4e20df591190f9850c0e524b5a7d746e`
+
+- :ref:`exhale_function_namespaceripple_1aba328d528a7e041cba5a92099785ae98`
+
+- :ref:`exhale_function_namespaceripple_1a652da7e596b000b11b7139c96ca2a45a`
+
+- :ref:`exhale_function_namespaceripple_1a7637cfeeb5eb199ab5e7bce7647a41c4`
+
+- :ref:`exhale_function_namespaceripple_1a3ad4eeeee06f3c56e4487879288baaaf`
+
+- :ref:`exhale_function_namespaceripple_1a1a2a1b46d9399a0393893e824bf79489`
+
+- :ref:`exhale_function_namespaceripple_1a5fa95ab936db809e859919bc6ee3450e`
+
+- :ref:`exhale_function_namespaceripple_1ae75b28f28eac75bb775fdd3e686a3434`
+
+- :ref:`exhale_function_namespaceripple_1a60be68dfac2ca20a946d86ba4f919d24`
+
+- :ref:`exhale_function_namespaceripple_1aab205db063daf6c8a81f393467b425bd`
+
+- :ref:`exhale_function_namespaceripple_1ae9b3d2d2cd24b321d0c151a10f10c8f9`
+
+- :ref:`exhale_function_namespaceripple_1a3a313191759165186c3a9389204c63c2`
+
+- :ref:`exhale_function_namespaceripple_1ab697556df32d1edc0ad8ffb0c6a42b7d`
+
+- :ref:`exhale_function_namespaceripple_1a69fc51b67ba02349c5f5a95a6a330344`
+
+- :ref:`exhale_function_namespaceripple_1a2207921b7b3a28d2b92ef12030889287`
+
+- :ref:`exhale_function_namespaceripple_1ab8008cc23ef048b199d8a4a410501ac0`
+
+- :ref:`exhale_function_namespaceripple_1af40d7d3c9cb56f5947d995c55eb3e8ef`
+
+- :ref:`exhale_function_namespaceripple_1abbcb0d3afff706f90bd21318d7d2072a`
+
+- :ref:`exhale_function_namespaceripple_1acd8c7c1a915eb737eb65e5c8f26c4f89`
+
+- :ref:`exhale_function_namespaceripple_1a4ad54b4162e2a049ba42f1e4a496e156`
+
+- :ref:`exhale_function_namespaceripple_1a9ddd313ab214ace5ee1b960fe5727055`
+
+- :ref:`exhale_function_namespaceripple_1a8e46711f9291d07a19250f8e9a9867c1`
+
+- :ref:`exhale_function_namespaceripple_1a6dada9e1d4b6a42fd3b45f50efc72811`
+
+- :ref:`exhale_function_namespaceripple_1aedf2188e29d0ae0bc4e7b2f30887b5d9`
+
+- :ref:`exhale_function_namespaceripple_1a6968f4764a926fb5044789a7fecf5b01`
+
+- :ref:`exhale_function_namespaceripple_1afd68ed4e746c3ea8168ad06d3f6968bc`
+
+- :ref:`exhale_function_namespaceripple_1a5aaeea317b030d274eb618f168850bfc`
+
+- :ref:`exhale_function_namespaceripple_1a6728a58362e4fb597cd753fb118895a1`
+
+- :ref:`exhale_function_namespaceripple_1a2fce9da692fc053046b5158953cb278b`
+
+- :ref:`exhale_function_namespaceripple_1a0a2fafc60896a2ceb527afe289c53fc3`
+
+- :ref:`exhale_function_namespaceripple_1af6c6009fe838989c737d0eca5e1e7e88`
+
+- :ref:`exhale_function_namespaceripple_1a6e961cc19621e03af8c80de31ea6b1e8`
+
+- :ref:`exhale_function_namespaceripple_1acf030048a40d378ca198f724ff620bb4`
+
+- :ref:`exhale_function_namespaceripple_1a5c79b2bc5ccd7bf199e1389c782be9e8`
+
+- :ref:`exhale_function_namespaceripple_1ac020c87c4752977fdab1573be62a63b3`
+
+- :ref:`exhale_function_namespaceripple_1ae646b949acf9fb2c991a37ac630a5776`
+
+- :ref:`exhale_function_namespaceripple_1ad7a73ba6a402e74bcf483c5719f32461`
+
+- :ref:`exhale_function_namespaceripple_1a1b55345c77aefb66955744241749c97f`
+
+- :ref:`exhale_function_namespaceripple_1a154b85aaee74d7f077f6d73400b746b5`
+
+- :ref:`exhale_function_namespaceripple_1aa10675c3bf46f366c93984248197fceb`
+
+- :ref:`exhale_function_namespaceripple_1a90d5d92add78bcbf00616ce78e90d4ea`
+
+- :ref:`exhale_function_namespaceripple_1ab2729f4333e7a636851eb14cc6a0c992`
+
+- :ref:`exhale_function_namespaceripple_1abba75ab4a4fc94470bcdbf1ae0537c70`
+
+- :ref:`exhale_function_namespaceripple_1a8d1816c21b0089cc83bc584de99d3d93`
+
+- :ref:`exhale_function_namespaceripple_1abcf5393f7bba30e3253aaa3528582237`
+
+- :ref:`exhale_function_namespaceripple_1a4bace5bb9388178920e5305b6b536688`
+
+- :ref:`exhale_function_namespaceripple_1a5b7b40b56aea3381efb35a5ea0144fbe`
+
+- :ref:`exhale_function_namespaceripple_1a5f27b69c33c32b0ae7476b09e09d075c`
+
+- :ref:`exhale_function_namespaceripple_1af08bde5695300f94f414b2a4953ad6c9`
+
+- :ref:`exhale_function_namespaceripple_1a1d98af4e04188b9bf1a8777995f67367`
+
+- :ref:`exhale_function_namespaceripple_1a79d90c975b4c7750add5452193ff1c4b`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_namespaceripple_1a1f453940eb7985996e657de7903a3898`
+
+- :ref:`exhale_typedef_namespaceripple_1a3470aefb1ca07481691c45171ba073d5`
+
+- :ref:`exhale_typedef_namespaceripple_1aaa8c6aca95ea6e96f19238633bd81a04`
+
+- :ref:`exhale_typedef_namespaceripple_1af82ff1d9b1a461877db751af55f43ac0`
+
+- :ref:`exhale_typedef_namespaceripple_1aa33cc96b703d4c8312b144f2a559a7ba`
+
+- :ref:`exhale_typedef_namespaceripple_1a84c021fb22ce1936a71d674d8b334ec7`
+
+- :ref:`exhale_typedef_namespaceripple_1a0b8c9c035f85f14461762b871f6737f2`
+
+- :ref:`exhale_typedef_namespaceripple_1a12b2a33023fb2ddaddc7431f3c98cb30`
+
+- :ref:`exhale_typedef_namespaceripple_1a33e6136dcf2f2679138b0e16e4ecd144`
+
+- :ref:`exhale_typedef_namespaceripple_1ab6bbf6ff75442cdb8e78ebc1bd152145`
+
+- :ref:`exhale_typedef_namespaceripple_1a8a29502ebe90edab600ee22db8f945fb`
+
+- :ref:`exhale_typedef_namespaceripple_1ae50432e1a3ca95db8f3444b3da38ce20`
+
+- :ref:`exhale_typedef_namespaceripple_1a06513aae184f9db0cde389ada11de7cc`
+
+- :ref:`exhale_typedef_namespaceripple_1a5628f49a48d187a91a56065d17e9e661`
+
+- :ref:`exhale_typedef_namespaceripple_1a909159fc5e3c255e15881983af9b2633`
+
+- :ref:`exhale_typedef_namespaceripple_1ad4fab21d2fa6bb6b15de2d3721551cf9`
+
+- :ref:`exhale_typedef_namespaceripple_1a5eb52ac87711789fcd1f2563c97debef`
+
+- :ref:`exhale_typedef_namespaceripple_1aad1bd536bed0bab1e9e1137742f319f8`
+
+- :ref:`exhale_typedef_namespaceripple_1a1a5c381f3645590820a3938acf807be7`
+
+- :ref:`exhale_typedef_namespaceripple_1a2e791a1ff6344d43a601641855236528`
+
+- :ref:`exhale_typedef_namespaceripple_1ad10146836bee0ecc370c0e180a74334f`
+
+- :ref:`exhale_typedef_namespaceripple_1a979e96b781bf89e81ddc8838ba114f38`
+
+- :ref:`exhale_typedef_namespaceripple_1a80bd7d5345b7cf27fa786731a34d9cf2`
+
+- :ref:`exhale_typedef_namespaceripple_1a766c9209a6fdc206665983ee203fdd5a`
+
+- :ref:`exhale_typedef_namespaceripple_1a9bbbbdc1f6efc4f6f3a17f4dccace267`
+
+- :ref:`exhale_typedef_namespaceripple_1aae6a0a89dc16b301bd7fd0453ed521d1`
+
+- :ref:`exhale_typedef_namespaceripple_1a351b2f3ab3ac1e48c49e24b5445c64ab`
+
+- :ref:`exhale_typedef_namespaceripple_1a227c91ad0de6b5a7d7ae8b74c98affb5`
+
+- :ref:`exhale_typedef_namespaceripple_1a32ba5d8f6350d78a3d518d9a1bbbfe8a`
+
+- :ref:`exhale_typedef_namespaceripple_1a9287f40df2183fc7a89ea5da71a71194`
+
+- :ref:`exhale_typedef_namespaceripple_1ae9b064a06b31746e7f1cb05e2a55f055`
+
+- :ref:`exhale_typedef_namespaceripple_1a305d83b331726d380947f9f40c6102b5`
+
+- :ref:`exhale_typedef_namespaceripple_1a54cf8638f86161bf597a4dc1567b87a2`
+
+- :ref:`exhale_typedef_namespaceripple_1accee5ddbf50b8a7052f4a162845e9697`
+
+- :ref:`exhale_typedef_namespaceripple_1a359041ff4c962cd4140a51b0c6eaf822`
+
+- :ref:`exhale_typedef_namespaceripple_1addb72415132564e36ecf6439b40a6aef`
+
+- :ref:`exhale_typedef_namespaceripple_1a0f01c1a2f6b8acb51be45a46f94f7b7c`
+
+- :ref:`exhale_typedef_namespaceripple_1a7ef0eeef83cdb64e9d31860b52c44a1a`
+
+- :ref:`exhale_typedef_namespaceripple_1ac2af1203c057b836b0fc5846e4379b6f`
+
+- :ref:`exhale_typedef_namespaceripple_1ae3145a6a80d94e33fadc5a2f513a5cdb`
+
+- :ref:`exhale_typedef_namespaceripple_1a8b6fd5189c82d6caa92c15955e452255`
+
+- :ref:`exhale_typedef_namespaceripple_1a63aa950627b43c44fff0f08e866af175`
+
+- :ref:`exhale_typedef_namespaceripple_1a42e0b9753f40c81356a3f6d34fa5ba01`
+
+- :ref:`exhale_typedef_namespaceripple_1a89371c3ab1ead888f2c8cbd4b2c03ac3`
+
+- :ref:`exhale_typedef_namespaceripple_1a01c13d6fc60b3c1ef658e978a9d85c10`
+
+- :ref:`exhale_typedef_namespaceripple_1a39ae133d1498f3fa080ae57cfabeb322`
+
+- :ref:`exhale_typedef_namespaceripple_1aed777764b1ca82dce0a6f712c4ac4522`
+
+- :ref:`exhale_typedef_namespaceripple_1aa39703284bbdc88c4216f8e385523ab3`
+
+- :ref:`exhale_typedef_namespaceripple_1ad3f3941294dd9c42d7cf84dbedac7e31`
+
+- :ref:`exhale_typedef_namespaceripple_1aa39574debe62d112daa8bd9d5aec723f`
+
+- :ref:`exhale_typedef_namespaceripple_1ab82919456e4c50db2c612567b4b17d38`
+
+- :ref:`exhale_typedef_namespaceripple_1ac42a6066a330e51a80f7093f88472b98`
+
+- :ref:`exhale_typedef_namespaceripple_1abd937e230cd58f8e727f235eb6b4d364`
+
+- :ref:`exhale_typedef_namespaceripple_1a75a81849295b3415092274f986683163`
+
+- :ref:`exhale_typedef_namespaceripple_1abe6d58b7119e8e95e3929a6b1ab428b6`
+
+- :ref:`exhale_typedef_namespaceripple_1a1779acd9719f8fd94ee48a401c013c24`
+
+- :ref:`exhale_typedef_namespaceripple_1a678068ccf66fb26c416e9115b2301e90`
+
+- :ref:`exhale_typedef_namespaceripple_1a4c98e494714abd18f11c98e13e8c5467`
+
+- :ref:`exhale_typedef_namespaceripple_1aa27a2243e4ba3c1c63b89d9305d8816f`
+
+- :ref:`exhale_typedef_namespaceripple_1a6d487ba60e26b4e4cbb0983aa4f0b191`
+
+- :ref:`exhale_typedef_namespaceripple_1a1bc3de7755eb55f1cf0946a244e291d7`
+
+- :ref:`exhale_typedef_namespaceripple_1af18cfe441f61f22e2e38f811492e0e07`
+
+- :ref:`exhale_typedef_namespaceripple_1a808bdd56e68d5ffc9332faef8627a1c4`
+
+- :ref:`exhale_typedef_namespaceripple_1a7d317cf5f720ae2326786a285bbe4b9e`
+
+- :ref:`exhale_typedef_namespaceripple_1abcf6051dfa51a96e385f5074f50b9be9`
+
+- :ref:`exhale_typedef_namespaceripple_1a371e30f9ce18d330ed1637a133640381`
+
+- :ref:`exhale_typedef_namespaceripple_1ad2424a8190fcd4b65d097f21fa3ef44d`
+
+- :ref:`exhale_typedef_namespaceripple_1ad9bca7c10639fc416933557eedbf0aef`
+
+- :ref:`exhale_typedef_namespaceripple_1a79e070373bad2845d1e0dfd62c36ba76`
+
+- :ref:`exhale_typedef_namespaceripple_1a84809db2dcb9bfb3e6590585096d1e1a`
+
+- :ref:`exhale_typedef_namespaceripple_1a59474903e1e2ddd833e8859fba1b217c`
+
+- :ref:`exhale_typedef_namespaceripple_1a8a498ae3a1ed631468b36339a962bd41`
+
+- :ref:`exhale_typedef_namespaceripple_1a567835d2b9c9bd4c05d05b1ab0f24396`
+
+- :ref:`exhale_typedef_namespaceripple_1a430a354c66107d69e4ff62c7f55c565a`
+
+- :ref:`exhale_typedef_namespaceripple_1a1918ee959c408c52796f11645ce50bbf`
+
+- :ref:`exhale_typedef_namespaceripple_1ad1aa794b3791c5d368932acc30b849ff`
+
+- :ref:`exhale_typedef_namespaceripple_1a7c17217456a18cc635203738a85ba922`
+
+- :ref:`exhale_typedef_namespaceripple_1ab5cb68e54ec5dff51ae0e32eb8993c7e`
+
+- :ref:`exhale_typedef_namespaceripple_1a9989a2843883c25e99344a1bec49d059`
+
+- :ref:`exhale_typedef_namespaceripple_1a85cfe560fdb15c5b94013c27ab1aea28`
+
+- :ref:`exhale_typedef_namespaceripple_1a71770faec40c5b9827880a0498096e18`
+
+- :ref:`exhale_typedef_namespaceripple_1a1e41e7a506ef28944bd2fc2e29e2da16`
+
+- :ref:`exhale_typedef_namespaceripple_1ab7be52de8905161299d844f301f247cf`
+
+- :ref:`exhale_typedef_namespaceripple_1a7a265833f9baf03dda19a25a95270991`
+
+- :ref:`exhale_typedef_namespaceripple_1a1682aff10f99c6b91484c827b8208601`
+
+- :ref:`exhale_typedef_namespaceripple_1a847af6c41b71d9d5df33eacc03a20346`
+
+- :ref:`exhale_typedef_namespaceripple_1a508cf7813ca6260070f32330efb9aca5`
+
+- :ref:`exhale_typedef_namespaceripple_1af47f883662758ffbd5b8a11531381505`
+
+- :ref:`exhale_typedef_namespaceripple_1a9178fa6f89f12add17e38a775c6fe857`
+
+- :ref:`exhale_typedef_namespaceripple_1a3b88d28fe8d0f8501f7c77b97fd60128`
+
+- :ref:`exhale_typedef_namespaceripple_1a23fab5c83909c1e9c0d38adfcd0b75d0`
+
+- :ref:`exhale_typedef_namespaceripple_1afdc61d89ee57d2855dde4210f14fd5a5`
+
+- :ref:`exhale_typedef_namespaceripple_1a561f69a66a5227090d886a1d4abb7fe0`
+
+- :ref:`exhale_typedef_namespaceripple_1a9f3a706936a5e50c202f9ba2a32e9971`
+
+- :ref:`exhale_typedef_namespaceripple_1a509b63291b8ff560ee18a280d0516ee3`
+
+- :ref:`exhale_typedef_namespaceripple_1af3009ff300b1ae2400113244dfc5e790`
+
+- :ref:`exhale_typedef_namespaceripple_1a78c56f114f6d3bf83c0574c73e17bf2d`
+
+- :ref:`exhale_typedef_namespaceripple_1aaf3a781e5ab322acbe335ab9e3baed31`
+
+- :ref:`exhale_typedef_namespaceripple_1a1222a6f8279a47c6e153bd72a1bfcded`
+
+- :ref:`exhale_typedef_namespaceripple_1a4ba56da3d1dc934b8c09f63fedd8c368`
+
+- :ref:`exhale_typedef_namespaceripple_1a12a78e0864a0a5723f51d4928befa4d4`
+
+- :ref:`exhale_typedef_namespaceripple_1ada36e4663716e5cc4bb51b710d651765`
+
+- :ref:`exhale_typedef_namespaceripple_1a00ffdf6072a6b493f8f5f550bdfa1676`
+
+- :ref:`exhale_typedef_namespaceripple_1a132bb633164b47de3980b5e40eeda8cb`
+
+- :ref:`exhale_typedef_namespaceripple_1a9d39b8294e2e8308cadf741aebb5b07f`
+
+- :ref:`exhale_typedef_namespaceripple_1ab5eeaae3ecb8f987af5dce2e979873bd`
+
+- :ref:`exhale_typedef_namespaceripple_1abec7ccb42ff365d46ffca6b100720dc6`
+
+- :ref:`exhale_typedef_namespaceripple_1a7b5c68430dcb371c6db1dd7e6626c2df`
+
+- :ref:`exhale_typedef_namespaceripple_1ab7672c32dcda26ca7de4da2491519234`
+
+- :ref:`exhale_typedef_namespaceripple_1aa66805191689c1b021031835ee6ff6fe`
+
+- :ref:`exhale_typedef_namespaceripple_1a2c855f98b9ba040e5f581e3e46952972`
+
+- :ref:`exhale_typedef_namespaceripple_1a492584af5a7d6e38490e87af64fa76e9`
+
+- :ref:`exhale_typedef_namespaceripple_1a92b203dfd7ff21108d8169b87be64718`
+
+- :ref:`exhale_typedef_namespaceripple_1ac69dae2d8142878bc58921c45a7e70dc`
+
+- :ref:`exhale_typedef_namespaceripple_1a59a213fd43758746eb0035efe107bb5f`
+
+- :ref:`exhale_typedef_namespaceripple_1a1f37ec31279f4f1db5be3b5a5300b8a4`
+
+- :ref:`exhale_typedef_namespaceripple_1affd8f14d73840127ca67bc7f34d01f52`
+
+- :ref:`exhale_typedef_namespaceripple_1aa56e5c14d2e2efd97cb362a5c5f05f21`
+
+- :ref:`exhale_typedef_namespaceripple_1ac091249f0d15165ee496c338b4a2716e`
+
+- :ref:`exhale_typedef_namespaceripple_1a746afc714500ed806c81d8dd6809bc94`
+
+- :ref:`exhale_typedef_namespaceripple_1ab0734d274a9f94c217e000d37093c567`
+
+- :ref:`exhale_typedef_namespaceripple_1aa53757d129f2a47528d4a11da92200e3`
+
+- :ref:`exhale_typedef_namespaceripple_1a17b45a6eb3ba1bb7db7879710ba79e10`
+
+- :ref:`exhale_typedef_namespaceripple_1aa2a3cd59905851da74eb58991a584853`
+
+- :ref:`exhale_typedef_namespaceripple_1adcea58c792c05678778f93f8bc1ef667`
+
+- :ref:`exhale_typedef_namespaceripple_1ae2cbb81db4de2f2caa352f5d8cc83684`
+
+- :ref:`exhale_typedef_namespaceripple_1a7c175fd219d67505dbd1af37b87b166c`
+
+- :ref:`exhale_typedef_namespaceripple_1a802c4dbdd0918625c13cf22d0be1d4af`
+
+- :ref:`exhale_typedef_namespaceripple_1ad228f526d1e097d36d69726a375bc769`
+
+- :ref:`exhale_typedef_namespaceripple_1a2ebdb447dd517648a890f7f49ce8d400`
+
+- :ref:`exhale_typedef_namespaceripple_1af98677acd6eefa161fbd912758b65308`
+
+- :ref:`exhale_typedef_namespaceripple_1a4801cb2f3b918f1e53023181cbbed263`
+
+- :ref:`exhale_typedef_namespaceripple_1ad2b99306ca587ebcb45a5beccb58a5c6`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_namespaceripple_1aaab317cabb1012e3c1e44e31ccd80b5a`
+
+- :ref:`exhale_variable_namespaceripple_1a3965ace79867d8822f19037fb69e1b01`
+
+- :ref:`exhale_variable_namespaceripple_1afaa8609939b5a8ad7377106ed1623305`
+
+- :ref:`exhale_variable_namespaceripple_1adb90786cc6c0327372d1f3dba412925e`
+
+- :ref:`exhale_variable_namespaceripple_1abe1ecf8e84a87dd95fc8a283184bd2ea`
+
+- :ref:`exhale_variable_namespaceripple_1a20ac32a0f55490bc4d806a5c5bcabd57`
+
+- :ref:`exhale_variable_namespaceripple_1aafb311a79bcd6266553c8d479e64d18b`
+
+- :ref:`exhale_variable_namespaceripple_1a62e2b547d84cc540736cfa59bce0080c`
+
+- :ref:`exhale_variable_namespaceripple_1a5952ca700c0697f578d279f06385bf5f`
+
+- :ref:`exhale_variable_namespaceripple_1a0859934a709aaffb097438a170341c67`
+
+- :ref:`exhale_variable_namespaceripple_1abe7a24f1145c15be0d4d21dd9916b006`
+
+- :ref:`exhale_variable_namespaceripple_1abac505afb2427bc24dea3745d4f9c2fd`
+
+- :ref:`exhale_variable_namespaceripple_1a838ac9971eb4fbca81f7607f5122ef39`
+
+- :ref:`exhale_variable_namespaceripple_1ac81c879009efd20af75df7a7db7caa80`
+
+- :ref:`exhale_variable_namespaceripple_1a51530aaa9e33c74d14f6f56a8319b626`
+
+- :ref:`exhale_variable_namespaceripple_1a6a55aec032cf5376c32c93c668c45994`
+
+- :ref:`exhale_variable_namespaceripple_1ab64f03d2937071cd0ac34228e9623cba`
+
+- :ref:`exhale_variable_namespaceripple_1ab2c7d73c3255882ae8bfd28168fd4bad`
+
+- :ref:`exhale_variable_namespaceripple_1a549d8359be92d2ee7c7062a303930c70`
+
+- :ref:`exhale_variable_namespaceripple_1a43608e0fb19722ae2becdf8e21c61513`
+
+- :ref:`exhale_variable_namespaceripple_1a3af47da757c759e27b15f48413180b1e`
+
+- :ref:`exhale_variable_namespaceripple_1a3dea869f5481c92efd397ae51f55450d`
+
+- :ref:`exhale_variable_namespaceripple_1ae834a380be22e8512a5dded9c6764058`
+
+- :ref:`exhale_variable_namespaceripple_1adbc05ccf4067312d86be738483d0e685`
+
+- :ref:`exhale_variable_namespaceripple_1a5a2ea1e313fade1d9a29ba3f274129f0`
+
+- :ref:`exhale_variable_namespaceripple_1a1abb4e132efab0cbb67159e30ff585af`
+
+- :ref:`exhale_variable_namespaceripple_1a4b486a030b11f168423d00e820ce059a`
+
+- :ref:`exhale_variable_namespaceripple_1a945396380c44eae8e0116540a3fcabf9`
+
+- :ref:`exhale_variable_namespaceripple_1a3a39570b1ce6fbc5f7ca41fb2674790b`
+
+- :ref:`exhale_variable_namespaceripple_1a35a5c475484ba8ad89b196603aa84ac0`
+
+- :ref:`exhale_variable_namespaceripple_1a00ec737a38723cde575e254e5fb28004`
+
+- :ref:`exhale_variable_namespaceripple_1ac8647ef72fe6ca0655717af80af34620`
+
+- :ref:`exhale_variable_namespaceripple_1a0738ee63a992da5e49af0a6969cb7e5e`
+
+- :ref:`exhale_variable_namespaceripple_1ae8d5d0160874c37fbd83ca2bc539d4e4`
+
+- :ref:`exhale_variable_namespaceripple_1a8564de7e15117baedda4ef973be79e8c`
+
+- :ref:`exhale_variable_namespaceripple_1a082fa1e501ff70c30d3b37c37a3f0402`
+
+- :ref:`exhale_variable_namespaceripple_1afd7cf265405b766f76803a0460490462`
+
+- :ref:`exhale_variable_namespaceripple_1a1de6d6e3049ccdf6cb079a03bc9a6ae1`
+
+- :ref:`exhale_variable_namespaceripple_1a3bd8b82d4c569bd1dfd28c02b4d93742`
+
+- :ref:`exhale_variable_namespaceripple_1a024e7262dd2d8d9e249ddd5fca80ced4`
+
+- :ref:`exhale_variable_namespaceripple_1ad8dca9924106dfffdc0231ee2d9f5e14`
+
+- :ref:`exhale_variable_namespaceripple_1ad01e35e450461a3824a542733c487d3c`
+
+- :ref:`exhale_variable_namespaceripple_1a25199bd45eef2aafa3a8b3debd952180`
+
+- :ref:`exhale_variable_namespaceripple_1aebc92eb8931c609d32f6a21f22ed34e9`
+
+- :ref:`exhale_variable_namespaceripple_1a44040c25d20a23f2728cefadcb9ceb0a`
+
+- :ref:`exhale_variable_namespaceripple_1afc6563e1d48cdbd61301bcaf29e61563`

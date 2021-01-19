@@ -1,0 +1,13 @@
+.. _exhale_function_invoke__utils_8hpp_1a7dace31c06cfa04136639d2827cdf458:
+
+Template Function ripple::kernel::get_overlap_factor
+====================================================
+
+- Defined in :ref:`file_include_ripple_core_functional_kernel_invoke_utils.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::kernel::get_overlap_factor(const T&)

@@ -1,0 +1,26 @@
+.. _exhale_struct_structripple_1_1Spinlock:
+
+Struct Spinlock
+===============
+
+- Defined in :ref:`file_include_ripple_core_utility_spinlock.hpp`
+
+
+Nested Relationships
+--------------------
+
+
+Nested Types
+************
+
+- :ref:`exhale_struct_structripple_1_1Spinlock_1_1Sleeper`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::Spinlock
+   :members:
+   :protected-members:
+   :undoc-members:

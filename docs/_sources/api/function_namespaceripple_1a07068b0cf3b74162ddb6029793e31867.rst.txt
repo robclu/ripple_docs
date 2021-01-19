@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a07068b0cf3b74162ddb6029793e31867:
+
+Template Function ripple::as_shared()
+=====================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::as_shared()

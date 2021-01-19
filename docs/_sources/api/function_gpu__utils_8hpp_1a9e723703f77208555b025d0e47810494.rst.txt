@@ -1,0 +1,13 @@
+.. _exhale_function_gpu__utils_8hpp_1a9e723703f77208555b025d0e47810494:
+
+Function ripple::gpu::create_nonblocking_stream
+===============================================
+
+- Defined in :ref:`file_include_ripple_core_arch_gpu_utils.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::gpu::create_nonblocking_stream(GpuStream *)

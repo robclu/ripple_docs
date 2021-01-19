@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1afd7cf265405b766f76803a0460490462:
+
+Variable ripple::is_tensor_v
+============================
+
+- Defined in :ref:`file_include_ripple_core_container_tensor_traits.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::is_tensor_v

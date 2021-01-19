@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1ac8647ef72fe6ca0655717af80af34620:
+
+Variable ripple::is_printable_v
+===============================
+
+- Defined in :ref:`file_include_ripple_core_io_printable_traits.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::is_printable_v

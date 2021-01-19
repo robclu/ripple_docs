@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1Reducer:
+
+Struct Reducer
+==============
+
+- Defined in :ref:`file_include_ripple_core_graph_reducer.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::Reducer
+   :members:
+   :protected-members:
+   :undoc-members:

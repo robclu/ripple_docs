@@ -1,0 +1,97 @@
+
+.. _program_listing_file_include_ripple_core_utility_spinlock.hpp:
+
+Program Listing for File spinlock.hpp
+=====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_utility_spinlock.hpp>` (``include/ripple/core/utility/spinlock.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/utility/spinlock.hpp -------------------- -*- C++ -*----==//
+   //
+   //                                  Ripple
+   //
+   //                      Copyright (c) 2019, 2020 Rob Clucas
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_UTILITY_SPINLOCK_HPP
+   #define RIPPLE_UTILITY_SPINLOCK_HPP
+   
+   #include <atomic>
+   #include <chrono>
+   #include <thread>
+   #include <cstdint>
+   
+   namespace ripple {
+   
+   struct Spinlock {
+    private:
+     // clang-format off
+     static constexpr uint8_t free   = 0;
+     static constexpr uint8_t locked = 1;
+     // clang-format
+   
+     struct Sleeper {
+       static constexpr uint32_t max_spins = 4000;
+   
+       static auto sleep() noexcept -> void {
+         using namespace std::chrono_literals;
+         // Sleep for an amount which will let the kernel schedule us for the min
+         // duration, which is usually somewhere between 1 and 10ms.
+         std::this_thread::sleep_for(200us);
+       }
+   
+       auto wait() noexcept -> void {
+         if (spincount_ < max_spins) {
+           spincount_++;
+           // Essentially _mm_pause() and a memory barrier in one instruction.
+           // Just to make sure that there is no memory reordering which might
+           // be the case if the compiler decided to move things around.
+           // The pause prevents speculative loads from causing pipeline clears
+           // due to memory ordering mis-speculation.
+           asm volatile("pause" ::: "memory");
+           return;
+         }
+         sleep();
+       }
+   
+      private:
+       uint32_t spincount_ = 0; 
+     };
+   
+    public:
+     auto try_lock() noexcept -> bool {
+       return __sync_bool_compare_and_swap(&lock_, free, locked);
+     }
+   
+     auto lock() noexcept -> void {
+       Sleeper sleeper;
+       while (!__sync_bool_compare_and_swap(&lock_, free, locked)) {
+         do {
+           sleeper.wait(); // Wait until CAS might succeed.
+         } while (lock_);
+       }
+     }
+   
+     auto unlock() noexcept -> void {
+       // Memory barrier so that we can write the lock to the unlocked state.
+       asm volatile("" ::: "memory");
+       lock_ = free;
+     }
+   
+    private:
+     uint8_t lock_ = free; 
+   };
+   
+   } // namespace ripple
+   
+   #endif

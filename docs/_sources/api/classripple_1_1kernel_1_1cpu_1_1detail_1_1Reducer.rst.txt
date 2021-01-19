@@ -1,0 +1,16 @@
+.. _exhale_class_classripple_1_1kernel_1_1cpu_1_1detail_1_1Reducer:
+
+Template Class Reducer
+======================
+
+- Defined in :ref:`file_include_ripple_core_algorithm_kernel_reduce_cpp_.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ripple::kernel::cpu::detail::Reducer
+   :members:
+   :protected-members:
+   :undoc-members:

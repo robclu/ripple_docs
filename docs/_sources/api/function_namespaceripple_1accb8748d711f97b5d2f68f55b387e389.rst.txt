@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1accb8748d711f97b5d2f68f55b387e389:
+
+Template Function ripple::get_modifier_expansion_params
+=======================================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::get_modifier_expansion_params(const T&)

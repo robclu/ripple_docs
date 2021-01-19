@@ -1,0 +1,66 @@
+
+.. _program_listing_file_include_ripple_core_storage_storage_layout.hpp:
+
+Program Listing for File storage_layout.hpp
+===========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_storage_storage_layout.hpp>` (``include/ripple/core/storage/storage_layout.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/storage/storage_layout.hpp ------------- -*- C++ -*- ---==//
+   //
+   //                                Ripple
+   //
+   //                      Copyright (c) 2019, 2020 Rob Clucas.
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_STORAGE_STORAGE_LAYOUT_HPP
+   #define RIPPLE_STORAGE_STORAGE_LAYOUT_HPP
+   
+   #include "../utility/portability.hpp"
+   
+   namespace ripple {
+   
+   enum class LayoutKind : uint8_t {
+     contiguous_view  = 0, 
+     strided_view     = 1, 
+     contiguous_owned = 2, 
+     none             = 3  
+   };
+   
+   template <LayoutKind Layout>
+   struct StorageLayout {
+     static constexpr LayoutKind value = Layout;
+   };
+   
+   template <typename T, size_t Size>
+   struct Vector {};
+   
+   // clang-format off
+   using ContiguousView  = StorageLayout<LayoutKind::contiguous_view>;
+   using StridedView     = StorageLayout<LayoutKind::strided_view>;
+   using ContiguousOwned = StorageLayout<LayoutKind::contiguous_owned>;
+   using NoLayout        = StorageLayout<LayoutKind::none>;
+   // clang-format on
+   
+   template <LayoutKind Kind>
+   static constexpr bool is_contig_view_v = Kind == LayoutKind::contiguous_view;
+   
+   template <LayoutKind Kind>
+   static constexpr bool is_contig_owned_v = Kind == LayoutKind::contiguous_owned;
+   
+   template <LayoutKind Kind>
+   static constexpr bool is_strided_view_v = Kind == LayoutKind::strided_view;
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_STORAGE_STORAGE_LAYOUT_HPP

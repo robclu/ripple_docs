@@ -1,0 +1,66 @@
+
+.. _file_include_ripple_core_algorithm_detail_unrolled_for_impl_.hpp:
+
+File unrolled_for_impl_.hpp
+===========================
+
+
+This file provides the implementation of the funtionality for compile time based unrolling. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/algorithm/detail/unrolled_for_impl_.hpp``)
+----------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_algorithm_detail_unrolled_for_impl_.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``../../utility/forward.hpp``
+
+- ``../../utility/number.hpp``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_algorithm_unrolled_for.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+- :ref:`namespace_ripple__detail`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1detail_1_1Unroll`
+
+- :ref:`exhale_struct_structripple_1_1detail_1_1Unroll_3_010_01_4`
+
+- :ref:`exhale_struct_structripple_1_1detail_1_1Unroll_3_011_01_4`
+

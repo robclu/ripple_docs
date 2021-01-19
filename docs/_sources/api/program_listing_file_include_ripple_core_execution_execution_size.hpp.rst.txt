@@ -1,0 +1,109 @@
+
+.. _program_listing_file_include_ripple_core_execution_execution_size.hpp:
+
+Program Listing for File execution_size.hpp
+===========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_execution_execution_size.hpp>` (``include/ripple/core/execution/execution_size.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/execution/execution_size.hpp ----------- -*- C++ -*- ---==//
+   //
+   //                                Ripple
+   //
+   //                      Copyright (c) 2019, 2020 Rob Clucas.
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_EXECUTION_EXECUTION_SIZE_HPP
+   #define RIPPLE_EXECUTION_EXECUTION_SIZE_HPP
+   
+   #include <ripple/core/container/device_block.hpp>
+   #include <ripple/core/utility/dim.hpp>
+   #include <ripple/core/utility/type_traits.hpp>
+   #include <cmath>
+   #include <tuple>
+   
+   namespace ripple {
+   
+   template <typename T, typename U>
+   auto get_dim_num_blocks(T elements, U threads) noexcept -> size_t {
+     return std::max(
+       static_cast<std::size_t>(
+         std::ceil(static_cast<double>(elements) / static_cast<double>(threads))),
+       std::size_t{1});
+   }
+   
+   template <typename T, typename U>
+   auto get_dim_num_threads(T elements, U max_threads) noexcept -> size_t {
+     return std::min(
+       static_cast<std::size_t>(elements), static_cast<std::size_t>(max_threads));
+   }
+   
+   template <typename Block, typename ExeImpl, any_block_1d_enable_t<Block> = 0>
+   auto get_exec_size(
+     const Block&               block,
+     const ExecParams<ExeImpl>& exec_params,
+     int                        overlap = 0) noexcept -> std::tuple<dim3, dim3> {
+     const auto elems_x = block.size(dimx());
+   
+     auto threads = dim3(1, 1, 1);
+     auto blocks  = dim3(1, 1, 1);
+   
+     threads.x = get_dim_num_threads(elems_x, exec_params.size(dimx()));
+     blocks.x  = get_dim_num_blocks(elems_x, threads.x - overlap);
+   
+     return std::make_tuple(threads, blocks);
+   }
+   
+   template <typename Block, typename ExeImpl, any_block_2d_enable_t<Block> = 0>
+   auto get_exec_size(
+     const Block&               block,
+     const ExecParams<ExeImpl>& exec_params,
+     int                        overlap = 0) noexcept -> std::tuple<dim3, dim3> {
+     const auto elems_x = block.size(dimx());
+     const auto elems_y = block.size(dimy());
+   
+     auto threads = dim3(1, 1, 1);
+     auto blocks  = dim3(1, 1, 1);
+   
+     threads.x = get_dim_num_threads(elems_x, exec_params.size(dimx()));
+     threads.y = get_dim_num_threads(elems_y, exec_params.size(dimy()));
+     blocks.x  = get_dim_num_blocks(elems_x, threads.x - overlap);
+     blocks.y  = get_dim_num_blocks(elems_y, threads.y - overlap);
+   
+     return std::make_tuple(threads, blocks);
+   }
+   
+   template <typename Block, typename ExeImpl, any_block_3d_enable_t<Block> = 0>
+   auto get_exec_size(
+     const Block& block, const ExecParams<ExeImpl>& exec_params, int overlap = 0)
+     -> std::tuple<dim3, dim3> {
+     const size_t elems_x = block.size(dimx());
+     const size_t elems_y = block.size(dimy());
+     const size_t elems_z = block.size(dimz());
+   
+     auto threads = dim3(1, 1, 1);
+     auto blocks  = dim3(1, 1, 1);
+   
+     threads.x = get_dim_num_threads(elems_x, exec_params.size(dimx()));
+     threads.y = get_dim_num_threads(elems_y, exec_params.size(dimy()));
+     threads.z = get_dim_num_threads(elems_z, exec_params.size(dimz()));
+     blocks.x  = get_dim_num_blocks(elems_x, threads.x - overlap);
+     blocks.y  = get_dim_num_blocks(elems_y, threads.y - overlap);
+     blocks.z  = get_dim_num_blocks(elems_z, threads.z - overlap);
+   
+     return std::make_tuple(threads, blocks);
+   }
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_EXECUTION_EXECUTION_SIZE_HPP

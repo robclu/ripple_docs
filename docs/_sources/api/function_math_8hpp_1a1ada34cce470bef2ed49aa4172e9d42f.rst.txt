@@ -1,0 +1,13 @@
+.. _exhale_function_math_8hpp_1a1ada34cce470bef2ed49aa4172e9d42f:
+
+Template Function ripple::math::cross
+=====================================
+
+- Defined in :ref:`file_include_ripple_core_math_math.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::math::cross(const Array<ImplA>&, const Array<ImplB>&)

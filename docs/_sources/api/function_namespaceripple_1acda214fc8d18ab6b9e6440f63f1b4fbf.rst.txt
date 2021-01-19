@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1acda214fc8d18ab6b9e6440f63f1b4fbf:
+
+Function ripple::first_thread_in_grid()
+=======================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::first_thread_in_grid()

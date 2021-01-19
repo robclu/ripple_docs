@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a0ca02e3ae43db731d0a821fb1f9fe7c6:
+
+Template Function ripple::concurrent_padded_access_in_shared(T&, ExpansionParams)
+=================================================================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::concurrent_padded_access_in_shared(T&, ExpansionParams)

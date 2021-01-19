@@ -1,0 +1,55 @@
+
+.. _program_listing_file_include_ripple_core_storage_storage_descriptor.hpp:
+
+Program Listing for File storage_descriptor.hpp
+===============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_storage_storage_descriptor.hpp>` (``include/ripple/core/storage/storage_descriptor.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/storage/storage_descriptor.hpp --------- -*- C++ -*- ---==//
+   //
+   //                                Ripple
+   //
+   //                      Copyright (c) 2019, 2020 Rob Clucas.
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_STORAGE_STORAGE_DESCRIPTOR_HPP
+   #define RIPPLE_STORAGE_STORAGE_DESCRIPTOR_HPP
+   
+   #include "contiguous_storage_view.hpp"
+   #include "owned_storage.hpp"
+   #include "storage_layout.hpp"
+   #include "strided_storage_view.hpp"
+   #include "storage_layout.hpp"
+   
+   namespace ripple {
+   
+   template <typename Layout, typename... Ts>
+   struct StorageDescriptor {
+     // clang-format off
+     static constexpr LayoutKind layout  = Layout::value;
+     static constexpr bool is_strided    = (layout == LayoutKind::strided_view);
+     static constexpr bool is_contiguous = (layout == LayoutKind::contiguous_view);
+   
+     using ContigView   = ContiguousStorageView<Ts...>;
+     using StridedView  = StridedStorageView<Ts...>;
+     using Owned        = OwnedStorage<Ts...>;
+   
+     using Storage = std::conditional_t<is_contiguous,
+       ContigView, std::conditional_t<is_strided, StridedView, Owned>>;
+     // clang-format on
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_STORAGE_STORAGE_DESCRIPTOR_HPP

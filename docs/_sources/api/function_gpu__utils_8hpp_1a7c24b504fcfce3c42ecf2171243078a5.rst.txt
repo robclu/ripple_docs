@@ -1,0 +1,13 @@
+.. _exhale_function_gpu__utils_8hpp_1a7c24b504fcfce3c42ecf2171243078a5:
+
+Function ripple::gpu::synchronize_device
+========================================
+
+- Defined in :ref:`file_include_ripple_core_arch_gpu_utils.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::gpu::synchronize_device()

@@ -1,0 +1,116 @@
+
+.. _program_listing_file_include_ripple_core_storage_storage_accessor.hpp:
+
+Program Listing for File storage_accessor.hpp
+=============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_storage_storage_accessor.hpp>` (``include/ripple/core/storage/storage_accessor.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/storage/storage_accessor.hpp ----------- -*- C++ -*- ---==//
+   //
+   //                                Ripple
+   //
+   //                      Copyright (c) 2019, 2020 Rob Clucas
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_STORAGE_STORAGE_ACCESSOR_HPP
+   #define RIPPLE_STORAGE_STORAGE_ACCESSOR_HPP
+   
+   #include "storage_traits.hpp"
+   
+   namespace ripple {
+   
+   template <typename Impl>
+   struct StorageAccessor {
+    private:
+     ripple_host_device constexpr auto impl() const noexcept -> const Impl* {
+       return static_cast<const Impl*>(this);
+     }
+   
+     ripple_host_device constexpr auto impl() noexcept -> Impl* {
+       return static_cast<Impl*>(this);
+     }
+   
+    public:
+     template <typename Other>
+     ripple_host_device auto copy(const Other& other) noexcept -> void {
+       impl()->copy(other);
+     }
+   
+     template <size_t I>
+     ripple_host_device constexpr auto components_of() const noexcept -> size_t {
+       return impl()->template components_of<I>();
+     }
+   
+     template <size_t I>
+     ripple_host_device decltype(auto) get() noexcept {
+       return impl()->template get<I>();
+     }
+   
+     template <size_t I>
+     ripple_host_device decltype(auto) get() const noexcept {
+       return impl()->template get<I>();
+     }
+   
+     template <size_t I, size_t J>
+     ripple_host_device decltype(auto) get() noexcept {
+       return impl()->template get<I, J>();
+     }
+   
+     template <size_t I, size_t J>
+     ripple_host_device decltype(auto) get() const noexcept {
+       return impl()->template get<I, J>();
+     }
+   
+     template <size_t I>
+     ripple_host_device decltype(auto) get(size_t j) noexcept {
+       return impl()->get<I>(j);
+     }
+   
+     template <size_t I>
+     ripple_host_device decltype(auto) get(size_t j) const noexcept {
+       return impl()->get<I>(j);
+     }
+   };
+   
+   /*==--- [utilities] --------------------------------------------------------==*/
+   
+   template <
+     size_t I,
+     size_t Values,
+     typename TypeI,
+     typename ImplFrom,
+     typename ImplTo,
+     vec_element_enable_t<TypeI> = 0>
+   ripple_host_device auto
+   copy_from_to(const ImplFrom& from, ImplTo& to) noexcept -> void {
+     unrolled_for<Values>([&](auto j) {
+       constexpr auto J        = size_t{j};
+       to.template get<I, J>() = from.template get<I, J>();
+     });
+   }
+   
+   template <
+     size_t I,
+     size_t Values,
+     typename TypeI,
+     typename ImplFrom,
+     typename ImplTo,
+     non_vec_element_enable_t<TypeI> = 0>
+   ripple_host_device auto copy_from_to(const ImplFrom& from, ImplTo& to) -> void {
+     to.template get<I>() = from.template get<I>();
+   }
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_STORAGE_STORAGE_ACCESSOR_HPP

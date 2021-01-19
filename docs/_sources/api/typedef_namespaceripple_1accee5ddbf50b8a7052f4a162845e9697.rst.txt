@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1accee5ddbf50b8a7052f4a162845e9697:
+
+Typedef ripple::DeviceBlock2d
+=============================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::DeviceBlock2d

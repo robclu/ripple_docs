@@ -1,0 +1,173 @@
+
+.. _program_listing_file_include_ripple_core_functional_kernel_invoke_generic_impl_.hpp:
+
+Program Listing for File invoke_generic_impl_.hpp
+=================================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_core_functional_kernel_invoke_generic_impl_.hpp>` (``include/ripple/core/functional/kernel/invoke_generic_impl_.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ../kernel/invoke_generic_impl_.hpp ----------------- -*- C++ -*- ---==//
+   //
+   //                                Ripple
+   //
+   //                      Copyright (c) 2019, 2020 Rob Clucas.
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   //
+   //==------------------------------------------------------------------------==//
+   
+   #ifndef RIPPLE_FUNCTIONAL_KERNEL_INVOKE_GENRIC__HPP
+   #define RIPPLE_FUNCTIONAL_KERNEL_INVOKE_GENRIC__HPP
+   
+   #include "invoke_utils.hpp"
+   #include <ripple/core/algorithm/max_element.hpp>
+   
+   namespace ripple::kernel::cpu {
+   
+   template <typename T, block_enable_t<T> = 0>
+   auto get_iterator(T&& host_block) noexcept {
+     return host_block.begin();
+   }
+   
+   template <typename T, multiblock_enable_t<T> = 0>
+   auto get_iterator(T&& block) noexcept {
+     return block.host_iterator();
+   }
+   
+   /*
+   template <typename T>
+   using block_shared_enable_t =
+     std::enable_if_t<is_shared_wrapper_v<T> && is_any_block_v<T>, int>;
+   
+   template <typename T>
+   using block_non_shared_enable_t =
+     std::enable_if_t<!is_shared_wrapper_v<T> && is_any_block_v<T>, int>;
+   
+   template <typename T>
+   using non_block_shared_enable_t =
+     std::enable_if_t<is_shared_wrapper_v<T> && !is_any_block_v<T>, int>;
+   */
+   
+   template <typename T>
+   using non_any_block_or_shared_or_expansion_enable_t = std::enable_if_t<
+     !is_any_block_v<T> && !is_shared_wrapper_v<T> && !is_expansion_wrapper_v<T>,
+     int>;
+   
+   template <typename T, typename... Offsets, any_block_enable_t<T> = 0>
+   decltype(auto) shift_if_iterator(T&& block, Offsets&&... offsets) noexcept {
+     auto iter = get_iterator(block);
+     auto offs = make_tuple(static_cast<Offsets&&>(offsets)...);
+     unrolled_for<sizeof...(Offsets)>(
+       [&](auto i) { iter.shift(Dimension<i>(), get<i>(offs)); });
+     return iter;
+   }
+   
+   template <typename T, typename... Offsets, any_block_enable_t<T> = 0>
+   decltype(auto)
+   shift_if_iterator(SharedWrapper<T>& wrapper, Offsets&&... offsets) noexcept {
+     auto iter = get_iterator(wrapper.wrapped);
+     auto offs = make_tuple(static_cast<Offsets&&>(offsets)...);
+     unrolled_for<sizeof...(Offsets)>(
+       [&](auto i) { iter.shift(Dimension<i>(), get<i>(offs)); });
+     return iter;
+   }
+   
+   template <typename T, typename... Offsets, any_block_enable_t<T> = 0>
+   decltype(auto)
+   shift_if_iterator(ExpansionWrapper<T>& wrapper, Offsets&&... offsets) noexcept {
+     // TODO: Add expansion factor ...
+     auto iter = get_iterator(wrapper.wrapped);
+     auto offs = make_tuple(static_cast<Offsets&&>(offsets)...);
+     unrolled_for<sizeof...(Offsets)>(
+       [&](auto i) { iter.shift(Dimension<i>(), get<i>(offs)); });
+     return iter;
+   }
+   
+   template <
+     typename T,
+     typename... Offsets,
+     non_any_block_or_shared_or_expansion_enable_t<T> = 0>
+   decltype(auto) shift_if_iterator(T&& non_block, Offsets&&... offsets) noexcept {
+     return static_cast<T&&>(non_block);
+   }
+   
+   template <typename T, typename... Offsets, non_any_block_enable_t<T> = 0>
+   decltype(auto)
+   shift_if_iterator(SharedWrapper<T>& wrapper, Offsets&&... offsets) noexcept {
+     return wrapper.wrapped;
+   }
+   
+   template <typename T, typename... Offsets, non_any_block_enable_t<T> = 0>
+   decltype(auto)
+   shift_if_iterator(ExpansionWrapper<T>& wrapper, Offsets&&... offsets) noexcept {
+     return wrapper.wrapped;
+   }
+   
+   template <size_t>
+   struct InvokeGenericImpl {};
+   
+   template <>
+   struct InvokeGenericImpl<2> {
+     template <typename Callable, typename... Args>
+     static auto
+     invoke(Callable&& callable, const DimSizes& sizes, Args&&... args) -> void {
+       for (size_t k = 0; k < sizes[dimz()]; ++k) {
+         for (size_t j = 0; j < sizes[dimy()]; ++j) {
+           for (size_t i = 0; i < sizes[dimx()]; ++i) {
+             callable(shift_if_iterator(static_cast<Args&&>(args), i, j, k)...);
+           }
+         }
+       }
+     }
+   };
+   
+   template <>
+   struct InvokeGenericImpl<1> {
+     template <typename Callable, typename... Args>
+     static auto
+     invoke(Callable&& callable, const DimSizes& sizes, Args&&... args) -> void {
+       //    Tuple<Args...> t(static_cast<Args&&>(args)...);
+       for (size_t j = 0; j < sizes[dimy()]; ++j) {
+         for (size_t i = 0; i < sizes[dimx()]; ++i) {
+           callable(shift_if_iterator(static_cast<Args&&>(args), i, j)...);
+         }
+       }
+     }
+   };
+   
+   template <>
+   struct InvokeGenericImpl<0> {
+     template <typename Callable, typename... Args>
+     static auto
+     invoke(Callable&& callable, const DimSizes& sizes, Args&&... args) -> void {
+       for (size_t i = 0; i < sizes[dimx()]; ++i) {
+         callable(shift_if_iterator(static_cast<Args&&>(args), i)...);
+       }
+     }
+   };
+   
+   template <typename Invocable, typename... Args>
+   auto invoke_generic_impl(Invocable&& invocable, Args&&... args) noexcept
+     -> void {
+     constexpr size_t dims = max_element(any_block_traits_t<Args>::dimensions...);
+   
+     // Find the grid sizes:
+     const auto sizes = DimSizes{
+       max_element(size_t{1}, get_size_if_block(args, dimx())...),
+       max_element(size_t{1}, get_size_if_block(args, dimy())...),
+       max_element(size_t{1}, get_size_if_block(args, dimz())...)};
+   
+     InvokeGenericImpl<dims - 1>::invoke(
+       static_cast<Invocable&&>(invocable), sizes, static_cast<Args>(args)...);
+   }
+   
+   } // namespace ripple::kernel::cpu
+   
+   #endif // RIPPLE_FUNCTIONAL_KERNEL_INVOKE_GENERIC_IMPL__HPP

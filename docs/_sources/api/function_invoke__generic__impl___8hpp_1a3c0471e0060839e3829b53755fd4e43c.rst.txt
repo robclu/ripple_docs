@@ -1,0 +1,13 @@
+.. _exhale_function_invoke__generic__impl___8hpp_1a3c0471e0060839e3829b53755fd4e43c:
+
+Template Function ripple::kernel::cpu::shift_if_iterator(ExpansionWrapper<T>&, Offsets&&...)
+============================================================================================
+
+- Defined in :ref:`file_include_ripple_core_functional_kernel_invoke_generic_impl_.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::kernel::cpu::shift_if_iterator(ExpansionWrapper<T>&, Offsets&&...)

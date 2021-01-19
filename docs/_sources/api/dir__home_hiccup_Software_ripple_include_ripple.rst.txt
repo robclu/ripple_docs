@@ -1,0 +1,20 @@
+.. _dir__home_hiccup_Software_ripple_include_ripple:
+
+
+Directory ripple
+================
+
+
+|exhale_lsh| :ref:`Parent directory <dir_include>` (``include``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+*Directory path:* ``/home/hiccup/Software/ripple/include/ripple``
+
+Subdirectories
+--------------
+
+- :ref:`dir__home_hiccup_Software_ripple_include_ripple_core`
+
+
+

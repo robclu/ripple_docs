@@ -1,0 +1,76 @@
+
+.. _file_include_ripple_core_container_shared_wrapper.hpp:
+
+File shared_wrapper.hpp
+=======================
+
+
+This file defines a utility wrapper class for wrapping types to add shared memory information. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/container/shared_wrapper.hpp``)
+-----------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_container_shared_wrapper.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``../graph/modifier.hpp``
+
+- ``block_traits.hpp`` (:ref:`file_include_ripple_core_container_block_traits.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_functional_kernel_invoke_utils.hpp`
+
+- :ref:`file_include_ripple_core_container_block_extractor.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1ExpansionWrapper`
+
+- :ref:`exhale_struct_structripple_1_1ExpansionWrapperTraits`
+
+- :ref:`exhale_struct_structripple_1_1ExpansionWrapperTraits_3_01ExpansionWrapper_3_01T_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1MultiBlockTraits_3_01ExpansionWrapper_3_01T_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1MultiBlockTraits_3_01SharedWrapper_3_01T_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1SharedWrapper`
+
+- :ref:`exhale_struct_structripple_1_1SharedWrapperTraits`
+
+- :ref:`exhale_struct_structripple_1_1SharedWrapperTraits_3_01SharedWrapper_3_01T_01_4_01_4`
+

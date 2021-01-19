@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1a3af47da757c759e27b15f48413180b1e:
+
+Variable ripple::is_expander_modifier_v
+=======================================
+
+- Defined in :ref:`file_include_ripple_core_graph_modifier.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::is_expander_modifier_v

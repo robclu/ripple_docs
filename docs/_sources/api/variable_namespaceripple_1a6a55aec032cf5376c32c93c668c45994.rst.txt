@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1a6a55aec032cf5376c32c93c668c45994:
+
+Variable ripple::is_contig_view_v
+=================================
+
+- Defined in :ref:`file_include_ripple_core_storage_storage_layout.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::is_contig_view_v

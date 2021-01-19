@@ -1,0 +1,732 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Template Struct MatImpl &mdash; Ripple 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Struct MaxReducer" href="structripple_1_1MaxReducer.html" />
+  <link rel="prev" title="Struct LoadMultiBoundary" href="structripple_1_1LoadMultiBoundary.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+  
+
+  <div class="table-of-contents-link-wrapper">
+    <span>Table of Contents</span>
+    <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+  </div>
+
+  <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+    <div class="pytorch-side-scroll">
+      <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <div class="pytorch-left-menu-search">
+          
+
+          
+          
+          
+          <div class="version">
+            1.0.0
+          </div>
+          
+          
+
+          
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        
+        
+        
+        
+        
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple_api_root.html">Ripple API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
+</ul>
+
+        
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class="pytorch-container">
+    <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+      <div class="pytorch-breadcrumbs-wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
+        
+      <li>Template Struct MatImpl</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/structripple_1_1MatImpl.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+      </div>
+
+      <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+        Shortcuts
+      </div>
+    </div>
+
+    <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+      <div class="pytorch-content-left">
+        
+          <div class="rst-content">
+            
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+                
+  <div class="section" id="template-struct-matimpl">
+<span id="exhale-struct-structripple-1-1matimpl"></span><h1>Template Struct MatImpl<a class="headerlink" href="#template-struct-matimpl" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_math_mat.hpp.html#file-include-ripple-core-math-mat-hpp"><span class="std std-ref">File mat.hpp</span></a></p></li>
+</ul>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp struct">
+<dt id="_CPPv4I0000EN6ripple7MatImplE">
+<span id="_CPPv3I0000EN6ripple7MatImplE"></span><span id="_CPPv2I0000EN6ripple7MatImplE"></span>template&lt;typename <code class="sig-name descname">T</code>, typename <code class="sig-name descname">Rows</code>, typename <code class="sig-name descname">Cols</code>, typename <code class="sig-name descname">Layout</code>&gt;<br /><span class="target" id="structripple_1_1MatImpl"></span><em class="property">struct </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">MatImpl</code><a class="headerlink" href="#_CPPv4I0000EN6ripple7MatImplE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#structripple_1_1MatImpl"><span class="std std-ref">MatImpl</span></a> class implements a matrix class with polymorphic data layout. </p>
+<p>The data for the elements is allocated according to the layout, and can be contiguous, owned, or strided.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This class should not be used directly, use the Mat aliases.</p>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the elements in the matrix </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Rows</span></code>: The number of rows for the matrix. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Cols</span></code>: The number of colums for the matrix. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Layout</span></code>: The type of the storage layout for the matrix. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7MatImpl7MatImplEv">
+<span id="_CPPv3N6ripple7MatImpl7MatImplEv"></span><span id="_CPPv2N6ripple7MatImpl7MatImplEv"></span><span id="ripple::MatImpl::MatImplCE"></span><span class="target" id="structripple_1_1MatImpl_1a38a74051ebd73e37d09bfc42480aff52"></span><em class="property">constexpr</em> <code class="sig-name descname">MatImpl</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple7MatImpl7MatImplEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Default constructor for the matrix. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7MatImpl7MatImplE1T">
+<span id="_CPPv3N6ripple7MatImpl7MatImplE1T"></span><span id="_CPPv2N6ripple7MatImpl7MatImplE1T"></span><span id="ripple::MatImpl::MatImpl__TCE"></span><span class="target" id="structripple_1_1MatImpl_1abe78b64da82d6e8b96f0fdbca327f8e7"></span><em class="property">constexpr</em> <code class="sig-name descname">MatImpl</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0000EN6ripple7MatImplE" title="ripple::MatImpl::T">T</a> <em>val</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple7MatImpl7MatImplE1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets all elements of the matrix to the given value. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">val</span></code>: The value to set all elements to. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDp_22variadic_size_enable_tI8elementsDp6ValuesEEN6ripple7MatImpl7MatImplEDpRR6Values">
+<span id="_CPPv3IDp_22variadic_size_enable_tI8elementsDp6ValuesEEN6ripple7MatImpl7MatImplEDpRR6Values"></span><span id="_CPPv2IDp_22variadic_size_enable_tI8elementsDp6ValuesEEN6ripple7MatImpl7MatImplEDpRR6Values"></span>template&lt;typename ...<code class="sig-name descname">Values</code>, <a class="reference internal" href="typedef_namespaceripple_1a7c175fd219d67505dbd1af37b87b166c.html#_CPPv4I_6size_tDpEN6ripple22variadic_size_enable_tE" title="ripple::variadic_size_enable_t">variadic_size_enable_t</a>&lt;elements, <a class="reference internal" href="#_CPPv4IDp_22variadic_size_enable_tI8elementsDp6ValuesEEN6ripple7MatImpl7MatImplEDpRR6Values" title="ripple::MatImpl::MatImpl::Values">Values</a>...&gt; = 0&gt;<br /><span class="target" id="structripple_1_1MatImpl_1ae14e5eb134d6ae0d6e86f1f6319c5d5c"></span><em class="property">constexpr</em> <code class="sig-name descname">MatImpl</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDp_22variadic_size_enable_tI8elementsDp6ValuesEEN6ripple7MatImpl7MatImplEDpRR6Values" title="ripple::MatImpl::MatImpl::Values">Values</a>&amp;&amp;... <em>values</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4IDp_22variadic_size_enable_tI8elementsDp6ValuesEEN6ripple7MatImpl7MatImplEDpRR6Values" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor to create the matrix from a list of values. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This overload is only enabled when the number of elements in the variadic parameter pack matches the number of elements in the matrix.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>The types of the values must be convertible to T.</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">values</span></code>: The values to set the elements to. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Values</span></code>: The types of the values for setting. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7MatImpl7MatImplE7Storage">
+<span id="_CPPv3N6ripple7MatImpl7MatImplE7Storage"></span><span id="_CPPv2N6ripple7MatImpl7MatImplE7Storage"></span><span id="ripple::MatImpl::MatImpl__StorageCE"></span><span class="target" id="structripple_1_1MatImpl_1a8e015e51e9b80d0db121c9b5ec0c4d3b"></span><em class="property">constexpr</em> <code class="sig-name descname">MatImpl</code><span class="sig-paren">(</span>Storage <em>storage</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple7MatImpl7MatImplE7Storage" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor to set the matrix from other <code class="docutils literal notranslate"><span class="pre">storage</span></code>. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other storage to use to set the matrix. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7MatImpl7MatImplERK7MatImpl">
+<span id="_CPPv3N6ripple7MatImpl7MatImplERK7MatImpl"></span><span id="_CPPv2N6ripple7MatImpl7MatImplERK7MatImpl"></span><span id="ripple::MatImpl::MatImpl__MatImplCRCE"></span><span class="target" id="structripple_1_1MatImpl_1a7cf405aea2aa68cb29d695b59bc01960"></span><em class="property">constexpr</em> <code class="sig-name descname">MatImpl</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple7MatImpl7MatImplERK7MatImpl" title="ripple::MatImpl::MatImpl">MatImpl</a> &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple7MatImpl7MatImplERK7MatImpl" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy constructor to set the matrix from another matrix. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other matrix to use to initialize this one. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7MatImpl7MatImplERR7MatImpl">
+<span id="_CPPv3N6ripple7MatImpl7MatImplERR7MatImpl"></span><span id="_CPPv2N6ripple7MatImpl7MatImplERR7MatImpl"></span><span id="ripple::MatImpl::MatImpl__MatImplRRCE"></span><span class="target" id="structripple_1_1MatImpl_1a36a260294f354e87c223af745e8084a9"></span><em class="property">constexpr</em> <code class="sig-name descname">MatImpl</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple7MatImpl7MatImplERR7MatImpl" title="ripple::MatImpl::MatImpl">MatImpl</a> &amp;&amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple7MatImpl7MatImplERR7MatImpl" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Move constructor to set the matrix from another matrix. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other matrix to use to initialize this one. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple7MatImpl7MatImplERK7MatImplI1T4Rows4Cols11OtherLayoutE">
+<span id="_CPPv3I0EN6ripple7MatImpl7MatImplERK7MatImplI1T4Rows4Cols11OtherLayoutE"></span><span id="_CPPv2I0EN6ripple7MatImpl7MatImplERK7MatImplI1T4Rows4Cols11OtherLayoutE"></span>template&lt;typename <code class="sig-name descname">OtherLayout</code>&gt;<br /><span class="target" id="structripple_1_1MatImpl_1a3bcb3f7487e3d9d39b46c83106e1203c"></span><em class="property">constexpr</em> <code class="sig-name descname">MatImpl</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN6ripple7MatImpl7MatImplERK7MatImplI1T4Rows4Cols11OtherLayoutE" title="ripple::MatImpl::MatImpl">MatImpl</a>&lt;<a class="reference internal" href="#_CPPv4I0000EN6ripple7MatImplE" title="ripple::MatImpl::T">T</a>, <a class="reference internal" href="#_CPPv4I0000EN6ripple7MatImplE" title="ripple::MatImpl::Rows">Rows</a>, <a class="reference internal" href="#_CPPv4I0000EN6ripple7MatImplE" title="ripple::MatImpl::Cols">Cols</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple7MatImpl7MatImplERK7MatImplI1T4Rows4Cols11OtherLayoutE" title="ripple::MatImpl::MatImpl::OtherLayout">OtherLayout</a>&gt; &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4I0EN6ripple7MatImpl7MatImplERK7MatImplI1T4Rows4Cols11OtherLayoutE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy constructor to set the matrix from another matrix with a different storage layout. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other matrix to use to initialize this one. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">OtherLayout</span></code>: The layout of the other storage. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple7MatImpl7MatImplERR7MatImplI1T4Rows4Cols11OtherLayoutE">
+<span id="_CPPv3I0EN6ripple7MatImpl7MatImplERR7MatImplI1T4Rows4Cols11OtherLayoutE"></span><span id="_CPPv2I0EN6ripple7MatImpl7MatImplERR7MatImplI1T4Rows4Cols11OtherLayoutE"></span>template&lt;typename <code class="sig-name descname">OtherLayout</code>&gt;<br /><span class="target" id="structripple_1_1MatImpl_1ae0ab9191b1d5ac149ec5e7e6bee13d95"></span><em class="property">constexpr</em> <code class="sig-name descname">MatImpl</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN6ripple7MatImpl7MatImplERR7MatImplI1T4Rows4Cols11OtherLayoutE" title="ripple::MatImpl::MatImpl">MatImpl</a>&lt;<a class="reference internal" href="#_CPPv4I0000EN6ripple7MatImplE" title="ripple::MatImpl::T">T</a>, <a class="reference internal" href="#_CPPv4I0000EN6ripple7MatImplE" title="ripple::MatImpl::Rows">Rows</a>, <a class="reference internal" href="#_CPPv4I0000EN6ripple7MatImplE" title="ripple::MatImpl::Cols">Cols</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple7MatImpl7MatImplERR7MatImplI1T4Rows4Cols11OtherLayoutE" title="ripple::MatImpl::MatImpl::OtherLayout">OtherLayout</a>&gt; &amp;&amp;<em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN6ripple7MatImpl7MatImplERR7MatImplI1T4Rows4Cols11OtherLayoutE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Move constructor to set the matrix from another matrix with a different storage layout. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other matrix to use to initialize this one. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">OtherLayout</span></code>: The layout of the other storage. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7MatImplaSERK7MatImpl">
+<span id="_CPPv3N6ripple7MatImplaSERK7MatImpl"></span><span id="_CPPv2N6ripple7MatImplaSERK7MatImpl"></span><span id="ripple::MatImpl::assign-operator__MatImplCR"></span><span class="target" id="structripple_1_1MatImpl_1a805aa9aa59fb85014fe05006c55a8b92"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0000EN6ripple7MatImplE" title="ripple::MatImpl">MatImpl</a> &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I0000EN6ripple7MatImplE" title="ripple::MatImpl">MatImpl</a>&amp;<a class="headerlink" href="#_CPPv4N6ripple7MatImplaSERK7MatImpl" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of copy assignment overload to copy the elements from another matrix to this matrix. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A references to the modified matrix. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other matrix to copy from. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7MatImplaSERR7MatImpl">
+<span id="_CPPv3N6ripple7MatImplaSERR7MatImpl"></span><span id="_CPPv2N6ripple7MatImplaSERR7MatImpl"></span><span id="ripple::MatImpl::assign-operator__MatImplRR"></span><span class="target" id="structripple_1_1MatImpl_1a933644517841ec4b1870d84e76d9491f"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0000EN6ripple7MatImplE" title="ripple::MatImpl">MatImpl</a> &amp;&amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I0000EN6ripple7MatImplE" title="ripple::MatImpl">MatImpl</a>&amp;<a class="headerlink" href="#_CPPv4N6ripple7MatImplaSERR7MatImpl" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of move assignment overload to move the elements from another matrix to this matrix. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified vector. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other matrix to move. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple7MatImplaSER7MatImplRK7MatImplI1T4Rows4Cols11OtherLayoutE">
+<span id="_CPPv3I0EN6ripple7MatImplaSERK7MatImplI1T4Rows4Cols11OtherLayoutE"></span><span id="_CPPv2I0EN6ripple7MatImplaSERK7MatImplI1T4Rows4Cols11OtherLayoutE"></span>template&lt;typename <code class="sig-name descname">OtherLayout</code>&gt;<br /><span class="target" id="structripple_1_1MatImpl_1a8ae16ce7d4bdb5ca34ac47290bd85a58"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0000EN6ripple7MatImplE" title="ripple::MatImpl">MatImpl</a>&lt;<a class="reference internal" href="#_CPPv4I0000EN6ripple7MatImplE" title="ripple::MatImpl::T">T</a>, <a class="reference internal" href="#_CPPv4I0000EN6ripple7MatImplE" title="ripple::MatImpl::Rows">Rows</a>, <a class="reference internal" href="#_CPPv4I0000EN6ripple7MatImplE" title="ripple::MatImpl::Cols">Cols</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple7MatImplaSER7MatImplRK7MatImplI1T4Rows4Cols11OtherLayoutE" title="ripple::MatImpl::operator=::OtherLayout">OtherLayout</a>&gt; &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I0000EN6ripple7MatImplE" title="ripple::MatImpl">MatImpl</a>&amp;<a class="headerlink" href="#_CPPv4I0EN6ripple7MatImplaSER7MatImplRK7MatImplI1T4Rows4Cols11OtherLayoutE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of copy assignment overload to copy the elements from another matrix with a different storage layout to this matrix. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified matrix. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other matrix to copy from. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">OtherLayout</span></code>: The layout of the other matrix. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN6ripple7MatImplaSER7MatImplRR7MatImplI1T4Rows4Cols11OtherLayoutE">
+<span id="_CPPv3I0EN6ripple7MatImplaSERR7MatImplI1T4Rows4Cols11OtherLayoutE"></span><span id="_CPPv2I0EN6ripple7MatImplaSERR7MatImplI1T4Rows4Cols11OtherLayoutE"></span>template&lt;typename <code class="sig-name descname">OtherLayout</code>&gt;<br /><span class="target" id="structripple_1_1MatImpl_1af78943cdfdb458ef7d6fa21677170b3f"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0000EN6ripple7MatImplE" title="ripple::MatImpl">MatImpl</a>&lt;<a class="reference internal" href="#_CPPv4I0000EN6ripple7MatImplE" title="ripple::MatImpl::T">T</a>, <a class="reference internal" href="#_CPPv4I0000EN6ripple7MatImplE" title="ripple::MatImpl::Rows">Rows</a>, <a class="reference internal" href="#_CPPv4I0000EN6ripple7MatImplE" title="ripple::MatImpl::Cols">Cols</a>, <a class="reference internal" href="#_CPPv4I0EN6ripple7MatImplaSER7MatImplRR7MatImplI1T4Rows4Cols11OtherLayoutE" title="ripple::MatImpl::operator=::OtherLayout">OtherLayout</a>&gt; &amp;&amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I0000EN6ripple7MatImplE" title="ripple::MatImpl">MatImpl</a>&amp;<a class="headerlink" href="#_CPPv4I0EN6ripple7MatImplaSER7MatImplRR7MatImplI1T4Rows4Cols11OtherLayoutE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of move assignment overload to copy the elements from another matrix to this matrix. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the modified matrix. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other matrix to move. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">OtherLayout</span></code>: The layout of the other matrix. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N6ripple7MatImplclE6size_t6size_t">
+<span id="_CPPv3N6ripple7MatImplclE6size_t6size_t"></span><span id="_CPPv2N6ripple7MatImplclE6size_t6size_t"></span><span id="ripple::MatImpl::call-operator__s.s"></span><span class="target" id="structripple_1_1MatImpl_1af6b187b8f365fe022095590a07a5da49"></span>auto <code class="sig-name descname">operator()</code><span class="sig-paren">(</span>size_t <em>row</em>, size_t <em>col</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; Value&amp;<a class="headerlink" href="#_CPPv4N6ripple7MatImplclE6size_t6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of call operator to get the element at the given indices. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the element. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">row</span></code>: The row of the element. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">col</span></code>: The column of the element. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple7MatImplclE6size_t6size_t">
+<span id="_CPPv3NK6ripple7MatImplclE6size_t6size_t"></span><span id="_CPPv2NK6ripple7MatImplclE6size_t6size_t"></span><span id="ripple::MatImpl::call-operator__s.sC"></span><span class="target" id="structripple_1_1MatImpl_1ac8331f878b90cf700d04f554bcff128d"></span>auto <code class="sig-name descname">operator()</code><span class="sig-paren">(</span>size_t <em>row</em>, size_t <em>col</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <em class="property">const</em> Value&amp;<a class="headerlink" href="#_CPPv4NK6ripple7MatImplclE6size_t6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Overload of call operator to get the element at the given indices. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A const reference to the element. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">row</span></code>: The row of the element. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">col</span></code>: The column of the element. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple7MatImpl7columnsEv">
+<span id="_CPPv3NK6ripple7MatImpl7columnsEv"></span><span id="_CPPv2NK6ripple7MatImpl7columnsEv"></span><span id="ripple::MatImpl::columnsCCE"></span><span class="target" id="structripple_1_1MatImpl_1aef56afd64b056f64d005c22bcd1d29f5"></span><em class="property">constexpr</em> auto <code class="sig-name descname">columns</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple7MatImpl7columnsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the number of columns for the matrix. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of columns for the matrix. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple7MatImpl4rowsEv">
+<span id="_CPPv3NK6ripple7MatImpl4rowsEv"></span><span id="_CPPv2NK6ripple7MatImpl4rowsEv"></span><span id="ripple::MatImpl::rowsCCE"></span><span class="target" id="structripple_1_1MatImpl_1a6db773fda4e0bbad4f4b040fb543fb65"></span><em class="property">constexpr</em> auto <code class="sig-name descname">rows</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple7MatImpl4rowsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the number of rows for the matrix. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of rows for the matrix. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I_6size_t_6size_tENK6ripple7MatImpl2atERK5Valuev">
+<span id="_CPPv3I_6size_t_6size_tENK6ripple7MatImpl2atEv"></span><span id="_CPPv2I_6size_t_6size_tENK6ripple7MatImpl2atEv"></span>template&lt;size_t <code class="sig-name descname">Row</code>, size_t <code class="sig-name descname">Col</code>&gt;<br /><span class="target" id="structripple_1_1MatImpl_1ac983ecc0510ada1cd5fa2a4e6c0fe6a6"></span><em class="property">constexpr</em> auto <code class="sig-name descname">at</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <em class="property">const</em> Value&amp;<a class="headerlink" href="#_CPPv4I_6size_t_6size_tENK6ripple7MatImpl2atERK5Valuev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the element at the row and column indices, where the offset to the element is computed at compile time. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A const reference to the element at position I. </p>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Row</span></code>: The index of row for the element. </p></li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Col</span></code>: The index of the column for the element. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I_6size_t_6size_tENK6ripple7MatImpl2atER5Valuev">
+template&lt;size_t <code class="sig-name descname">Row</code>, size_t <code class="sig-name descname">Col</code>&gt;<br /><span class="target" id="structripple_1_1MatImpl_1a2ab16a2e0fe569e5276e8296b0189641"></span><em class="property">constexpr</em> auto <code class="sig-name descname">at</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; Value&amp;<a class="headerlink" href="#_CPPv4I_6size_t_6size_tENK6ripple7MatImpl2atER5Valuev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the element in the Ith row and Jth column, where the offset to the element is computed at compile time. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A reference to the element at position I. </p>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Row</span></code>: The index of row for the element. </p></li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Col</span></code>: The index of the column for the element. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK6ripple7MatImpl4sizeEv">
+<span id="_CPPv3NK6ripple7MatImpl4sizeEv"></span><span id="_CPPv2NK6ripple7MatImpl4sizeEv"></span><span id="ripple::MatImpl::sizeCCE"></span><span class="target" id="structripple_1_1MatImpl_1a6dec0a53ef63e98d27aa718004e130ff"></span><em class="property">constexpr</em> auto <code class="sig-name descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple7MatImpl4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the number of elements in the matrix. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The number of elements in the matrix. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N6ripple7MatImpl8storage_E">
+<span id="_CPPv3N6ripple7MatImpl8storage_E"></span><span id="_CPPv2N6ripple7MatImpl8storage_E"></span><span id="ripple::MatImpl::storage___Storage"></span><span class="target" id="structripple_1_1MatImpl_1ab82d59a7902433c495bb6b3a0866f083"></span>Storage <code class="sig-name descname">storage_</code><a class="headerlink" href="#_CPPv4N6ripple7MatImpl8storage_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The storage for the vector. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </article>
+              
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structripple_1_1MaxReducer.html" class="btn btn-neutral float-right" title="Struct MaxReducer" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="structripple_1_1LoadMultiBoundary.html" class="btn btn-neutral" title="Struct LoadMultiBoundary" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2021, Rob Clucas.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Template Struct MatImpl</a><ul>
+<li><a class="reference internal" href="#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script src="../_static/jquery.js"></script>
+  <script src="../_static/underscore.js"></script>
+  <script src="../_static/doctools.js"></script>
+  <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+  <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for Ripple</p>
+          <a class="with-right-arrow" href="">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get tutorials to help with understand all features</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Examples</h2>
+          <p>Find examples to help get started</p>
+          <a class="with-right-arrow" href="">View Examples</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---
+  <footer class="site-footer">
+    <!---
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://github.com/robclu/ripple" class="footer-logo"></a>
+      </div>
+    </div>
+  </footer>
+  --->
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="../_static/images/flex-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://github.com/robclu/ripple" aria-label="Ripple"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <li>
+            <a href="https://github.com/roblcu/ripple">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function (e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+
+</html>

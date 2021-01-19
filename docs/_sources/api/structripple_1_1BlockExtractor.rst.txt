@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1BlockExtractor:
+
+Struct BlockExtractor
+=====================
+
+- Defined in :ref:`file_include_ripple_core_container_block_extractor.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::BlockExtractor
+   :members:
+   :protected-members:
+   :undoc-members:

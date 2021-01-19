@@ -1,0 +1,13 @@
+.. _exhale_variable_namespaceripple_1a4b486a030b11f168423d00e820ce059a:
+
+Variable ripple::is_modifier_v
+==============================
+
+- Defined in :ref:`file_include_ripple_core_graph_modifier.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ripple::is_modifier_v

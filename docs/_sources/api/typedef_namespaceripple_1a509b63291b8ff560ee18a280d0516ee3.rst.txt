@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a509b63291b8ff560ee18a280d0516ee3:
+
+Typedef ripple::not_dim_3d_enable_t
+===================================
+
+- Defined in :ref:`file_include_ripple_core_utility_type_traits.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::not_dim_3d_enable_t

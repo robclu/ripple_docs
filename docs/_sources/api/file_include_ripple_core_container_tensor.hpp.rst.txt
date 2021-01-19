@@ -1,0 +1,78 @@
+
+.. _file_include_ripple_core_container_tensor.hpp:
+
+File tensor.hpp
+===============
+
+
+This file defines a class which represents a tensor  An N dimensional space across multiple devices. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/core/container/tensor.hpp``)
+---------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_core_container_tensor.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``array`` (:ref:`file_include_ripple_core_container_array.hpp`)
+
+- ``block.hpp`` (:ref:`file_include_ripple_core_container_block.hpp`)
+
+- ``cassert``
+
+- ``numeric``
+
+- ``ripple/core/arch/topology.hpp`` (:ref:`file_include_ripple_core_arch_topology.hpp`)
+
+- ``ripple/core/functional/invoke.hpp`` (:ref:`file_include_ripple_core_functional_invoke.hpp`)
+
+- ``ripple/core/math/math.hpp`` (:ref:`file_include_ripple_core_math_math.hpp`)
+
+- ``ripple/core/multidim/dynamic_multidim_space.hpp`` (:ref:`file_include_ripple_core_multidim_dynamic_multidim_space.hpp`)
+
+- ``ripple/core/utility/dim.hpp`` (:ref:`file_include_ripple_core_utility_dim.hpp`)
+
+- ``set`` (:ref:`file_include_ripple_core_multidim_offset_to.hpp`)
+
+- ``tensor_traits.hpp`` (:ref:`file_include_ripple_core_container_tensor_traits.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_core_io_multidim_writer.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1Tensor`
+

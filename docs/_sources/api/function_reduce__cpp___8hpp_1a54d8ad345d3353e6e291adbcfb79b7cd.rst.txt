@@ -1,0 +1,13 @@
+.. _exhale_function_reduce__cpp___8hpp_1a54d8ad345d3353e6e291adbcfb79b7cd:
+
+Template Function ripple::kernel::cpu::reduce
+=============================================
+
+- Defined in :ref:`file_include_ripple_core_algorithm_kernel_reduce_cpp_.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::kernel::cpu::reduce(const HostBlock<T, Dims>&, Pred&&, Args&&...)

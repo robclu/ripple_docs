@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1ad7a73ba6a402e74bcf483c5719f32461:
+
+Template Function ripple::rotate(const Quat<T, LQ>&, const Vec3d<U, LV>&)
+=========================================================================
+
+- Defined in :ref:`file_include_ripple_core_math_quat.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::rotate(const Quat<T, LQ>&, const Vec3d<U, LV>&)

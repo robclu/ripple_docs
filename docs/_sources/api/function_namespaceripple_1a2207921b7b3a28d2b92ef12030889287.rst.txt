@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a2207921b7b3a28d2b92ef12030889287:
+
+Template Function ripple::make_tuple
+====================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::make_tuple(Ts&&...)

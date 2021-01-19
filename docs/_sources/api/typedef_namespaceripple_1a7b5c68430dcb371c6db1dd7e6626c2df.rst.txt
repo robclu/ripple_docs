@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a7b5c68430dcb371c6db1dd7e6626c2df:
+
+Typedef ripple::space_traits_t
+==============================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::space_traits_t

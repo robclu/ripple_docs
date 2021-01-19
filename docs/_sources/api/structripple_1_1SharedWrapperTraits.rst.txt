@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1SharedWrapperTraits:
+
+Template Struct SharedWrapperTraits
+===================================
+
+- Defined in :ref:`file_include_ripple_core_container_shared_wrapper.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::SharedWrapperTraits
+   :members:
+   :protected-members:
+   :undoc-members:

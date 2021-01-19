@@ -1,0 +1,13 @@
+.. _exhale_function_thread__index__impl___8hpp_1a421757c688ec8c94ebf81ee0851ae062:
+
+Template Function ripple::detail::global_elements
+=================================================
+
+- Defined in :ref:`file_include_ripple_core_execution_detail_thread_index_impl_.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::detail::global_elements(Dim&&)
