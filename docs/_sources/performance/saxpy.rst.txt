@@ -8,6 +8,7 @@ GPU library for linear algebra, and Kokkos also simplifies GPU programming.
 
 To see the actual code implementations, see :code:`benchmarks/saxpy` from the 
 root directory of ripple. The results presented here were run on a V100 GPU. 
+All times are in milliseconds.
 
 .. list-table:: Performance comparison for saxpy
    :widths: 50 50 50 50 50
@@ -55,3 +56,7 @@ root directory of ripple. The results presented here were run on a V100 GPU.
   by the tensor. While this is required, we add the result to illustrate that
   the cost of the check is minimal, being a few percent for even the simplest
   kernel.
+
+So we see here that the performance of ripple is very good, even for something 
+as simple as saxpy, which is not what ripple is designed for, which is for
+more complex computations across multiple gpus.

@@ -33,6 +33,7 @@
   <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
   <link rel="index" title="Index" href="../genindex.html" />
   <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Particle Update Performance" href="particle_update.html" />
   <link rel="prev" title="Typedef ripple::VecFallback" href="../api/typedef_namespaceripple_1ad2b99306ca587ebcb45a5beccb58a5c6.html" /> 
 
   
@@ -141,6 +142,7 @@
 <p class="caption"><span class="caption-text">Performance:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Saxpy Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="particle_update.html">Particle Update Performance</a></li>
 </ul>
 
         
@@ -218,7 +220,8 @@ to evaluate the overhead of the implementation which facilitates the expressive
 api. Specifically, we benchmark against cuBLAS and Kokkos, since cuBLAS is the
 GPU library for linear algebra, and Kokkos also simplifies GPU programming.</p>
 <p>To see the actual code implementations, see <code class="code docutils literal notranslate"><span class="pre">benchmarks/saxpy</span></code> from the
-root directory of ripple. The results presented here were run on a V100 GPU.</p>
+root directory of ripple. The results presented here were run on a V100 GPU.
+All times are in milliseconds.</p>
 <table class="colwidths-given docutils align-default" id="id1">
 <caption><span class="caption-text">Performance comparison for saxpy</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -283,6 +286,9 @@ by the tensor. While this is required, we add the result to illustrate that
 the cost of the check is minimal, being a few percent for even the simplest
 kernel.</p>
 </div>
+<p>So we see here that the performance of ripple is very good, even for something
+as simple as saxpy, which is not what ripple is designed for, which is for
+more complex computations across multiple gpus.</p>
 </div>
 
 
@@ -292,6 +298,8 @@ kernel.</p>
             <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="particle_update.html" class="btn btn-neutral float-right" title="Particle Update Performance" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="../api/typedef_namespaceripple_1ad2b99306ca587ebcb45a5beccb58a5c6.html" class="btn btn-neutral" title="Typedef ripple::VecFallback" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -347,6 +355,7 @@ kernel.</p>
   <script src="../_static/doctools.js"></script>
   <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
   <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+  <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
   

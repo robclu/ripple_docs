@@ -86,9 +86,9 @@ Functions
 
 - :ref:`exhale_function_math_8hpp_1a1ada34cce470bef2ed49aa4172e9d42f`
 
-- :ref:`exhale_function_math_8hpp_1a2e635a75df5c0aff26f4fd4c247c29b6`
-
 - :ref:`exhale_function_math_8hpp_1a4a386c61160f7c298c4083632564fb04`
+
+- :ref:`exhale_function_math_8hpp_1a2e635a75df5c0aff26f4fd4c247c29b6`
 
 - :ref:`exhale_function_math_8hpp_1ae1ad87bcf30c7730eda5c2e3f7598c5c`
 
@@ -112,11 +112,11 @@ Functions
 
 - :ref:`exhale_function_math_8hpp_1ab389086da42891f5da6b32ec9449967b`
 
+- :ref:`exhale_function_math_8hpp_1a62fd022c7a3c990a08267dd5a17f765f`
+
 - :ref:`exhale_function_math_8hpp_1aab5eaf31f3c4904c5b824dc10db65356`
 
 - :ref:`exhale_function_math_8hpp_1a12e1bfae19e0f0e7ffca9c2935a803c2`
-
-- :ref:`exhale_function_math_8hpp_1a62fd022c7a3c990a08267dd5a17f765f`
 
 - :ref:`exhale_function_math_8hpp_1a5cf81ea8b457c74609190560fc616fac`
 

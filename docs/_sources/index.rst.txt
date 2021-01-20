@@ -44,7 +44,7 @@ Building Ripple
 
 First, get ripple from github: `ripple <https://github.com/robclu/ripple>`_
 
-Currently, Ripple *requires* CUDA, since some of the features require it,
+Currently, Ripple **requires** CUDA, since some of the features require it,
 however, we are in the process of removing the CUDA dependency for the CPU only
 use case . Ripple has the following dependencies:
 
@@ -84,7 +84,7 @@ specified:
     ..
 
 .. note::  
-  Of the above parameters, the first three are *required*, while
+  Of the above parameters, the first three are **required**, while
   the rest are optional.
 
   If the cuda compiler is clang, then the CXX compiler is automatically set to

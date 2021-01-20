@@ -56,7 +56,7 @@ Functions
 ---------
 
 
-- :ref:`exhale_function_lerp_8hpp_1a64758aedf49aad7bb2728c02161583bd`
-
 - :ref:`exhale_function_lerp_8hpp_1a872e7362ead9bfbbf3a45b3070f0f421`
+
+- :ref:`exhale_function_lerp_8hpp_1a64758aedf49aad7bb2728c02161583bd`
 

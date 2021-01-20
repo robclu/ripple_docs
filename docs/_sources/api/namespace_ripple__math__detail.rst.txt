@@ -17,8 +17,8 @@ Functions
 ---------
 
 
-- :ref:`exhale_function_math_8hpp_1a2e635a75df5c0aff26f4fd4c247c29b6`
-
 - :ref:`exhale_function_math_8hpp_1a4a386c61160f7c298c4083632564fb04`
+
+- :ref:`exhale_function_math_8hpp_1a2e635a75df5c0aff26f4fd4c247c29b6`
 
 - :ref:`exhale_function_math_8hpp_1ae1ad87bcf30c7730eda5c2e3f7598c5c`
