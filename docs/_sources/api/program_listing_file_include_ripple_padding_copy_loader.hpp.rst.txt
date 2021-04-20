@@ -1,0 +1,33 @@
+
+.. _program_listing_file_include_ripple_padding_copy_loader.hpp:
+
+Program Listing for File copy_loader.hpp
+========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_padding_copy_loader.hpp>` (``include/ripple/padding/copy_loader.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_PADDING_COPY_LOADER_HPP
+   #define RIPPLE_PADDING_COPY_LOADER_HPP
+   
+   #include "internal_loader.hpp"
+   
+   namespace ripple {
+   
+   struct CopyLoader : public InternalLoader<CopyLoader> {
+     template <typename IteratorFrom, typename IteratorTo>
+     ripple_all constexpr auto
+     load(IteratorFrom&& from, IteratorTo&& to) const noexcept -> void {
+       static_assert_iterator(to);
+       static_assert_iterator(from);
+       *to = *from;
+     }
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_PADDING_COPY_LOADER_HPP

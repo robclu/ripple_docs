@@ -10,7 +10,7 @@ Directory include
 Subdirectories
 --------------
 
-- :ref:`dir__home_hiccup_Software_ripple_include_ripple`
+- :ref:`dir__home_hiccup_Catalyst_ripple_include_ripple`
 
 
 

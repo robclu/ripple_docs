@@ -3,7 +3,7 @@
 Variable ripple::is_host_block_v
 ================================
 
-- Defined in :ref:`file_include_ripple_core_container_block_traits.hpp`
+- Defined in :ref:`file_include_ripple_container_block_traits.hpp`
 
 
 Variable Documentation

@@ -52,7 +52,7 @@ Program Listing for File portability.hpp
    
      #define ripple_device         __device__
    
-     #define ripple_host_device    __host__ __device__
+     #define ripple_all    __host__ __device__
    
      #define ripple_global         __global__
      /* Defines valid code if cuda is available. */
@@ -75,7 +75,7 @@ Program Listing for File portability.hpp
    
      #define ripple_device
    
-     #define ripple_host_device
+     #define ripple_all
    
      #define ripple_global
    

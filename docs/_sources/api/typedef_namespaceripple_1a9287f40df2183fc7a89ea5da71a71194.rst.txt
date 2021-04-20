@@ -3,7 +3,7 @@
 Typedef ripple::default_exec_params_t
 =====================================
 
-- Defined in :ref:`file_include_ripple_core_execution_execution_traits.hpp`
+- Defined in :ref:`file_include_ripple_execution_execution_traits.hpp`
 
 
 Typedef Documentation

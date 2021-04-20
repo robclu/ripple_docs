@@ -76,25 +76,25 @@ Program Listing for File strided_storage_view.hpp
      struct Allocator {
       private:
        template <size_t I>
-       ripple_host_device static constexpr auto
+       ripple_all static constexpr auto
        offset_scale(Num<I>, DimX) noexcept -> size_t {
          return 1;
        }
    
        template <size_t I>
-       ripple_host_device static constexpr auto
+       ripple_all static constexpr auto
        offset_scale(Num<I>, DimY) noexcept -> size_t {
          return nth_element_components<I>;
        }
    
        template <size_t I>
-       ripple_host_device static constexpr auto
+       ripple_all static constexpr auto
        offset_scale(Num<I>, DimZ) noexcept -> size_t {
          return nth_element_components<I>;
        }
    
        template <size_t I>
-       ripple_host_device static constexpr auto
+       ripple_all static constexpr auto
        offset_scale(Num<I>, size_t dim) noexcept -> size_t {
          return dim == 0 ? 1 : nth_element_components<I>;
        }
@@ -103,13 +103,13 @@ Program Listing for File strided_storage_view.hpp
        static constexpr size_t alignment =
          max_element(storage_element_traits_t<Ts>::align_size...);
    
-       ripple_host_device static constexpr auto
+       ripple_all static constexpr auto
        allocation_size(size_t elements) noexcept -> size_t {
          return storage_byte_size * elements;
        }
    
        template <size_t Elements>
-       ripple_host_device static constexpr auto
+       ripple_all static constexpr auto
        allocation_size() noexcept -> size_t {
          return storage_byte_size * Elements;
        }
@@ -131,7 +131,7 @@ Program Listing for File strided_storage_view.hpp
        }
    
        template <typename SpaceImpl, typename Dim>
-       ripple_host_device static auto offset(
+       ripple_all static auto offset(
          const Storage&                  storage,
          const MultidimSpace<SpaceImpl>& space,
          Dim&&                           dim,
@@ -149,7 +149,7 @@ Program Listing for File strided_storage_view.hpp
        }
    
        template <typename SpaceImpl, typename Dim>
-       ripple_host_device static auto shift(
+       ripple_all static auto shift(
          Storage&                        storage,
          const MultidimSpace<SpaceImpl>& space,
          Dim&&                           dim,
@@ -164,7 +164,7 @@ Program Listing for File strided_storage_view.hpp
        }
    
        template <typename SpaceImpl>
-       ripple_host_device static auto
+       ripple_all static auto
        create(void* ptr, const MultidimSpace<SpaceImpl>& space) noexcept
          -> Storage {
          Storage r;
@@ -208,18 +208,18 @@ Program Listing for File strided_storage_view.hpp
      StridedStorageView() = default;
    
      template <typename Impl>
-     ripple_host_device
+     ripple_all
      StridedStorageView(const StorageAccessor<Impl>& other) noexcept {
        copy(static_cast<const Impl&>(other));
      }
    
-     ripple_host_device
+     ripple_all
      StridedStorageView(const StridedStorageView& other) noexcept
      : stride_{other.stride_} {
        unrolled_for<num_types>([&](auto i) { data_[i] = other.data_[i]; });
      }
    
-     ripple_host_device StridedStorageView(StridedStorageView&& other) noexcept
+     ripple_all StridedStorageView(StridedStorageView&& other) noexcept
      : stride_{other.stride_} {
        unrolled_for<num_types>([&](auto i) {
          data_[i]       = other.data_[i];
@@ -230,19 +230,19 @@ Program Listing for File strided_storage_view.hpp
      /*==--- [operator overload] ----------------------------------------------==*/
    
      template <typename Impl>
-     ripple_host_device auto operator=(const StorageAccessor<Impl>& other) noexcept
+     ripple_all auto operator=(const StorageAccessor<Impl>& other) noexcept
        -> StridedStorageView& {
        copy(static_cast<const Impl&>(other));
        return *this;
      }
    
-     ripple_host_device auto
+     ripple_all auto
      operator=(const StridedStorageView& other) noexcept -> StridedStorageView& {
        copy(other);
        return *this;
      }
    
-     ripple_host_device auto
+     ripple_all auto
      operator=(StridedStorageView&& other) noexcept -> StridedStorageView& {
        stride_ = other.stride_;
        unrolled_for<num_types>([&](auto i) {
@@ -253,22 +253,22 @@ Program Listing for File strided_storage_view.hpp
      }
      /*==--- [interface] ------------------------------------------------------==*/
    
-     ripple_host_device auto data() noexcept -> Ptr {
+     ripple_all auto data() noexcept -> Ptr {
        return &data_[0];
      }
    
-     ripple_host_device auto data() const noexcept -> ConstPtr {
+     ripple_all auto data() const noexcept -> ConstPtr {
        return &data_[0];
      }
    
-     ripple_host_device auto data_ptrs() noexcept -> std::vector<Ptr> {
+     ripple_all auto data_ptrs() noexcept -> std::vector<Ptr> {
        std::vector<Ptr> p;
        unrolled_for<num_types>([&](auto i) { p.push_back(data_[i]); });
        return p;
      }
    
      template <typename Other>
-     ripple_host_device auto copy(const Other& other) noexcept -> void {
+     ripple_all auto copy(const Other& other) noexcept -> void {
        static_assert(
          is_storage_accessor_v<Other>,
          "Can only copy from storage accessor types!");
@@ -281,7 +281,7 @@ Program Listing for File strided_storage_view.hpp
      }
    
      template <size_t I>
-     ripple_host_device constexpr auto components_of() const noexcept -> size_t {
+     ripple_all constexpr auto components_of() const noexcept -> size_t {
        return nth_element_components<I>;
      }
    
@@ -289,7 +289,7 @@ Program Listing for File strided_storage_view.hpp
        size_t I,
        typename T                  = nth_element_t<I, Ts...>,
        non_vec_element_enable_t<T> = 0>
-     ripple_host_device auto get() noexcept -> element_value_t<T>& {
+     ripple_all auto get() noexcept -> element_value_t<T>& {
        return *static_cast<element_value_t<T>*>(data_[I]);
      }
    
@@ -297,7 +297,7 @@ Program Listing for File strided_storage_view.hpp
        size_t I,
        typename T                  = nth_element_t<I, Ts...>,
        non_vec_element_enable_t<T> = 0>
-     ripple_host_device auto get() const noexcept -> const element_value_t<T>& {
+     ripple_all auto get() const noexcept -> const element_value_t<T>& {
        return *static_cast<const element_value_t<T>*>(data_[I]);
      }
    
@@ -306,7 +306,7 @@ Program Listing for File strided_storage_view.hpp
        size_t J,
        typename T              = nth_element_t<I, Ts...>,
        vec_element_enable_t<T> = 0>
-     ripple_host_device auto get() noexcept -> element_value_t<T>& {
+     ripple_all auto get() noexcept -> element_value_t<T>& {
        static_assert(
          J < element_components<T>, "Out of range access for element!");
        return static_cast<element_value_t<T>*>(data_[I])[J * stride_];
@@ -317,7 +317,7 @@ Program Listing for File strided_storage_view.hpp
        size_t J,
        typename T              = nth_element_t<I, Ts...>,
        vec_element_enable_t<T> = 0>
-     ripple_host_device auto get() const noexcept -> const element_value_t<T>& {
+     ripple_all auto get() const noexcept -> const element_value_t<T>& {
        static_assert(
          J < element_components<T>, "Out of range access for element!");
        return static_cast<const element_value_t<T>*>(data_[I])[J * stride_];
@@ -327,7 +327,7 @@ Program Listing for File strided_storage_view.hpp
        size_t I,
        typename T              = nth_element_t<I, Ts...>,
        vec_element_enable_t<T> = 0>
-     ripple_host_device auto get(size_t j) noexcept -> element_value_t<T>& {
+     ripple_all auto get(size_t j) noexcept -> element_value_t<T>& {
        return static_cast<element_value_t<T>*>(data_[I])[j * stride_];
      }
    
@@ -335,7 +335,7 @@ Program Listing for File strided_storage_view.hpp
        size_t I,
        typename T              = nth_element_t<I, Ts...>,
        vec_element_enable_t<T> = 0>
-     ripple_host_device auto
+     ripple_all auto
      get(size_t j) const noexcept -> const element_value_t<T>& {
        return static_cast<const element_value_t<T>*>(data_[I])[j * stride_];
      }
@@ -370,7 +370,7 @@ Program Listing for File strided_storage_view.hpp
      struct Allocator {
       private:
        template <typename Dim>
-       ripple_host_device static constexpr auto
+       ripple_all static constexpr auto
        offset_scale(Dim&& dim) noexcept -> size_t {
          if constexpr (is_cx_number_v<Dim>) {
            if constexpr (std::decay_t<Dim>::value == DimX::value) {
@@ -386,13 +386,13 @@ Program Listing for File strided_storage_view.hpp
       public:
        static constexpr size_t alignment = ElementTraits::align_size;
    
-       ripple_host_device static constexpr auto
+       ripple_all static constexpr auto
        allocation_size(size_t elements) noexcept -> size_t {
          return storage_byte_size * elements;
        }
    
        template <size_t Elements>
-       ripple_host_device static constexpr auto
+       ripple_all static constexpr auto
        allocation_size() noexcept -> size_t {
          return storage_byte_size * Elements;
        }
@@ -412,7 +412,7 @@ Program Listing for File strided_storage_view.hpp
        }
    
        template <typename SpaceImpl, typename Dim>
-       ripple_host_device static auto offset(
+       ripple_all static auto offset(
          const Storage&                  storage,
          const MultidimSpace<SpaceImpl>& space,
          Dim&&                           dim,
@@ -425,7 +425,7 @@ Program Listing for File strided_storage_view.hpp
        }
    
        template <typename SpaceImpl, typename Dim>
-       ripple_host_device static auto shift(
+       ripple_all static auto shift(
          Storage&                        storage,
          const MultidimSpace<SpaceImpl>& space,
          Dim&&                           dim,
@@ -435,7 +435,7 @@ Program Listing for File strided_storage_view.hpp
        }
    
        template <typename SpaceImpl>
-       ripple_host_device static auto
+       ripple_all static auto
        create(void* ptr, const MultidimSpace<SpaceImpl>& space) noexcept
          -> Storage {
          Storage r;
@@ -456,16 +456,16 @@ Program Listing for File strided_storage_view.hpp
      StridedStorageView() = default;
    
      template <typename Impl>
-     ripple_host_device
+     ripple_all
      StridedStorageView(const StorageAccessor<Impl>& other) noexcept {
        copy(static_cast<const Impl&>(other));
      }
    
-     ripple_host_device
+     ripple_all
      StridedStorageView(const StridedStorageView& other) noexcept
      : data_{other.data_}, stride_{other.stride_} {}
    
-     ripple_host_device StridedStorageView(StridedStorageView&& other) noexcept
+     ripple_all StridedStorageView(StridedStorageView&& other) noexcept
      : data_{other.data_}, stride_{other.stride_} {
        other.data_ = nullptr;
      }
@@ -473,19 +473,19 @@ Program Listing for File strided_storage_view.hpp
      /*==--- [operator overload] ----------------------------------------------==*/
    
      template <typename Impl>
-     ripple_host_device auto operator=(const StorageAccessor<Impl>& other) noexcept
+     ripple_all auto operator=(const StorageAccessor<Impl>& other) noexcept
        -> StridedStorageView& {
        copy(static_cast<const Impl&>(other));
        return *this;
      }
    
-     ripple_host_device auto
+     ripple_all auto
      operator=(const StridedStorageView& other) noexcept -> StridedStorageView& {
        copy(other);
        return *this;
      }
    
-     ripple_host_device auto
+     ripple_all auto
      operator=(StridedStorageView&& other) noexcept -> StridedStorageView& {
        stride_     = other.stride_;
        data_       = other.data_;
@@ -495,20 +495,20 @@ Program Listing for File strided_storage_view.hpp
    
      /*==--- [interface] ------------------------------------------------------==*/
    
-     ripple_host_device auto data() noexcept -> Ptr {
+     ripple_all auto data() noexcept -> Ptr {
        return &data_;
      }
    
-     ripple_host_device auto data() const noexcept -> ConstPtr {
+     ripple_all auto data() const noexcept -> ConstPtr {
        return &data_;
      }
    
-     ripple_host_device auto data_ptrs() noexcept -> std::vector<Ptr> {
+     ripple_all auto data_ptrs() noexcept -> std::vector<Ptr> {
        return std::vector<Ptr>{data_};
      }
    
      template <typename Other>
-     ripple_host_device auto copy(const Other& other) noexcept -> void {
+     ripple_all auto copy(const Other& other) noexcept -> void {
        static_assert(
          is_storage_accessor_v<Other>,
          "Can only copy from storage accessor types!");
@@ -516,7 +516,7 @@ Program Listing for File strided_storage_view.hpp
      }
    
      template <size_t I>
-     ripple_host_device constexpr auto components_of() const noexcept -> size_t {
+     ripple_all constexpr auto components_of() const noexcept -> size_t {
        return element_components;
      }
    
@@ -524,7 +524,7 @@ Program Listing for File strided_storage_view.hpp
        size_t I,
        typename T                  = nth_element_t<I, Type>,
        non_vec_element_enable_t<T> = 0>
-     ripple_host_device auto get() noexcept -> ValueType& {
+     ripple_all auto get() noexcept -> ValueType& {
        static_assert(I == 0, "Element only has one type!");
        return *data_;
      }
@@ -533,32 +533,32 @@ Program Listing for File strided_storage_view.hpp
        size_t I,
        typename T                  = nth_element_t<I, Type>,
        non_vec_element_enable_t<T> = 0>
-     ripple_host_device auto get() const noexcept -> const ValueType& {
+     ripple_all auto get() const noexcept -> const ValueType& {
        static_assert(I == 0, "Element only has one type!");
        return *data_;
      }
    
      template <size_t I, size_t J, vec_element_enable_t<Type> = 0>
-     ripple_host_device auto get() noexcept -> ValueType& {
+     ripple_all auto get() noexcept -> ValueType& {
        static_assert(I == 0, "Element only has one type!");
        static_assert(J < element_components, "Out of range access for element!");
        return data_[J * stride_];
      }
    
      template <size_t I, size_t J, vec_element_enable_t<Type> = 0>
-     ripple_host_device auto get() const noexcept -> const ValueType& {
+     ripple_all auto get() const noexcept -> const ValueType& {
        static_assert(I == 0, "Element only has one type!");
        static_assert(J < element_components, "Out of range access for element!");
        return data_[J * stride_];
      }
    
      template <size_t I, vec_element_enable_t<Type> = 0>
-     ripple_host_device auto get(size_t j) noexcept -> ValueType& {
+     ripple_all auto get(size_t j) noexcept -> ValueType& {
        return data_[j * stride_];
      }
    
      template <size_t I, vec_element_enable_t<Type> = 0>
-     ripple_host_device auto get(size_t j) const noexcept -> const ValueType& {
+     ripple_all auto get(size_t j) const noexcept -> const ValueType& {
        return data_[j * stride_];
      }
    };

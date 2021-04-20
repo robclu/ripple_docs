@@ -3,7 +3,7 @@
 Template Struct BasicTuple
 ==========================
 
-- Defined in :ref:`file_include_ripple_core_container_detail_basic_tuple_.hpp`
+- Defined in :ref:`file_include_ripple_container_detail_basic_tuple_.hpp`
 
 
 Inheritance Relationships

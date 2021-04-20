@@ -1,0 +1,87 @@
+
+.. _file_include_ripple_allocation_arena.hpp:
+
+File arena.hpp
+==============
+
+
+= :ref:`file_include_ripple_allocation_arena.hpp` --------------------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/allocation/arena.hpp``)
+----------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_allocation_arena.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file defines memory arena implementations.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``cstring``
+
+- ``ripple/arch/gpu_utils.hpp`` (:ref:`file_include_ripple_arch_gpu_utils.hpp`)
+
+- ``ripple/utility/memory.hpp`` (:ref:`file_include_ripple_utility_memory.hpp`)
+
+- ``type_traits`` (:ref:`file_include_ripple_utility_type_traits.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_allocation_allocator.hpp`
+
+- :ref:`file_include_ripple_allocation_multiarch_allocator.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1GpuHeapArena`
+
+- :ref:`exhale_struct_structripple_1_1HeapArena`
+
+- :ref:`exhale_class_classripple_1_1StackArena`
+

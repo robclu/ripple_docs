@@ -3,7 +3,7 @@
 Template Function ripple::operator+
 ===================================
 
-- Defined in :ref:`file_include_ripple_core_container_array.hpp`
+- Defined in :ref:`file_include_ripple_container_array.hpp`
 
 
 Function Documentation

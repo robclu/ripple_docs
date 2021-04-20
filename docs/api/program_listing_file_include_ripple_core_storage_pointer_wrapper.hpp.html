@@ -141,6 +141,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -236,14 +237,14 @@
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
 <span class="k">struct</span> <span class="n">PointerWrapper</span> <span class="p">{</span>
-  <span class="n">ripple_host_device</span> <span class="n">PointerWrapper</span><span class="p">(</span><span class="n">T</span> <span class="n">data</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">:</span> <span class="n">data_</span><span class="p">{</span><span class="n">data</span><span class="p">}</span> <span class="p">{}</span>
+  <span class="n">ripple_all</span> <span class="n">PointerWrapper</span><span class="p">(</span><span class="n">T</span> <span class="n">data</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">:</span> <span class="n">data_</span><span class="p">{</span><span class="n">data</span><span class="p">}</span> <span class="p">{}</span>
 
   <span class="c1">// clang-format off</span>
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">-&gt;</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="o">*</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">-&gt;</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="o">*</span> <span class="p">{</span>
     <span class="k">return</span> <span class="o">&amp;</span><span class="n">data_</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">-&gt;</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">T</span><span class="o">*</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">-&gt;</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">T</span><span class="o">*</span> <span class="p">{</span>
     <span class="k">return</span> <span class="o">&amp;</span><span class="n">data_</span><span class="p">;</span>
   <span class="p">}</span>
 

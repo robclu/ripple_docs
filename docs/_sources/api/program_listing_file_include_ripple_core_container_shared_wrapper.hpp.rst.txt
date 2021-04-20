@@ -43,11 +43,11 @@ Program Listing for File shared_wrapper.hpp
      ExpType     expansion = 0; 
      ExpType     overlap   = 0; 
    
-     ripple_host_device auto padded() const noexcept -> bool {
+     ripple_all auto padded() const noexcept -> bool {
        return padding != invalid_padding;
      }
    
-     ripple_host_device auto offset_amount() const noexcept -> ExpType {
+     ripple_all auto offset_amount() const noexcept -> ExpType {
        return overlap != 0 ? overlap : expansion;
      }
    };
@@ -58,7 +58,7 @@ Program Listing for File shared_wrapper.hpp
      ExpType expansion = 0;
      ExpType overlap   = 0;
    
-     ripple_host_device auto offset_amount() const noexcept -> ExpType {
+     ripple_all auto offset_amount() const noexcept -> ExpType {
        return overlap != 0 ? overlap : expansion;
      }
    };

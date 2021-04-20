@@ -143,6 +143,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -218,7 +219,7 @@
   <div class="section" id="template-function-ripple-offset-to-aos">
 <span id="exhale-function-namespaceripple-1a8e46711f9291d07a19250f8e9a9867c1"></span><h1>Template Function ripple::offset_to_aos<a class="headerlink" href="#template-function-ripple-offset-to-aos" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_multidim_offset_to.hpp.html#file-include-ripple-core-multidim-offset-to-hpp"><span class="std std-ref">File offset_to.hpp</span></a></p></li>
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_space_offset_to.hpp.html#file-include-ripple-space-offset-to-hpp"><span class="std std-ref">File offset_to.hpp</span></a></p></li>
 </ul>
 <div class="section" id="function-documentation">
 <h2>Function Documentation<a class="headerlink" href="#function-documentation" title="Permalink to this headline">¶</a></h2>
@@ -226,7 +227,7 @@
 <dt id="_CPPv4I0DpEN6ripple13offset_to_aosE6size_tRK13MultidimSpaceI11SpatialImplE6size_tDpRR7Indices">
 <span id="_CPPv3I0DpEN6ripple13offset_to_aosERK13MultidimSpaceI11SpatialImplE6size_tDpRR7Indices"></span><span id="_CPPv2I0DpEN6ripple13offset_to_aosERK13MultidimSpaceI11SpatialImplE6size_tDpRR7Indices"></span>template&lt;typename <code class="sig-name descname">SpatialImpl</code>, typename ...<code class="sig-name descname">Indices</code>&gt;<br /><span class="target" id="namespaceripple_1a8e46711f9291d07a19250f8e9a9867c1"></span>auto <code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">offset_to_aos</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="structripple_1_1MultidimSpace.html#_CPPv4I0EN6ripple13MultidimSpaceE" title="ripple::MultidimSpace">MultidimSpace</a>&lt;<a class="reference internal" href="#_CPPv4I0DpEN6ripple13offset_to_aosE6size_tRK13MultidimSpaceI11SpatialImplE6size_tDpRR7Indices" title="ripple::offset_to_aos::SpatialImpl">SpatialImpl</a>&gt; &amp;<em>space</em>, size_t <em>element_size</em>, <a class="reference internal" href="#_CPPv4I0DpEN6ripple13offset_to_aosE6size_tRK13MultidimSpaceI11SpatialImplE6size_tDpRR7Indices" title="ripple::offset_to_aos::Indices">Indices</a>&amp;&amp;... <em>indices</em><span class="sig-paren">)</span> -&gt; size_t<a class="headerlink" href="#_CPPv4I0DpEN6ripple13offset_to_aosE6size_tRK13MultidimSpaceI11SpatialImplE6size_tDpRR7Indices" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the offset to the element at the index defined by the <code class="docutils literal notranslate"><span class="pre">indices</span></code> for each of the dimension in a space defined by the <code class="docutils literal notranslate"><span class="pre">space</span></code>. </p>
-<p>The <code class="docutils literal notranslate"><span class="pre">element_size</span></code> is the number of elements in the type. For all types, this should be 1, since the types are next to each other, however, when using this to compute the offset when the data is stored as SoA or AoS, <code class="docutils literal notranslate"><span class="pre">element_size</span></code> is the number of components in the type being stored. For Returns the offset to the element at the index defined by the <code class="docutils literal notranslate"><span class="pre">indices</span></code> for each of the dimension in a space defined by the <code class="docutils literal notranslate"><span class="pre">space</span></code>. The <code class="docutils literal notranslate"><span class="pre">element_size</span></code> is the number of elements in the array type, if the data stored the underlying type in the array.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">element_size</span></code> is the number of elements in the array type, if the data stored the underlying type in the array.</p>
 <p>For example, for a 2D velocity array for types T and the underlying storage for the space allocates T, the element_size would be 2. For complex types which store the whole type, for example if Vec&lt;T, 2&gt; is stored rather than raw T, then the <code class="docutils literal notranslate"><span class="pre">element_size</span></code> would be 1. This allows for the caller to compute the offset based on the way the data has been stored.</p>
 <p>For the case that the u, v data is allocated as type T, the storage would look as follows:</p>
 <p></p>

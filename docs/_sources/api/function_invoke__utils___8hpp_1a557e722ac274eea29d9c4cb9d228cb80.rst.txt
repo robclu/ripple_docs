@@ -1,0 +1,13 @@
+.. _exhale_function_invoke__utils___8hpp_1a557e722ac274eea29d9c4cb9d228cb80:
+
+Template Function ripple::kernel::gpu::util::block_iter_or_same(ExpansionWrapper<T>&)
+=====================================================================================
+
+- Defined in :ref:`file_include_ripple_functional_kernel_invoke_utils_.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::kernel::gpu::util::block_iter_or_same(ExpansionWrapper<T>&)

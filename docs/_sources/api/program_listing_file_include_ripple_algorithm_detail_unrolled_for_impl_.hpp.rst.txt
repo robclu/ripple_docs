@@ -1,0 +1,54 @@
+
+.. _program_listing_file_include_ripple_algorithm_detail_unrolled_for_impl_.hpp:
+
+Program Listing for File unrolled_for_impl_.hpp
+===============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_algorithm_detail_unrolled_for_impl_.hpp>` (``include/ripple/algorithm/detail/unrolled_for_impl_.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_ALGORITHM_UNROLLED_FOR_IMPL_HPP
+   #define RIPPLE_ALGORITHM_UNROLLED_FOR_IMPL_HPP
+   
+   #include <ripple/utility/forward.hpp>
+   #include <ripple/utility/number.hpp>
+   
+   namespace ripple::detail {
+   
+   template <size_t Amount>
+   struct Unroll : public Unroll<(Amount <= 1 ? 0 : Amount - 1)> {
+     static constexpr size_t previous_level = Amount <= 1 ? 0 : Amount - 1;
+   
+     using PreviousLevel = Unroll<previous_level>;
+   
+     template <typename Functor, typename... Args>
+     ripple_all constexpr Unroll(
+       Functor&& functor, Args&&... args) noexcept
+     : PreviousLevel{ripple_forward(functor), ripple_forward(args)...} {
+       functor(Num<previous_level>(), ripple_forward(args)...);
+     }
+   };
+   
+   template <>
+   struct Unroll<1> {
+     template <typename Functor, typename... Args>
+     ripple_all constexpr Unroll(
+       Functor&& functor, Args&&... args) noexcept {
+       functor(Num<0>(), ripple_forward(args)...);
+     }
+   };
+   
+   template <>
+   struct Unroll<0> {
+     template <typename Functor, typename... Args>
+     ripple_all constexpr Unroll(
+       Functor&& functor, Args&&... args) noexcept {}
+   };
+   
+   } // namespace ripple::detail
+   
+   #endif // RIPPLE_ALGORITHM_UNROLLED_FOR_HPP

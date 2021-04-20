@@ -3,7 +3,7 @@
 Variable ripple::max_cache_subleaves
 ====================================
 
-- Defined in :ref:`file_include_ripple_core_arch_cpu_info.hpp`
+- Defined in :ref:`file_include_ripple_arch_cpu_info.hpp`
 
 
 Variable Documentation

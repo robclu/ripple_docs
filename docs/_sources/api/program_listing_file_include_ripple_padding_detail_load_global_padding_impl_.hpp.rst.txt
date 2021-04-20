@@ -1,0 +1,111 @@
+
+.. _program_listing_file_include_ripple_padding_detail_load_global_padding_impl_.hpp:
+
+Program Listing for File load_global_padding_impl_.hpp
+======================================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_padding_detail_load_global_padding_impl_.hpp>` (``include/ripple/padding/detail/load_global_padding_impl_.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_PADDING_DETAIL_LOAD_GLOBAL_PADDING_IMPL__HPP
+   #define RIPPLE_PADDING_DETAIL_LOAD_GLOBAL_PADDING_IMPL__HPP
+   
+   #include "../ghost_index.hpp"
+   
+   namespace ripple::detail {
+   
+   // clang-format off
+   
+   template <
+     typename It, size_t Dims, typename Loader, typename Dim, typename... Args>
+   ripple_all auto load_global_padding_for_dim(
+     It&&                    it,
+     const GhostIndex<Dims>& indices,
+     Dim&&                   dim,
+     Loader&&                loader,
+     Args&&...               args) noexcept -> void {
+     if (indices.is_front(dim)) {
+       loader.load_front(
+         it.offset(dim, -it.padding()),
+         indices.index(dim),
+         dim,
+         ripple_forward(args)...);
+     } else if (indices.is_back(dim)) {
+       loader.load_back(
+         it.offset(dim, it.padding()),
+         indices.index(dim),
+         dim,
+         ripple_forward(args)...);
+     }
+   }
+   
+   template <typename It, size_t Dims, typename Loader, typename... Args>
+   ripple_all auto load_global_padding(
+     DimX                    dim,
+     It&&                    it,
+     const GhostIndex<Dims>& indices,
+     Loader&&                loader,
+     Args&&... args) noexcept -> void {
+     load_global_padding_for_dim(
+       it, indices, dim, ripple_forward(loader), ripple_forward(args)...);
+   }
+   
+   template <typename It, size_t Dims, typename Loader, typename... Args>
+   ripple_all auto load_global_padding(
+     DimY                    dim,
+     It&&                    it,
+     const GhostIndex<Dims>& indices,
+     Loader&&                loader,
+     Args&&... args) noexcept -> void {
+     load_global_padding_for_dim(
+       it, indices, dimx(), ripple_forward(loader), ripple_forward(args)...);
+     load_global_padding_for_dim(
+       it, indices, dimy(), ripple_forward(loader), ripple_forward(args)...);
+   
+     /* Load corner boundaries: first offset into y padding, then load x
+      * boundaries using the padding data for y. The sign of the index is opposite
+      * to the direction in which we need to offset because the index normal points
+      * into the domain, and here we need to walk out the domaim. */
+     const int step = -math::sign(indices.index(dimy())) * it.padding();
+     load_global_padding_for_dim(
+       it.offset(dimy(), step),
+       indices,
+       dimx(),
+       ripple_forward(loader),
+       ripple_forward(args)...);
+   }
+   
+   template <typename It, size_t Dims, typename Loader, typename... Args>
+   ripple_all auto load_global_padding(
+     DimZ                    dim,
+     It&&                    it,
+     const GhostIndex<Dims>& indices,
+     Loader&&                loader,
+     Args&&... args) noexcept -> void {
+     load_global_padding(
+       dimy(), it, indices, ripple_forward(loader), ripple_forward(args)...);
+   
+     load_global_padding_for_dim(
+       it, indices, dimz(), ripple_forward(loader), ripple_forward(args)...);
+   
+     /* Offset in the z dimension and then load the boundaries for the 2D plane
+      * from the offset cell. As in the 2D case, the direction to offset in is
+      * opposite to the sign of the index since the index normal points into the
+      * domain, and here we are moving out of it.
+      */
+     const int step = -math::sign(indices.index(dimz())) * it.padding();
+     load_global_padding(
+       dimy(),
+       it.offset(dimz(), step),
+       indices,
+       ripple_forward(loader),
+       ripple_forward(args)...);
+   }
+   
+   } // namespace ripple::detail
+   
+   #endif // RIPPLE_PADDING_DETAIL_LOAD_GLOBAL_PADDING_IMPL__HPP

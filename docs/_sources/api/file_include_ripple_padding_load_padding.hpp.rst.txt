@@ -1,0 +1,79 @@
+
+.. _file_include_ripple_padding_load_padding.hpp:
+
+File load_padding.hpp
+=====================
+
+
+= :ref:`file_include_ripple_padding_load_padding.hpp` ----------------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/padding/load_padding.hpp``)
+--------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_padding_load_padding.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file implements functionality for loading padding data for iterators over multidimensional spaces, such as blocks and tensors, both globally and locally.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``detail/load_global_padding_impl_.hpp`` (:ref:`file_include_ripple_padding_detail_load_global_padding_impl_.hpp`)
+
+- ``detail/load_internal_padding_impl_.hpp`` (:ref:`file_include_ripple_padding_detail_load_internal_padding_impl_.hpp`)
+
+- ``padding_loader.hpp`` (:ref:`file_include_ripple_padding_padding_loader.hpp`)
+
+- ``ripple/execution/execution_traits.hpp`` (:ref:`file_include_ripple_execution_execution_traits.hpp`)
+
+- ``ripple/execution/thread_index.hpp`` (:ref:`file_include_ripple_execution_thread_index.hpp`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1LoadMultiPadding`
+
+- :ref:`exhale_struct_structripple_1_1LoadPadding`
+

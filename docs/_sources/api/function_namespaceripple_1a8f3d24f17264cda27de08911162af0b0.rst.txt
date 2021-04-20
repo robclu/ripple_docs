@@ -3,7 +3,7 @@
 Template Function ripple::copy_from_to
 ======================================
 
-- Defined in :ref:`file_include_ripple_core_storage_storage_accessor.hpp`
+- Defined in :ref:`file_include_ripple_storage_storage_accessor.hpp`
 
 
 Function Documentation

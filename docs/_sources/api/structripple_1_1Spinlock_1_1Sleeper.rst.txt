@@ -3,7 +3,7 @@
 Struct Spinlock::Sleeper
 ========================
 
-- Defined in :ref:`file_include_ripple_core_utility_spinlock.hpp`
+- Defined in :ref:`file_include_ripple_utility_spinlock.hpp`
 
 
 Nested Relationships

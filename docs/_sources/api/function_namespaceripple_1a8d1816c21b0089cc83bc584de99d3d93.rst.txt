@@ -3,7 +3,7 @@
 Template Function ripple::to_mat2x2
 ===================================
 
-- Defined in :ref:`file_include_ripple_core_math_quat.hpp`
+- Defined in :ref:`file_include_ripple_math_quat.hpp`
 
 
 Function Documentation

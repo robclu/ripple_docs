@@ -3,7 +3,7 @@
 Template Function ripple::kernel::cpu::get_iterator
 ===================================================
 
-- Defined in :ref:`file_include_ripple_core_functional_kernel_invoke_generic_impl_.hpp`
+- Defined in :ref:`file_include_ripple_functional_kernel_invoke_generic_impl_.hpp`
 
 
 Function Documentation

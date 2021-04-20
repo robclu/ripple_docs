@@ -47,17 +47,17 @@ Program Listing for File arena.hpp
      using Ptr      = void*;       
      using ConstPtr = const void*; 
    
-     ripple_host_device StackArena(size_t size = 0) noexcept {}
+     ripple_all StackArena(size_t size = 0) noexcept {}
    
-     ripple_nodiscard ripple_host_device auto begin() const noexcept -> ConstPtr {
+     ripple_nodiscard ripple_all auto begin() const noexcept -> ConstPtr {
        return static_cast<ConstPtr>(&buffer_[0]);
      }
    
-     ripple_nodiscard ripple_host_device auto end() const noexcept -> ConstPtr {
+     ripple_nodiscard ripple_all auto end() const noexcept -> ConstPtr {
        return static_cast<ConstPtr>(&buffer_[stack_size]);
      }
    
-     ripple_nodiscard ripple_host_device constexpr auto
+     ripple_nodiscard ripple_all constexpr auto
      size() const noexcept -> size_t {
        return stack_size;
      }

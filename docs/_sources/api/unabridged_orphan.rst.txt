@@ -11,127 +11,117 @@ Directories
 .. toctree::
    :maxdepth: 5
 
-   dir__home_hiccup_Software_ripple_include_ripple.rst
+   dir__home_hiccup_Catalyst_ripple_include_ripple.rst
 
 .. toctree::
    :maxdepth: 5
 
-   dir__home_hiccup_Software_ripple_include_ripple_core.rst
+   dir__home_hiccup_Catalyst_ripple_include_ripple_algorithm.rst
 
 .. toctree::
    :maxdepth: 5
 
-   dir__home_hiccup_Software_ripple_include_ripple_core_algorithm.rst
+   dir__home_hiccup_Catalyst_ripple_include_ripple_algorithm_detail.rst
 
 .. toctree::
    :maxdepth: 5
 
-   dir__home_hiccup_Software_ripple_include_ripple_core_algorithm_detail.rst
+   dir__home_hiccup_Catalyst_ripple_include_ripple_algorithm_kernel.rst
 
 .. toctree::
    :maxdepth: 5
 
-   dir__home_hiccup_Software_ripple_include_ripple_core_algorithm_kernel.rst
+   dir__home_hiccup_Catalyst_ripple_include_ripple_allocation.rst
 
 .. toctree::
    :maxdepth: 5
 
-   dir__home_hiccup_Software_ripple_include_ripple_core_allocation.rst
+   dir__home_hiccup_Catalyst_ripple_include_ripple_arch.rst
 
 .. toctree::
    :maxdepth: 5
 
-   dir__home_hiccup_Software_ripple_include_ripple_core_arch.rst
+   dir__home_hiccup_Catalyst_ripple_include_ripple_container.rst
 
 .. toctree::
    :maxdepth: 5
 
-   dir__home_hiccup_Software_ripple_include_ripple_core_boundary.rst
+   dir__home_hiccup_Catalyst_ripple_include_ripple_container_detail.rst
 
 .. toctree::
    :maxdepth: 5
 
-   dir__home_hiccup_Software_ripple_include_ripple_core_boundary_detail.rst
+   dir__home_hiccup_Catalyst_ripple_include_ripple_execution.rst
 
 .. toctree::
    :maxdepth: 5
 
-   dir__home_hiccup_Software_ripple_include_ripple_core_container.rst
+   dir__home_hiccup_Catalyst_ripple_include_ripple_execution_detail.rst
 
 .. toctree::
    :maxdepth: 5
 
-   dir__home_hiccup_Software_ripple_include_ripple_core_container_detail.rst
+   dir__home_hiccup_Catalyst_ripple_include_ripple_functional.rst
 
 .. toctree::
    :maxdepth: 5
 
-   dir__home_hiccup_Software_ripple_include_ripple_core_execution.rst
+   dir__home_hiccup_Catalyst_ripple_include_ripple_functional_kernel.rst
 
 .. toctree::
    :maxdepth: 5
 
-   dir__home_hiccup_Software_ripple_include_ripple_core_execution_detail.rst
+   dir__home_hiccup_Catalyst_ripple_include_ripple_graph.rst
 
 .. toctree::
    :maxdepth: 5
 
-   dir__home_hiccup_Software_ripple_include_ripple_core_functional.rst
+   dir__home_hiccup_Catalyst_ripple_include_ripple_graph_detail.rst
 
 .. toctree::
    :maxdepth: 5
 
-   dir__home_hiccup_Software_ripple_include_ripple_core_functional_kernel.rst
+   dir__home_hiccup_Catalyst_ripple_include_ripple_iterator.rst
 
 .. toctree::
    :maxdepth: 5
 
-   dir__home_hiccup_Software_ripple_include_ripple_core_graph.rst
+   dir__home_hiccup_Catalyst_ripple_include_ripple_math.rst
 
 .. toctree::
    :maxdepth: 5
 
-   dir__home_hiccup_Software_ripple_include_ripple_core_graph_detail.rst
+   dir__home_hiccup_Catalyst_ripple_include_ripple_padding.rst
 
 .. toctree::
    :maxdepth: 5
 
-   dir__home_hiccup_Software_ripple_include_ripple_core_io.rst
+   dir__home_hiccup_Catalyst_ripple_include_ripple_padding_detail.rst
 
 .. toctree::
    :maxdepth: 5
 
-   dir__home_hiccup_Software_ripple_include_ripple_core_iterator.rst
+   dir__home_hiccup_Catalyst_ripple_include_ripple_space.rst
 
 .. toctree::
    :maxdepth: 5
 
-   dir__home_hiccup_Software_ripple_include_ripple_core_math.rst
+   dir__home_hiccup_Catalyst_ripple_include_ripple_storage.rst
 
 .. toctree::
    :maxdepth: 5
 
-   dir__home_hiccup_Software_ripple_include_ripple_core_multidim.rst
+   dir__home_hiccup_Catalyst_ripple_include_ripple_storage_detail.rst
 
 .. toctree::
    :maxdepth: 5
 
-   dir__home_hiccup_Software_ripple_include_ripple_core_storage.rst
+   dir__home_hiccup_Catalyst_ripple_include_ripple_utility.rst
 
 .. toctree::
    :maxdepth: 5
 
-   dir__home_hiccup_Software_ripple_include_ripple_core_storage_detail.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   dir__home_hiccup_Software_ripple_include_ripple_core_utility.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   dir__home_hiccup_Software_ripple_include_ripple_core_utility_detail.rst
+   dir__home_hiccup_Catalyst_ripple_include_ripple_utility_detail.rst
 
 .. toctree::
    :maxdepth: 5
@@ -145,574 +135,544 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_allocation_aligned_heap_allocator.hpp.rst
+   file_include_ripple_allocation_aligned_heap_allocator.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_allocation_allocator.hpp.rst
+   file_include_ripple_allocation_allocator.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_allocation_arena.hpp.rst
+   file_include_ripple_allocation_arena.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_container_array.hpp.rst
+   file_include_ripple_container_array.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_container_array_traits.hpp.rst
+   file_include_ripple_container_array_traits.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_container_detail_basic_tuple_.hpp.rst
+   file_include_ripple_container_detail_basic_tuple_.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_utility_bitops.hpp.rst
+   file_include_ripple_utility_bitops.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_container_block.hpp.rst
+   file_include_ripple_container_block.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_container_block_extractor.hpp.rst
+   file_include_ripple_container_block_extractor.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_iterator_block_iterator.hpp.rst
+   file_include_ripple_iterator_block_iterator.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_container_block_memory_properties.hpp.rst
+   file_include_ripple_container_block_memory_properties.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_container_block_traits.hpp.rst
+   file_include_ripple_container_block_traits.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_boundary_boundary_loader.hpp.rst
+   file_include_ripple_arch_cache.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_arch_cache.hpp.rst
+   file_include_ripple_padding_const_loader.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_boundary_const_loader.hpp.rst
+   file_include_ripple_storage_contiguous_storage_view.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_storage_contiguous_storage_view.hpp.rst
+   file_include_ripple_padding_copy_loader.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_boundary_copy_loader.hpp.rst
+   file_include_ripple_arch_cpu_info.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_arch_cpu_info.hpp.rst
+   file_include_ripple_arch_cpu_utils.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_arch_cpu_utils.hpp.rst
+   file_include_ripple_storage_default_storage.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_storage_default_storage.hpp.rst
+   file_include_ripple_container_device_block.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_container_device_block.hpp.rst
+   file_include_ripple_utility_dim.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_utility_dim.hpp.rst
+   file_include_ripple_execution_dynamic_execution_params.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_execution_dynamic_execution_params.hpp.rst
+   file_include_ripple_space_dynamic_multidim_space.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_multidim_dynamic_multidim_space.hpp.rst
+   file_include_ripple_execution_execution_params.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_execution_execution_params.hpp.rst
+   file_include_ripple_execution_execution_size.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_execution_execution_size.hpp.rst
+   file_include_ripple_execution_execution_traits.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_execution_execution_traits.hpp.rst
+   file_include_ripple_execution_executor.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_execution_executor.hpp.rst
+   file_include_ripple_padding_fo_extrap_loader.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_boundary_fo_extrap_loader.hpp.rst
+   file_include_ripple_algorithm_for_each.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_algorithm_for_each.hpp.rst
+   file_include_ripple_utility_forward.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_utility_forward.hpp.rst
+   file_include_ripple_allocation_freelist.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_allocation_freelist.hpp.rst
+   file_include_ripple_utility_detail_function_traits_impl_.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_utility_detail_function_traits_impl_.hpp.rst
+   file_include_ripple_functional_functional_traits.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_functional_functional_traits.hpp.rst
+   file_include_ripple_padding_ghost_index.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_boundary_generic_loader.hpp.rst
+   file_include_ripple_arch_gpu_info.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_boundary_ghost_index.hpp.rst
+   file_include_ripple_arch_gpu_utils.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_arch_gpu_info.hpp.rst
+   file_include_ripple_graph_graph.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_arch_gpu_utils.hpp.rst
+   file_include_ripple_container_host_block.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_graph_graph.hpp.rst
+   file_include_ripple_utility_detail_index_of_impl_.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_container_host_block.hpp.rst
+   file_include_ripple_iterator_indexed_iterator.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_utility_detail_index_of_impl_.hpp.rst
+   file_include_ripple_padding_internal_loader.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_iterator_indexed_iterator.hpp.rst
+   file_include_ripple_functional_invocable.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_boundary_internal_loader.hpp.rst
+   file_include_ripple_functional_invoke.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_functional_invocable.hpp.rst
+   file_include_ripple_functional_kernel_invoke_cpu_impl_.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_functional_invoke.hpp.rst
+   file_include_ripple_functional_kernel_invoke_generic_impl_.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_functional_kernel_invoke_cpp_.hpp.rst
+   file_include_ripple_functional_kernel_invoke_utils_.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_functional_kernel_invoke_generic_impl_.hpp.rst
+   file_include_ripple_iterator_iterator_traits.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_functional_kernel_invoke_utils.hpp.rst
+   file_include_ripple_storage_layout_traits.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_iterator_iterator_traits.hpp.rst
+   file_include_ripple_math_lerp.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_storage_layout_traits.hpp.rst
+   file_include_ripple_allocation_linear_allocator.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_math_lerp.hpp.rst
+   file_include_ripple_padding_detail_load_global_padding_impl_.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_allocation_linear_allocator.hpp.rst
+   file_include_ripple_padding_detail_load_internal_padding_impl_.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_boundary_load_boundary.hpp.rst
+   file_include_ripple_padding_load_padding.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_boundary_detail_load_global_boundary_impl_.hpp.rst
+   file_include_ripple_utility_logger.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_boundary_detail_load_internal_boundary_impl_.hpp.rst
+   file_include_ripple_math_mat.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_utility_logger.hpp.rst
+   file_include_ripple_math_math.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_math_mat.hpp.rst
+   file_include_ripple_algorithm_max_element.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_math_math.hpp.rst
+   file_include_ripple_graph_memcopy.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_algorithm_max_element.hpp.rst
+   file_include_ripple_container_memcopy_padding.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_graph_memcopy.hpp.rst
+   file_include_ripple_utility_memory.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_container_memcopy_padding.hpp.rst
+   file_include_ripple_graph_modifier.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_utility_memory.hpp.rst
+   file_include_ripple_allocation_multiarch_allocator.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_graph_modifier.hpp.rst
+   file_include_ripple_space_multidim_space.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_allocation_multiarch_allocator.hpp.rst
+   file_include_ripple_graph_node.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_multidim_multidim_space.hpp.rst
+   file_include_ripple_utility_detail_nth_element_impl_.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_io_multidim_writer.hpp.rst
+   file_include_ripple_utility_number.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_graph_node.hpp.rst
+   file_include_ripple_space_offset_to.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_utility_detail_nth_element_impl_.hpp.rst
+   file_include_ripple_storage_owned_storage.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_utility_number.hpp.rst
+   file_include_ripple_padding_padding_loader.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_multidim_offset_to.hpp.rst
+   file_include_ripple_storage_pointer_wrapper.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_storage_owned_storage.hpp.rst
+   file_include_ripple_storage_polymorphic_layout.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_storage_pointer_wrapper.hpp.rst
+   file_include_ripple_allocation_pool_allocator.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_storage_polymorphic_layout.hpp.rst
+   file_include_ripple_utility_portability.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_allocation_pool_allocator.hpp.rst
+   file_include_ripple_arch_proc_info.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_utility_portability.hpp.rst
+   file_include_ripple_math_quat.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_io_printable.hpp.rst
+   file_include_ripple_utility_range.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_io_printable_element.hpp.rst
+   file_include_ripple_algorithm_reduce.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_io_printable_traits.hpp.rst
+   file_include_ripple_algorithm_kernel_reduce_cpp_.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_arch_proc_info.hpp.rst
+   file_include_ripple_graph_reducer.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_math_quat.hpp.rst
+   file_include_ripple_container_shared_wrapper.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_utility_range.hpp.rst
+   file_include_ripple_space_space_traits.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_algorithm_reduce.hpp.rst
+   file_include_ripple_utility_spinlock.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_algorithm_kernel_reduce_cpp_.hpp.rst
+   file_include_ripple_graph_splitter.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_graph_reducer.hpp.rst
+   file_include_ripple_execution_static_execution_params.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_container_shared_wrapper.hpp.rst
+   file_include_ripple_space_static_multidim_space.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_multidim_space_traits.hpp.rst
+   file_include_ripple_container_static_stealable_dequeue.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_utility_spinlock.hpp.rst
+   file_include_ripple_graph_stealer.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_graph_splitter.hpp.rst
+   file_include_ripple_storage_storage_accessor.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_execution_static_execution_params.hpp.rst
+   file_include_ripple_storage_storage_descriptor.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_multidim_static_multidim_space.hpp.rst
+   file_include_ripple_storage_storage_element_traits.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_container_static_stealable_dequeue.hpp.rst
+   file_include_ripple_storage_storage_layout.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_graph_stealer.hpp.rst
+   file_include_ripple_storage_storage_traits.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_storage_storage_accessor.hpp.rst
+   file_include_ripple_storage_detail_storage_traits_impl_.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_storage_storage_descriptor.hpp.rst
+   file_include_ripple_storage_strided_storage_view.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_storage_storage_element_traits.hpp.rst
+   file_include_ripple_storage_struct_accessor.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_storage_storage_layout.hpp.rst
+   file_include_ripple_execution_synchronize.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_storage_storage_traits.hpp.rst
+   file_include_ripple_container_tensor.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_storage_detail_storage_traits_impl_.hpp.rst
+   file_include_ripple_container_tensor_traits.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_storage_strided_storage_view.hpp.rst
+   file_include_ripple_execution_thread_index.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_storage_struct_accessor.hpp.rst
+   file_include_ripple_execution_detail_thread_index_impl_.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_execution_synchronize.hpp.rst
+   file_include_ripple_utility_timer.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_container_tensor.hpp.rst
+   file_include_ripple_arch_topology.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_container_tensor_traits.hpp.rst
+   file_include_ripple_container_tuple.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_execution_thread_index.hpp.rst
+   file_include_ripple_container_tuple_traits.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_execution_detail_thread_index_impl_.hpp.rst
+   file_include_ripple_utility_type_traits.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_utility_timer.hpp.rst
+   file_include_ripple_algorithm_unrolled_for.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_arch_topology.hpp.rst
+   file_include_ripple_algorithm_detail_unrolled_for_impl_.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_container_tuple.hpp.rst
+   file_include_ripple_graph_detail_utils_.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_include_ripple_core_container_tuple_traits.hpp.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_include_ripple_core_utility_type_traits.hpp.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_include_ripple_core_algorithm_unrolled_for.hpp.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_include_ripple_core_algorithm_detail_unrolled_for_impl_.hpp.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_include_ripple_core_graph_detail_utils_.hpp.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_include_ripple_core_container_vec.hpp.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_include_ripple_core_io_vtk_writer.hpp.rst
+   file_include_ripple_container_vec.hpp.rst

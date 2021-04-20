@@ -36,7 +36,7 @@ Program Listing for File load_boundary.hpp
    namespace ripple {
    
    template <typename Iterator, typename Loader, typename... Args>
-   ripple_host_device auto
+   ripple_all auto
    load_boundary(Iterator&& it, Loader&& loader, Args&&... args) noexcept -> void {
      static_assert(
        is_iterator_v<Iterator>,
@@ -66,7 +66,7 @@ Program Listing for File load_boundary.hpp
    
    struct LoadBoundary {
      template <typename Iterator, typename Loader, typename... Args>
-     ripple_host_device auto
+     ripple_all auto
      operator()(Iterator&& it, Loader&& loader, Args&&... args) const noexcept
        -> void {
        static_assert(
@@ -102,7 +102,7 @@ Program Listing for File load_boundary.hpp
        typename IteratorB,
        typename Loader,
        typename... Args>
-     ripple_host_device auto operator()(
+     ripple_all auto operator()(
        IteratorA&& it_a,
        IteratorB&& it_b,
        Loader&&    loader,
@@ -147,7 +147,7 @@ Program Listing for File load_boundary.hpp
    };
    
    template <size_t Dims, typename ItFrom, typename ItTo>
-   ripple_host_device auto
+   ripple_all auto
    load_internal_boundary(ItFrom&& it_from, ItTo&& it_to) noexcept -> void {
      static_assert(
        is_iterator_v<ItFrom>,

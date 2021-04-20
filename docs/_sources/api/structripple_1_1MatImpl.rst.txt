@@ -3,7 +3,7 @@
 Template Struct MatImpl
 =======================
 
-- Defined in :ref:`file_include_ripple_core_math_mat.hpp`
+- Defined in :ref:`file_include_ripple_math_mat.hpp`
 
 
 Struct Documentation

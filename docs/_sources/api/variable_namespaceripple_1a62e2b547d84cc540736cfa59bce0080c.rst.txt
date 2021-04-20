@@ -3,7 +3,7 @@
 Variable ripple::default_stack_arena_size
 =========================================
 
-- Defined in :ref:`file_include_ripple_core_allocation_arena.hpp`
+- Defined in :ref:`file_include_ripple_allocation_arena.hpp`
 
 
 Variable Documentation

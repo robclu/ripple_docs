@@ -1,0 +1,85 @@
+
+.. _file_include_ripple_container_device_block.hpp:
+
+File device_block.hpp
+=====================
+
+
+= :ref:`file_include_ripple_container_device_block.hpp` --------------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/container/device_block.hpp``)
+----------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_container_device_block.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file imlements a device side block class which holds some data.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``block_memory_properties.hpp`` (:ref:`file_include_ripple_container_block_memory_properties.hpp`)
+
+- ``block_traits.hpp`` (:ref:`file_include_ripple_container_block_traits.hpp`)
+
+- ``ripple/allocation/multiarch_allocator.hpp`` (:ref:`file_include_ripple_allocation_multiarch_allocator.hpp`)
+
+- ``ripple/iterator/block_iterator.hpp`` (:ref:`file_include_ripple_iterator_block_iterator.hpp`)
+
+- ``ripple/utility/memory.hpp`` (:ref:`file_include_ripple_utility_memory.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_container_block.hpp`
+
+- :ref:`file_include_ripple_execution_execution_size.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1DeviceBlock`
+

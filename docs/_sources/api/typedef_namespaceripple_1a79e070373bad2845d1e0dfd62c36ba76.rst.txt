@@ -3,7 +3,7 @@
 Typedef ripple::make_invocable_t
 ================================
 
-- Defined in :ref:`file_include_ripple_core_functional_functional_traits.hpp`
+- Defined in :ref:`file_include_ripple_functional_functional_traits.hpp`
 
 
 Typedef Documentation

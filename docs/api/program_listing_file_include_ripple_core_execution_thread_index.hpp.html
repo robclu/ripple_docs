@@ -141,6 +141,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -237,45 +238,45 @@
 <span class="cm">/*==--- [sizes] ------------------------------------------------------------==*/</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Dim</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">block_size</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
+<span class="n">ripple_all</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">block_size</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">detail</span><span class="o">::</span><span class="n">block_size</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">Dim</span><span class="o">&gt;</span><span class="p">(</span><span class="n">dim</span><span class="p">));</span>
 <span class="p">}</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Dim</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">grid_size</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
+<span class="n">ripple_all</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">grid_size</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">detail</span><span class="o">::</span><span class="n">grid_size</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">Dim</span><span class="o">&gt;</span><span class="p">(</span><span class="n">dim</span><span class="p">));</span>
 <span class="p">}</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Dim</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">global_size</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
+<span class="n">ripple_all</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">global_size</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">detail</span><span class="o">::</span><span class="n">grid_size</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span> <span class="o">*</span> <span class="n">detail</span><span class="o">::</span><span class="n">block_size</span><span class="p">(</span><span class="n">dim</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="cm">/*==--- [indexing] ---------------------------------------------------------==*/</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Dim</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">thread_idx</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
+<span class="n">ripple_all</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">thread_idx</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">detail</span><span class="o">::</span><span class="n">thread_idx</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">Dim</span><span class="o">&gt;</span><span class="p">(</span><span class="n">dim</span><span class="p">));</span>
 <span class="p">}</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Dim</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">block_idx</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
+<span class="n">ripple_all</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">block_idx</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">detail</span><span class="o">::</span><span class="n">block_idx</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">Dim</span><span class="o">&gt;</span><span class="p">(</span><span class="n">dim</span><span class="p">));</span>
 <span class="p">}</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Dim</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">global_idx</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
+<span class="n">ripple_all</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">global_idx</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">detail</span><span class="o">::</span><span class="n">global_idx</span><span class="p">(</span><span class="n">ripple_forward</span><span class="p">(</span><span class="n">dim</span><span class="p">));</span>
 <span class="p">}</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Dim</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">global_norm_idx</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">double</span> <span class="p">{</span>
+<span class="n">ripple_all</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">global_norm_idx</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">double</span> <span class="p">{</span>
   <span class="k">return</span> <span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">global_idx</span><span class="p">(</span><span class="n">dim</span><span class="p">))</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span>
          <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">detail</span><span class="o">::</span><span class="n">global_elements</span><span class="p">(</span><span class="n">dim</span><span class="p">));</span>
 <span class="p">}</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Dim</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">block_norm_idx</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">double</span> <span class="p">{</span>
+<span class="n">ripple_all</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">block_norm_idx</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">double</span> <span class="p">{</span>
   <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">block_idx</span><span class="p">(</span><span class="n">dim</span><span class="p">))</span> <span class="o">/</span>
          <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">block_size</span><span class="p">(</span><span class="n">dim</span><span class="p">));</span>
 <span class="p">}</span>
@@ -283,46 +284,46 @@
 <span class="cm">/*==--- [utilities] --------------------------------------------------------==*/</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Dim</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="kr">inline</span> <span class="k">auto</span>
+<span class="n">ripple_all</span> <span class="kr">inline</span> <span class="k">auto</span>
 <span class="n">first_thread_in_block</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">detail</span><span class="o">::</span><span class="n">thread_idx</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">Dim</span><span class="o">&gt;</span><span class="p">(</span><span class="n">dim</span><span class="p">))</span> <span class="o">==</span> <span class="kt">size_t</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
 <span class="p">}</span>
 
-<span class="n">ripple_host_device</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">first_thread_in_block</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
+<span class="n">ripple_all</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">first_thread_in_block</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">first_thread_in_block</span><span class="p">(</span><span class="n">dimx</span><span class="p">())</span> <span class="o">&amp;&amp;</span> <span class="n">first_thread_in_block</span><span class="p">(</span><span class="n">dimy</span><span class="p">())</span> <span class="o">&amp;&amp;</span>
          <span class="n">first_thread_in_block</span><span class="p">(</span><span class="n">dimz</span><span class="p">());</span>
 <span class="p">}</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Dim</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="kr">inline</span> <span class="k">auto</span>
+<span class="n">ripple_all</span> <span class="kr">inline</span> <span class="k">auto</span>
 <span class="n">last_thread_in_block</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">detail</span><span class="o">::</span><span class="n">thread_idx</span><span class="p">(</span><span class="n">ripple_forward</span><span class="p">(</span><span class="n">dim</span><span class="p">))</span> <span class="o">==</span>
          <span class="p">(</span><span class="n">detail</span><span class="o">::</span><span class="n">block_size</span><span class="p">(</span><span class="n">ripple_forward</span><span class="p">(</span><span class="n">dim</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="n">ripple_host_device</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">last_thread_in_block</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
+<span class="n">ripple_all</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">last_thread_in_block</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">last_thread_in_block</span><span class="p">(</span><span class="n">dimx</span><span class="p">())</span> <span class="o">&amp;&amp;</span> <span class="n">last_thread_in_block</span><span class="p">(</span><span class="n">dimy</span><span class="p">())</span> <span class="o">&amp;&amp;</span>
          <span class="n">last_thread_in_block</span><span class="p">(</span><span class="n">dimz</span><span class="p">());</span>
 <span class="p">}</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Dim</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="kr">inline</span> <span class="k">auto</span>
+<span class="n">ripple_all</span> <span class="kr">inline</span> <span class="k">auto</span>
 <span class="n">first_thread_in_grid</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">detail</span><span class="o">::</span><span class="n">global_idx</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">Dim</span><span class="o">&gt;</span><span class="p">(</span><span class="n">dim</span><span class="p">))</span> <span class="o">==</span> <span class="kt">size_t</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
 <span class="p">}</span>
 
-<span class="n">ripple_host_device</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">first_thread_in_grid</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
+<span class="n">ripple_all</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">first_thread_in_grid</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">first_thread_in_grid</span><span class="p">(</span><span class="n">dimx</span><span class="p">())</span> <span class="o">&amp;&amp;</span> <span class="n">first_thread_in_grid</span><span class="p">(</span><span class="n">dimy</span><span class="p">())</span> <span class="o">&amp;&amp;</span>
          <span class="n">first_thread_in_grid</span><span class="p">(</span><span class="n">dimz</span><span class="p">());</span>
 <span class="p">}</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Dim</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">last_thread_in_grid</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
+<span class="n">ripple_all</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">last_thread_in_grid</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">detail</span><span class="o">::</span><span class="n">global_idx</span><span class="p">(</span><span class="n">ripple_forward</span><span class="p">(</span><span class="n">dim</span><span class="p">))</span> <span class="o">==</span>
          <span class="p">(</span><span class="n">detail</span><span class="o">::</span><span class="n">global_elements</span><span class="p">(</span><span class="n">ripple_forward</span><span class="p">(</span><span class="n">dim</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="n">ripple_host_device</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">last_thread_in_grid</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
+<span class="n">ripple_all</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">last_thread_in_grid</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">last_thread_in_grid</span><span class="p">(</span><span class="n">dimx</span><span class="p">())</span> <span class="o">&amp;&amp;</span> <span class="n">last_thread_in_grid</span><span class="p">(</span><span class="n">dimy</span><span class="p">())</span> <span class="o">&amp;&amp;</span>
          <span class="n">last_thread_in_grid</span><span class="p">(</span><span class="n">dimz</span><span class="p">());</span>
 <span class="p">}</span>

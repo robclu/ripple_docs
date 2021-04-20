@@ -1,0 +1,79 @@
+
+.. _file_include_ripple_padding_internal_loader.hpp:
+
+File internal_loader.hpp
+========================
+
+
+= :ref:`file_include_ripple_padding_internal_loader.hpp` -------------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/padding/internal_loader.hpp``)
+-----------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_padding_internal_loader.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file defines an interface for inernal loading of data.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``ripple/iterator/iterator_traits.hpp`` (:ref:`file_include_ripple_iterator_iterator_traits.hpp`)
+
+- ``ripple/utility/forward.hpp`` (:ref:`file_include_ripple_utility_forward.hpp`)
+
+- ``ripple/utility/portability.hpp`` (:ref:`file_include_ripple_utility_portability.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_padding_copy_loader.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1InternalLoader`
+

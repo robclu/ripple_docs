@@ -1,0 +1,99 @@
+
+.. _file_include_ripple_storage_storage_element_traits.hpp:
+
+File storage_element_traits.hpp
+===============================
+
+
+= :ref:`file_include_ripple_storage_storage_element_traits.hpp` ------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/storage/storage_element_traits.hpp``)
+------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_storage_storage_element_traits.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file traits for elements to be stored.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``ripple/algorithm/max_element.hpp`` (:ref:`file_include_ripple_algorithm_max_element.hpp`)
+
+- ``storage_layout.hpp`` (:ref:`file_include_ripple_storage_storage_layout.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_storage_owned_storage.hpp`
+
+- :ref:`file_include_ripple_storage_detail_storage_traits_impl_.hpp`
+
+- :ref:`file_include_ripple_storage_contiguous_storage_view.hpp`
+
+- :ref:`file_include_ripple_storage_strided_storage_view.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+- :ref:`namespace_ripple__detail`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1detail_1_1ContigStorageHelper`
+
+- :ref:`exhale_struct_structripple_1_1detail_1_1ContigStorageHelper_1_1Vec`
+
+- :ref:`exhale_struct_structripple_1_1detail_1_1HasStorageLayout`
+
+- :ref:`exhale_struct_structripple_1_1detail_1_1HasStorageLayout_3_01T_3_01Ts_8_8_8_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1detail_1_1IsStorageLayout`
+
+- :ref:`exhale_struct_structripple_1_1detail_1_1IsStorageLayout_3_01StorageLayout_3_01Layout_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1StorageElementTraits`
+
+- :ref:`exhale_struct_structripple_1_1StorageElementTraits_3_01Vector_3_01T_00_01Size_01_4_01_4`
+

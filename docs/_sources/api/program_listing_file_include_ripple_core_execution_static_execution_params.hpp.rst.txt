@@ -64,7 +64,7 @@ Program Listing for File static_execution_params.hpp
    
     public:
      template <size_t Dims>
-     ripple_host_device constexpr auto size() const noexcept -> size_t {
+     ripple_all constexpr auto size() const noexcept -> size_t {
        constexpr size_t dim_pad     = Padding * 2;
        constexpr size_t dim_1d_size = SizeX + dim_pad;
        constexpr size_t dim_2d_size = dim_1d_size * (SizeY + dim_pad);
@@ -76,16 +76,16 @@ Program Listing for File static_execution_params.hpp
      }
    
      template <typename Dim>
-     ripple_host_device constexpr auto size(Dim&& dim) const noexcept -> size_t {
+     ripple_all constexpr auto size(Dim&& dim) const noexcept -> size_t {
        return size_impl(ripple_forward(dim));
      }
    
-     ripple_host_device constexpr auto padding() const noexcept -> size_t {
+     ripple_all constexpr auto padding() const noexcept -> size_t {
        return Padding;
      }
    
      template <size_t Dims, typename T>
-     ripple_host_device auto
+     ripple_all auto
      iterator(T* data) const noexcept -> BlockIterator<Value, Space<Dims>> {
        using SpaceType      = Space<Dims>;
        using Iterator       = BlockIterator<Value, SpaceType>;
@@ -94,26 +94,26 @@ Program Listing for File static_execution_params.hpp
      }
    
      template <size_t Dims>
-     ripple_host_device constexpr auto allocation_size() const noexcept -> size_t {
+     ripple_all constexpr auto allocation_size() const noexcept -> size_t {
        return Allocator::allocation_size(size<Dims>());
      }
    
     private:
-     ripple_host_device constexpr auto size_impl(DimX) const noexcept -> size_t {
+     ripple_all constexpr auto size_impl(DimX) const noexcept -> size_t {
        return SizeX;
      }
    
-     ripple_host_device constexpr auto size_impl(DimY) const noexcept -> size_t {
+     ripple_all constexpr auto size_impl(DimY) const noexcept -> size_t {
        return SizeY;
      }
    
-     ripple_host_device constexpr auto size_impl(DimZ) const noexcept -> size_t {
+     ripple_all constexpr auto size_impl(DimZ) const noexcept -> size_t {
        return SizeZ;
      }
    };
    
    template <size_t Dims, typename Shared = VoidShared, size_t Pad = 0>
-   ripple_host_device auto
+   ripple_all auto
    static_params() noexcept -> default_shared_exec_params_t<Dims, Shared, Pad> {
      return default_shared_exec_params_t<Dims, Shared, Pad>();
    }

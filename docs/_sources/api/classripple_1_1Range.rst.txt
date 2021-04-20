@@ -3,7 +3,7 @@
 Template Class Range
 ====================
 
-- Defined in :ref:`file_include_ripple_core_utility_range.hpp`
+- Defined in :ref:`file_include_ripple_utility_range.hpp`
 
 
 Nested Relationships
@@ -13,7 +13,7 @@ Nested Relationships
 Nested Types
 ************
 
-- :ref:`exhale_struct_structripple_1_1Range_1_1Iterator`
+- :ref:`exhale_struct_structripple_1_1Range_1_1IteratorImpl`
 
 
 Class Documentation

@@ -1,0 +1,117 @@
+
+.. _file_include_ripple_utility_memory.hpp:
+
+File memory.hpp
+===============
+
+
+= :ref:`file_include_ripple_utility_memory.hpp` ----------------------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/utility/memory.hpp``)
+--------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_utility_memory.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file defines a utility functions for memory related operations.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``cassert``
+
+- ``cstdint``
+
+- ``portability.hpp`` (:ref:`file_include_ripple_utility_portability.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_allocation_arena.hpp`
+
+- :ref:`file_include_ripple_allocation_freelist.hpp`
+
+- :ref:`file_include_ripple_allocation_pool_allocator.hpp`
+
+- :ref:`file_include_ripple_allocation_linear_allocator.hpp`
+
+- :ref:`file_include_ripple_container_device_block.hpp`
+
+- :ref:`file_include_ripple_container_host_block.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+- :ref:`namespace_ripple__cpu`
+
+- :ref:`namespace_ripple__gpu`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_memory_8hpp_1a2f5fb67f3deb7e44e035c058fba7472a`
+
+- :ref:`exhale_function_memory_8hpp_1a365cc80baab0b86aaf85326e7b8f7043`
+
+- :ref:`exhale_function_memory_8hpp_1a898c0d505b5694503b6416a9e2fe5dae`
+
+- :ref:`exhale_function_memory_8hpp_1a5c2fbadf3bd64bc52dd4a9eaf35b5898`
+
+- :ref:`exhale_function_memory_8hpp_1a698ee89143f8aba37a846891bee33605`
+
+- :ref:`exhale_function_memory_8hpp_1a8c6c54c789ca794261d23104e8adda20`
+
+- :ref:`exhale_function_memory_8hpp_1ae6135ec62c6a37f91021b8ad8adc7f68`
+
+- :ref:`exhale_function_memory_8hpp_1ab57b762d63f0b29e3d861ac12aee17ad`
+
+- :ref:`exhale_function_memory_8hpp_1afd05fc87eeffaa6eb6aafebd0910a0c2`
+
+- :ref:`exhale_function_memory_8hpp_1a12b16d981b69300d36be4ee3ff946a3f`
+
+- :ref:`exhale_function_memory_8hpp_1a8d03d3c92250e3884cebbec025301773`
+
+- :ref:`exhale_function_memory_8hpp_1a62240c90067d5bab05ff8f2b4b3212da`
+
+- :ref:`exhale_function_memory_8hpp_1a733bbc9ae6f7472bfbb066ed6c74499d`
+

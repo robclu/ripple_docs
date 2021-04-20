@@ -1,0 +1,166 @@
+
+.. _program_listing_file_include_ripple_iterator_indexed_iterator.hpp:
+
+Program Listing for File indexed_iterator.hpp
+=============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_iterator_indexed_iterator.hpp>` (``include/ripple/iterator/indexed_iterator.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_CONTAINER_INDEXED_ITERATOR_HPP
+   #define RIPPLE_CONTAINER_INDEXED_ITERATOR_HPP
+   
+   #include "block_iterator.hpp"
+   #include <ripple/container/vec.hpp>
+   #include <ripple/execution/thread_index.hpp>
+   
+   namespace ripple {
+   
+   template <typename T, typename Space>
+   class IndexedIterator : public BlockIterator<T, Space> {
+     using Value = typename layout_traits_t<T>::Value;
+   
+    public:
+     // clang-format off
+     using BlockIter = BlockIterator<T, Space>;
+     using Index     = int32_t;
+     using Indices   = Vec<Index, BlockIter::dims>;
+   
+     static constexpr size_t dims = BlockIter::dims;
+   
+     using Coordinate  = Coord<dims>;
+     using Coordinatef = Vec<Value, dims>;
+     // clang-format on
+   
+     /*==--- [consturction] ---------------------------------------------------==*/
+   
+     using BlockIter::BlockIter;
+   
+     ripple_all IndexedIterator(BlockIter block_iter) noexcept
+     : BlockIter{block_iter} {}
+   
+     /*==--- [interface] ------------------------------------------------------==*/
+   
+     template <typename Dim>
+     ripple_all constexpr auto
+     offset(Dim&& dim, int amount = 1) const noexcept -> IndexedIterator {
+       auto res = IndexedIterator{BlockIter::offset(ripple_forward(dim), amount)};
+       res.block_start_indices_ = block_start_indices_;
+       res.global_sizes_        = global_sizes_;
+       return res;
+     }
+   
+     template <typename Dim>
+     ripple_all auto block_start_index(Dim&& dim) const noexcept -> Index {
+       return block_start_indices_.component(ripple_forward(dim));
+     }
+   
+     template <typename Dim>
+     ripple_all auto
+     set_block_start_index(Dim&& dim, Index index) noexcept -> void {
+       block_start_indices_.component(ripple_forward(dim)) = index;
+     }
+   
+     template <typename Dim>
+     ripple_all auto global_size(Dim&& dim) const noexcept -> Index {
+       return global_sizes_[dim];
+     }
+   
+     template <typename Dim>
+     ripple_all auto
+     set_global_size(Dim&& dim, Index size) noexcept -> void {
+       global_sizes_[dim] = size;
+     }
+   
+     template <typename Dim>
+     ripple_all auto global_idx(Dim&& dim) const noexcept -> size_t {
+       return ::ripple::global_idx(ripple_forward(dim)) +
+              static_cast<size_t>(block_start_indices_[dim]);
+     }
+   
+     template <typename Dim>
+     ripple_all auto normalized_idx(Dim&& dim) const noexcept -> double {
+       return static_cast<double>(global_idx(ripple_forward(dim))) /
+              global_sizes_[dim];
+     }
+   
+     template <typename Dim>
+     ripple_all auto is_valid(Dim&& dim) const noexcept -> bool {
+       // const auto global_idx_in_block = ::ripple::global_idx(dim);
+       const size_t global_idx_in_block = ::ripple::global_idx(dim);
+       return (global_idx_in_block < (BlockIter::size(dim) + 2)) &&
+              ((static_cast<Index>(global_idx_in_block) +
+                block_start_indices_[dim]) < global_sizes_[dim]);
+     }
+   
+     template <typename Dim>
+     ripple_all auto
+     is_valid(Dim&& dim, Index extra) const noexcept -> bool {
+       // const auto global_idx_in_block = ::ripple::global_idx(dim);
+       const size_t global_idx_in_block = ::ripple::global_idx(dim);
+       return (global_idx_in_block < (BlockIter::size(dim) + 2 * extra)) &&
+              ((static_cast<Index>(global_idx_in_block) +
+                block_start_indices_[dim]) < (global_sizes_[dim] + extra));
+   
+       //    return (global_idx_in_block < (BlockIter::size(dim))) &&
+       //           ((static_cast<Index>(global_idx_in_block) +
+       //             block_start_indices_[dim]) < (global_sizes_[dim]));
+     }
+   
+     /*==--- [coordinates] ----------------------------------------------------==*/
+   
+     ripple_all auto coord() noexcept -> Coordinate {
+       return make_coord(std::make_index_sequence<dims>());
+     }
+   
+     ripple_all auto norm_coord() noexcept -> Coordinatef {
+       return make_norm_coord(std::make_index_sequence<dims>());
+     }
+   
+     ripple_all auto
+     scaled_norm_coord(Coordinatef sizes) noexcept -> Coordinatef {
+       return norm_coord() * sizes;
+     }
+   
+     ripple_all auto first_in_global_space() const noexcept -> bool {
+       for (size_t dim = 0; dim < dims; ++dim) {
+         if (global_idx(dim) != 0) {
+           return false;
+         }
+       }
+       return true;
+     }
+   
+     ripple_all auto last_in_global_space() const noexcept -> bool {
+       for (size_t dim = 0; dim < dims; ++dim) {
+         if (global_idx(dim) != (global_sizes_[dim] - 1)) {
+           return false;
+         }
+       }
+       return true;
+     }
+   
+    private:
+     Indices block_start_indices_{0}; 
+     Indices global_sizes_{0};        
+   
+     template <size_t... I>
+     ripple_all auto
+     make_coord(std::index_sequence<I...>) const noexcept -> Coordinate {
+       return Coordinate{global_idx(Dimension<I>())...};
+     }
+   
+     template <size_t... I>
+     ripple_all auto
+     make_norm_coord(std::index_sequence<I...>) const noexcept -> Coordinatef {
+       return Coordinatef{normalized_idx(Dimension<I>())...};
+     }
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_CONTAINER_INDEXED_ITERATOR_HPP

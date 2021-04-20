@@ -1,0 +1,270 @@
+
+.. _program_listing_file_include_ripple_storage_contiguous_storage_view.hpp:
+
+Program Listing for File contiguous_storage_view.hpp
+====================================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_storage_contiguous_storage_view.hpp>` (``include/ripple/storage/contiguous_storage_view.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_STORAGE_CONTIGUOUS_STORAGE_VIEW_HPP
+   #define RIPPLE_STORAGE_CONTIGUOUS_STORAGE_VIEW_HPP
+   
+   #include "owned_storage.hpp"
+   #include "storage_element_traits.hpp"
+   #include "storage_traits.hpp"
+   #include "storage_accessor.hpp"
+   
+   namespace ripple {
+   
+   template <typename... Ts>
+   class ContiguousStorageView
+   : public StorageAccessor<ContiguousStorageView<Ts...>> {
+     // clang-format off
+     using Ptr          = void*;
+     using Storage      = ContiguousStorageView;
+     using Helper       = detail::ContigStorageHelper<Ts...>;
+     // clang-format on
+   
+     template <typename T, bool B>
+     friend struct LayoutTraits;
+   
+     template <typename T>
+     using element_value_t = typename storage_element_traits_t<T>::Value;
+   
+     template <size_t I>
+     using nth_element_value_t = element_value_t<nth_element_t<I, Ts...>>;
+   
+     template <size_t I>
+     static constexpr size_t nth_element_components_v =
+       storage_element_traits_t<nth_element_t<I, Ts...>>::num_elements;
+   
+     /*==--- [constants] ------------------------------------------------------==*/
+   
+     // clang-format off
+     static constexpr auto   num_types         = sizeof...(Ts);
+     static constexpr auto   offsets           = Helper::offsets();
+     static constexpr size_t storage_byte_size = Helper::storage_byte_size();
+     // clang-format on
+   
+     template <typename T>
+     static constexpr size_t element_components =
+       storage_element_traits_t<T>::num_elements;
+   
+     /*==--- [allocator] ------------------------------------------------------==*/
+   
+     struct Allocator {
+       static constexpr size_t alignment = Helper::max_align;
+   
+       ripple_all static constexpr auto
+       allocation_size(size_t elements) noexcept -> size_t {
+         return storage_byte_size * elements;
+       }
+   
+       template <size_t Elements>
+       ripple_all static constexpr auto
+       allocation_size() noexcept -> size_t {
+         return storage_byte_size * Elements;
+       }
+   
+       static constexpr auto strided_types() noexcept -> size_t {
+         return 1;
+       }
+   
+       template <size_t I>
+       static constexpr auto num_elements() noexcept -> size_t {
+         return 1;
+       }
+   
+       template <size_t I>
+       static constexpr auto element_byte_size() noexcept -> size_t {
+         return storage_byte_size;
+       }
+   
+       template <typename SpaceImpl, typename Dim, diff_enable_t<Dim, int> = 0>
+       ripple_all static auto offset(
+         const Storage&                  storage,
+         const MultidimSpace<SpaceImpl>& space,
+         Dim&&                           dim,
+         int                             amount) noexcept -> Storage {
+         Storage r;
+         r.data_ = static_cast<void*>(
+           static_cast<char*>(storage.data_) +
+           amount * storage_byte_size * space.step(ripple_forward(dim)));
+         return r;
+       }
+   
+       template <typename SpaceImpl, typename Dim>
+       ripple_all static auto shift(
+         Storage&                        storage,
+         const MultidimSpace<SpaceImpl>& space,
+         Dim&&                           dim,
+         int                             amount) noexcept -> void {
+         storage.data_ = static_cast<void*>(
+           static_cast<char*>(storage.data_) +
+           amount * storage_byte_size * space.step(ripple_forward(dim)));
+       }
+   
+       template <typename SpaceImpl>
+       ripple_all static auto
+       create(void* ptr, const MultidimSpace<SpaceImpl>& space) noexcept
+         -> Storage {
+         Storage r;
+         r.data_ = ptr;
+         return r;
+       }
+     };
+   
+     /*==--- [members] --------------------------------------------------------==*/
+   
+     Ptr data_ = nullptr; 
+   
+    public:
+     template <size_t I>
+     static constexpr auto nth_element_components =
+       element_components<nth_element_t<I, Ts...>>;
+   
+     /*==--- [construction] ---------------------------------------------------==*/
+   
+     ContiguousStorageView() noexcept = default;
+   
+     template <typename Impl>
+     ripple_all
+     ContiguousStorageView(const StorageAccessor<Impl>& other) noexcept {
+       copy(static_cast<const Impl&>(other));
+     }
+   
+     ContiguousStorageView(const ContiguousStorageView& other) noexcept = default;
+   
+     ContiguousStorageView(ContiguousStorageView&& other) noexcept = default;
+   
+     /*==--- [operator overloads] ---------------------------------------------==*/
+   
+     template <typename Impl>
+     ripple_all auto operator=(const StorageAccessor<Impl>& other) noexcept
+       -> ContiguousStorageView& {
+       copy(static_cast<const Impl&>(other));
+       return *this;
+     }
+   
+     ripple_all auto operator=(const ContiguousStorageView& other) noexcept
+       -> ContiguousStorageView& {
+       copy(other);
+       return *this;
+     }
+   
+     ripple_all auto
+     operator=(ContiguousStorageView&& other) noexcept -> ContiguousStorageView& {
+       data_       = other.data_;
+       other.data_ = nullptr;
+       return *this;
+     }
+   
+     /*==--- [interface] ------------------------------------------------------==*/
+   
+     ripple_all auto data() noexcept -> void* {
+       return data_;
+     }
+   
+     ripple_all auto data() const noexcept -> const void* {
+       return data_;
+     }
+   
+     ripple_all auto data_ptrs() noexcept -> std::vector<Ptr> {
+       return {data_};
+     }
+   
+     template <typename Other>
+     ripple_all auto copy(const Other& other) noexcept -> void {
+       static_assert(
+         is_storage_accessor_v<Other>, "Argument type isn't a StorageAccessor!");
+   
+       unrolled_for<num_types>([&](auto i) {
+         constexpr size_t type_idx = i;
+         using Type                = nth_element_t<type_idx, Ts...>;
+         constexpr auto values     = element_components<Type>;
+   
+         copy_from_to<type_idx, values, Type>(other, *this);
+       });
+     }
+   
+     template <size_t I>
+     ripple_all constexpr auto components_of() const noexcept -> size_t {
+       return Helper::components[I];
+     }
+   
+     template <
+       size_t I,
+       typename T                  = nth_element_t<I, Ts...>,
+       non_vec_element_enable_t<T> = 0>
+     ripple_all auto get() noexcept -> element_value_t<T>& {
+       constexpr size_t offset = offsets[I];
+       return *static_cast<element_value_t<T>*>(
+         static_cast<void*>(static_cast<char*>(data_) + offset));
+     }
+   
+     template <
+       size_t I,
+       typename T                  = nth_element_t<I, Ts...>,
+       non_vec_element_enable_t<T> = 0>
+     ripple_all auto get() const noexcept -> const element_value_t<T>& {
+       constexpr size_t offset = offsets[I];
+       return *static_cast<const element_value_t<T>*>(
+         static_cast<void*>(static_cast<char*>(data_) + offset));
+     }
+   
+     template <
+       size_t I,
+       size_t J,
+       typename T              = nth_element_t<I, Ts...>,
+       vec_element_enable_t<T> = 0>
+     ripple_all auto get() noexcept -> element_value_t<T>& {
+       constexpr size_t elements = element_components<T>;
+       static_assert(J < elements, "Out of range acess for storage element!");
+       constexpr size_t offset = offsets[I];
+       return static_cast<element_value_t<T>*>(
+         static_cast<void*>(static_cast<char*>(data_) + offset))[J];
+     }
+   
+     template <
+       size_t I,
+       size_t J,
+       typename T              = nth_element_t<I, Ts...>,
+       vec_element_enable_t<T> = 0>
+     ripple_all auto get() const noexcept -> const element_value_t<T>& {
+       static_assert(
+         J < element_components<T>, "Out of range acess for storage element!");
+       constexpr size_t offset = offsets[I];
+       return static_cast<const element_value_t<T>*>(
+         static_cast<void*>(static_cast<char*>(data_) + offset))[J];
+     }
+   
+     template <
+       size_t I,
+       typename T              = nth_element_t<I, Ts...>,
+       vec_element_enable_t<T> = 0>
+     ripple_all auto get(size_t j) noexcept -> element_value_t<T>& {
+       constexpr size_t offset = offsets[I];
+       return static_cast<element_value_t<T>*>(
+         static_cast<void*>(static_cast<char*>(data_) + offset))[j];
+     }
+   
+     template <
+       size_t I,
+       typename T              = nth_element_t<I, Ts...>,
+       vec_element_enable_t<T> = 0>
+     ripple_all auto
+     get(size_t j) const noexcept -> const element_value_t<T>& {
+       constexpr size_t offset = offsets[I];
+       return static_cast<const element_value_t<T>*>(
+         static_cast<void*>(static_cast<char*>(data_) + offset))[j];
+     }
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_STORAGE_CONTIGUOUS_STORAGE_VIEW_HPP

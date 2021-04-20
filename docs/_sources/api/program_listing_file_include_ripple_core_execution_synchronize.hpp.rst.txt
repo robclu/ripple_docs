@@ -31,7 +31,7 @@ Program Listing for File synchronize.hpp
    
    namespace ripple {
    
-   ripple_host_device inline auto syncthreads() noexcept -> void {
+   ripple_all inline auto syncthreads() noexcept -> void {
    /*
     * For newer architectures, __syncthreads is called on each thread in a block,
     * so if one thread has returned and __syncthreads is called then there will
@@ -53,7 +53,7 @@ Program Listing for File synchronize.hpp
    #endif // __CUDACC__
    }
    
-   // ripple_host_device inline auto syncthreads() noexcept -> void {}
+   // ripple_all inline auto syncthreads() noexcept -> void {}
    
    } // namespace ripple
    

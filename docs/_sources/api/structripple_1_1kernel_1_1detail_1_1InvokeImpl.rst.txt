@@ -3,7 +3,7 @@
 Template Struct InvokeImpl
 ==========================
 
-- Defined in :ref:`file_include_ripple_core_functional_kernel_invoke_cpp_.hpp`
+- Defined in :ref:`file_include_ripple_functional_kernel_invoke_cpu_impl_.hpp`
 
 
 Struct Documentation

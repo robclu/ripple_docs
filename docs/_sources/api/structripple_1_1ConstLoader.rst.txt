@@ -3,7 +3,7 @@
 Template Struct ConstLoader
 ===========================
 
-- Defined in :ref:`file_include_ripple_core_boundary_const_loader.hpp`
+- Defined in :ref:`file_include_ripple_padding_const_loader.hpp`
 
 
 Inheritance Relationships
@@ -12,7 +12,7 @@ Inheritance Relationships
 Base Type
 *********
 
-- ``public ripple::BoundaryLoader< ConstLoader< T > >`` (:ref:`exhale_class_classripple_1_1BoundaryLoader`)
+- ``public ripple::PaddingLoader< ConstLoader< T > >`` (:ref:`exhale_class_classripple_1_1PaddingLoader`)
 
 
 Struct Documentation

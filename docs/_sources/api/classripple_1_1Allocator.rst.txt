@@ -3,7 +3,7 @@
 Template Class Allocator
 ========================
 
-- Defined in :ref:`file_include_ripple_core_allocation_allocator.hpp`
+- Defined in :ref:`file_include_ripple_allocation_allocator.hpp`
 
 
 Class Documentation

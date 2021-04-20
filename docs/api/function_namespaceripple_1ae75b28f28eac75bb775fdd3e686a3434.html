@@ -32,9 +32,7 @@
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
   <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
   <link rel="index" title="Index" href="../genindex.html" />
-  <link rel="search" title="Search" href="../search.html" />
-  <link rel="next" title="Template Function ripple::log_debug" href="function_namespaceripple_1a60be68dfac2ca20a946d86ba4f919d24.html" />
-  <link rel="prev" title="Template Function ripple::load_boundary" href="function_namespaceripple_1a5fa95ab936db809e859919bc6ee3450e.html" /> 
+  <link rel="search" title="Search" href="../search.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -143,6 +141,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -183,8 +182,6 @@
       </li>
 
         
-          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
-        
       <li>Template Function ripple::load_internal_boundary</li>
     
     
@@ -224,8 +221,8 @@
 <h2>Function Documentation<a class="headerlink" href="#function-documentation" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv4I_6size_t00EN6ripple22load_internal_boundaryEvRR6ItFromRR4ItTo">
-<span id="_CPPv3I_6size_t00EN6ripple22load_internal_boundaryERR6ItFromRR4ItTo"></span><span id="_CPPv2I_6size_t00EN6ripple22load_internal_boundaryERR6ItFromRR4ItTo"></span>template&lt;size_t <code class="sig-name descname">Dims</code>, typename <code class="sig-name descname">ItFrom</code>, typename <code class="sig-name descname">ItTo</code>&gt;<br /><span class="target" id="namespaceripple_1ae75b28f28eac75bb775fdd3e686a3434"></span>auto <code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">load_internal_boundary</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I_6size_t00EN6ripple22load_internal_boundaryEvRR6ItFromRR4ItTo" title="ripple::load_internal_boundary::ItFrom">ItFrom</a> &amp;&amp;<em>it_from</em>, <a class="reference internal" href="#_CPPv4I_6size_t00EN6ripple22load_internal_boundaryEvRR6ItFromRR4ItTo" title="ripple::load_internal_boundary::ItTo">ItTo</a> &amp;&amp;<em>it_to</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4I_6size_t00EN6ripple22load_internal_boundaryEvRR6ItFromRR4ItTo" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Loads boundary data from the <code class="docutils literal notranslate"><span class="pre">it_from</span></code> iterator into the boundary of the <code class="docutils literal notranslate"><span class="pre">it_to</span></code> iterator. </p>
+<span id="_CPPv3I_6size_t00EN6ripple22load_internal_boundaryERR6ItFromRR4ItTo"></span><span id="_CPPv2I_6size_t00EN6ripple22load_internal_boundaryERR6ItFromRR4ItTo"></span>template&lt;size_t <code class="sig-name descname">Dims</code>, typename <code class="sig-name descname">ItFrom</code>, typename <code class="sig-name descname">ItTo</code>&gt;<br /><span class="target" id="namespaceripple_1a06c5d2856d58bdf30b043e0a02e47476"></span>auto <code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">load_internal_boundary</code><span class="sig-paren">(</span><a class="reference internal" href="function_namespaceripple_1a06c5d2856d58bdf30b043e0a02e47476.html#_CPPv4I_6size_t00EN6ripple22load_internal_boundaryEvRR6ItFromRR4ItTo" title="ripple::load_internal_boundary::ItFrom">ItFrom</a> &amp;&amp;<em>from</em>, <a class="reference internal" href="function_namespaceripple_1a06c5d2856d58bdf30b043e0a02e47476.html#_CPPv4I_6size_t00EN6ripple22load_internal_boundaryEvRR6ItFromRR4ItTo" title="ripple::load_internal_boundary::ItTo">ItTo</a> &amp;&amp;<em>to</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<br /></dt>
+<dd><p>Loads padding data from the from iterator into the padding of the to iterator. </p>
 <p><dl class="xrefsect">
 <dt>
 <em>Todo:</em></dt>
@@ -233,9 +230,9 @@
 </dd></dl>
 
 <dl class="simple">
-<dt><strong>Pre</strong></dt><dd><p>The iterators must be offset to the locations from which the padding will be loaded. I.e, The top left cell pointed to by an iterator must * point to the first cell in the domain.</p>
+<dt><strong>Pre</strong></dt><dd><p>The iterators must be offset to the locations from which the padding will be loaded.</p>
 </dd>
-<dt><strong>Note</strong></dt><dd><p>If the <code class="docutils literal notranslate"><span class="pre">it_from</span></code> is a smaller (in any dimension) iterator than the <code class="docutils literal notranslate"><span class="pre">it_to</span></code> iterator, the behaviour is undefined. Additionally, it must be possible to offset both itertators by the padding amount of <code class="docutils literal notranslate"><span class="pre">it_to</span></code> in each dimension.</p>
+<dt><strong>Note</strong></dt><dd><p>If the from iterator is a smaller (in any dimension) iterator than the to iterator, the behaviour is undefined. Additionally, it must be possible to offset both itertators by the padding amount of to in each dimension.</p>
 </dd>
 </dl>
 </p>
@@ -248,8 +245,8 @@
 </p>
 <p><dl class="simple">
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">it_from</span></code>: The iterator to load the boundary data from. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">it_to</span></code>: The iterator to load the boundary data into. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">from</span></code>: The iterator to load the boundary data from. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">to</span></code>: The iterator to load the boundary data into. </p></li>
 </ul>
 </dd>
 <dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
@@ -270,15 +267,6 @@
               
             </div>
             <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="function_namespaceripple_1a60be68dfac2ca20a946d86ba4f919d24.html" class="btn btn-neutral float-right" title="Template Function ripple::log_debug" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
-      
-      
-        <a href="function_namespaceripple_1a5fa95ab936db809e859919bc6ee3450e.html" class="btn btn-neutral" title="Template Function ripple::load_boundary" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
-      
-    </div>
   
 
   

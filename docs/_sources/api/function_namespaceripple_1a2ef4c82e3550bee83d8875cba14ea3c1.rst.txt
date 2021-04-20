@@ -3,7 +3,7 @@
 Template Function ripple::expanded
 ==================================
 
-- Defined in :ref:`file_include_ripple_core_graph_modifier.hpp`
+- Defined in :ref:`file_include_ripple_graph_modifier.hpp`
 
 
 Function Documentation

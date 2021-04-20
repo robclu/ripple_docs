@@ -3,7 +3,7 @@
 Template Function ripple::get(const Tuple<Ts...>&)
 ==================================================
 
-- Defined in :ref:`file_include_ripple_core_container_tuple.hpp`
+- Defined in :ref:`file_include_ripple_container_tuple.hpp`
 
 
 Function Documentation

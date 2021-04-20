@@ -1,0 +1,80 @@
+
+.. _program_listing_file_include_ripple_functional_invocable.hpp:
+
+Program Listing for File invocable.hpp
+======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_functional_invocable.hpp>` (``include/ripple/functional/invocable.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_FUNCTIONAL_INVOCABLE_HPP
+   #define RIPPLE_FUNCTIONAL_INVOCABLE_HPP
+   
+   #include "functional_traits.hpp"
+   #include <ripple/container/tuple.hpp>
+   #include <ripple/utility/forward.hpp>
+   #include <ripple/utility/type_traits.hpp>
+   
+   namespace ripple {
+   
+   template <typename Functor>
+   class Invocable {
+    public:
+     /*==--- [construction] ---------------------------------------------------==*/
+   
+     template <typename F>
+     ripple_all Invocable(F&& functor) noexcept
+     : functor_{ripple_forward(functor)} {}
+   
+     ripple_all Invocable(const Functor& functor) noexcept
+     : functor_{functor} {}
+   
+     ripple_all Invocable(const Invocable& other) noexcept
+     : functor_{other.functor_} {}
+   
+     ripple_all Invocable(Invocable&& other) noexcept
+     : functor_{ripple_move(other._functor)} {}
+   
+     ripple_all auto
+     operator=(const Invocable& other) noexcept -> Invocable& {
+       functor_ = other.functor_;
+       return *this;
+     }
+   
+     ripple_all auto operator=(Invocable&& other) noexcept -> Invocable& {
+       if (&other != this) {
+         functor_ = ripple_move(other.functor_);
+       }
+       return *this;
+     }
+   
+     /*==--- [interface] ------------------------------------------------------==*/
+   
+     template <typename... Args>
+     ripple_all auto operator()(Args&&... args) const noexcept -> void {
+       functor_(ripple_forward(args)...);
+     }
+   
+     template <typename... Args>
+     ripple_all auto operator()(Args&&... args) noexcept -> void {
+       functor_(ripple_forward(args)...);
+     }
+   
+    private:
+     Functor functor_; 
+   };
+   
+   /*==--- [functions] -------------------------------------------------------==*/
+   
+   template <typename Functor>
+   ripple_all decltype(auto) make_invocable(Functor&& functor) noexcept {
+     return Invocable<std::decay_t<Functor>>{ripple_forward(functor)};
+   }
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_FUNCTIONAL_INVOCABLE_HPP

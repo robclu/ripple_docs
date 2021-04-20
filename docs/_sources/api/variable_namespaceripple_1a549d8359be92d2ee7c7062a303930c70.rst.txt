@@ -3,7 +3,7 @@
 Variable ripple::is_dimension_v
 ===============================
 
-- Defined in :ref:`file_include_ripple_core_utility_dim.hpp`
+- Defined in :ref:`file_include_ripple_utility_dim.hpp`
 
 
 Variable Documentation

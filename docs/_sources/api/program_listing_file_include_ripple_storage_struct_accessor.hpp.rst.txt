@@ -1,0 +1,80 @@
+
+.. _program_listing_file_include_ripple_storage_struct_accessor.hpp:
+
+Program Listing for File struct_accessor.hpp
+============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_storage_struct_accessor.hpp>` (``include/ripple/storage/struct_accessor.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_STORAGE_STRUCT_ACCESSOR_HPP
+   #define RIPPLE_STORAGE_STRUCT_ACCESSOR_HPP
+   
+   #include <ripple/utility/portability.hpp>
+   
+   namespace ripple {
+   
+   template <typename T, typename Storage, size_t Index>
+   struct StructAccessor : public Storage {
+     static constexpr bool is_accessor = is_storage_accessor_v<Storage>;
+   
+     ripple_all operator T() const noexcept {
+       if constexpr (is_accessor) {
+         return get_accessor<Index>();
+       } else {
+         return get_nonaccessor<Index>();
+       }
+     }
+   
+     ripple_all operator T&() noexcept {
+       if constexpr (is_accessor) {
+         return get_accessor<Index>();
+       } else {
+         return get_nonaccessor<Index>();
+       }
+     }
+   
+     ripple_all auto operator=(T v) noexcept -> StructAccessor& {
+       if constexpr (is_accessor) {
+         get_accessor<Index>() = v;
+       } else {
+         get_nonaccessor<Index>() = v;
+       }
+       return *this;
+     }
+   
+    private:
+     template <size_t I>
+     ripple_all auto get_accessor() const noexcept -> const T& {
+       static_assert(
+         I < Storage::template nth_element_components_v<0>,
+         "Invalid index for accessor!");
+       return Storage::template get<0, I>();
+     }
+   
+     template <size_t I>
+     ripple_all auto get_nonaccessor() const noexcept -> const T& {
+       return Storage::operator[](I);
+     }
+   
+     template <size_t I>
+     ripple_all auto get_accessor() noexcept -> T& {
+       static_assert(
+         I < Storage::template nth_element_components_v<0>,
+         "Invalid index for accessor!");
+       return Storage::template get<0, I>();
+     }
+   
+     template <size_t I>
+     ripple_all auto get_nonaccessor() noexcept -> T& {
+       return Storage::operator[](I);
+     }
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_STORAGE_STRUCT_ACCESSOR_HPP

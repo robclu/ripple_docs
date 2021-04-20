@@ -72,13 +72,13 @@ Program Listing for File contiguous_storage_view.hpp
      struct Allocator {
        static constexpr size_t alignment = Helper::max_align;
    
-       ripple_host_device static constexpr auto
+       ripple_all static constexpr auto
        allocation_size(size_t elements) noexcept -> size_t {
          return storage_byte_size * elements;
        }
    
        template <size_t Elements>
-       ripple_host_device static constexpr auto
+       ripple_all static constexpr auto
        allocation_size() noexcept -> size_t {
          return storage_byte_size * Elements;
        }
@@ -98,7 +98,7 @@ Program Listing for File contiguous_storage_view.hpp
        }
    
        template <typename SpaceImpl, typename Dim, diff_enable_t<Dim, int> = 0>
-       ripple_host_device static auto offset(
+       ripple_all static auto offset(
          const Storage&                  storage,
          const MultidimSpace<SpaceImpl>& space,
          Dim&&                           dim,
@@ -111,7 +111,7 @@ Program Listing for File contiguous_storage_view.hpp
        }
    
        template <typename SpaceImpl, typename Dim>
-       ripple_host_device static auto shift(
+       ripple_all static auto shift(
          Storage&                        storage,
          const MultidimSpace<SpaceImpl>& space,
          Dim&&                           dim,
@@ -122,7 +122,7 @@ Program Listing for File contiguous_storage_view.hpp
        }
    
        template <typename SpaceImpl>
-       ripple_host_device static auto
+       ripple_all static auto
        create(void* ptr, const MultidimSpace<SpaceImpl>& space) noexcept
          -> Storage {
          Storage r;
@@ -145,7 +145,7 @@ Program Listing for File contiguous_storage_view.hpp
      ContiguousStorageView() noexcept = default;
    
      template <typename Impl>
-     ripple_host_device
+     ripple_all
      ContiguousStorageView(const StorageAccessor<Impl>& other) noexcept {
        copy(static_cast<const Impl&>(other));
      }
@@ -157,19 +157,19 @@ Program Listing for File contiguous_storage_view.hpp
      /*==--- [operator overloads] ---------------------------------------------==*/
    
      template <typename Impl>
-     ripple_host_device auto operator=(const StorageAccessor<Impl>& other) noexcept
+     ripple_all auto operator=(const StorageAccessor<Impl>& other) noexcept
        -> ContiguousStorageView& {
        copy(static_cast<const Impl&>(other));
        return *this;
      }
    
-     ripple_host_device auto operator=(const ContiguousStorageView& other) noexcept
+     ripple_all auto operator=(const ContiguousStorageView& other) noexcept
        -> ContiguousStorageView& {
        copy(other);
        return *this;
      }
    
-     ripple_host_device auto
+     ripple_all auto
      operator=(ContiguousStorageView&& other) noexcept -> ContiguousStorageView& {
        data_       = other.data_;
        other.data_ = nullptr;
@@ -178,20 +178,20 @@ Program Listing for File contiguous_storage_view.hpp
    
      /*==--- [interface] ------------------------------------------------------==*/
    
-     ripple_host_device auto data() noexcept -> void* {
+     ripple_all auto data() noexcept -> void* {
        return data_;
      }
    
-     ripple_host_device auto data() const noexcept -> const void* {
+     ripple_all auto data() const noexcept -> const void* {
        return data_;
      }
    
-     ripple_host_device auto data_ptrs() noexcept -> std::vector<Ptr> {
+     ripple_all auto data_ptrs() noexcept -> std::vector<Ptr> {
        return {data_};
      }
    
      template <typename Other>
-     ripple_host_device auto copy(const Other& other) noexcept -> void {
+     ripple_all auto copy(const Other& other) noexcept -> void {
        static_assert(
          is_storage_accessor_v<Other>, "Argument type isn't a StorageAccessor!");
    
@@ -205,7 +205,7 @@ Program Listing for File contiguous_storage_view.hpp
      }
    
      template <size_t I>
-     ripple_host_device constexpr auto components_of() const noexcept -> size_t {
+     ripple_all constexpr auto components_of() const noexcept -> size_t {
        return Helper::components[I];
      }
    
@@ -213,7 +213,7 @@ Program Listing for File contiguous_storage_view.hpp
        size_t I,
        typename T                  = nth_element_t<I, Ts...>,
        non_vec_element_enable_t<T> = 0>
-     ripple_host_device auto get() noexcept -> element_value_t<T>& {
+     ripple_all auto get() noexcept -> element_value_t<T>& {
        constexpr size_t offset = offsets[I];
        return *static_cast<element_value_t<T>*>(
          static_cast<void*>(static_cast<char*>(data_) + offset));
@@ -223,7 +223,7 @@ Program Listing for File contiguous_storage_view.hpp
        size_t I,
        typename T                  = nth_element_t<I, Ts...>,
        non_vec_element_enable_t<T> = 0>
-     ripple_host_device auto get() const noexcept -> const element_value_t<T>& {
+     ripple_all auto get() const noexcept -> const element_value_t<T>& {
        constexpr size_t offset = offsets[I];
        return *static_cast<const element_value_t<T>*>(
          static_cast<void*>(static_cast<char*>(data_) + offset));
@@ -234,7 +234,7 @@ Program Listing for File contiguous_storage_view.hpp
        size_t J,
        typename T              = nth_element_t<I, Ts...>,
        vec_element_enable_t<T> = 0>
-     ripple_host_device auto get() noexcept -> element_value_t<T>& {
+     ripple_all auto get() noexcept -> element_value_t<T>& {
        constexpr size_t elements = element_components<T>;
        static_assert(J < elements, "Out of range acess for storage element!");
        constexpr size_t offset = offsets[I];
@@ -247,7 +247,7 @@ Program Listing for File contiguous_storage_view.hpp
        size_t J,
        typename T              = nth_element_t<I, Ts...>,
        vec_element_enable_t<T> = 0>
-     ripple_host_device auto get() const noexcept -> const element_value_t<T>& {
+     ripple_all auto get() const noexcept -> const element_value_t<T>& {
        static_assert(
          J < element_components<T>, "Out of range acess for storage element!");
        constexpr size_t offset = offsets[I];
@@ -259,7 +259,7 @@ Program Listing for File contiguous_storage_view.hpp
        size_t I,
        typename T              = nth_element_t<I, Ts...>,
        vec_element_enable_t<T> = 0>
-     ripple_host_device auto get(size_t j) noexcept -> element_value_t<T>& {
+     ripple_all auto get(size_t j) noexcept -> element_value_t<T>& {
        constexpr size_t offset = offsets[I];
        return static_cast<element_value_t<T>*>(
          static_cast<void*>(static_cast<char*>(data_) + offset))[j];
@@ -269,7 +269,7 @@ Program Listing for File contiguous_storage_view.hpp
        size_t I,
        typename T              = nth_element_t<I, Ts...>,
        vec_element_enable_t<T> = 0>
-     ripple_host_device auto
+     ripple_all auto
      get(size_t j) const noexcept -> const element_value_t<T>& {
        constexpr size_t offset = offsets[I];
        return static_cast<const element_value_t<T>*>(

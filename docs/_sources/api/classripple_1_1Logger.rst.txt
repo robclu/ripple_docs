@@ -3,7 +3,7 @@
 Template Class Logger
 =====================
 
-- Defined in :ref:`file_include_ripple_core_utility_logger.hpp`
+- Defined in :ref:`file_include_ripple_utility_logger.hpp`
 
 
 Class Documentation

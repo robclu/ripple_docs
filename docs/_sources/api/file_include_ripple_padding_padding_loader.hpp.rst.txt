@@ -1,0 +1,81 @@
+
+.. _file_include_ripple_padding_padding_loader.hpp:
+
+File padding_loader.hpp
+=======================
+
+
+= :ref:`file_include_ripple_padding_padding_loader.hpp` --------------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/padding/padding_loader.hpp``)
+----------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_padding_padding_loader.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file defines an interface for boundary loading.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``ripple/iterator/iterator_traits.hpp`` (:ref:`file_include_ripple_iterator_iterator_traits.hpp`)
+
+- ``ripple/utility/portability.hpp`` (:ref:`file_include_ripple_utility_portability.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_padding_const_loader.hpp`
+
+- :ref:`file_include_ripple_padding_fo_extrap_loader.hpp`
+
+- :ref:`file_include_ripple_padding_load_padding.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1PaddingLoader`
+

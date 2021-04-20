@@ -3,7 +3,7 @@
 Template Function ripple::load_boundary
 =======================================
 
-- Defined in :ref:`file_include_ripple_core_boundary_load_boundary.hpp`
+- Defined in :ref:`file_include_ripple_padding_load_padding.hpp`
 
 
 Function Documentation

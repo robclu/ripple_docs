@@ -32,9 +32,7 @@
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
   <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
   <link rel="index" title="Index" href="../genindex.html" />
-  <link rel="search" title="Search" href="../search.html" />
-  <link rel="next" title="Template Function ripple::detail::load_global_boundary(DimY, It&amp;&amp;, const GhostIndex&lt;Dims&gt;&amp;, Loader&amp;&amp;, Args&amp;&amp;…)" href="function_load__global__boundary__impl___8hpp_1ad6767e7e04b298d3b43337c04e97ab83.html" />
-  <link rel="prev" title="Function ripple::detail::grid_size(size_t)" href="function_thread__index__impl___8hpp_1a5112ce11c5974d96e6e438d5c230341d.html" /> 
+  <link rel="search" title="Search" href="../search.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -143,6 +141,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -183,8 +182,6 @@
       </li>
 
         
-          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
-        
       <li>Template Function ripple::detail::load_global_boundary(DimX, It&amp;&amp;, const GhostIndex&lt;Dims&gt;&amp;, Loader&amp;&amp;, Args&amp;&amp;…)</li>
     
     
@@ -224,14 +221,7 @@
 <h2>Function Documentation<a class="headerlink" href="#function-documentation" title="Permalink to this headline">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>doxygenfunction: Unable to resolve multiple matches for function “ripple::detail::load_global_boundary” with arguments ((DimX, It&amp;&amp;, const GhostIndex&lt;Dims&gt;&amp;, Loader&amp;&amp;, Args&amp;&amp;…)) in doxygen xml output for project “Ripple” from directory: /home/hiccup/Software/ripple/build/docs/docs/doxygen/xml.
-Potential matches:
-</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">It</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">Dims</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Loader</span><span class="p">,</span> <span class="k">typename</span> <span class="p">...</span><span class="n">Args</span><span class="o">&gt;</span> <span class="k">auto</span> <span class="n">load_global_boundary</span><span class="p">(</span><span class="n">DimX</span> <span class="n">dim</span><span class="p">,</span> <span class="n">It</span> <span class="o">&amp;&amp;</span><span class="n">it</span><span class="p">,</span> <span class="k">const</span> <span class="n">GhostIndex</span><span class="o">&lt;</span><span class="n">Dims</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">indices</span><span class="p">,</span> <span class="n">Loader</span> <span class="o">&amp;&amp;</span><span class="n">loader</span><span class="p">,</span> <span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">void</span>
-<span class="o">-</span> <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">It</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">Dims</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Loader</span><span class="p">,</span> <span class="k">typename</span> <span class="p">...</span><span class="n">Args</span><span class="o">&gt;</span> <span class="k">auto</span> <span class="n">load_global_boundary</span><span class="p">(</span><span class="n">DimY</span> <span class="n">dim</span><span class="p">,</span> <span class="n">It</span> <span class="o">&amp;&amp;</span><span class="n">it</span><span class="p">,</span> <span class="k">const</span> <span class="n">GhostIndex</span><span class="o">&lt;</span><span class="n">Dims</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">indices</span><span class="p">,</span> <span class="n">Loader</span> <span class="o">&amp;&amp;</span><span class="n">loader</span><span class="p">,</span> <span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">void</span>
-<span class="o">-</span> <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">It</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">Dims</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Loader</span><span class="p">,</span> <span class="k">typename</span> <span class="p">...</span><span class="n">Args</span><span class="o">&gt;</span> <span class="k">auto</span> <span class="n">load_global_boundary</span><span class="p">(</span><span class="n">DimZ</span> <span class="n">dim</span><span class="p">,</span> <span class="n">It</span> <span class="o">&amp;&amp;</span><span class="n">it</span><span class="p">,</span> <span class="k">const</span> <span class="n">GhostIndex</span><span class="o">&lt;</span><span class="n">Dims</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">indices</span><span class="p">,</span> <span class="n">Loader</span> <span class="o">&amp;&amp;</span><span class="n">loader</span><span class="p">,</span> <span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">void</span>
-</pre></div>
-</div>
+<p>doxygenfunction: Cannot find function “ripple::detail::load_global_boundary” in doxygen xml output for project “Ripple” from directory: /home/hiccup/Catalyst/ripple/build/docs/docs/doxygen/xml</p>
 </div>
 </div>
 </div>
@@ -241,15 +231,6 @@ Potential matches:
               
             </div>
             <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="function_load__global__boundary__impl___8hpp_1ad6767e7e04b298d3b43337c04e97ab83.html" class="btn btn-neutral float-right" title="Template Function ripple::detail::load_global_boundary(DimY, It&amp;&amp;, const GhostIndex&lt;Dims&gt;&amp;, Loader&amp;&amp;, Args&amp;&amp;…)" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
-      
-      
-        <a href="function_thread__index__impl___8hpp_1a5112ce11c5974d96e6e438d5c230341d.html" class="btn btn-neutral" title="Function ripple::detail::grid_size(size_t)" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
-      
-    </div>
   
 
   

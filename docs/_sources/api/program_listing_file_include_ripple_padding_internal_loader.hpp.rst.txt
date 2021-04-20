@@ -1,0 +1,50 @@
+
+.. _program_listing_file_include_ripple_padding_internal_loader.hpp:
+
+Program Listing for File internal_loader.hpp
+============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_padding_internal_loader.hpp>` (``include/ripple/padding/internal_loader.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_PADDING_INTERNAL_LOADER_HPP
+   #define RIPPLE_PADDING_INTERNAL_LOADER_HPP
+   
+   #include <ripple/iterator/iterator_traits.hpp>
+   #include <ripple/utility/forward.hpp>
+   #include <ripple/utility/portability.hpp>
+   
+   namespace ripple {
+   
+   template <typename Impl>
+   class InternalLoader {
+     ripple_all constexpr auto impl() const -> const Impl* {
+       return static_cast<const Impl*>(this);
+     }
+   
+    protected:
+     template <typename Iterator>
+     ripple_all auto
+     static_assert_iterator(Iterator&&) const noexcept -> void {
+       static_assert(
+         is_iterator_v<Iterator>,
+         "Boundary loader requires a parameter which is an iterator!");
+     }
+   
+    public:
+     template <typename IteratorFrom, typename IteratorTo, typename... Args>
+     ripple_all constexpr auto
+     load(IteratorFrom&& from, IteratorTo&& to, Args&&... args) const noexcept
+       -> void {
+       impl()->load(
+         ripple_forward(from), ripple_forward(to), ripple_forward(args)...);
+     }
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_PADDING_INTERNAL_LOADER_HPP

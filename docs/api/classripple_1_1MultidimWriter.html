@@ -32,9 +32,7 @@
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
   <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
   <link rel="index" title="Index" href="../genindex.html" />
-  <link rel="search" title="Search" href="../search.html" />
-  <link rel="next" title="Template Class Node" href="classripple_1_1Node.html" />
-  <link rel="prev" title="Class MultiarchAllocator" href="classripple_1_1MultiarchAllocator.html" /> 
+  <link rel="search" title="Search" href="../search.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -143,6 +141,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -182,8 +181,6 @@
         </a> &gt;
       </li>
 
-        
-          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
         
       <li>Class MultidimWriter</li>
     
@@ -240,221 +237,10 @@
 </div>
 <div class="section" id="class-documentation">
 <h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
-<dl class="cpp class">
-<dt id="_CPPv4N6ripple14MultidimWriterE">
-<span id="_CPPv3N6ripple14MultidimWriterE"></span><span id="_CPPv2N6ripple14MultidimWriterE"></span><span id="ripple::MultidimWriter"></span><span class="target" id="classripple_1_1MultidimWriter"></span><em class="property">class </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">MultidimWriter</code><a class="headerlink" href="#_CPPv4N6ripple14MultidimWriterE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>The <a class="reference internal" href="#classripple_1_1MultidimWriter"><span class="std std-ref">MultidimWriter</span></a> class defines an interface for writing data to a file for multi dimensional data types. </p>
-<p>Subclassed by <a class="reference internal" href="classripple_1_1VtkWriter.html#classripple_1_1VtkWriter"><span class="std std-ref">ripple::VtkWriter</span></a></p>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Types</p>
-<dl class="cpp type">
-<dt id="_CPPv4N6ripple14MultidimWriter12ElementNamesE">
-<span id="_CPPv3N6ripple14MultidimWriter12ElementNamesE"></span><span id="_CPPv2N6ripple14MultidimWriter12ElementNamesE"></span><span class="target" id="classripple_1_1MultidimWriter_1a68df6df31f63dd563145cb35b8895115"></span><em class="property">using </em><code class="sig-name descname">ElementNames</code> = std::vector&lt;std::string&gt;<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter12ElementNamesE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>The type of the container for the element names. </p>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenclass: Cannot find class “ripple::MultidimWriter” in doxygen xml output for project “Ripple” from directory: /home/hiccup/Catalyst/ripple/build/docs/docs/doxygen/xml</p>
 </div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="cpp function">
-<dt id="_CPPv4N6ripple14MultidimWriter14MultidimWriterEv">
-<span id="_CPPv3N6ripple14MultidimWriter14MultidimWriterEv"></span><span id="_CPPv2N6ripple14MultidimWriter14MultidimWriterEv"></span><span id="ripple::MultidimWriter::MultidimWriter"></span><span class="target" id="classripple_1_1MultidimWriter_1a00a90cf9c8d7477b04aec50fa3adaae3"></span><code class="sig-name descname">MultidimWriter</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = default<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter14MultidimWriterEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Default constructor. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N6ripple14MultidimWriterD0Ev">
-<span id="_CPPv3N6ripple14MultidimWriterD0Ev"></span><span id="_CPPv2N6ripple14MultidimWriterD0Ev"></span><span id="ripple::MultidimWriter::~MultidimWriter"></span><span class="target" id="classripple_1_1MultidimWriter_1af4ab4565cacc2ad333ef400068f76bff"></span><code class="sig-name descname">~MultidimWriter</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = default<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriterD0Ev" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Default destructor. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4I0_6size_tDpEN6ripple14MultidimWriter5writeEvRK6TensorI1T4DimsERK12ElementNamesDpRR4Args">
-<span id="_CPPv3I0_6size_tDpEN6ripple14MultidimWriter5writeERK6TensorI1T4DimsERK12ElementNamesDpRR4Args"></span><span id="_CPPv2I0_6size_tDpEN6ripple14MultidimWriter5writeERK6TensorI1T4DimsERK12ElementNamesDpRR4Args"></span>template&lt;typename <code class="sig-name descname">T</code>, size_t <code class="sig-name descname">Dims</code>, typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classripple_1_1MultidimWriter_1a3691867e10287c386544e66541a49c44"></span>auto <code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="classripple_1_1Tensor.html#_CPPv4I0_6size_tEN6ripple6TensorE" title="ripple::Tensor">Tensor</a>&lt;<a class="reference internal" href="#_CPPv4I0_6size_tDpEN6ripple14MultidimWriter5writeEvRK6TensorI1T4DimsERK12ElementNamesDpRR4Args" title="ripple::MultidimWriter::write::T">T</a>, <a class="reference internal" href="#_CPPv4I0_6size_tDpEN6ripple14MultidimWriter5writeEvRK6TensorI1T4DimsERK12ElementNamesDpRR4Args" title="ripple::MultidimWriter::write::Dims">Dims</a>&gt; &amp;<em>data</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple14MultidimWriter12ElementNamesE" title="ripple::MultidimWriter::ElementNames">ElementNames</a> &amp;<em>element_names</em>, <a class="reference internal" href="#_CPPv4I0_6size_tDpEN6ripple14MultidimWriter5writeEvRK6TensorI1T4DimsERK12ElementNamesDpRR4Args" title="ripple::MultidimWriter::write::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> -&gt; void<a class="headerlink" href="#_CPPv4I0_6size_tDpEN6ripple14MultidimWriter5writeEvRK6TensorI1T4DimsERK12ElementNamesDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Writes the elements with the given names from the data tensor. </p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>This will cause a compile time error if the data dos not implement the <a class="reference internal" href="classripple_1_1Printable.html#classripple_1_1Printable"><span class="std std-ref">Printable</span></a> interface, or is an arithmetic type.</p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code>: The data to write. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">element_names</span></code>: The names of the elements to write. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: Additional arguments for getting an element. </p></li>
-</ul>
-</dd>
-<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the tensor data. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Dims</span></code>: The number of dimensions for the tensor. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The type of additional arguments. </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N6ripple14MultidimWriter8set_nameENSt6stringE">
-<span id="_CPPv3N6ripple14MultidimWriter8set_nameENSt6stringE"></span><span id="_CPPv2N6ripple14MultidimWriter8set_nameENSt6stringE"></span><span id="ripple::MultidimWriter::set_name__ss"></span><span class="target" id="classripple_1_1MultidimWriter_1a73a87ca5f86b3cb1990174a5e30869de"></span>auto <code class="sig-name descname">set_name</code><span class="sig-paren">(</span>std::string <em>name</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void = 0<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter8set_nameENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Sets the name of the data to write. </p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: The name to set for the data. </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N6ripple14MultidimWriter14set_resolutionEd">
-<span id="_CPPv3N6ripple14MultidimWriter14set_resolutionEd"></span><span id="_CPPv2N6ripple14MultidimWriter14set_resolutionEd"></span><span id="ripple::MultidimWriter::set_resolution__double"></span><span class="target" id="classripple_1_1MultidimWriter_1ac663e9d460e9e3c1f11830babf285304"></span>auto <code class="sig-name descname">set_resolution</code><span class="sig-paren">(</span>double <em>res</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void = 0<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter14set_resolutionEd" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Sets the resolution of the data. </p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">res</span></code>: The resolution for the data. </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N6ripple14MultidimWriter14write_metadataERK8DimSizes">
-<span id="_CPPv3N6ripple14MultidimWriter14write_metadataERK8DimSizes"></span><span id="_CPPv2N6ripple14MultidimWriter14write_metadataERK8DimSizes"></span><span id="ripple::MultidimWriter::write_metadata__DimSizesCR"></span><span class="target" id="classripple_1_1MultidimWriter_1a488f875b7997467f77eadbfca0ec086f"></span>auto <code class="sig-name descname">write_metadata</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple14MultidimWriter8DimSizesE" title="ripple::MultidimWriter::DimSizes">DimSizes</a> &amp;<em>sizes</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void = 0<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter14write_metadataERK8DimSizes" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Writes the metadata for the writer, if there is any. </p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sizes</span></code>: The sizes of the dimension to write. </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N6ripple14MultidimWriter13write_elementERK16PrintableElement">
-<span id="_CPPv3N6ripple14MultidimWriter13write_elementERK16PrintableElement"></span><span id="_CPPv2N6ripple14MultidimWriter13write_elementERK16PrintableElement"></span><span id="ripple::MultidimWriter::write_element__PrintableElementCR"></span><span class="target" id="classripple_1_1MultidimWriter_1aeebcb3c416e1636f1509aa391d1fa566"></span>auto <code class="sig-name descname">write_element</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="classripple_1_1PrintableElement.html#_CPPv4N6ripple16PrintableElementE" title="ripple::PrintableElement">PrintableElement</a> &amp;<em>element</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void = 0<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter13write_elementERK16PrintableElement" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Writes the element to the output file. </p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">element</span></code>: The printable element to write. </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N6ripple14MultidimWriter20write_element_headerERK16PrintableElement">
-<span id="_CPPv3N6ripple14MultidimWriter20write_element_headerERK16PrintableElement"></span><span id="_CPPv2N6ripple14MultidimWriter20write_element_headerERK16PrintableElement"></span><span id="ripple::MultidimWriter::write_element_header__PrintableElementCR"></span><span class="target" id="classripple_1_1MultidimWriter_1a9945eb85bfa2b6fe68b84b7125c5349b"></span>auto <code class="sig-name descname">write_element_header</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="classripple_1_1PrintableElement.html#_CPPv4N6ripple16PrintableElementE" title="ripple::PrintableElement">PrintableElement</a> &amp;<em>element</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void = 0<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter20write_element_headerERK16PrintableElement" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Writes any necessary header data for an <code class="docutils literal notranslate"><span class="pre">element</span></code>. </p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">element</span></code>: The printable element to write the start data </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N6ripple14MultidimWriter20write_element_footerEv">
-<span id="_CPPv3N6ripple14MultidimWriter20write_element_footerEv"></span><span id="_CPPv2N6ripple14MultidimWriter20write_element_footerEv"></span><span id="ripple::MultidimWriter::write_element_footer"></span><span class="target" id="classripple_1_1MultidimWriter_1acdf3fbcb7800d844ecb87dfb4835d465"></span>auto <code class="sig-name descname">write_element_footer</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void = 0<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter20write_element_footerEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Writes a footer after all element data has been written. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N6ripple14MultidimWriter4openENSt6stringENSt6stringE">
-<span id="_CPPv3N6ripple14MultidimWriter4openENSt6stringENSt6stringE"></span><span id="_CPPv2N6ripple14MultidimWriter4openENSt6stringENSt6stringE"></span><span id="ripple::MultidimWriter::open__ss.ss"></span><span class="target" id="classripple_1_1MultidimWriter_1aa4e83bb00cd456579929d51c15ce6630"></span>auto <code class="sig-name descname">open</code><span class="sig-paren">(</span>std::string <em>path</em> = &quot;&quot;, std::string <em>suffix</em> = &quot;&quot;<span class="sig-paren">)</span> -&gt; void = 0<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter4openENSt6stringENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Opens the file for the writer, using the base filename for the writer, appending the suffix to the base filename. </p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">path</span></code>: Path to the directory for the file. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">suffix</span></code>: The suffix to append to the base filename. </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N6ripple14MultidimWriter5closeEv">
-<span id="_CPPv3N6ripple14MultidimWriter5closeEv"></span><span id="_CPPv2N6ripple14MultidimWriter5closeEv"></span><span id="ripple::MultidimWriter::close"></span><span class="target" id="classripple_1_1MultidimWriter_1a5713c7023fcc62823b21446c14ac0bf7"></span>auto <code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span> -&gt; void = 0<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter5closeEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Closes the file being written to. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4NK6ripple14MultidimWriter5cloneEv">
-<span id="_CPPv3NK6ripple14MultidimWriter5cloneEv"></span><span id="_CPPv2NK6ripple14MultidimWriter5cloneEv"></span><span id="ripple::MultidimWriter::cloneC"></span><span class="target" id="classripple_1_1MultidimWriter_1a1b932e32c34c30d3eaf792364d113257"></span>auto <code class="sig-name descname">clone</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; std::shared_ptr&lt;<a class="reference internal" href="#_CPPv4N6ripple14MultidimWriterE" title="ripple::MultidimWriter">MultidimWriter</a>&gt; = 0<a class="headerlink" href="#_CPPv4NK6ripple14MultidimWriter5cloneEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Clones the writer, returning a copy with the same paramters. </p>
-</dd></dl>
-
-</div>
-<dl class="cpp struct">
-<dt id="_CPPv4N6ripple14MultidimWriter8DimSizesE">
-<span id="_CPPv3N6ripple14MultidimWriter8DimSizesE"></span><span id="_CPPv2N6ripple14MultidimWriter8DimSizesE"></span><span id="ripple::MultidimWriter::DimSizes"></span><span class="target" id="structripple_1_1MultidimWriter_1_1DimSizes"></span><em class="property">struct </em><code class="sig-name descname">DimSizes</code><a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter8DimSizesE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Struct for the sizes of the dimensions to write. </p>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="cpp function">
-<dt id="_CPPv4NK6ripple14MultidimWriter8DimSizes8elementsEv">
-<span id="_CPPv3NK6ripple14MultidimWriter8DimSizes8elementsEv"></span><span id="_CPPv2NK6ripple14MultidimWriter8DimSizes8elementsEv"></span><span id="ripple::MultidimWriter::DimSizes::elementsC"></span><span class="target" id="structripple_1_1MultidimWriter_1_1DimSizes_1a081420d9eeddf917c05f20445c236a10"></span>auto <code class="sig-name descname">elements</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; size_t<a class="headerlink" href="#_CPPv4NK6ripple14MultidimWriter8DimSizes8elementsEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets the total number of elements in the grid. </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>The number of elements in the grid. </p>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-</div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Members</p>
-<dl class="cpp var">
-<dt id="_CPPv4N6ripple14MultidimWriter8DimSizes1xE">
-<span id="_CPPv3N6ripple14MultidimWriter8DimSizes1xE"></span><span id="_CPPv2N6ripple14MultidimWriter8DimSizes1xE"></span><span id="ripple::MultidimWriter::DimSizes::x__s"></span><span class="target" id="structripple_1_1MultidimWriter_1_1DimSizes_1a38a317b78014ba68c6bbbff965e095c3"></span>size_t <code class="sig-name descname">x</code> = 1<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter8DimSizes1xE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Size of x dimension. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt id="_CPPv4N6ripple14MultidimWriter8DimSizes1yE">
-<span id="_CPPv3N6ripple14MultidimWriter8DimSizes1yE"></span><span id="_CPPv2N6ripple14MultidimWriter8DimSizes1yE"></span><span id="ripple::MultidimWriter::DimSizes::y__s"></span><span class="target" id="structripple_1_1MultidimWriter_1_1DimSizes_1a61d473cbe55ed2717ae322b259c97c03"></span>size_t <code class="sig-name descname">y</code> = 1<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter8DimSizes1yE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Size of x dimension. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt id="_CPPv4N6ripple14MultidimWriter8DimSizes1zE">
-<span id="_CPPv3N6ripple14MultidimWriter8DimSizes1zE"></span><span id="_CPPv2N6ripple14MultidimWriter8DimSizes1zE"></span><span id="ripple::MultidimWriter::DimSizes::z__s"></span><span class="target" id="structripple_1_1MultidimWriter_1_1DimSizes_1a8a4caaf8e8a75afb59b6333ebf19dc2a"></span>size_t <code class="sig-name descname">z</code> = 1<a class="headerlink" href="#_CPPv4N6ripple14MultidimWriter8DimSizes1zE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Size of x dimension. </p>
-</dd></dl>
-
-</div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Static Functions</p>
-<dl class="cpp function">
-<dt id="_CPPv4I0_6size_tEN6ripple14MultidimWriter8DimSizes11from_tensorE8DimSizesRK6TensorI1T4DimsE">
-<span id="_CPPv3I0_6size_tEN6ripple14MultidimWriter8DimSizes11from_tensorERK6TensorI1T4DimsE"></span><span id="_CPPv2I0_6size_tEN6ripple14MultidimWriter8DimSizes11from_tensorERK6TensorI1T4DimsE"></span>template&lt;typename <code class="sig-name descname">T</code>, size_t <code class="sig-name descname">Dims</code>&gt;<br /><span class="target" id="structripple_1_1MultidimWriter_1_1DimSizes_1a4f2f2f9f61a75c56d66d0f521096f36a"></span>auto <code class="sig-name descname">from_tensor</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="classripple_1_1Tensor.html#_CPPv4I0_6size_tEN6ripple6TensorE" title="ripple::Tensor">Tensor</a>&lt;<a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple14MultidimWriter8DimSizes11from_tensorE8DimSizesRK6TensorI1T4DimsE" title="ripple::MultidimWriter::DimSizes::from_tensor::T">T</a>, <a class="reference internal" href="#_CPPv4I0_6size_tEN6ripple14MultidimWriter8DimSizes11from_tensorE8DimSizesRK6TensorI1T4DimsE" title="ripple::MultidimWriter::DimSizes::from_tensor::Dims">Dims</a>&gt; &amp;<em>t</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple14MultidimWriter8DimSizesE" title="ripple::MultidimWriter::DimSizes">DimSizes</a><a class="headerlink" href="#_CPPv4I0_6size_tEN6ripple14MultidimWriter8DimSizes11from_tensorE8DimSizesRK6TensorI1T4DimsE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Creates the dim sizes from a tensor. </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>The sizes of the dimensions from the tensor. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">t</span></code>: The tensor to create the dim sizes from. </p></li>
-</ul>
-</dd>
-<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the tensor data. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Dims</span></code>: The number of dimensions in the tensor. </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-</div>
-</dd></dl>
-
-</dd></dl>
-
 </div>
 </div>
 
@@ -463,15 +249,6 @@
               
             </div>
             <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="classripple_1_1Node.html" class="btn btn-neutral float-right" title="Template Class Node" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
-      
-      
-        <a href="classripple_1_1MultiarchAllocator.html" class="btn btn-neutral" title="Class MultiarchAllocator" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
-      
-    </div>
   
 
   

@@ -1,0 +1,66 @@
+
+.. _program_listing_file_include_ripple_graph_stealer.hpp:
+
+Program Listing for File stealer.hpp
+====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_graph_stealer.hpp>` (``include/ripple/graph/stealer.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_GRAPH_STEALER_HPP
+   #define RIPPLE_GRAPH_STEALER_HPP
+   
+   #include <ripple/math/math.hpp>
+   
+   namespace ripple {
+   
+   enum class StealPolicy {
+     random      = 0, 
+     neighbour   = 1, 
+     topological = 2  
+   };
+   
+   template <StealPolicy Policy>
+   struct Stealer {};
+   
+   /*==--- [specializations] --------------------------------------------------==*/
+   
+   template <>
+   struct Stealer<StealPolicy::random> {
+     auto
+     operator()(uint32_t curr_id, uint32_t total_ids) const noexcept -> uint32_t {
+       return math::randint(uint32_t{0}, total_ids - 1);
+     }
+   };
+   
+   template <>
+   struct Stealer<StealPolicy::neighbour> {
+     auto
+     operator()(uint32_t curr_id, uint32_t total_ids) const noexcept -> uint32_t {
+       return (curr_id + uint32_t{1}) % total_ids;
+     }
+   };
+   
+   template <>
+   struct Stealer<StealPolicy::topological> {
+     auto
+     operator()(uint32_t curr_id, uint32_t total_ids) const noexcept -> uint32_t {
+       return (curr_id + uint32_t{1}) % total_ids;
+     }
+   };
+   
+   /*==--- [aliases] ----------------------------------------------------------==*/
+   
+   // clang-format off
+   using RandomStealer    = Stealer<StealPolicy::random>;
+   using NeighbourStealer = Stealer<StealPolicy::neighbour>;
+   using TopoStealer      = Stealer<StealPolicy::topological>;
+   // clang-format on
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_GRAPH_STEALER_HPP

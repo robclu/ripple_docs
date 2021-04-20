@@ -141,6 +141,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -238,13 +239,13 @@
 <span class="k">namespace</span> <span class="n">detail</span> <span class="p">{</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+<span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
 <span class="n">max_element_impl</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span> <span class="n">element</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="o">&amp;&amp;</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">ripple_forward</span><span class="p">(</span><span class="n">element</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Next</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span>
+<span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span>
 <span class="n">max_element_impl</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span> <span class="n">current_max</span><span class="p">,</span> <span class="n">Next</span><span class="o">&amp;&amp;</span> <span class="n">next</span><span class="p">,</span> <span class="n">Ts</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">rest</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">max_element_impl</span><span class="p">(</span>
     <span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">ripple_forward</span><span class="p">(</span><span class="n">current_max</span><span class="p">),</span> <span class="n">ripple_forward</span><span class="p">(</span><span class="n">next</span><span class="p">)),</span>
@@ -254,7 +255,7 @@
 <span class="p">}</span> <span class="c1">// namespace detail</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span>
+<span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span>
 <span class="n">max_element</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span> <span class="n">first</span><span class="p">,</span> <span class="n">Ts</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">rest</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">detail</span><span class="o">::</span><span class="n">max_element_impl</span><span class="p">(</span>
     <span class="n">ripple_forward</span><span class="p">(</span><span class="n">first</span><span class="p">),</span> <span class="n">ripple_forward</span><span class="p">(</span><span class="n">rest</span><span class="p">)...);</span>

@@ -44,32 +44,32 @@ Program Listing for File range.hpp
    
        //==--- [construction] -------------------------------------------------==//
    
-       ripple_host_device constexpr Iterator(value_t value, value_t step)
+       ripple_all constexpr Iterator(value_t value, value_t step)
        : _value(value), _step(step) {}
    
        //==--- [operator overloads] -------------------------------------------==//
    
-       ripple_host_device constexpr self_t operator++() { 
+       ripple_all constexpr self_t operator++() { 
          self_t i = *this; _value += _step; return i;
        }
    
-       ripple_host_device constexpr self_t operator++(int) {
+       ripple_all constexpr self_t operator++(int) {
          _value += _step; return *this;
        }
    
-       ripple_host_device constexpr reference_t operator*() {
+       ripple_all constexpr reference_t operator*() {
          return _value;
        }
    
-       ripple_host_device constexpr pointer_t operator->() {
+       ripple_all constexpr pointer_t operator->() {
          return &_value;
        }
    
-       ripple_host_device constexpr bool operator==(const self_t& other) {
+       ripple_all constexpr bool operator==(const self_t& other) {
          return _value >= other._value;
        }
    
-       ripple_host_device constexpr bool operator!=(const self_t& other) {
+       ripple_all constexpr bool operator!=(const self_t& other) {
          return _value < other._value;
        }
    
@@ -90,22 +90,22 @@ Program Listing for File range.hpp
    
      //==--- [construction] ---------------------------------------------------==//
      
-     ripple_host_device constexpr Range(value_t min, value_t max, value_t step)
+     ripple_all constexpr Range(value_t min, value_t max, value_t step)
      : _min(min), _max(max), _step(step) {}
    
-     ripple_host_device auto begin() {
+     ripple_all auto begin() {
        return iterator_t{_min, _step};
      }
      
-     ripple_host_device auto end() {
+     ripple_all auto end() {
       return iterator_t{_max, _step};   
      }
    
-     ripple_host_device auto begin() const {
+     ripple_all auto begin() const {
        return const_iterator_t(_min, _step);
      }
      
-     ripple_host_device auto end() const {
+     ripple_all auto end() const {
       return const_iterator_t(_max, _step);   
      }
    };
@@ -113,12 +113,12 @@ Program Listing for File range.hpp
    //==--- [functions] --------------------------------------------------------==//
    
    template <typename T>
-   ripple_host_device constexpr inline auto range(T end) -> Range<T> {
+   ripple_all constexpr inline auto range(T end) -> Range<T> {
      return Range<T>(T{0}, static_cast<T>(end), T{1});
    }
    
    template <typename T>
-   ripple_host_device constexpr inline auto range(
+   ripple_all constexpr inline auto range(
      T start, T end, T step = T{1}
    ) -> Range<T> {
      return Range<T>(start, end, step);

@@ -1,0 +1,81 @@
+
+.. _file_include_ripple_functional_invocable.hpp:
+
+File invocable.hpp
+==================
+
+
+= ripple/kernel/invocable.hpp --------------------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/functional/invocable.hpp``)
+--------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_functional_invocable.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file implements functionality for an invocable object.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``functional_traits.hpp`` (:ref:`file_include_ripple_functional_functional_traits.hpp`)
+
+- ``ripple/container/tuple.hpp`` (:ref:`file_include_ripple_container_tuple.hpp`)
+
+- ``ripple/utility/forward.hpp`` (:ref:`file_include_ripple_utility_forward.hpp`)
+
+- ``ripple/utility/type_traits.hpp`` (:ref:`file_include_ripple_utility_type_traits.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_graph_node.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1Invocable`
+

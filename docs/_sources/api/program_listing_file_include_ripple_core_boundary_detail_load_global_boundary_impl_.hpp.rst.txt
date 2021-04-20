@@ -34,7 +34,7 @@ Program Listing for File load_global_boundary_impl_.hpp
    
    template <
      typename It, size_t Dims, typename Loader, typename Dim, typename... Args>
-   ripple_host_device auto load_global_boundary_for_dim(
+   ripple_all auto load_global_boundary_for_dim(
      It&&                    it,
      const GhostIndex<Dims>& indices,
      Dim&&                   dim,
@@ -59,7 +59,7 @@ Program Listing for File load_global_boundary_impl_.hpp
    
    // clang-format off
    template <typename It, size_t Dims, typename Loader, typename... Args>
-   ripple_host_device auto load_global_boundary(
+   ripple_all auto load_global_boundary(
      DimX                    dim,
      It&&                    it,
      const GhostIndex<Dims>& indices,
@@ -74,7 +74,7 @@ Program Listing for File load_global_boundary_impl_.hpp
    }
    
    template <typename It, size_t Dims, typename Loader, typename... Args>
-   ripple_host_device auto load_global_boundary(
+   ripple_all auto load_global_boundary(
      DimY                  dim,
      It&&                    it,
      const GhostIndex<Dims>& indices,
@@ -109,7 +109,7 @@ Program Listing for File load_global_boundary_impl_.hpp
    }
    
    template <typename It, size_t Dims, typename Loader, typename... Args>
-   ripple_host_device auto load_global_boundary(
+   ripple_all auto load_global_boundary(
      DimZ                    dim,
      It&&                    it,
      const GhostIndex<Dims>& indices,

@@ -1,0 +1,69 @@
+
+.. _file_include_ripple_padding_const_loader.hpp:
+
+File const_loader.hpp
+=====================
+
+
+= ripple/padding/const_loader_.hpp ---------------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/padding/const_loader.hpp``)
+--------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_padding_const_loader.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file defines an implementation of a padding loader which loads a contant into the boundary.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``padding_loader.hpp`` (:ref:`file_include_ripple_padding_padding_loader.hpp`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1ConstLoader`
+

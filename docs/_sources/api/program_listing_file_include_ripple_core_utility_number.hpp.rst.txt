@@ -34,7 +34,7 @@ Program Listing for File number.hpp
    struct Num {
      static constexpr auto value = size_t{Value};
    
-     ripple_host_device constexpr operator size_t() const noexcept {
+     ripple_all constexpr operator size_t() const noexcept {
        return Value;
      }
    };
@@ -43,7 +43,7 @@ Program Listing for File number.hpp
    struct Int64 {
      static constexpr auto value = int64_t{Value};
    
-     ripple_host_device constexpr operator int64_t() const noexcept {
+     ripple_all constexpr operator int64_t() const noexcept {
        return Value;
      }
    };

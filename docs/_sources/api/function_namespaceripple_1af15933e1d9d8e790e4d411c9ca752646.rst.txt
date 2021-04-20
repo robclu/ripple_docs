@@ -3,7 +3,7 @@
 Template Function ripple::global_size
 =====================================
 
-- Defined in :ref:`file_include_ripple_core_execution_thread_index.hpp`
+- Defined in :ref:`file_include_ripple_execution_thread_index.hpp`
 
 
 Function Documentation

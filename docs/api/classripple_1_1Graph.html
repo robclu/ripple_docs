@@ -34,7 +34,7 @@
   <link rel="index" title="Index" href="../genindex.html" />
   <link rel="search" title="Search" href="../search.html" />
   <link rel="next" title="Template Class HostBlock" href="classripple_1_1HostBlock.html" />
-  <link rel="prev" title="Class GenericLoader" href="classripple_1_1GenericLoader.html" /> 
+  <link rel="prev" title="Class Freelist" href="classripple_1_1Freelist.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -143,6 +143,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -218,7 +219,7 @@
   <div class="section" id="class-graph">
 <span id="exhale-class-classripple-1-1graph"></span><h1>Class Graph<a class="headerlink" href="#class-graph" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_graph_graph.hpp.html#file-include-ripple-core-graph-graph-hpp"><span class="std std-ref">File graph.hpp</span></a></p></li>
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_graph_graph.hpp.html#file-include-ripple-graph-graph-hpp"><span class="std std-ref">File graph.hpp</span></a></p></li>
 </ul>
 <div class="section" id="class-documentation">
 <h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
@@ -448,7 +449,7 @@
 <p><dl class="simple">
 <dt><strong>Note</strong></dt><dd><p>This does not flush all gpu work, it simply ensures that all GPU work is submitted by this point, to flush and wait for all GPU work to finish, </p>
 </dd>
-<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#classripple_1_1Graph_1a580d39eb336ea80ee777906699d49016"><span class="std std-ref">sync_gpus</span></a>.</p>
+<dt><strong>See</strong></dt><dd><p>sync_gpus.</p>
 </dd>
 <dt><strong>Return</strong></dt><dd><p>A reference to the modified graph. </p>
 </dd>
@@ -467,11 +468,13 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph9sync_gpusER5GraphRR1FDpRR4Args">
-<span id="_CPPv3I0Dp_17non_node_enable_tI1FEEN6ripple5Graph9sync_gpusERR1FDpRR4Args"></span><span id="_CPPv2I0Dp_17non_node_enable_tI1FEEN6ripple5Graph9sync_gpusERR1FDpRR4Args"></span>template&lt;typename <code class="sig-name descname">F</code>, typename ...<code class="sig-name descname">Args</code>, non_node_enable_t&lt;<a class="reference internal" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph9sync_gpusER5GraphRR1FDpRR4Args" title="ripple::Graph::sync_gpus::F">F</a>&gt; = 0&gt;<br /><span class="target" id="classripple_1_1Graph_1a580d39eb336ea80ee777906699d49016"></span>auto <code class="sig-name descname">sync_gpus</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph9sync_gpusER5GraphRR1FDpRR4Args" title="ripple::Graph::sync_gpus::F">F</a> &amp;&amp;<em>callable</em>, <a class="reference internal" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph9sync_gpusER5GraphRR1FDpRR4Args" title="ripple::Graph::sync_gpus::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph9sync_gpusER5GraphRR1FDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph9gpu_fenceER5GraphRR1FDpRR4Args">
+<span id="_CPPv3I0Dp_17non_node_enable_tI1FEEN6ripple5Graph9gpu_fenceERR1FDpRR4Args"></span><span id="_CPPv2I0Dp_17non_node_enable_tI1FEEN6ripple5Graph9gpu_fenceERR1FDpRR4Args"></span>template&lt;typename <code class="sig-name descname">F</code>, typename ...<code class="sig-name descname">Args</code>, non_node_enable_t&lt;<a class="reference internal" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph9gpu_fenceER5GraphRR1FDpRR4Args" title="ripple::Graph::gpu_fence::F">F</a>&gt; = 0&gt;<br /><span class="target" id="classripple_1_1Graph_1a5c84c763d081dab553c2ecf652f1a138"></span>auto <code class="sig-name descname">gpu_fence</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph9gpu_fenceER5GraphRR1FDpRR4Args" title="ripple::Graph::gpu_fence::F">F</a> &amp;&amp;<em>callable</em>, <a class="reference internal" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph9gpu_fenceER5GraphRR1FDpRR4Args" title="ripple::Graph::gpu_fence::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4I0Dp_17non_node_enable_tI1FEEN6ripple5Graph9gpu_fenceER5GraphRR1FDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Emplaces a node into the graph which creates a sync point in the graph which synchronizes <em>all</em> streams on <em>all</em> GPUs. </p>
 <p>To create only a submission synchronization point, <dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#classripple_1_1Graph_1a3142bf2ddedde2a42b6c53c9f2f07914"><span class="std std-ref">sync</span></a>.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>This is less restrictive than a barrier, which fully synchronizes each device. This just places a synchronization point into the graph.</p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">callable</span></code>: The callable which defines the node’s operation. </p></li>
@@ -488,9 +491,9 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N6ripple5Graph9gpu_fenceEv">
-<span id="_CPPv3N6ripple5Graph9gpu_fenceEv"></span><span id="_CPPv2N6ripple5Graph9gpu_fenceEv"></span><span id="ripple::Graph::gpu_fence"></span><span class="target" id="classripple_1_1Graph_1a6e32759969c0ca53cb8ebcfb1f4f8156"></span>auto <code class="sig-name descname">gpu_fence</code><span class="sig-paren">(</span><span class="sig-paren">)</span> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4N6ripple5Graph9gpu_fenceEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Emplaces a node into the graph which creates a fence for each gpu, which will block until all gpus have finished their currently submitted work. </p>
+<dt id="_CPPv4N6ripple5Graph11gpu_barrierEv">
+<span id="_CPPv3N6ripple5Graph11gpu_barrierEv"></span><span id="_CPPv2N6ripple5Graph11gpu_barrierEv"></span><span id="ripple::Graph::gpu_barrier"></span><span class="target" id="classripple_1_1Graph_1a3b179848157a3d8eb1ca009d847285e6"></span>auto <code class="sig-name descname">gpu_barrier</code><span class="sig-paren">(</span><span class="sig-paren">)</span> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5GraphE" title="ripple::Graph">Graph</a>&amp;<a class="headerlink" href="#_CPPv4N6ripple5Graph11gpu_barrierEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Emplaces a node into the graph which creates a barrier for each gpu, which will block until all gpus have finished their currently submitted work. </p>
 <p><dl class="simple">
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">callable</span></code>: The callable which defines the node’s operation. </p></li>
@@ -929,7 +932,7 @@
 <p class="breathe-sectiondef-title rubric">Public Static Functions</p>
 <dl class="cpp function">
 <dt id="_CPPv4N6ripple5Graph24set_allocation_pool_sizeE6size_t">
-<span id="_CPPv3N6ripple5Graph24set_allocation_pool_sizeE6size_t"></span><span id="_CPPv2N6ripple5Graph24set_allocation_pool_sizeE6size_t"></span><span id="ripple::Graph::set_allocation_pool_size__s"></span><span class="target" id="classripple_1_1Graph_1ab2827d2605d13119fe56fa72daacfb0b"></span>auto <code class="sig-name descname">set_allocation_pool_size</code><span class="sig-paren">(</span>size_t <em>nodes</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4N6ripple5Graph24set_allocation_pool_sizeE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6ripple5Graph24set_allocation_pool_sizeE6size_t"></span><span id="_CPPv2N6ripple5Graph24set_allocation_pool_sizeE6size_t"></span><span id="ripple::Graph::set_allocation_pool_size__s"></span><span class="target" id="classripple_1_1Graph_1a2a64d1ee629e8dc02fe2f30db7331266"></span>auto <code class="sig-name descname">set_allocation_pool_size</code><span class="sig-paren">(</span>size_t <em>nodes</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4N6ripple5Graph24set_allocation_pool_sizeE6size_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets the size of the allocation pool for all grphs combined. </p>
 <p><dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>true when called for the first time, false otherwise. </p>
@@ -1017,7 +1020,7 @@
         <a href="classripple_1_1HostBlock.html" class="btn btn-neutral float-right" title="Template Class HostBlock" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="classripple_1_1GenericLoader.html" class="btn btn-neutral" title="Class GenericLoader" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="classripple_1_1Freelist.html" class="btn btn-neutral" title="Class Freelist" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   

@@ -1,0 +1,147 @@
+
+.. _program_listing_file_include_ripple_allocation_multiarch_allocator.hpp:
+
+Program Listing for File multiarch_allocator.hpp
+================================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_allocation_multiarch_allocator.hpp>` (``include/ripple/allocation/multiarch_allocator.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_ALLOCATION_MULTIARCH_ALLOCATOR_HPP
+   #define RIPPLE_ALLOCATION_MULTIARCH_ALLOCATOR_HPP
+   
+   #include "arena.hpp"
+   #include "linear_allocator.hpp"
+   #include <ripple/arch/topology.hpp>
+   #include <ripple/utility/spinlock.hpp>
+   #include <mutex>
+   #include <vector>
+   
+   namespace ripple {
+   
+   enum class AllocArch {
+     cpu = 0, 
+     gpu = 1, 
+   };
+   
+   template <AllocArch Arch, typename LockingPolicy = Spinlock>
+   class alignas(avoid_false_sharing_size) SimpleAllocator {
+     static constexpr bool cpu_allocator = Arch == AllocArch::cpu;
+   
+     using ArchArena = std::conditional_t<cpu_allocator, HeapArena, GpuHeapArena>;
+   
+     ArchArena       arena_;     
+     LinearAllocator allocator_; 
+     LockingPolicy   lock_;      
+   
+     using Guard = std::lock_guard<LockingPolicy>;
+   
+    public:
+     template <
+       AllocArch ArchType                                = Arch,
+       std::enable_if_t<ArchType == AllocArch::cpu, int> = 0>
+     SimpleAllocator() noexcept
+     : arena_{}, allocator_(arena_.begin(), arena_.end()) {}
+   
+     template <
+       AllocArch ArchType                                = Arch,
+       std::enable_if_t<ArchType == AllocArch::gpu, int> = 0>
+     SimpleAllocator(size_t dev_id) noexcept
+     : arena_{dev_id}, allocator_(arena_.begin(), arena_.end()) {}
+   
+     auto reserve(size_t bytes) -> void {
+       Guard g(lock_);
+       arena_.resize(bytes);
+       allocator_.reset(arena_.begin(), arena_.end());
+     }
+   
+     auto alloc(size_t size, size_t alignment) -> void* {
+       if (allocator_.capacity() < size) {
+         // log_error("Not enough memory remaining for device allocation");
+         printf(
+           "Allocator too small, cap : %4lu, req : %4lu\n",
+           allocator_.capacity(),
+           size);
+         return nullptr;
+       }
+       Guard g(lock_);
+       return allocator_.alloc(size, alignment);
+     }
+   
+     auto free(void* ptr) -> void {}
+   
+     auto reset() noexcept -> void {
+       Guard g(lock_);
+       allocator_.reset();
+     }
+   };
+   
+   class MultiarchAllocator {
+    public:
+     MultiarchAllocator(size_t num_gpus) {
+       for (size_t i = 0; i < num_gpus; ++i) {
+         gpu_allocators_.emplace_back(i);
+       }
+     }
+   
+     ~MultiarchAllocator() noexcept {
+       for (auto& alloc : gpu_allocators_) {
+         alloc.reset();
+       }
+       cpu_allocator_.reset();
+     }
+   
+     using GpuAllocator = SimpleAllocator<AllocArch::gpu>;
+     using CpuAllocator = SimpleAllocator<AllocArch::cpu>;
+     using GpuAllocators = std::vector<GpuAllocator>;
+   
+     auto gpu_allocator(size_t gpu_id) noexcept -> GpuAllocator& {
+       return gpu_allocators_[gpu_id];
+     }
+   
+     auto cpu_allocator() noexcept -> CpuAllocator& {
+       return cpu_allocator_;
+     }
+   
+     auto reserve_gpu(size_t bytes_per_gpu) -> void {
+       for (auto& gpu_alloc : gpu_allocators_) {
+         gpu_alloc.reserve(bytes_per_gpu);
+       }
+     }
+   
+     auto reserve_cpu(size_t bytes) -> void {
+       cpu_allocator_.reserve(bytes);
+     }
+   
+     auto reset_gpu() noexcept -> void {
+       for (auto& alloc : gpu_allocators_) {
+         alloc.reset();
+       }
+     }
+   
+     auto reset_cpu() noexcept -> void {
+       cpu_allocator_.reset();
+     }
+   
+     auto reset() noexcept -> void {
+       reset_gpu();
+       reset_cpu();
+     }
+   
+    private:
+     GpuAllocators gpu_allocators_; 
+     CpuAllocator  cpu_allocator_;  
+   };
+   
+   static inline auto multiarch_allocator() noexcept -> MultiarchAllocator& {
+     static MultiarchAllocator allocator(topology().num_gpus());
+     return allocator;
+   }
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_ALLOCATION_MULTIARCH_ALLOCATOR_HPP

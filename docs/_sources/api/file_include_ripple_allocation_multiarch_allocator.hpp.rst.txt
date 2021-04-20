@@ -1,0 +1,89 @@
+
+.. _file_include_ripple_allocation_multiarch_allocator.hpp:
+
+File multiarch_allocator.hpp
+============================
+
+
+= :ref:`file_include_ripple_allocation_multiarch_allocator.hpp` ------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/allocation/multiarch_allocator.hpp``)
+------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_allocation_multiarch_allocator.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file defines an allocator for cpus and gpus.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``arena.hpp`` (:ref:`file_include_ripple_allocation_arena.hpp`)
+
+- ``linear_allocator.hpp`` (:ref:`file_include_ripple_allocation_linear_allocator.hpp`)
+
+- ``mutex``
+
+- ``ripple/arch/topology.hpp`` (:ref:`file_include_ripple_arch_topology.hpp`)
+
+- ``ripple/utility/spinlock.hpp`` (:ref:`file_include_ripple_utility_spinlock.hpp`)
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_container_device_block.hpp`
+
+- :ref:`file_include_ripple_container_host_block.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1MultiarchAllocator`
+
+- :ref:`exhale_class_classripple_1_1SimpleAllocator`
+

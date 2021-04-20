@@ -1,0 +1,121 @@
+
+.. _program_listing_file_include_ripple_execution_static_execution_params.hpp:
+
+Program Listing for File static_execution_params.hpp
+====================================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_execution_static_execution_params.hpp>` (``include/ripple/execution/static_execution_params.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/execution/static_execution_params.hpp -- -*- C++ -*- ---==//
+   //
+   //                                Ripple
+   //
+   //                      Copyright (c) 2019, 2020 Rob Clucas.
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   
+   #ifndef RIPPLE_EXECUTION_STATIC_EXECUTION_PARAMS_HPP
+   #define RIPPLE_EXECUTION_STATIC_EXECUTION_PARAMS_HPP
+   
+   #include "execution_params.hpp"
+   #include <ripple/iterator/block_iterator.hpp>
+   #include <ripple/space/static_multidim_space.hpp>
+   #include <ripple/storage/storage_traits.hpp>
+   
+   namespace ripple {
+   
+   template <
+     size_t SizeX,
+     size_t SizeY,
+     size_t SizeZ,
+     size_t Padding,
+     typename Shared>
+   struct StaticExecParams
+   : public ExecParams<StaticExecParams<SizeX, SizeY, SizeZ, Padding, Shared>> {
+    private:
+     /*==--- [aliases] --------------------------------------------------------==*/
+   
+     // clang-format off
+     using Traits    = layout_traits_t<Shared>;
+     using Value     = typename Traits::Value;
+     using Allocator = typename Traits::Allocator;
+   
+   
+     using Space1d = StaticMultidimSpace<SizeX>;
+     using Space2d = StaticMultidimSpace<SizeX, SizeY>;
+     using Space3d = StaticMultidimSpace<SizeX, SizeY, SizeZ>;
+   
+     template <size_t Dims>
+     using Space = std::conditional_t<
+       Dims == 1, Space1d, std::conditional_t<Dims == 2, Space2d, Space3d>>;
+   
+     template <size_t Dims>
+     using Iter = BlockIterator<Value, Space<Dims>>;
+     // clang-format on
+   
+    public:
+     template <size_t Dims>
+     ripple_all constexpr auto size() const noexcept -> size_t {
+       constexpr size_t dim_pad     = Padding * 2;
+       constexpr size_t dim_1d_size = SizeX + dim_pad;
+       constexpr size_t dim_2d_size = dim_1d_size * (SizeY + dim_pad);
+       constexpr size_t dim_3d_size = dim_2d_size * (SizeZ + dim_pad);
+       return Dims == 1   ? dim_1d_size
+              : Dims == 2 ? dim_2d_size
+              : Dims == 3 ? dim_3d_size
+                          : 0;
+     }
+   
+     template <typename Dim>
+     ripple_all constexpr auto size(Dim&& dim) const noexcept -> size_t {
+       return size_impl(ripple_forward(dim));
+     }
+   
+     ripple_all constexpr auto padding() const noexcept -> size_t {
+       return Padding;
+     }
+   
+     template <size_t Dims, typename T>
+     ripple_all auto
+     iterator(T* data) const noexcept -> BlockIterator<Value, Space<Dims>> {
+       using SpaceType      = Space<Dims>;
+       using Iterator       = BlockIterator<Value, SpaceType>;
+       constexpr auto space = SpaceType{Padding};
+       return Iterator{Allocator::create(data, space), space};
+     }
+   
+     template <size_t Dims>
+     ripple_all constexpr auto allocation_size() const noexcept -> size_t {
+       return Allocator::allocation_size(size<Dims>());
+     }
+   
+    private:
+     ripple_all constexpr auto size_impl(DimX) const noexcept -> size_t {
+       return SizeX;
+     }
+   
+     ripple_all constexpr auto size_impl(DimY) const noexcept -> size_t {
+       return SizeY;
+     }
+   
+     ripple_all constexpr auto size_impl(DimZ) const noexcept -> size_t {
+       return SizeZ;
+     }
+   };
+   
+   template <size_t Dims, typename Shared = VoidShared, size_t Pad = 0>
+   ripple_all auto
+   static_params() noexcept -> default_shared_exec_params_t<Dims, Shared, Pad> {
+     return default_shared_exec_params_t<Dims, Shared, Pad>();
+   }
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_EXECUTION_STATIC_EXECUTION_PARAMS_HPP

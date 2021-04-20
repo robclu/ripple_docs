@@ -141,6 +141,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -243,7 +244,7 @@
   <span class="k">using</span> <span class="n">PreviousLevel</span> <span class="o">=</span> <span class="n">Unroll</span><span class="o">&lt;</span><span class="n">previous_level</span><span class="o">&gt;</span><span class="p">;</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Functor</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="n">Unroll</span><span class="p">(</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="n">Unroll</span><span class="p">(</span>
     <span class="n">Functor</span><span class="o">&amp;&amp;</span> <span class="n">functor</span><span class="p">,</span> <span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span> <span class="k">noexcept</span>
   <span class="o">:</span> <span class="n">PreviousLevel</span><span class="p">{</span><span class="n">ripple_forward</span><span class="p">(</span><span class="n">functor</span><span class="p">),</span> <span class="n">ripple_forward</span><span class="p">(</span><span class="n">args</span><span class="p">)...}</span> <span class="p">{</span>
     <span class="n">functor</span><span class="p">(</span><span class="n">Num</span><span class="o">&lt;</span><span class="n">previous_level</span><span class="o">&gt;</span><span class="p">(),</span> <span class="n">ripple_forward</span><span class="p">(</span><span class="n">args</span><span class="p">)...);</span>
@@ -253,7 +254,7 @@
 <span class="k">template</span> <span class="o">&lt;&gt;</span>
 <span class="k">struct</span> <span class="n">Unroll</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span> <span class="p">{</span>
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Functor</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="n">Unroll</span><span class="p">(</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="n">Unroll</span><span class="p">(</span>
     <span class="n">Functor</span><span class="o">&amp;&amp;</span> <span class="n">functor</span><span class="p">,</span> <span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span>
     <span class="n">functor</span><span class="p">(</span><span class="n">Num</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(),</span> <span class="n">ripple_forward</span><span class="p">(</span><span class="n">args</span><span class="p">)...);</span>
   <span class="p">}</span>
@@ -262,7 +263,7 @@
 <span class="k">template</span> <span class="o">&lt;&gt;</span>
 <span class="k">struct</span> <span class="n">Unroll</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span> <span class="p">{</span>
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Functor</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="n">Unroll</span><span class="p">(</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="n">Unroll</span><span class="p">(</span>
     <span class="n">Functor</span><span class="o">&amp;&amp;</span> <span class="n">functor</span><span class="p">,</span> <span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{}</span>
 <span class="p">};</span>
 

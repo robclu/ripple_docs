@@ -3,7 +3,7 @@
 Variable ripple::is_vec_element_v
 =================================
 
-- Defined in :ref:`file_include_ripple_core_storage_storage_element_traits.hpp`
+- Defined in :ref:`file_include_ripple_storage_storage_element_traits.hpp`
 
 
 Variable Documentation

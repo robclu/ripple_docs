@@ -1,0 +1,68 @@
+
+.. _file_include_ripple_utility_bitops.hpp:
+
+File bitops.hpp
+===============
+
+
+= :ref:`file_include_ripple_utility_bitops.hpp` ----------------------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/utility/bitops.hpp``)
+--------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_utility_bitops.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file contains bit related operations.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``portability.hpp`` (:ref:`file_include_ripple_utility_portability.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_arch_cpu_info.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+

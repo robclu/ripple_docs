@@ -3,7 +3,7 @@
 Struct CopyLoader
 =================
 
-- Defined in :ref:`file_include_ripple_core_boundary_copy_loader.hpp`
+- Defined in :ref:`file_include_ripple_padding_copy_loader.hpp`
 
 
 Inheritance Relationships

@@ -58,7 +58,7 @@ Program Listing for File ghost_index.hpp
    
     private:
      template <typename Iterator, typename Dim>
-     ripple_host_device constexpr auto init_dim(
+     ripple_all constexpr auto init_dim(
        Iterator&& it,
        size_t     idx,
        Dim&&      dim,
@@ -91,7 +91,7 @@ Program Listing for File ghost_index.hpp
    
     public:
      template <typename Iterator>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      init_as_global(Iterator&& it) noexcept -> bool {
        bool loader_cell = false;
        unrolled_for<Dimensions>([&](auto d) {
@@ -103,7 +103,7 @@ Program Listing for File ghost_index.hpp
      }
    
      template <typename Iterator, typename Space>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      init_as_block(Iterator&& it, Space&& space) noexcept -> bool {
        bool loader_cell = false;
        unrolled_for<Dimensions>([&](auto d) {
@@ -116,24 +116,24 @@ Program Listing for File ghost_index.hpp
    
      /*==--- [interface] -------------------------------------------------------=*/
    
-     ripple_host_device constexpr auto dimensions() const noexcept -> size_t {
+     ripple_all constexpr auto dimensions() const noexcept -> size_t {
        return Dimensions;
      }
    
      /*==--- [access] ---------------------------------------------------------==*/
    
      template <typename Dim>
-     ripple_host_device constexpr auto index(Dim&& dim) const noexcept -> value_t {
+     ripple_all constexpr auto index(Dim&& dim) const noexcept -> value_t {
        return _values[dim];
      }
    
      template <typename Dim>
-     ripple_host_device constexpr auto index(Dim&& dim) noexcept -> value_t& {
+     ripple_all constexpr auto index(Dim&& dim) noexcept -> value_t& {
        return _values[dim];
      }
    
      template <typename Dim>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      abs_index(Dim&& dim) const noexcept -> value_t {
        return math::sign(_values[dim]) * _values[dim];
      }
@@ -141,22 +141,22 @@ Program Listing for File ghost_index.hpp
      /*==--- [utilities] ------------------------------------------------------==*/
    
      template <typename Dim>
-     ripple_host_device constexpr auto is_front(Dim&& dim) const noexcept -> bool {
+     ripple_all constexpr auto is_front(Dim&& dim) const noexcept -> bool {
        return _values[dim] > value_t{0};
      }
    
      template <typename Dim>
-     ripple_host_device constexpr auto is_back(Dim&& dim) const noexcept -> bool {
+     ripple_all constexpr auto is_back(Dim&& dim) const noexcept -> bool {
        return _values[dim] < value_t{0};
      }
    
      template <typename Dim>
-     ripple_host_device constexpr auto is_void(Dim&& dim) const noexcept -> bool {
+     ripple_all constexpr auto is_void(Dim&& dim) const noexcept -> bool {
        return _values[dim] == void_value;
      }
    
      template <typename Dim>
-     ripple_host_device constexpr auto set_as_void(Dim&& dim) noexcept -> void {
+     ripple_all constexpr auto set_as_void(Dim&& dim) noexcept -> void {
        _values[dim] = void_value;
      }
    

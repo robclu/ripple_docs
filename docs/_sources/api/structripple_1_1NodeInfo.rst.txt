@@ -3,7 +3,7 @@
 Struct NodeInfo
 ===============
 
-- Defined in :ref:`file_include_ripple_core_graph_node.hpp`
+- Defined in :ref:`file_include_ripple_graph_node.hpp`
 
 
 Struct Documentation

@@ -3,7 +3,7 @@
 Class MultiarchAllocator
 ========================
 
-- Defined in :ref:`file_include_ripple_core_allocation_multiarch_allocator.hpp`
+- Defined in :ref:`file_include_ripple_allocation_multiarch_allocator.hpp`
 
 
 Class Documentation

@@ -65,52 +65,52 @@ Program Listing for File block_iterator.hpp
    
      /*==--- [deref impl] -----------------------------------------------------==*/
    
-     ripple_host_device auto deref_impl(PolyLayoutOverload) noexcept -> Ref {
+     ripple_all auto deref_impl(PolyLayoutOverload) noexcept -> Ref {
        return Ref{data_ptr_};
      }
    
-     ripple_host_device auto
+     ripple_all auto
      deref_impl(PolyLayoutOverload) const noexcept -> ConstRef {
        return ConstRef{data_ptr_};
      }
    
-     ripple_host_device auto deref_impl(NonPolyLayoutOverload) noexcept -> Ref {
+     ripple_all auto deref_impl(NonPolyLayoutOverload) noexcept -> Ref {
        return *data_ptr_;
      }
    
-     ripple_host_device auto
+     ripple_all auto
      deref_impl(NonPolyLayoutOverload) const noexcept -> ConstRef {
        return *data_ptr_;
      }
    
      /*==--- [access impl] ----------------------------------------------------==*/
    
-     ripple_host_device auto access_impl(PolyLayoutOverload) noexcept -> Ptr {
+     ripple_all auto access_impl(PolyLayoutOverload) noexcept -> Ptr {
        return Ptr{Value{data_ptr_}};
      }
    
-     ripple_host_device auto
+     ripple_all auto
      access_impl(PolyLayoutOverload) const noexcept -> ConstPtr {
        return ConstPtr{Value{data_ptr_}};
      }
    
-     ripple_host_device auto access_impl(NonPolyLayoutOverload) noexcept -> Ptr {
+     ripple_all auto access_impl(NonPolyLayoutOverload) noexcept -> Ptr {
        return data_ptr_;
      }
    
-     ripple_host_device auto
+     ripple_all auto
      access_impl(NonPolyLayoutOverload) const noexcept -> ConstPtr {
        return data_ptr_;
      }
    
      /*===--- [unwrap impl] ---------------------------------------------------==*/
    
-     ripple_host_device auto
+     ripple_all auto
      unwrap_impl(PolyLayoutOverload) const noexcept -> CopyType {
        return CopyType{data_ptr_};
      }
    
-     ripple_host_device auto
+     ripple_all auto
      unwrap_impl(NonPolyLayoutOverload) const noexcept -> CopyType {
        return CopyType{*data_ptr_};
      }
@@ -125,37 +125,37 @@ Program Listing for File block_iterator.hpp
      using ConstRawPtr = typename LayoutTraits::ConstRawPtr;
      // clang-format on
    
-     ripple_host_device BlockIterator(Storage data_ptr, Space space) noexcept
+     ripple_all BlockIterator(Storage data_ptr, Space space) noexcept
      : data_ptr_{data_ptr}, space_{space} {}
    
      /*==--- [operator overloading] -------------------------------------------==*/
    
-     ripple_host_device auto operator*() noexcept -> Ref {
+     ripple_all auto operator*() noexcept -> Ref {
        return deref_impl(is_poly_layout_overload);
      }
    
-     ripple_host_device auto operator*() const noexcept -> ConstRef {
+     ripple_all auto operator*() const noexcept -> ConstRef {
        return deref_impl(is_poly_layout_overload);
      }
    
      // clang-format off
-     ripple_host_device auto operator->() noexcept -> Ptr {
+     ripple_all auto operator->() noexcept -> Ptr {
        return access_impl(is_poly_layout_overload);
      }
    
-     ripple_host_device auto operator->() const noexcept -> ConstPtr {
+     ripple_all auto operator->() const noexcept -> ConstPtr {
        return access_impl(is_poly_layout_overload);
      }
      // clang-format on
    
-     ripple_host_device auto unwrap() const noexcept -> CopyType {
+     ripple_all auto unwrap() const noexcept -> CopyType {
        return unwrap_impl(is_poly_layout_overload);
      }
    
      /*==--- [offsetting] -----------------------------------------------------==*/
    
      template <typename Dim>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      offset(Dim&& dim, int amount) const noexcept -> BlockIterator {
        return BlockIterator{
          Offsetter::offset(data_ptr_, space_, ripple_forward(dim), amount),
@@ -163,12 +163,12 @@ Program Listing for File block_iterator.hpp
      }
    
      template <typename Dim>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      shift(Dim&& dim, int amount) noexcept -> void {
        Offsetter::shift(data_ptr_, space_, ripple_forward(dim), amount);
      }
    
-     ripple_host_device auto data() noexcept -> RawPtr {
+     ripple_all auto data() noexcept -> RawPtr {
        if constexpr (is_storage_accessor_v<Storage>) {
          return data_ptr_.data();
        } else {
@@ -176,7 +176,7 @@ Program Listing for File block_iterator.hpp
        }
      }
    
-     ripple_host_device auto data() const noexcept -> ConstRawPtr {
+     ripple_all auto data() const noexcept -> ConstRawPtr {
        if constexpr (is_storage_accessor_v<Storage>) {
          return data_ptr_.data();
        } else {
@@ -184,7 +184,7 @@ Program Listing for File block_iterator.hpp
        }
      }
    
-     ripple_host_device decltype(auto) storage() noexcept {
+     ripple_all decltype(auto) storage() noexcept {
        if constexpr (is_storage_accessor_v<Storage>) {
          return data_ptr_;
        } else {
@@ -192,7 +192,7 @@ Program Listing for File block_iterator.hpp
        }
      }
    
-     ripple_host_device decltype(auto) storage() const noexcept {
+     ripple_all decltype(auto) storage() const noexcept {
        if constexpr (is_storage_accessor_v<Storage>) {
          return data_ptr_;
        } else {
@@ -201,35 +201,35 @@ Program Listing for File block_iterator.hpp
      }
    
      template <typename Dim>
-     ripple_host_device auto is_valid(Dim&& dim) const noexcept -> bool {
+     ripple_all auto is_valid(Dim&& dim) const noexcept -> bool {
        return ::ripple::global_idx(static_cast<Dim&&>(dim)) <
               size(static_cast<Dim&&>(dim));
      }
    
      /*==--- [dimensions] -----------------------------------------------------==*/
    
-     ripple_host_device constexpr auto dimensions() const noexcept -> size_t {
+     ripple_all constexpr auto dimensions() const noexcept -> size_t {
        return dims;
      }
    
      /*==--- [gradients] ------------------------------------------------------==*/
    
      template <typename Dim>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      backward_diff(Dim&& dim, int amount = 1) const noexcept -> CopyType {
        return deref_impl(is_poly_layout_overload) -
               *offset(static_cast<Dim&&>(dim), -amount);
      }
    
      template <typename Dim>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      forward_diff(Dim&& dim, int amount = 1) const noexcept -> CopyType {
        return *offset(static_cast<Dim&&>(dim), amount) -
               deref_impl(is_poly_layout_overload);
      }
    
      template <typename Dim, typename Index>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      central_diff(Dim&& dim, Index&& index, int amount) const noexcept
        -> UnderlyingType {
        return offset(static_cast<Dim&&>(dim), amount)->component(index) -
@@ -237,14 +237,14 @@ Program Listing for File block_iterator.hpp
      }
    
      template <typename Dim>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      central_diff(Dim&& dim, int amount = 1) const noexcept -> CopyType {
        return *offset(static_cast<Dim&&>(dim), amount) -
               *offset(static_cast<Dim&&>(dim), -amount);
      }
    
      template <typename Dim>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      second_diff(Dim&& dim, int amount = 1) const noexcept -> CopyType {
        return *offset(static_cast<Dim&&>(dim), amount) +
               *offset(static_cast<Dim&&>(dim), -amount) -
@@ -252,7 +252,7 @@ Program Listing for File block_iterator.hpp
      }
    
      template <typename Dim1, typename Dim2>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      second_partial_diff(Dim1&& dim1, Dim2&& dim2, int amount = 1) const noexcept
        -> CopyType {
        const auto scale   = 0.25;
@@ -267,7 +267,7 @@ Program Listing for File block_iterator.hpp
      }
    
      template <typename DataType>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      grad(DataType dh = 1) const noexcept -> Vec {
        Vec result{};
        unrolled_for<dims>([&](auto d) { result[d] = grad_dim(d, dh); });
@@ -275,7 +275,7 @@ Program Listing for File block_iterator.hpp
      }
    
      template <typename Dim, typename DataType>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      grad_dim(Dim&& dim, DataType dh = 1) const noexcept -> CopyType {
        // NOTE: Have to do something different depending on the data type
        // because the optimization for 0.5 / dh doesn't work if dh is integral
@@ -297,7 +297,7 @@ Program Listing for File block_iterator.hpp
       * ---------------------------------------------------------==*/
    
      template <typename DataType>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      norm(DataType dh = DataType(1)) const noexcept -> Vec {
        Vec      result{};
        DataType mag{1e-15};
@@ -321,7 +321,7 @@ Program Listing for File block_iterator.hpp
      }
    
      template <typename DataType>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      norm_sd(DataType dh = 1) const noexcept -> Vec {
        // NOTE: Here we do not use the grad() function to save some loops.
        // If grad was used, then an extra multiplication would be required per
@@ -342,7 +342,7 @@ Program Listing for File block_iterator.hpp
       * ------------------------------------------------------==*/
    
      template <typename DataType>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      curvature(DataType dh = 1) const noexcept -> DataType {
        if constexpr (dims == 2) {
          return curvature_2d(dh);
@@ -354,7 +354,7 @@ Program Listing for File block_iterator.hpp
      }
    
      template <typename DataType>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      curvature_2d(DataType dh = 1) const noexcept -> DataType {
        const auto px      = grad_dim(dimx(), dh);
        const auto py      = grad_dim(dimy(), dh);
@@ -371,7 +371,7 @@ Program Listing for File block_iterator.hpp
      }
    
      template <typename DataType>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      curvature_3d(DataType dh = 1) const noexcept -> DataType {
        const auto px    = grad_dim(dimx(), dh);
        const auto py    = grad_dim(dimy(), dh);
@@ -402,22 +402,22 @@ Program Listing for File block_iterator.hpp
      /*==--- [size]
       * -----------------------------------------------------------==*/
    
-     ripple_host_device constexpr auto size() const noexcept -> size_t {
+     ripple_all constexpr auto size() const noexcept -> size_t {
        return space_.internal_size();
      }
    
      template <typename Dim>
-     ripple_host_device constexpr auto size(Dim&& dim) const noexcept -> size_t {
+     ripple_all constexpr auto size(Dim&& dim) const noexcept -> size_t {
        return space_.internal_size(static_cast<Dim&&>(dim));
      }
    
      template <typename Dim>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      resize(Dim&& dim, size_t size) noexcept -> void {
        space_.resize_dim(ripple_forward(dim), size);
      }
    
-     ripple_host_device constexpr auto padding() const noexcept -> size_t {
+     ripple_all constexpr auto padding() const noexcept -> size_t {
        return space_.padding();
      }
    };

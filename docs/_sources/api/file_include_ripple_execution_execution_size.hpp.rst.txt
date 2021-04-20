@@ -1,0 +1,76 @@
+
+.. _file_include_ripple_execution_execution_size.hpp:
+
+File execution_size.hpp
+=======================
+
+
+= :ref:`file_include_ripple_execution_execution_size.hpp` ------------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/execution/execution_size.hpp``)
+------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_execution_execution_size.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file contains functionality for computing the size of an execution space for a kernel.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``cmath``
+
+- ``ripple/container/device_block.hpp`` (:ref:`file_include_ripple_container_device_block.hpp`)
+
+- ``ripple/utility/dim.hpp`` (:ref:`file_include_ripple_utility_dim.hpp`)
+
+- ``ripple/utility/type_traits.hpp`` (:ref:`file_include_ripple_utility_type_traits.hpp`)
+
+- ``tuple`` (:ref:`file_include_ripple_container_detail_basic_tuple_.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_functional_kernel_invoke_utils_.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+

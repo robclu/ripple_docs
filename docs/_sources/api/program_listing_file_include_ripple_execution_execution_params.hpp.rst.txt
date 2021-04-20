@@ -1,0 +1,69 @@
+
+.. _program_listing_file_include_ripple_execution_execution_params.hpp:
+
+Program Listing for File execution_params.hpp
+=============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_execution_execution_params.hpp>` (``include/ripple/execution/execution_params.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_EXECUTION_EXECUTION_PARAMS_HPP
+   #define RIPPLE_EXECUTION_EXECUTION_PARAMS_HPP
+   
+   #include "execution_traits.hpp"
+   #include <ripple/utility/dim.hpp>
+   #include <ripple/utility/portability.hpp>
+   
+   namespace ripple {
+   
+   template <typename Impl>
+   struct ExecParams {
+    private:
+     using Traits = ExecTraits<Impl>;
+   
+     ripple_all constexpr auto impl() const noexcept -> const Impl* {
+       return static_cast<const Impl*>(this);
+     }
+   
+     ripple_all constexpr auto impl() noexcept -> Impl* {
+       return static_cast<Impl*>(this);
+     }
+   
+    public:
+     template <size_t Dims>
+     ripple_all constexpr auto size() const noexcept {
+       return impl()->template size<Dims>();
+     }
+   
+     template <size_t Dims>
+     ripple_all constexpr auto size(size_t padding) const noexcept {
+       return impl()->template size<Dims>(padding);
+     }
+   
+     template <typename Dim>
+     ripple_all constexpr auto size(Dim&& dim) const noexcept -> size_t {
+       return impl()->size(ripple_forward(dim));
+     }
+   
+     ripple_all constexpr auto padding() const noexcept -> size_t {
+       return impl()->padding();
+     }
+   
+     template <size_t Dims, typename T>
+     ripple_all decltype(auto) iterator(T* data) const noexcept {
+       return impl()->template iterator<Dims>(data);
+     }
+   
+     template <size_t Dims>
+     ripple_all constexpr auto allocation_size() const noexcept -> size_t {
+       return impl()->template allocation_size<Dims>();
+     }
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_EXECUTION_EXECUTION_PARAMS_HPP

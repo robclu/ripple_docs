@@ -33,8 +33,8 @@
   <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
   <link rel="index" title="Index" href="../genindex.html" />
   <link rel="search" title="Search" href="../search.html" />
-  <link rel="next" title="Template Class Printable" href="classripple_1_1Printable.html" />
-  <link rel="prev" title="Template Class OwnedStorage" href="classripple_1_1OwnedStorage.html" /> 
+  <link rel="next" title="Template Class Range" href="classripple_1_1Range.html" />
+  <link rel="prev" title="Template Class PaddingLoader" href="classripple_1_1PaddingLoader.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -143,6 +143,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -218,20 +219,20 @@
   <div class="section" id="template-class-poolallocator">
 <span id="exhale-class-classripple-1-1poolallocator"></span><h1>Template Class PoolAllocator<a class="headerlink" href="#template-class-poolallocator" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_allocation_pool_allocator.hpp.html#file-include-ripple-core-allocation-pool-allocator-hpp"><span class="std std-ref">File pool_allocator.hpp</span></a></p></li>
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_allocation_pool_allocator.hpp.html#file-include-ripple-allocation-pool-allocator-hpp"><span class="std std-ref">File pool_allocator.hpp</span></a></p></li>
 </ul>
 <div class="section" id="class-documentation">
 <h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp class">
 <dt id="_CPPv4I_6size_t_6size_t0EN6ripple13PoolAllocatorE">
-<span id="_CPPv3I_6size_t_6size_t0EN6ripple13PoolAllocatorE"></span><span id="_CPPv2I_6size_t_6size_t0EN6ripple13PoolAllocatorE"></span>template&lt;size_t <code class="sig-name descname">ElementSize</code>, size_t <code class="sig-name descname">Alignment</code>, typename <code class="sig-name descname">FreelistImpl</code> = <a class="reference internal" href="classripple_1_1Freelist.html#_CPPv4N6ripple8FreelistE" title="ripple::Freelist">Freelist</a>&gt;<br /><span class="target" id="classripple_1_1PoolAllocator"></span><em class="property">class </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">PoolAllocator</code><a class="headerlink" href="#_CPPv4I_6size_t_6size_t0EN6ripple13PoolAllocatorE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3I_6size_t_6size_t0EN6ripple13PoolAllocatorE"></span><span id="_CPPv2I_6size_t_6size_t0EN6ripple13PoolAllocatorE"></span>template&lt;size_t <code class="sig-name descname">ElementSize</code>, size_t <code class="sig-name descname">Alignment</code>, typename <code class="sig-name descname">FreeList</code> = <a class="reference internal" href="classripple_1_1Freelist.html#_CPPv4N6ripple8FreelistE" title="ripple::Freelist">Freelist</a>&gt;<br /><span class="target" id="classripple_1_1PoolAllocator"></span><em class="property">class </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">PoolAllocator</code><a class="headerlink" href="#_CPPv4I_6size_t_6size_t0EN6ripple13PoolAllocatorE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><a class="reference internal" href="classripple_1_1Allocator.html#classripple_1_1Allocator"><span class="std std-ref">Allocator</span></a> to allocator elements of size ElementSize, with a given Alignment, and using the given FreelistImpl. </p>
 <p>We don’t use a templated type for the pooled allocator to allow the allocator to allocate elements of different types but which are the same size, or smaller, than the element size for the pool.</p>
 <p><dl class="simple">
 <dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ElementSize</span></code>: The byte size of the elements in the pool. </p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Alignment</span></code>: The alignment for the elements. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">FreelistImpl</span></code>: The implementation type of the freelist. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FreeList</span></code>: The implementation type of the freelist. </p></li>
 </ul>
 </dd>
 </dl>
@@ -240,20 +241,20 @@
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="cpp function">
 <dt id="_CPPv4N6ripple13PoolAllocator13PoolAllocatorEv">
-<span id="_CPPv3N6ripple13PoolAllocator13PoolAllocatorEv"></span><span id="_CPPv2N6ripple13PoolAllocator13PoolAllocatorEv"></span><span id="ripple::PoolAllocator::PoolAllocator"></span><span class="target" id="classripple_1_1PoolAllocator_1add0bfc9451439ba48902b12bb99ad8fc"></span><code class="sig-name descname">PoolAllocator</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> = delete<a class="headerlink" href="#_CPPv4N6ripple13PoolAllocator13PoolAllocatorEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6ripple13PoolAllocator13PoolAllocatorEv"></span><span id="_CPPv2N6ripple13PoolAllocator13PoolAllocatorEv"></span><span id="ripple::PoolAllocator::PoolAllocator"></span><span class="target" id="classripple_1_1PoolAllocator_1ae5aea4f3d60066c1c80a1b6ff171b2ee"></span><code class="sig-name descname">PoolAllocator</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> = delete<a class="headerlink" href="#_CPPv4N6ripple13PoolAllocator13PoolAllocatorEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Default constructor for the pool. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N6ripple13PoolAllocatorD0Ev">
-<span id="_CPPv3N6ripple13PoolAllocatorD0Ev"></span><span id="_CPPv2N6ripple13PoolAllocatorD0Ev"></span><span id="ripple::PoolAllocator::~PoolAllocator"></span><span class="target" id="classripple_1_1PoolAllocator_1a583bdd60f5917757745310b59787b9ca"></span><code class="sig-name descname">~PoolAllocator</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> = default<a class="headerlink" href="#_CPPv4N6ripple13PoolAllocatorD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6ripple13PoolAllocatorD0Ev"></span><span id="_CPPv2N6ripple13PoolAllocatorD0Ev"></span><span id="ripple::PoolAllocator::~PoolAllocator"></span><span class="target" id="classripple_1_1PoolAllocator_1ad67556c4465d76c32e0dd24ed18e019e"></span><code class="sig-name descname">~PoolAllocator</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> = default<a class="headerlink" href="#_CPPv4N6ripple13PoolAllocatorD0Ev" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Default destructor for the pool. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N6ripple13PoolAllocator13PoolAllocatorEPKvPKv">
-<span id="_CPPv3N6ripple13PoolAllocator13PoolAllocatorEPKvPKv"></span><span id="_CPPv2N6ripple13PoolAllocator13PoolAllocatorEPKvPKv"></span><span id="ripple::PoolAllocator::PoolAllocator__voidCP.voidCP"></span><span class="target" id="classripple_1_1PoolAllocator_1af274ed849168b8d78fbe2d5373a32fe3"></span><code class="sig-name descname">PoolAllocator</code><span class="sig-paren">(</span><em class="property">const</em> void *<em>begin</em>, <em class="property">const</em> void *<em>end</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple13PoolAllocator13PoolAllocatorEPKvPKv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Constructor which initializes the freelist with the <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code> pointers to the memory arena for the pool. </p>
+<span id="_CPPv3N6ripple13PoolAllocator13PoolAllocatorEPKvPKv"></span><span id="_CPPv2N6ripple13PoolAllocator13PoolAllocatorEPKvPKv"></span><span id="ripple::PoolAllocator::PoolAllocator__voidCP.voidCP"></span><span class="target" id="classripple_1_1PoolAllocator_1a6b0117a652d0589ae8eac9e3e9ed7c7d"></span><code class="sig-name descname">PoolAllocator</code><span class="sig-paren">(</span><em class="property">const</em> void *<em>begin</em>, <em class="property">const</em> void *<em>end</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple13PoolAllocator13PoolAllocatorEPKvPKv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor which initializes the freelist with the start and end pointers to the memory arena for the pool. </p>
 <p><dl class="simple">
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">start</span></code>: A pointer to the start of the arena for the pool. </p></li>
@@ -266,7 +267,7 @@
 
 <dl class="cpp function">
 <dt id="_CPPv4I0EN6ripple13PoolAllocator13PoolAllocatorERK5Arena">
-<span id="_CPPv3I0EN6ripple13PoolAllocator13PoolAllocatorERK5Arena"></span><span id="_CPPv2I0EN6ripple13PoolAllocator13PoolAllocatorERK5Arena"></span>template&lt;typename <code class="sig-name descname">Arena</code>&gt;<br /><span class="target" id="classripple_1_1PoolAllocator_1a5c73be098d32e2ce904527a0473fefab"></span><code class="sig-name descname">PoolAllocator</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN6ripple13PoolAllocator13PoolAllocatorERK5Arena" title="ripple::PoolAllocator::PoolAllocator::Arena">Arena</a> &amp;<em>arena</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4I0EN6ripple13PoolAllocator13PoolAllocatorERK5Arena" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3I0EN6ripple13PoolAllocator13PoolAllocatorERK5Arena"></span><span id="_CPPv2I0EN6ripple13PoolAllocator13PoolAllocatorERK5Arena"></span>template&lt;typename <code class="sig-name descname">Arena</code>&gt;<br /><span class="target" id="classripple_1_1PoolAllocator_1a73849384ef1e3716b8763ae0fb92baf0"></span><code class="sig-name descname">PoolAllocator</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN6ripple13PoolAllocator13PoolAllocatorERK5Arena" title="ripple::PoolAllocator::PoolAllocator::Arena">Arena</a> &amp;<em>arena</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4I0EN6ripple13PoolAllocator13PoolAllocatorERK5Arena" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructor to initialize the allocator with the arena to allocator from. </p>
 <p><dl class="simple">
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
@@ -283,8 +284,8 @@
 
 <dl class="cpp function">
 <dt id="_CPPv4N6ripple13PoolAllocator13PoolAllocatorERR13PoolAllocator">
-<span id="_CPPv3N6ripple13PoolAllocator13PoolAllocatorERR13PoolAllocator"></span><span id="_CPPv2N6ripple13PoolAllocator13PoolAllocatorERR13PoolAllocator"></span><span id="ripple::PoolAllocator::PoolAllocator__PoolAllocatorRR"></span><span class="target" id="classripple_1_1PoolAllocator_1a5840c3db472d4b99ad57b9f6a2dbcd2b"></span><code class="sig-name descname">PoolAllocator</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple13PoolAllocator13PoolAllocatorERR13PoolAllocator" title="ripple::PoolAllocator::PoolAllocator">PoolAllocator</a> &amp;&amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> = default<a class="headerlink" href="#_CPPv4N6ripple13PoolAllocator13PoolAllocatorERR13PoolAllocator" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Moves constructor to move <code class="docutils literal notranslate"><span class="pre">other</span></code> into this allocator. </p>
+<span id="_CPPv3N6ripple13PoolAllocator13PoolAllocatorERR13PoolAllocator"></span><span id="_CPPv2N6ripple13PoolAllocator13PoolAllocatorERR13PoolAllocator"></span><span id="ripple::PoolAllocator::PoolAllocator__PoolAllocatorRR"></span><span class="target" id="classripple_1_1PoolAllocator_1a0f2d58b8424593fb2c5737eb334dacb6"></span><code class="sig-name descname">PoolAllocator</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple13PoolAllocator13PoolAllocatorERR13PoolAllocator" title="ripple::PoolAllocator::PoolAllocator">PoolAllocator</a> &amp;&amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> = default<a class="headerlink" href="#_CPPv4N6ripple13PoolAllocator13PoolAllocatorERR13PoolAllocator" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Moves constructor to move other into this allocator. </p>
 <p><dl class="simple">
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other allocator to move into this one. </p></li>
@@ -296,8 +297,8 @@
 
 <dl class="cpp function">
 <dt id="_CPPv4N6ripple13PoolAllocatoraSERR13PoolAllocator">
-<span id="_CPPv3N6ripple13PoolAllocatoraSERR13PoolAllocator"></span><span id="_CPPv2N6ripple13PoolAllocatoraSERR13PoolAllocator"></span><span id="ripple::PoolAllocator::assign-operator__PoolAllocatorRR"></span><span class="target" id="classripple_1_1PoolAllocator_1af4850c5a44092bb515418ef17d653743"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I_6size_t_6size_t0EN6ripple13PoolAllocatorE" title="ripple::PoolAllocator">PoolAllocator</a> &amp;&amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I_6size_t_6size_t0EN6ripple13PoolAllocatorE" title="ripple::PoolAllocator">PoolAllocator</a>&amp; = default<a class="headerlink" href="#_CPPv4N6ripple13PoolAllocatoraSERR13PoolAllocator" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Move assignment operator to move <code class="docutils literal notranslate"><span class="pre">other</span></code> into this allocator. </p>
+<span id="_CPPv3N6ripple13PoolAllocatoraSERR13PoolAllocator"></span><span id="_CPPv2N6ripple13PoolAllocatoraSERR13PoolAllocator"></span><span id="ripple::PoolAllocator::assign-operator__PoolAllocatorRR"></span><span class="target" id="classripple_1_1PoolAllocator_1aa6fe266b054f3d717acce3be00ee24f3"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I_6size_t_6size_t0EN6ripple13PoolAllocatorE" title="ripple::PoolAllocator">PoolAllocator</a> &amp;&amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4I_6size_t_6size_t0EN6ripple13PoolAllocatorE" title="ripple::PoolAllocator">PoolAllocator</a>&amp; = default<a class="headerlink" href="#_CPPv4N6ripple13PoolAllocatoraSERR13PoolAllocator" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Move assignment operator to move other into this allocator. </p>
 <p><dl class="simple">
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other allocator to move into this one. </p></li>
@@ -309,23 +310,25 @@
 
 <dl class="cpp function">
 <dt id="_CPPv4N6ripple13PoolAllocator13PoolAllocatorERK13PoolAllocator">
-<span id="_CPPv3N6ripple13PoolAllocator13PoolAllocatorERK13PoolAllocator"></span><span id="_CPPv2N6ripple13PoolAllocator13PoolAllocatorERK13PoolAllocator"></span><span id="ripple::PoolAllocator::PoolAllocator__PoolAllocatorCR"></span><span class="target" id="classripple_1_1PoolAllocator_1a4e318dadd3b71ffd76a86d5cfd47f2a3"></span><code class="sig-name descname">PoolAllocator</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple13PoolAllocator13PoolAllocatorERK13PoolAllocator" title="ripple::PoolAllocator::PoolAllocator">PoolAllocator</a>&amp;<span class="sig-paren">)</span> = delete<a class="headerlink" href="#_CPPv4N6ripple13PoolAllocator13PoolAllocatorERK13PoolAllocator" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6ripple13PoolAllocator13PoolAllocatorERK13PoolAllocator"></span><span id="_CPPv2N6ripple13PoolAllocator13PoolAllocatorERK13PoolAllocator"></span><span id="ripple::PoolAllocator::PoolAllocator__PoolAllocatorCR"></span><span class="target" id="classripple_1_1PoolAllocator_1afd18b895aed47fc30f223b3b4cde8f2d"></span><code class="sig-name descname">PoolAllocator</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple13PoolAllocator13PoolAllocatorERK13PoolAllocator" title="ripple::PoolAllocator::PoolAllocator">PoolAllocator</a>&amp;<span class="sig-paren">)</span> = delete<a class="headerlink" href="#_CPPv4N6ripple13PoolAllocator13PoolAllocatorERK13PoolAllocator" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Copy constructor  deleted, allocators can’t be copied. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N6ripple13PoolAllocatoraSERK13PoolAllocator">
-<span id="_CPPv3N6ripple13PoolAllocatoraSERK13PoolAllocator"></span><span id="_CPPv2N6ripple13PoolAllocatoraSERK13PoolAllocator"></span><span id="ripple::PoolAllocator::assign-operator__PoolAllocatorCR"></span><span class="target" id="classripple_1_1PoolAllocator_1ab25c91d7d6553a24cc0e3c8948ed7679"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I_6size_t_6size_t0EN6ripple13PoolAllocatorE" title="ripple::PoolAllocator">PoolAllocator</a>&amp;<span class="sig-paren">)</span> = delete<a class="headerlink" href="#_CPPv4N6ripple13PoolAllocatoraSERK13PoolAllocator" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6ripple13PoolAllocatoraSERK13PoolAllocator"></span><span id="_CPPv2N6ripple13PoolAllocatoraSERK13PoolAllocator"></span><span id="ripple::PoolAllocator::assign-operator__PoolAllocatorCR"></span><span class="target" id="classripple_1_1PoolAllocator_1a36924ea11d49c7f35304f348ffd29ff0"></span>auto <code class="sig-name descname">operator=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I_6size_t_6size_t0EN6ripple13PoolAllocatorE" title="ripple::PoolAllocator">PoolAllocator</a>&amp;<span class="sig-paren">)</span> = delete<a class="headerlink" href="#_CPPv4N6ripple13PoolAllocatoraSERK13PoolAllocator" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Copy assignment  deleted, allocators can’t be copied. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N6ripple13PoolAllocator5allocE6size_t6size_t">
-<span id="_CPPv3N6ripple13PoolAllocator5allocE6size_t6size_t"></span><span id="_CPPv2N6ripple13PoolAllocator5allocE6size_t6size_t"></span><span id="ripple::PoolAllocator::alloc__s.s"></span><span class="target" id="classripple_1_1PoolAllocator_1a049f778ae1062d2f6ae68f82178db3bd"></span>auto <code class="sig-name descname">alloc</code><span class="sig-paren">(</span>size_t <em>size</em> = element_size, size_t <em>align</em> = alignment<span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void*<a class="headerlink" href="#_CPPv4N6ripple13PoolAllocator5allocE6size_t6size_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Allocates an element of <code class="docutils literal notranslate"><span class="pre">size</span></code> with a given <code class="docutils literal notranslate"><span class="pre">alignment</span></code> from the pool. </p>
-<p>This will fail if <code class="docutils literal notranslate"><span class="pre">size</span></code> is larger than the element size for the pool or if the alignment is larger than the alignment for the pool.</p>
-<p>If the pool is full, this will return a nullptr.</p>
+<span id="_CPPv3N6ripple13PoolAllocator5allocE6size_t6size_t"></span><span id="_CPPv2N6ripple13PoolAllocator5allocE6size_t6size_t"></span><span id="ripple::PoolAllocator::alloc__s.s"></span><span class="target" id="classripple_1_1PoolAllocator_1a2cb8c2297659e74cce246a742fc5b2ec"></span>auto <code class="sig-name descname">alloc</code><span class="sig-paren">(</span>size_t <em>size</em> = element_size, size_t <em>align</em> = alignment<span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void*<a class="headerlink" href="#_CPPv4N6ripple13PoolAllocator5allocE6size_t6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Allocates an element of size with a given alignment from the pool. </p>
 <p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This will fail if size is larger than the element size for the pool or if the alignment is larger than the alignment for the pool.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>If the pool is full, this will return a nullptr.</p>
+</dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">size</span></code>: The size of the element to allocate. </p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">align</span></code>: The alignment for the allocation. </p></li>
@@ -337,8 +340,8 @@
 
 <dl class="cpp function">
 <dt id="_CPPv4N6ripple13PoolAllocator4freeEPv6size_t">
-<span id="_CPPv3N6ripple13PoolAllocator4freeEPv6size_t"></span><span id="_CPPv2N6ripple13PoolAllocator4freeEPv6size_t"></span><span id="ripple::PoolAllocator::free__voidP.s"></span><span class="target" id="classripple_1_1PoolAllocator_1a2ad7a2506a594fd77d02a99bd462b2fb"></span>auto <code class="sig-name descname">free</code><span class="sig-paren">(</span>void *<em>ptr</em>, size_t = element_size<span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple13PoolAllocator4freeEPv6size_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Frees the <code class="docutils literal notranslate"><span class="pre">ptr</span></code>, pushing it onto the front of the freelist. </p>
+<span id="_CPPv3N6ripple13PoolAllocator4freeEPv6size_t"></span><span id="_CPPv2N6ripple13PoolAllocator4freeEPv6size_t"></span><span id="ripple::PoolAllocator::free__voidP.s"></span><span class="target" id="classripple_1_1PoolAllocator_1afd046984228987ffbaf55f229fd6a293"></span>auto <code class="sig-name descname">free</code><span class="sig-paren">(</span>void *<em>ptr</em>, size_t = element_size<span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple13PoolAllocator4freeEPv6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Frees the ptr, pushing it onto the front of the freelist. </p>
 <p><dl class="simple">
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ptr</span></code>: The pointer to free. </p></li>
@@ -350,8 +353,8 @@
 
 <dl class="cpp function">
 <dt id="_CPPv4NK6ripple13PoolAllocator4ownsEPv">
-<span id="_CPPv3NK6ripple13PoolAllocator4ownsEPv"></span><span id="_CPPv2NK6ripple13PoolAllocator4ownsEPv"></span><span id="ripple::PoolAllocator::owns__voidPC"></span><span class="target" id="classripple_1_1PoolAllocator_1aa6eb09d8bd38ff628f14f4aa4eb2a00e"></span>auto <code class="sig-name descname">owns</code><span class="sig-paren">(</span>void *<em>ptr</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4NK6ripple13PoolAllocator4ownsEPv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns true if the allocator owns the <code class="docutils literal notranslate"><span class="pre">ptr</span></code>. </p>
+<span id="_CPPv3NK6ripple13PoolAllocator4ownsEPv"></span><span id="_CPPv2NK6ripple13PoolAllocator4ownsEPv"></span><span id="ripple::PoolAllocator::owns__voidPC"></span><span class="target" id="classripple_1_1PoolAllocator_1a65d91ad26bfc4afe3e944f144ddf8b48"></span>auto <code class="sig-name descname">owns</code><span class="sig-paren">(</span>void *<em>ptr</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4NK6ripple13PoolAllocator4ownsEPv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns true if the allocator owns the ptr. </p>
 <p><dl class="simple">
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ptr</span></code>: The pointer to determine if is owned by the allocator. </p></li>
@@ -363,7 +366,7 @@
 
 <dl class="cpp function">
 <dt id="_CPPv4N6ripple13PoolAllocator5resetEv">
-<span id="_CPPv3N6ripple13PoolAllocator5resetEv"></span><span id="_CPPv2N6ripple13PoolAllocator5resetEv"></span><span id="ripple::PoolAllocator::reset"></span><span class="target" id="classripple_1_1PoolAllocator_1aa8206847383c67089d428ff8a6e7e686"></span>auto <code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple13PoolAllocator5resetEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6ripple13PoolAllocator5resetEv"></span><span id="_CPPv2N6ripple13PoolAllocator5resetEv"></span><span id="ripple::PoolAllocator::reset"></span><span class="target" id="classripple_1_1PoolAllocator_1ab004f615067417017d4823b672ead7dd"></span>auto <code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4N6ripple13PoolAllocator5resetEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Resets the pool. </p>
 <p>Since the freelist doesn’t support restting, this doesn’t do anything. </p>
 </dd></dl>
@@ -382,10 +385,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="classripple_1_1Printable.html" class="btn btn-neutral float-right" title="Template Class Printable" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="classripple_1_1Range.html" class="btn btn-neutral float-right" title="Template Class Range" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="classripple_1_1OwnedStorage.html" class="btn btn-neutral" title="Template Class OwnedStorage" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="classripple_1_1PaddingLoader.html" class="btn btn-neutral" title="Template Class PaddingLoader" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   

@@ -3,7 +3,7 @@
 Template Struct ContigStorageHelper::Vec
 ========================================
 
-- Defined in :ref:`file_include_ripple_core_storage_storage_element_traits.hpp`
+- Defined in :ref:`file_include_ripple_storage_storage_element_traits.hpp`
 
 
 Nested Relationships

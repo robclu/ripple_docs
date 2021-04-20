@@ -3,7 +3,7 @@
 Template Function ripple::detail::copy_face_padding
 ===================================================
 
-- Defined in :ref:`file_include_ripple_core_graph_detail_utils_.hpp`
+- Defined in :ref:`file_include_ripple_graph_detail_utils_.hpp`
 
 
 Function Documentation

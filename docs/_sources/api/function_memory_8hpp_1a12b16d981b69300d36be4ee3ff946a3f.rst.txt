@@ -3,7 +3,7 @@
 Template Function ripple::gpu::memcpy_device_to_host_async(HostPtr \*, const DevPtr \*, size_t, const GpuStream&)
 =================================================================================================================
 
-- Defined in :ref:`file_include_ripple_core_utility_memory.hpp`
+- Defined in :ref:`file_include_ripple_utility_memory.hpp`
 
 
 Function Documentation

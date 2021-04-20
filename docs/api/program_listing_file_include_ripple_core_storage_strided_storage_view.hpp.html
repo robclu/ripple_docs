@@ -141,6 +141,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -280,25 +281,25 @@
   <span class="k">struct</span> <span class="n">Allocator</span> <span class="p">{</span>
    <span class="k">private</span><span class="o">:</span>
     <span class="k">template</span> <span class="o">&lt;</span><span class="kt">size_t</span> <span class="n">I</span><span class="o">&gt;</span>
-    <span class="n">ripple_host_device</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span>
+    <span class="n">ripple_all</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span>
     <span class="n">offset_scale</span><span class="p">(</span><span class="n">Num</span><span class="o">&lt;</span><span class="n">I</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">DimX</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
       <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="k">template</span> <span class="o">&lt;</span><span class="kt">size_t</span> <span class="n">I</span><span class="o">&gt;</span>
-    <span class="n">ripple_host_device</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span>
+    <span class="n">ripple_all</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span>
     <span class="n">offset_scale</span><span class="p">(</span><span class="n">Num</span><span class="o">&lt;</span><span class="n">I</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">DimY</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
       <span class="k">return</span> <span class="n">nth_element_components</span><span class="o">&lt;</span><span class="n">I</span><span class="o">&gt;</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="k">template</span> <span class="o">&lt;</span><span class="kt">size_t</span> <span class="n">I</span><span class="o">&gt;</span>
-    <span class="n">ripple_host_device</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span>
+    <span class="n">ripple_all</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span>
     <span class="n">offset_scale</span><span class="p">(</span><span class="n">Num</span><span class="o">&lt;</span><span class="n">I</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">DimZ</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
       <span class="k">return</span> <span class="n">nth_element_components</span><span class="o">&lt;</span><span class="n">I</span><span class="o">&gt;</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="k">template</span> <span class="o">&lt;</span><span class="kt">size_t</span> <span class="n">I</span><span class="o">&gt;</span>
-    <span class="n">ripple_host_device</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span>
+    <span class="n">ripple_all</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span>
     <span class="n">offset_scale</span><span class="p">(</span><span class="n">Num</span><span class="o">&lt;</span><span class="n">I</span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">dim</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
       <span class="k">return</span> <span class="n">dim</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="n">nth_element_components</span><span class="o">&lt;</span><span class="n">I</span><span class="o">&gt;</span><span class="p">;</span>
     <span class="p">}</span>
@@ -307,13 +308,13 @@
     <span class="k">static</span> <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">alignment</span> <span class="o">=</span>
       <span class="n">max_element</span><span class="p">(</span><span class="n">storage_element_traits_t</span><span class="o">&lt;</span><span class="n">Ts</span><span class="o">&gt;::</span><span class="n">align_size</span><span class="p">...);</span>
 
-    <span class="n">ripple_host_device</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span>
+    <span class="n">ripple_all</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span>
     <span class="nf">allocation_size</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">elements</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
       <span class="k">return</span> <span class="n">storage_byte_size</span> <span class="o">*</span> <span class="n">elements</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="k">template</span> <span class="o">&lt;</span><span class="kt">size_t</span> <span class="n">Elements</span><span class="o">&gt;</span>
-    <span class="n">ripple_host_device</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span>
+    <span class="n">ripple_all</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span>
     <span class="n">allocation_size</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
       <span class="k">return</span> <span class="n">storage_byte_size</span> <span class="o">*</span> <span class="n">Elements</span><span class="p">;</span>
     <span class="p">}</span>
@@ -335,7 +336,7 @@
     <span class="p">}</span>
 
     <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">SpaceImpl</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Dim</span><span class="o">&gt;</span>
-    <span class="n">ripple_host_device</span> <span class="k">static</span> <span class="k">auto</span> <span class="n">offset</span><span class="p">(</span>
+    <span class="n">ripple_all</span> <span class="k">static</span> <span class="k">auto</span> <span class="n">offset</span><span class="p">(</span>
       <span class="k">const</span> <span class="n">Storage</span><span class="o">&amp;</span>                  <span class="n">storage</span><span class="p">,</span>
       <span class="k">const</span> <span class="n">MultidimSpace</span><span class="o">&lt;</span><span class="n">SpaceImpl</span><span class="o">&gt;&amp;</span> <span class="n">space</span><span class="p">,</span>
       <span class="n">Dim</span><span class="o">&amp;&amp;</span>                           <span class="n">dim</span><span class="p">,</span>
@@ -353,7 +354,7 @@
     <span class="p">}</span>
 
     <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">SpaceImpl</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Dim</span><span class="o">&gt;</span>
-    <span class="n">ripple_host_device</span> <span class="k">static</span> <span class="k">auto</span> <span class="n">shift</span><span class="p">(</span>
+    <span class="n">ripple_all</span> <span class="k">static</span> <span class="k">auto</span> <span class="n">shift</span><span class="p">(</span>
       <span class="n">Storage</span><span class="o">&amp;</span>                        <span class="n">storage</span><span class="p">,</span>
       <span class="k">const</span> <span class="n">MultidimSpace</span><span class="o">&lt;</span><span class="n">SpaceImpl</span><span class="o">&gt;&amp;</span> <span class="n">space</span><span class="p">,</span>
       <span class="n">Dim</span><span class="o">&amp;&amp;</span>                           <span class="n">dim</span><span class="p">,</span>
@@ -368,7 +369,7 @@
     <span class="p">}</span>
 
     <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">SpaceImpl</span><span class="o">&gt;</span>
-    <span class="n">ripple_host_device</span> <span class="k">static</span> <span class="k">auto</span>
+    <span class="n">ripple_all</span> <span class="k">static</span> <span class="k">auto</span>
     <span class="n">create</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">ptr</span><span class="p">,</span> <span class="k">const</span> <span class="n">MultidimSpace</span><span class="o">&lt;</span><span class="n">SpaceImpl</span><span class="o">&gt;&amp;</span> <span class="n">space</span><span class="p">)</span> <span class="k">noexcept</span>
       <span class="o">-&gt;</span> <span class="n">Storage</span> <span class="p">{</span>
       <span class="n">Storage</span> <span class="n">r</span><span class="p">;</span>
@@ -412,18 +413,18 @@
   <span class="n">StridedStorageView</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Impl</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span>
+  <span class="n">ripple_all</span>
   <span class="n">StridedStorageView</span><span class="p">(</span><span class="k">const</span> <span class="n">StorageAccessor</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span>
     <span class="n">copy</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">Impl</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">other</span><span class="p">));</span>
   <span class="p">}</span>
 
-  <span class="n">ripple_host_device</span>
+  <span class="n">ripple_all</span>
   <span class="n">StridedStorageView</span><span class="p">(</span><span class="k">const</span> <span class="n">StridedStorageView</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span>
   <span class="o">:</span> <span class="n">stride_</span><span class="p">{</span><span class="n">other</span><span class="p">.</span><span class="n">stride_</span><span class="p">}</span> <span class="p">{</span>
     <span class="n">unrolled_for</span><span class="o">&lt;</span><span class="n">num_types</span><span class="o">&gt;</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="n">data_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">other</span><span class="p">.</span><span class="n">data_</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="p">});</span>
   <span class="p">}</span>
 
-  <span class="n">ripple_host_device</span> <span class="n">StridedStorageView</span><span class="p">(</span><span class="n">StridedStorageView</span><span class="o">&amp;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span>
+  <span class="n">ripple_all</span> <span class="n">StridedStorageView</span><span class="p">(</span><span class="n">StridedStorageView</span><span class="o">&amp;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span>
   <span class="o">:</span> <span class="n">stride_</span><span class="p">{</span><span class="n">other</span><span class="p">.</span><span class="n">stride_</span><span class="p">}</span> <span class="p">{</span>
     <span class="n">unrolled_for</span><span class="o">&lt;</span><span class="n">num_types</span><span class="o">&gt;</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
       <span class="n">data_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>       <span class="o">=</span> <span class="n">other</span><span class="p">.</span><span class="n">data_</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
@@ -434,19 +435,19 @@
   <span class="cm">/*==--- [operator overload] ----------------------------------------------==*/</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Impl</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">StorageAccessor</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">StorageAccessor</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span>
     <span class="o">-&gt;</span> <span class="n">StridedStorageView</span><span class="o">&amp;</span> <span class="p">{</span>
     <span class="n">copy</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">Impl</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">other</span><span class="p">));</span>
     <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span>
   <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">StridedStorageView</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">StridedStorageView</span><span class="o">&amp;</span> <span class="p">{</span>
     <span class="n">copy</span><span class="p">(</span><span class="n">other</span><span class="p">);</span>
     <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span>
   <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">StridedStorageView</span><span class="o">&amp;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">StridedStorageView</span><span class="o">&amp;</span> <span class="p">{</span>
     <span class="n">stride_</span> <span class="o">=</span> <span class="n">other</span><span class="p">.</span><span class="n">stride_</span><span class="p">;</span>
     <span class="n">unrolled_for</span><span class="o">&lt;</span><span class="n">num_types</span><span class="o">&gt;</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
@@ -457,22 +458,22 @@
   <span class="p">}</span>
   <span class="cm">/*==--- [interface] ------------------------------------------------------==*/</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="n">data</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Ptr</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="n">data</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Ptr</span> <span class="p">{</span>
     <span class="k">return</span> <span class="o">&amp;</span><span class="n">data_</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
   <span class="p">}</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="n">data</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">ConstPtr</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="n">data</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">ConstPtr</span> <span class="p">{</span>
     <span class="k">return</span> <span class="o">&amp;</span><span class="n">data_</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
   <span class="p">}</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="n">data_ptrs</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Ptr</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="n">data_ptrs</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Ptr</span><span class="o">&gt;</span> <span class="p">{</span>
     <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Ptr</span><span class="o">&gt;</span> <span class="n">p</span><span class="p">;</span>
     <span class="n">unrolled_for</span><span class="o">&lt;</span><span class="n">num_types</span><span class="o">&gt;</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="n">p</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">data_</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span> <span class="p">});</span>
     <span class="k">return</span> <span class="n">p</span><span class="p">;</span>
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Other</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="n">copy</span><span class="p">(</span><span class="k">const</span> <span class="n">Other</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="n">copy</span><span class="p">(</span><span class="k">const</span> <span class="n">Other</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
     <span class="k">static_assert</span><span class="p">(</span>
       <span class="n">is_storage_accessor_v</span><span class="o">&lt;</span><span class="n">Other</span><span class="o">&gt;</span><span class="p">,</span>
       <span class="s">&quot;Can only copy from storage accessor types!&quot;</span><span class="p">);</span>
@@ -485,7 +486,7 @@
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="kt">size_t</span> <span class="n">I</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">components_of</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">components_of</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">nth_element_components</span><span class="o">&lt;</span><span class="n">I</span><span class="o">&gt;</span><span class="p">;</span>
   <span class="p">}</span>
 
@@ -493,7 +494,7 @@
     <span class="kt">size_t</span> <span class="n">I</span><span class="p">,</span>
     <span class="k">typename</span> <span class="n">T</span>                  <span class="o">=</span> <span class="n">nth_element_t</span><span class="o">&lt;</span><span class="n">I</span><span class="p">,</span> <span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span><span class="p">,</span>
     <span class="n">non_vec_element_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="n">get</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="n">get</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="p">{</span>
     <span class="k">return</span> <span class="o">*</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;*&gt;</span><span class="p">(</span><span class="n">data_</span><span class="p">[</span><span class="n">I</span><span class="p">]);</span>
   <span class="p">}</span>
 
@@ -501,7 +502,7 @@
     <span class="kt">size_t</span> <span class="n">I</span><span class="p">,</span>
     <span class="k">typename</span> <span class="n">T</span>                  <span class="o">=</span> <span class="n">nth_element_t</span><span class="o">&lt;</span><span class="n">I</span><span class="p">,</span> <span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span><span class="p">,</span>
     <span class="n">non_vec_element_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="n">get</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="n">get</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="p">{</span>
     <span class="k">return</span> <span class="o">*</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;*&gt;</span><span class="p">(</span><span class="n">data_</span><span class="p">[</span><span class="n">I</span><span class="p">]);</span>
   <span class="p">}</span>
 
@@ -510,7 +511,7 @@
     <span class="kt">size_t</span> <span class="n">J</span><span class="p">,</span>
     <span class="k">typename</span> <span class="n">T</span>              <span class="o">=</span> <span class="n">nth_element_t</span><span class="o">&lt;</span><span class="n">I</span><span class="p">,</span> <span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span><span class="p">,</span>
     <span class="n">vec_element_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="n">get</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="n">get</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="p">{</span>
     <span class="k">static_assert</span><span class="p">(</span>
       <span class="n">J</span> <span class="o">&lt;</span> <span class="n">element_components</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="s">&quot;Out of range access for element!&quot;</span><span class="p">);</span>
     <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;*&gt;</span><span class="p">(</span><span class="n">data_</span><span class="p">[</span><span class="n">I</span><span class="p">])[</span><span class="n">J</span> <span class="o">*</span> <span class="n">stride_</span><span class="p">];</span>
@@ -521,7 +522,7 @@
     <span class="kt">size_t</span> <span class="n">J</span><span class="p">,</span>
     <span class="k">typename</span> <span class="n">T</span>              <span class="o">=</span> <span class="n">nth_element_t</span><span class="o">&lt;</span><span class="n">I</span><span class="p">,</span> <span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span><span class="p">,</span>
     <span class="n">vec_element_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="n">get</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="n">get</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="p">{</span>
     <span class="k">static_assert</span><span class="p">(</span>
       <span class="n">J</span> <span class="o">&lt;</span> <span class="n">element_components</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="s">&quot;Out of range access for element!&quot;</span><span class="p">);</span>
     <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;*&gt;</span><span class="p">(</span><span class="n">data_</span><span class="p">[</span><span class="n">I</span><span class="p">])[</span><span class="n">J</span> <span class="o">*</span> <span class="n">stride_</span><span class="p">];</span>
@@ -531,7 +532,7 @@
     <span class="kt">size_t</span> <span class="n">I</span><span class="p">,</span>
     <span class="k">typename</span> <span class="n">T</span>              <span class="o">=</span> <span class="n">nth_element_t</span><span class="o">&lt;</span><span class="n">I</span><span class="p">,</span> <span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span><span class="p">,</span>
     <span class="n">vec_element_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="n">get</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">j</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="n">get</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">j</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;*&gt;</span><span class="p">(</span><span class="n">data_</span><span class="p">[</span><span class="n">I</span><span class="p">])[</span><span class="n">j</span> <span class="o">*</span> <span class="n">stride_</span><span class="p">];</span>
   <span class="p">}</span>
 
@@ -539,7 +540,7 @@
     <span class="kt">size_t</span> <span class="n">I</span><span class="p">,</span>
     <span class="k">typename</span> <span class="n">T</span>              <span class="o">=</span> <span class="n">nth_element_t</span><span class="o">&lt;</span><span class="n">I</span><span class="p">,</span> <span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span><span class="p">,</span>
     <span class="n">vec_element_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span>
   <span class="n">get</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">j</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;*&gt;</span><span class="p">(</span><span class="n">data_</span><span class="p">[</span><span class="n">I</span><span class="p">])[</span><span class="n">j</span> <span class="o">*</span> <span class="n">stride_</span><span class="p">];</span>
   <span class="p">}</span>
@@ -574,7 +575,7 @@
   <span class="k">struct</span> <span class="n">Allocator</span> <span class="p">{</span>
    <span class="k">private</span><span class="o">:</span>
     <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Dim</span><span class="o">&gt;</span>
-    <span class="n">ripple_host_device</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span>
+    <span class="n">ripple_all</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span>
     <span class="n">offset_scale</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
       <span class="k">if</span> <span class="k">constexpr</span> <span class="p">(</span><span class="n">is_cx_number_v</span><span class="o">&lt;</span><span class="n">Dim</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="k">constexpr</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">decay_t</span><span class="o">&lt;</span><span class="n">Dim</span><span class="o">&gt;::</span><span class="n">value</span> <span class="o">==</span> <span class="n">DimX</span><span class="o">::</span><span class="n">value</span><span class="p">)</span> <span class="p">{</span>
@@ -590,13 +591,13 @@
    <span class="k">public</span><span class="o">:</span>
     <span class="k">static</span> <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">alignment</span> <span class="o">=</span> <span class="n">ElementTraits</span><span class="o">::</span><span class="n">align_size</span><span class="p">;</span>
 
-    <span class="n">ripple_host_device</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span>
+    <span class="n">ripple_all</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span>
     <span class="nf">allocation_size</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">elements</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
       <span class="k">return</span> <span class="n">storage_byte_size</span> <span class="o">*</span> <span class="n">elements</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="k">template</span> <span class="o">&lt;</span><span class="kt">size_t</span> <span class="n">Elements</span><span class="o">&gt;</span>
-    <span class="n">ripple_host_device</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span>
+    <span class="n">ripple_all</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span>
     <span class="n">allocation_size</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
       <span class="k">return</span> <span class="n">storage_byte_size</span> <span class="o">*</span> <span class="n">Elements</span><span class="p">;</span>
     <span class="p">}</span>
@@ -616,7 +617,7 @@
     <span class="p">}</span>
 
     <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">SpaceImpl</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Dim</span><span class="o">&gt;</span>
-    <span class="n">ripple_host_device</span> <span class="k">static</span> <span class="k">auto</span> <span class="n">offset</span><span class="p">(</span>
+    <span class="n">ripple_all</span> <span class="k">static</span> <span class="k">auto</span> <span class="n">offset</span><span class="p">(</span>
       <span class="k">const</span> <span class="n">Storage</span><span class="o">&amp;</span>                  <span class="n">storage</span><span class="p">,</span>
       <span class="k">const</span> <span class="n">MultidimSpace</span><span class="o">&lt;</span><span class="n">SpaceImpl</span><span class="o">&gt;&amp;</span> <span class="n">space</span><span class="p">,</span>
       <span class="n">Dim</span><span class="o">&amp;&amp;</span>                           <span class="n">dim</span><span class="p">,</span>
@@ -629,7 +630,7 @@
     <span class="p">}</span>
 
     <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">SpaceImpl</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Dim</span><span class="o">&gt;</span>
-    <span class="n">ripple_host_device</span> <span class="k">static</span> <span class="k">auto</span> <span class="n">shift</span><span class="p">(</span>
+    <span class="n">ripple_all</span> <span class="k">static</span> <span class="k">auto</span> <span class="n">shift</span><span class="p">(</span>
       <span class="n">Storage</span><span class="o">&amp;</span>                        <span class="n">storage</span><span class="p">,</span>
       <span class="k">const</span> <span class="n">MultidimSpace</span><span class="o">&lt;</span><span class="n">SpaceImpl</span><span class="o">&gt;&amp;</span> <span class="n">space</span><span class="p">,</span>
       <span class="n">Dim</span><span class="o">&amp;&amp;</span>                           <span class="n">dim</span><span class="p">,</span>
@@ -639,7 +640,7 @@
     <span class="p">}</span>
 
     <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">SpaceImpl</span><span class="o">&gt;</span>
-    <span class="n">ripple_host_device</span> <span class="k">static</span> <span class="k">auto</span>
+    <span class="n">ripple_all</span> <span class="k">static</span> <span class="k">auto</span>
     <span class="n">create</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">ptr</span><span class="p">,</span> <span class="k">const</span> <span class="n">MultidimSpace</span><span class="o">&lt;</span><span class="n">SpaceImpl</span><span class="o">&gt;&amp;</span> <span class="n">space</span><span class="p">)</span> <span class="k">noexcept</span>
       <span class="o">-&gt;</span> <span class="n">Storage</span> <span class="p">{</span>
       <span class="n">Storage</span> <span class="n">r</span><span class="p">;</span>
@@ -660,16 +661,16 @@
   <span class="n">StridedStorageView</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Impl</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span>
+  <span class="n">ripple_all</span>
   <span class="n">StridedStorageView</span><span class="p">(</span><span class="k">const</span> <span class="n">StorageAccessor</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span>
     <span class="n">copy</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">Impl</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">other</span><span class="p">));</span>
   <span class="p">}</span>
 
-  <span class="n">ripple_host_device</span>
+  <span class="n">ripple_all</span>
   <span class="n">StridedStorageView</span><span class="p">(</span><span class="k">const</span> <span class="n">StridedStorageView</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span>
   <span class="o">:</span> <span class="n">data_</span><span class="p">{</span><span class="n">other</span><span class="p">.</span><span class="n">data_</span><span class="p">},</span> <span class="n">stride_</span><span class="p">{</span><span class="n">other</span><span class="p">.</span><span class="n">stride_</span><span class="p">}</span> <span class="p">{}</span>
 
-  <span class="n">ripple_host_device</span> <span class="n">StridedStorageView</span><span class="p">(</span><span class="n">StridedStorageView</span><span class="o">&amp;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span>
+  <span class="n">ripple_all</span> <span class="n">StridedStorageView</span><span class="p">(</span><span class="n">StridedStorageView</span><span class="o">&amp;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span>
   <span class="o">:</span> <span class="n">data_</span><span class="p">{</span><span class="n">other</span><span class="p">.</span><span class="n">data_</span><span class="p">},</span> <span class="n">stride_</span><span class="p">{</span><span class="n">other</span><span class="p">.</span><span class="n">stride_</span><span class="p">}</span> <span class="p">{</span>
     <span class="n">other</span><span class="p">.</span><span class="n">data_</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
   <span class="p">}</span>
@@ -677,19 +678,19 @@
   <span class="cm">/*==--- [operator overload] ----------------------------------------------==*/</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Impl</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">StorageAccessor</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">StorageAccessor</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span>
     <span class="o">-&gt;</span> <span class="n">StridedStorageView</span><span class="o">&amp;</span> <span class="p">{</span>
     <span class="n">copy</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">Impl</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">other</span><span class="p">));</span>
     <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span>
   <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">StridedStorageView</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">StridedStorageView</span><span class="o">&amp;</span> <span class="p">{</span>
     <span class="n">copy</span><span class="p">(</span><span class="n">other</span><span class="p">);</span>
     <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span>
   <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">StridedStorageView</span><span class="o">&amp;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">StridedStorageView</span><span class="o">&amp;</span> <span class="p">{</span>
     <span class="n">stride_</span>     <span class="o">=</span> <span class="n">other</span><span class="p">.</span><span class="n">stride_</span><span class="p">;</span>
     <span class="n">data_</span>       <span class="o">=</span> <span class="n">other</span><span class="p">.</span><span class="n">data_</span><span class="p">;</span>
@@ -699,20 +700,20 @@
 
   <span class="cm">/*==--- [interface] ------------------------------------------------------==*/</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="n">data</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Ptr</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="n">data</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Ptr</span> <span class="p">{</span>
     <span class="k">return</span> <span class="o">&amp;</span><span class="n">data_</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="n">data</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">ConstPtr</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="n">data</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">ConstPtr</span> <span class="p">{</span>
     <span class="k">return</span> <span class="o">&amp;</span><span class="n">data_</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="n">data_ptrs</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Ptr</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="n">data_ptrs</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Ptr</span><span class="o">&gt;</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Ptr</span><span class="o">&gt;</span><span class="p">{</span><span class="n">data_</span><span class="p">};</span>
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Other</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="n">copy</span><span class="p">(</span><span class="k">const</span> <span class="n">Other</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="n">copy</span><span class="p">(</span><span class="k">const</span> <span class="n">Other</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
     <span class="k">static_assert</span><span class="p">(</span>
       <span class="n">is_storage_accessor_v</span><span class="o">&lt;</span><span class="n">Other</span><span class="o">&gt;</span><span class="p">,</span>
       <span class="s">&quot;Can only copy from storage accessor types!&quot;</span><span class="p">);</span>
@@ -720,7 +721,7 @@
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="kt">size_t</span> <span class="n">I</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">components_of</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">components_of</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">element_components</span><span class="p">;</span>
   <span class="p">}</span>
 
@@ -728,7 +729,7 @@
     <span class="kt">size_t</span> <span class="n">I</span><span class="p">,</span>
     <span class="k">typename</span> <span class="n">T</span>                  <span class="o">=</span> <span class="n">nth_element_t</span><span class="o">&lt;</span><span class="n">I</span><span class="p">,</span> <span class="n">Type</span><span class="o">&gt;</span><span class="p">,</span>
     <span class="n">non_vec_element_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="n">get</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">ValueType</span><span class="o">&amp;</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="n">get</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">ValueType</span><span class="o">&amp;</span> <span class="p">{</span>
     <span class="k">static_assert</span><span class="p">(</span><span class="n">I</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&quot;Element only has one type!&quot;</span><span class="p">);</span>
     <span class="k">return</span> <span class="o">*</span><span class="n">data_</span><span class="p">;</span>
   <span class="p">}</span>
@@ -737,32 +738,32 @@
     <span class="kt">size_t</span> <span class="n">I</span><span class="p">,</span>
     <span class="k">typename</span> <span class="n">T</span>                  <span class="o">=</span> <span class="n">nth_element_t</span><span class="o">&lt;</span><span class="n">I</span><span class="p">,</span> <span class="n">Type</span><span class="o">&gt;</span><span class="p">,</span>
     <span class="n">non_vec_element_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="n">get</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">ValueType</span><span class="o">&amp;</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="n">get</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">ValueType</span><span class="o">&amp;</span> <span class="p">{</span>
     <span class="k">static_assert</span><span class="p">(</span><span class="n">I</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&quot;Element only has one type!&quot;</span><span class="p">);</span>
     <span class="k">return</span> <span class="o">*</span><span class="n">data_</span><span class="p">;</span>
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="kt">size_t</span> <span class="n">I</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">J</span><span class="p">,</span> <span class="n">vec_element_enable_t</span><span class="o">&lt;</span><span class="n">Type</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="n">get</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">ValueType</span><span class="o">&amp;</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="n">get</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">ValueType</span><span class="o">&amp;</span> <span class="p">{</span>
     <span class="k">static_assert</span><span class="p">(</span><span class="n">I</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&quot;Element only has one type!&quot;</span><span class="p">);</span>
     <span class="k">static_assert</span><span class="p">(</span><span class="n">J</span> <span class="o">&lt;</span> <span class="n">element_components</span><span class="p">,</span> <span class="s">&quot;Out of range access for element!&quot;</span><span class="p">);</span>
     <span class="k">return</span> <span class="n">data_</span><span class="p">[</span><span class="n">J</span> <span class="o">*</span> <span class="n">stride_</span><span class="p">];</span>
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="kt">size_t</span> <span class="n">I</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">J</span><span class="p">,</span> <span class="n">vec_element_enable_t</span><span class="o">&lt;</span><span class="n">Type</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="n">get</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">ValueType</span><span class="o">&amp;</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="n">get</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">ValueType</span><span class="o">&amp;</span> <span class="p">{</span>
     <span class="k">static_assert</span><span class="p">(</span><span class="n">I</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&quot;Element only has one type!&quot;</span><span class="p">);</span>
     <span class="k">static_assert</span><span class="p">(</span><span class="n">J</span> <span class="o">&lt;</span> <span class="n">element_components</span><span class="p">,</span> <span class="s">&quot;Out of range access for element!&quot;</span><span class="p">);</span>
     <span class="k">return</span> <span class="n">data_</span><span class="p">[</span><span class="n">J</span> <span class="o">*</span> <span class="n">stride_</span><span class="p">];</span>
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="kt">size_t</span> <span class="n">I</span><span class="p">,</span> <span class="n">vec_element_enable_t</span><span class="o">&lt;</span><span class="n">Type</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="n">get</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">j</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">ValueType</span><span class="o">&amp;</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="n">get</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">j</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">ValueType</span><span class="o">&amp;</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">data_</span><span class="p">[</span><span class="n">j</span> <span class="o">*</span> <span class="n">stride_</span><span class="p">];</span>
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="kt">size_t</span> <span class="n">I</span><span class="p">,</span> <span class="n">vec_element_enable_t</span><span class="o">&lt;</span><span class="n">Type</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="n">get</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">j</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">ValueType</span><span class="o">&amp;</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="n">get</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">j</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">ValueType</span><span class="o">&amp;</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">data_</span><span class="p">[</span><span class="n">j</span> <span class="o">*</span> <span class="n">stride_</span><span class="p">];</span>
   <span class="p">}</span>
 <span class="p">};</span>

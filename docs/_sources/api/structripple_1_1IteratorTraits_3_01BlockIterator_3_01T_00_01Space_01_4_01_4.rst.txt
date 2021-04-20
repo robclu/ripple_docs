@@ -3,7 +3,7 @@
 Template Struct IteratorTraits< BlockIterator< T, Space > >
 ===========================================================
 
-- Defined in :ref:`file_include_ripple_core_iterator_iterator_traits.hpp`
+- Defined in :ref:`file_include_ripple_iterator_iterator_traits.hpp`
 
 
 Struct Documentation

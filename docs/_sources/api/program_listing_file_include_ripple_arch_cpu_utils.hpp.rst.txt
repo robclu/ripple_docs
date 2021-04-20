@@ -1,0 +1,51 @@
+
+.. _program_listing_file_include_ripple_arch_cpu_utils.hpp:
+
+Program Listing for File cpu_utils.hpp
+======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_arch_cpu_utils.hpp>` (``include/ripple/arch/cpu_utils.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_ARCH_CPU_UTILS_HPP
+   #define RIPPLE_ARCH_CPU_UTILS_HPP
+   
+   #include <ripple/utility/portability.hpp>
+   #include <cstdint>
+   
+   #if defined(__linux__)
+     #include <sched.h>
+   
+     #if defined(__CPU_ISSET)
+       #define ripple_cpu_set __CPU_SET
+       #define ripple_cpu_zero __CPU_ZERO
+       #define ripple_cpu_is_set __CPU_ISSET
+     #else
+       #define ripple_cpu_set CPU_SET
+       #define ripple_cpu_zero CPU_ZERO
+       #define ripple_cpu_is_set CPU_ISSET
+     #endif // __CPU_ISSET
+   
+   #endif // __linux__
+   
+   namespace ripple {
+   
+   inline auto set_affinity(uint32_t thread_id) noexcept -> bool {
+   #if defined(__linux__)
+     cpu_set_t current_thread;
+     ripple_cpu_zero(&current_thread);
+     ripple_cpu_set(thread_id, &current_thread);
+     if (!sched_setaffinity(0, sizeof(current_thread), &current_thread)) {
+       return true;
+     }
+   #endif // __linux__
+     return false;
+   }
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_ARCH_CPU_UTILS_HPP

@@ -1,0 +1,79 @@
+
+.. _file_include_ripple_math_lerp.hpp:
+
+File lerp.hpp
+=============
+
+
+= :ref:`file_include_ripple_math_lerp.hpp` ---------------------------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/math/lerp.hpp``)
+---------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_math_lerp.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file defines linear interpolation functions.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``math.hpp`` (:ref:`file_include_ripple_math_math.hpp`)
+
+- ``ripple/container/vec.hpp`` (:ref:`file_include_ripple_container_vec.hpp`)
+
+- ``ripple/iterator/iterator_traits.hpp`` (:ref:`file_include_ripple_iterator_iterator_traits.hpp`)
+
+- ``ripple/utility/range.hpp`` (:ref:`file_include_ripple_utility_range.hpp`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+- :ref:`namespace_ripple__math`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_lerp_8hpp_1a872e7362ead9bfbbf3a45b3070f0f421`
+
+- :ref:`exhale_function_lerp_8hpp_1a64758aedf49aad7bb2728c02161583bd`
+

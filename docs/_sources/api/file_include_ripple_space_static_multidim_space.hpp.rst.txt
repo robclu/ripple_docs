@@ -1,0 +1,75 @@
+
+.. _file_include_ripple_space_static_multidim_space.hpp:
+
+File static_multidim_space.hpp
+==============================
+
+
+= :ref:`file_include_ripple_space_static_multidim_space.hpp` ---------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/space/static_multidim_space.hpp``)
+---------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_space_static_multidim_space.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file imlements a class which defines a statically sized multi dimensional space.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``multidim_space.hpp`` (:ref:`file_include_ripple_space_dynamic_multidim_space.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_execution_static_execution_params.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1StaticMultidimSpace`
+

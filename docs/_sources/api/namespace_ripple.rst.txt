@@ -15,7 +15,7 @@ Namespace ripple
 Detailed Description
 --------------------
 
-TodoAdd windows support.
+TodoAdd windows support + add osx support.
 
 
 
@@ -135,9 +135,9 @@ Classes
 
 - :ref:`exhale_struct_structripple_1_1LayoutTraits_3_01T_00_01true_01_4`
 
-- :ref:`exhale_struct_structripple_1_1LoadBoundary`
+- :ref:`exhale_struct_structripple_1_1LoadMultiPadding`
 
-- :ref:`exhale_struct_structripple_1_1LoadMultiBoundary`
+- :ref:`exhale_struct_structripple_1_1LoadPadding`
 
 - :ref:`exhale_struct_structripple_1_1MatImpl`
 
@@ -165,8 +165,6 @@ Classes
 
 - :ref:`exhale_struct_structripple_1_1MultidimSpace`
 
-- :ref:`exhale_struct_structripple_1_1MultidimWriter_1_1DimSizes`
-
 - :ref:`exhale_struct_structripple_1_1NodeExecutor`
 
 - :ref:`exhale_struct_structripple_1_1NodeExecutorImpl`
@@ -187,7 +185,7 @@ Classes
 
 - :ref:`exhale_struct_structripple_1_1Quat`
 
-- :ref:`exhale_struct_structripple_1_1Range_1_1Iterator`
+- :ref:`exhale_struct_structripple_1_1Range_1_1IteratorImpl`
 
 - :ref:`exhale_struct_structripple_1_1Reducer`
 
@@ -269,8 +267,6 @@ Classes
 
 - :ref:`exhale_class_classripple_1_1BlockIterator`
 
-- :ref:`exhale_class_classripple_1_1BoundaryLoader`
-
 - :ref:`exhale_class_classripple_1_1ContiguousStorageView`
 
 - :ref:`exhale_class_classripple_1_1DeviceBlock`
@@ -278,8 +274,6 @@ Classes
 - :ref:`exhale_class_classripple_1_1Executor`
 
 - :ref:`exhale_class_classripple_1_1Freelist`
-
-- :ref:`exhale_class_classripple_1_1GenericLoader`
 
 - :ref:`exhale_class_classripple_1_1Graph`
 
@@ -297,17 +291,13 @@ Classes
 
 - :ref:`exhale_class_classripple_1_1MultiarchAllocator`
 
-- :ref:`exhale_class_classripple_1_1MultidimWriter`
-
 - :ref:`exhale_class_classripple_1_1Node`
 
 - :ref:`exhale_class_classripple_1_1OwnedStorage`
 
+- :ref:`exhale_class_classripple_1_1PaddingLoader`
+
 - :ref:`exhale_class_classripple_1_1PoolAllocator`
-
-- :ref:`exhale_class_classripple_1_1Printable`
-
-- :ref:`exhale_class_classripple_1_1PrintableElement`
 
 - :ref:`exhale_class_classripple_1_1Range`
 
@@ -331,8 +321,6 @@ Classes
 
 - :ref:`exhale_class_classripple_1_1Tuple_3_4`
 
-- :ref:`exhale_class_classripple_1_1VtkWriter`
-
 
 Enums
 -----
@@ -341,10 +329,6 @@ Enums
 - :ref:`exhale_enum_namespaceripple_1adfb7267df8924979597b053026d4e492`
 
 - :ref:`exhale_enum_namespaceripple_1a8eab3f289abb7f4b625ec7525b54ce4c`
-
-- :ref:`exhale_enum_namespaceripple_1ad242b598ccd7062fe54ff42b2f8212c7`
-
-- :ref:`exhale_enum_namespaceripple_1a4ec397f4549f779f188aa0580cb735ca`
 
 - :ref:`exhale_enum_namespaceripple_1a0c2d39511c6a3ff234ce9c2a7885d528`
 
@@ -387,13 +371,15 @@ Functions
 
 - :ref:`exhale_function_namespaceripple_1ab3775395905dc71267c59f2991f5fce1`
 
+- :ref:`exhale_function_namespaceripple_1ab89cf305c5aa0d6f47cfb05797526fcb`
+
 - :ref:`exhale_function_namespaceripple_1aa475bdfab10cae63294c90b5a2f6c773`
 
-- :ref:`exhale_function_namespaceripple_1a8b177506a3d47f33fef878ee96f4a543`
+- :ref:`exhale_function_namespaceripple_1ac4ed9ea278304ed8da279ee6c4e7b143`
 
 - :ref:`exhale_function_namespaceripple_1adfd3336cac0719a9edff86dc6025b6ac`
 
-- :ref:`exhale_function_namespaceripple_1ade76cd7fec5f670be9642e6c7385d3a3`
+- :ref:`exhale_function_namespaceripple_1a73e12a6030e9b38edd28b4f8308e0268`
 
 - :ref:`exhale_function_namespaceripple_1a395a7455aa92d3edfd66977e1fd115aa`
 
@@ -419,9 +405,9 @@ Functions
 
 - :ref:`exhale_function_namespaceripple_1ab8c903b6e615092964a3296da1d732a8`
 
-- :ref:`exhale_function_namespaceripple_1ab03c3679a82638794098911f964ef7b6`
-
 - :ref:`exhale_function_namespaceripple_1ad7fa946ec4d1a259da3046572c3f6ce6`
+
+- :ref:`exhale_function_namespaceripple_1ab03c3679a82638794098911f964ef7b6`
 
 - :ref:`exhale_function_namespaceripple_1a21986d1b8309cd3788d25fbea33c5b37`
 
@@ -473,7 +459,7 @@ Functions
 
 - :ref:`exhale_function_namespaceripple_1a212854f3f54b09bc7d742616dfc9d52d`
 
-- :ref:`exhale_function_namespaceripple_1ad4b68964dc3588f6dec0186ff2c154ba`
+- :ref:`exhale_function_namespaceripple_1a65f2c5e94180dd866720454c401d39cd`
 
 - :ref:`exhale_function_namespaceripple_1af15933e1d9d8e790e4d411c9ca752646`
 
@@ -485,9 +471,9 @@ Functions
 
 - :ref:`exhale_function_namespaceripple_1a0b35b974f859045b41ff3882fc3444f6`
 
-- :ref:`exhale_function_namespaceripple_1a4e20df591190f9850c0e524b5a7d746e`
-
 - :ref:`exhale_function_namespaceripple_1aba328d528a7e041cba5a92099785ae98`
+
+- :ref:`exhale_function_namespaceripple_1ac96726eb9b7130b4b3118bc81ab832c4`
 
 - :ref:`exhale_function_namespaceripple_1a652da7e596b000b11b7139c96ca2a45a`
 
@@ -499,7 +485,7 @@ Functions
 
 - :ref:`exhale_function_namespaceripple_1a5fa95ab936db809e859919bc6ee3450e`
 
-- :ref:`exhale_function_namespaceripple_1ae75b28f28eac75bb775fdd3e686a3434`
+- :ref:`exhale_function_namespaceripple_1a06c5d2856d58bdf30b043e0a02e47476`
 
 - :ref:`exhale_function_namespaceripple_1a60be68dfac2ca20a946d86ba4f919d24`
 
@@ -515,8 +501,6 @@ Functions
 
 - :ref:`exhale_function_namespaceripple_1a2207921b7b3a28d2b92ef12030889287`
 
-- :ref:`exhale_function_namespaceripple_1ab8008cc23ef048b199d8a4a410501ac0`
-
 - :ref:`exhale_function_namespaceripple_1af40d7d3c9cb56f5947d995c55eb3e8ef`
 
 - :ref:`exhale_function_namespaceripple_1abbcb0d3afff706f90bd21318d7d2072a`
@@ -531,11 +515,11 @@ Functions
 
 - :ref:`exhale_function_namespaceripple_1a6dada9e1d4b6a42fd3b45f50efc72811`
 
+- :ref:`exhale_function_namespaceripple_1afd68ed4e746c3ea8168ad06d3f6968bc`
+
 - :ref:`exhale_function_namespaceripple_1aedf2188e29d0ae0bc4e7b2f30887b5d9`
 
 - :ref:`exhale_function_namespaceripple_1a6968f4764a926fb5044789a7fecf5b01`
-
-- :ref:`exhale_function_namespaceripple_1afd68ed4e746c3ea8168ad06d3f6968bc`
 
 - :ref:`exhale_function_namespaceripple_1a5aaeea317b030d274eb618f168850bfc`
 
@@ -547,11 +531,9 @@ Functions
 
 - :ref:`exhale_function_namespaceripple_1af6c6009fe838989c737d0eca5e1e7e88`
 
-- :ref:`exhale_function_namespaceripple_1a6e961cc19621e03af8c80de31ea6b1e8`
+- :ref:`exhale_function_namespaceripple_1af46f150e15eda253233f34d096510efc`
 
-- :ref:`exhale_function_namespaceripple_1acf030048a40d378ca198f724ff620bb4`
-
-- :ref:`exhale_function_namespaceripple_1a5c79b2bc5ccd7bf199e1389c782be9e8`
+- :ref:`exhale_function_namespaceripple_1ae2822f6caf54098d041b1572dcf7496d`
 
 - :ref:`exhale_function_namespaceripple_1ac020c87c4752977fdab1573be62a63b3`
 
@@ -672,6 +654,8 @@ Typedefs
 
 - :ref:`exhale_typedef_namespaceripple_1ae3145a6a80d94e33fadc5a2f513a5cdb`
 
+- :ref:`exhale_typedef_namespaceripple_1a664d80e26b409862e394bfd8c1a2a33a`
+
 - :ref:`exhale_typedef_namespaceripple_1a8b6fd5189c82d6caa92c15955e452255`
 
 - :ref:`exhale_typedef_namespaceripple_1a63aa950627b43c44fff0f08e866af175`
@@ -694,11 +678,11 @@ Typedefs
 
 - :ref:`exhale_typedef_namespaceripple_1ab82919456e4c50db2c612567b4b17d38`
 
-- :ref:`exhale_typedef_namespaceripple_1ac42a6066a330e51a80f7093f88472b98`
+- :ref:`exhale_typedef_namespaceripple_1aacb09a891c59b7cac4a249d7b2540e52`
 
-- :ref:`exhale_typedef_namespaceripple_1abd937e230cd58f8e727f235eb6b4d364`
+- :ref:`exhale_typedef_namespaceripple_1a6c6c6e1684a04c2681a84d5e1734d819`
 
-- :ref:`exhale_typedef_namespaceripple_1a75a81849295b3415092274f986683163`
+- :ref:`exhale_typedef_namespaceripple_1a7480e80ff90cd8c11b4b657d56d1c0e8`
 
 - :ref:`exhale_typedef_namespaceripple_1abe6d58b7119e8e95e3929a6b1ab428b6`
 
@@ -922,10 +906,6 @@ Variables
 - :ref:`exhale_variable_namespaceripple_1a3a39570b1ce6fbc5f7ca41fb2674790b`
 
 - :ref:`exhale_variable_namespaceripple_1a35a5c475484ba8ad89b196603aa84ac0`
-
-- :ref:`exhale_variable_namespaceripple_1a00ec737a38723cde575e254e5fb28004`
-
-- :ref:`exhale_variable_namespaceripple_1ac8647ef72fe6ca0655717af80af34620`
 
 - :ref:`exhale_variable_namespaceripple_1a0738ee63a992da5e49af0a6969cb7e5e`
 

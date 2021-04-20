@@ -3,7 +3,7 @@
 Define ripple_move
 ==================
 
-- Defined in :ref:`file_include_ripple_core_utility_forward.hpp`
+- Defined in :ref:`file_include_ripple_utility_forward.hpp`
 
 
 Define Documentation

@@ -1,0 +1,83 @@
+
+.. _file_include_ripple_graph_splitter.hpp:
+
+File splitter.hpp
+=================
+
+
+== ripple/core/graph/splitter.hpp ----------------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/graph/splitter.hpp``)
+--------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_graph_splitter.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                            Ripple
+
+             Copyright (c) 2019 - 2021 Rob Clucas
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file implements functionality for splitting a tensor in a graph.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``detail/utils_.hpp`` (:ref:`file_include_ripple_graph_detail_utils_.hpp`)
+
+- ``modifier.hpp`` (:ref:`file_include_ripple_graph_modifier.hpp`)
+
+- ``ripple/container/block_extractor.hpp`` (:ref:`file_include_ripple_container_block_extractor.hpp`)
+
+- ``ripple/execution/execution_traits.hpp`` (:ref:`file_include_ripple_execution_execution_traits.hpp`)
+
+- ``ripple/functional/invoke.hpp`` (:ref:`file_include_ripple_functional_invoke.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_graph_graph.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1Splitter`
+

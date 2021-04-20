@@ -141,6 +141,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -248,32 +249,32 @@
 
     <span class="c1">//==--- [construction] -------------------------------------------------==//</span>
 
-    <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="nf">Iterator</span><span class="p">(</span><span class="n">value_t</span> <span class="n">value</span><span class="p">,</span> <span class="n">value_t</span> <span class="n">step</span><span class="p">)</span>
+    <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="nf">Iterator</span><span class="p">(</span><span class="n">value_t</span> <span class="n">value</span><span class="p">,</span> <span class="n">value_t</span> <span class="n">step</span><span class="p">)</span>
     <span class="o">:</span> <span class="n">_value</span><span class="p">(</span><span class="n">value</span><span class="p">),</span> <span class="n">_step</span><span class="p">(</span><span class="n">step</span><span class="p">)</span> <span class="p">{}</span>
 
     <span class="c1">//==--- [operator overloads] -------------------------------------------==//</span>
 
-    <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="n">self_t</span> <span class="k">operator</span><span class="o">++</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="n">self_t</span> <span class="k">operator</span><span class="o">++</span><span class="p">()</span> <span class="p">{</span>
       <span class="n">self_t</span> <span class="n">i</span> <span class="o">=</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span> <span class="n">_value</span> <span class="o">+=</span> <span class="n">_step</span><span class="p">;</span> <span class="k">return</span> <span class="n">i</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="n">self_t</span> <span class="k">operator</span><span class="o">++</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="n">self_t</span> <span class="k">operator</span><span class="o">++</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
       <span class="n">_value</span> <span class="o">+=</span> <span class="n">_step</span><span class="p">;</span> <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="n">reference_t</span> <span class="k">operator</span><span class="o">*</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="n">reference_t</span> <span class="k">operator</span><span class="o">*</span><span class="p">()</span> <span class="p">{</span>
       <span class="k">return</span> <span class="n">_value</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="n">pointer_t</span> <span class="k">operator</span><span class="o">-&gt;</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="n">pointer_t</span> <span class="k">operator</span><span class="o">-&gt;</span><span class="p">()</span> <span class="p">{</span>
       <span class="k">return</span> <span class="o">&amp;</span><span class="n">_value</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span> <span class="n">self_t</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span> <span class="n">self_t</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">return</span> <span class="n">_value</span> <span class="o">&gt;=</span> <span class="n">other</span><span class="p">.</span><span class="n">_value</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="kt">bool</span> <span class="k">operator</span><span class="o">!=</span><span class="p">(</span><span class="k">const</span> <span class="n">self_t</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="kt">bool</span> <span class="k">operator</span><span class="o">!=</span><span class="p">(</span><span class="k">const</span> <span class="n">self_t</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">return</span> <span class="n">_value</span> <span class="o">&lt;</span> <span class="n">other</span><span class="p">.</span><span class="n">_value</span><span class="p">;</span>
     <span class="p">}</span>
 
@@ -294,22 +295,22 @@
 
   <span class="c1">//==--- [construction] ---------------------------------------------------==//</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="nf">Range</span><span class="p">(</span><span class="n">value_t</span> <span class="n">min</span><span class="p">,</span> <span class="n">value_t</span> <span class="n">max</span><span class="p">,</span> <span class="n">value_t</span> <span class="n">step</span><span class="p">)</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="nf">Range</span><span class="p">(</span><span class="n">value_t</span> <span class="n">min</span><span class="p">,</span> <span class="n">value_t</span> <span class="n">max</span><span class="p">,</span> <span class="n">value_t</span> <span class="n">step</span><span class="p">)</span>
   <span class="o">:</span> <span class="n">_min</span><span class="p">(</span><span class="n">min</span><span class="p">),</span> <span class="n">_max</span><span class="p">(</span><span class="n">max</span><span class="p">),</span> <span class="n">_step</span><span class="p">(</span><span class="n">step</span><span class="p">)</span> <span class="p">{}</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="nf">begin</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="nf">begin</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">iterator_t</span><span class="p">{</span><span class="n">_min</span><span class="p">,</span> <span class="n">_step</span><span class="p">};</span>
   <span class="p">}</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="nf">end</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="nf">end</span><span class="p">()</span> <span class="p">{</span>
    <span class="k">return</span> <span class="n">iterator_t</span><span class="p">{</span><span class="n">_max</span><span class="p">,</span> <span class="n">_step</span><span class="p">};</span>
   <span class="p">}</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="nf">begin</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="nf">begin</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">const_iterator_t</span><span class="p">(</span><span class="n">_min</span><span class="p">,</span> <span class="n">_step</span><span class="p">);</span>
   <span class="p">}</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="nf">end</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="nf">end</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
    <span class="k">return</span> <span class="n">const_iterator_t</span><span class="p">(</span><span class="n">_max</span><span class="p">,</span> <span class="n">_step</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">};</span>
@@ -317,12 +318,12 @@
 <span class="c1">//==--- [functions] --------------------------------------------------------==//</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">range</span><span class="p">(</span><span class="n">T</span> <span class="n">end</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Range</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">range</span><span class="p">(</span><span class="n">T</span> <span class="n">end</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Range</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">Range</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">T</span><span class="p">{</span><span class="mi">0</span><span class="p">},</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">end</span><span class="p">),</span> <span class="n">T</span><span class="p">{</span><span class="mi">1</span><span class="p">});</span>
 <span class="p">}</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">range</span><span class="p">(</span>
+<span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">range</span><span class="p">(</span>
   <span class="n">T</span> <span class="n">start</span><span class="p">,</span> <span class="n">T</span> <span class="n">end</span><span class="p">,</span> <span class="n">T</span> <span class="n">step</span> <span class="o">=</span> <span class="n">T</span><span class="p">{</span><span class="mi">1</span><span class="p">}</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Range</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">Range</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">step</span><span class="p">);</span>

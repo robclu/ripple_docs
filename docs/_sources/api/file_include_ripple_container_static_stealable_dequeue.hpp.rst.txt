@@ -1,0 +1,79 @@
+
+.. _file_include_ripple_container_static_stealable_dequeue.hpp:
+
+File static_stealable_dequeue.hpp
+=================================
+
+
+= :ref:`file_include_ripple_container_static_stealable_dequeue.hpp` --- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/container/static_stealable_dequeue.hpp``)
+----------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_container_static_stealable_dequeue.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file defines an implemenation of a static stealable double ended queue. The queue is lock free.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``array`` (:ref:`file_include_ripple_container_array.hpp`)
+
+- ``atomic``
+
+- ``optional``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_execution_executor.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1StaticStealableDequeue`
+

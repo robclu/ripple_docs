@@ -3,7 +3,7 @@
 Template Struct Stealer< StealPolicy::topological >
 ===================================================
 
-- Defined in :ref:`file_include_ripple_core_graph_stealer.hpp`
+- Defined in :ref:`file_include_ripple_graph_stealer.hpp`
 
 
 Struct Documentation

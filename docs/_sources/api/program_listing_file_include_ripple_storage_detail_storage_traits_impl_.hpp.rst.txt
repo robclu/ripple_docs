@@ -1,0 +1,100 @@
+
+.. _program_listing_file_include_ripple_storage_detail_storage_traits_impl_.hpp:
+
+Program Listing for File storage_traits_impl_.hpp
+=================================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_storage_detail_storage_traits_impl_.hpp>` (``include/ripple/storage/detail/storage_traits_impl_.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_STORAGE_DETAIL_STORAGE_TRAITS_IMPL__HPP
+   #define RIPPLE_STORAGE_DETAIL_STORAGE_TRAITS_IMPL__HPP
+   
+   #include "../storage_element_traits.hpp"
+   #include <ripple/utility/type_traits.hpp>
+   
+   namespace ripple::detail {
+   
+   /*==--- [storage as] -------------------------------------------------------==*/
+   
+   template <typename Storage, typename T>
+   struct StorageAs {
+     using Type = T;
+   };
+   
+   template <typename Storage, typename T1, typename T2>
+   struct StorageAsImpl;
+   
+   template <typename Storage, typename T, typename... Ts, typename... Us>
+   struct StorageAsImpl<Storage, std::tuple<T, Ts...>, std::tuple<Us...>> {
+     using Type = std::conditional_t<
+       IsStorageLayout<T>::value,
+       std::tuple<Us..., Storage, Ts...>,
+       typename StorageAsImpl<Storage, std::tuple<Ts...>, std::tuple<Us..., T>>::
+         Type>;
+   };
+   
+   template <typename Storage, typename... Ts>
+   struct StorageAsImpl<Storage, std::tuple<>, std::tuple<Ts...>> {
+     using Type = std::tuple<Ts...>;
+   };
+   
+   template <typename Storage, template <typename...> typename T, typename... Ts>
+   struct StorageAs<Storage, T<Ts...>> {
+    private:
+     using TypeList = typename detail::
+       StorageAsImpl<Storage, std::tuple<Ts...>, std::tuple<>>::Type;
+   
+     template <typename... Us>
+     struct MakeStorageType;
+   
+     template <typename... Us>
+     struct MakeStorageType<std::tuple<Us...>> {
+       using Type = T<Us...>;
+     };
+   
+    public:
+     using Type = typename MakeStorageType<TypeList>::Type;
+   };
+   
+   /*==--- [storage layout kind] ----------------------------------------------==*/
+   
+   namespace {
+   
+   template <typename... Ts>
+   struct StorageLayoutKindImpl;
+   
+   template <typename T, typename... Ts>
+   struct StorageLayoutKindImpl<T, Ts...> {
+     using Type = std::conditional_t<
+       IsStorageLayout<T>::value,
+       T,
+       typename StorageLayoutKindImpl<Ts...>::Type>;
+   
+     static constexpr auto value = Type::value;
+   };
+   
+   template <>
+   struct StorageLayoutKindImpl<> {
+     using Type = StorageLayout<LayoutKind::none>;
+   };
+   
+   } // namespace
+   
+   template <typename T>
+   struct StorageLayoutKind {
+     static constexpr auto value = StorageLayoutKindImpl<T>::value;
+   };
+   
+   template <template <typename...> typename T, typename... Ts>
+   struct StorageLayoutKind<T<Ts...>> {
+     static constexpr auto value = StorageLayoutKindImpl<Ts...>::value;
+   };
+   
+   } // namespace ripple::detail
+   
+   #endif // RIPPLE_STORAGE_DETAIL_STORAGE_TRAITS_IMPL__HPP

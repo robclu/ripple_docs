@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1a664d80e26b409862e394bfd8c1a2a33a:
+
+Typedef ripple::dim_type_from_dims_t
+====================================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::dim_type_from_dims_t

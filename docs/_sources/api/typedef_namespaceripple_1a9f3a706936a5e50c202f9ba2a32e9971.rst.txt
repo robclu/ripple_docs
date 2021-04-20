@@ -3,7 +3,7 @@
 Typedef ripple::not_dim_2d_enable_t
 ===================================
 
-- Defined in :ref:`file_include_ripple_core_utility_type_traits.hpp`
+- Defined in :ref:`file_include_ripple_utility_type_traits.hpp`
 
 
 Typedef Documentation

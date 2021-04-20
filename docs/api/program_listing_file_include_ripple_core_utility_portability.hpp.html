@@ -141,6 +141,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -256,7 +257,7 @@
 
   <span class="cp">#define ripple_device         __device__</span>
 
-  <span class="cp">#define ripple_host_device    __host__ __device__</span>
+  <span class="cp">#define ripple_all    __host__ __device__</span>
 
   <span class="cp">#define ripple_global         __global__</span>
   <span class="cm">/* Defines valid code if cuda is available. */</span>
@@ -279,7 +280,7 @@
 
   <span class="cp">#define ripple_device</span>
 
-  <span class="cp">#define ripple_host_device</span>
+  <span class="cp">#define ripple_all</span>
 
   <span class="cp">#define ripple_global</span>
 

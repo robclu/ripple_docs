@@ -1,0 +1,91 @@
+
+.. _file_include_ripple_utility_number.hpp:
+
+File number.hpp
+===============
+
+
+= :ref:`file_include_ripple_utility_number.hpp` ----------------------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/utility/number.hpp``)
+--------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_utility_number.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file defines a class which represents a compile time constant number type, where a number can be represented as a time, and also have a value at runtime.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``portability.hpp`` (:ref:`file_include_ripple_utility_portability.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_algorithm_detail_unrolled_for_impl_.hpp`
+
+- :ref:`file_include_ripple_container_array_traits.hpp`
+
+- :ref:`file_include_ripple_functional_kernel_invoke_cpu_impl_.hpp`
+
+- :ref:`file_include_ripple_utility_type_traits.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+- :ref:`namespace_ripple__detail`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1detail_1_1IsNumber`
+
+- :ref:`exhale_struct_structripple_1_1detail_1_1IsNumber_3_01Int64_3_01Value_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1detail_1_1IsNumber_3_01Num_3_01Value_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1Int64`
+
+- :ref:`exhale_struct_structripple_1_1Num`
+

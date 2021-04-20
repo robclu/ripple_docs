@@ -1,0 +1,101 @@
+
+.. _file_include_ripple_algorithm_reduce.hpp:
+
+File reduce.hpp
+===============
+
+
+= :ref:`file_include_ripple_algorithm_reduce.hpp` --------------------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/algorithm/reduce.hpp``)
+----------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_algorithm_reduce.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file implements a reduction on a block.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``kernel/reduce_cpp_.hpp`` (:ref:`file_include_ripple_algorithm_kernel_reduce_cpp_.hpp`)
+
+- ``kernel/reduce_cuda_.cuh``
+
+- ``ripple/allocation/multiarch_allocator.hpp`` (:ref:`file_include_ripple_allocation_multiarch_allocator.hpp`)
+
+- ``ripple/arch/gpu_utils.hpp`` (:ref:`file_include_ripple_arch_gpu_utils.hpp`)
+
+- ``ripple/container/host_block.hpp`` (:ref:`file_include_ripple_container_host_block.hpp`)
+
+- ``ripple/execution/synchronize.hpp`` (:ref:`file_include_ripple_execution_synchronize.hpp`)
+
+- ``ripple/execution/thread_index.hpp`` (:ref:`file_include_ripple_execution_thread_index.hpp`)
+
+- ``ripple/functional/invoke.hpp`` (:ref:`file_include_ripple_functional_invoke.hpp`)
+
+- ``ripple/iterator/iterator_traits.hpp`` (:ref:`file_include_ripple_iterator_iterator_traits.hpp`)
+
+- ``ripple/utility/portability.hpp`` (:ref:`file_include_ripple_utility_portability.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_container_block.hpp`
+
+- :ref:`file_include_ripple_graph_reducer.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1MaxReducer`
+
+- :ref:`exhale_struct_structripple_1_1MinReducer`
+
+- :ref:`exhale_struct_structripple_1_1SubtractionReducer`
+
+- :ref:`exhale_struct_structripple_1_1SumReducer`
+

@@ -3,7 +3,7 @@
 Template Function ripple::static_params
 =======================================
 
-- Defined in :ref:`file_include_ripple_core_execution_static_execution_params.hpp`
+- Defined in :ref:`file_include_ripple_execution_static_execution_params.hpp`
 
 
 Function Documentation

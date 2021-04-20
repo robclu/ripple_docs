@@ -141,6 +141,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -268,7 +269,7 @@
 
  <span class="k">public</span><span class="o">:</span>
   <span class="k">template</span> <span class="o">&lt;</span><span class="kt">size_t</span> <span class="n">Dims</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">size</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">size</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
     <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">dim_pad</span>     <span class="o">=</span> <span class="n">Padding</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
     <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">dim_1d_size</span> <span class="o">=</span> <span class="n">SizeX</span> <span class="o">+</span> <span class="n">dim_pad</span><span class="p">;</span>
     <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">dim_2d_size</span> <span class="o">=</span> <span class="n">dim_1d_size</span> <span class="o">*</span> <span class="p">(</span><span class="n">SizeY</span> <span class="o">+</span> <span class="n">dim_pad</span><span class="p">);</span>
@@ -280,16 +281,16 @@
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Dim</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">size</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">size</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">size_impl</span><span class="p">(</span><span class="n">ripple_forward</span><span class="p">(</span><span class="n">dim</span><span class="p">));</span>
   <span class="p">}</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">padding</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">padding</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">Padding</span><span class="p">;</span>
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="kt">size_t</span> <span class="n">Dims</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span>
   <span class="n">iterator</span><span class="p">(</span><span class="n">T</span><span class="o">*</span> <span class="n">data</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">BlockIterator</span><span class="o">&lt;</span><span class="n">Value</span><span class="p">,</span> <span class="n">Space</span><span class="o">&lt;</span><span class="n">Dims</span><span class="o">&gt;&gt;</span> <span class="p">{</span>
     <span class="k">using</span> <span class="n">SpaceType</span>      <span class="o">=</span> <span class="n">Space</span><span class="o">&lt;</span><span class="n">Dims</span><span class="o">&gt;</span><span class="p">;</span>
     <span class="k">using</span> <span class="n">Iterator</span>       <span class="o">=</span> <span class="n">BlockIterator</span><span class="o">&lt;</span><span class="n">Value</span><span class="p">,</span> <span class="n">SpaceType</span><span class="o">&gt;</span><span class="p">;</span>
@@ -298,26 +299,26 @@
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="kt">size_t</span> <span class="n">Dims</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">allocation_size</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">allocation_size</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">Allocator</span><span class="o">::</span><span class="n">allocation_size</span><span class="p">(</span><span class="n">size</span><span class="o">&lt;</span><span class="n">Dims</span><span class="o">&gt;</span><span class="p">());</span>
   <span class="p">}</span>
 
  <span class="k">private</span><span class="o">:</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">size_impl</span><span class="p">(</span><span class="n">DimX</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">size_impl</span><span class="p">(</span><span class="n">DimX</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">SizeX</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">size_impl</span><span class="p">(</span><span class="n">DimY</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">size_impl</span><span class="p">(</span><span class="n">DimY</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">SizeY</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">size_impl</span><span class="p">(</span><span class="n">DimZ</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">size_impl</span><span class="p">(</span><span class="n">DimZ</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">SizeZ</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">};</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="kt">size_t</span> <span class="n">Dims</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Shared</span> <span class="o">=</span> <span class="n">VoidShared</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">Pad</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="k">auto</span>
+<span class="n">ripple_all</span> <span class="k">auto</span>
 <span class="n">static_params</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">default_shared_exec_params_t</span><span class="o">&lt;</span><span class="n">Dims</span><span class="p">,</span> <span class="n">Shared</span><span class="p">,</span> <span class="n">Pad</span><span class="o">&gt;</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">default_shared_exec_params_t</span><span class="o">&lt;</span><span class="n">Dims</span><span class="p">,</span> <span class="n">Shared</span><span class="p">,</span> <span class="n">Pad</span><span class="o">&gt;</span><span class="p">();</span>
 <span class="p">}</span>

@@ -3,7 +3,7 @@
 Variable ripple::tuple_size_v
 =============================
 
-- Defined in :ref:`file_include_ripple_core_container_tuple_traits.hpp`
+- Defined in :ref:`file_include_ripple_container_tuple_traits.hpp`
 
 
 Variable Documentation

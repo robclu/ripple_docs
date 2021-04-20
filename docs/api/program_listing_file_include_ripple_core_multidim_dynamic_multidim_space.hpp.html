@@ -141,6 +141,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -256,36 +257,36 @@
   <span class="k">constexpr</span> <span class="n">DynamicMultidimSpace</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Sizes</span><span class="p">,</span> <span class="n">all_arithmetic_size_enable_t</span><span class="o">&lt;</span><span class="n">dims</span><span class="p">,</span> <span class="n">Sizes</span><span class="p">...</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="n">DynamicMultidimSpace</span><span class="p">(</span><span class="n">Sizes</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">sizes</span><span class="p">)</span> <span class="k">noexcept</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="n">DynamicMultidimSpace</span><span class="p">(</span><span class="n">Sizes</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">sizes</span><span class="p">)</span> <span class="k">noexcept</span>
   <span class="o">:</span> <span class="n">sizes_</span><span class="p">{</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">Step</span><span class="o">&gt;</span><span class="p">(</span><span class="n">sizes</span><span class="p">)...}</span> <span class="p">{}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Sizes</span><span class="p">,</span> <span class="n">all_arithmetic_size_enable_t</span><span class="o">&lt;</span><span class="n">dims</span><span class="p">,</span> <span class="n">Sizes</span><span class="p">...</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="n">DynamicMultidimSpace</span><span class="p">(</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="n">DynamicMultidimSpace</span><span class="p">(</span>
     <span class="n">Padding</span> <span class="n">padding</span><span class="p">,</span> <span class="n">Sizes</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">sizes</span><span class="p">)</span> <span class="k">noexcept</span>
   <span class="o">:</span> <span class="n">sizes_</span><span class="p">{</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">Step</span><span class="o">&gt;</span><span class="p">(</span><span class="n">sizes</span><span class="p">)...},</span> <span class="n">padding_</span><span class="p">{</span><span class="n">padding</span><span class="p">}</span> <span class="p">{}</span>
 
   <span class="cm">/*==--- [padding] --------------------------------------------------------==*/</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">padding</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Padding</span><span class="o">&amp;</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">padding</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Padding</span><span class="o">&amp;</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">padding_</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">padding</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Padding</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">padding</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Padding</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">padding_</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">dim_padding</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Padding</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">dim_padding</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Padding</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">padding_</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
   <span class="p">}</span>
 
   <span class="cm">/*==--- [size] -----------------------------------------------------------==*/</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">dimensions</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">dimensions</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">dims</span><span class="p">;</span>
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Sizes</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="n">resize</span><span class="p">(</span><span class="n">Sizes</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">sizes</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="n">resize</span><span class="p">(</span><span class="n">Sizes</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">sizes</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
     <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">num_sizes</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">...(</span><span class="n">Sizes</span><span class="p">);</span>
     <span class="k">static_assert</span><span class="p">(</span><span class="n">num_sizes</span> <span class="o">&lt;=</span> <span class="n">dims</span><span class="p">,</span> <span class="s">&quot;Too many sizes specified in resize.&quot;</span><span class="p">);</span>
 
@@ -294,16 +295,16 @@
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Dim</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="n">resize_dim</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">,</span> <span class="n">Step</span> <span class="n">size</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="n">resize_dim</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">,</span> <span class="n">Step</span> <span class="n">size</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
     <span class="n">sizes_</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">=</span> <span class="n">size</span><span class="p">;</span>
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Dim</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">size</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Step</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">size</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Step</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">sizes_</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">+</span> <span class="n">dim_padding</span><span class="p">();</span>
   <span class="p">}</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">size</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Step</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">size</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Step</span> <span class="p">{</span>
     <span class="n">Step</span> <span class="n">prod_sum</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="n">unrolled_for</span><span class="o">&lt;</span><span class="n">dims</span><span class="o">&gt;</span><span class="p">(</span>
       <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="n">dim</span><span class="p">)</span> <span class="p">{</span> <span class="n">prod_sum</span> <span class="o">*=</span> <span class="p">(</span><span class="n">sizes_</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">+</span> <span class="n">dim_padding</span><span class="p">());</span> <span class="p">});</span>
@@ -311,12 +312,12 @@
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Dim</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
   <span class="n">internal_size</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Step</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">sizes_</span><span class="p">[</span><span class="n">dim</span><span class="p">];</span>
   <span class="p">}</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">internal_size</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Step</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">internal_size</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Step</span> <span class="p">{</span>
     <span class="n">Step</span> <span class="n">prod_sum</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="n">unrolled_for</span><span class="o">&lt;</span><span class="n">dims</span><span class="o">&gt;</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="n">dim</span><span class="p">)</span> <span class="p">{</span> <span class="n">prod_sum</span> <span class="o">*=</span> <span class="n">sizes_</span><span class="p">[</span><span class="n">dim</span><span class="p">];</span> <span class="p">});</span>
     <span class="k">return</span> <span class="n">prod_sum</span><span class="p">;</span>
@@ -325,7 +326,7 @@
   <span class="cm">/*==--- [step] -----------------------------------------------------------==*/</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Dim</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">step</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Step</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">step</span><span class="p">(</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Step</span> <span class="p">{</span>
     <span class="k">using</span> <span class="n">DimType</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">decay_t</span><span class="o">&lt;</span><span class="n">Dim</span><span class="o">&gt;</span><span class="p">;</span>
     <span class="n">Step</span> <span class="n">res</span>      <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="k">if</span> <span class="nf">constexpr</span> <span class="p">(</span><span class="n">is_dimension_v</span><span class="o">&lt;</span><span class="n">DimType</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
@@ -342,12 +343,12 @@
   <span class="c1">//==--- [access] ---------------------------------------------------------==//</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Dim</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="p">[](</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Step</span><span class="o">&amp;</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="p">[](</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Step</span><span class="o">&amp;</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">sizes_</span><span class="p">[</span><span class="n">dim</span><span class="p">];</span>
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Dim</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
   <span class="k">operator</span><span class="p">[](</span><span class="n">Dim</span><span class="o">&amp;&amp;</span> <span class="n">dim</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">Step</span><span class="o">&amp;</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">sizes_</span><span class="p">[</span><span class="n">dim</span><span class="p">];</span>
   <span class="p">}</span>

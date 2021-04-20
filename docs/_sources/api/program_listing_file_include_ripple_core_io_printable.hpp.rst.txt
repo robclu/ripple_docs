@@ -33,7 +33,7 @@ Program Listing for File printable.hpp
    
    template <typename Impl>
    class Printable {
-     ripple_host_device constexpr auto impl() const -> const Impl* {
+     ripple_all constexpr auto impl() const -> const Impl* {
        return static_cast<const Impl*>(this);
      }
    

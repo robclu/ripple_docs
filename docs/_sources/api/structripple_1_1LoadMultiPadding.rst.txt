@@ -1,0 +1,16 @@
+.. _exhale_struct_structripple_1_1LoadMultiPadding:
+
+Struct LoadMultiPadding
+=======================
+
+- Defined in :ref:`file_include_ripple_padding_load_padding.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ripple::LoadMultiPadding
+   :members:
+   :protected-members:
+   :undoc-members:

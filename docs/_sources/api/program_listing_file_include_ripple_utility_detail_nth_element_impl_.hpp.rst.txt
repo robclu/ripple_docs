@@ -1,0 +1,42 @@
+
+.. _program_listing_file_include_ripple_utility_detail_nth_element_impl_.hpp:
+
+Program Listing for File nth_element_impl_.hpp
+==============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_utility_detail_nth_element_impl_.hpp>` (``include/ripple/utility/detail/nth_element_impl_.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_UTILITY_DETAIL_NTH_ELEMENT_IMPL__HPP
+   #define RIPPLE_UTILITY_DETAIL_NTH_ELEMENT_IMPL__HPP
+   
+   #include "../portability.hpp"
+   #include <type_traits>
+   
+   namespace ripple::detail {
+   
+   template <size_t N, typename... Ts>
+   struct NthElement {
+     // If clang is being used, we can use the __much__ faster compiler intrinsic
+     // to improve compile time, otherwise default to using tuple element.
+   #if ripple_clang
+   
+     using type = __type_pack_element<N, Ts...>;
+   #else
+   
+     using type = std::tuple_element_t<N, std::tuple<Ts...> >;
+   #endif
+   };
+   
+   template <size_t N>
+   struct NthElement<N> {
+     using type = void;
+   };
+   
+   } // namespace ripple::detail
+   
+   #endif // RIPPLE_UTILITY_DETAIL_NTH_ELEMENT_IMPL__HPP

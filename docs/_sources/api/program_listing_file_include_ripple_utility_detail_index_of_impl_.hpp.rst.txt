@@ -1,0 +1,37 @@
+
+.. _program_listing_file_include_ripple_utility_detail_index_of_impl_.hpp:
+
+Program Listing for File index_of_impl_.hpp
+===========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_utility_detail_index_of_impl_.hpp>` (``include/ripple/utility/detail/index_of_impl_.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_UTILITY_DETAIL_INDEX_OF_IMPL__HPP
+   #define RIPPLE_UTILITY_DETAIL_INDEX_OF_IMPL__HPP
+   
+   #include <type_traits>
+   
+   namespace ripple::detail {
+   
+   template <int I, typename T, typename... Ts>
+   struct IndexOf;
+   
+   template <int I, typename T, typename U, typename... Ts>
+   struct IndexOf<I, T, U, Ts...> {
+     static constexpr auto value =
+       std::is_same_v<T, U> ? I : IndexOf<I + 1, T, Ts...>::value;
+   };
+   
+   template <int I, typename T>
+   struct IndexOf<I, T> {
+     static constexpr auto value = I;
+   };
+   
+   } // namespace ripple::detail
+   
+   #endif // RIPPLE_UTILITY_DETAIL_INDEX_OF_IMPL__HPP

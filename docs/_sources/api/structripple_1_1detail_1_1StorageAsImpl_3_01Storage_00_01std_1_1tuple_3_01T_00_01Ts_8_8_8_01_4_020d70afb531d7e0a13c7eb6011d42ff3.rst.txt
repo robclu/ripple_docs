@@ -3,7 +3,7 @@
 Template Struct StorageAsImpl< Storage, std::tuple< T, Ts... >, std::tuple< Us... > >
 =====================================================================================
 
-- Defined in :ref:`file_include_ripple_core_storage_detail_storage_traits_impl_.hpp`
+- Defined in :ref:`file_include_ripple_storage_detail_storage_traits_impl_.hpp`
 
 
 Struct Documentation

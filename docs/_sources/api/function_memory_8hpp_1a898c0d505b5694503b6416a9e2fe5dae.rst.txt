@@ -3,7 +3,7 @@
 Template Function ripple::gpu::allocate_device
 ==============================================
 
-- Defined in :ref:`file_include_ripple_core_utility_memory.hpp`
+- Defined in :ref:`file_include_ripple_utility_memory.hpp`
 
 
 Function Documentation

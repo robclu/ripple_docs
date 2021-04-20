@@ -3,7 +3,7 @@
 Variable ripple::logfile_prefix
 ===============================
 
-- Defined in :ref:`file_include_ripple_core_utility_logger.hpp`
+- Defined in :ref:`file_include_ripple_utility_logger.hpp`
 
 
 Variable Documentation

@@ -1,0 +1,83 @@
+
+.. _file_include_ripple_algorithm_detail_unrolled_for_impl_.hpp:
+
+File unrolled_for_impl_.hpp
+===========================
+
+
+= :ref:`file_include_ripple_algorithm_detail_unrolled_for_impl_.hpp` -- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/algorithm/detail/unrolled_for_impl_.hpp``)
+-----------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_algorithm_detail_unrolled_for_impl_.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file provides the implementation of the funtionality for compile time based unrolling.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``ripple/utility/forward.hpp`` (:ref:`file_include_ripple_utility_forward.hpp`)
+
+- ``ripple/utility/number.hpp`` (:ref:`file_include_ripple_utility_number.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_algorithm_unrolled_for.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+- :ref:`namespace_ripple__detail`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1detail_1_1Unroll`
+
+- :ref:`exhale_struct_structripple_1_1detail_1_1Unroll_3_010_01_4`
+
+- :ref:`exhale_struct_structripple_1_1detail_1_1Unroll_3_011_01_4`
+

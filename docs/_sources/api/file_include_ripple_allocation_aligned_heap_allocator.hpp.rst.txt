@@ -1,0 +1,75 @@
+
+.. _file_include_ripple_allocation_aligned_heap_allocator.hpp:
+
+File aligned_heap_allocator.hpp
+===============================
+
+
+= :ref:`file_include_ripple_allocation_aligned_heap_allocator.hpp` --- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/allocation/aligned_heap_allocator.hpp``)
+---------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_allocation_aligned_heap_allocator.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file defines an allocator which uses aligned_alloc for allocation.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``cstdlib``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_allocation_allocator.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1AlignedHeapAllocator`
+

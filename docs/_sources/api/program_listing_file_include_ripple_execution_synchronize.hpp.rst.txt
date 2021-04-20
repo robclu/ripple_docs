@@ -1,0 +1,48 @@
+
+.. _program_listing_file_include_ripple_execution_synchronize.hpp:
+
+Program Listing for File synchronize.hpp
+========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_execution_synchronize.hpp>` (``include/ripple/execution/synchronize.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_EXECUTION_SYNCHRONIZE_HPP
+   #define RIPPLE_EXECUTION_SYNCHRONIZE_HPP
+   
+   #include <ripple/utility/portability.hpp>
+   #include <cooperative_groups.h>
+   
+   namespace ripple {
+   
+   ripple_all inline auto syncthreads() noexcept -> void {
+   /*
+    * For newer architectures, __syncthreads is called on each thread in a block,
+    * so if one thread has returned and __syncthreads is called then there will
+    * be a deadlock, which is solved by using the coalesced groups.
+    */
+   #if defined(__CUDA__) && __CUDA_ARCH__ >= 600 && __CUDA_ARCH__ != 700
+     //__syncthreads();
+     // co-operative groups not working on ampere!
+     auto g = cooperative_groups::coalesced_threads();
+     g.sync();
+   
+   /*
+    * For older architectures, __syncthreads only needs to succeed on one running
+    * thread in the block to avoid deadlock, and the coalesced groupd does not
+    * work, so here we default to the old syncthreads.
+    */
+   #elif defined(__CUDA__) && defined(__CUDA_ARCH__)
+     __syncthreads();
+   #endif // __CUDACC__
+   }
+   
+   // ripple_all inline auto syncthreads() noexcept -> void {}
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_EXECUTION_SYNCHRONIZE_HPP

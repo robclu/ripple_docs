@@ -1,0 +1,214 @@
+
+.. _program_listing_file_include_ripple_arch_gpu_info.hpp:
+
+Program Listing for File gpu_info.hpp
+=====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_arch_gpu_info.hpp>` (``include/ripple/arch/gpu_info.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_ARCH_GPU_INFO_HPP
+   #define RIPPLE_ARCH_GPU_INFO_HPP
+   
+   #include "gpu_utils.hpp"
+   #include <ripple/storage/storage_traits.hpp>
+   #include <ripple/utility/range.hpp>
+   #include <ripple/utility/portability.hpp>
+   #include <array>
+   #include <vector>
+   
+   namespace ripple {
+   
+   struct GpuInfo {
+     // clang-format off
+     static constexpr size_t compute_streams  = 1;
+     static constexpr size_t transfer_streams = 2;
+     static constexpr size_t total_streams    = compute_streams + transfer_streams;
+     // clang-format on
+   
+     struct Stream {
+       GpuStream stream = nullptr; 
+       bool      set    = false;   
+   
+       auto create() noexcept -> void {
+         if (set) {
+           return;
+         }
+         gpu::create_nonblocking_stream(&stream);
+       }
+   
+       auto destroy() noexcept -> void {
+         if (!set) {
+           return;
+         }
+   
+         gpu::destroy_stream(stream);
+         set = false;
+       }
+     };
+   
+     /*==--- [aliases] --------------------------------------------------------==*/
+   
+     // clang-format off
+     using Index           = uint32_t;
+     using PeerContainer   = std::vector<Index>;
+     using StreamContainer = std::array<Stream, total_streams>;
+     using Id              = uint8_t;
+     // clang-format on
+   
+     /*==--- [constants] ------------------------------------------------------==*/
+   
+     static constexpr Index invalid = 0xFFFFFFFF;
+   
+     // clang-format off
+     static constexpr size_t padding_size = avoid_false_sharing_size - ((
+       sizeof(PeerContainer)   + 
+       sizeof(Index)           + 
+       sizeof(uint64_t)        +
+       sizeof(uint64_t)        +
+       sizeof(uint8_t)         +
+       sizeof(uint8_t)         +
+       sizeof(bool)            +
+       sizeof(StreamContainer)
+     ) % avoid_false_sharing_size);
+     // clang-format on
+   
+     /*==--- [constructor] ----------------------------------------------------==*/
+   
+     GpuInfo(Index idx) noexcept : peers{idx}, index{idx} {
+       gpu::set_device(index);
+       for (auto& stream : streams) {
+         stream.create();
+       }
+     }
+   
+     ~GpuInfo() noexcept {
+       gpu::set_device(index);
+       for (auto& stream : streams) {
+         stream.destroy();
+       }
+     }
+   
+     /*==--- [interface] ------------------------------------------------------==*/
+   
+     static auto create_for_all_devices() -> std::vector<GpuInfo> {
+       Index num_devices = device_count();
+       auto  devices     = std::vector<GpuInfo>();
+   
+   #if defined(ripple_cuda_available)
+       cudaDeviceProp device_props;
+       int            can_access_peer;
+       for (auto dev : range(num_devices)) {
+         // Constructor sets the device to the current device.
+         gpu::set_device(dev);
+         cudaDeviceSetCacheConfig(cudaFuncCachePreferL1);
+         cudaDeviceSetSharedMemConfig(cudaSharedMemBankSizeEightByte);
+         auto& info = devices.emplace_back(dev);
+         cudaGetDeviceProperties(&device_props, dev);
+         info.mem_size = device_props.totalGlobalMem;
+   
+         // Determine if peer to peer is supported:
+         for (Index i = 0; i < num_devices; ++i) {
+           if (i == dev) {
+             continue;
+           }
+           cudaDeviceCanAccessPeer(&can_access_peer, dev, i);
+           if (can_access_peer) {
+             info.peers.emplace_back(i);
+             cudaDeviceEnablePeerAccess(i, 0);
+           }
+         }
+       }
+   #endif
+       return devices;
+     }
+   
+     static auto device_count() noexcept -> uint32_t {
+       int count = 0;
+       ripple_if_cuda(cudaGetDeviceCount(&count));
+       return static_cast<uint32_t>(count);
+     }
+   
+     auto is_invalid() const noexcept -> bool {
+       return index == invalid;
+     }
+   
+     auto peer_to_peer_available() const noexcept -> bool {
+       return !peers.empty();
+     }
+   
+     auto peer_to_peer_available(Index other_id) const noexcept -> bool {
+       for (auto& peer_id : peers) {
+         if (peer_id == other_id) {
+           return true;
+         }
+       }
+       return false;
+     }
+   
+     auto next_compute_stream_id() noexcept -> Id {
+       Id id      = compute_id;
+       compute_id = (compute_id + 1) % compute_streams;
+       return id;
+     }
+   
+     auto next_transfer_stream_id() noexcept -> Id {
+       Id id = transfer_id;
+   
+       // Need to change the id in the range [transfer_streams, total_streams):
+       transfer_id =
+         (transfer_id + 1 - compute_streams) % (total_streams - compute_streams) +
+         compute_streams;
+       return id;
+     }
+   
+     auto synchronize_streams() const noexcept -> void {
+       if (index == invalid) {
+         return;
+       }
+   
+       gpu::set_device(index);
+       for (auto& stream : streams) {
+         if (!stream.set) {
+           continue;
+         }
+         gpu::synchronize_stream(stream.stream);
+       }
+     }
+   
+     auto prepare_barrier() noexcept -> void {
+       barrier_up = true;
+     }
+   
+     auto execute_barrier() noexcept -> void {
+       if (index == invalid) {
+         return;
+       }
+   
+       gpu::set_device(index);
+       gpu::synchronize_device();
+       barrier_up = false;
+     }
+   
+     auto is_barrier_down() const noexcept -> bool {
+       return !barrier_up;
+     }
+   
+     StreamContainer streams     = {};      
+     PeerContainer   peers       = {};      
+     Index           index       = invalid; 
+     uint64_t        mem_size    = 0;       
+     uint64_t        mem_alloc   = 0;       
+     Id              compute_id  = 0;       
+     Id              transfer_id = 0;       
+     bool            barrier_up  = false;   
+     uint8_t         pad[padding_size];     
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_ARCH_GPU_INFO_HPP

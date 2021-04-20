@@ -34,7 +34,7 @@
   <link rel="index" title="Index" href="../genindex.html" />
   <link rel="search" title="Search" href="../search.html" />
   <link rel="next" title="Template Class ReductionResult" href="classripple_1_1ReductionResult.html" />
-  <link rel="prev" title="Class PrintableElement" href="classripple_1_1PrintableElement.html" /> 
+  <link rel="prev" title="Template Class PoolAllocator" href="classripple_1_1PoolAllocator.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -143,6 +143,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -218,14 +219,14 @@
   <div class="section" id="template-class-range">
 <span id="exhale-class-classripple-1-1range"></span><h1>Template Class Range<a class="headerlink" href="#template-class-range" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_utility_range.hpp.html#file-include-ripple-core-utility-range-hpp"><span class="std std-ref">File range.hpp</span></a></p></li>
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_utility_range.hpp.html#file-include-ripple-utility-range-hpp"><span class="std std-ref">File range.hpp</span></a></p></li>
 </ul>
 <div class="section" id="nested-relationships">
 <h2>Nested Relationships<a class="headerlink" href="#nested-relationships" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="nested-types">
 <h3>Nested Types<a class="headerlink" href="#nested-types" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p><a class="reference internal" href="structripple_1_1Range_1_1Iterator.html#exhale-struct-structripple-1-1range-1-1iterator"><span class="std std-ref">Template Struct Range::Iterator</span></a></p></li>
+<li><p><a class="reference internal" href="structripple_1_1Range_1_1IteratorImpl.html#exhale-struct-structripple-1-1range-1-1iteratorimpl"><span class="std std-ref">Template Struct Range::IteratorImpl</span></a></p></li>
 </ul>
 </div>
 </div>
@@ -248,7 +249,7 @@
 
 <span class="c1">// i = [23 .. 69) step = 3</span>
 <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">range</span><span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="p">{</span>
-  <span class="c1">// Use i </span>
+  <span class="c1">// Use i</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -270,14 +271,14 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Types</p>
 <dl class="cpp type">
-<dt id="_CPPv4N6ripple5Range16const_iterator_tE">
-<span id="_CPPv3N6ripple5Range16const_iterator_tE"></span><span id="_CPPv2N6ripple5Range16const_iterator_tE"></span><span class="target" id="classripple_1_1Range_1a94945120e240f88c24d9a58932adcd33"></span><em class="property">using </em><code class="sig-name descname">const_iterator_t</code> = Iterator&lt;true&gt;<a class="headerlink" href="#_CPPv4N6ripple5Range16const_iterator_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N6ripple5Range13ConstIteratorE">
+<span id="_CPPv3N6ripple5Range13ConstIteratorE"></span><span id="_CPPv2N6ripple5Range13ConstIteratorE"></span><span class="target" id="classripple_1_1Range_1a313b73331178ae5de9e28c6b17ad608e"></span><em class="property">using </em><code class="sig-name descname">ConstIterator</code> = IteratorImpl&lt;true&gt;<a class="headerlink" href="#_CPPv4N6ripple5Range13ConstIteratorE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Defines the type of a constant iterator. </p>
 </dd></dl>
 
 <dl class="cpp type">
-<dt id="_CPPv4N6ripple5Range10iterator_tE">
-<span id="_CPPv3N6ripple5Range10iterator_tE"></span><span id="_CPPv2N6ripple5Range10iterator_tE"></span><span class="target" id="classripple_1_1Range_1ab794224209c3ee6b43d96d1e73f672b5"></span><em class="property">using </em><code class="sig-name descname">iterator_t</code> = Iterator&lt;false&gt;<a class="headerlink" href="#_CPPv4N6ripple5Range10iterator_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N6ripple5Range8IteratorE">
+<span id="_CPPv3N6ripple5Range8IteratorE"></span><span id="_CPPv2N6ripple5Range8IteratorE"></span><span class="target" id="classripple_1_1Range_1a47dad8d80aa2f6aa71f7bd4f067eaa04"></span><em class="property">using </em><code class="sig-name descname">Iterator</code> = IteratorImpl&lt;false&gt;<a class="headerlink" href="#_CPPv4N6ripple5Range8IteratorE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Defines the type of a non-constant iterator. </p>
 </dd></dl>
 
@@ -285,14 +286,14 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="cpp function">
-<dt id="_CPPv4N6ripple5Range5RangeE7value_t7value_t7value_t">
-<span id="_CPPv3N6ripple5Range5RangeE7value_t7value_t7value_t"></span><span id="_CPPv2N6ripple5Range5RangeE7value_t7value_t7value_t"></span><span id="ripple::Range::Range__value_t.value_t.value_tCE"></span><span class="target" id="classripple_1_1Range_1a02dfac2fbb37730ec2d6b3613f4257f9"></span><em class="property">constexpr</em> <code class="sig-name descname">Range</code><span class="sig-paren">(</span>value_t <em>min</em>, value_t <em>max</em>, value_t <em>step</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ripple5Range5RangeE7value_t7value_t7value_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N6ripple5Range5RangeE5Value5Value5Value">
+<span id="_CPPv3N6ripple5Range5RangeE5Value5Value5Value"></span><span id="_CPPv2N6ripple5Range5RangeE5Value5Value5Value"></span><span id="ripple::Range::Range__Value.Value.ValueCE"></span><span class="target" id="classripple_1_1Range_1a07c697dcbb43fd99d6f1996a919575fe"></span><em class="property">constexpr</em> <code class="sig-name descname">Range</code><span class="sig-paren">(</span>Value <em>min</em>, Value <em>max</em>, Value <em>step</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple5Range5RangeE5Value5Value5Value" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Creates the range. </p>
 <p><dl class="simple">
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">min</span></code>: The minimum (start) value for the range. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">max</span></code>: The maximum (end) value for the range. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">step</span></code>: The step size for the range. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min</span></code>: The minimum (start) value for the range. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max</span></code>: The maximum (end) value for the range. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">step</span></code>: The step size for the range. </p></li>
 </ul>
 </dd>
 </dl>
@@ -301,25 +302,25 @@
 
 <dl class="cpp function">
 <dt id="_CPPv4N6ripple5Range5beginEv">
-<span id="_CPPv3N6ripple5Range5beginEv"></span><span id="_CPPv2N6ripple5Range5beginEv"></span><span id="ripple::Range::begin"></span><span class="target" id="classripple_1_1Range_1a5d9d207c244de1023d6e2339c4d3099a"></span>auto <code class="sig-name descname">begin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ripple5Range5beginEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6ripple5Range5beginEv"></span><span id="_CPPv2N6ripple5Range5beginEv"></span><span id="ripple::Range::beginCE"></span><span class="target" id="classripple_1_1Range_1a9874cc365c4b3921b1d9e75e4decb80a"></span><em class="property">constexpr</em> auto <code class="sig-name descname">begin</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5Range8IteratorE" title="ripple::Range::Iterator">Iterator</a><a class="headerlink" href="#_CPPv4N6ripple5Range5beginEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Gets a non constant iterator to the beginning of the range. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N6ripple5Range3endEv">
-<span id="_CPPv3N6ripple5Range3endEv"></span><span id="_CPPv2N6ripple5Range3endEv"></span><span id="ripple::Range::end"></span><span class="target" id="classripple_1_1Range_1ad32036bcb475e967212ef38aa0f83a81"></span>auto <code class="sig-name descname">end</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ripple5Range3endEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6ripple5Range3endEv"></span><span id="_CPPv2N6ripple5Range3endEv"></span><span id="ripple::Range::endCE"></span><span class="target" id="classripple_1_1Range_1a564475f37e0ae79641727e983b4ff23d"></span><em class="property">constexpr</em> auto <code class="sig-name descname">end</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5Range8IteratorE" title="ripple::Range::Iterator">Iterator</a><a class="headerlink" href="#_CPPv4N6ripple5Range3endEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Gets a non constant iterator to the end of the range. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK6ripple5Range5beginEv">
-<span id="_CPPv3NK6ripple5Range5beginEv"></span><span id="_CPPv2NK6ripple5Range5beginEv"></span><span id="ripple::Range::beginC"></span><span class="target" id="classripple_1_1Range_1a395ae42f6533288d8b4a63ec1ba007cc"></span>auto <code class="sig-name descname">begin</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK6ripple5Range5beginEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK6ripple5Range5beginEv"></span><span id="_CPPv2NK6ripple5Range5beginEv"></span><span id="ripple::Range::beginCCE"></span><span class="target" id="classripple_1_1Range_1a7b7aa5fa2134453f76e082863f137cde"></span><em class="property">constexpr</em> auto <code class="sig-name descname">begin</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5Range13ConstIteratorE" title="ripple::Range::ConstIterator">ConstIterator</a><a class="headerlink" href="#_CPPv4NK6ripple5Range5beginEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Gets a constant iterator to the beginning of the range. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK6ripple5Range3endEv">
-<span id="_CPPv3NK6ripple5Range3endEv"></span><span id="_CPPv2NK6ripple5Range3endEv"></span><span id="ripple::Range::endC"></span><span class="target" id="classripple_1_1Range_1a187b363ddac9b30645c7b5433ebd1ae3"></span>auto <code class="sig-name descname">end</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK6ripple5Range3endEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK6ripple5Range3endEv"></span><span id="_CPPv2NK6ripple5Range3endEv"></span><span id="ripple::Range::endCCE"></span><span class="target" id="classripple_1_1Range_1af3b03f02a8112d0fdeb7c2835b575b3b"></span><em class="property">constexpr</em> auto <code class="sig-name descname">end</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple5Range13ConstIteratorE" title="ripple::Range::ConstIterator">ConstIterator</a><a class="headerlink" href="#_CPPv4NK6ripple5Range3endEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Gets a non constant iterator to the end of the range. </p>
 </dd></dl>
 
@@ -340,7 +341,7 @@
         <a href="classripple_1_1ReductionResult.html" class="btn btn-neutral float-right" title="Template Class ReductionResult" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="classripple_1_1PrintableElement.html" class="btn btn-neutral" title="Class PrintableElement" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="classripple_1_1PoolAllocator.html" class="btn btn-neutral" title="Template Class PoolAllocator" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   

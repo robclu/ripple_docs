@@ -3,7 +3,7 @@
 Template Struct NthElement
 ==========================
 
-- Defined in :ref:`file_include_ripple_core_utility_detail_nth_element_impl_.hpp`
+- Defined in :ref:`file_include_ripple_utility_detail_nth_element_impl_.hpp`
 
 
 Struct Documentation

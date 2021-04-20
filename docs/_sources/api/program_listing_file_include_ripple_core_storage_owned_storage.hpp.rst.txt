@@ -70,7 +70,7 @@ Program Listing for File owned_storage.hpp
      constexpr OwnedStorage() noexcept = default;
    
      template <typename Impl>
-     ripple_host_device constexpr OwnedStorage(
+     ripple_all constexpr OwnedStorage(
        const StorageAccessor<Impl>& from) noexcept {
        copy(static_cast<const Impl&>(from));
      }
@@ -78,7 +78,7 @@ Program Listing for File owned_storage.hpp
      /*==--- [operator overload] ----------------------------------------------=*/
    
      template <typename Impl>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      operator=(const StorageAccessor<Impl>& from) noexcept -> OwnedStorage& {
        copy(static_cast<const Impl&>(from));
        return *this;
@@ -87,7 +87,7 @@ Program Listing for File owned_storage.hpp
      /*==--- [interface] ------------------------------------------------------==*/
    
      template <typename Other>
-     ripple_host_device constexpr auto copy(const Other& other) noexcept -> void {
+     ripple_all constexpr auto copy(const Other& other) noexcept -> void {
        static_assert(
          is_storage_accessor_v<Other>, "Argument type isn't a StorageAccessor!");
        unrolled_for<num_types>([&](auto i) {
@@ -99,7 +99,7 @@ Program Listing for File owned_storage.hpp
      }
    
      template <size_t I>
-     ripple_host_device constexpr auto components_of() const noexcept -> size_t {
+     ripple_all constexpr auto components_of() const noexcept -> size_t {
        return Helper::components[I];
      }
    
@@ -107,7 +107,7 @@ Program Listing for File owned_storage.hpp
        size_t I,
        typename T                  = nth_element_t<I, Ts...>,
        non_vec_element_enable_t<T> = 0>
-     ripple_host_device constexpr auto get() noexcept -> element_value_t<T>& {
+     ripple_all constexpr auto get() noexcept -> element_value_t<T>& {
        constexpr size_t offset = offsets[I];
        return *static_cast<element_value_t<T>*>(
          static_cast<void*>(static_cast<char*>(data_) + offset));
@@ -117,7 +117,7 @@ Program Listing for File owned_storage.hpp
        size_t I,
        typename T                  = nth_element_t<I, Ts...>,
        non_vec_element_enable_t<T> = 0>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      get() const noexcept -> const element_value_t<T>& {
        constexpr size_t offset = offsets[I];
        return *reinterpret_cast<const element_value_t<T>*>(
@@ -129,7 +129,7 @@ Program Listing for File owned_storage.hpp
        size_t J,
        typename T              = nth_element_t<I, Ts...>,
        vec_element_enable_t<T> = 0>
-     ripple_host_device constexpr auto get() noexcept -> element_value_t<T>& {
+     ripple_all constexpr auto get() noexcept -> element_value_t<T>& {
        static_assert(
          J < element_components<T>, "Out of range acess for storage element!");
        constexpr size_t offset = offsets[I];
@@ -142,7 +142,7 @@ Program Listing for File owned_storage.hpp
        size_t J,
        typename T              = nth_element_t<I, Ts...>,
        vec_element_enable_t<T> = 0>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      get() const noexcept -> const element_value_t<T>& {
        static_assert(
          J < element_components<T>, "Out of range acess for storage element!");
@@ -155,7 +155,7 @@ Program Listing for File owned_storage.hpp
        size_t I,
        typename T              = nth_element_t<I, Ts...>,
        vec_element_enable_t<T> = 0>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      get(size_t j) noexcept -> element_value_t<T>& {
        constexpr size_t offset = offsets[I];
        return static_cast<element_value_t<T>*>(
@@ -166,7 +166,7 @@ Program Listing for File owned_storage.hpp
        size_t I,
        typename T              = nth_element_t<I, Ts...>,
        vec_element_enable_t<T> = 0>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      get(size_t j) const noexcept -> const element_value_t<T>& {
        constexpr size_t offset = offsets[I];
        return reinterpret_cast<const element_value_t<T>*>(

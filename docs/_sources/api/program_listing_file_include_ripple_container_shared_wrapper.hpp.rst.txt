@@ -1,0 +1,165 @@
+
+.. _program_listing_file_include_ripple_container_shared_wrapper.hpp:
+
+Program Listing for File shared_wrapper.hpp
+===========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_container_shared_wrapper.hpp>` (``include/ripple/container/shared_wrapper.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_CONTAINER_SHARED_WRAPPER_HPP
+   #define RIPPLE_CONTAINER_SHARED_WRAPPER_HPP
+   
+   #include "block_traits.hpp"
+   #include <ripple/graph/modifier.hpp>
+   
+   namespace ripple {
+   
+   using PaddingType = uint8_t;
+   
+   template <typename T>
+   struct SharedWrapper {
+     static constexpr PaddingType invalid_padding =
+       std::numeric_limits<PaddingType>::max();
+   
+     T           wrapped; 
+     PaddingType padding   = invalid_padding; 
+     ExpType     expansion = 0; 
+     ExpType     overlap   = 0; 
+   
+     ripple_all auto padded() const noexcept -> bool {
+       return padding != invalid_padding;
+     }
+   
+     ripple_all auto offset_amount() const noexcept -> ExpType {
+       return overlap != 0 ? overlap : expansion;
+     }
+   };
+   
+   template <typename T>
+   struct ExpansionWrapper {
+     T       wrapped;
+     ExpType expansion = 0; 
+     ExpType overlap   = 0; 
+   
+     ripple_all auto offset_amount() const noexcept -> ExpType {
+       return overlap != 0 ? overlap : expansion;
+     }
+   };
+   
+   template <typename T>
+   struct MultiBlockTraits<SharedWrapper<T>> {
+     using Value = typename multiblock_traits_t<T>::Value;
+   
+     static constexpr size_t dimensions = multiblock_traits_t<T>::dimensions;
+   };
+   
+   template <typename T>
+   struct MultiBlockTraits<ExpansionWrapper<T>> {
+     using Value = typename multiblock_traits_t<T>::Value;
+   
+     static constexpr size_t dimensions = multiblock_traits_t<T>::dimensions;
+   };
+   
+   template <typename T>
+   struct SharedWrapperTraits {
+     using type = T;
+   
+     static constexpr bool is_shared_wrapper = false;
+   };
+   
+   template <typename T>
+   struct SharedWrapperTraits<SharedWrapper<T>> {
+     using type = T;
+   
+     static constexpr bool is_shared_wrapper = true;
+   };
+   
+   template <typename T>
+   struct ExpansionWrapperTraits {
+     using type = T;
+   
+     static constexpr bool is_expansion_wrapper = false;
+   };
+   
+   template <typename T>
+   struct ExpansionWrapperTraits<ExpansionWrapper<T>> {
+     using type = T;
+   
+     static constexpr bool is_expansion_wrapper = true;
+   };
+   
+   /*==--- [aliases & constants] ----------------------------------------------==*/
+   
+   template <typename T>
+   using shared_wrapper_traits_t = SharedWrapperTraits<std::decay_t<T>>;
+   
+   template <typename T>
+   using expansion_wrapper_traits_t = ExpansionWrapperTraits<std::decay_t<T>>;
+   
+   template <typename T>
+   static constexpr bool is_shared_wrapper_v =
+     shared_wrapper_traits_t<T>::is_shared_wrapper;
+   
+   template <typename T>
+   static constexpr bool is_expansion_wrapper_v =
+     expansion_wrapper_traits_t<T>::is_expansion_wrapper;
+   
+   template <typename T>
+   using shared_wrapper_enable_t = std::enable_if_t<is_shared_wrapper_v<T>, int>;
+   
+   template <typename T>
+   using non_shared_wrapper_enable_t =
+     std::enable_if_t<!is_shared_wrapper_v<T>, int>;
+   
+   /*==--- [functions] --------------------------------------------------------==*/
+   
+   template <typename T>
+   auto as_shared() noexcept -> SharedWrapper<T> {
+     return SharedWrapper<T>{T{}};
+   }
+   
+   template <typename T>
+   auto as_shared(T&& t) noexcept {
+     return SharedWrapper<T&&>{ripple_forward(t)};
+   }
+   
+   template <typename T>
+   auto as_shared(T& t, PaddingType padding, ExpansionParams params) noexcept
+     -> SharedWrapper<T&> {
+     return SharedWrapper<T&>{t, padding, params.expansion, params.overlap};
+   }
+   
+   template <typename T>
+   auto as_expansion() noexcept -> ExpansionWrapper<T> {
+     return ExpansionWrapper<T>{T{}};
+   }
+   
+   template <typename T>
+   auto as_expansion(T&& t) noexcept {
+     return ExpansionWrapper<T&&>{ripple_forward(t)};
+   }
+   
+   template <typename T>
+   auto as_expansion(T& t, ExpansionParams params) noexcept
+     -> ExpansionWrapper<T&> {
+     return ExpansionWrapper<T&>{t, params.expansion, params.overlap};
+   }
+   
+   template <typename T, any_block_enable_t<T> = 0>
+   auto padding(SharedWrapper<T>& wrapper) noexcept -> size_t {
+     return wrapper.padded() ? wrapper.padding : wrapper.wrapped.padding();
+   }
+   
+   template <typename T, non_any_block_enable_t<T> = 0>
+   auto padding(SharedWrapper<T>& wrapper) noexcept -> size_t {
+     return wrapper.padded() ? wrapper.padding : 0;
+   }
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_CONTAINER_SHARED_WRAPPER_HPP

@@ -1,0 +1,15 @@
+.. _dir__home_hiccup_Catalyst_ripple_include_ripple_graph_detail:
+
+
+Directory detail
+================
+
+
+|exhale_lsh| :ref:`Parent directory <dir__home_hiccup_Catalyst_ripple_include_ripple_graph>` (``/home/hiccup/Catalyst/ripple/include/ripple/graph``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+*Directory path:* ``/home/hiccup/Catalyst/ripple/include/ripple/graph/detail``
+
+
+

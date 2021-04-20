@@ -3,7 +3,7 @@
 Template Function ripple::math::lerp(const Iterator&, const Weights&)
 =====================================================================
 
-- Defined in :ref:`file_include_ripple_core_math_lerp.hpp`
+- Defined in :ref:`file_include_ripple_math_lerp.hpp`
 
 
 Function Documentation

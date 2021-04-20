@@ -141,6 +141,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -254,19 +255,19 @@
       <span class="k">return</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">T</span><span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="n">ripple_host_device</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span>
+    <span class="n">ripple_all</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span>
     <span class="n">allocation_size</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">elements</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
       <span class="k">return</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="o">*</span> <span class="n">elements</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="k">template</span> <span class="o">&lt;</span><span class="kt">size_t</span> <span class="n">Elements</span><span class="o">&gt;</span>
-    <span class="n">ripple_host_device</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span>
+    <span class="n">ripple_all</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="k">auto</span>
     <span class="n">allocation_size</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
       <span class="k">return</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="o">*</span> <span class="n">Elements</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">SpaceImpl</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Dim</span><span class="p">,</span> <span class="n">diff_enable_t</span><span class="o">&lt;</span><span class="n">Dim</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-    <span class="n">ripple_host_device</span> <span class="k">static</span> <span class="k">auto</span> <span class="n">offset</span><span class="p">(</span>
+    <span class="n">ripple_all</span> <span class="k">static</span> <span class="k">auto</span> <span class="n">offset</span><span class="p">(</span>
       <span class="k">const</span> <span class="n">Storage</span><span class="o">&amp;</span>                  <span class="n">storage</span><span class="p">,</span>
       <span class="k">const</span> <span class="n">MultidimSpace</span><span class="o">&lt;</span><span class="n">SpaceImpl</span><span class="o">&gt;&amp;</span> <span class="n">space</span><span class="p">,</span>
       <span class="n">Dim</span><span class="o">&amp;&amp;</span>                           <span class="n">dim</span><span class="p">,</span>
@@ -277,7 +278,7 @@
     <span class="p">}</span>
 
     <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">SpaceImpl</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Dim</span><span class="o">&gt;</span>
-    <span class="n">ripple_host_device</span> <span class="k">static</span> <span class="k">auto</span> <span class="n">shift</span><span class="p">(</span>
+    <span class="n">ripple_all</span> <span class="k">static</span> <span class="k">auto</span> <span class="n">shift</span><span class="p">(</span>
       <span class="n">Storage</span><span class="o">&amp;</span>                        <span class="n">storage</span><span class="p">,</span>
       <span class="k">const</span> <span class="n">MultidimSpace</span><span class="o">&lt;</span><span class="n">SpaceImpl</span><span class="o">&gt;&amp;</span> <span class="n">space</span><span class="p">,</span>
       <span class="n">Dim</span><span class="o">&amp;&amp;</span>                           <span class="n">dim</span><span class="p">,</span>
@@ -286,7 +287,7 @@
     <span class="p">}</span>
 
     <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">SpaceImpl</span><span class="o">&gt;</span>
-    <span class="n">ripple_host_device</span> <span class="k">static</span> <span class="k">auto</span>
+    <span class="n">ripple_all</span> <span class="k">static</span> <span class="k">auto</span>
     <span class="n">create</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">ptr</span><span class="p">,</span> <span class="k">const</span> <span class="n">MultidimSpace</span><span class="o">&lt;</span><span class="n">SpaceImpl</span><span class="o">&gt;&amp;</span> <span class="n">space</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Storage</span> <span class="p">{</span>
       <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">T</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span>
     <span class="p">}</span>

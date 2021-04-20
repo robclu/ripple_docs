@@ -1,0 +1,79 @@
+
+.. _file_include_ripple_iterator_indexed_iterator.hpp:
+
+File indexed_iterator.hpp
+=========================
+
+
+= :ref:`file_include_ripple_iterator_indexed_iterator.hpp` ------------ -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/iterator/indexed_iterator.hpp``)
+-------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_iterator_indexed_iterator.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file implements an iterator over a block, which has knowledge of the block's relative location in the global space to which it is a subregion of.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``block_iterator.hpp`` (:ref:`file_include_ripple_iterator_block_iterator.hpp`)
+
+- ``ripple/container/vec.hpp`` (:ref:`file_include_ripple_container_vec.hpp`)
+
+- ``ripple/execution/thread_index.hpp`` (:ref:`file_include_ripple_execution_thread_index.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_container_block.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1IndexedIterator`
+

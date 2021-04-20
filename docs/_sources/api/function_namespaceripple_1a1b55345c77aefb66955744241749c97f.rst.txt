@@ -3,7 +3,7 @@
 Template Function ripple::rotate(const Quat<T, LQ>&, const Vec2d<U, LV>&)
 =========================================================================
 
-.. did not find file this was defined in
+- Defined in :ref:`file_include_ripple_math_quat.hpp`
 
 
 Function Documentation

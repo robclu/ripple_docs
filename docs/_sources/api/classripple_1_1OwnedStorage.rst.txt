@@ -3,7 +3,7 @@
 Template Class OwnedStorage
 ===========================
 
-- Defined in :ref:`file_include_ripple_core_storage_owned_storage.hpp`
+- Defined in :ref:`file_include_ripple_storage_owned_storage.hpp`
 
 
 Inheritance Relationships

@@ -3,7 +3,7 @@
 Struct BlockMemoryProps
 =======================
 
-- Defined in :ref:`file_include_ripple_core_container_block_memory_properties.hpp`
+- Defined in :ref:`file_include_ripple_container_block_memory_properties.hpp`
 
 
 Struct Documentation

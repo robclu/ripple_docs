@@ -141,6 +141,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -274,7 +275,7 @@
   <span class="k">constexpr</span> <span class="nf">OwnedStorage</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Impl</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="n">OwnedStorage</span><span class="p">(</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="n">OwnedStorage</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">StorageAccessor</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;&amp;</span> <span class="n">from</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span>
     <span class="n">copy</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">Impl</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">from</span><span class="p">));</span>
   <span class="p">}</span>
@@ -282,7 +283,7 @@
   <span class="cm">/*==--- [operator overload] ----------------------------------------------=*/</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Impl</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
   <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">StorageAccessor</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;&amp;</span> <span class="n">from</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">OwnedStorage</span><span class="o">&amp;</span> <span class="p">{</span>
     <span class="n">copy</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">Impl</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">from</span><span class="p">));</span>
     <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
@@ -291,7 +292,7 @@
   <span class="cm">/*==--- [interface] ------------------------------------------------------==*/</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Other</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">copy</span><span class="p">(</span><span class="k">const</span> <span class="n">Other</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">copy</span><span class="p">(</span><span class="k">const</span> <span class="n">Other</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
     <span class="k">static_assert</span><span class="p">(</span>
       <span class="n">is_storage_accessor_v</span><span class="o">&lt;</span><span class="n">Other</span><span class="o">&gt;</span><span class="p">,</span> <span class="s">&quot;Argument type isn&#39;t a StorageAccessor!&quot;</span><span class="p">);</span>
     <span class="n">unrolled_for</span><span class="o">&lt;</span><span class="n">num_types</span><span class="o">&gt;</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
@@ -303,7 +304,7 @@
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="kt">size_t</span> <span class="n">I</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">components_of</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">components_of</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">Helper</span><span class="o">::</span><span class="n">components</span><span class="p">[</span><span class="n">I</span><span class="p">];</span>
   <span class="p">}</span>
 
@@ -311,7 +312,7 @@
     <span class="kt">size_t</span> <span class="n">I</span><span class="p">,</span>
     <span class="k">typename</span> <span class="n">T</span>                  <span class="o">=</span> <span class="n">nth_element_t</span><span class="o">&lt;</span><span class="n">I</span><span class="p">,</span> <span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span><span class="p">,</span>
     <span class="n">non_vec_element_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">get</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">get</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="p">{</span>
     <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">offset</span> <span class="o">=</span> <span class="n">offsets</span><span class="p">[</span><span class="n">I</span><span class="p">];</span>
     <span class="k">return</span> <span class="o">*</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;*&gt;</span><span class="p">(</span>
       <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">*&gt;</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">data_</span><span class="p">)</span> <span class="o">+</span> <span class="n">offset</span><span class="p">));</span>
@@ -321,7 +322,7 @@
     <span class="kt">size_t</span> <span class="n">I</span><span class="p">,</span>
     <span class="k">typename</span> <span class="n">T</span>                  <span class="o">=</span> <span class="n">nth_element_t</span><span class="o">&lt;</span><span class="n">I</span><span class="p">,</span> <span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span><span class="p">,</span>
     <span class="n">non_vec_element_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
   <span class="n">get</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="p">{</span>
     <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">offset</span> <span class="o">=</span> <span class="n">offsets</span><span class="p">[</span><span class="n">I</span><span class="p">];</span>
     <span class="k">return</span> <span class="o">*</span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;*&gt;</span><span class="p">(</span>
@@ -333,7 +334,7 @@
     <span class="kt">size_t</span> <span class="n">J</span><span class="p">,</span>
     <span class="k">typename</span> <span class="n">T</span>              <span class="o">=</span> <span class="n">nth_element_t</span><span class="o">&lt;</span><span class="n">I</span><span class="p">,</span> <span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span><span class="p">,</span>
     <span class="n">vec_element_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">get</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">get</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="p">{</span>
     <span class="k">static_assert</span><span class="p">(</span>
       <span class="n">J</span> <span class="o">&lt;</span> <span class="n">element_components</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="s">&quot;Out of range acess for storage element!&quot;</span><span class="p">);</span>
     <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">offset</span> <span class="o">=</span> <span class="n">offsets</span><span class="p">[</span><span class="n">I</span><span class="p">];</span>
@@ -346,7 +347,7 @@
     <span class="kt">size_t</span> <span class="n">J</span><span class="p">,</span>
     <span class="k">typename</span> <span class="n">T</span>              <span class="o">=</span> <span class="n">nth_element_t</span><span class="o">&lt;</span><span class="n">I</span><span class="p">,</span> <span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span><span class="p">,</span>
     <span class="n">vec_element_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
   <span class="n">get</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="p">{</span>
     <span class="k">static_assert</span><span class="p">(</span>
       <span class="n">J</span> <span class="o">&lt;</span> <span class="n">element_components</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="s">&quot;Out of range acess for storage element!&quot;</span><span class="p">);</span>
@@ -359,7 +360,7 @@
     <span class="kt">size_t</span> <span class="n">I</span><span class="p">,</span>
     <span class="k">typename</span> <span class="n">T</span>              <span class="o">=</span> <span class="n">nth_element_t</span><span class="o">&lt;</span><span class="n">I</span><span class="p">,</span> <span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span><span class="p">,</span>
     <span class="n">vec_element_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
   <span class="n">get</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">j</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="p">{</span>
     <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">offset</span> <span class="o">=</span> <span class="n">offsets</span><span class="p">[</span><span class="n">I</span><span class="p">];</span>
     <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;*&gt;</span><span class="p">(</span>
@@ -370,7 +371,7 @@
     <span class="kt">size_t</span> <span class="n">I</span><span class="p">,</span>
     <span class="k">typename</span> <span class="n">T</span>              <span class="o">=</span> <span class="n">nth_element_t</span><span class="o">&lt;</span><span class="n">I</span><span class="p">,</span> <span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span><span class="p">,</span>
     <span class="n">vec_element_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
   <span class="n">get</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">j</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="p">{</span>
     <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">offset</span> <span class="o">=</span> <span class="n">offsets</span><span class="p">[</span><span class="n">I</span><span class="p">];</span>
     <span class="k">return</span> <span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">element_value_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;*&gt;</span><span class="p">(</span>

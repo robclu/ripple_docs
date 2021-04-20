@@ -3,7 +3,7 @@
 Template Struct Quat
 ====================
 
-- Defined in :ref:`file_include_ripple_core_math_quat.hpp`
+- Defined in :ref:`file_include_ripple_math_quat.hpp`
 
 
 Inheritance Relationships

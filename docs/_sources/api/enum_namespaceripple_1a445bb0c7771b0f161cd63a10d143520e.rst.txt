@@ -3,7 +3,7 @@
 Enum Mapping
 ============
 
-- Defined in :ref:`file_include_ripple_core_container_memcopy_padding.hpp`
+- Defined in :ref:`file_include_ripple_container_memcopy_padding.hpp`
 
 
 Enum Documentation

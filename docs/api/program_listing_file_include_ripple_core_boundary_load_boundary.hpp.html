@@ -141,6 +141,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -240,7 +241,7 @@
 <span class="k">namespace</span> <span class="n">ripple</span> <span class="p">{</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Iterator</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Loader</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="k">auto</span>
+<span class="n">ripple_all</span> <span class="k">auto</span>
 <span class="n">load_boundary</span><span class="p">(</span><span class="n">Iterator</span><span class="o">&amp;&amp;</span> <span class="n">it</span><span class="p">,</span> <span class="n">Loader</span><span class="o">&amp;&amp;</span> <span class="n">loader</span><span class="p">,</span> <span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
   <span class="k">static_assert</span><span class="p">(</span>
     <span class="n">is_iterator_v</span><span class="o">&lt;</span><span class="n">Iterator</span><span class="o">&gt;</span><span class="p">,</span>
@@ -270,7 +271,7 @@
 
 <span class="k">struct</span> <span class="n">LoadBoundary</span> <span class="p">{</span>
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Iterator</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Loader</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span>
   <span class="k">operator</span><span class="p">()(</span><span class="n">Iterator</span><span class="o">&amp;&amp;</span> <span class="n">it</span><span class="p">,</span> <span class="n">Loader</span><span class="o">&amp;&amp;</span> <span class="n">loader</span><span class="p">,</span> <span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span>
     <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
     <span class="k">static_assert</span><span class="p">(</span>
@@ -306,7 +307,7 @@
     <span class="k">typename</span> <span class="n">IteratorB</span><span class="p">,</span>
     <span class="k">typename</span> <span class="n">Loader</span><span class="p">,</span>
     <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="k">operator</span><span class="p">()(</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="k">operator</span><span class="p">()(</span>
     <span class="n">IteratorA</span><span class="o">&amp;&amp;</span> <span class="n">it_a</span><span class="p">,</span>
     <span class="n">IteratorB</span><span class="o">&amp;&amp;</span> <span class="n">it_b</span><span class="p">,</span>
     <span class="n">Loader</span><span class="o">&amp;&amp;</span>    <span class="n">loader</span><span class="p">,</span>
@@ -351,7 +352,7 @@
 <span class="p">};</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="kt">size_t</span> <span class="n">Dims</span><span class="p">,</span> <span class="k">typename</span> <span class="n">ItFrom</span><span class="p">,</span> <span class="k">typename</span> <span class="n">ItTo</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="k">auto</span>
+<span class="n">ripple_all</span> <span class="k">auto</span>
 <span class="n">load_internal_boundary</span><span class="p">(</span><span class="n">ItFrom</span><span class="o">&amp;&amp;</span> <span class="n">it_from</span><span class="p">,</span> <span class="n">ItTo</span><span class="o">&amp;&amp;</span> <span class="n">it_to</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
   <span class="k">static_assert</span><span class="p">(</span>
     <span class="n">is_iterator_v</span><span class="o">&lt;</span><span class="n">ItFrom</span><span class="o">&gt;</span><span class="p">,</span>

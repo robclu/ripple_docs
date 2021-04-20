@@ -3,7 +3,7 @@
 Template Function ripple::unrolled_for_bounded
 ==============================================
 
-- Defined in :ref:`file_include_ripple_core_algorithm_unrolled_for.hpp`
+- Defined in :ref:`file_include_ripple_algorithm_unrolled_for.hpp`
 
 
 Function Documentation

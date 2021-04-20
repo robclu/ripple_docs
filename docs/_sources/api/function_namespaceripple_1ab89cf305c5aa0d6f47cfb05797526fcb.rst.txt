@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1ab89cf305c5aa0d6f47cfb05797526fcb:
+
+Function ripple::barrier
+========================
+
+- Defined in :ref:`file_include_ripple_execution_executor.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::barrier()

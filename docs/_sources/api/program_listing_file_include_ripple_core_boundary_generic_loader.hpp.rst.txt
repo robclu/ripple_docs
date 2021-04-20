@@ -50,7 +50,7 @@ Program Listing for File generic_loader.hpp
      // clang-format on
    
      template <typename Dim>
-     ripple_host_device auto constexpr get_boundary_type(
+     ripple_all auto constexpr get_boundary_type(
        Dim&& dim, BoundaryLocation location) const noexcept -> BoundaryType {
        const auto shift_amount = static_cast<size_t>(dim) * bits_per_dim +
                                  static_cast<size_t>(location) * bits_per_type;
@@ -75,7 +75,7 @@ Program Listing for File generic_loader.hpp
      }
    
      template <typename Iterator, typename Dim>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      load_front(Iterator&& it, int index, Dim&& dim) const noexcept -> void {
        static_assert_iterator(it);
        *it = *it.offset(ripple_forward(dim), index);
@@ -93,7 +93,7 @@ Program Listing for File generic_loader.hpp
      }
    
      template <typename Iterator, typename Dim>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      load_back(Iterator&& it, int index, Dim&& dim) const noexcept -> void {
        static_assert_iterator(it);
        *it = *it.offset(ripple_forward(dim), index);

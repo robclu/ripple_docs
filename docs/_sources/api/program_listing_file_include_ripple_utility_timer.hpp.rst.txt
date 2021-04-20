@@ -1,0 +1,58 @@
+
+.. _program_listing_file_include_ripple_utility_timer.hpp:
+
+Program Listing for File timer.hpp
+==================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_utility_timer.hpp>` (``include/ripple/utility/timer.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_UTILITY_TIMER_HPP
+   #define RIPPLE_UTILITY_TIMER_HPP
+   
+   #include <chrono>
+   
+   namespace ripple {
+   
+   struct Timer {
+     // clang-format off
+     using Clock     = std::chrono::high_resolution_clock;
+     using TimePoint = typename Clock::time_point;
+     using Duration  = std::chrono::duration<double>;
+     // clang-format on
+   
+     static constexpr double microsecs_to_millisecs = 1000.0;
+   
+     Timer() noexcept {
+       reset();
+     }
+   
+     auto reset() noexcept -> void {
+       start_ = Clock::now();
+     }
+   
+     auto elapsed(bool reset_timer = false) noexcept -> double {
+       TimePoint curr      = Clock::now();
+       Duration  time_span = std::chrono::duration_cast<Duration>(curr - start_);
+   
+       if (reset_timer) {
+         reset();
+       }
+       return time_span.count();
+     }
+   
+     auto elapsed_msec(bool reset_timer = false) noexcept -> double {
+       return elapsed(reset_timer) * microsecs_to_millisecs;
+     }
+   
+    private:
+     TimePoint start_; 
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_UTILITY_TIMER_HPP

@@ -1,0 +1,103 @@
+
+.. _program_listing_file_include_ripple_allocation_freelist.hpp:
+
+Program Listing for File freelist.hpp
+=====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_allocation_freelist.hpp>` (``include/ripple/allocation/freelist.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_ALLOCATION_FREELIST_HPP
+   #define RIPPLE_ALLOCATION_FREELIST_HPP
+   
+   #include <ripple/utility/memory.hpp>
+   
+   namespace ripple {
+   
+   class Freelist {
+     struct Node {
+       Node* next = nullptr; 
+     };
+   
+    public:
+     ripple_all Freelist() noexcept : head_{nullptr} {}
+   
+     ripple_all ~Freelist() noexcept {
+       if (head_ != nullptr) {
+         head_ = nullptr;
+       }
+     }
+   
+     ripple_all Freelist(
+       const void* start,
+       const void* end,
+       size_t      element_size,
+       size_t      alignment) noexcept
+     : head_{initialize(start, end, element_size, alignment)} {}
+   
+     Freelist(Freelist&& other) noexcept = default;
+   
+     auto operator=(Freelist&& other) noexcept -> Freelist& = default;
+   
+     // clang-format off
+     Freelist(const Freelist&)       = delete;
+     auto operator=(const Freelist&) = delete;
+     // clang-format on
+   
+     /*==--- [interface] ------------------------------------------------------==*/
+   
+     ripple_all auto pop_front() noexcept -> void* {
+       Node* const popped_head = head_;
+       head_                   = popped_head ? popped_head->next : nullptr;
+       return static_cast<void*>(popped_head);
+     }
+   
+     ripple_all auto push_front(void* ptr) noexcept -> void {
+       if (ptr == nullptr) {
+         return;
+       }
+   
+       Node* const pushed_head = static_cast<Node*>(ptr);
+       pushed_head->next       = head_;
+       head_                   = pushed_head;
+     }
+   
+    private:
+     Node* head_ = nullptr; 
+   
+     ripple_all static auto initialize(
+       const void* start, const void* end, size_t element_size, size_t alignment)
+       -> Node* {
+       // Create the first and second elements:
+       void* const first  = align_ptr(start, alignment);
+       void* const second = align_ptr(offset_ptr(first, element_size), alignment);
+   
+       const size_t size     = uintptr_t(second) - uintptr_t(first);
+       const size_t elements = (uintptr_t(end) - uintptr_t(first)) / size;
+   
+       // Set the head of the list:
+       Node* head = static_cast<Node*>(first);
+   
+       // Initialize the rest of the list:
+       Node* current = head;
+       for (size_t i = 1; i < elements; ++i) {
+         Node* next    = static_cast<Node*>(offset_ptr(current, size));
+         current->next = next;
+         current       = next;
+       }
+       assert(
+         offset_ptr(current, size) <= end &&
+         "Freelist initialization overflows provided arena!");
+   
+       current->next = nullptr;
+       return head;
+     }
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_ALLOCATION_FREELIST_HPP

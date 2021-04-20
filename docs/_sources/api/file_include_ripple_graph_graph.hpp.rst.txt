@@ -1,0 +1,101 @@
+
+.. _file_include_ripple_graph_graph.hpp:
+
+File graph.hpp
+==============
+
+
+= :ref:`file_include_ripple_graph_graph.hpp` -------------------------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/graph/graph.hpp``)
+-----------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_graph_graph.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file implements a Graph class, which is simply a collection of nodes with a specifier for where to allocate the nodes.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``memcopy.hpp`` (:ref:`file_include_ripple_graph_memcopy.hpp`)
+
+- ``memory`` (:ref:`file_include_ripple_container_block_memory_properties.hpp`)
+
+- ``mutex``
+
+- ``node.hpp`` (:ref:`file_include_ripple_graph_node.hpp`)
+
+- ``optional``
+
+- ``reducer.hpp`` (:ref:`file_include_ripple_graph_reducer.hpp`)
+
+- ``ripple/algorithm/unrolled_for.hpp`` (:ref:`file_include_ripple_algorithm_unrolled_for.hpp`)
+
+- ``ripple/allocation/allocator.hpp`` (:ref:`file_include_ripple_allocation_allocator.hpp`)
+
+- ``ripple/arch/cache.hpp`` (:ref:`file_include_ripple_arch_cache.hpp`)
+
+- ``ripple/utility/spinlock.hpp`` (:ref:`file_include_ripple_utility_spinlock.hpp`)
+
+- ``ripple/utility/type_traits.hpp`` (:ref:`file_include_ripple_utility_type_traits.hpp`)
+
+- ``splitter.hpp`` (:ref:`file_include_ripple_graph_splitter.hpp`)
+
+- ``unordered_map``
+
+- ``unordered_set``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_execution_executor.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1Graph`
+

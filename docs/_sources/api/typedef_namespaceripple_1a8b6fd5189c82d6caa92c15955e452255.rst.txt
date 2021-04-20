@@ -3,7 +3,7 @@
 Typedef ripple::DimX
 ====================
 
-- Defined in :ref:`file_include_ripple_core_execution_detail_thread_index_impl_.hpp`
+- Defined in :ref:`file_include_ripple_execution_detail_thread_index_impl_.hpp`
 
 
 Typedef Documentation

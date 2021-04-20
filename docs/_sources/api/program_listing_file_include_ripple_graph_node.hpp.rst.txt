@@ -1,0 +1,405 @@
+
+.. _program_listing_file_include_ripple_graph_node.hpp:
+
+Program Listing for File node.hpp
+=================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_graph_node.hpp>` (``include/ripple/graph/node.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_GRAPH_NODE_HPP
+   #define RIPPLE_GRAPH_NODE_HPP
+   
+   #include <ripple/container/tuple.hpp>
+   #include <ripple/execution/execution_traits.hpp>
+   #include <ripple/functional/invocable.hpp>
+   #include <ripple/math/math.hpp>
+   #include <ripple/utility/forward.hpp>
+   #include <array>
+   #include <atomic>
+   #include <cassert>
+   #include <string>
+   #include <vector>
+   
+   namespace ripple {
+   
+   class Graph;
+   
+   enum class NodeKind : uint8_t {
+     normal = 0, 
+     split  = 1, 
+     sync   = 2  
+   };
+   
+   /*==--- [node executor] ----------------------------------------------------==*/
+   
+   struct NodeExecutor {
+     // clang-format off
+     NodeExecutor() noexcept          = default;
+     virtual ~NodeExecutor() noexcept = default;
+   
+     NodeExecutor(const NodeExecutor&) = delete;
+     NodeExecutor(NodeExecutor&&)      = delete;
+   
+     auto operator=(const NodeExecutor&) = delete;
+     auto operator=(NodeExecutor&&)      = delete;
+     // clang-format on
+   
+     virtual auto clone(void* storage) const noexcept -> NodeExecutor* = 0;
+   
+     virtual auto execute() noexcept -> void = 0;
+   };
+   
+   /*==--- [node executor impl] -----------------------------------------------==*/
+   
+   template <typename Callable, typename... Args>
+   struct NodeExecutorImpl final : public NodeExecutor {
+    private:
+     // clang-format off
+     using InvocableType = Invocable<std::decay_t<Callable>>;
+     using ArgContainer  = Tuple<Args...>;
+   
+     static constexpr size_t num_args = sizeof...(Args);
+     // clang-format on
+   
+    public:
+     template <typename InvType, typename... ArgTypes>
+     NodeExecutorImpl(InvType&& invocable, ArgTypes&&... args) noexcept
+     : invocable_{ripple_forward(invocable)}, args_{ripple_forward(args)...} {}
+   
+     ~NodeExecutorImpl() noexcept final = default;
+   
+     NodeExecutorImpl(const NodeExecutorImpl& other) noexcept
+     : invocable_{other.invocable_}, args_{other.args_} {}
+   
+     NodeExecutorImpl(NodeExecutorImpl&& other) noexcept
+     : invocable_{ripple_move(other._invocable)},
+       args_{ripple_move(other._args)} {}
+   
+     auto operator=(const NodeExecutorImpl& other) noexcept -> NodeExecutorImpl& {
+       invocable_ = other.invocable_;
+       args_      = other.args_;
+       return *this;
+     }
+   
+     auto operator=(NodeExecutorImpl&& other) noexcept -> NodeExecutorImpl& {
+       if (&other != this) {
+         invocable_ = ripple_move(other.invocable_);
+         args_      = ripple_move(other.args_);
+       }
+       return *this;
+     }
+   
+     /*==--- [interface impl] -------------------------------------------------==*/
+   
+     auto execute() noexcept -> void final {
+       execute_impl(std::make_index_sequence<num_args>());
+     }
+   
+     auto clone(void* storage) const noexcept -> NodeExecutorImpl* final {
+       new (storage) NodeExecutorImpl(*this);
+       return reinterpret_cast<NodeExecutorImpl*>(storage);
+     }
+   
+    private:
+     InvocableType invocable_; 
+     ArgContainer  args_;      
+   
+     template <size_t... I>
+     auto execute_impl(std::index_sequence<I...>) noexcept -> void {
+       invocable_(get<I>(args_)...);
+     }
+   };
+   
+   /*==--- [node info] --------------------------------------------------------==*/
+   
+   struct NodeInfo {
+     // clang-format off
+     using Name    = std::string;
+     using IdType  = uint64_t;
+     using Friends = std::vector<IdType>;
+   
+     static constexpr IdType default_id   = std::numeric_limits<IdType>::max();
+     static constexpr auto   default_name = "";
+     // clang-format on
+   
+     template <size_t Size>
+     static auto
+     id_from_indices(const std::array<uint32_t, Size>& indices) -> uint64_t {
+       using namespace math;
+       static_assert(Size <= 3, "Node id only valid for up to 3 dimensions!");
+       return Size == 1   ? indices[0]
+              : Size == 2 ? hash_combine(indices[0], indices[1])
+              : Size == 3
+                ? hash_combine(indices[2], hash_combine(indices[0], indices[1]))
+                : 0;
+     }
+   
+     template <size_t Size>
+     static auto
+     name_from_indices(const std::array<uint32_t, Size>& indices) noexcept
+       -> Name {
+       Name name = Size == 0 ? "" : std::to_string(indices[0]);
+       for (auto i : range(Size - 1)) {
+         name += "_" + std::to_string(indices[i + 1]);
+       }
+       return name;
+     }
+   
+     /*==--- [construction] ---------------------------------------------------==*/
+   
+     NodeInfo() = default;
+   
+     explicit NodeInfo(ExecutionKind exec_kind_) noexcept : exec{exec_kind_} {}
+   
+     explicit NodeInfo(NodeKind kind_, ExecutionKind exec_kind_) noexcept
+     : kind{kind_}, exec{exec_kind_} {}
+   
+     NodeInfo(Name name_) noexcept : name{ripple_move(name_)} {}
+   
+     NodeInfo(Name name_, IdType id_) noexcept
+     : name{ripple_move(name_)}, id{id_} {}
+   
+     NodeInfo(Name name_, IdType id_, NodeKind kind_) noexcept
+     : name{ripple_move(name_)}, id{id_}, kind{kind_} {}
+   
+     NodeInfo(Name name_, IdType id_, NodeKind kind_, ExecutionKind exec_) noexcept
+     : name{ripple_move(name_)}, id{id_}, kind{kind_}, exec{exec_} {}
+   
+     /*==--- [deleted] --------------------------------------------------------==*/
+   
+     // clang-format off
+     NodeInfo(const NodeInfo& other) = default; 
+     NodeInfo(NodeInfo&& other)      = default;
+     auto operator=(const NodeInfo&) = delete;
+     auto operator=(NodeInfo&&)      = delete;
+     // clang-format on
+   
+     /*==--- [members] --------------------------------------------------------==*/
+   
+     Name          name    = default_name;       
+     Friends       friends = {};                 
+     IdType        id      = default_id;         
+     NodeKind      kind    = NodeKind::normal;   
+     ExecutionKind exec    = ExecutionKind::gpu; 
+   };
+   
+   /*==--- [node impl] --------------------------------------------------------==*/
+   
+   template <size_t Alignment, size_t MinStorage = 72>
+   class alignas(Alignment) Node {
+     friend Graph;
+   
+     // clang-format off
+     using Successors      = std::vector<Node*>;
+     using CounterValue    = uint32_t;
+     using Counter         = std::atomic<CounterValue>;
+     using NodeInfoPtr     = NodeInfo*;
+     using NodeExecutorPtr = NodeExecutor*;
+   
+     // clang-format off
+     static constexpr size_t data_mem_size =
+       sizeof(Successors)      +
+       sizeof(NodeExecutorPtr) + 
+       sizeof(NodeInfoPtr)     +
+       sizeof(CounterValue)    +
+       sizeof(Counter);
+   
+     static constexpr size_t spare_mem  = data_mem_size % Alignment;
+     static constexpr size_t align_mult = (data_mem_size + MinStorage) / Alignment;
+     static constexpr size_t size       = spare_mem + (align_mult * Alignment);
+     // clang-format on
+   
+     template <typename T>
+     static constexpr bool is_not_node_v = !std::is_same_v<std::decay_t<T>, Node>;
+   
+     template <typename T>
+     using non_node_enable_t = std::enable_if_t<is_not_node_v<T>, int>;
+   
+    public:
+     /*==--- [construction] ---------------------------------------------------==*/
+   
+     // clang-format off
+     Node() noexcept  = default;
+     ~Node() noexcept = default;
+     // clang-format on
+   
+     Node(const Node& other) noexcept {
+       debug_assert_node_valid(other);
+       executor_ = other.executor_->clone(&storage_);
+       incoming_ = other.incoming_;
+       dependents_.store(
+         other.dependents_.load(std::memory_order_relaxed),
+         std::memory_order_relaxed);
+   
+       for (size_t i = 0; i < other.successors_.size(); ++i) {
+         successors_[i] = other.successors_[i];
+       }
+     }
+   
+     Node(Node&& other) noexcept
+     : executor_(other.executor_),
+       info_(other.info_),
+       incoming_(other.incoming_),
+       successors_(ripple_move(other.successors_)),
+       dependents_(other.dependents_.load(std::memory_order_relaxed)) {
+       other._executor = nullptr;
+       other._info     = nullptr;
+       other._incoming = 0;
+       other._dependents.store(0, std::memory_order_relaxed);
+     }
+   
+     template <typename F, typename... Args, non_node_enable_t<F> = 0>
+     Node(F&& callable, Args&&... args) noexcept {
+       set_executor(ripple_forward(callable), ripple_forward(args)...);
+     }
+   
+     /*==--- [operator overloads] ---------------------------------------------==*/
+   
+     auto operator=(const Node& other) noexcept -> Node& {
+       if (this == &other) {
+         return *this;
+       }
+   
+       debug_assert_valid_node(other);
+       executor_ = other.executor_->clone(&storage_);
+       incoming_ = other.incoming_;
+       dependents_.store(
+         other.dependents_.load(std::memory_order_relaxed),
+         std::memory_order_relaxed);
+   
+       for (int i = 0; i < other.successors_.size(); ++i) {
+         successors_[i] = other.successors_[i];
+       }
+       return *this;
+     }
+   
+     auto operator=(Node&& other) noexcept -> Node& {
+       if (this == &other) {
+         return *this;
+       }
+   
+       debug_assert_node_valid(other);
+       executor_   = other.executor_;
+       info_       = other.info_;
+       incoming_   = other.incoming_;
+       successors_ = ripple_move(other.successors_);
+       dependents_.store(
+         other.dependents_.load(std::memory_order_relaxed),
+         std::memory_order_relaxed);
+   
+       other.executor_ = nullptr;
+       other.info_     = nullptr;
+       other.incoming_ = 0;
+       other.dependents_.store(0, std::memory_order_relaxed);
+       return *this;
+     }
+   
+     /*==--- [interface] ------ -----------------------------------------------==*/
+   
+     template <typename F, typename... Args>
+     auto set_executor(F&& callable, Args&&... args) noexcept -> void {
+       using Executor = NodeExecutorImpl<F, Args...>;
+       if constexpr (size < sizeof(Executor)) {
+         static_assert(
+           Tuple<
+             Num<size - sizeof(Executor)>,
+             Num<size>,
+             Num<sizeof(Executor)>,
+             Num<sizeof(F)>,
+             Tuple<Args, Num<sizeof(Args)>>...>::too_large,
+           "Node storage is too small to allocate callable and its args!");
+       }
+   
+       new (&storage_) Executor{ripple_forward(callable), ripple_forward(args)...};
+       executor_ = reinterpret_cast<Executor*>(&storage_);
+     }
+   
+     auto try_run() noexcept -> bool {
+       if (dependents_.load(std::memory_order_relaxed) != size_t{0}) {
+         return false;
+       }
+   
+       /* Reset the node incase it needs to be run again, as well as to make sure
+        * that it can't be run again until all dependents have run;
+        *
+        * \note This is very improtant that this is reset *before* the executor
+        *       executes. If not, it's possible that multiple threads could see
+        *       this node as having no dependencies, and both run the node.
+        */
+       dependents_.store(incoming_, std::memory_order_relaxed);
+       executor_->execute();
+   
+       for (auto* successor : successors_) {
+         if (successor && successor->num_dependents() > 0) {
+           successor->dependents_.fetch_sub(1, std::memory_order_relaxed);
+         }
+       }
+       return true;
+     }
+   
+     auto add_successor(Node& node) noexcept -> void {
+       for (auto* successor : successors_) {
+         if (successor == &node) {
+           return;
+         }
+       }
+       successors_.push_back(&node);
+       node.increment_num_dependents();
+     }
+   
+     auto add_friend(typename NodeInfo::IdType friend_id) noexcept -> void {
+       info_->friends.emplace_back(friend_id);
+     }
+   
+     auto friends() const noexcept -> typename NodeInfo::Friends& {
+       return info_->friends;
+     }
+   
+     auto increment_num_dependents() noexcept -> void {
+       dependents_.fetch_add(1, std::memory_order_relaxed);
+       incoming_ = dependents_.load(std::memory_order_relaxed);
+     }
+   
+     auto name() const noexcept -> typename NodeInfo::Name {
+       return info_ ? info_->name : NodeInfo::default_name;
+     }
+   
+     auto id() const noexcept -> typename NodeInfo::IdType {
+       return info_ ? info_->id : NodeInfo::default_id;
+     }
+   
+     auto kind() const noexcept -> NodeKind {
+       return info_ ? info_->kind : NodeKind::normal;
+     }
+   
+     auto execution_kind() const noexcept -> ExecutionKind {
+       return info_ ? info_->exec : default_execution_kind;
+     }
+   
+     auto num_dependents() const noexcept -> CounterValue {
+       return dependents_.load(std::memory_order_relaxed);
+     }
+   
+    private:
+     /*==--- [members] --------------------------------------------------------==*/
+   
+     Successors      successors_    = {};      
+     NodeExecutorPtr executor_      = nullptr; 
+     NodeInfoPtr     info_          = nullptr; 
+     CounterValue    incoming_      = 0;       
+     Counter         dependents_    = 0;       
+     char            storage_[size] = {};      
+   
+     auto debug_assert_node_valid(const Node& node) const noexcept -> void {
+       assert(node.executor_ != nullptr && "Node executor can't be a nullptr!");
+     }
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_GRAPH_NODE_HPP

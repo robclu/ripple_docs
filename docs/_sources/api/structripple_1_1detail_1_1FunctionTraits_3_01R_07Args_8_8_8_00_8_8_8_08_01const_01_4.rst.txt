@@ -3,7 +3,7 @@
 Template Struct FunctionTraits< R(Args...,...) const >
 ======================================================
 
-- Defined in :ref:`file_include_ripple_core_utility_detail_function_traits_impl_.hpp`
+- Defined in :ref:`file_include_ripple_utility_detail_function_traits_impl_.hpp`
 
 
 Inheritance Relationships

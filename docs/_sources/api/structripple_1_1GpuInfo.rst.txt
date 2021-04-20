@@ -3,7 +3,7 @@
 Struct GpuInfo
 ==============
 
-- Defined in :ref:`file_include_ripple_core_arch_gpu_info.hpp`
+- Defined in :ref:`file_include_ripple_arch_gpu_info.hpp`
 
 
 Nested Relationships

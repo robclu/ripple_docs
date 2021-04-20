@@ -17,7 +17,7 @@ Namespaces
 ----------
 
 
-- :ref:`namespace_ripple__detail__@89`
+- :ref:`namespace_ripple__detail__@83`
 
 
 Classes
@@ -215,15 +215,15 @@ Functions
 
 - :ref:`exhale_function_thread__index__impl___8hpp_1a5112ce11c5974d96e6e438d5c230341d`
 
-- :ref:`exhale_function_load__global__boundary__impl___8hpp_1ac13a071a69fbe67663a63ac453e378c2`
+- :ref:`exhale_function_load__global__padding__impl___8hpp_1a0878ba57cbf0596153eb6332eb8a7e47`
 
-- :ref:`exhale_function_load__global__boundary__impl___8hpp_1ad6767e7e04b298d3b43337c04e97ab83`
+- :ref:`exhale_function_load__global__padding__impl___8hpp_1aff4a031a092387bcdb84d99ace371d18`
 
-- :ref:`exhale_function_load__global__boundary__impl___8hpp_1a5a9c3563f89d9fd943256caed9de7dc6`
+- :ref:`exhale_function_load__global__padding__impl___8hpp_1a678b45de68fb0462892d04f8dea82097`
 
-- :ref:`exhale_function_load__global__boundary__impl___8hpp_1a4a7a0ef14f2f387faa10f96b153f8c42`
+- :ref:`exhale_function_load__global__padding__impl___8hpp_1adbd3e7256c9eb0df4177b98d29196747`
 
-- :ref:`exhale_function_load__internal__boundary__impl___8hpp_1a5320e599c77559d1218f3ab042bdb114`
+- :ref:`exhale_function_load__internal__padding__impl___8hpp_1a6e9aa53f8c0128a1a6a82ed35dccaa57`
 
 - :ref:`exhale_function_max__element_8hpp_1a4519db7224256ed6b40a8098e5cdf5b2`
 

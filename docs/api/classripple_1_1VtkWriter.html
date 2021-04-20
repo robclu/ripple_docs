@@ -32,9 +32,7 @@
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
   <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
   <link rel="index" title="Index" href="../genindex.html" />
-  <link rel="search" title="Search" href="../search.html" />
-  <link rel="next" title="Enum AllocArch" href="enum_namespaceripple_1adfb7267df8924979597b053026d4e492.html" />
-  <link rel="prev" title="Template Class Tuple&lt;&gt;" href="classripple_1_1Tuple_3_4.html" /> 
+  <link rel="search" title="Search" href="../search.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -143,6 +141,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -182,8 +181,6 @@
         </a> &gt;
       </li>
 
-        
-          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
         
       <li>Class VtkWriter</li>
     
@@ -231,159 +228,10 @@
 </div>
 <div class="section" id="class-documentation">
 <h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
-<dl class="cpp class">
-<dt id="_CPPv4N6ripple9VtkWriterE">
-<span id="_CPPv3N6ripple9VtkWriterE"></span><span id="_CPPv2N6ripple9VtkWriterE"></span><span id="ripple::VtkWriter"></span><span class="target" id="classripple_1_1VtkWriter"></span><em class="property">class </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">VtkWriter</code> : <em class="property">public</em> ripple::<a class="reference internal" href="classripple_1_1MultidimWriter.html#_CPPv4N6ripple14MultidimWriterE" title="ripple::MultidimWriter">MultidimWriter</a><a class="headerlink" href="#_CPPv4N6ripple9VtkWriterE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>The <a class="reference internal" href="#classripple_1_1VtkWriter"><span class="std std-ref">VtkWriter</span></a> type implements the multidim writer interface to write data to a file in the Vtk format. </p>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Types</p>
-<dl class="cpp type">
-<dt id="_CPPv4N6ripple9VtkWriter8DimSizesE">
-<span id="_CPPv3N6ripple9VtkWriter8DimSizesE"></span><span id="_CPPv2N6ripple9VtkWriter8DimSizesE"></span><span class="target" id="classripple_1_1VtkWriter_1ae0faf5dd6bbc5b1e2465ff63cab3d10b"></span><em class="property">using </em><code class="sig-name descname">DimSizes</code> = <a class="reference internal" href="classripple_1_1MultidimWriter.html#_CPPv4N6ripple14MultidimWriterE" title="ripple::MultidimWriter">MultidimWriter</a>::<a class="reference internal" href="classripple_1_1MultidimWriter.html#_CPPv4N6ripple14MultidimWriter8DimSizesE" title="ripple::MultidimWriter::DimSizes">DimSizes</a><a class="headerlink" href="#_CPPv4N6ripple9VtkWriter8DimSizesE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Defines the type of the dimension sizes. </p>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenclass: Cannot find class “ripple::VtkWriter” in doxygen xml output for project “Ripple” from directory: /home/hiccup/Catalyst/ripple/build/docs/docs/doxygen/xml</p>
 </div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="cpp function">
-<dt id="_CPPv4N6ripple9VtkWriter9VtkWriterENSt6stringENSt6stringE">
-<span id="_CPPv3N6ripple9VtkWriter9VtkWriterENSt6stringENSt6stringE"></span><span id="_CPPv2N6ripple9VtkWriter9VtkWriterENSt6stringENSt6stringE"></span><span id="ripple::VtkWriter::VtkWriter__ss.ss"></span><span class="target" id="classripple_1_1VtkWriter_1a27a9151eed18fb9f5564bc96d0ac4acd"></span><code class="sig-name descname">VtkWriter</code><span class="sig-paren">(</span>std::string <em>base_filename</em>, std::string <em>data_name</em> = &quot;&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ripple9VtkWriter9VtkWriterENSt6stringENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Constructor which sets the base name of the file to write, as well as the name of the data, and the names of any elements to write. </p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">base_filename</span></code>: The base name of the file to write to. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">data_name</span></code>: The name of the data. </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N6ripple9VtkWriterD0Ev">
-<span id="_CPPv3N6ripple9VtkWriterD0Ev"></span><span id="_CPPv2N6ripple9VtkWriterD0Ev"></span><span id="ripple::VtkWriter::~VtkWriter"></span><span class="target" id="classripple_1_1VtkWriter_1ac35d1dcf4c3622fea05b77d939fd9c28"></span><code class="sig-name descname">~VtkWriter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ripple9VtkWriterD0Ev" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Destructor which closes the file. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N6ripple9VtkWriter9VtkWriterERK9VtkWriter">
-<span id="_CPPv3N6ripple9VtkWriter9VtkWriterERK9VtkWriter"></span><span id="_CPPv2N6ripple9VtkWriter9VtkWriterERK9VtkWriter"></span><span id="ripple::VtkWriter::VtkWriter__VtkWriterCR"></span><span class="target" id="classripple_1_1VtkWriter_1abeb6bbc446a632f39012a6ffca99668d"></span><code class="sig-name descname">VtkWriter</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple9VtkWriter9VtkWriterERK9VtkWriter" title="ripple::VtkWriter::VtkWriter">VtkWriter</a> &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple9VtkWriter9VtkWriterERK9VtkWriter" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Copy constructor to create another writer from this writer. </p>
-<p>This copies the parameters from the other writer, but <strong>does not</strong> open or write any data for the writer. <dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other writer to copy from. </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4NK6ripple9VtkWriter5cloneEv">
-<span id="_CPPv3NK6ripple9VtkWriter5cloneEv"></span><span id="_CPPv2NK6ripple9VtkWriter5cloneEv"></span><span id="ripple::VtkWriter::cloneC"></span><span class="target" id="classripple_1_1VtkWriter_1a992b8c00157b77a5cc093a6b00d63533"></span>auto <code class="sig-name descname">clone</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; std::shared_ptr&lt;<a class="reference internal" href="classripple_1_1MultidimWriter.html#_CPPv4N6ripple14MultidimWriterE" title="ripple::MultidimWriter">MultidimWriter</a>&gt; <em class="property">final</em> <em class="property">override</em><a class="headerlink" href="#_CPPv4NK6ripple9VtkWriter5cloneEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Clones the writer to create a new multidimensional writer. </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>A shared multidimensional writer. </p>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N6ripple9VtkWriter8set_nameENSt6stringE">
-<span id="_CPPv3N6ripple9VtkWriter8set_nameENSt6stringE"></span><span id="_CPPv2N6ripple9VtkWriter8set_nameENSt6stringE"></span><span id="ripple::VtkWriter::set_name__ss"></span><span class="target" id="classripple_1_1VtkWriter_1a3eff9b57b0fdd4d21025c0874fe32eac"></span>auto <code class="sig-name descname">set_name</code><span class="sig-paren">(</span>std::string <em>name</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void <em class="property">final</em> <em class="property">override</em><a class="headerlink" href="#_CPPv4N6ripple9VtkWriter8set_nameENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Sets the name of the data to write. </p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: The name to set for the data. </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N6ripple9VtkWriter14set_resolutionEd">
-<span id="_CPPv3N6ripple9VtkWriter14set_resolutionEd"></span><span id="_CPPv2N6ripple9VtkWriter14set_resolutionEd"></span><span id="ripple::VtkWriter::set_resolution__double"></span><span class="target" id="classripple_1_1VtkWriter_1a28e188840a70b97d6be99c04fafffc5b"></span>auto <code class="sig-name descname">set_resolution</code><span class="sig-paren">(</span>double <em>res</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void <em class="property">final</em> <em class="property">override</em><a class="headerlink" href="#_CPPv4N6ripple9VtkWriter14set_resolutionEd" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Sets the resolution of the data. </p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">res</span></code>: The resolution for the data. </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N6ripple9VtkWriter14write_metadataERK8DimSizes">
-<span id="_CPPv3N6ripple9VtkWriter14write_metadataERK8DimSizes"></span><span id="_CPPv2N6ripple9VtkWriter14write_metadataERK8DimSizes"></span><span id="ripple::VtkWriter::write_metadata__DimSizesCR"></span><span class="target" id="classripple_1_1VtkWriter_1a7121012bcb5add426498efb060e6ded3"></span>auto <code class="sig-name descname">write_metadata</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple9VtkWriter8DimSizesE" title="ripple::VtkWriter::DimSizes">DimSizes</a> &amp;<em>dims</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void <em class="property">final</em> <em class="property">override</em><a class="headerlink" href="#_CPPv4N6ripple9VtkWriter14write_metadataERK8DimSizes" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Writes the metadata for the file, which is the header and the indices. </p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">dims</span></code>: The dimensions to write. </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N6ripple9VtkWriter13write_elementERK16PrintableElement">
-<span id="_CPPv3N6ripple9VtkWriter13write_elementERK16PrintableElement"></span><span id="_CPPv2N6ripple9VtkWriter13write_elementERK16PrintableElement"></span><span id="ripple::VtkWriter::write_element__PrintableElementCR"></span><span class="target" id="classripple_1_1VtkWriter_1a01a8d0ec7206ae88ed09225f096ad8d9"></span>auto <code class="sig-name descname">write_element</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="classripple_1_1PrintableElement.html#_CPPv4N6ripple16PrintableElementE" title="ripple::PrintableElement">PrintableElement</a> &amp;<em>element</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void <em class="property">final</em> <em class="property">override</em><a class="headerlink" href="#_CPPv4N6ripple9VtkWriter13write_elementERK16PrintableElement" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Writes the element to the output file. </p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">element</span></code>: The printable element to write. </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N6ripple9VtkWriter20write_element_headerERK16PrintableElement">
-<span id="_CPPv3N6ripple9VtkWriter20write_element_headerERK16PrintableElement"></span><span id="_CPPv2N6ripple9VtkWriter20write_element_headerERK16PrintableElement"></span><span id="ripple::VtkWriter::write_element_header__PrintableElementCR"></span><span class="target" id="classripple_1_1VtkWriter_1ae174aadfd9243629a1cb5ef1c4c74528"></span>auto <code class="sig-name descname">write_element_header</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="classripple_1_1PrintableElement.html#_CPPv4N6ripple16PrintableElementE" title="ripple::PrintableElement">PrintableElement</a> &amp;<em>element</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void <em class="property">final</em> <em class="property">override</em><a class="headerlink" href="#_CPPv4N6ripple9VtkWriter20write_element_headerERK16PrintableElement" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Writes any necessary header data for an element. </p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">element</span></code>: The printable element to write the start data </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N6ripple9VtkWriter20write_element_footerEv">
-<span id="_CPPv3N6ripple9VtkWriter20write_element_footerEv"></span><span id="_CPPv2N6ripple9VtkWriter20write_element_footerEv"></span><span id="ripple::VtkWriter::write_element_footer"></span><span class="target" id="classripple_1_1VtkWriter_1acefb70d2a547a1d8d3e7a634672187bf"></span>auto <code class="sig-name descname">write_element_footer</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void <em class="property">final</em> <em class="property">override</em><a class="headerlink" href="#_CPPv4N6ripple9VtkWriter20write_element_footerEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Writes a footer after all element data has been written. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N6ripple9VtkWriter4openENSt6stringENSt6stringE">
-<span id="_CPPv3N6ripple9VtkWriter4openENSt6stringENSt6stringE"></span><span id="_CPPv2N6ripple9VtkWriter4openENSt6stringENSt6stringE"></span><span id="ripple::VtkWriter::open__ss.ss"></span><span class="target" id="classripple_1_1VtkWriter_1a2efc0f0ad4be41697940355bc3da3ab2"></span>auto <code class="sig-name descname">open</code><span class="sig-paren">(</span>std::string <em>path</em> = &quot;&quot;, std::string <em>suffix</em> = &quot;&quot;<span class="sig-paren">)</span> -&gt; void <em class="property">final</em> <em class="property">override</em><a class="headerlink" href="#_CPPv4N6ripple9VtkWriter4openENSt6stringENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Opens the file for the writer, using the base filename for the writer and the suffix. </p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">path</span></code>: Path to the directory for the file. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">suffix</span></code>: The suffix to append to the base filename. </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N6ripple9VtkWriter5closeEv">
-<span id="_CPPv3N6ripple9VtkWriter5closeEv"></span><span id="_CPPv2N6ripple9VtkWriter5closeEv"></span><span id="ripple::VtkWriter::close"></span><span class="target" id="classripple_1_1VtkWriter_1a33ab32d766408b559b0d6c8e645ad7b2"></span>auto <code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span> -&gt; void <em class="property">final</em> <em class="property">override</em><a class="headerlink" href="#_CPPv4N6ripple9VtkWriter5closeEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Close the file for writing. </p>
-</dd></dl>
-
-</div>
-</dd></dl>
-
 </div>
 </div>
 
@@ -392,15 +240,6 @@
               
             </div>
             <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="enum_namespaceripple_1adfb7267df8924979597b053026d4e492.html" class="btn btn-neutral float-right" title="Enum AllocArch" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
-      
-      
-        <a href="classripple_1_1Tuple_3_4.html" class="btn btn-neutral" title="Template Class Tuple&lt;&gt;" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
-      
-    </div>
   
 
   

@@ -34,7 +34,7 @@ Program Listing for File dim.hpp
    struct Dimension {
      static constexpr size_t value = Value;
    
-     ripple_host_device constexpr operator size_t() const {
+     ripple_all constexpr operator size_t() const {
        return static_cast<size_t>(Value);
      }
    };

@@ -3,7 +3,7 @@
 Struct SumReducer
 =================
 
-- Defined in :ref:`file_include_ripple_core_algorithm_reduce.hpp`
+- Defined in :ref:`file_include_ripple_algorithm_reduce.hpp`
 
 
 Struct Documentation

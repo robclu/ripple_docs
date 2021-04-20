@@ -3,7 +3,7 @@
 Struct CpuInfo::Regs
 ====================
 
-- Defined in :ref:`file_include_ripple_core_arch_cpu_info.hpp`
+- Defined in :ref:`file_include_ripple_arch_cpu_info.hpp`
 
 
 Nested Relationships

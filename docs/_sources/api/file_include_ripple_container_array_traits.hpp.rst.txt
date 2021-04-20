@@ -1,0 +1,91 @@
+
+.. _file_include_ripple_container_array_traits.hpp:
+
+File array_traits.hpp
+=====================
+
+
+= :ref:`file_include_ripple_container_array_traits.hpp` --------------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/container/array_traits.hpp``)
+----------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_container_array_traits.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file defines forward declarations and traits for arrays.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``ripple/storage/storage_layout.hpp`` (:ref:`file_include_ripple_storage_storage_layout.hpp`)
+
+- ``ripple/utility/number.hpp`` (:ref:`file_include_ripple_utility_number.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_container_array.hpp`
+
+- :ref:`file_include_ripple_container_vec.hpp`
+
+- :ref:`file_include_ripple_iterator_iterator_traits.hpp`
+
+- :ref:`file_include_ripple_iterator_block_iterator.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1Array`
+
+- :ref:`exhale_struct_structripple_1_1ArrayTraits`
+
+- :ref:`exhale_struct_structripple_1_1ArrayTraits_3_01Array_3_01Impl_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1ArrayTraits_3_01VecImpl_3_01T_00_01Size_00_01LayoutType_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1VecImpl`
+

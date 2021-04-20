@@ -1,0 +1,13 @@
+.. _exhale_function_load__global__padding__impl___8hpp_1aff4a031a092387bcdb84d99ace371d18:
+
+Template Function ripple::detail::load_global_padding(DimY, It&&, const GhostIndex<Dims>&, Loader&&, Args&&...)
+===============================================================================================================
+
+- Defined in :ref:`file_include_ripple_padding_detail_load_global_padding_impl_.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::detail::load_global_padding(DimY, It&&, const GhostIndex<Dims>&, Loader&&, Args&&...)

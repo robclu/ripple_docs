@@ -1,0 +1,162 @@
+
+.. _program_listing_file_include_ripple_utility_detail_function_traits_impl_.hpp:
+
+Program Listing for File function_traits_impl_.hpp
+==================================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_utility_detail_function_traits_impl_.hpp>` (``include/ripple/utility/detail/function_traits_impl_.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //==--- ripple/core/utility/detail/function_traits_.hpp ---- -*- C++ -*- ---==//
+   //
+   //                                Ripple
+   //
+   //                      Copyright (c) 2020 Ripple
+   //
+   //  This file is distributed under the MIT License. See LICENSE for details.
+   //
+   //==------------------------------------------------------------------------==//
+   //
+   
+   #ifndef RIPPLE_UTILITY_DETAIL_FUNCTION_TRAITS_IMPL__HPP
+   #define RIPPLE_UTILITY_DETAIL_FUNCTION_TRAITS_IMPL__HPP
+   
+   #include "nth_element_impl_.hpp"
+   
+   namespace ripple::detail {
+   
+   // clang-format off
+   template <
+     typename    Return,
+     typename    Class,
+     bool        IsConst,
+     bool        IsVariadic,
+     typename... Args>
+   struct FunctionTypes {
+     static constexpr auto arity       = size_t{sizeof...(Args)};
+     static constexpr auto is_const    = IsConst;
+     static constexpr auto is_variadic = IsVariadic;
+   
+     using ReturnType = Return;
+     using ClassType = Class;
+   
+     template <size_t I>
+     using ArgType = typename NthElement<I, Args...>::type;
+   };
+   
+   /*==--- [function traits] --------------------------------------------------==*/
+   
+   template <typename... Ts>
+   struct FunctionTraits;
+   
+   template <typename T>
+   struct FunctionTraits<T>
+   : FunctionTraits<decltype(&std::decay_t<T>::operator())> {};
+   
+   template <typename T, typename T1, typename... Ts>
+   struct FunctionTraits<T, T1, Ts...>
+   : FunctionTraits<decltype(&std::decay_t<T>::operator()(
+       std::declval<T1>(), std::declval<Ts>()...))> {};
+   
+   /*==--- [function] ---------------------------------------------------------==*/
+   
+   template <typename R, typename... Args>
+   struct FunctionTraits<R(Args...)>
+   : FunctionTypes<R, void, false, false, Args...> {};
+   
+   template <typename R, typename... Args>
+   struct FunctionTraits<R(Args...) const>
+   : FunctionTypes<R, void, true, false, Args...> {};
+   
+   /*==--- [pointer to function] ----------------------------------------------==*/
+   
+   template <typename R, typename... Args>
+   struct FunctionTraits<R (*)(Args...)>
+   : FunctionTypes<R, void, false, false, Args...> {};
+   
+   /*==--- [reference to function] --------------------------------------------==*/
+   
+   template <typename R, typename... Args>
+   struct FunctionTraits<R (&)(Args...)>
+   : FunctionTypes<R, void, false, false, Args...> {};
+   
+   template <typename R, typename... Args>
+   struct FunctionTraits<R(Args...)&>
+   : FunctionTypes<R, void, false, false, Args...> {};
+   
+   template <typename R, typename... Args>
+   struct FunctionTraits<R(Args...) const&>
+   : FunctionTypes<R, void, false, false, Args...> {};
+   
+   template <typename R, typename... Args>
+   struct FunctionTraits<R(Args...) &&>
+   : FunctionTypes<R, void, false, false, Args...> {};
+   
+   template <typename R, typename... Args>
+   struct FunctionTraits<R(Args...) const&&>
+   : FunctionTypes<R, void, false, false, Args...> {};
+   
+   /*==--- [variadic function] ------------------------------------------------==*/
+   
+   template <typename R, typename... Args>
+   struct FunctionTraits<R(Args..., ...)>
+   : FunctionTypes<R, void, false, true, Args...> {};
+   
+   template <typename R, typename... Args>
+   struct FunctionTraits<R(Args..., ...) const>
+   : FunctionTypes<R, void, true, true, Args...> {};
+   
+   /*==--- [pointer to variadic function] -------------------------------------==*/
+   
+   template <typename R, typename... Args>
+   struct FunctionTraits<R (*)(Args..., ...)>
+   : FunctionTypes<R, void, false, true, Args...> {};
+   
+   /*==--- [reference to variadic function] -----------------------------------==*/
+   
+   template <typename R, typename... Args>
+   struct FunctionTraits<R (&)(Args..., ...)>
+   : FunctionTypes<R, void, false, true, Args...> {};
+   
+   template <typename R, typename... Args>
+   struct FunctionTraits<R(Args..., ...)&>
+   : FunctionTypes<R, void, false, true, Args...> {};
+   
+   template <typename R, typename... Args>
+   struct FunctionTraits<R(Args..., ...) const&>
+   : FunctionTypes<R, void, false, true, Args...> {};
+   
+   template <typename R, typename... Args>
+   struct FunctionTraits<R(Args..., ...) &&>
+   : FunctionTypes<R, void, false, true, Args...> {};
+   
+   template <typename R, typename... Args>
+   struct FunctionTraits<R(Args..., ...) const&&>
+   : FunctionTypes<R, void, false, true, Args...> {};
+   
+   /*==--- [pointer to class function] ----------------------------------------==*/
+   
+   template <typename R, typename C, typename... Args>
+   struct FunctionTraits<R (C::*)(Args...)>
+   : FunctionTypes<R, C, false, false, Args...> {};
+   
+   template <typename R, typename C, typename... Args>
+   struct FunctionTraits<R (C::*)(Args...) const>
+   : FunctionTypes<R, C, true, false, Args...> {};
+   
+   /*==--- [pointer to class variadic function] -------------------------------==*/
+   
+   template <typename R, typename C, typename... Args>
+   struct FunctionTraits<R (C::*)(Args..., ...)>
+   : FunctionTypes<R, C, false, true, Args...> {};
+   
+   template <typename R, typename C, typename... Args>
+   struct FunctionTraits<R (C::*)(Args..., ...) const>
+   : FunctionTypes<R, C, true, true, Args...> {};
+   
+   } // namespace ripple::detail
+   
+   #endif // RIPPLE_UTILITY_DETAIL_FUNCTION_TRAITS_IMPL__HPP

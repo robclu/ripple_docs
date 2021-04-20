@@ -3,7 +3,7 @@
 Variable ripple::is_loader_v
 ============================
 
-- Defined in :ref:`file_include_ripple_core_boundary_boundary_loader.hpp`
+- Defined in :ref:`file_include_ripple_padding_padding_loader.hpp`
 
 
 Variable Documentation

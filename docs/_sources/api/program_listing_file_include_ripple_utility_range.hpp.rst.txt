@@ -1,0 +1,118 @@
+
+.. _program_listing_file_include_ripple_utility_range.hpp:
+
+Program Listing for File range.hpp
+==================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_utility_range.hpp>` (``include/ripple/utility/range.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_UTILITY_RANGE_HPP
+   #define RIPPLE_UTILITY_RANGE_HPP
+   
+   #include "portability.hpp"
+   #include "type_traits.hpp"
+   
+   namespace ripple {
+   
+   template <typename T>
+   class Range {
+     using Value = std::decay_t<T>;
+   
+     template <bool IsConst>
+     struct IteratorImpl {
+       // clang-format off
+       using Self      = IteratorImpl<IsConst>;
+       using IterValue = std::decay_t<T>;
+       using Reference = std::conditional_t<IsConst, const T&, T&>;
+       using Pointer   = std::conditional_t<IsConst, const T*, T*>;
+       // clang-format on
+   
+       ripple_all constexpr IteratorImpl(
+         IterValue value, IterValue step) noexcept
+       : value_(value), step_(step) {}
+   
+       ripple_all constexpr auto operator++() noexcept -> Self {
+         Self i = *this;
+         value_ += step_;
+         return i;
+       }
+   
+       ripple_all constexpr auto operator++(int) noexcept -> Self {
+         value_ += step_;
+         return *this;
+       }
+   
+       ripple_all constexpr auto operator*() noexcept -> Reference {
+         return value_;
+       }
+   
+       ripple_all constexpr auto operator->() noexcept -> Pointer {
+         return &value_;
+       }
+   
+       ripple_all constexpr auto
+       operator==(const Self& other) noexcept -> bool {
+         return value_ >= other.value_;
+       }
+   
+       ripple_all constexpr auto
+       operator!=(const Self& other) noexcept -> bool {
+         return value_ < other.value_;
+       }
+   
+      private:
+       IterValue value_; 
+       IterValue step_;  
+     };
+   
+     Value min_;  
+     Value max_;  
+     Value step_; 
+   
+    public:
+     // clang-format off
+     using ConstIterator = IteratorImpl<true>;
+     using Iterator      = IteratorImpl<false>;
+     // clang-format on
+   
+     ripple_all constexpr Range(Value min, Value max, Value step) noexcept
+     : min_(min), max_(max), step_(step) {}
+   
+     ripple_all constexpr auto begin() noexcept -> Iterator {
+       return Iterator{min_, step_};
+     }
+   
+     ripple_all constexpr auto end() noexcept -> Iterator {
+       return Iterator{max_, step_};
+     }
+   
+     ripple_all constexpr auto begin() const -> ConstIterator {
+       return ConstIterator{min_, step_};
+     }
+   
+     ripple_all constexpr auto end() const -> ConstIterator {
+       return ConstIterator{max_, step_};
+     }
+   };
+   
+   /*==--- [functions] --------------------------------------------------------==*/
+   
+   template <typename T>
+   ripple_all constexpr inline auto range(T end) noexcept -> Range<T> {
+     return Range<T>(T{0}, static_cast<T>(end), T{1});
+   }
+   
+   template <typename T>
+   ripple_all constexpr inline auto
+   range(T start, T end, T step = T{1}) noexcept -> Range<T> {
+     return Range<T>(start, end, step);
+   }
+   
+   } // namespace ripple
+   
+   #endif // RIPPPLE_UTILITY_RANGE_HPP

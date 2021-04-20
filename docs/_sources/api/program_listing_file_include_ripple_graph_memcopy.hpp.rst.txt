@@ -1,0 +1,65 @@
+
+.. _program_listing_file_include_ripple_graph_memcopy.hpp:
+
+Program Listing for File memcopy.hpp
+====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_graph_memcopy.hpp>` (``include/ripple/graph/memcopy.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_GRAPH_MEMCOPY_HPP
+   #define RIPPLE_GRAPH_MEMCOPY_HPP
+   
+   #include "detail/utils_.hpp"
+   #include <ripple/container/block_extractor.hpp>
+   #include <ripple/functional/invoke.hpp>
+   
+   namespace ripple {
+   
+   struct Memcopy {
+    public:
+     // clang-format off
+     template <typename Graph, typename... Args>
+     static auto memcopy(
+       Graph&        graph,
+       ExecutionKind exec,
+       TransferKind  transfer,
+       Args&&...     args) noexcept -> void {
+       // clang-format on
+       memcopy_impl(
+         graph,
+         exec,
+         transfer,
+         BlockExtractor::extract_blocks_if_tensor(ripple_forward(args))...);
+     }
+   
+    private:
+     // clang-format off
+     template <typename Graph, typename... Args>
+     static auto memcopy_impl(
+       Graph&        graph,
+       ExecutionKind exec,
+       TransferKind  transfer,
+       Args&&...     args) noexcept -> void {
+       // clang-format on
+       using Modifiers = Tuple<std::decay_t<Args>...>;
+   
+       /* If any argument has a modifier, then padding nodes are needed, so add the
+        * them for any tensor which has the modifier and multiple partitions. */
+       invoke_generic(
+         CpuExecutor(),
+         [&](auto&&... unwrapped_args) {
+           detail::add_padding_op_nodes<Modifiers>(
+             graph, exec, transfer, ripple_forward(unwrapped_args)...);
+         },
+         unwrap_modifiers(ripple_forward(args))...);
+     }
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_GRAPH_MEMCOPY_HPP

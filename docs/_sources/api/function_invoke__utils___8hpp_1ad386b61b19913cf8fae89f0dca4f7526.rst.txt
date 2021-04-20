@@ -1,0 +1,13 @@
+.. _exhale_function_invoke__utils___8hpp_1ad386b61b19913cf8fae89f0dca4f7526:
+
+Template Function ripple::kernel::get_size_if_block(T&&, Dim&&, int)
+====================================================================
+
+- Defined in :ref:`file_include_ripple_functional_kernel_invoke_utils_.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::kernel::get_size_if_block(T&&, Dim&&, int)

@@ -1,0 +1,81 @@
+
+.. _file_include_ripple_execution_execution_params.hpp:
+
+File execution_params.hpp
+=========================
+
+
+= :ref:`file_include_ripple_execution_execution_params.hpp` ----------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/execution/execution_params.hpp``)
+--------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_execution_execution_params.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file defines an interface for execution parameters.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``execution_traits.hpp`` (:ref:`file_include_ripple_execution_execution_traits.hpp`)
+
+- ``ripple/utility/dim.hpp`` (:ref:`file_include_ripple_utility_dim.hpp`)
+
+- ``ripple/utility/portability.hpp`` (:ref:`file_include_ripple_utility_portability.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_execution_dynamic_execution_params.hpp`
+
+- :ref:`file_include_ripple_execution_static_execution_params.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1ExecParams`
+

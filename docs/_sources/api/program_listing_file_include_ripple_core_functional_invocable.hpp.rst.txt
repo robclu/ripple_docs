@@ -42,25 +42,25 @@ Program Listing for File invocable.hpp
      /*==--- [construction] ---------------------------------------------------==*/
    
      template <typename F>
-     ripple_host_device Invocable(F&& functor) noexcept
+     ripple_all Invocable(F&& functor) noexcept
      : functor_{ripple_forward(functor)} {}
    
-     ripple_host_device Invocable(const Functor& functor) noexcept
+     ripple_all Invocable(const Functor& functor) noexcept
      : functor_{functor} {}
    
-     ripple_host_device Invocable(const Invocable& other) noexcept
+     ripple_all Invocable(const Invocable& other) noexcept
      : functor_{other.functor_} {}
    
-     ripple_host_device Invocable(Invocable&& other) noexcept
+     ripple_all Invocable(Invocable&& other) noexcept
      : functor_{ripple_move(other._functor)} {}
    
-     ripple_host_device auto
+     ripple_all auto
      operator=(const Invocable& other) noexcept -> Invocable& {
        functor_ = other.functor_;
        return *this;
      }
    
-     ripple_host_device auto operator=(Invocable&& other) noexcept -> Invocable& {
+     ripple_all auto operator=(Invocable&& other) noexcept -> Invocable& {
        if (&other != this) {
          functor_ = ripple_move(other.functor_);
        }
@@ -70,12 +70,12 @@ Program Listing for File invocable.hpp
      /*==--- [interface] ------------------------------------------------------==*/
    
      template <typename... Args>
-     ripple_host_device auto operator()(Args&&... args) const noexcept -> void {
+     ripple_all auto operator()(Args&&... args) const noexcept -> void {
        functor_(ripple_forward(args)...);
      }
    
      template <typename... Args>
-     ripple_host_device auto operator()(Args&&... args) noexcept -> void {
+     ripple_all auto operator()(Args&&... args) noexcept -> void {
        functor_(ripple_forward(args)...);
      }
    
@@ -86,7 +86,7 @@ Program Listing for File invocable.hpp
    /*==--- [functions] -------------------------------------------------------==*/
    
    template <typename Functor>
-   ripple_host_device decltype(auto) make_invocable(Functor&& functor) noexcept {
+   ripple_all decltype(auto) make_invocable(Functor&& functor) noexcept {
      return Invocable<std::decay_t<Functor>>{ripple_forward(functor)};
    }
    

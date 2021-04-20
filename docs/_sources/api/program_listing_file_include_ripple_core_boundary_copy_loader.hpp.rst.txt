@@ -32,7 +32,7 @@ Program Listing for File copy_loader.hpp
    
    struct CopyLoader : public InternalLoader<CopyLoader> {
      template <typename IteratorFrom, typename IteratorTo>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      load(IteratorFrom&& it_from, IteratorTo&& it_to) const noexcept -> void {
        static_assert_iterator(it_to);
        static_assert_iterator(it_from);

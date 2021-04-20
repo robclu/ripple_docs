@@ -3,7 +3,7 @@
 Template Struct StorageDescriptor
 =================================
 
-- Defined in :ref:`file_include_ripple_core_storage_storage_descriptor.hpp`
+- Defined in :ref:`file_include_ripple_storage_storage_descriptor.hpp`
 
 
 Struct Documentation

@@ -3,7 +3,7 @@
 Typedef ripple::NonPolyLayoutOverload
 =====================================
 
-- Defined in :ref:`file_include_ripple_core_iterator_block_iterator.hpp`
+- Defined in :ref:`file_include_ripple_iterator_block_iterator.hpp`
 
 
 Typedef Documentation

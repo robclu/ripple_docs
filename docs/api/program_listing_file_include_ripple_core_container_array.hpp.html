@@ -141,6 +141,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -240,23 +241,23 @@
   <span class="k">static</span> <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">elements</span> <span class="o">=</span> <span class="n">array_traits_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;::</span><span class="n">size</span><span class="p">;</span>
 
  <span class="k">public</span><span class="o">:</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="k">operator</span><span class="p">[](</span><span class="kt">size_t</span> <span class="n">i</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="k">operator</span><span class="p">[](</span><span class="kt">size_t</span> <span class="n">i</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">impl</span><span class="p">()</span><span class="o">-&gt;</span><span class="k">operator</span><span class="p">[](</span><span class="n">i</span><span class="p">);</span>
   <span class="p">}</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span>
   <span class="k">operator</span><span class="p">[](</span><span class="kt">size_t</span> <span class="n">i</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">impl</span><span class="p">()</span><span class="o">-&gt;</span><span class="k">operator</span><span class="p">[](</span><span class="n">i</span><span class="p">);</span>
   <span class="p">}</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">size</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">size</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">size_t</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">array_traits_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;::</span><span class="n">size</span><span class="p">;</span>
   <span class="p">}</span>
 
   <span class="cm">/*==--- [comparison operators] -------------------------------------------==*/</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">ImplOther</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
   <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">ImplOther</span><span class="o">&gt;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
     <span class="n">assert_size_match</span><span class="o">&lt;</span><span class="n">ImplOther</span><span class="o">&gt;</span><span class="p">();</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">elements</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
@@ -268,7 +269,7 @@
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="n">array_value_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Impl</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">elements</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">if</span> <span class="p">(</span><span class="n">impl</span><span class="p">()</span><span class="o">-&gt;</span><span class="k">operator</span><span class="p">[](</span><span class="n">i</span><span class="p">)</span> <span class="o">!=</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
@@ -278,13 +279,13 @@
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">ImplOther</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
   <span class="k">operator</span><span class="o">!=</span><span class="p">(</span><span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">ImplOther</span><span class="o">&gt;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
     <span class="k">return</span> <span class="o">!</span><span class="p">(</span><span class="o">*</span><span class="k">this</span> <span class="o">==</span> <span class="n">other</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="n">array_value_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Impl</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">!=</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">!=</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">elements</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">if</span> <span class="p">(</span><span class="n">impl</span><span class="p">()</span><span class="o">-&gt;</span><span class="k">operator</span><span class="p">[](</span><span class="n">i</span><span class="p">)</span> <span class="o">!=</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
@@ -294,7 +295,7 @@
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">ImplOther</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
   <span class="k">operator</span><span class="o">&lt;=</span><span class="p">(</span><span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">ImplOther</span><span class="o">&gt;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">elements</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">if</span> <span class="p">(</span><span class="n">impl</span><span class="p">()</span><span class="o">-&gt;</span><span class="k">operator</span><span class="p">[](</span><span class="n">i</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">other</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">{</span>
@@ -305,7 +306,7 @@
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="n">array_value_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Impl</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">&lt;=</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">&lt;=</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">elements</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">if</span> <span class="p">(</span><span class="n">impl</span><span class="p">()</span><span class="o">-&gt;</span><span class="k">operator</span><span class="p">[](</span><span class="n">i</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
@@ -315,7 +316,7 @@
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">ImplOther</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
   <span class="k">operator</span><span class="o">&gt;=</span><span class="p">(</span><span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">ImplOther</span><span class="o">&gt;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">elements</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">if</span> <span class="p">(</span><span class="n">impl</span><span class="p">()</span><span class="o">-&gt;</span><span class="k">operator</span><span class="p">[](</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">other</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">{</span>
@@ -326,7 +327,7 @@
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="n">array_value_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Impl</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">&gt;=</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">&gt;=</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">elements</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">if</span> <span class="p">(</span><span class="n">impl</span><span class="p">()</span><span class="o">-&gt;</span><span class="k">operator</span><span class="p">[](</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
@@ -336,7 +337,7 @@
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">ImplOther</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
   <span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">ImplOther</span><span class="o">&gt;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">elements</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">if</span> <span class="p">(</span><span class="n">impl</span><span class="p">()</span><span class="o">-&gt;</span><span class="k">operator</span><span class="p">[](</span><span class="n">i</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">other</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">{</span>
@@ -347,7 +348,7 @@
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="n">array_value_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Impl</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">elements</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">if</span> <span class="p">(</span><span class="n">impl</span><span class="p">()</span><span class="o">-&gt;</span><span class="k">operator</span><span class="p">[](</span><span class="n">i</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
@@ -357,7 +358,7 @@
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">ImplOther</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
   <span class="k">operator</span><span class="o">&gt;</span><span class="p">(</span><span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">ImplOther</span><span class="o">&gt;&amp;</span> <span class="n">a</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">elements</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">if</span> <span class="p">(</span><span class="n">impl</span><span class="p">()</span><span class="o">-&gt;</span><span class="k">operator</span><span class="p">[](</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">{</span>
@@ -368,7 +369,7 @@
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="n">array_value_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Impl</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">&gt;</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">&gt;</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">bool</span> <span class="p">{</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">elements</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">if</span> <span class="p">(</span><span class="n">impl</span><span class="p">()</span><span class="o">-&gt;</span><span class="k">operator</span><span class="p">[](</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
@@ -380,7 +381,7 @@
   <span class="cm">/*==--- [operator {+,+=} overloads] --------------------------------------==*/</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">ImplOther</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
   <span class="k">operator</span><span class="o">+=</span><span class="p">(</span><span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">ImplOther</span><span class="o">&gt;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Impl</span><span class="o">&amp;</span> <span class="p">{</span>
     <span class="n">assert_size_match</span><span class="o">&lt;</span><span class="n">ImplOther</span><span class="o">&gt;</span><span class="p">();</span>
     <span class="n">unrolled_for_bounded</span><span class="o">&lt;</span><span class="n">elements</span><span class="o">&gt;</span><span class="p">(</span>
@@ -389,7 +390,7 @@
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="n">array_value_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Impl</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">+=</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Impl</span><span class="o">&amp;</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">+=</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Impl</span><span class="o">&amp;</span> <span class="p">{</span>
     <span class="k">using</span> <span class="n">Value</span> <span class="o">=</span> <span class="k">typename</span> <span class="n">array_traits_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;::</span><span class="n">Value</span><span class="p">;</span>
     <span class="n">unrolled_for_bounded</span><span class="o">&lt;</span><span class="n">elements</span><span class="o">&gt;</span><span class="p">(</span>
       <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="n">impl</span><span class="p">()</span><span class="o">-&gt;</span><span class="k">operator</span><span class="p">[](</span><span class="n">i</span><span class="p">)</span> <span class="o">+=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">Value</span><span class="o">&gt;</span><span class="p">(</span><span class="n">val</span><span class="p">);</span> <span class="p">});</span>
@@ -397,7 +398,7 @@
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">ImplOther</span><span class="p">,</span> <span class="k">typename</span> <span class="n">R</span> <span class="o">=</span> <span class="n">array_impl_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="p">,</span> <span class="n">ImplOther</span><span class="o">&gt;&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
   <span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">ImplOther</span><span class="o">&gt;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">R</span> <span class="p">{</span>
     <span class="n">R</span> <span class="n">result</span><span class="p">;</span>
     <span class="n">unrolled_for_bounded</span><span class="o">&lt;</span><span class="n">elements</span><span class="o">&gt;</span><span class="p">(</span>
@@ -409,7 +410,7 @@
     <span class="k">typename</span> <span class="n">T</span><span class="p">,</span>
     <span class="k">typename</span> <span class="n">R</span>                    <span class="o">=</span> <span class="n">array_impl_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="p">,</span> <span class="n">Impl</span><span class="o">&gt;</span><span class="p">,</span>
     <span class="n">array_value_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Impl</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">R</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">R</span> <span class="p">{</span>
     <span class="n">R</span> <span class="n">result</span><span class="p">;</span>
     <span class="k">using</span> <span class="n">Value</span> <span class="o">=</span> <span class="k">typename</span> <span class="n">array_traits_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;::</span><span class="n">Value</span><span class="p">;</span>
     <span class="n">unrolled_for_bounded</span><span class="o">&lt;</span><span class="n">elements</span><span class="o">&gt;</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
@@ -421,7 +422,7 @@
   <span class="cm">/*==--- [operator {-,-=} overloads] --------------------------------------==*/</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">ImplOther</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
   <span class="k">operator</span><span class="o">-=</span><span class="p">(</span><span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">ImplOther</span><span class="o">&gt;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Impl</span><span class="o">&amp;</span> <span class="p">{</span>
     <span class="n">assert_size_match</span><span class="o">&lt;</span><span class="n">ImplOther</span><span class="o">&gt;</span><span class="p">();</span>
     <span class="n">unrolled_for_bounded</span><span class="o">&lt;</span><span class="n">elements</span><span class="o">&gt;</span><span class="p">(</span>
@@ -430,7 +431,7 @@
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="n">array_value_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Impl</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">-=</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Impl</span><span class="o">&amp;</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">-=</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Impl</span><span class="o">&amp;</span> <span class="p">{</span>
     <span class="k">using</span> <span class="n">Value</span> <span class="o">=</span> <span class="k">typename</span> <span class="n">array_traits_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;::</span><span class="n">Value</span><span class="p">;</span>
     <span class="n">unrolled_for_bounded</span><span class="o">&lt;</span><span class="n">elements</span><span class="o">&gt;</span><span class="p">(</span>
       <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="n">impl</span><span class="p">()</span><span class="o">-&gt;</span><span class="k">operator</span><span class="p">[](</span><span class="n">i</span><span class="p">)</span> <span class="o">-=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">Value</span><span class="o">&gt;</span><span class="p">(</span><span class="n">val</span><span class="p">);</span> <span class="p">});</span>
@@ -438,7 +439,7 @@
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">ImplOther</span><span class="p">,</span> <span class="k">typename</span> <span class="n">R</span> <span class="o">=</span> <span class="n">array_impl_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="p">,</span> <span class="n">ImplOther</span><span class="o">&gt;&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
   <span class="k">operator</span><span class="o">-</span><span class="p">(</span><span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">ImplOther</span><span class="o">&gt;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">R</span> <span class="p">{</span>
     <span class="n">R</span> <span class="n">result</span><span class="p">;</span>
     <span class="n">unrolled_for_bounded</span><span class="o">&lt;</span><span class="n">elements</span><span class="o">&gt;</span><span class="p">(</span>
@@ -450,7 +451,7 @@
     <span class="k">typename</span> <span class="n">T</span><span class="p">,</span>
     <span class="k">typename</span> <span class="n">R</span>                    <span class="o">=</span> <span class="n">array_impl_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="p">,</span> <span class="n">Impl</span><span class="o">&gt;</span><span class="p">,</span>
     <span class="n">array_value_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Impl</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">-</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">R</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">-</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">R</span> <span class="p">{</span>
     <span class="n">R</span> <span class="n">result</span><span class="p">;</span>
     <span class="k">using</span> <span class="n">Value</span> <span class="o">=</span> <span class="k">typename</span> <span class="n">array_traits_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;::</span><span class="n">Value</span><span class="p">;</span>
     <span class="n">unrolled_for_bounded</span><span class="o">&lt;</span><span class="n">elements</span><span class="o">&gt;</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
@@ -462,7 +463,7 @@
   <span class="cm">/*==--- [operator {*,*=} overloads] --------------------------------------==*/</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">ImplOther</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
   <span class="k">operator</span><span class="o">*=</span><span class="p">(</span><span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">ImplOther</span><span class="o">&gt;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Impl</span><span class="o">&amp;</span> <span class="p">{</span>
     <span class="n">assert_size_match</span><span class="o">&lt;</span><span class="n">ImplOther</span><span class="o">&gt;</span><span class="p">();</span>
     <span class="n">unrolled_for_bounded</span><span class="o">&lt;</span><span class="n">elements</span><span class="o">&gt;</span><span class="p">(</span>
@@ -471,7 +472,7 @@
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="n">array_value_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Impl</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">*=</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Impl</span><span class="o">&amp;</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">*=</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Impl</span><span class="o">&amp;</span> <span class="p">{</span>
     <span class="k">using</span> <span class="n">Value</span> <span class="o">=</span> <span class="k">typename</span> <span class="n">array_traits_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;::</span><span class="n">Value</span><span class="p">;</span>
     <span class="n">unrolled_for_bounded</span><span class="o">&lt;</span><span class="n">elements</span><span class="o">&gt;</span><span class="p">(</span>
       <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="n">impl</span><span class="p">()</span><span class="o">-&gt;</span><span class="k">operator</span><span class="p">[](</span><span class="n">i</span><span class="p">)</span> <span class="o">*=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">Value</span><span class="o">&gt;</span><span class="p">(</span><span class="n">val</span><span class="p">);</span> <span class="p">});</span>
@@ -479,7 +480,7 @@
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">ImplOther</span><span class="p">,</span> <span class="k">typename</span> <span class="n">R</span> <span class="o">=</span> <span class="n">array_impl_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="p">,</span> <span class="n">ImplOther</span><span class="o">&gt;&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
   <span class="k">operator</span><span class="o">*</span><span class="p">(</span><span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">ImplOther</span><span class="o">&gt;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">R</span> <span class="p">{</span>
     <span class="n">R</span> <span class="n">result</span><span class="p">;</span>
     <span class="n">unrolled_for_bounded</span><span class="o">&lt;</span><span class="n">elements</span><span class="o">&gt;</span><span class="p">(</span>
@@ -491,7 +492,7 @@
     <span class="k">typename</span> <span class="n">T</span><span class="p">,</span>
     <span class="k">typename</span> <span class="n">R</span>                    <span class="o">=</span> <span class="n">array_impl_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="p">,</span> <span class="n">Impl</span><span class="o">&gt;</span><span class="p">,</span>
     <span class="n">array_value_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Impl</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">*</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">R</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">*</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">R</span> <span class="p">{</span>
     <span class="n">R</span> <span class="n">result</span><span class="p">;</span>
     <span class="k">using</span> <span class="n">Value</span> <span class="o">=</span> <span class="k">typename</span> <span class="n">array_traits_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;::</span><span class="n">Value</span><span class="p">;</span>
     <span class="n">unrolled_for_bounded</span><span class="o">&lt;</span><span class="n">elements</span><span class="o">&gt;</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
@@ -503,7 +504,7 @@
   <span class="cm">/*==--- [operator {/,/=} overloads] --------------------------------------==*/</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">ImplOther</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
   <span class="k">operator</span><span class="o">/=</span><span class="p">(</span><span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">ImplOther</span><span class="o">&gt;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Impl</span><span class="o">&amp;</span> <span class="p">{</span>
     <span class="n">assert_size_match</span><span class="o">&lt;</span><span class="n">ImplOther</span><span class="o">&gt;</span><span class="p">();</span>
     <span class="n">unrolled_for_bounded</span><span class="o">&lt;</span><span class="n">elements</span><span class="o">&gt;</span><span class="p">(</span>
@@ -512,7 +513,7 @@
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="n">array_value_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Impl</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">/=</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Impl</span><span class="o">&amp;</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">/=</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Impl</span><span class="o">&amp;</span> <span class="p">{</span>
     <span class="k">using</span> <span class="n">Value</span> <span class="o">=</span> <span class="k">typename</span> <span class="n">array_traits_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;::</span><span class="n">Value</span><span class="p">;</span>
     <span class="n">unrolled_for_bounded</span><span class="o">&lt;</span><span class="n">elements</span><span class="o">&gt;</span><span class="p">(</span>
       <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="n">impl</span><span class="p">()</span><span class="o">-&gt;</span><span class="k">operator</span><span class="p">[](</span><span class="n">i</span><span class="p">)</span> <span class="o">/=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">Value</span><span class="o">&gt;</span><span class="p">(</span><span class="n">val</span><span class="p">);</span> <span class="p">});</span>
@@ -520,7 +521,7 @@
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">ImplOther</span><span class="p">,</span> <span class="k">typename</span> <span class="n">R</span> <span class="o">=</span> <span class="n">array_impl_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="p">,</span> <span class="n">ImplOther</span><span class="o">&gt;&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
   <span class="k">operator</span><span class="o">/</span><span class="p">(</span><span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">ImplOther</span><span class="o">&gt;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">R</span> <span class="p">{</span>
     <span class="n">R</span> <span class="n">result</span><span class="p">;</span>
     <span class="n">unrolled_for_bounded</span><span class="o">&lt;</span><span class="n">elements</span><span class="o">&gt;</span><span class="p">(</span>
@@ -532,7 +533,7 @@
     <span class="k">typename</span> <span class="n">T</span><span class="p">,</span>
     <span class="k">typename</span> <span class="n">R</span>                    <span class="o">=</span> <span class="n">array_impl_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="p">,</span> <span class="n">Impl</span><span class="o">&gt;</span><span class="p">,</span>
     <span class="n">array_value_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Impl</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">/</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">R</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">/</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">R</span> <span class="p">{</span>
     <span class="n">R</span> <span class="n">result</span><span class="p">;</span>
     <span class="k">using</span> <span class="n">Value</span> <span class="o">=</span> <span class="k">typename</span> <span class="n">array_traits_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;::</span><span class="n">Value</span><span class="p">;</span>
     <span class="n">unrolled_for_bounded</span><span class="o">&lt;</span><span class="n">elements</span><span class="o">&gt;</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="k">auto</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
@@ -542,16 +543,16 @@
   <span class="p">}</span>
 
  <span class="k">private</span><span class="o">:</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">impl</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Impl</span><span class="o">*</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">impl</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Impl</span><span class="o">*</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">*&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
   <span class="p">}</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">impl</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">Impl</span><span class="o">*</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">impl</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">Impl</span><span class="o">*</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">Impl</span><span class="o">*&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">ImplOther</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">assert_size_match</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">assert_size_match</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
     <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">size_other</span> <span class="o">=</span> <span class="n">array_traits_t</span><span class="o">&lt;</span><span class="n">ImplOther</span><span class="o">&gt;::</span><span class="n">size</span><span class="p">;</span>
     <span class="k">static_assert</span><span class="p">(</span>
       <span class="n">size_other</span> <span class="o">==</span> <span class="n">elements</span><span class="p">,</span> <span class="s">&quot;Arrays have different number of elements&quot;</span><span class="p">);</span>
@@ -565,7 +566,7 @@
   <span class="k">typename</span> <span class="n">Impl</span><span class="p">,</span>
   <span class="k">typename</span> <span class="n">R</span>                    <span class="o">=</span> <span class="n">array_impl_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="p">,</span> <span class="n">Impl</span><span class="o">&gt;</span><span class="p">,</span>
   <span class="n">array_value_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Impl</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+<span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
 <span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">,</span> <span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;&amp;</span> <span class="n">a</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">R</span> <span class="p">{</span>
   <span class="k">using</span> <span class="n">Value</span> <span class="o">=</span> <span class="k">typename</span> <span class="n">array_traits_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;::</span><span class="n">Value</span><span class="p">;</span>
   <span class="k">using</span> <span class="n">Type</span>  <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">decay_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">;</span>
@@ -586,7 +587,7 @@
   <span class="k">typename</span> <span class="n">Impl</span><span class="p">,</span>
   <span class="k">typename</span> <span class="n">R</span>                    <span class="o">=</span> <span class="n">array_impl_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="p">,</span> <span class="n">Impl</span><span class="o">&gt;</span><span class="p">,</span>
   <span class="n">array_value_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Impl</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+<span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
 <span class="k">operator</span><span class="o">-</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">,</span> <span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;&amp;</span> <span class="n">a</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">R</span> <span class="p">{</span>
   <span class="k">using</span> <span class="n">Value</span> <span class="o">=</span> <span class="k">typename</span> <span class="n">array_traits_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;::</span><span class="n">Value</span><span class="p">;</span>
   <span class="k">using</span> <span class="n">Type</span>  <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">decay_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">;</span>
@@ -607,7 +608,7 @@
   <span class="k">typename</span> <span class="n">Impl</span><span class="p">,</span>
   <span class="k">typename</span> <span class="n">R</span>                    <span class="o">=</span> <span class="n">array_impl_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="p">,</span> <span class="n">Impl</span><span class="o">&gt;</span><span class="p">,</span>
   <span class="n">array_value_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Impl</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+<span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
 <span class="k">operator</span><span class="o">*</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">,</span> <span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;&amp;</span> <span class="n">a</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">R</span> <span class="p">{</span>
   <span class="k">using</span> <span class="n">Value</span> <span class="o">=</span> <span class="k">typename</span> <span class="n">array_traits_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;::</span><span class="n">Value</span><span class="p">;</span>
   <span class="k">using</span> <span class="n">Type</span>  <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">decay_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">;</span>
@@ -628,7 +629,7 @@
   <span class="k">typename</span> <span class="n">Impl</span><span class="p">,</span>
   <span class="k">typename</span> <span class="n">R</span>                    <span class="o">=</span> <span class="n">array_impl_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="p">,</span> <span class="n">Impl</span><span class="o">&gt;</span><span class="p">,</span>
   <span class="n">array_value_enable_t</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">Impl</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+<span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
 <span class="k">operator</span><span class="o">/</span><span class="p">(</span><span class="n">T</span> <span class="n">val</span><span class="p">,</span> <span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;&amp;</span> <span class="n">a</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">R</span> <span class="p">{</span>
   <span class="k">using</span> <span class="n">Value</span> <span class="o">=</span> <span class="k">typename</span> <span class="n">array_traits_t</span><span class="o">&lt;</span><span class="n">Impl</span><span class="o">&gt;::</span><span class="n">Value</span><span class="p">;</span>
   <span class="k">using</span> <span class="n">Type</span>  <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">decay_t</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">;</span>

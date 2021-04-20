@@ -143,6 +143,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -218,7 +219,7 @@
   <div class="section" id="template-struct-invokegenericimpl-2">
 <span id="exhale-struct-structripple-1-1kernel-1-1cpu-1-1invokegenericimpl-3-012-01-4"></span><h1>Template Struct InvokeGenericImpl&lt; 2 &gt;<a class="headerlink" href="#template-struct-invokegenericimpl-2" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_functional_kernel_invoke_generic_impl_.hpp.html#file-include-ripple-core-functional-kernel-invoke-generic-impl-hpp"><span class="std std-ref">File invoke_generic_impl_.hpp</span></a></p></li>
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_functional_kernel_invoke_generic_impl_.hpp.html#file-include-ripple-functional-kernel-invoke-generic-impl-hpp"><span class="std std-ref">File invoke_generic_impl_.hpp</span></a></p></li>
 </ul>
 <div class="section" id="struct-documentation">
 <h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
@@ -238,7 +239,7 @@
 <dl class="cpp function">
 <dt id="_CPPv4I0DpEN6ripple6kernel3cpu17InvokeGenericImplIXL2EEE6invokeEvRR8CallableRK8DimSizesDpRR4Args">
 <span id="_CPPv3I0DpEN6ripple6kernel3cpu17InvokeGenericImplIXL2EEE6invokeERR8CallableRK8DimSizesDpRR4Args"></span><span id="_CPPv2I0DpEN6ripple6kernel3cpu17InvokeGenericImplIX2EE6invokeERR8CallableRK8DimSizesDpRR4Args"></span>template&lt;typename <code class="sig-name descname">Callable</code>, typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="structripple_1_1kernel_1_1cpu_1_1InvokeGenericImpl_3_012_01_4_1ad90f166d78d628ccd951bae4c548de94"></span>auto <code class="sig-name descname">invoke</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0DpEN6ripple6kernel3cpu17InvokeGenericImplIXL2EEE6invokeEvRR8CallableRK8DimSizesDpRR4Args" title="ripple::kernel::cpu::InvokeGenericImpl&lt;2&gt;::invoke::Callable">Callable</a> &amp;&amp;<em>callable</em>, <em class="property">const</em> <a class="reference internal" href="typedef_invoke__utils_8hpp_1a361de60b93138975cdbde330471c89fc.html#_CPPv4N6ripple6kernel8DimSizesE" title="ripple::kernel::DimSizes">DimSizes</a> &amp;<em>sizes</em>, <a class="reference internal" href="#_CPPv4I0DpEN6ripple6kernel3cpu17InvokeGenericImplIXL2EEE6invokeEvRR8CallableRK8DimSizesDpRR4Args" title="ripple::kernel::cpu::InvokeGenericImpl&lt;2&gt;::invoke::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> -&gt; void<a class="headerlink" href="#_CPPv4I0DpEN6ripple6kernel3cpu17InvokeGenericImplIXL2EEE6invokeEvRR8CallableRK8DimSizesDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Invokes the <code class="docutils literal notranslate"><span class="pre">callable</span></code> on the <code class="docutils literal notranslate"><span class="pre">it</span></code> iterator with the <code class="docutils literal notranslate"><span class="pre">args</span></code>, and the execution <code class="docutils literal notranslate"><span class="pre">exec_params</span></code>, in a blocked manner. </p>
+<dd><p>Invokes the callable on the iterator with the given args and execution params. </p>
 <p><dl class="simple">
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">it</span></code>: The iterator to pass to the callable. </p></li>

@@ -1,0 +1,115 @@
+
+.. _program_listing_file_include_ripple_container_detail_basic_tuple_.hpp:
+
+Program Listing for File basic_tuple_.hpp
+=========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_container_detail_basic_tuple_.hpp>` (``include/ripple/container/detail/basic_tuple_.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_CONTAINER_DETAIL_BASIC_TUPLE__HPP
+   #define RIPPLE_CONTAINER_DETAIL_BASIC_TUPLE__HPP
+   
+   #include <ripple/utility/portability.hpp>
+   #include <utility>
+   
+   namespace ripple::detail {
+   
+   /*==--- [element] ----------------------------------------------------------==*/
+   
+   template <size_t Index, typename T>
+   struct Element {
+     constexpr Element() = default;
+   
+     template <typename E>
+     ripple_all constexpr Element(E&& element) noexcept
+     : value{static_cast<T&&>(element)} {}
+   
+     T value; 
+   };
+   
+   /*==--- [get implementation] -----------------------------------------------==*/
+   
+   template <size_t I, typename T>
+   ripple_all constexpr inline auto
+   type_extractor(Element<I, T> e) noexcept -> T {
+     return T{};
+   }
+   
+   template <size_t I, typename T>
+   ripple_all constexpr inline auto
+   get_impl(const Element<I, T>&& e) noexcept
+     -> const std::remove_reference_t<T>&& {
+     return e.value;
+   }
+   
+   template <size_t I, typename T>
+   ripple_all constexpr inline auto
+   get_impl(const Element<I, T>& e) noexcept -> const std::remove_reference_t<T>& {
+     return e.value;
+   }
+   
+   template <size_t I, typename T>
+   ripple_all constexpr inline auto
+   get_impl(Element<I, T>& e) noexcept -> std::remove_reference_t<T>& {
+     return e.value;
+   }
+   
+   template <size_t I, typename T>
+   ripple_all constexpr inline auto
+   get_impl(Element<I, T>&& e) noexcept -> std::remove_reference_t<T>&& {
+     using DataType = decltype(e.value);
+     return ripple_move(e.value);
+   }
+   
+   /*==--- [tuple storage] ----------------------------------------------------==*/
+   
+   template <typename Is, typename... Ts>
+   struct TupleStorage;
+   
+   template <size_t... Is, typename... Ts>
+   struct TupleStorage<std::index_sequence<Is...>, Ts...> : Element<Is, Ts>... {
+     static constexpr size_t elements = sizeof...(Ts);
+   
+     constexpr TupleStorage() = default;
+   
+     template <typename... Types>
+     ripple_all constexpr TupleStorage(Types&&... elements) noexcept
+     : Element<Is, Ts>{ripple_forward(elements)}... {}
+   
+     template <typename... Types>
+     ripple_all TupleStorage(const Types&... elements) noexcept
+     : Element<Is, Ts>{static_cast<const Ts&>(elements)}... {}
+   };
+   
+   /*==--- [basic tuple] ------------------------------------------------------==*/
+   
+   template <typename... Ts>
+   struct BasicTuple
+   : TupleStorage<std::make_index_sequence<sizeof...(Ts)>, Ts...> {
+     // clang-format off
+     using IndexSeq = std::make_index_sequence<sizeof...(Ts)>;
+     using Base     = TupleStorage<IndexSeq, Ts...>;
+     // clang-format on
+   
+     static constexpr size_t elements = Base::elements;
+   
+     constexpr BasicTuple() = default;
+   
+     template <typename... Types>
+     ripple_all explicit constexpr BasicTuple(Types&&... elements) noexcept
+     : Base{ripple_move(elements)...} {}
+   
+     template <typename... Types>
+     ripple_all constexpr explicit BasicTuple(
+       const Types&... elements) noexcept
+     : Base{static_cast<const Ts&>(elements)...} {}
+   };
+   
+   } // namespace ripple::detail
+   
+   #endif // RIPPLE_CONTAINER_DETAIL_BASIC_TUPLE__HPP

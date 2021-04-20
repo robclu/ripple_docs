@@ -148,7 +148,7 @@ Program Listing for File device_block.hpp
      }
    
      template <typename... Indices>
-     ripple_host_device auto operator()(Indices&&... is) noexcept -> Iter {
+     ripple_all auto operator()(Indices&&... is) noexcept -> Iter {
        return Iter{
          Allocator::create(
            data_, space_, ripple_forward(is) + space_.padding()...),
@@ -156,7 +156,7 @@ Program Listing for File device_block.hpp
      }
    
      template <typename... Indices>
-     ripple_host_device auto
+     ripple_all auto
      operator()(Indices&&... is) const noexcept -> ConstIter {
        return ConstIter{
          Allocator::create(
@@ -175,7 +175,7 @@ Program Listing for File device_block.hpp
        copy_from_host(other);
      }
    
-     ripple_host_device auto begin(int padding_mod = 0) noexcept -> Iter {
+     ripple_all auto begin(int padding_mod = 0) noexcept -> Iter {
        // Modify the iteration space based on the padding parameter:
        auto space = space_;
        if (padding_mod != 0) {
@@ -195,7 +195,7 @@ Program Listing for File device_block.hpp
        return it;
      }
    
-     ripple_host_device auto
+     ripple_all auto
      begin(int padding_mod = 0) const noexcept -> ConstIter {
        // Modify the iteration space based on the padding parameter:
        auto space = space_;

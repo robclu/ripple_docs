@@ -3,7 +3,7 @@
 Template Function ripple::reduce(const HostBlock<T, Dims>&, Pred&&)
 ===================================================================
 
-- Defined in :ref:`file_include_ripple_core_algorithm_reduce.hpp`
+- Defined in :ref:`file_include_ripple_algorithm_reduce.hpp`
 
 
 Function Documentation

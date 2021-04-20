@@ -1,0 +1,99 @@
+
+.. _file_include_ripple_arch_gpu_utils.hpp:
+
+File gpu_utils.hpp
+==================
+
+
+= :ref:`file_include_ripple_arch_gpu_utils.hpp` ----------------------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/arch/gpu_utils.hpp``)
+--------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_arch_gpu_utils.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                           Ripple
+
+             Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==---------------------------------------------------------------------==**
+
+This file defines gpu related utilities.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``ripple/utility/portability.hpp`` (:ref:`file_include_ripple_utility_portability.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_allocation_arena.hpp`
+
+- :ref:`file_include_ripple_arch_gpu_info.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+- :ref:`namespace_ripple__gpu`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_gpu__utils_8hpp_1a1ac939d6da523eba7a1dfe7acca449b9`
+
+- :ref:`exhale_function_gpu__utils_8hpp_1a81e718530672e129395053611452cb24`
+
+- :ref:`exhale_function_gpu__utils_8hpp_1a9e723703f77208555b025d0e47810494`
+
+- :ref:`exhale_function_gpu__utils_8hpp_1acf245608854f60000a656207ecdb9224`
+
+- :ref:`exhale_function_gpu__utils_8hpp_1a79336b1e390952afe62ac8b729ee2003`
+
+- :ref:`exhale_function_gpu__utils_8hpp_1a765a73eb119983b6b0a54cfea7b98502`
+
+- :ref:`exhale_function_gpu__utils_8hpp_1ab6f88ad95967dbb1ee53dd2405e704b1`
+
+- :ref:`exhale_function_gpu__utils_8hpp_1af42d13dba9a66de11586d712d92b1441`
+
+- :ref:`exhale_function_gpu__utils_8hpp_1a7c24b504fcfce3c42ecf2171243078a5`
+
+- :ref:`exhale_function_gpu__utils_8hpp_1a6eeef471474bce91df50150972756d9a`
+
+- :ref:`exhale_function_gpu__utils_8hpp_1a0b2c1a6a2b234b1644a0c94f145fe776`
+

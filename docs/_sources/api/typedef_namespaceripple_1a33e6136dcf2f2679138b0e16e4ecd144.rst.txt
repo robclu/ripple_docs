@@ -3,7 +3,7 @@
 Typedef ripple::arena_non_constexpr_size_enable_t
 =================================================
 
-- Defined in :ref:`file_include_ripple_core_allocation_arena.hpp`
+- Defined in :ref:`file_include_ripple_allocation_arena.hpp`
 
 
 Typedef Documentation

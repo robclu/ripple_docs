@@ -141,6 +141,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -239,32 +240,32 @@
 <span class="cm">/*==--- [tuple] ------------------------------------------------------------==*/</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Functor</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">FuncArgs</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">for_each</span><span class="p">(</span>
+<span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">for_each</span><span class="p">(</span>
   <span class="n">Tuple</span><span class="o">&lt;</span><span class="n">Args</span><span class="p">...</span><span class="o">&gt;&amp;</span> <span class="n">tuple</span><span class="p">,</span> <span class="n">Functor</span><span class="o">&amp;&amp;</span> <span class="n">functor</span><span class="p">,</span> <span class="n">FuncArgs</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">func_args</span><span class="p">)</span> <span class="k">noexcept</span>
   <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
   <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">num_args</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">...(</span><span class="n">Args</span><span class="p">);</span>
-  <span class="n">unrolled_for</span><span class="o">&lt;</span><span class="n">num_args</span><span class="o">&gt;</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]</span> <span class="n">ripple_host_device</span><span class="p">(</span><span class="k">auto</span> <span class="n">i</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
+  <span class="n">unrolled_for</span><span class="o">&lt;</span><span class="n">num_args</span><span class="o">&gt;</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]</span> <span class="n">ripple_all</span><span class="p">(</span><span class="k">auto</span> <span class="n">i</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
     <span class="n">functor</span><span class="p">(</span><span class="n">get</span><span class="o">&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tuple</span><span class="p">),</span> <span class="n">ripple_forward</span><span class="p">(</span><span class="n">func_args</span><span class="p">)...);</span>
   <span class="p">});</span>
 <span class="p">}</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Functor</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">FuncArgs</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">for_each</span><span class="p">(</span>
+<span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">for_each</span><span class="p">(</span>
   <span class="k">const</span> <span class="n">Tuple</span><span class="o">&lt;</span><span class="n">Args</span><span class="p">...</span><span class="o">&gt;&amp;</span> <span class="n">tuple</span><span class="p">,</span>
   <span class="n">Functor</span><span class="o">&amp;&amp;</span>             <span class="n">functor</span><span class="p">,</span>
   <span class="n">FuncArgs</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">func_args</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
   <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">num_args</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">...(</span><span class="n">Args</span><span class="p">);</span>
-  <span class="n">unrolled_for</span><span class="o">&lt;</span><span class="n">num_args</span><span class="o">&gt;</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]</span> <span class="n">ripple_host_device</span><span class="p">(</span><span class="k">auto</span> <span class="n">i</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
+  <span class="n">unrolled_for</span><span class="o">&lt;</span><span class="n">num_args</span><span class="o">&gt;</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]</span> <span class="n">ripple_all</span><span class="p">(</span><span class="k">auto</span> <span class="n">i</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
     <span class="n">functor</span><span class="p">(</span><span class="n">get</span><span class="o">&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tuple</span><span class="p">),</span> <span class="n">ripple_forward</span><span class="p">(</span><span class="n">func_args</span><span class="p">)...);</span>
   <span class="p">});</span>
 <span class="p">}</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Functor</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">FuncArgs</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">for_each</span><span class="p">(</span>
+<span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">for_each</span><span class="p">(</span>
   <span class="n">Tuple</span><span class="o">&lt;</span><span class="n">Args</span><span class="p">...</span><span class="o">&gt;&amp;&amp;</span> <span class="n">tuple</span><span class="p">,</span> <span class="n">Functor</span><span class="o">&amp;&amp;</span> <span class="n">functor</span><span class="p">,</span> <span class="n">FuncArgs</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">func_args</span><span class="p">)</span> <span class="k">noexcept</span>
   <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
   <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="n">num_args</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">...(</span><span class="n">Args</span><span class="p">);</span>
-  <span class="n">unrolled_for</span><span class="o">&lt;</span><span class="n">num_args</span><span class="o">&gt;</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]</span> <span class="n">ripple_host_device</span><span class="p">(</span><span class="k">auto</span> <span class="n">i</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
+  <span class="n">unrolled_for</span><span class="o">&lt;</span><span class="n">num_args</span><span class="o">&gt;</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]</span> <span class="n">ripple_all</span><span class="p">(</span><span class="k">auto</span> <span class="n">i</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
     <span class="n">functor</span><span class="p">(</span><span class="n">ripple_move</span><span class="p">(</span><span class="n">get</span><span class="o">&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tuple</span><span class="p">)),</span> <span class="n">ripple_forward</span><span class="p">(</span><span class="n">func_args</span><span class="p">)...);</span>
   <span class="p">});</span>
 <span class="p">}</span>
@@ -272,7 +273,7 @@
 <span class="cm">/*==--- [parameter pack] ---------------------------------------------------==*/</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Functor</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+<span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
 <span class="n">for_each</span><span class="p">(</span><span class="n">Functor</span><span class="o">&amp;&amp;</span> <span class="n">functor</span><span class="p">,</span> <span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
   <span class="k">using</span> <span class="n">TupleType</span> <span class="o">=</span> <span class="n">Tuple</span><span class="o">&lt;</span><span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span><span class="o">&gt;</span><span class="p">;</span>
   <span class="n">for_each</span><span class="p">(</span><span class="n">TupleType</span><span class="p">{</span><span class="n">ripple_forward</span><span class="p">(</span><span class="n">args</span><span class="p">)...},</span> <span class="n">ripple_forward</span><span class="p">(</span><span class="n">functor</span><span class="p">));</span>

@@ -3,7 +3,7 @@
 Template Function ripple::math::max(const Array<ImplA>&, const Array<ImplB>&)
 =============================================================================
 
-- Defined in :ref:`file_include_ripple_core_math_math.hpp`
+- Defined in :ref:`file_include_ripple_math_math.hpp`
 
 
 Function Documentation

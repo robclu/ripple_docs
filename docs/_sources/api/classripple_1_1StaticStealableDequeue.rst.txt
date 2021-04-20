@@ -3,7 +3,7 @@
 Template Class StaticStealableDequeue
 =====================================
 
-- Defined in :ref:`file_include_ripple_core_container_static_stealable_dequeue.hpp`
+- Defined in :ref:`file_include_ripple_container_static_stealable_dequeue.hpp`
 
 
 Class Documentation

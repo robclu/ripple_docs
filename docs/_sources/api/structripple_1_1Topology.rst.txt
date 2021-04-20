@@ -3,7 +3,7 @@
 Struct Topology
 ===============
 
-- Defined in :ref:`file_include_ripple_core_arch_topology.hpp`
+- Defined in :ref:`file_include_ripple_arch_topology.hpp`
 
 
 Struct Documentation

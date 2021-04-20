@@ -143,6 +143,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -218,7 +219,7 @@
   <div class="section" id="struct-cpuinfo">
 <span id="exhale-struct-structripple-1-1cpuinfo"></span><h1>Struct CpuInfo<a class="headerlink" href="#struct-cpuinfo" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_arch_cpu_info.hpp.html#file-include-ripple-core-arch-cpu-info-hpp"><span class="std std-ref">File cpu_info.hpp</span></a></p></li>
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_arch_cpu_info.hpp.html#file-include-ripple-arch-cpu-info-hpp"><span class="std std-ref">File cpu_info.hpp</span></a></p></li>
 </ul>
 <div class="section" id="nested-relationships">
 <h2>Nested Relationships<a class="headerlink" href="#nested-relationships" title="Permalink to this headline">¶</a></h2>
@@ -239,37 +240,36 @@
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="cpp function">
 <dt id="_CPPv4N6ripple7CpuInfo7CpuInfoEv">
-<span id="_CPPv3N6ripple7CpuInfo7CpuInfoEv"></span><span id="_CPPv2N6ripple7CpuInfo7CpuInfoEv"></span><span id="ripple::CpuInfo::CpuInfo"></span><span class="target" id="structripple_1_1CpuInfo_1a26584701a4bc9ff28560722c80e43c5f"></span><code class="sig-name descname">CpuInfo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ripple7CpuInfo7CpuInfoEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Constructor, initialises that max supported values for cpuid. </p>
-</dd></dl>
+<span id="_CPPv3N6ripple7CpuInfo7CpuInfoEv"></span><span id="_CPPv2N6ripple7CpuInfo7CpuInfoEv"></span><span id="ripple::CpuInfo::CpuInfo"></span><span class="target" id="structripple_1_1CpuInfo_1ad6eb89527c19f170ccbc7fc5ad199d21"></span><code class="sig-name descname">CpuInfo</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple7CpuInfo7CpuInfoEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK6ripple7CpuInfo15available_coresEv">
-<span id="_CPPv3NK6ripple7CpuInfo15available_coresEv"></span><span id="_CPPv2NK6ripple7CpuInfo15available_coresEv"></span><span id="ripple::CpuInfo::available_coresC"></span><span class="target" id="structripple_1_1CpuInfo_1a6c3f92e89687fcef7977c11768a39151"></span>auto <code class="sig-name descname">available_cores</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> -&gt; uint32_t<a class="headerlink" href="#_CPPv4NK6ripple7CpuInfo15available_coresEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK6ripple7CpuInfo15available_coresEv"></span><span id="_CPPv2NK6ripple7CpuInfo15available_coresEv"></span><span id="ripple::CpuInfo::available_coresC"></span><span class="target" id="structripple_1_1CpuInfo_1a399f1cdc7ddd32d9a679533897e5bb22"></span>auto <code class="sig-name descname">available_cores</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; uint32_t<a class="headerlink" href="#_CPPv4NK6ripple7CpuInfo15available_coresEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the number of available physical cores. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N6ripple7CpuInfo8packagesEv">
-<span id="_CPPv3N6ripple7CpuInfo8packagesEv"></span><span id="_CPPv2N6ripple7CpuInfo8packagesEv"></span><span id="ripple::CpuInfo::packages"></span><span class="target" id="structripple_1_1CpuInfo_1a193a3c5c220226b213f071cf9e6ee6eb"></span>auto <code class="sig-name descname">packages</code><span class="sig-paren">(</span><span class="sig-paren">)</span> -&gt; uint32_t<a class="headerlink" href="#_CPPv4N6ripple7CpuInfo8packagesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4NK6ripple7CpuInfo8packagesEv">
+<span id="_CPPv3NK6ripple7CpuInfo8packagesEv"></span><span id="_CPPv2NK6ripple7CpuInfo8packagesEv"></span><span id="ripple::CpuInfo::packagesC"></span><span class="target" id="structripple_1_1CpuInfo_1a2bdca19911128ee2f5c54e4fd1c154e8"></span>auto <code class="sig-name descname">packages</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; uint32_t<a class="headerlink" href="#_CPPv4NK6ripple7CpuInfo8packagesEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the number of packages. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N6ripple7CpuInfo17cores_per_packageEv">
-<span id="_CPPv3N6ripple7CpuInfo17cores_per_packageEv"></span><span id="_CPPv2N6ripple7CpuInfo17cores_per_packageEv"></span><span id="ripple::CpuInfo::cores_per_package"></span><span class="target" id="structripple_1_1CpuInfo_1a58eebf7929b9f10c3954eb4181203bfd"></span>auto <code class="sig-name descname">cores_per_package</code><span class="sig-paren">(</span><span class="sig-paren">)</span> -&gt; uint32_t<a class="headerlink" href="#_CPPv4N6ripple7CpuInfo17cores_per_packageEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4NK6ripple7CpuInfo17cores_per_packageEv">
+<span id="_CPPv3NK6ripple7CpuInfo17cores_per_packageEv"></span><span id="_CPPv2NK6ripple7CpuInfo17cores_per_packageEv"></span><span id="ripple::CpuInfo::cores_per_packageC"></span><span class="target" id="structripple_1_1CpuInfo_1a704084eef1e9e6f4931d7cb242f1ed6b"></span>auto <code class="sig-name descname">cores_per_package</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; uint32_t<a class="headerlink" href="#_CPPv4NK6ripple7CpuInfo17cores_per_packageEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the number of cores per package. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N6ripple7CpuInfo10cache_infoEv">
-<span id="_CPPv3N6ripple7CpuInfo10cache_infoEv"></span><span id="_CPPv2N6ripple7CpuInfo10cache_infoEv"></span><span id="ripple::CpuInfo::cache_info"></span><span class="target" id="structripple_1_1CpuInfo_1a55c5ea00c376d8d667de0541c14fb731"></span>auto <code class="sig-name descname">cache_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span> -&gt; CacheContainer&amp;<a class="headerlink" href="#_CPPv4N6ripple7CpuInfo10cache_infoEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6ripple7CpuInfo10cache_infoEv"></span><span id="_CPPv2N6ripple7CpuInfo10cache_infoEv"></span><span id="ripple::CpuInfo::cache_info"></span><span class="target" id="structripple_1_1CpuInfo_1aa20260b2fc24e59f60923e07c52bb6f1"></span>auto <code class="sig-name descname">cache_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; CacheContainer&amp;<a class="headerlink" href="#_CPPv4N6ripple7CpuInfo10cache_infoEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns a reference to the container of caches. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N6ripple7CpuInfo14processor_infoEv">
-<span id="_CPPv3N6ripple7CpuInfo14processor_infoEv"></span><span id="_CPPv2N6ripple7CpuInfo14processor_infoEv"></span><span id="ripple::CpuInfo::processor_info"></span><span class="target" id="structripple_1_1CpuInfo_1a42ab7fe30f838c5010bfc624692daf56"></span>auto <code class="sig-name descname">processor_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span> -&gt; ProcInfoContainer&amp;<a class="headerlink" href="#_CPPv4N6ripple7CpuInfo14processor_infoEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6ripple7CpuInfo14processor_infoEv"></span><span id="_CPPv2N6ripple7CpuInfo14processor_infoEv"></span><span id="ripple::CpuInfo::processor_info"></span><span class="target" id="structripple_1_1CpuInfo_1a7b75f132e0c91ebc3e9403e92a3b9498"></span>auto <code class="sig-name descname">processor_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; ProcInfoContainer&amp;<a class="headerlink" href="#_CPPv4N6ripple7CpuInfo14processor_infoEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns a reference to the container of processor information. </p>
 </dd></dl>
 

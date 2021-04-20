@@ -1,0 +1,32 @@
+
+.. _program_listing_file_include_ripple_utility_bitops.hpp:
+
+Program Listing for File bitops.hpp
+===================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_utility_bitops.hpp>` (``include/ripple/utility/bitops.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_UTILITY_BITOPS_HPP
+   #define RIPPLE_UTILITY_BITOPS_HPP
+   
+   #include "portability.hpp"
+   
+   namespace ripple {
+   
+   ripple_all static inline auto bitmask(int width) -> uint64_t {
+     return (uint64_t{1} << width) - 1;
+   }
+   
+   template <typename T>
+   ripple_all static inline auto bits(T val, int start, int end) -> T {
+     return static_cast<T>((val >> start) & bitmask(end - start + 1));
+   }
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_UTILITY_BITOPS_HPP

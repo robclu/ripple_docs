@@ -3,7 +3,7 @@
 Template Class Tuple
 ====================
 
-- Defined in :ref:`file_include_ripple_core_container_tuple.hpp`
+- Defined in :ref:`file_include_ripple_container_tuple.hpp`
 
 
 Class Documentation

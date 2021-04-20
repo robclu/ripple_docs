@@ -1,0 +1,89 @@
+
+.. _file_include_ripple_container_tensor.hpp:
+
+File tensor.hpp
+===============
+
+
+= :ref:`file_include_ripple_container_tensor.hpp` --------------------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/container/tensor.hpp``)
+----------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_container_tensor.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file defines a class which represents a tensor  An N dimensional space across multiple devices.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``array`` (:ref:`file_include_ripple_container_array.hpp`)
+
+- ``block.hpp`` (:ref:`file_include_ripple_container_block.hpp`)
+
+- ``cassert``
+
+- ``numeric``
+
+- ``ripple/arch/topology.hpp`` (:ref:`file_include_ripple_arch_topology.hpp`)
+
+- ``ripple/functional/invoke.hpp`` (:ref:`file_include_ripple_functional_invoke.hpp`)
+
+- ``ripple/math/math.hpp`` (:ref:`file_include_ripple_math_math.hpp`)
+
+- ``ripple/space/dynamic_multidim_space.hpp`` (:ref:`file_include_ripple_space_dynamic_multidim_space.hpp`)
+
+- ``ripple/utility/dim.hpp`` (:ref:`file_include_ripple_utility_dim.hpp`)
+
+- ``set`` (:ref:`file_include_ripple_space_offset_to.hpp`)
+
+- ``tensor_traits.hpp`` (:ref:`file_include_ripple_container_tensor_traits.hpp`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1Tensor`
+

@@ -3,7 +3,7 @@
 Typedef ripple::as_contiguous_view_t
 ====================================
 
-- Defined in :ref:`file_include_ripple_core_storage_storage_traits.hpp`
+- Defined in :ref:`file_include_ripple_storage_storage_traits.hpp`
 
 
 Typedef Documentation

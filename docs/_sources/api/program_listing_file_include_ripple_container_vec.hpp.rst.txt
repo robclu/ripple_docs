@@ -1,0 +1,200 @@
+
+.. _program_listing_file_include_ripple_container_vec.hpp:
+
+Program Listing for File vec.hpp
+================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_container_vec.hpp>` (``include/ripple/container/vec.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_CONTAINER_VEC_HPP
+   #define RIPPLE_CONTAINER_VEC_HPP
+   
+   #include "array.hpp"
+   #include "array_traits.hpp"
+   #include "tuple.hpp"
+   #include <ripple/storage/polymorphic_layout.hpp>
+   #include <ripple/storage/storage_descriptor.hpp>
+   #include <ripple/storage/storage_traits.hpp>
+   #include <ripple/storage/struct_accessor.hpp>
+   #include <ripple/utility/portability.hpp>
+   
+   namespace ripple {
+   
+   template <typename T, typename Size, typename Layout>
+   struct VecImpl : public PolymorphicLayout<VecImpl<T, Size, Layout>>,
+                    public Array<VecImpl<T, Size, Layout>> {
+    private:
+     /*==--- [constants] ------------------------------------------------------==*/
+   
+     static constexpr auto elements = size_t{Size::value};
+   
+     //==--- [aliases] --------------------------------------------------------==//
+   
+     // clang-format off
+     using Descriptor = StorageDescriptor<Layout, Vector<T, elements>>;
+     using Storage    = typename Descriptor::Storage;
+     using Value      = std::decay_t<T>;
+   
+     using ZerothAccessor = StructAccessor<Value, Storage, 0>;
+     using FirstAccessor  = StructAccessor<Value, Storage, 1>;
+     using SecondAccessor = StructAccessor<Value, Storage, 2>;
+     using ThirdAccessor  = StructAccessor<Value, Storage, 3>;
+     // clang-format on
+   
+     template <typename OtherType, typename OtherSize, typename OtherLayout>
+     friend struct VecImpl;
+   
+     template <typename Layable, bool IsStridable>
+     friend struct LayoutTraits;
+   
+    public:
+     /*
+      * NOTE: Storage accessors are provided for xyzw, and rgba, for the first 4
+      *       elements of the vector. There are only valid if the vector has enough
+      *       components, and will assert at compile time if an invalid access is
+      *       requested (i.e, accessing w in a 3D vector).
+      */
+     union {
+       Storage        storage_; 
+       ZerothAccessor x;        
+       FirstAccessor  y;        
+       SecondAccessor z;        
+       ThirdAccessor  w;        
+     };
+   
+     /*==--- [construction] ---------------------------------------------------==*/
+   
+     ripple_all constexpr VecImpl() noexcept {}
+   
+     ripple_all constexpr VecImpl(T val) noexcept {
+       unrolled_for<elements>(
+         [&](auto i) { storage_.template get<0, i>() = val; });
+     }
+   
+     template <typename... Values, variadic_size_enable_t<elements, Values...> = 0>
+     ripple_all constexpr VecImpl(Values&&... values) noexcept {
+       const auto v = Tuple<Values...>{values...};
+       unrolled_for<elements>(
+         [&](auto i) { storage_.template get<0, i>() = get<i>(v); });
+     }
+   
+     ripple_all constexpr VecImpl(Storage storage) noexcept
+     : storage_{storage} {}
+   
+     ripple_all constexpr VecImpl(const VecImpl& other) noexcept
+     : storage_{other.storage_} {}
+   
+     ripple_all constexpr VecImpl(VecImpl&& other) noexcept
+     : storage_{std::move(other.storage_)} {}
+   
+     template <typename OtherLayout>
+     ripple_all constexpr VecImpl(
+       const VecImpl<T, Size, OtherLayout>& other) noexcept
+     : storage_{other.storage_} {}
+   
+     template <typename OtherLayout>
+     ripple_all constexpr VecImpl(VecImpl<T, Size, OtherLayout>&& other)
+     : storage_{other.storage_} {}
+   
+     template <typename Impl>
+     ripple_all constexpr VecImpl(const Array<Impl>& arr) {
+       unrolled_for<elements>(
+         [&](auto i) { storage_.template get<0, i>() = arr[i]; });
+     }
+   
+     /*==--- [operator overloads] ---------------------------------------------==*/
+   
+     ripple_all auto operator=(const VecImpl& other) noexcept -> VecImpl& {
+       storage_ = other.storage_;
+       return *this;
+     }
+   
+     ripple_all auto operator=(VecImpl&& other) noexcept -> VecImpl& {
+       storage_ = std::move(other.storage_);
+       return *this;
+     }
+   
+     template <typename OtherLayout>
+     ripple_all auto
+     operator=(const VecImpl<T, Size, OtherLayout>& other) noexcept -> VecImpl& {
+       unrolled_for<elements>(
+         [&](auto i) { storage_.template get<0, i>() = other[i]; });
+       return *this;
+     }
+   
+     template <typename Impl>
+     ripple_all auto
+     operator=(const Array<Impl>& arr) noexcept -> VecImpl& {
+       unrolled_for<elements>(
+         [&](auto i) { storage_.template get<0, i>() = arr[i]; });
+       return *this;
+     }
+   
+     template <typename OtherLayout>
+     ripple_all auto
+     operator=(VecImpl<T, Size, OtherLayout>&& other) noexcept -> VecImpl& {
+       storage_ = other.storage_;
+       return *this;
+     }
+   
+     ripple_all constexpr auto
+     operator[](size_t i) const noexcept -> const Value& {
+       return storage_.template get<0>(i);
+     }
+   
+     ripple_all constexpr auto operator[](size_t i) noexcept -> Value& {
+       return storage_.template get<0>(i);
+     }
+   
+     /*==--- [interface] ------------------------------------------------------==*/
+   
+     template <typename Index>
+     ripple_all auto component(Index&& i) noexcept -> Value& {
+       if constexpr (ripple::is_cx_number_v<Index>) {
+         using Idx = std::decay_t<Index>;
+         return storage_.template get<0, Idx::value>();
+       } else {
+         return storage_.template get<0>(i);
+       }
+     }
+   
+     template <typename Index>
+     ripple_all auto component(Index&& i) const noexcept -> const Value& {
+       if constexpr (ripple::is_cx_number_v<Index>) {
+         using Idx = std::decay_t<Index>;
+         return storage_.template get<0, Idx::value>();
+       } else {
+         return storage_.template get<0>(i);
+       }
+     }
+   
+     ripple_all constexpr auto size() const noexcept -> size_t {
+       return elements;
+     }
+   
+     ripple_all constexpr auto length_squared() const noexcept -> Value {
+       Value result = 0;
+       unrolled_for<elements>(
+         [&](auto i) { result += component(i) * component(i); });
+       return result;
+     }
+   
+     ripple_all constexpr auto length() const noexcept -> Value {
+       return std::sqrt(length_squared());
+     }
+   
+     ripple_all constexpr auto normalize() noexcept -> void {
+       const auto scale = Value{1} / length();
+       unrolled_for<elements>(
+         [&](auto i) { storage_.template get<0, i>() *= scale; });
+     }
+   };
+   
+   } // namespace ripple
+   
+   #endif // namespace RIPPLE_CONTAINER_VEC_HPP

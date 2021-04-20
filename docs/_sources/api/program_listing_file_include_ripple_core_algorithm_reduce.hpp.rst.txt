@@ -36,12 +36,12 @@ Program Listing for File reduce.hpp
    
    struct SumReducer {
      template <typename T>
-     ripple_host_device auto inplace(T& a, const T& b) const noexcept -> void {
+     ripple_all auto inplace(T& a, const T& b) const noexcept -> void {
        *a += *b;
      }
    
      template <typename T>
-     ripple_host_device auto
+     ripple_all auto
      operator()(const T& a, const T& b) const noexcept -> T {
        return T{a + b};
      }
@@ -49,12 +49,12 @@ Program Listing for File reduce.hpp
    
    struct SubtractionReducer {
      template <typename T>
-     ripple_host_device auto inplace(T& a, const T& b) const noexcept -> void {
+     ripple_all auto inplace(T& a, const T& b) const noexcept -> void {
        *a -= *b;
      }
    
      template <typename T>
-     ripple_host_device auto
+     ripple_all auto
      operator()(const T& a, const T& b) const noexcept -> T {
        return a - b;
      }
@@ -62,12 +62,12 @@ Program Listing for File reduce.hpp
    
    struct MaxReducer {
      template <typename T>
-     ripple_host_device auto inplace(T& a, const T& b) const noexcept -> void {
+     ripple_all auto inplace(T& a, const T& b) const noexcept -> void {
        *a = std::max(*a, *b);
      }
    
      template <typename T>
-     ripple_host_device auto
+     ripple_all auto
      operator()(const T& a, const T& b) const noexcept -> T {
        return std::max(a, b);
      }
@@ -75,12 +75,12 @@ Program Listing for File reduce.hpp
    
    struct MinReducer {
      template <typename T>
-     ripple_host_device auto operator()(T& a, const T& b) const noexcept -> void {
+     ripple_all auto operator()(T& a, const T& b) const noexcept -> void {
        *a = std::min(*a, *b);
      }
    
      template <typename T>
-     ripple_host_device auto
+     ripple_all auto
      operator()(const T& a, const T& b) const noexcept -> T {
        return std::min(a, b);
      }

@@ -143,6 +143,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -218,14 +219,23 @@
   <div class="section" id="template-function-ripple-to-mat2x2">
 <span id="exhale-function-namespaceripple-1a8d1816c21b0089cc83bc584de99d3d93"></span><h1>Template Function ripple::to_mat2x2<a class="headerlink" href="#template-function-ripple-to-mat2x2" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_math_quat.hpp.html#file-include-ripple-core-math-quat-hpp"><span class="std std-ref">File quat.hpp</span></a></p></li>
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_math_quat.hpp.html#file-include-ripple-math-quat-hpp"><span class="std std-ref">File quat.hpp</span></a></p></li>
 </ul>
 <div class="section" id="function-documentation">
 <h2>Function Documentation<a class="headerlink" href="#function-documentation" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv4I00EN6ripple9to_mat2x2E3MatI1TXL2EEXL2EEERK4QuatI1T1LE">
 <span id="_CPPv3I00EN6ripple9to_mat2x2ERK4QuatI1T1LE"></span><span id="_CPPv2I00EN6ripple9to_mat2x2ERK4QuatI1T1LE"></span>template&lt;typename <code class="sig-name descname">T</code>, typename <code class="sig-name descname">L</code>&gt;<br /><span class="target" id="namespaceripple_1a8d1816c21b0089cc83bc584de99d3d93"></span>auto <code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">to_mat2x2</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="structripple_1_1Quat.html#_CPPv4I00EN6ripple4QuatE" title="ripple::Quat">Quat</a>&lt;<a class="reference internal" href="#_CPPv4I00EN6ripple9to_mat2x2E3MatI1TXL2EEXL2EEERK4QuatI1T1LE" title="ripple::to_mat2x2::T">T</a>, <a class="reference internal" href="#_CPPv4I00EN6ripple9to_mat2x2E3MatI1TXL2EEXL2EEERK4QuatI1T1LE" title="ripple::to_mat2x2::L">L</a>&gt; &amp;<em>q</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="typedef_namespaceripple_1a84809db2dcb9bfb3e6590585096d1e1a.html#_CPPv4I0_6size_t_6size_t0EN6ripple3MatE" title="ripple::Mat">Mat</a>&lt;<a class="reference internal" href="#_CPPv4I00EN6ripple9to_mat2x2E3MatI1TXL2EEXL2EEERK4QuatI1T1LE" title="ripple::to_mat2x2::T">T</a>, 2, 2&gt;<a class="headerlink" href="#_CPPv4I00EN6ripple9to_mat2x2E3MatI1TXL2EEXL2EEERK4QuatI1T1LE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets an ortogonal matrix represneting a rotation. </p>
+<dd><p>Gets an ortogonal 2x2 matrix representing the rotation of the quaternion. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A matrix representing the rotation. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">q</span></code>: The quaternion to get the rotation matrix for. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
 </dd></dl>
 
 </div>

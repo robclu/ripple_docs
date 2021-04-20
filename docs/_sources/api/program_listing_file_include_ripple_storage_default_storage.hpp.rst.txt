@@ -1,0 +1,85 @@
+
+.. _program_listing_file_include_ripple_storage_default_storage.hpp:
+
+Program Listing for File default_storage.hpp
+============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_storage_default_storage.hpp>` (``include/ripple/storage/default_storage.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_STORAGE_DEFAULT_STORAGE_HPP
+   #define RIPPLE_STORAGE_DEFAULT_STORAGE_HPP
+   
+   #include <ripple/space/multidim_space.hpp>
+   #include <ripple/utility/portability.hpp>
+   
+   namespace ripple {
+   
+   template <typename T>
+   struct DefaultStorage {
+     using Storage = T*;
+   
+     struct Allocator {
+       static constexpr auto strided_types() noexcept -> size_t {
+         return 1;
+       }
+   
+       template <size_t I>
+       static constexpr auto num_elements() noexcept -> size_t {
+         return 1;
+       }
+   
+       template <size_t I>
+       static constexpr auto element_byte_size() noexcept -> size_t {
+         return sizeof(T);
+       }
+   
+       ripple_all static constexpr auto
+       allocation_size(size_t elements) noexcept -> size_t {
+         return sizeof(T) * elements;
+       }
+   
+       template <size_t Elements>
+       ripple_all static constexpr auto
+       allocation_size() noexcept -> size_t {
+         return sizeof(T) * Elements;
+       }
+   
+       template <typename SpaceImpl, typename Dim, diff_enable_t<Dim, int> = 0>
+       ripple_all static auto offset(
+         const Storage&                  storage,
+         const MultidimSpace<SpaceImpl>& space,
+         Dim&&                           dim,
+         int                             amount) -> Storage {
+         Storage r;
+         r = storage + amount * space.step(ripple_forward(dim));
+         return r;
+       }
+   
+       template <typename SpaceImpl, typename Dim>
+       ripple_all static auto shift(
+         Storage&                        storage,
+         const MultidimSpace<SpaceImpl>& space,
+         Dim&&                           dim,
+         int                             amount) -> void {
+         storage = storage + (amount * space.step(dim));
+       }
+   
+       template <typename SpaceImpl>
+       ripple_all static auto
+       create(void* ptr, const MultidimSpace<SpaceImpl>& space) -> Storage {
+         return static_cast<T*>(ptr);
+       }
+     };
+   
+     template <size_t I>
+     static constexpr size_t nth_element_components_v = 1;
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_STORAGE_DEFAULT_STORAGE_HPP

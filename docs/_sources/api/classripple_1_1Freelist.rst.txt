@@ -3,7 +3,7 @@
 Class Freelist
 ==============
 
-- Defined in :ref:`file_include_ripple_core_allocation_freelist.hpp`
+- Defined in :ref:`file_include_ripple_allocation_freelist.hpp`
 
 
 Nested Relationships

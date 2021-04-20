@@ -32,9 +32,7 @@
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
   <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
   <link rel="index" title="Index" href="../genindex.html" />
-  <link rel="search" title="Search" href="../search.html" />
-  <link rel="next" title="Struct LoadMultiBoundary" href="structripple_1_1LoadMultiBoundary.html" />
-  <link rel="prev" title="Template Struct LayoutTraits&lt; T, true &gt;" href="structripple_1_1LayoutTraits_3_01T_00_01true_01_4.html" /> 
+  <link rel="search" title="Search" href="../search.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -143,6 +141,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -183,8 +182,6 @@
       </li>
 
         
-          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
-        
       <li>Struct LoadBoundary</li>
     
     
@@ -222,39 +219,10 @@
 </ul>
 <div class="section" id="struct-documentation">
 <h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
-<dl class="cpp struct">
-<dt id="_CPPv4N6ripple12LoadBoundaryE">
-<span id="_CPPv3N6ripple12LoadBoundaryE"></span><span id="_CPPv2N6ripple12LoadBoundaryE"></span><span id="ripple::LoadBoundary"></span><span class="target" id="structripple_1_1LoadBoundary"></span><em class="property">struct </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">LoadBoundary</code><a class="headerlink" href="#_CPPv4N6ripple12LoadBoundaryE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Functor which applies a loader to call the boundary loading function. </p>
-<p>This can be passed to a graph to be applied to a tensor. </p>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="cpp function">
-<dt id="_CPPv4I00DpENK6ripple12LoadBoundaryclEvRR8IteratorRR6LoaderDpRR4Args">
-<span id="_CPPv3I00DpENK6ripple12LoadBoundaryclERR8IteratorRR6LoaderDpRR4Args"></span><span id="_CPPv2I00DpENK6ripple12LoadBoundaryclERR8IteratorRR6LoaderDpRR4Args"></span>template&lt;typename <code class="sig-name descname">Iterator</code>, typename <code class="sig-name descname">Loader</code>, typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="structripple_1_1LoadBoundary_1ac89d537ccf988f4f982ef64c06a5a577"></span>auto <code class="sig-name descname">operator()</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00DpENK6ripple12LoadBoundaryclEvRR8IteratorRR6LoaderDpRR4Args" title="ripple::LoadBoundary::operator()::Iterator">Iterator</a> &amp;&amp;<em>it</em>, <a class="reference internal" href="#_CPPv4I00DpENK6ripple12LoadBoundaryclEvRR8IteratorRR6LoaderDpRR4Args" title="ripple::LoadBoundary::operator()::Loader">Loader</a> &amp;&amp;<em>loader</em>, <a class="reference internal" href="#_CPPv4I00DpENK6ripple12LoadBoundaryclEvRR8IteratorRR6LoaderDpRR4Args" title="ripple::LoadBoundary::operator()::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4I00DpENK6ripple12LoadBoundaryclEvRR8IteratorRR6LoaderDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Loads the global boundary data for the iterator using theloader. </p>
-<p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>The loader must implement the <a class="reference internal" href="classripple_1_1BoundaryLoader.html#classripple_1_1BoundaryLoader"><span class="std std-ref">BoundaryLoader</span></a> interface.</p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">it</span></code>: The iterator to load the boundaries for. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">loader</span></code>: The loader which defines how to load the boundaries. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: Additional arguments for the loading. </p></li>
-</ul>
-</dd>
-<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Iterator</span></code>: The type of the iterator. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Loader</span></code>: The type of the loader. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The types of the arguments. </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenstruct: Cannot find class “ripple::LoadBoundary” in doxygen xml output for project “Ripple” from directory: /home/hiccup/Catalyst/ripple/build/docs/docs/doxygen/xml</p>
 </div>
-</dd></dl>
-
 </div>
 </div>
 
@@ -263,15 +231,6 @@
               
             </div>
             <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="structripple_1_1LoadMultiBoundary.html" class="btn btn-neutral float-right" title="Struct LoadMultiBoundary" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
-      
-      
-        <a href="structripple_1_1LayoutTraits_3_01T_00_01true_01_4.html" class="btn btn-neutral" title="Template Struct LayoutTraits&lt; T, true &gt;" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
-      
-    </div>
   
 
   

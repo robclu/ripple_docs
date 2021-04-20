@@ -3,7 +3,7 @@
 Template Function ripple::math::div_then_ceil
 =============================================
 
-- Defined in :ref:`file_include_ripple_core_math_math.hpp`
+- Defined in :ref:`file_include_ripple_math_math.hpp`
 
 
 Function Documentation

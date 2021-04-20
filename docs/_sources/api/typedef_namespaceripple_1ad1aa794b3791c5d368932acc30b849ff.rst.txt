@@ -3,7 +3,7 @@
 Typedef ripple::NeighbourStealer
 ================================
 
-- Defined in :ref:`file_include_ripple_core_execution_executor.hpp`
+- Defined in :ref:`file_include_ripple_execution_executor.hpp`
 
 
 Typedef Documentation

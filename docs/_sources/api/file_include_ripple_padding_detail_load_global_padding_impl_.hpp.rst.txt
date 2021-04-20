@@ -1,0 +1,83 @@
+
+.. _file_include_ripple_padding_detail_load_global_padding_impl_.hpp:
+
+File load_global_padding_impl_.hpp
+==================================
+
+
+= ripple/padding/detail/load_globaL_padding_impl_.hpp -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/padding/detail/load_global_padding_impl_.hpp``)
+----------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_padding_detail_load_global_padding_impl_.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file implements functionality to load global padding data.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``../ghost_index.hpp``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_padding_load_padding.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+- :ref:`namespace_ripple__detail`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_load__global__padding__impl___8hpp_1a0878ba57cbf0596153eb6332eb8a7e47`
+
+- :ref:`exhale_function_load__global__padding__impl___8hpp_1aff4a031a092387bcdb84d99ace371d18`
+
+- :ref:`exhale_function_load__global__padding__impl___8hpp_1a678b45de68fb0462892d04f8dea82097`
+
+- :ref:`exhale_function_load__global__padding__impl___8hpp_1adbd3e7256c9eb0df4177b98d29196747`
+

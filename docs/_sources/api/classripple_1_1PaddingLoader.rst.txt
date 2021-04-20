@@ -1,0 +1,16 @@
+.. _exhale_class_classripple_1_1PaddingLoader:
+
+Template Class PaddingLoader
+============================
+
+- Defined in :ref:`file_include_ripple_padding_padding_loader.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ripple::PaddingLoader
+   :members:
+   :protected-members:
+   :undoc-members:

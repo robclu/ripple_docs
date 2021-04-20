@@ -143,6 +143,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -218,7 +219,7 @@
   <div class="section" id="template-struct-invokeonblock-0">
 <span id="exhale-struct-structripple-1-1kernel-1-1detail-1-1invokeonblock-3-010-01-4"></span><h1>Template Struct InvokeOnBlock&lt; 0 &gt;<a class="headerlink" href="#template-struct-invokeonblock-0" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_functional_kernel_invoke_cpp_.hpp.html#file-include-ripple-core-functional-kernel-invoke-cpp-hpp"><span class="std std-ref">File invoke_cpp_.hpp</span></a></p></li>
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_functional_kernel_invoke_cpu_impl_.hpp.html#file-include-ripple-functional-kernel-invoke-cpu-impl-hpp"><span class="std std-ref">File invoke_cpu_impl_.hpp</span></a></p></li>
 </ul>
 <div class="section" id="struct-documentation">
 <h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
@@ -238,7 +239,7 @@
 <dl class="cpp function">
 <dt id="_CPPv4I000Dp_19exec_param_enable_tI8ExecImplEEN6ripple6kernel6detail13InvokeOnBlockIXL0EEE6invokeEvRR8IteratorRR8ExecImplR4dim3RR8CallableDpRR4Args">
 <span id="_CPPv3I000Dp_19exec_param_enable_tI8ExecImplEEN6ripple6kernel6detail13InvokeOnBlockIXL0EEE6invokeERR8IteratorRR8ExecImplR4dim3RR8CallableDpRR4Args"></span><span id="_CPPv2I000Dp_19exec_param_enable_tI8ExecImplEEN6ripple6kernel6detail13InvokeOnBlockIX0EE6invokeERR8IteratorRR8ExecImplR4dim3RR8CallableDpRR4Args"></span>template&lt;typename <code class="sig-name descname">Iterator</code>, typename <code class="sig-name descname">ExecImpl</code>, typename <code class="sig-name descname">Callable</code>, typename ...<code class="sig-name descname">Args</code>, <a class="reference internal" href="typedef_namespaceripple_1a01c13d6fc60b3c1ef658e978a9d85c10.html#_CPPv4I0EN6ripple19exec_param_enable_tE" title="ripple::exec_param_enable_t">exec_param_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I000Dp_19exec_param_enable_tI8ExecImplEEN6ripple6kernel6detail13InvokeOnBlockIXL0EEE6invokeEvRR8IteratorRR8ExecImplR4dim3RR8CallableDpRR4Args" title="ripple::kernel::detail::InvokeOnBlock&lt;0&gt;::invoke::ExecImpl">ExecImpl</a>&gt; = 0&gt;<br /><span class="target" id="structripple_1_1kernel_1_1detail_1_1InvokeOnBlock_3_010_01_4_1a9eaa68b7b148ac45a6c4f9e8ff9b14a4"></span>auto <code class="sig-name descname">invoke</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I000Dp_19exec_param_enable_tI8ExecImplEEN6ripple6kernel6detail13InvokeOnBlockIXL0EEE6invokeEvRR8IteratorRR8ExecImplR4dim3RR8CallableDpRR4Args" title="ripple::kernel::detail::InvokeOnBlock&lt;0&gt;::invoke::Iterator">Iterator</a> &amp;&amp;<em>it</em>, <a class="reference internal" href="#_CPPv4I000Dp_19exec_param_enable_tI8ExecImplEEN6ripple6kernel6detail13InvokeOnBlockIXL0EEE6invokeEvRR8IteratorRR8ExecImplR4dim3RR8CallableDpRR4Args" title="ripple::kernel::detail::InvokeOnBlock&lt;0&gt;::invoke::ExecImpl">ExecImpl</a> &amp;&amp;<em>exec_params</em>, dim3 &amp;<em>threads</em>, <a class="reference internal" href="#_CPPv4I000Dp_19exec_param_enable_tI8ExecImplEEN6ripple6kernel6detail13InvokeOnBlockIXL0EEE6invokeEvRR8IteratorRR8ExecImplR4dim3RR8CallableDpRR4Args" title="ripple::kernel::detail::InvokeOnBlock&lt;0&gt;::invoke::Callable">Callable</a> &amp;&amp;<em>callable</em>, <a class="reference internal" href="#_CPPv4I000Dp_19exec_param_enable_tI8ExecImplEEN6ripple6kernel6detail13InvokeOnBlockIXL0EEE6invokeEvRR8IteratorRR8ExecImplR4dim3RR8CallableDpRR4Args" title="ripple::kernel::detail::InvokeOnBlock&lt;0&gt;::invoke::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> -&gt; void<a class="headerlink" href="#_CPPv4I000Dp_19exec_param_enable_tI8ExecImplEEN6ripple6kernel6detail13InvokeOnBlockIXL0EEE6invokeEvRR8IteratorRR8ExecImplR4dim3RR8CallableDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Invokes the <code class="docutils literal notranslate"><span class="pre">callable</span></code> on the <code class="docutils literal notranslate"><span class="pre">it</span></code> iterator with the <code class="docutils literal notranslate"><span class="pre">args</span></code>, and the execution <code class="docutils literal notranslate"><span class="pre">exec_params</span></code>, in a blocked manner. </p>
+<dd><p>Invokes the callable on the given iterator with the given args and execution params. </p>
 <p><dl class="simple">
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">it</span></code>: The iterator to pass to the callable. </p></li>

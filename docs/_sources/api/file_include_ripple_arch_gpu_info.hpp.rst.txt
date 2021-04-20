@@ -1,0 +1,87 @@
+
+.. _file_include_ripple_arch_gpu_info.hpp:
+
+File gpu_info.hpp
+=================
+
+
+= ripple/core/arch/gpu_info.hpp ------------------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/arch/gpu_info.hpp``)
+-------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_arch_gpu_info.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                           Ripple
+
+            Copyright (c) 2019 - 2021 Rob Clucas
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==---------------------------------------------------------------------==**
+
+This file defines a struct to store gpu information.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``array`` (:ref:`file_include_ripple_container_array.hpp`)
+
+- ``gpu_utils.hpp`` (:ref:`file_include_ripple_arch_gpu_utils.hpp`)
+
+- ``ripple/storage/storage_traits.hpp`` (:ref:`file_include_ripple_storage_storage_traits.hpp`)
+
+- ``ripple/utility/portability.hpp`` (:ref:`file_include_ripple_utility_portability.hpp`)
+
+- ``ripple/utility/range.hpp`` (:ref:`file_include_ripple_utility_range.hpp`)
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_arch_topology.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1GpuInfo`
+
+- :ref:`exhale_struct_structripple_1_1GpuInfo_1_1Stream`
+

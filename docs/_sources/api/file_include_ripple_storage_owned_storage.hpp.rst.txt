@@ -1,0 +1,83 @@
+
+.. _file_include_ripple_storage_owned_storage.hpp:
+
+File owned_storage.hpp
+======================
+
+
+= :ref:`file_include_ripple_storage_owned_storage.hpp` ---------------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/storage/owned_storage.hpp``)
+---------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_storage_owned_storage.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file implements a storage class which owns it storage.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``ripple/utility/type_traits.hpp`` (:ref:`file_include_ripple_utility_type_traits.hpp`)
+
+- ``storage_accessor.hpp`` (:ref:`file_include_ripple_storage_storage_accessor.hpp`)
+
+- ``storage_element_traits.hpp`` (:ref:`file_include_ripple_storage_storage_element_traits.hpp`)
+
+- ``storage_traits.hpp`` (:ref:`file_include_ripple_storage_storage_traits.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_storage_contiguous_storage_view.hpp`
+
+- :ref:`file_include_ripple_storage_storage_descriptor.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1OwnedStorage`
+

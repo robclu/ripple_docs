@@ -1,0 +1,92 @@
+
+.. _program_listing_file_include_ripple_functional_invoke.hpp:
+
+Program Listing for File invoke.hpp
+===================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_functional_invoke.hpp>` (``include/ripple/functional/invoke.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_FUNCTIONAL_INVOKE_HPP
+   #define RIPPLE_FUNCTIONAL_INVOKE_HPP
+   
+   #include "kernel/invoke_cpu_impl_.hpp"
+   #include "kernel/invoke_gpu_impl_.cuh"
+   #include "kernel/invoke_generic_impl_.cuh"
+   #include "kernel/invoke_generic_impl_.hpp"
+   #include <ripple/execution/execution_traits.hpp>
+   
+   namespace ripple {
+   
+   /*==--- [generic invoke] ---------------------------------------------------==*/
+   
+   template <typename Invocable, typename... Args>
+   auto invoke_generic(
+     GpuExecutor exec_kind, Invocable&& invocable, Args&&... args) noexcept
+     -> void {
+     kernel::gpu::invoke_generic_impl(
+       ripple_forward(invocable), ripple_forward(args)...);
+     return;
+   }
+   
+   template <typename Invocable, typename... Args>
+   auto invoke_generic(
+     CpuExecutor exec_kind, Invocable&& invocable, Args&&... args) noexcept
+     -> void {
+     kernel::cpu::invoke_generic_impl(
+       ripple_forward(invocable), ripple_forward(args)...);
+     return;
+   }
+   
+   template <typename Invocable, typename... Args>
+   auto invoke_generic(
+     ExecutionKind exec_kind, Invocable&& invocable, Args&&... args) noexcept
+     -> void {
+     switch (exec_kind) {
+       case ExecutionKind::gpu:
+         invoke_generic(
+           GpuExecutor(), ripple_forward(invocable), ripple_forward(args)...);
+         break;
+       case ExecutionKind::cpu:
+         invoke_generic(
+           CpuExecutor(), ripple_forward(invocable), ripple_forward(args)...);
+         break;
+       default: assert(false && "Invalid execution kind!");
+     }
+   }
+   
+   /*==--- [invoke for blocks] ------------------------------------------------==*/
+   
+   template <
+     typename T,
+     size_t Dims,
+     typename Callable,
+     typename... Args,
+     non_exec_param_enable_t<Callable> = 0>
+   auto invoke(
+     HostBlock<T, Dims>& block, Callable&& callable, Args&&... args) noexcept
+     -> void {
+     kernel::invoke(block, ripple_forward(callable), ripple_forward(args)...);
+   }
+   
+   // clang-format off
+   template <
+     typename    T,
+     size_t      Dims,
+     typename    Callable,
+     typename... Args,
+     non_exec_param_enable_t<Callable> = 0>
+   auto invoke(
+     DeviceBlock<T, Dims>& block, Callable&& callable, Args&&... args) noexcept
+     -> void {
+     // clang-format on
+     kernel::gpu::invoke(block, ripple_forward(callable), ripple_forward(args)...);
+   }
+   
+   } // namespace ripple
+   
+   #endif //  RIPPLE_FUNCTIONAL_INVOKE_HPP

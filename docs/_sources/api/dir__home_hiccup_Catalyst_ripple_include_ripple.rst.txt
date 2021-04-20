@@ -1,0 +1,32 @@
+.. _dir__home_hiccup_Catalyst_ripple_include_ripple:
+
+
+Directory ripple
+================
+
+
+|exhale_lsh| :ref:`Parent directory <dir_include>` (``include``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+*Directory path:* ``/home/hiccup/Catalyst/ripple/include/ripple``
+
+Subdirectories
+--------------
+
+- :ref:`dir__home_hiccup_Catalyst_ripple_include_ripple_algorithm`
+- :ref:`dir__home_hiccup_Catalyst_ripple_include_ripple_allocation`
+- :ref:`dir__home_hiccup_Catalyst_ripple_include_ripple_arch`
+- :ref:`dir__home_hiccup_Catalyst_ripple_include_ripple_container`
+- :ref:`dir__home_hiccup_Catalyst_ripple_include_ripple_execution`
+- :ref:`dir__home_hiccup_Catalyst_ripple_include_ripple_functional`
+- :ref:`dir__home_hiccup_Catalyst_ripple_include_ripple_graph`
+- :ref:`dir__home_hiccup_Catalyst_ripple_include_ripple_iterator`
+- :ref:`dir__home_hiccup_Catalyst_ripple_include_ripple_math`
+- :ref:`dir__home_hiccup_Catalyst_ripple_include_ripple_padding`
+- :ref:`dir__home_hiccup_Catalyst_ripple_include_ripple_space`
+- :ref:`dir__home_hiccup_Catalyst_ripple_include_ripple_storage`
+- :ref:`dir__home_hiccup_Catalyst_ripple_include_ripple_utility`
+
+
+

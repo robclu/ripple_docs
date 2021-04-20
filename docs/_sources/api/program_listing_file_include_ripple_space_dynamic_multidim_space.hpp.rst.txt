@@ -1,0 +1,137 @@
+
+.. _program_listing_file_include_ripple_space_dynamic_multidim_space.hpp:
+
+Program Listing for File dynamic_multidim_space.hpp
+===================================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_space_dynamic_multidim_space.hpp>` (``include/ripple/space/dynamic_multidim_space.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_SPACE_DYNAMIC_MULTIDIM_SPACE_HPP
+   #define RIPPLE_SPACE_DYNAMIC_MULTIDIM_SPACE_HPP
+   
+   #include "multidim_space.hpp"
+   #include <ripple/container/vec.hpp>
+   #include <ripple/utility/type_traits.hpp>
+   
+   namespace ripple {
+   
+   template <size_t Dimensions>
+   struct DynamicMultidimSpace
+   : public MultidimSpace<DynamicMultidimSpace<Dimensions>> {
+     // clang-format off
+     using Padding = uint32_t;
+     using Step    = uint32_t;
+     // clang-format on
+   
+    private:
+     static constexpr size_t dims = Dimensions;
+   
+     using Container = Vec<Step, dims>;
+   
+    public:
+     //==--- [construction] ---------------------------------------------------==//
+   
+     constexpr DynamicMultidimSpace() = default;
+   
+     template <typename... Sizes, all_arithmetic_size_enable_t<dims, Sizes...> = 0>
+     ripple_all constexpr DynamicMultidimSpace(Sizes&&... sizes) noexcept
+     : sizes_{static_cast<Step>(sizes)...} {}
+   
+     template <typename... Sizes, all_arithmetic_size_enable_t<dims, Sizes...> = 0>
+     ripple_all constexpr DynamicMultidimSpace(
+       Padding padding, Sizes&&... sizes) noexcept
+     : sizes_{static_cast<Step>(sizes)...}, padding_{padding} {}
+   
+     ripple_all constexpr auto padding() noexcept -> Padding& {
+       return padding_;
+     }
+   
+     ripple_all constexpr auto padding() const noexcept -> Padding {
+       return padding_;
+     }
+   
+     ripple_all constexpr auto dim_padding() const noexcept -> Padding {
+       return padding_ * 2;
+     }
+   
+     ripple_all constexpr auto dimensions() const noexcept -> size_t {
+       return dims;
+     }
+   
+     template <typename... Sizes>
+     ripple_all auto resize(Sizes&&... sizes) noexcept -> void {
+       constexpr size_t num_sizes = sizeof...(Sizes);
+       static_assert(num_sizes <= dims, "Too many sizes specified in resize.");
+   
+       const Step dim_sizes[num_sizes] = {static_cast<Step>(sizes)...};
+       unrolled_for<num_sizes>([&](auto i) { sizes_[i] = dim_sizes[i]; });
+     }
+   
+     template <typename Dim>
+     ripple_all auto resize_dim(Dim&& dim, Step size) noexcept -> void {
+       sizes_[dim] = size;
+     }
+   
+     template <typename Dim>
+     ripple_all constexpr auto size(Dim&& dim) const noexcept -> Step {
+       return sizes_[dim] + dim_padding();
+     }
+   
+     ripple_all constexpr auto size() const noexcept -> Step {
+       Step prod_sum = 1;
+       unrolled_for<dims>(
+         [&](auto dim) { prod_sum *= (sizes_[dim] + dim_padding()); });
+       return prod_sum;
+     }
+   
+     template <typename Dim>
+     ripple_all constexpr auto
+     internal_size(Dim&& dim) const noexcept -> Step {
+       return sizes_[dim];
+     }
+   
+     ripple_all constexpr auto internal_size() const noexcept -> Step {
+       Step prod_sum = 1;
+       unrolled_for<dims>([&](auto dim) { prod_sum *= sizes_[dim]; });
+       return prod_sum;
+     }
+   
+     template <typename Dim>
+     ripple_all constexpr auto step(Dim&& dim) const noexcept -> Step {
+       using DimType = std::decay_t<Dim>;
+       Step res      = 1;
+       if constexpr (is_dimension_v<DimType>) {
+         constexpr size_t end = static_cast<size_t>(DimType::value);
+         unrolled_for<end>([&](auto d) { res *= (sizes_[d] + dim_padding()); });
+       } else {
+         for (size_t d = 0; d < static_cast<size_t>(dim); ++d) {
+           res *= sizes_[d] + dim_padding();
+         }
+       }
+       return res;
+     }
+   
+     template <typename Dim>
+     ripple_all constexpr auto operator[](Dim&& dim) noexcept -> Step& {
+       return sizes_[dim];
+     }
+   
+     template <typename Dim>
+     ripple_all constexpr auto
+     operator[](Dim&& dim) const noexcept -> const Step& {
+       return sizes_[dim];
+     }
+   
+    private:
+     Container sizes_;       
+     Padding   padding_ = 0; 
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_SPACE_MULTIDIM_SPACE_HPP

@@ -141,6 +141,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -236,7 +237,7 @@
 
 <span class="k">struct</span> <span class="nl">CopyLoader</span> <span class="p">:</span> <span class="k">public</span> <span class="n">InternalLoader</span><span class="o">&lt;</span><span class="n">CopyLoader</span><span class="o">&gt;</span> <span class="p">{</span>
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">IteratorFrom</span><span class="p">,</span> <span class="k">typename</span> <span class="n">IteratorTo</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span>
   <span class="n">load</span><span class="p">(</span><span class="n">IteratorFrom</span><span class="o">&amp;&amp;</span> <span class="n">it_from</span><span class="p">,</span> <span class="n">IteratorTo</span><span class="o">&amp;&amp;</span> <span class="n">it_to</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
     <span class="n">static_assert_iterator</span><span class="p">(</span><span class="n">it_to</span><span class="p">);</span>
     <span class="n">static_assert_iterator</span><span class="p">(</span><span class="n">it_from</span><span class="p">);</span>

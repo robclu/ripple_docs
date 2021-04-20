@@ -3,7 +3,7 @@
 Template Struct ExecParams
 ==========================
 
-- Defined in :ref:`file_include_ripple_core_execution_execution_params.hpp`
+- Defined in :ref:`file_include_ripple_execution_execution_params.hpp`
 
 
 Struct Documentation

@@ -141,6 +141,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -246,25 +247,25 @@
   <span class="cm">/*==--- [construction] ---------------------------------------------------==*/</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">F</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="n">Invocable</span><span class="p">(</span><span class="n">F</span><span class="o">&amp;&amp;</span> <span class="n">functor</span><span class="p">)</span> <span class="k">noexcept</span>
+  <span class="n">ripple_all</span> <span class="n">Invocable</span><span class="p">(</span><span class="n">F</span><span class="o">&amp;&amp;</span> <span class="n">functor</span><span class="p">)</span> <span class="k">noexcept</span>
   <span class="o">:</span> <span class="n">functor_</span><span class="p">{</span><span class="n">ripple_forward</span><span class="p">(</span><span class="n">functor</span><span class="p">)}</span> <span class="p">{}</span>
 
-  <span class="n">ripple_host_device</span> <span class="n">Invocable</span><span class="p">(</span><span class="k">const</span> <span class="n">Functor</span><span class="o">&amp;</span> <span class="n">functor</span><span class="p">)</span> <span class="k">noexcept</span>
+  <span class="n">ripple_all</span> <span class="n">Invocable</span><span class="p">(</span><span class="k">const</span> <span class="n">Functor</span><span class="o">&amp;</span> <span class="n">functor</span><span class="p">)</span> <span class="k">noexcept</span>
   <span class="o">:</span> <span class="n">functor_</span><span class="p">{</span><span class="n">functor</span><span class="p">}</span> <span class="p">{}</span>
 
-  <span class="n">ripple_host_device</span> <span class="n">Invocable</span><span class="p">(</span><span class="k">const</span> <span class="n">Invocable</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span>
+  <span class="n">ripple_all</span> <span class="n">Invocable</span><span class="p">(</span><span class="k">const</span> <span class="n">Invocable</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span>
   <span class="o">:</span> <span class="n">functor_</span><span class="p">{</span><span class="n">other</span><span class="p">.</span><span class="n">functor_</span><span class="p">}</span> <span class="p">{}</span>
 
-  <span class="n">ripple_host_device</span> <span class="n">Invocable</span><span class="p">(</span><span class="n">Invocable</span><span class="o">&amp;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span>
+  <span class="n">ripple_all</span> <span class="n">Invocable</span><span class="p">(</span><span class="n">Invocable</span><span class="o">&amp;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span>
   <span class="o">:</span> <span class="n">functor_</span><span class="p">{</span><span class="n">ripple_move</span><span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">_functor</span><span class="p">)}</span> <span class="p">{}</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">auto</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span>
   <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Invocable</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Invocable</span><span class="o">&amp;</span> <span class="p">{</span>
     <span class="n">functor_</span> <span class="o">=</span> <span class="n">other</span><span class="p">.</span><span class="n">functor_</span><span class="p">;</span>
     <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">Invocable</span><span class="o">&amp;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Invocable</span><span class="o">&amp;</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">Invocable</span><span class="o">&amp;&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">Invocable</span><span class="o">&amp;</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">other</span> <span class="o">!=</span> <span class="k">this</span><span class="p">)</span> <span class="p">{</span>
       <span class="n">functor_</span> <span class="o">=</span> <span class="n">ripple_move</span><span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">functor_</span><span class="p">);</span>
     <span class="p">}</span>
@@ -274,12 +275,12 @@
   <span class="cm">/*==--- [interface] ------------------------------------------------------==*/</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="k">operator</span><span class="p">()(</span><span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="k">operator</span><span class="p">()(</span><span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
     <span class="n">functor_</span><span class="p">(</span><span class="n">ripple_forward</span><span class="p">(</span><span class="n">args</span><span class="p">)...);</span>
   <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
-  <span class="n">ripple_host_device</span> <span class="k">auto</span> <span class="k">operator</span><span class="p">()(</span><span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">auto</span> <span class="k">operator</span><span class="p">()(</span><span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
     <span class="n">functor_</span><span class="p">(</span><span class="n">ripple_forward</span><span class="p">(</span><span class="n">args</span><span class="p">)...);</span>
   <span class="p">}</span>
 
@@ -290,7 +291,7 @@
 <span class="cm">/*==--- [functions] -------------------------------------------------------==*/</span>
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Functor</span><span class="o">&gt;</span>
-<span class="n">ripple_host_device</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">make_invocable</span><span class="p">(</span><span class="n">Functor</span><span class="o">&amp;&amp;</span> <span class="n">functor</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span>
+<span class="n">ripple_all</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">make_invocable</span><span class="p">(</span><span class="n">Functor</span><span class="o">&amp;&amp;</span> <span class="n">functor</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">Invocable</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">decay_t</span><span class="o">&lt;</span><span class="n">Functor</span><span class="o">&gt;&gt;</span><span class="p">{</span><span class="n">ripple_forward</span><span class="p">(</span><span class="n">functor</span><span class="p">)};</span>
 <span class="p">}</span>
 

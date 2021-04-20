@@ -1,0 +1,39 @@
+
+.. _program_listing_file_include_ripple_padding_fo_extrap_loader.hpp:
+
+Program Listing for File fo_extrap_loader.hpp
+=============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_padding_fo_extrap_loader.hpp>` (``include/ripple/padding/fo_extrap_loader.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_PADDING_FO_EXTRAP_LOADER_HPP
+   #define RIPPLE_PADDING_FO_EXTRAP_LOADER_HPP
+   
+   #include "padding_loader.hpp"
+   
+   namespace ripple {
+   
+   struct FOExtrapLoader : public PaddingLoader<FOExtrapLoader> {
+     template <typename Iterator, typename Dim>
+     ripple_all constexpr auto
+     load_front(Iterator&& it, int index, Dim&& dim) const noexcept -> void {
+       static_assert_iterator(it);
+       *it = *it.offset(dim, index);
+     }
+   
+     template <typename Iterator, typename Dim>
+     ripple_all constexpr auto
+     load_back(Iterator&& it, int index, Dim&& dim) const noexcept -> void {
+       static_assert_iterator(it);
+       *it = *it.offset(dim, index);
+     }
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_PADDING_FO_EXTRAP_LOADER_HPP

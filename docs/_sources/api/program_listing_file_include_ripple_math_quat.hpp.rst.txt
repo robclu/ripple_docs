@@ -1,0 +1,330 @@
+
+.. _program_listing_file_include_ripple_math_quat.hpp:
+
+Program Listing for File quat.hpp
+=================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_math_quat.hpp>` (``include/ripple/math/quat.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_MATH_QUAT_HPP
+   #define RIPPLE_MATH_QUAT_HPP
+   
+   #include <ripple/container/array.hpp>
+   #include <ripple/container/tuple.hpp>
+   #include <ripple/storage/polymorphic_layout.hpp>
+   #include <ripple/storage/storage_descriptor.hpp>
+   #include <ripple/storage/storage_traits.hpp>
+   #include <ripple/storage/struct_accessor.hpp>
+   #include <ripple/utility/portability.hpp>
+   
+   namespace ripple {
+   
+   template <typename T, typename Layout = ContiguousOwned>
+   struct Quat : public PolymorphicLayout<Quat<T, Layout>> {
+    private:
+     /*==--- [constants] ------------------------------------------------------==*/
+   
+     static constexpr auto elements = 4;
+   
+     //==--- [aliases] --------------------------------------------------------==//
+   
+     // clang-format off
+     using Descriptor = StorageDescriptor<Layout, Vector<T, elements>>;
+     using Storage    = typename Descriptor::Storage;
+     using Value      = std::decay_t<T>;
+     using WAccessor  = StructAccessor<Value, Storage, 0>;
+     using XAccessor  = StructAccessor<Value, Storage, 1>;
+     using YAccessor  = StructAccessor<Value, Storage, 2>;
+     using ZAccessor  = StructAccessor<Value, Storage, 3>;
+     // clang-format on
+     // clang-format on
+   
+     template <typename OtherType, typename OtherLayout>
+     friend struct Quat;
+   
+     template <typename Layable, bool IsStridable>
+     friend struct LayoutTraits;
+   
+    public:
+     union {
+       Storage   storage; 
+       WAccessor w;       
+       XAccessor x;       
+       YAccessor y;       
+       ZAccessor z;       
+     };
+   
+     /*==--- [construction] ---------------------------------------------------==*/
+   
+     ripple_all constexpr Quat() noexcept {}
+   
+     ripple_all constexpr Quat(T val) noexcept {
+       unrolled_for<elements>([&](auto i) { storage.template get<0, i>() = val; });
+     }
+   
+     template <typename... Values, variadic_ge_enable_t<2, Values...> = 0>
+     ripple_all constexpr Quat(Values&&... values) noexcept {
+       const auto       v         = Tuple<Values...>{values...};
+       constexpr size_t arg_count = sizeof...(Values);
+       constexpr size_t extra     = elements - arg_count;
+       unrolled_for<arg_count>(
+         [&](auto i) { storage.template get<0, i>() = get<i>(v); });
+   
+       unrolled_for<extra>([&](auto i) {
+         constexpr size_t idx           = i + arg_count;
+         storage.template get<0, idx>() = Value{0};
+       });
+     }
+   
+     ripple_all constexpr Quat(Storage storage) noexcept
+     : storage{storage} {}
+   
+     ripple_all constexpr Quat(const Quat& other) noexcept
+     : storage{other.storage} {}
+   
+     ripple_all constexpr Quat(Quat&& other) noexcept
+     : storage{ripple_move(other.storage)} {}
+   
+     template <typename OtherLayout>
+     ripple_all constexpr Quat(const Quat<T, OtherLayout>& other) noexcept
+     : storage{other.storage} {}
+   
+     template <typename OtherLayout>
+     ripple_all constexpr Quat(Quat<T, OtherLayout>&& other) noexcept
+     : storage{ripple_move(other.storage)} {}
+   
+     /*==--- [operator overloads] ---------------------------------------------==*/
+   
+     ripple_all auto operator=(const Quat& other) noexcept -> Quat& {
+       storage = other.storage;
+       return *this;
+     }
+   
+     ripple_all auto operator=(Quat&& other) noexcept -> Quat& {
+       storage = ripple_move(other.storage);
+       return *this;
+     }
+   
+     template <typename OtherLayout>
+     ripple_all auto
+     operator=(const Quat<T, OtherLayout>& other) noexcept -> Quat& {
+       unrolled_for<elements>([&](auto i) {
+         storage.template get<0, i>() = other.storage.template get<0, i>();
+       });
+       return *this;
+     }
+   
+     template <typename OtherLayout>
+     ripple_all auto
+     operator=(Quat<T, OtherLayout>&& other) noexcept -> Quat& {
+       storage = ripple_move(other.storage);
+       return *this;
+     }
+   
+     ripple_all auto operator[](size_t i) noexcept -> Value& {
+       return storage.template get<0>(i);
+     }
+   
+     /*==--- [interface] ------------------------------------------------------==*/
+   
+     ripple_all auto scalar() noexcept -> Value& {
+       return storage.template get<0, 0>();
+     }
+   
+     ripple_all auto scalar() const noexcept -> const Value& {
+       return storage.template get<0, 0>();
+     }
+   
+     template <size_t I>
+     ripple_all auto vec_component() noexcept -> Value& {
+       return storage.template get<0, I + 1>();
+     }
+   
+     template <size_t I>
+     ripple_all auto vec_component() const noexcept -> const Value& {
+       return storage.template get<0, I + 1>();
+     }
+   
+     ripple_all auto vec_component(size_t i) noexcept -> Value& {
+       return storage.template get<0>(i + 1);
+     }
+   
+     ripple_all auto
+     vec_component(size_t i) const noexcept -> const Value& {
+       return storage.template get<0>(i + 1);
+     }
+   
+     ripple_all auto length_squared() const noexcept -> Value {
+       return w * w + x * x + y * y + z * z;
+     }
+   
+     ripple_all auto length() const noexcept -> Value {
+       return std::sqrt(length_squared());
+     }
+   
+     ripple_all auto normalize() noexcept -> void {
+       const auto scale = Value{1} / length();
+       w *= scale;
+       x *= scale;
+       y *= scale;
+       z *= scale;
+     }
+   
+     ripple_all auto invert() noexcept -> void {
+       const auto scale = Value{1} / length_squared();
+       w *= scale;
+       x *= -scale;
+       y *= -scale;
+       z *= -scale;
+     }
+   
+     ripple_all auto inverse() const noexcept -> Quat<T, ContiguousOwned> {
+       const auto scale = Value{-1} / length_squared();
+       return Quat<T, ContiguousOwned>{
+         w * -scale, x * scale, y * scale, z * scale};
+     }
+   
+     template <typename U, typename L>
+     ripple_all auto
+     operator*(const Quat<U, L>& q) const noexcept -> Quat<T, ContiguousOwned> {
+       // clang-format off
+       return Quat<T, ContiguousOwned>{
+         w * q.w - x * q.x - y * q.y - z * q.z,
+         w * q.x + x * q.w + y * q.z - z * q.y,
+         w * q.y - x * q.z + y * q.w + z * q.x,
+         w * q.z + x * q.y - y * q.x + z * q.w};
+       // clang-format on
+     }
+   };
+   
+   template <typename T, typename L>
+   ripple_all auto
+   to_mat2x2(const Quat<T, L>& q) noexcept -> Mat<T, 2, 2> {
+     const auto xy = q.x * q.y;
+     const auto wz = q.w * q.z;
+     // clang-format off
+     return Mat<T, 2, 2>{
+       q.w * q.w + q.x * q.x - q.y * q.y - q.z * q.z,
+       T{2} * (xy - wz), 
+       T{2} * (xy + wz),
+       q.w * q.w - q.x * q.x + q.y * q.y - q.z * q.z};
+     // clang-format on
+   }
+   
+   template <typename T, typename LQ, typename U, typename LV>
+   ripple_all auto
+   rotate(const Quat<T, LQ>& q, const Vec3d<U, LV>& v) noexcept
+     -> Vec3d<std::decay_t<U>, ContiguousOwned> {
+     using TT = std::decay_t<U>;
+     // clang-format off
+     /* First compute the temp cross product and addition.
+        t = r x v + w * v */
+     const auto t = Vec3d<TT, ContiguousOwned>{
+       q.w * v.x + q.y * v.z - q.z * v.y,
+       q.w * v.y + q.z * v.x - q.x * v.z,
+       q.w * v.z + q.x * v.y - q.y * v.x
+     };
+     /* Note: We expand out the multiplication here, so that we don't store any
+        temporary results which may bloat the register usage. */
+     return Vec3d<TT, ContiguousOwned>{
+       v.x + U{2} * (q.y * t.z - q.z * t.y),
+       v.y + U{2} * (q.z * t.x - q.x * t.z),
+       v.z + U{2} * (q.x * t.y - q.y * t.x)
+     };
+     // clang-format on
+   }
+   
+   template <typename T, typename LQ, typename U, typename LV>
+   ripple_all auto
+   rotate(const Quat<T, LQ>& q, const Vec2d<U, LV>& v) noexcept
+     -> Vec2d<std::decay_t<U>, ContiguousOwned> {
+     using TT = std::decay_t<U>;
+     // clang-format off
+     /* First compute the temp cross product and addition.
+        t = r x v + w * v */
+     const TT x = q.w * v.x - q.z * v.y;
+     const TT y = q.w * v.y + q.z * v.x;
+     const TT z = q.x * v.y - q.y * v.x;
+   
+     /* Note: We expand out the multiplication here, so that we don't store any
+        temporary results which may bloat the register usage. */
+     return Vec2d<TT, ContiguousOwned>{
+       v.x + U{2} * (q.y * z - q.z * y),
+       v.y + U{2} * (q.z * x - q.x * z)
+     };
+     // clang-format on
+   }
+   
+   template <typename T, typename U, typename L1, typename L2>
+   ripple_all auto
+   create_quat(const Vec3d<T, L1>& v1, const Vec3d<U, L2>& v2) noexcept
+     -> Quat<std::decay_t<T>> {
+     using TT         = std::decay_t<T>;
+     constexpr TT tol = 0.999999999999999999;
+     const TT     t   = math::dot(v1, v2);
+     Quat<TT>     q{0, 0, 0, 0};
+   
+     if (t > tol) {
+       q.w = 1;
+     } else if (t < -tol) {
+       // Here we have to check if the cross with the x/y unit vector is valid,
+       // and then define the result in terms of that.
+       // We would want to set the quat from the axis (the vector we define
+       // here),
+       // and the angle (180), but sin and cos terms reduce to 1 and 0, so we
+       // don't need to do that.
+       const TT scale = TT{1} / v1.length();
+       if (std::sqrt(v1.z * v1.z + v1.y * v1.y) >= TT{1} - tol) {
+         q.y = -v1.z * scale;
+         q.z = v1.y * scale;
+       } else {
+         q.x = v1.z * scale;
+         q.z = -v1.x * scale;
+       }
+     } else {
+       // clang-format off
+       q.w = std::sqrt(v1.length_squared() * v2.length_squared()) + t;
+       q.x = v1.y * v2.z - v1.z *v2.y;
+       q.y = v1.z * v2.x - v1.x *v2.z;
+       q.z = v1.x * v2.y - v1.y *v2.x;
+       q.normalize();
+       // clang-format on
+     }
+     return q;
+   }
+   
+   template <typename T, typename U, typename L1, typename L2>
+   ripple_all auto
+   create_quat(const Vec2d<T, L1>& v1, const Vec2d<U, L2>& v2) noexcept
+     -> Quat<std::decay_t<T>> {
+     using TT         = std::decay_t<T>;
+     constexpr TT tol = 0.999999999999999999;
+     const TT     t   = math::dot(v1, v2);
+     Quat<TT>     q{0, 0, 0, 0};
+   
+     if (t > tol) {
+       q.w = 1;
+     } else if (t < -tol) {
+       const auto scale = TT{1} / v1.length();
+       if (v1.y >= TT{1} - tol) {
+         q.z = v1.y * scale;
+       } else {
+         q.z = -v1.x * scale;
+       }
+     } else {
+       // clang-format off
+       q.w = std::sqrt(v1.length_squared() * v2.length_squared()) + t;
+       q.z = v1.x * v2.y - v1.y * v2.x;
+       q.normalize();
+     }
+     return q;
+   }
+   
+   } // namespace ripple
+   
+   #endif // namespace RIPPLE_MATH_MAT_HPP

@@ -1,0 +1,104 @@
+
+.. _file_include_ripple_utility_type_traits.hpp:
+
+File type_traits.hpp
+====================
+
+
+= ripple/utiliy/type_traits.hpp ------------------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/utility/type_traits.hpp``)
+-------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_utility_type_traits.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file defines generic trait related functionality.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``detail/function_traits_impl_.hpp`` (:ref:`file_include_ripple_utility_detail_function_traits_impl_.hpp`)
+
+- ``detail/index_of_impl_.hpp`` (:ref:`file_include_ripple_utility_detail_index_of_impl_.hpp`)
+
+- ``dim.hpp`` (:ref:`file_include_ripple_utility_dim.hpp`)
+
+- ``number.hpp`` (:ref:`file_include_ripple_utility_number.hpp`)
+
+- ``type_traits`` (:ref:`file_include_ripple_utility_type_traits.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_algorithm_unrolled_for.hpp`
+
+- :ref:`file_include_ripple_container_tensor_traits.hpp`
+
+- :ref:`file_include_ripple_container_tuple_traits.hpp`
+
+- :ref:`file_include_ripple_execution_execution_traits.hpp`
+
+- :ref:`file_include_ripple_execution_execution_size.hpp`
+
+- :ref:`file_include_ripple_functional_invocable.hpp`
+
+- :ref:`file_include_ripple_graph_modifier.hpp`
+
+- :ref:`file_include_ripple_graph_graph.hpp`
+
+- :ref:`file_include_ripple_padding_detail_load_internal_padding_impl_.hpp`
+
+- :ref:`file_include_ripple_space_multidim_space.hpp`
+
+- :ref:`file_include_ripple_space_dynamic_multidim_space.hpp`
+
+- :ref:`file_include_ripple_storage_detail_storage_traits_impl_.hpp`
+
+- :ref:`file_include_ripple_storage_owned_storage.hpp`
+
+- :ref:`file_include_ripple_storage_strided_storage_view.hpp`
+
+- :ref:`file_include_ripple_utility_range.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+

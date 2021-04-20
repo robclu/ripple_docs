@@ -3,7 +3,7 @@
 Typedef ripple::dim_enable_t
 ============================
 
-- Defined in :ref:`file_include_ripple_core_utility_dim.hpp`
+- Defined in :ref:`file_include_ripple_utility_dim.hpp`
 
 
 Typedef Documentation

@@ -3,7 +3,7 @@
 Template Struct GhostIndex
 ==========================
 
-- Defined in :ref:`file_include_ripple_core_boundary_ghost_index.hpp`
+- Defined in :ref:`file_include_ripple_padding_ghost_index.hpp`
 
 
 Struct Documentation

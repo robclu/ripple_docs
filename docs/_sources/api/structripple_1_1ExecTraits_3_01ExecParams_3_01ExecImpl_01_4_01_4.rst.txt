@@ -3,7 +3,7 @@
 Template Struct ExecTraits< ExecParams< ExecImpl > >
 ====================================================
 
-- Defined in :ref:`file_include_ripple_core_execution_execution_traits.hpp`
+- Defined in :ref:`file_include_ripple_execution_execution_traits.hpp`
 
 
 Struct Documentation

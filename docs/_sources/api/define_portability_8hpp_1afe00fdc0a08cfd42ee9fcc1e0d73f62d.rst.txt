@@ -1,6 +1,6 @@
 .. _exhale_define_portability_8hpp_1afe00fdc0a08cfd42ee9fcc1e0d73f62d:
 
-Define ripple_host_device
+Define ripple_all
 =========================
 
 - Defined in :ref:`file_include_ripple_core_utility_portability.hpp`
@@ -10,4 +10,4 @@ Define Documentation
 --------------------
 
 
-.. doxygendefine:: ripple_host_device
+.. doxygendefine:: ripple_all

@@ -1,0 +1,101 @@
+
+.. _file_include_ripple_graph_node.hpp:
+
+File node.hpp
+=============
+
+
+= :ref:`file_include_ripple_graph_node.hpp` --------------------------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/graph/node.hpp``)
+----------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_graph_node.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file implements a Node class for a graph.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``array`` (:ref:`file_include_ripple_container_array.hpp`)
+
+- ``atomic``
+
+- ``cassert``
+
+- ``ripple/container/tuple.hpp`` (:ref:`file_include_ripple_container_tuple.hpp`)
+
+- ``ripple/execution/execution_traits.hpp`` (:ref:`file_include_ripple_execution_execution_traits.hpp`)
+
+- ``ripple/functional/invocable.hpp`` (:ref:`file_include_ripple_functional_invocable.hpp`)
+
+- ``ripple/math/math.hpp`` (:ref:`file_include_ripple_math_math.hpp`)
+
+- ``ripple/utility/forward.hpp`` (:ref:`file_include_ripple_utility_forward.hpp`)
+
+- ``string``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_graph_detail_utils_.hpp`
+
+- :ref:`file_include_ripple_graph_graph.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1NodeExecutor`
+
+- :ref:`exhale_struct_structripple_1_1NodeExecutorImpl`
+
+- :ref:`exhale_struct_structripple_1_1NodeInfo`
+
+- :ref:`exhale_class_classripple_1_1Node`
+

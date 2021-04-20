@@ -143,6 +143,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -218,7 +219,7 @@
   <div class="section" id="template-struct-ghostindex">
 <span id="exhale-struct-structripple-1-1ghostindex"></span><h1>Template Struct GhostIndex<a class="headerlink" href="#template-struct-ghostindex" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_boundary_ghost_index.hpp.html#file-include-ripple-core-boundary-ghost-index-hpp"><span class="std std-ref">File ghost_index.hpp</span></a></p></li>
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_padding_ghost_index.hpp.html#file-include-ripple-padding-ghost-index-hpp"><span class="std std-ref">File ghost_index.hpp</span></a></p></li>
 </ul>
 <div class="section" id="struct-documentation">
 <h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
@@ -262,8 +263,8 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Types</p>
 <dl class="cpp type">
-<dt id="_CPPv4N6ripple10GhostIndex7value_tE">
-<span id="_CPPv3N6ripple10GhostIndex7value_tE"></span><span id="_CPPv2N6ripple10GhostIndex7value_tE"></span><span class="target" id="structripple_1_1GhostIndex_1ada4f7fbe90c0c2625be68ba5b2d8d9f0"></span><em class="property">using </em><code class="sig-name descname">value_t</code> = int8_t<a class="headerlink" href="#_CPPv4N6ripple10GhostIndex7value_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N6ripple10GhostIndex5ValueE">
+<span id="_CPPv3N6ripple10GhostIndex5ValueE"></span><span id="_CPPv2N6ripple10GhostIndex5ValueE"></span><span class="target" id="structripple_1_1GhostIndex_1aa8014cc31fd07f5fac93d609c5f7fd52"></span><em class="property">using </em><code class="sig-name descname">Value</code> = int8_t<a class="headerlink" href="#_CPPv4N6ripple10GhostIndex5ValueE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Defines the type used for the indices. </p>
 </dd></dl>
 
@@ -273,7 +274,7 @@
 <dl class="cpp function">
 <dt id="_CPPv4I0EN6ripple10GhostIndex14init_as_globalEbRR8Iterator">
 <span id="_CPPv3I0EN6ripple10GhostIndex14init_as_globalERR8Iterator"></span><span id="_CPPv2I0EN6ripple10GhostIndex14init_as_globalERR8Iterator"></span>template&lt;typename <code class="sig-name descname">Iterator</code>&gt;<br /><span class="target" id="structripple_1_1GhostIndex_1aecfe28683fed179a0db9ec94d1a36a3d"></span><em class="property">constexpr</em> auto <code class="sig-name descname">init_as_global</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN6ripple10GhostIndex14init_as_globalEbRR8Iterator" title="ripple::GhostIndex::init_as_global::Iterator">Iterator</a> &amp;&amp;<em>it</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4I0EN6ripple10GhostIndex14init_as_globalEbRR8Iterator" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Initialises the indices from the <code class="docutils literal notranslate"><span class="pre">it</span></code> iterator for the global domain, returning true if one of the indices for a dimension is valid, and hence that the index structure is valid (i.e that it defines a valid index for a ghost cell). </p>
+<dd><p>Initialises the indices from the iterator for the global domain, returning true if one of the indices for a dimension is valid, and hence that the index structure is valid (i.e that it defines a valid index for a ghost cell). </p>
 <p><dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>true if one of the indicies for a dimension is valid. </p>
 </dd>
@@ -289,7 +290,7 @@
 <dl class="cpp function">
 <dt id="_CPPv4I00EN6ripple10GhostIndex13init_as_blockEbRR8IteratorRR5Space">
 <span id="_CPPv3I00EN6ripple10GhostIndex13init_as_blockERR8IteratorRR5Space"></span><span id="_CPPv2I00EN6ripple10GhostIndex13init_as_blockERR8IteratorRR5Space"></span>template&lt;typename <code class="sig-name descname">Iterator</code>, typename <code class="sig-name descname">Space</code>&gt;<br /><span class="target" id="structripple_1_1GhostIndex_1a286f31be03059505b05a490ce8014375"></span><em class="property">constexpr</em> auto <code class="sig-name descname">init_as_block</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00EN6ripple10GhostIndex13init_as_blockEbRR8IteratorRR5Space" title="ripple::GhostIndex::init_as_block::Iterator">Iterator</a> &amp;&amp;<em>it</em>, <a class="reference internal" href="#_CPPv4I00EN6ripple10GhostIndex13init_as_blockEbRR8IteratorRR5Space" title="ripple::GhostIndex::init_as_block::Space">Space</a> &amp;&amp;<em>space</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4I00EN6ripple10GhostIndex13init_as_blockEbRR8IteratorRR5Space" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Initialises the indices from the <code class="docutils literal notranslate"><span class="pre">it</span></code> iterator for the block level domain, returning true if one of the indices for a dimension is valid, and hence that the index structure is valid (i.e that it defines a valid index for a ghost cell). </p>
+<dd><p>Initialises the indices from the iterator for the block level domain, returning true if one of the indices for a dimension is valid, and hence that the index structure is valid (i.e that it defines a valid index for a ghost cell). </p>
 <p><dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>true if one of the indicies for a dimension is valid. </p>
 </dd>
@@ -315,9 +316,9 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4I0ENK6ripple10GhostIndex5indexE7value_tRR3Dim">
-<span id="_CPPv3I0ENK6ripple10GhostIndex5indexERR3Dim"></span><span id="_CPPv2I0ENK6ripple10GhostIndex5indexERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="structripple_1_1GhostIndex_1ad840f4ad3837e6723801fd2f54b9f819"></span><em class="property">constexpr</em> auto <code class="sig-name descname">index</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple10GhostIndex5indexE7value_tRR3Dim" title="ripple::GhostIndex::index::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple10GhostIndex7value_tE" title="ripple::GhostIndex::value_t">value_t</a><a class="headerlink" href="#_CPPv4I0ENK6ripple10GhostIndex5indexE7value_tRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets the value of the index in the <code class="docutils literal notranslate"><span class="pre">dim</span></code> dimension. </p>
+<dt id="_CPPv4I0ENK6ripple10GhostIndex5indexE5ValueRR3Dim">
+<span id="_CPPv3I0ENK6ripple10GhostIndex5indexERR3Dim"></span><span id="_CPPv2I0ENK6ripple10GhostIndex5indexERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="structripple_1_1GhostIndex_1a5b4384131b31158bd911b1b327a3d7a7"></span><em class="property">constexpr</em> auto <code class="sig-name descname">index</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple10GhostIndex5indexE5ValueRR3Dim" title="ripple::GhostIndex::index::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple10GhostIndex5ValueE" title="ripple::GhostIndex::Value">Value</a><a class="headerlink" href="#_CPPv4I0ENK6ripple10GhostIndex5indexE5ValueRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the value of the index in the dim dimension. </p>
 <p><dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>The index in the dimension dim. </p>
 </dd>
@@ -334,9 +335,9 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4I0EN6ripple10GhostIndex5indexER7value_tRR3Dim">
-<span id="_CPPv3I0EN6ripple10GhostIndex5indexERR3Dim"></span><span id="_CPPv2I0EN6ripple10GhostIndex5indexERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="structripple_1_1GhostIndex_1a9fb9889b1a99d72bb8693a29582b487b"></span><em class="property">constexpr</em> auto <code class="sig-name descname">index</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN6ripple10GhostIndex5indexER7value_tRR3Dim" title="ripple::GhostIndex::index::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple10GhostIndex7value_tE" title="ripple::GhostIndex::value_t">value_t</a>&amp;<a class="headerlink" href="#_CPPv4I0EN6ripple10GhostIndex5indexER7value_tRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets a reference to the value of the index in the <code class="docutils literal notranslate"><span class="pre">dim</span></code> dimension. </p>
+<dt id="_CPPv4I0EN6ripple10GhostIndex5indexER5ValueRR3Dim">
+<span id="_CPPv3I0EN6ripple10GhostIndex5indexERR3Dim"></span><span id="_CPPv2I0EN6ripple10GhostIndex5indexERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="structripple_1_1GhostIndex_1aa1eff56a442f022027416c94d26e7b94"></span><em class="property">constexpr</em> auto <code class="sig-name descname">index</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN6ripple10GhostIndex5indexER5ValueRR3Dim" title="ripple::GhostIndex::index::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple10GhostIndex5ValueE" title="ripple::GhostIndex::Value">Value</a>&amp;<a class="headerlink" href="#_CPPv4I0EN6ripple10GhostIndex5indexER5ValueRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets a reference to the value of the index in the dim dimension. </p>
 <p><dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>An reference to the index for dimension dim. </p>
 </dd>
@@ -353,9 +354,9 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4I0ENK6ripple10GhostIndex9abs_indexE7value_tRR3Dim">
-<span id="_CPPv3I0ENK6ripple10GhostIndex9abs_indexERR3Dim"></span><span id="_CPPv2I0ENK6ripple10GhostIndex9abs_indexERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="structripple_1_1GhostIndex_1aa8d385d2383046b0b86f0bd0f59cfbd0"></span><em class="property">constexpr</em> auto <code class="sig-name descname">abs_index</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple10GhostIndex9abs_indexE7value_tRR3Dim" title="ripple::GhostIndex::abs_index::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple10GhostIndex7value_tE" title="ripple::GhostIndex::value_t">value_t</a><a class="headerlink" href="#_CPPv4I0ENK6ripple10GhostIndex9abs_indexE7value_tRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets the absolute value of the index in the <code class="docutils literal notranslate"><span class="pre">dim</span></code> dimension. </p>
+<dt id="_CPPv4I0ENK6ripple10GhostIndex9abs_indexE5ValueRR3Dim">
+<span id="_CPPv3I0ENK6ripple10GhostIndex9abs_indexERR3Dim"></span><span id="_CPPv2I0ENK6ripple10GhostIndex9abs_indexERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="structripple_1_1GhostIndex_1a3122f7ef0bfb37fd6fcb88eec5d2d4f1"></span><em class="property">constexpr</em> auto <code class="sig-name descname">abs_index</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple10GhostIndex9abs_indexE5ValueRR3Dim" title="ripple::GhostIndex::abs_index::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple10GhostIndex5ValueE" title="ripple::GhostIndex::Value">Value</a><a class="headerlink" href="#_CPPv4I0ENK6ripple10GhostIndex9abs_indexE5ValueRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the absolute value of the index in the dim dimension. </p>
 <p><dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>The abs value of the index in dimension dim. </p>
 </dd>
@@ -412,8 +413,8 @@
 <dl class="cpp function">
 <dt id="_CPPv4I0ENK6ripple10GhostIndex7is_voidEbRR3Dim">
 <span id="_CPPv3I0ENK6ripple10GhostIndex7is_voidERR3Dim"></span><span id="_CPPv2I0ENK6ripple10GhostIndex7is_voidERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="structripple_1_1GhostIndex_1a6d1a1ce63755909778d1ff2d5c824c5c"></span><em class="property">constexpr</em> auto <code class="sig-name descname">is_void</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple10GhostIndex7is_voidEbRR3Dim" title="ripple::GhostIndex::is_void::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4I0ENK6ripple10GhostIndex7is_voidEbRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns true if the index is neither back nor front, and therefore should nothing for the dimension. </p>
-<p>Determines if the index is void  it is neither a front nor back index. <dl class="simple">
+<dd><p>Determines if the index is void  it is neither a front nor back index. </p>
+<p><dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>true if the index is neither front nor back. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
@@ -431,7 +432,7 @@
 <dl class="cpp function">
 <dt id="_CPPv4I0EN6ripple10GhostIndex11set_as_voidEvRR3Dim">
 <span id="_CPPv3I0EN6ripple10GhostIndex11set_as_voidERR3Dim"></span><span id="_CPPv2I0EN6ripple10GhostIndex11set_as_voidERR3Dim"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="structripple_1_1GhostIndex_1a98fb22584dbae203b638a945679a1e8d"></span><em class="property">constexpr</em> auto <code class="sig-name descname">set_as_void</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN6ripple10GhostIndex11set_as_voidEvRR3Dim" title="ripple::GhostIndex::set_as_void::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4I0EN6ripple10GhostIndex11set_as_voidEvRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Sets the index in dimension <code class="docutils literal notranslate"><span class="pre">dim</span></code> as a void index. </p>
+<dd><p>Sets the index in dimension dim as a void index. </p>
 <p><dl class="simple">
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to set as a void index. </p></li>
@@ -450,7 +451,7 @@
 <p class="breathe-sectiondef-title rubric">Public Static Attributes</p>
 <dl class="cpp var">
 <dt id="_CPPv4N6ripple10GhostIndex10void_valueE">
-<span id="_CPPv3N6ripple10GhostIndex10void_valueE"></span><span id="_CPPv2N6ripple10GhostIndex10void_valueE"></span><span id="ripple::GhostIndex::void_value__auto"></span><span class="target" id="structripple_1_1GhostIndex_1adc8e3af306695ec41a441a84fcc09cdd"></span><em class="property">constexpr</em> auto <code class="sig-name descname">void_value</code> = <a class="reference internal" href="#_CPPv4N6ripple10GhostIndex7value_tE" title="ripple::GhostIndex::value_t">value_t</a>{0}<a class="headerlink" href="#_CPPv4N6ripple10GhostIndex10void_valueE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6ripple10GhostIndex10void_valueE"></span><span id="_CPPv2N6ripple10GhostIndex10void_valueE"></span><span id="ripple::GhostIndex::void_value__auto"></span><span class="target" id="structripple_1_1GhostIndex_1adc8e3af306695ec41a441a84fcc09cdd"></span><em class="property">constexpr</em> auto <code class="sig-name descname">void_value</code> = <a class="reference internal" href="#_CPPv4N6ripple10GhostIndex5ValueE" title="ripple::GhostIndex::Value">Value</a>{0}<a class="headerlink" href="#_CPPv4N6ripple10GhostIndex10void_valueE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Defines the value of a void index. </p>
 </dd></dl>
 

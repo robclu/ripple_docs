@@ -3,7 +3,7 @@
 Template Struct DynamicMultidimSpace
 ====================================
 
-- Defined in :ref:`file_include_ripple_core_multidim_dynamic_multidim_space.hpp`
+- Defined in :ref:`file_include_ripple_space_dynamic_multidim_space.hpp`
 
 
 Inheritance Relationships

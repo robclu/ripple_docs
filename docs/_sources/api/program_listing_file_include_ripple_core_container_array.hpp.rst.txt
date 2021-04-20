@@ -36,23 +36,23 @@ Program Listing for File array.hpp
      static constexpr size_t elements = array_traits_t<Impl>::size;
    
     public:
-     ripple_host_device constexpr decltype(auto) operator[](size_t i) noexcept {
+     ripple_all constexpr decltype(auto) operator[](size_t i) noexcept {
        return impl()->operator[](i);
      }
    
-     ripple_host_device constexpr decltype(auto)
+     ripple_all constexpr decltype(auto)
      operator[](size_t i) const noexcept {
        return impl()->operator[](i);
      }
    
-     ripple_host_device constexpr auto size() const noexcept -> size_t {
+     ripple_all constexpr auto size() const noexcept -> size_t {
        return array_traits_t<Impl>::size;
      }
    
      /*==--- [comparison operators] -------------------------------------------==*/
    
      template <typename ImplOther>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      operator==(const Array<ImplOther>& other) noexcept -> bool {
        assert_size_match<ImplOther>();
        for (size_t i = 0; i < elements; ++i) {
@@ -64,7 +64,7 @@ Program Listing for File array.hpp
      }
    
      template <typename T, array_value_enable_t<T, Impl> = 0>
-     ripple_host_device constexpr auto operator==(T val) const noexcept -> bool {
+     ripple_all constexpr auto operator==(T val) const noexcept -> bool {
        for (size_t i = 0; i < elements; ++i) {
          if (impl()->operator[](i) != val) {
            return false;
@@ -74,13 +74,13 @@ Program Listing for File array.hpp
      }
    
      template <typename ImplOther>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      operator!=(const Array<ImplOther>& other) noexcept -> bool {
        return !(*this == other);
      }
    
      template <typename T, array_value_enable_t<T, Impl> = 0>
-     ripple_host_device constexpr auto operator!=(T val) const noexcept -> bool {
+     ripple_all constexpr auto operator!=(T val) const noexcept -> bool {
        for (size_t i = 0; i < elements; ++i) {
          if (impl()->operator[](i) != val) {
            return true;
@@ -90,7 +90,7 @@ Program Listing for File array.hpp
      }
    
      template <typename ImplOther>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      operator<=(const Array<ImplOther>& other) noexcept -> bool {
        for (size_t i = 0; i < elements; ++i) {
          if (impl()->operator[](i) > other[i]) {
@@ -101,7 +101,7 @@ Program Listing for File array.hpp
      }
    
      template <typename T, array_value_enable_t<T, Impl> = 0>
-     ripple_host_device constexpr auto operator<=(T val) const noexcept -> bool {
+     ripple_all constexpr auto operator<=(T val) const noexcept -> bool {
        for (size_t i = 0; i < elements; ++i) {
          if (impl()->operator[](i) > val) {
            return false;
@@ -111,7 +111,7 @@ Program Listing for File array.hpp
      }
    
      template <typename ImplOther>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      operator>=(const Array<ImplOther>& other) noexcept -> bool {
        for (size_t i = 0; i < elements; ++i) {
          if (impl()->operator[](i) < other[i]) {
@@ -122,7 +122,7 @@ Program Listing for File array.hpp
      }
    
      template <typename T, array_value_enable_t<T, Impl> = 0>
-     ripple_host_device constexpr auto operator>=(T val) const noexcept -> bool {
+     ripple_all constexpr auto operator>=(T val) const noexcept -> bool {
        for (size_t i = 0; i < elements; ++i) {
          if (impl()->operator[](i) < val) {
            return false;
@@ -132,7 +132,7 @@ Program Listing for File array.hpp
      }
    
      template <typename ImplOther>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      operator<(const Array<ImplOther>& other) const noexcept -> bool {
        for (size_t i = 0; i < elements; ++i) {
          if (impl()->operator[](i) >= other[i]) {
@@ -143,7 +143,7 @@ Program Listing for File array.hpp
      }
    
      template <typename T, array_value_enable_t<T, Impl> = 0>
-     ripple_host_device constexpr auto operator<(T val) const noexcept -> bool {
+     ripple_all constexpr auto operator<(T val) const noexcept -> bool {
        for (size_t i = 0; i < elements; ++i) {
          if (impl()->operator[](i) >= val) {
            return false;
@@ -153,7 +153,7 @@ Program Listing for File array.hpp
      }
    
      template <typename ImplOther>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      operator>(const Array<ImplOther>& a) const noexcept -> bool {
        for (size_t i = 0; i < elements; ++i) {
          if (impl()->operator[](i) <= a[i]) {
@@ -164,7 +164,7 @@ Program Listing for File array.hpp
      }
    
      template <typename T, array_value_enable_t<T, Impl> = 0>
-     ripple_host_device constexpr auto operator>(T val) const noexcept -> bool {
+     ripple_all constexpr auto operator>(T val) const noexcept -> bool {
        for (size_t i = 0; i < elements; ++i) {
          if (impl()->operator[](i) <= val) {
            return false;
@@ -176,7 +176,7 @@ Program Listing for File array.hpp
      /*==--- [operator {+,+=} overloads] --------------------------------------==*/
    
      template <typename ImplOther>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      operator+=(const Array<ImplOther>& other) noexcept -> Impl& {
        assert_size_match<ImplOther>();
        unrolled_for_bounded<elements>(
@@ -185,7 +185,7 @@ Program Listing for File array.hpp
      }
    
      template <typename T, array_value_enable_t<T, Impl> = 0>
-     ripple_host_device constexpr auto operator+=(T val) noexcept -> Impl& {
+     ripple_all constexpr auto operator+=(T val) noexcept -> Impl& {
        using Value = typename array_traits_t<Impl>::Value;
        unrolled_for_bounded<elements>(
          [&](auto i) { impl()->operator[](i) += static_cast<Value>(val); });
@@ -193,7 +193,7 @@ Program Listing for File array.hpp
      }
    
      template <typename ImplOther, typename R = array_impl_t<Impl, ImplOther>>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      operator+(const Array<ImplOther>& other) const noexcept -> R {
        R result;
        unrolled_for_bounded<elements>(
@@ -205,7 +205,7 @@ Program Listing for File array.hpp
        typename T,
        typename R                    = array_impl_t<Impl, Impl>,
        array_value_enable_t<T, Impl> = 0>
-     ripple_host_device constexpr auto operator+(T val) const noexcept -> R {
+     ripple_all constexpr auto operator+(T val) const noexcept -> R {
        R result;
        using Value = typename array_traits_t<Impl>::Value;
        unrolled_for_bounded<elements>([&](auto i) {
@@ -217,7 +217,7 @@ Program Listing for File array.hpp
      /*==--- [operator {-,-=} overloads] --------------------------------------==*/
    
      template <typename ImplOther>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      operator-=(const Array<ImplOther>& other) noexcept -> Impl& {
        assert_size_match<ImplOther>();
        unrolled_for_bounded<elements>(
@@ -226,7 +226,7 @@ Program Listing for File array.hpp
      }
    
      template <typename T, array_value_enable_t<T, Impl> = 0>
-     ripple_host_device constexpr auto operator-=(T val) noexcept -> Impl& {
+     ripple_all constexpr auto operator-=(T val) noexcept -> Impl& {
        using Value = typename array_traits_t<Impl>::Value;
        unrolled_for_bounded<elements>(
          [&](auto i) { impl()->operator[](i) -= static_cast<Value>(val); });
@@ -234,7 +234,7 @@ Program Listing for File array.hpp
      }
    
      template <typename ImplOther, typename R = array_impl_t<Impl, ImplOther>>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      operator-(const Array<ImplOther>& other) const noexcept -> R {
        R result;
        unrolled_for_bounded<elements>(
@@ -246,7 +246,7 @@ Program Listing for File array.hpp
        typename T,
        typename R                    = array_impl_t<Impl, Impl>,
        array_value_enable_t<T, Impl> = 0>
-     ripple_host_device constexpr auto operator-(T val) const noexcept -> R {
+     ripple_all constexpr auto operator-(T val) const noexcept -> R {
        R result;
        using Value = typename array_traits_t<Impl>::Value;
        unrolled_for_bounded<elements>([&](auto i) {
@@ -258,7 +258,7 @@ Program Listing for File array.hpp
      /*==--- [operator {*,*=} overloads] --------------------------------------==*/
    
      template <typename ImplOther>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      operator*=(const Array<ImplOther>& other) noexcept -> Impl& {
        assert_size_match<ImplOther>();
        unrolled_for_bounded<elements>(
@@ -267,7 +267,7 @@ Program Listing for File array.hpp
      }
    
      template <typename T, array_value_enable_t<T, Impl> = 0>
-     ripple_host_device constexpr auto operator*=(T val) noexcept -> Impl& {
+     ripple_all constexpr auto operator*=(T val) noexcept -> Impl& {
        using Value = typename array_traits_t<Impl>::Value;
        unrolled_for_bounded<elements>(
          [&](auto i) { impl()->operator[](i) *= static_cast<Value>(val); });
@@ -275,7 +275,7 @@ Program Listing for File array.hpp
      }
    
      template <typename ImplOther, typename R = array_impl_t<Impl, ImplOther>>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      operator*(const Array<ImplOther>& other) const noexcept -> R {
        R result;
        unrolled_for_bounded<elements>(
@@ -287,7 +287,7 @@ Program Listing for File array.hpp
        typename T,
        typename R                    = array_impl_t<Impl, Impl>,
        array_value_enable_t<T, Impl> = 0>
-     ripple_host_device constexpr auto operator*(T val) const noexcept -> R {
+     ripple_all constexpr auto operator*(T val) const noexcept -> R {
        R result;
        using Value = typename array_traits_t<Impl>::Value;
        unrolled_for_bounded<elements>([&](auto i) {
@@ -299,7 +299,7 @@ Program Listing for File array.hpp
      /*==--- [operator {/,/=} overloads] --------------------------------------==*/
    
      template <typename ImplOther>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      operator/=(const Array<ImplOther>& other) noexcept -> Impl& {
        assert_size_match<ImplOther>();
        unrolled_for_bounded<elements>(
@@ -308,7 +308,7 @@ Program Listing for File array.hpp
      }
    
      template <typename T, array_value_enable_t<T, Impl> = 0>
-     ripple_host_device constexpr auto operator/=(T val) noexcept -> Impl& {
+     ripple_all constexpr auto operator/=(T val) noexcept -> Impl& {
        using Value = typename array_traits_t<Impl>::Value;
        unrolled_for_bounded<elements>(
          [&](auto i) { impl()->operator[](i) /= static_cast<Value>(val); });
@@ -316,7 +316,7 @@ Program Listing for File array.hpp
      }
    
      template <typename ImplOther, typename R = array_impl_t<Impl, ImplOther>>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      operator/(const Array<ImplOther>& other) const noexcept -> R {
        R result;
        unrolled_for_bounded<elements>(
@@ -328,7 +328,7 @@ Program Listing for File array.hpp
        typename T,
        typename R                    = array_impl_t<Impl, Impl>,
        array_value_enable_t<T, Impl> = 0>
-     ripple_host_device constexpr auto operator/(T val) const noexcept -> R {
+     ripple_all constexpr auto operator/(T val) const noexcept -> R {
        R result;
        using Value = typename array_traits_t<Impl>::Value;
        unrolled_for_bounded<elements>([&](auto i) {
@@ -338,16 +338,16 @@ Program Listing for File array.hpp
      }
    
     private:
-     ripple_host_device constexpr auto impl() noexcept -> Impl* {
+     ripple_all constexpr auto impl() noexcept -> Impl* {
        return static_cast<Impl*>(this);
      }
    
-     ripple_host_device constexpr auto impl() const noexcept -> const Impl* {
+     ripple_all constexpr auto impl() const noexcept -> const Impl* {
        return static_cast<const Impl*>(this);
      }
    
      template <typename ImplOther>
-     ripple_host_device constexpr auto assert_size_match() const noexcept -> void {
+     ripple_all constexpr auto assert_size_match() const noexcept -> void {
        constexpr size_t size_other = array_traits_t<ImplOther>::size;
        static_assert(
          size_other == elements, "Arrays have different number of elements");
@@ -361,7 +361,7 @@ Program Listing for File array.hpp
      typename Impl,
      typename R                    = array_impl_t<Impl, Impl>,
      array_value_enable_t<T, Impl> = 0>
-   ripple_host_device constexpr auto
+   ripple_all constexpr auto
    operator+(T val, const Array<Impl>& a) noexcept -> R {
      using Value = typename array_traits_t<Impl>::Value;
      using Type  = std::decay_t<T>;
@@ -382,7 +382,7 @@ Program Listing for File array.hpp
      typename Impl,
      typename R                    = array_impl_t<Impl, Impl>,
      array_value_enable_t<T, Impl> = 0>
-   ripple_host_device constexpr auto
+   ripple_all constexpr auto
    operator-(T val, const Array<Impl>& a) noexcept -> R {
      using Value = typename array_traits_t<Impl>::Value;
      using Type  = std::decay_t<T>;
@@ -403,7 +403,7 @@ Program Listing for File array.hpp
      typename Impl,
      typename R                    = array_impl_t<Impl, Impl>,
      array_value_enable_t<T, Impl> = 0>
-   ripple_host_device constexpr auto
+   ripple_all constexpr auto
    operator*(T val, const Array<Impl>& a) noexcept -> R {
      using Value = typename array_traits_t<Impl>::Value;
      using Type  = std::decay_t<T>;
@@ -424,7 +424,7 @@ Program Listing for File array.hpp
      typename Impl,
      typename R                    = array_impl_t<Impl, Impl>,
      array_value_enable_t<T, Impl> = 0>
-   ripple_host_device constexpr auto
+   ripple_all constexpr auto
    operator/(T val, const Array<Impl>& a) noexcept -> R {
      using Value = typename array_traits_t<Impl>::Value;
      using Type  = std::decay_t<T>;

@@ -33,13 +33,13 @@ Program Listing for File boundary_loader.hpp
    
    template <typename Impl>
    class BoundaryLoader {
-     ripple_host_device constexpr auto impl() const noexcept -> const Impl* {
+     ripple_all constexpr auto impl() const noexcept -> const Impl* {
        return static_cast<const Impl*>(this);
      }
    
     protected:
      template <typename Iterator>
-     ripple_host_device auto
+     ripple_all auto
      static_assert_iterator(Iterator&&) const noexcept -> void {
        static_assert(
          is_iterator_v<Iterator>,
@@ -48,7 +48,7 @@ Program Listing for File boundary_loader.hpp
    
     public:
      template <typename Iterator, typename Dim, typename... Args>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      load_front(Iterator&& it, int index, Dim&& dim, Args&&... args) const noexcept
        -> void {
        impl()->load_front(
@@ -56,7 +56,7 @@ Program Listing for File boundary_loader.hpp
      }
    
      template <typename Iterator, typename Dim, typename... Args>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      load_back(Iterator&& it, int index, Dim&& dim, Args&&... args) const noexcept
        -> void {
        impl()->load_back(

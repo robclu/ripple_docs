@@ -1,0 +1,332 @@
+
+.. _program_listing_file_include_ripple_container_device_block.hpp:
+
+Program Listing for File device_block.hpp
+=========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_container_device_block.hpp>` (``include/ripple/container/device_block.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_CONTAINER_DEVICE_BLOCK_HPP
+   #define RIPPLE_CONTAINER_DEVICE_BLOCK_HPP
+   
+   #include "block_traits.hpp"
+   #include "block_memory_properties.hpp"
+   #include <ripple/allocation/multiarch_allocator.hpp>
+   #include <ripple/iterator/block_iterator.hpp>
+   #include <ripple/utility/memory.hpp>
+   
+   namespace ripple {
+   
+   template <typename T, size_t Dimensions>
+   class DeviceBlock {
+     // clang-format off
+     using Traits    = BlockTraits<DeviceBlock<T, Dimensions>>;
+     using Allocator = typename Traits::Allocator;
+     using Space     = typename Traits::Space;
+     using Ptr       = void*;
+     using Value     = typename Traits::Value;
+     using Iter      = typename Traits::Iter;
+     using ConstIter = const Iter;
+     using HostBlock = HostBlock<T, Dimensions>;
+     using Stream    = GpuStream;
+     // clang-format on
+   
+     friend HostBlock;
+   
+     template <typename Type, size_t Dims>
+     friend struct Block;
+   
+    public:
+     // clang-format off
+     using Padding      = typename Space::Padding;
+     using AllocatorPtr = MultiarchAllocator*;
+     // clang-format on
+   
+     friend auto swap(DeviceBlock& lhs, DeviceBlock& rhs) noexcept -> void {
+       using std::swap;
+       swap(lhs.data_, rhs.data_);
+       swap(lhs.allocator_, rhs.allocator_);
+       swap(lhs.mem_props_, rhs.mem_props_);
+       swap(lhs.space_, rhs.space_);
+     }
+   
+     /*==--- [construction] ---------------------------------------------------==*/
+   
+     DeviceBlock() noexcept {
+       gpu::create_stream(&stream_);
+     }
+   
+     DeviceBlock(Stream stream, AllocatorPtr allocator = nullptr) noexcept
+     : allocator_{allocator}, stream_{stream} {}
+   
+     DeviceBlock(AllocatorPtr allocator) noexcept : allocator_{allocator} {
+       gpu::create_stream(&stream_);
+     }
+   
+     DeviceBlock(Stream stream) noexcept : stream_{stream} {}
+   
+     ~DeviceBlock() noexcept {
+       cleanup();
+     }
+   
+     template <
+       typename... Sizes,
+       all_arithmetic_size_enable_t<Dimensions, Sizes...> = 0>
+     DeviceBlock(Sizes&&... sizes) : space_{ripple_forward(sizes)...} {
+       gpu::create_stream(&stream_);
+       allocate();
+     }
+   
+     template <
+       typename... Sizes,
+       all_arithmetic_size_enable_t<Dimensions, Sizes...> = 0>
+     DeviceBlock(Padding padding, Sizes&&... sizes)
+     : space_{padding, ripple_forward(sizes)...} {
+       gpu::create_stream(&stream_);
+       allocate();
+     }
+   
+     DeviceBlock(const DeviceBlock& other)
+     : space_{other.space_}, stream_{other.stream_} {
+       gpu::create_stream(&stream_);
+       allocate();
+       copy_from_device(other);
+     }
+   
+     DeviceBlock(DeviceBlock&& other) noexcept : space_{other.space_} {
+       data_       = other.data_;
+       device_id_  = other.device_id_;
+       stream_     = other.stream_;
+       other.data_ = nullptr;
+       mem_props_  = other.mem_props_;
+       other.mem_props_.reset();
+     }
+   
+     DeviceBlock(const HostBlock& other)
+     : allocator_{other.allocator_}, space_{other.space_} {
+       gpu::create_stream(&stream_);
+       allocate();
+       copy_from_host(other);
+     }
+   
+     /*==--- [operator overloads] ---------------------------------------------==*/
+   
+     auto operator=(const DeviceBlock& other) -> DeviceBlock& {
+       stream_ = other.stream_;
+       space_  = other.space_;
+       reallocate();
+       copy_from_device(other);
+       return *this;
+     }
+   
+     auto operator=(const HostBlock& other) -> DeviceBlock& {
+       space_     = other._space;
+       allocator_ = other.allocator_;
+       gpu::create_stream(&stream_);
+       reallocate();
+       copy_from_host(other);
+       return *this;
+     }
+   
+     template <typename... Indices>
+     ripple_all auto operator()(Indices&&... is) noexcept -> Iter {
+       return Iter{
+         Allocator::create(
+           data_, space_, ripple_forward(is) + space_.padding()...),
+         space_};
+     }
+   
+     template <typename... Indices>
+     ripple_all auto
+     operator()(Indices&&... is) const noexcept -> ConstIter {
+       return ConstIter{
+         Allocator::create(
+           data_, space_, ripple_forward(is) + space_.padding()...),
+         space_};
+     }
+   
+     /*==--- [interface] ------------------------------------------------------==*/
+   
+     auto
+     as_host(BlockOpKind op_kind = BlockOpKind::synchronous) const -> HostBlock {
+       return HostBlock{*this, op_kind};
+     }
+   
+     auto copy_data(const HostBlock& other) noexcept -> void {
+       copy_from_host(other);
+     }
+   
+     ripple_all auto begin(int padding_mod = 0) noexcept -> Iter {
+       // Modify the iteration space based on the padding parameter:
+       auto space = space_;
+       if (padding_mod != 0) {
+         space.padding() = space_.padding() - padding_mod;
+         unrolled_for<Dimensions>([&](auto i) {
+           space.resize_dim(
+             i, space_.internal_size(i) + static_cast<int>(2 * padding_mod));
+         });
+       }
+       auto it = ConstIter{Allocator::create(data_, space), space};
+       unrolled_for<Dimensions>([&](auto dim) { it.shift(dim, space.padding()); });
+       /*
+           auto it = Iter{Allocator::create(data_, space_), space_};
+           unrolled_for<Dimensions>(
+             [&](auto dim) { it.shift(dim, space_.padding()); });
+       */
+       return it;
+     }
+   
+     ripple_all auto
+     begin(int padding_mod = 0) const noexcept -> ConstIter {
+       // Modify the iteration space based on the padding parameter:
+       auto space = space_;
+       if (padding_mod != 0) {
+         space.padding() = space_.padding() - padding_mod;
+         unrolled_for<Dimensions>([&](auto i) {
+           space.resize_dim(
+             i, space_.internal_size(i) + static_cast<int>(2 * padding_mod));
+         });
+       }
+       auto it = ConstIter{Allocator::create(data_, space), space};
+       unrolled_for<Dimensions>([&](auto dim) { it.shift(dim, space.padding()); });
+       /*
+           auto it = ConstIter{Allocator::create(data_, space_), space_};
+           unrolled_for<Dimensions>(
+             [&](auto dim) { it.shift(dim, space_.padding()); });
+       */
+       return it;
+     }
+   
+     auto reallocate() -> void {
+       cleanup();
+       allocate();
+     }
+   
+     template <typename Dim>
+     auto resize_dim(Dim&& dim, size_t size) noexcept -> void {
+       space_[dim] = size;
+     }
+   
+     template <typename... Sizes>
+     auto resize(Sizes&&... sizes) -> void {
+       space_.resize(ripple_forward(sizes)...);
+       reallocate();
+     }
+   
+     auto size() const noexcept -> size_t {
+       return space_.internal_size();
+     }
+   
+     template <typename Dim>
+     auto size(Dim&& dim) const -> size_t {
+       return space_.internal_size(ripple_forward(dim));
+     }
+   
+     template <typename Dim>
+     constexpr auto pitch(Dim&& dim) const noexcept -> size_t {
+       return space_.size(ripple_forward(dim));
+     }
+   
+     constexpr auto dimensions() const noexcept -> size_t {
+       return Dimensions;
+     }
+   
+     auto set_padding(Padding padding) noexcept -> void {
+       space_.padding() = padding;
+     }
+   
+     auto padding() const noexcept -> Padding {
+       return space_.padding();
+     }
+   
+     auto mem_requirement() const noexcept -> size_t {
+       return Allocator::allocation_size(space_.size());
+     }
+   
+     auto set_device_id(uint32_t device_id) noexcept -> void {
+       device_id_ = device_id;
+     }
+   
+     auto device_id() const noexcept -> uint32_t {
+       return device_id_;
+     }
+   
+     auto stream() const noexcept -> Stream {
+       return stream_;
+     }
+   
+     auto set_stream(Stream stream) noexcept -> void {
+       stream_ = stream;
+     }
+   
+     auto destroy_stream() noexcept -> void {
+       gpu::set_device(device_id_);
+       gpu::destroy_stream(stream_);
+     }
+   
+     template <typename Block>
+     constexpr auto get_copy_type() const noexcept -> cudaMemcpyKind {
+       return is_host_block_v<Block> ? cudaMemcpyDeviceToHost
+                                     : cudaMemcpyDeviceToDevice;
+     }
+   
+    private:
+     Ptr              data_      = nullptr; 
+     AllocatorPtr     allocator_ = nullptr; 
+     Space            space_;         
+     Stream           stream_;        
+     uint32_t         device_id_ = 0; 
+     BlockMemoryProps mem_props_;     
+   
+     auto allocate() -> void {
+       // Can only allocate if the memory is not allocated, and if we own it.
+       if (data_ == nullptr && !mem_props_.allocated) {
+         gpu::set_device(device_id_);
+         if (allocator_ != nullptr) {
+           data_ = allocator_->gpu_allocator(device_id_)
+                     .alloc(mem_requirement(), Traits::alignment);
+         } else {
+           gpu::allocate_device(
+             reinterpret_cast<void**>(&data_), mem_requirement());
+         }
+         mem_props_.allocated = true;
+         mem_props_.must_free = true;
+       }
+     }
+   
+     auto cleanup() -> void {
+       if (data_ != nullptr && mem_props_.must_free) {
+         gpu::set_device(device_id_);
+         if (allocator_ != nullptr) {
+           allocator_->gpu_allocator(device_id_).free(data_);
+         } else {
+           gpu::free_device(data_);
+         }
+         data_                = nullptr;
+         mem_props_.must_free = false;
+         mem_props_.allocated = false;
+       }
+     }
+   
+     auto copy_from_host(const HostBlock& other) noexcept -> void {
+       const auto alloc_size = Allocator::allocation_size(space_.size());
+       gpu::set_device(device_id_);
+       gpu::memcpy_host_to_device_async(data_, other.data_, alloc_size, stream_);
+     }
+   
+     auto copy_from_device(const DeviceBlock& other) noexcept -> void {
+       const auto alloc_size = Allocator::allocation_size(space_.size());
+       gpu::set_device(device_id_);
+       gpu::memcpy_device_to_device_async(
+         data_, other.data_, alloc_size, other.stream());
+     }
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_CONTAINER_DEVICE_BLOCK_HPP

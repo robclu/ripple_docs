@@ -3,7 +3,7 @@
 Template Function ripple::invoke(DeviceBlock<T, Dims>&, Callable&&, Args&&...)
 ==============================================================================
 
-- Defined in :ref:`file_include_ripple_core_functional_invoke.hpp`
+- Defined in :ref:`file_include_ripple_functional_invoke.hpp`
 
 
 Function Documentation

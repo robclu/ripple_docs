@@ -1,0 +1,90 @@
+
+.. _file_include_ripple_algorithm_kernel_reduce_cpp_.hpp:
+
+File reduce_cpp_.hpp
+====================
+
+
+= :ref:`file_include_ripple_algorithm_detail_unrolled_for_impl_.hpp` -- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/algorithm/kernel/reduce_cpp_.hpp``)
+----------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_algorithm_kernel_reduce_cpp_.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file implements functionality to reduce a multi dimensional block on the device.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``ripple/iterator/iterator_traits.hpp`` (:ref:`file_include_ripple_iterator_iterator_traits.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_algorithm_reduce.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+- :ref:`namespace_ripple__kernel`
+
+- :ref:`namespace_ripple__kernel__cpu`
+
+- :ref:`namespace_ripple__kernel__cpu__detail`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1kernel_1_1cpu_1_1detail_1_1Reducer`
+
+- :ref:`exhale_class_classripple_1_1kernel_1_1cpu_1_1detail_1_1Reducer_3_010_01_4`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_reduce__cpp___8hpp_1a54d8ad345d3353e6e291adbcfb79b7cd`
+

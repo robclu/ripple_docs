@@ -3,7 +3,7 @@
 Template Struct Unroll< 0 >
 ===========================
 
-- Defined in :ref:`file_include_ripple_core_algorithm_detail_unrolled_for_impl_.hpp`
+- Defined in :ref:`file_include_ripple_algorithm_detail_unrolled_for_impl_.hpp`
 
 
 Struct Documentation

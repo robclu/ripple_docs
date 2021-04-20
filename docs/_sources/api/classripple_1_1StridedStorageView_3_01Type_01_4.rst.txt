@@ -3,7 +3,7 @@
 Template Class StridedStorageView< Type >
 =========================================
 
-- Defined in :ref:`file_include_ripple_core_storage_strided_storage_view.hpp`
+- Defined in :ref:`file_include_ripple_storage_strided_storage_view.hpp`
 
 
 Nested Relationships

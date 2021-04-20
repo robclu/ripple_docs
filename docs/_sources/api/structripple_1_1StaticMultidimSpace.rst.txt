@@ -3,7 +3,7 @@
 Template Struct StaticMultidimSpace
 ===================================
 
-- Defined in :ref:`file_include_ripple_core_multidim_space_traits.hpp`
+- Defined in :ref:`file_include_ripple_space_space_traits.hpp`
 
 
 Struct Documentation

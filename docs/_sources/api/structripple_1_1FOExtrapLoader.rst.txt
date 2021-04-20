@@ -3,7 +3,7 @@
 Struct FOExtrapLoader
 =====================
 
-- Defined in :ref:`file_include_ripple_core_boundary_fo_extrap_loader.hpp`
+- Defined in :ref:`file_include_ripple_padding_fo_extrap_loader.hpp`
 
 
 Inheritance Relationships
@@ -12,7 +12,7 @@ Inheritance Relationships
 Base Type
 *********
 
-- ``public ripple::BoundaryLoader< FOExtrapLoader >`` (:ref:`exhale_class_classripple_1_1BoundaryLoader`)
+- ``public ripple::PaddingLoader< FOExtrapLoader >`` (:ref:`exhale_class_classripple_1_1PaddingLoader`)
 
 
 Struct Documentation

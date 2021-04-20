@@ -1,0 +1,52 @@
+
+.. _program_listing_file_include_ripple_functional_functional_traits.hpp:
+
+Program Listing for File functional_traits.hpp
+==============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_functional_functional_traits.hpp>` (``include/ripple/functional/functional_traits.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_FUNCTIONAL_FUNCTIONAL_TRAITS_HPP
+   #define RIPPLE_FUNCTIONAL_FUNCTIONAL_TRAITS_HPP
+   
+   #include <ripple/utility/portability.hpp>
+   
+   namespace ripple {
+   
+   /*==--- [forward declarations] ---------------------------------------------==*/
+   
+   template <typename Functor>
+   class Invocable;
+   
+   /*==--- [traits helpers] ---------------------------------------------------==*/
+   
+   namespace detail {
+   
+   template <typename T>
+   struct IsInvocable {
+     static constexpr bool value = false;
+   };
+   
+   template <typename F>
+   struct IsInvocable<Invocable<F>> {
+     static constexpr bool value = true;
+   };
+   
+   } // namespace detail
+   
+   template <typename T>
+   static constexpr auto is_invocable_v =
+     detail::IsInvocable<std::decay_t<T>>::value;
+   
+   template <typename T>
+   using make_invocable_t = std::
+     conditional_t<is_invocable_v<std::decay_t<T>>, T, Invocable<std::decay_t<T>>>;
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_FUNCTIONAL_FUNCTIONAL_TRAITS_HPP

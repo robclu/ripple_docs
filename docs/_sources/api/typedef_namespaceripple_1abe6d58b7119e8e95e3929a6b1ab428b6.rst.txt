@@ -3,7 +3,7 @@
 Typedef ripple::GpuError
 ========================
 
-- Defined in :ref:`file_include_ripple_core_utility_portability.hpp`
+- Defined in :ref:`file_include_ripple_utility_portability.hpp`
 
 
 Typedef Documentation

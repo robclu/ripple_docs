@@ -3,7 +3,7 @@
 Struct Splitter
 ===============
 
-- Defined in :ref:`file_include_ripple_core_graph_splitter.hpp`
+- Defined in :ref:`file_include_ripple_graph_splitter.hpp`
 
 
 Struct Documentation

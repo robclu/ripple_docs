@@ -32,15 +32,15 @@ Program Listing for File freelist.hpp
    
    class Freelist {
     public:
-     ripple_host_device Freelist() noexcept : head_{nullptr} {}
+     ripple_all Freelist() noexcept : head_{nullptr} {}
    
-     ripple_host_device ~Freelist() noexcept {
+     ripple_all ~Freelist() noexcept {
        if (head_ != nullptr) {
          head_ = nullptr;
        }
      }
    
-     ripple_host_device Freelist(
+     ripple_all Freelist(
        const void* start,
        const void* end,
        size_t      element_size,
@@ -58,13 +58,13 @@ Program Listing for File freelist.hpp
    
      /*==--- [interface] ------------------------------------------------------==*/
    
-     ripple_host_device auto pop_front() noexcept -> void* {
+     ripple_all auto pop_front() noexcept -> void* {
        Node* const popped_head = head_;
        head_                   = popped_head ? popped_head->next : nullptr;
        return static_cast<void*>(popped_head);
      }
    
-     ripple_host_device auto push_front(void* ptr) noexcept -> void {
+     ripple_all auto push_front(void* ptr) noexcept -> void {
        if (ptr == nullptr) {
          return;
        }
@@ -81,7 +81,7 @@ Program Listing for File freelist.hpp
    
      Node* head_ = nullptr; 
    
-     ripple_host_device static auto initialize(
+     ripple_all static auto initialize(
        const void* start, const void* end, size_t element_size, size_t alignment)
        -> Node* {
        // Create the first and second elements:

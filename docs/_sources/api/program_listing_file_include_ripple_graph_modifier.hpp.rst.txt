@@ -1,0 +1,226 @@
+
+.. _program_listing_file_include_ripple_graph_modifier.hpp:
+
+Program Listing for File modifier.hpp
+=====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_graph_modifier.hpp>` (``include/ripple/graph/modifier.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_GRAPH_MODIFIER_HPP
+   #define RIPPLE_GRAPH_MODIFIER_HPP
+   
+   #include <ripple/utility/type_traits.hpp>
+   
+   namespace ripple {
+   
+   enum class Modifier : uint8_t {
+     concurrent                 = 0,  
+     exclusive                  = 1,  
+     shared                     = 2,  
+     concurrent_shared          = 3,  
+     exclusive_shared           = 4,  
+     expander                   = 5,  
+     concurrent_expander        = 6,  
+     exclusive_expander         = 7,  
+     shared_expander            = 8,  
+     concurrent_shared_expander = 9,  
+     exclusive_shared_expander  = 10, 
+   };
+   
+   using ExpType = int16_t;
+   
+   template <typename T, Modifier Modification = Modifier::concurrent>
+   struct ModificationSpecifier {
+     T       wrapped;       
+     ExpType expansion = 0; 
+     ExpType overlap   = 0; 
+   };
+   
+   /*==--- [traits] -----------------------------------------------------------==*/
+   
+   template <typename T>
+   struct ModificationTraits {
+     using Value = std::remove_reference_t<T>;
+   
+     // clang-format off
+     static constexpr bool is_modifier             = false;
+     static constexpr bool is_concurrent           = true;
+     static constexpr bool is_exclusive            = !is_concurrent;
+     static constexpr bool uses_shared             = false;
+     static constexpr bool exclusive_or_concurrent = false;
+     static constexpr bool is_expander             = false;
+     // clang-format on
+   };
+   
+   template <typename T, Modifier Modification>
+   struct ModificationTraits<ModificationSpecifier<T, Modification>> {
+     using Value = std::remove_reference_t<T>;
+   
+     // clang-format off
+     static constexpr bool is_modifier = true;
+   
+     static constexpr bool is_concurrent = 
+       Modification == Modifier::concurrent          ||
+       Modification == Modifier::concurrent_shared   ||
+       Modification == Modifier::concurrent_expander ||
+       Modification == Modifier::concurrent_shared_expander;
+   
+     static constexpr bool is_exclusive = 
+       Modification == Modifier::exclusive          ||
+       Modification == Modifier::exclusive_shared   ||
+       Modification == Modifier::exclusive_expander ||
+       Modification == Modifier::exclusive_shared_expander;
+   
+     static constexpr bool uses_shared =
+       Modification == Modifier::shared                    ||
+       Modification == Modifier::exclusive_shared          ||
+       Modification == Modifier::concurrent_shared         ||
+       Modification == Modifier::shared_expander           ||
+       Modification == Modifier::exclusive_shared_expander ||
+       Modification == Modifier::concurrent_shared_expander;
+   
+     static constexpr bool is_expander   = 
+       Modification == Modifier::expander                  ||
+       Modification == Modifier::shared_expander           ||
+       Modification == Modifier::concurrent_expander       ||
+       Modification == Modifier::exclusive_expander        ||
+       Modification == Modifier::exclusive_shared_expander ||
+       Modification == Modifier::concurrent_shared_expander;
+   
+   
+     static constexpr bool exclusive_or_concurrent = is_exclusive || is_concurrent;
+   
+     // clang-format on
+   };
+   
+   template <typename T>
+   using modification_traits_t = ModificationTraits<std::decay_t<T>>;
+   
+   template <typename T>
+   static constexpr bool is_modifier_v = modification_traits_t<T>::is_modifier;
+   
+   template <typename T>
+   static constexpr bool is_expander_modifier_v =
+     modification_traits_t<T>::is_expander;
+   
+   template <typename... Modifiers>
+   static constexpr bool has_modifier_v =
+     (modification_traits_t<Modifiers>::exclusive_or_concurrent || ... || false);
+   
+   template <typename T>
+   using shared_mod_enable_t =
+     std::enable_if_t<modification_traits_t<T>::uses_shared, int>;
+   
+   template <typename T>
+   using non_shared_mod_enable_t =
+     std::enable_if_t<!modification_traits_t<T>::uses_shared, int>;
+   
+   template <typename T>
+   using modifier_enable_t = std::enable_if_t<is_modifier_v<T>, int>;
+   
+   template <typename T>
+   using non_modifier_enable_t = std::enable_if_t<!is_modifier_v<T>, int>;
+   
+   /*==--- [methods] ----------------------------------------------------------==*/
+   
+   struct ExpansionParams {
+     ExpType expansion = 0; 
+     ExpType overlap   = 0; 
+   };
+   
+   inline auto with_expansion(ExpType expansion) noexcept -> ExpansionParams {
+     return ExpansionParams{expansion, expansion};
+   }
+   
+   inline auto with_overlap(ExpType overlap) noexcept -> ExpansionParams {
+     return ExpansionParams{overlap, overlap};
+   }
+   
+   template <typename T, typename Type = std::remove_reference_t<T>>
+   auto concurrent_padded_access(T& t) noexcept {
+     return ModificationSpecifier<Type&, Modifier::concurrent>{t};
+   }
+   
+   template <typename T, typename Type = std::remove_reference_t<T>>
+   auto concurrent_padded_access(T& t, ExpansionParams params) noexcept {
+     return ModificationSpecifier<Type&, Modifier::concurrent_expander>{
+       t, params.expansion, params.overlap};
+   }
+   
+   template <typename T, typename Type = std::remove_reference_t<T>>
+   auto exclusive_padded_access(T& t) noexcept {
+     return ModificationSpecifier<Type&, Modifier::exclusive>{t};
+   }
+   
+   template <typename T, typename Type = std::remove_reference_t<T>>
+   auto exclusive_padded_access(T& t, ExpansionParams params) noexcept {
+     return ModificationSpecifier<Type&, Modifier::exclusive_expander>{
+       t, params.expansion, params.overlap};
+   }
+   
+   template <typename T, typename Type = std::remove_reference_t<T>>
+   auto concurrent_padded_access_in_shared(T& t) noexcept {
+     return ModificationSpecifier<Type&, Modifier::concurrent_shared>{t};
+   }
+   
+   template <typename T, typename Type = std::remove_reference_t<T>>
+   auto concurrent_padded_access_in_shared(T& t, ExpansionParams params) noexcept {
+     return ModificationSpecifier<Type&, Modifier::concurrent_shared_expander>{
+       t, params.expansion, params.overlap};
+   }
+   
+   template <typename T, typename Type = std::remove_reference_t<T>>
+   auto exclusive_padded_access_in_shared(T& t) noexcept {
+     return ModificationSpecifier<Type&, Modifier::exclusive_shared>{t};
+   }
+   
+   template <typename T, typename Type = std::remove_reference_t<T>>
+   auto exclusive_padded_access_in_shared(T& t, ExpansionParams params) noexcept {
+     return ModificationSpecifier<Type&, Modifier::exclusive_shared_expander>{
+       t, params.expansion, params.overlap};
+   }
+   
+   template <typename T, typename Type = std::remove_reference_t<T>>
+   auto in_shared(T& t) noexcept {
+     return ModificationSpecifier<Type&, Modifier::shared>{t};
+   }
+   
+   template <typename T, typename Type = std::remove_reference_t<T>>
+   auto expanded(T& t, ExpType expansion) noexcept {
+     return ModificationSpecifier<Type&, Modifier::expander>{
+       t, expansion, expansion};
+   }
+   
+   template <typename T, typename Type = std::remove_reference_t<T>>
+   auto overlapped(T& t, ExpType overlap) noexcept {
+     return ModificationSpecifier<Type&, Modifier::expander>{t, overlap, overlap};
+   }
+   
+   template <typename T>
+   auto unwrap_modifiers(T&& t) noexcept -> T&& {
+     return static_cast<T&&>(t);
+   }
+   
+   template <typename T, Modifier M>
+   auto unwrap_modifiers(ModificationSpecifier<T, M> t) noexcept
+     -> std::remove_reference_t<decltype(t.wrapped)>& {
+     return t.wrapped;
+   }
+   
+   template <typename T>
+   auto get_modifier_expansion_params(const T& t) noexcept -> ExpansionParams {
+     if constexpr (is_modifier_v<T>) {
+       return ExpansionParams{t.expansion, t.overlap};
+     } else {
+       return ExpansionParams{};
+     }
+   }
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_GRAPH_MODIFIER_HPP

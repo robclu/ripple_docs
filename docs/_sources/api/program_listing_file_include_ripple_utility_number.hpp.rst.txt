@@ -1,0 +1,63 @@
+
+.. _program_listing_file_include_ripple_utility_number.hpp:
+
+Program Listing for File number.hpp
+===================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_utility_number.hpp>` (``include/ripple/utility/number.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_UTILITY_NUMBER_HPP
+   #define RIPPLE_UTILITY_NUMBER_HPP
+   
+   #include "portability.hpp"
+   
+   namespace ripple {
+   
+   template <size_t Value>
+   struct Num {
+     static constexpr auto value = size_t{Value};
+   
+     ripple_all constexpr operator size_t() const noexcept {
+       return Value;
+     }
+   };
+   
+   template <int64_t Value>
+   struct Int64 {
+     static constexpr auto value = int64_t{Value};
+   
+     ripple_all constexpr operator int64_t() const noexcept {
+       return Value;
+     }
+   };
+   
+   namespace detail {
+   
+   template <typename T>
+   struct IsNumber {
+     static constexpr bool value = false;
+   };
+   
+   template <size_t Value>
+   struct IsNumber<Num<Value>> {
+     static constexpr bool value = true;
+   };
+   
+   template <int64_t Value>
+   struct IsNumber<Int64<Value>> {
+     static constexpr bool value = true;
+   };
+   
+   } // namespace detail
+   
+   template <typename T>
+   static constexpr bool is_number_v = detail::IsNumber<std::decay_t<T>>::value;
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_UTILITY_NUMBER_HPP

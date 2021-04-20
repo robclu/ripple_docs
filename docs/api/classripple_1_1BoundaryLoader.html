@@ -32,9 +32,7 @@
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
   <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
   <link rel="index" title="Index" href="../genindex.html" />
-  <link rel="search" title="Search" href="../search.html" />
-  <link rel="next" title="Template Class ContiguousStorageView" href="classripple_1_1ContiguousStorageView.html" />
-  <link rel="prev" title="Template Class BlockIterator" href="classripple_1_1BlockIterator.html" /> 
+  <link rel="search" title="Search" href="../search.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -143,6 +141,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -183,8 +182,6 @@
       </li>
 
         
-          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
-        
       <li>Template Class BoundaryLoader</li>
     
     
@@ -222,82 +219,10 @@
 </ul>
 <div class="section" id="class-documentation">
 <h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
-<dl class="cpp class">
-<dt id="_CPPv4I0EN6ripple14BoundaryLoaderE">
-<span id="_CPPv3I0EN6ripple14BoundaryLoaderE"></span><span id="_CPPv2I0EN6ripple14BoundaryLoaderE"></span>template&lt;typename <code class="sig-name descname">Impl</code>&gt;<br /><span class="target" id="classripple_1_1BoundaryLoader"></span><em class="property">class </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">BoundaryLoader</code><a class="headerlink" href="#_CPPv4I0EN6ripple14BoundaryLoaderE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>The <a class="reference internal" href="#classripple_1_1BoundaryLoader"><span class="std std-ref">BoundaryLoader</span></a> class defines an interface for boundary loading. </p>
-<p><dl class="simple">
-<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Impl</span></code>: The implementation of the loading interface. </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="cpp function">
-<dt id="_CPPv4I00DpENK6ripple14BoundaryLoader10load_frontEvRR8IteratoriRR3DimDpRR4Args">
-<span id="_CPPv3I00DpENK6ripple14BoundaryLoader10load_frontERR8IteratoriRR3DimDpRR4Args"></span><span id="_CPPv2I00DpENK6ripple14BoundaryLoader10load_frontERR8IteratoriRR3DimDpRR4Args"></span>template&lt;typename <code class="sig-name descname">Iterator</code>, typename <code class="sig-name descname">Dim</code>, typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classripple_1_1BoundaryLoader_1a366c3dc2c01e251d3add7c1295cf21c2"></span><em class="property">constexpr</em> auto <code class="sig-name descname">load_front</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00DpENK6ripple14BoundaryLoader10load_frontEvRR8IteratoriRR3DimDpRR4Args" title="ripple::BoundaryLoader::load_front::Iterator">Iterator</a> &amp;&amp;<em>it</em>, int <em>index</em>, <a class="reference internal" href="#_CPPv4I00DpENK6ripple14BoundaryLoader10load_frontEvRR8IteratoriRR3DimDpRR4Args" title="ripple::BoundaryLoader::load_front::Dim">Dim</a> &amp;&amp;<em>dim</em>, <a class="reference internal" href="#_CPPv4I00DpENK6ripple14BoundaryLoader10load_frontEvRR8IteratoriRR3DimDpRR4Args" title="ripple::BoundaryLoader::load_front::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4I00DpENK6ripple14BoundaryLoader10load_frontEvRR8IteratoriRR3DimDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Loads the front boundary in the <code class="docutils literal notranslate"><span class="pre">dim</span></code> dimension, using the value of the <code class="docutils literal notranslate"><span class="pre">index</span></code> in the dimension to find the appropriate cell. </p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">it</span></code>: An iterator to the boundary cell to load. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">index</span></code>: The index of the boundary cell in the dimension. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to load the boundary in. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: Additional arguments for the loading. </p></li>
-</ul>
-</dd>
-<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Iterator</span></code>: The type of the iterator. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The types of the additional arguments. </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4I00DpENK6ripple14BoundaryLoader9load_backEvRR8IteratoriRR3DimDpRR4Args">
-<span id="_CPPv3I00DpENK6ripple14BoundaryLoader9load_backERR8IteratoriRR3DimDpRR4Args"></span><span id="_CPPv2I00DpENK6ripple14BoundaryLoader9load_backERR8IteratoriRR3DimDpRR4Args"></span>template&lt;typename <code class="sig-name descname">Iterator</code>, typename <code class="sig-name descname">Dim</code>, typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classripple_1_1BoundaryLoader_1a9d1e89a963123ba82794fc13e12a1b6f"></span><em class="property">constexpr</em> auto <code class="sig-name descname">load_back</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00DpENK6ripple14BoundaryLoader9load_backEvRR8IteratoriRR3DimDpRR4Args" title="ripple::BoundaryLoader::load_back::Iterator">Iterator</a> &amp;&amp;<em>it</em>, int <em>index</em>, <a class="reference internal" href="#_CPPv4I00DpENK6ripple14BoundaryLoader9load_backEvRR8IteratoriRR3DimDpRR4Args" title="ripple::BoundaryLoader::load_back::Dim">Dim</a> &amp;&amp;<em>dim</em>, <a class="reference internal" href="#_CPPv4I00DpENK6ripple14BoundaryLoader9load_backEvRR8IteratoriRR3DimDpRR4Args" title="ripple::BoundaryLoader::load_back::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4I00DpENK6ripple14BoundaryLoader9load_backEvRR8IteratoriRR3DimDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Loads the back boundary in the <code class="docutils literal notranslate"><span class="pre">dim</span></code> dimension, using the value of the <code class="docutils literal notranslate"><span class="pre">index</span></code> in the dimension to find the appropriate cell. </p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">it</span></code>: An iterator to the boundary cell to load. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">index</span></code>: The index of the boundary cell in the dimension. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to load the boundary in. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: Additional arguments for the loading. </p></li>
-</ul>
-</dd>
-<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Iterator</span></code>: The type of the iterator. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The types of the additional arguments. </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenclass: Cannot find class “ripple::BoundaryLoader” in doxygen xml output for project “Ripple” from directory: /home/hiccup/Catalyst/ripple/build/docs/docs/doxygen/xml</p>
 </div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Protected Functions</p>
-<dl class="cpp function">
-<dt id="_CPPv4I0ENK6ripple14BoundaryLoader22static_assert_iteratorEvRR8Iterator">
-<span id="_CPPv3I0ENK6ripple14BoundaryLoader22static_assert_iteratorERR8Iterator"></span><span id="_CPPv2I0ENK6ripple14BoundaryLoader22static_assert_iteratorERR8Iterator"></span>template&lt;typename <code class="sig-name descname">Iterator</code>&gt;<br /><span class="target" id="classripple_1_1BoundaryLoader_1a8b6301dbc9d8bfa5851ce710eacefaaf"></span>auto <code class="sig-name descname">static_assert_iterator</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0ENK6ripple14BoundaryLoader22static_assert_iteratorEvRR8Iterator" title="ripple::BoundaryLoader::static_assert_iterator::Iterator">Iterator</a>&amp;&amp;<span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4I0ENK6ripple14BoundaryLoader22static_assert_iteratorEvRR8Iterator" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Checks that the iterator is an iterator. </p>
-<p><dl class="simple">
-<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Iterator</span></code>: The iterator to check is an iterator. </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-</div>
-</dd></dl>
-
 </div>
 </div>
 
@@ -306,15 +231,6 @@
               
             </div>
             <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="classripple_1_1ContiguousStorageView.html" class="btn btn-neutral float-right" title="Template Class ContiguousStorageView" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
-      
-      
-        <a href="classripple_1_1BlockIterator.html" class="btn btn-neutral" title="Template Class BlockIterator" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
-      
-    </div>
   
 
   

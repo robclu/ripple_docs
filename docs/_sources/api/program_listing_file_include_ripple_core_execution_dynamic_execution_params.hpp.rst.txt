@@ -52,22 +52,22 @@ Program Listing for File dynamic_execution_params.hpp
     public:
      /*==--- [constructor] ----------------------------------------------------==*/
    
-     ripple_host_device constexpr DynamicExecParams() noexcept
+     ripple_all constexpr DynamicExecParams() noexcept
      : space_{1024, 1, 1} {}
    
      template <typename... Sizes, all_arithmetic_size_enable_t<3, Sizes...> = 0>
-     ripple_host_device constexpr DynamicExecParams(Sizes&&... sizes) noexcept
+     ripple_all constexpr DynamicExecParams(Sizes&&... sizes) noexcept
      : space_{static_cast<Step>(sizes)...} {}
    
      template <typename... Sizes, all_arithmetic_size_enable_t<3, Sizes...> = 0>
-     ripple_host_device constexpr DynamicExecParams(
+     ripple_all constexpr DynamicExecParams(
        uint32_t padding, Sizes&&... sizes) noexcept
      : space_{padding, static_cast<Step>(sizes)...} {}
    
      /*==--- [size] -----------------------------------------------------------==*/
    
      template <size_t Dims>
-     ripple_host_device constexpr auto size() const noexcept -> Step {
+     ripple_all constexpr auto size() const noexcept -> Step {
        static_assert(
          Dims <= 3, "Execution space can't be more than 3 dimensions!");
        Step total_size = space_.size(dimx());
@@ -79,7 +79,7 @@ Program Listing for File dynamic_execution_params.hpp
      }
    
      template <size_t Dims>
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      size(size_t padding) const noexcept -> Step {
        static_assert(
          Dims <= 3, "Execution space can't be more than 3 dimensions!");
@@ -93,20 +93,20 @@ Program Listing for File dynamic_execution_params.hpp
      }
    
      template <typename Dim>
-     ripple_host_device constexpr auto size(Dim&& dim) const noexcept -> size_t {
+     ripple_all constexpr auto size(Dim&& dim) const noexcept -> size_t {
        return space_.internal_size(static_cast<Dim&&>(dim));
      }
    
      /*==--- [properties] -----------------------------------------------------==*/
    
-     ripple_host_device constexpr auto padding() const noexcept -> size_t {
+     ripple_all constexpr auto padding() const noexcept -> size_t {
        return space_.padding();
      }
    
      /*==--- [creation] -------------------------------------------------------==*/
    
      template <size_t Dims, typename T>
-     ripple_host_device auto iterator(T* data) const noexcept
+     ripple_all auto iterator(T* data) const noexcept
        -> BlockIterator<Value, MakeSpaceType<Dims>> {
        using SpaceType = MakeSpaceType<Dims>;
        using Iter      = BlockIterator<Value, SpaceType>;
@@ -120,7 +120,7 @@ Program Listing for File dynamic_execution_params.hpp
      }
    
      template <size_t Dims>
-     ripple_host_device constexpr auto allocation_size() const noexcept -> size_t {
+     ripple_all constexpr auto allocation_size() const noexcept -> size_t {
        return Allocator::allocation_size(size<Dims>());
      }
    
@@ -131,7 +131,7 @@ Program Listing for File dynamic_execution_params.hpp
    /*==--- [functions] --------------------------------------------------------==*/
    
    template <size_t Dims, typename Shared = VoidShared>
-   ripple_host_device auto
+   ripple_all auto
    dynamic_params(size_t padding = 0) noexcept -> DynamicExecParams<Shared> {
      constexpr auto size_x = (Dims == 1 ? 512 : Dims == 2 ? 32 : 8);
      constexpr auto size_y = (Dims == 1 ? 1 : Dims == 2 ? 16 : 8);

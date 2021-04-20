@@ -3,7 +3,7 @@
 Template Function ripple::offset_to_aos
 =======================================
 
-- Defined in :ref:`file_include_ripple_core_multidim_offset_to.hpp`
+- Defined in :ref:`file_include_ripple_space_offset_to.hpp`
 
 
 Function Documentation

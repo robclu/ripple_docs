@@ -3,7 +3,7 @@
 Enum DataState
 ==============
 
-- Defined in :ref:`file_include_ripple_core_container_block.hpp`
+- Defined in :ref:`file_include_ripple_container_block.hpp`
 
 
 Enum Documentation

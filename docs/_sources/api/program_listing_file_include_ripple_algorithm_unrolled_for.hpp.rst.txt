@@ -1,0 +1,55 @@
+
+.. _program_listing_file_include_ripple_algorithm_unrolled_for.hpp:
+
+Program Listing for File unrolled_for.hpp
+=========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_algorithm_unrolled_for.hpp>` (``include/ripple/algorithm/unrolled_for.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_ALGORITHM_UNROLLED_FOR_HPP
+   #define RIPPLE_ALGORITHM_UNROLLED_FOR_HPP
+   
+   #include "detail/unrolled_for_impl_.hpp"
+   #include <ripple/utility/type_traits.hpp>
+   
+   namespace ripple {
+   
+   template <size_t Amount, typename Functor, typename... Args>
+   ripple_all constexpr inline auto
+   unrolled_for(Functor&& functor, Args&&... args) noexcept -> void {
+     detail::Unroll<Amount> unrolled(
+       ripple_forward(functor), ripple_forward(args)...);
+   }
+   
+   // clang-format off
+   template <
+     size_t      Amount,
+     typename    Functor,
+     typename... Args,
+     unroll_enabled_t<Amount> = 0>
+   ripple_all constexpr inline auto
+   unrolled_for_bounded(Functor&& functor, Args&&... args) noexcept -> void {
+     unrolled_for<Amount>(ripple_forward(functor), ripple_forward(args)...);
+   }
+   
+   template <
+     size_t      Amount,
+     typename    Functor,
+     typename... Args,
+     unroll_disabled_t<Amount> = 0>
+   ripple_all constexpr inline auto
+   unrolled_for_bounded(Functor&& functor, Args&&... args) noexcept -> void {
+     for (size_t i = 0; i < Amount; ++i) {
+       functor(i, ripple_forward(args)...);
+     }
+   }
+   // clang-format on
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_ALGORITHM_UNROLLED_FOR_HPP

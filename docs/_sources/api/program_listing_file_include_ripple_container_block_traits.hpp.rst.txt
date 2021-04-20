@@ -1,0 +1,251 @@
+
+.. _program_listing_file_include_ripple_container_block_traits.hpp:
+
+Program Listing for File block_traits.hpp
+=========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_container_block_traits.hpp>` (``include/ripple/container/block_traits.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_CONTAINER_BLOCK_TRAITS_HPP
+   #define RIPPLE_CONTAINER_BLOCK_TRAITS_HPP
+   
+   #include <ripple/iterator/block_iterator.hpp>
+   #include <ripple/space/dynamic_multidim_space.hpp>
+   #include <ripple/storage/storage_traits.hpp>
+   #include <ripple/utility/portability.hpp>
+   
+   namespace ripple {
+   
+   /*==--- [forward declarations] ---------------------------------------------==*/
+   
+   template <typename T, size_t Dimensions>
+   class DeviceBlock;
+   
+   template <typename T, size_t Dimensions>
+   class HostBlock;
+   
+   template <typename T, size_t Dimensions>
+   struct Block;
+   
+   /*==--- [block traits] -----------------------------------------------------==*/
+   
+   enum class BlockOpKind : uint8_t {
+     asynchronous = 0, 
+     synchronous  = 1  
+   };
+   
+   template <typename T>
+   struct BlockTraits {
+     // clang-format off
+     using Value     = void*;
+     using Allocator = void*;
+     using Space     = void*;
+     using Iter      = BlockIterator<Value, Space>;
+   
+     static constexpr auto dimensions      = 0;
+     static constexpr auto is_block        = false;
+     static constexpr auto is_host_block   = false;
+     static constexpr auto is_device_block = false;
+     // clang-format on
+   };
+   
+   template <typename T, size_t Dimensions>
+   struct BlockTraits<HostBlock<T, Dimensions>> {
+    private:
+     using LayoutTraits = layout_traits_t<T>;
+   
+    public:
+     // clang-format off
+     using Value     = typename LayoutTraits::Value;
+     using Allocator = typename LayoutTraits::Allocator;
+     using Space     = DynamicMultidimSpace<Dimensions>;
+     using Iter      = BlockIterator<Value, Space>;
+   
+     static constexpr size_t dimensions      = Dimensions;
+     static constexpr bool   is_block        = true;
+     static constexpr bool   is_host_block   = true;
+     static constexpr bool   is_device_block = false;
+     static constexpr size_t alignment       = LayoutTraits::alignment;
+     // clang-format on
+   };
+   
+   template <typename T, size_t Dimensions>
+   struct BlockTraits<DeviceBlock<T, Dimensions>> {
+    private:
+     using LayoutTraits = layout_traits_t<T>;
+   
+    public:
+     // clang-format off
+     using Value     = typename LayoutTraits::Value;
+     using Allocator = typename LayoutTraits::Allocator;
+     using Space     = DynamicMultidimSpace<Dimensions>;
+     using Iter      = BlockIterator<Value, Space>;
+   
+     static constexpr size_t dimensions      = Dimensions;
+     static constexpr bool   is_block        = true;
+     static constexpr bool   is_host_block   = false;
+     static constexpr bool   is_device_block = true;
+     static constexpr size_t alignment       = LayoutTraits::alignment;
+     // clang-format on
+   };
+   
+   template <typename T>
+   struct MultiBlockTraits {
+     // clang-format off
+     using Value      = void*;
+     using Iterator   = void*;
+   
+     static constexpr size_t dimensions = 0;
+     // clang-format on
+   };
+   
+   template <typename T>
+   struct AnyBlockTraits {
+    private:
+     // clang-format off
+     using Traits = std::conditional_t<
+       BlockTraits<T>::is_block, BlockTraits<T>, MultiBlockTraits<T>>;
+     // clang-format on
+   
+    public:
+     using Value = typename Traits::Value;
+   
+     static constexpr size_t dimensions = Traits::dimensions;
+   };
+   
+   /*==--- [multi block] ------------------------------------------------------==*/
+   
+   template <typename Impl>
+   struct MultiBlock {
+     auto impl() const noexcept -> const Impl* {
+       return static_cast<const Impl*>(this);
+     }
+   
+     auto impl() noexcept -> Impl* {
+       return static_cast<Impl*>(this);
+     }
+   
+    public:
+     auto device_iterator() noexcept -> typename MultiBlockTraits<Impl>::Iterator {
+       return impl()->device_iterator();
+     }
+   
+     auto host_iterator() noexcept -> typename MultiBlockTraits<Impl>::Iterator {
+       return impl()->host_iterator();
+     }
+   
+     decltype(auto) stream() const noexcept {
+       return impl()->stream();
+     }
+   
+     template <typename Dim>
+     auto size(Dim&& dim) const noexcept -> size_t {
+       return impl()->size(ripple_forward(dim));
+     }
+   };
+   
+   /*==--- [aliases] ----------------------------------------------------------==*/
+   
+   template <typename T>
+   using multiblock_traits_t = MultiBlockTraits<std::decay_t<T>>;
+   
+   template <typename T>
+   using block_traits_t = BlockTraits<std::decay_t<T>>;
+   
+   template <typename T>
+   using any_block_traits_t = AnyBlockTraits<std::decay_t<T>>;
+   
+   template <typename T>
+   using HostBlock1d = HostBlock<T, 1>;
+   
+   template <typename T>
+   using DeviceBlock1d = DeviceBlock<T, 1>;
+   
+   template <typename T>
+   using HostBlock2d = HostBlock<T, 2>;
+   
+   template <typename T>
+   using DeviceBlock2d = DeviceBlock<T, 2>;
+   
+   template <typename T>
+   using HostBlock3d = HostBlock<T, 3>;
+   
+   template <typename T>
+   using DeviceBlock3d = DeviceBlock<T, 3>;
+   
+   /*==--- [traits] -----------------------------------------------------------==*/
+   
+   template <typename T>
+   static constexpr auto is_block_v = block_traits_t<T>::is_block;
+   
+   template <typename T>
+   static constexpr auto is_host_block_v = block_traits_t<T>::is_host_block;
+   
+   template <typename T>
+   static constexpr auto is_device_block_v = block_traits_t<T>::is_device_block;
+   
+   template <typename T>
+   static constexpr bool is_multiblock_v =
+     std::is_base_of_v<MultiBlock<std::decay_t<T>>, std::decay_t<T>>;
+   
+   template <typename T>
+   static constexpr bool is_any_block_v = is_block_v<T> || is_multiblock_v<T>;
+   
+   template <typename T>
+   using block_enable_t = std::enable_if_t<is_block_v<T>, int>;
+   
+   template <typename T>
+   using non_block_enable_t = std::enable_if_t<!is_block_v<T>, int>;
+   
+   template <typename T>
+   using multiblock_enable_t = std::enable_if_t<is_multiblock_v<T>, int>;
+   
+   template <typename T>
+   using non_multiblock_enable_t = std::enable_if_t<!is_multiblock_v<T>, int>;
+   
+   template <typename T>
+   using any_block_enable_t =
+     std::enable_if_t<is_multiblock_v<T> || is_block_v<T>, int>;
+   
+   template <typename T>
+   using non_any_block_enable_t =
+     std::enable_if_t<!is_multiblock_v<T> && !is_block_v<T>, int>;
+   
+   template <typename T>
+   using block_1d_enable_t =
+     std::enable_if_t<is_block_v<T> && block_traits_t<T>::dimensions == 1, int>;
+   
+   template <typename T>
+   using block_2d_enable_t =
+     std::enable_if_t<is_block_v<T> && block_traits_t<T>::dimensions == 2, int>;
+   
+   template <typename T>
+   using block_3d_enable_t =
+     std::enable_if_t<is_block_v<T> && block_traits_t<T>::dimensions == 3, int>;
+   
+   template <typename T>
+   using any_block_1d_enable_t = std::enable_if_t<
+     (is_block_v<T> && block_traits_t<T>::dimensions == 1) ||
+       (is_multiblock_v<T> && multiblock_traits_t<T>::dimensions == 1),
+     int>;
+   
+   template <typename T>
+   using any_block_2d_enable_t = std::enable_if_t<
+     (is_block_v<T> && block_traits_t<T>::dimensions == 2) ||
+       (is_multiblock_v<T> && multiblock_traits_t<T>::dimensions == 2),
+     int>;
+   
+   template <typename T>
+   using any_block_3d_enable_t = std::enable_if_t<
+     (is_block_v<T> && block_traits_t<T>::dimensions == 3) ||
+       (is_multiblock_v<T> && multiblock_traits_t<T>::dimensions == 3),
+     int>;
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_CONTAINER_BLOCK_TRAITS_HPP

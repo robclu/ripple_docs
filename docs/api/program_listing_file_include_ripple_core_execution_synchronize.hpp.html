@@ -141,6 +141,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -235,7 +236,7 @@
 
 <span class="k">namespace</span> <span class="n">ripple</span> <span class="p">{</span>
 
-<span class="n">ripple_host_device</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">syncthreads</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
+<span class="n">ripple_all</span> <span class="kr">inline</span> <span class="k">auto</span> <span class="n">syncthreads</span><span class="p">()</span> <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="kt">void</span> <span class="p">{</span>
 <span class="cm">/*</span>
 <span class="cm"> * For newer architectures, __syncthreads is called on each thread in a block,</span>
 <span class="cm"> * so if one thread has returned and __syncthreads is called then there will</span>
@@ -257,7 +258,7 @@
 <span class="cp">#endif </span><span class="c1">// __CUDACC__</span>
 <span class="p">}</span>
 
-<span class="c1">// ripple_host_device inline auto syncthreads() noexcept -&gt; void {}</span>
+<span class="c1">// ripple_all inline auto syncthreads() noexcept -&gt; void {}</span>
 
 <span class="p">}</span> <span class="c1">// namespace ripple</span>
 

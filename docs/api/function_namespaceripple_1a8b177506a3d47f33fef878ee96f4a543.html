@@ -32,9 +32,7 @@
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
   <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
   <link rel="index" title="Index" href="../genindex.html" />
-  <link rel="search" title="Search" href="../search.html" />
-  <link rel="next" title="Template Function ripple::block_idx" href="function_namespaceripple_1adfd3336cac0719a9edff86dc6025b6ac.html" />
-  <link rel="prev" title="Function ripple::bitmask" href="function_namespaceripple_1aa475bdfab10cae63294c90b5a2f6c773.html" /> 
+  <link rel="search" title="Search" href="../search.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -143,6 +141,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -183,8 +182,6 @@
       </li>
 
         
-          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
-        
       <li>Template Function ripple::bits</li>
     
     
@@ -220,14 +217,20 @@
 <div class="section" id="function-documentation">
 <h2>Function Documentation<a class="headerlink" href="#function-documentation" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
-<dt id="_CPPv4I0EN6ripple4bitsEDa1Tii">
-<span id="_CPPv3I0EN6ripple4bitsE1Tii"></span><span id="_CPPv2I0EN6ripple4bitsE1Tii"></span>template&lt;typename <code class="sig-name descname">T</code>&gt;<br /><span class="target" id="namespaceripple_1a8b177506a3d47f33fef878ee96f4a543"></span>auto <code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">bits</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN6ripple4bitsEDa1Tii" title="ripple::bits::T">T</a> <em>val</em>, int <em>start</em>, int <em>end</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN6ripple4bitsEDa1Tii" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns the value of the bits between [start, end] (inclusive). </p>
+<dt id="_CPPv4I0EN6ripple4bitsE1T1Tii">
+<span id="_CPPv3I0EN6ripple4bitsE1Tii"></span><span id="_CPPv2I0EN6ripple4bitsE1Tii"></span>template&lt;typename <code class="sig-name descname">T</code>&gt;<br /><span class="target" id="namespaceripple_1ac4ed9ea278304ed8da279ee6c4e7b143"></span>auto <code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">bits</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN6ripple4bitsE1T1Tii" title="ripple::bits::T">T</a> <em>val</em>, int <em>start</em>, int <em>end</em><span class="sig-paren">)</span> -&gt; <a class="reference internal" href="#_CPPv4I0EN6ripple4bitsE1T1Tii" title="ripple::bits::T">T</a><a class="headerlink" href="#_CPPv4I0EN6ripple4bitsE1T1Tii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the value of the bits between [start, end] (inclusive). </p>
 <p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The value of the bits between the given [start, end] range. </p>
+</dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">val</span></code>: The value to get a bitrange from. </p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">start</span></code>: The index of the start bit. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">end</span></code>: The index of the end bit. \tparma T The type of the input value. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">end</span></code>: The index of the end bit. </p></li>
+</ul>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: The type of the input value. </p></li>
 </ul>
 </dd>
 </dl>
@@ -242,15 +245,6 @@
               
             </div>
             <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="function_namespaceripple_1adfd3336cac0719a9edff86dc6025b6ac.html" class="btn btn-neutral float-right" title="Template Function ripple::block_idx" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
-      
-      
-        <a href="function_namespaceripple_1aa475bdfab10cae63294c90b5a2f6c773.html" class="btn btn-neutral" title="Function ripple::bitmask" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
-      
-    </div>
   
 
   

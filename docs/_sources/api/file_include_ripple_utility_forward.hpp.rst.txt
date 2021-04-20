@@ -1,0 +1,84 @@
+
+.. _file_include_ripple_utility_forward.hpp:
+
+File forward.hpp
+================
+
+
+== ripple/core/utility/forward.hpp ---------------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/utility/forward.hpp``)
+---------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_utility_forward.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                           Ripple
+
+             Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==---------------------------------------------------------------------==**
+
+This file defines macros for forwarding and moving.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``type_traits`` (:ref:`file_include_ripple_utility_type_traits.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_algorithm_detail_unrolled_for_impl_.hpp`
+
+- :ref:`file_include_ripple_algorithm_for_each.hpp`
+
+- :ref:`file_include_ripple_algorithm_max_element.hpp`
+
+- :ref:`file_include_ripple_allocation_pool_allocator.hpp`
+
+- :ref:`file_include_ripple_functional_invocable.hpp`
+
+- :ref:`file_include_ripple_graph_node.hpp`
+
+- :ref:`file_include_ripple_padding_internal_loader.hpp`
+
+- :ref:`file_include_ripple_space_multidim_space.hpp`
+
+
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_forward_8hpp_1a9ea51b6e63c0ac0bb7359839d2d7069d`
+
+- :ref:`exhale_define_forward_8hpp_1a79f6a34ca171a6916522869eed9bbdfe`
+

@@ -38,7 +38,7 @@ Program Listing for File basic_tuple_.hpp
      constexpr Element() = default;
    
      template <typename E>
-     ripple_host_device constexpr Element(E&& element) noexcept
+     ripple_all constexpr Element(E&& element) noexcept
      : value{static_cast<T&&>(element)} {}
    
      T value; 
@@ -47,32 +47,32 @@ Program Listing for File basic_tuple_.hpp
    /*==--- [get implementation] -----------------------------------------------==*/
    
    template <size_t I, typename T>
-   ripple_host_device constexpr inline auto
+   ripple_all constexpr inline auto
    type_extractor(Element<I, T> e) noexcept -> T {
      return T{};
    }
    
    template <size_t I, typename T>
-   ripple_host_device constexpr inline auto
+   ripple_all constexpr inline auto
    get_impl(const Element<I, T>&& e) noexcept
      -> const std::remove_reference_t<T>&& {
      return e.value;
    }
    
    template <size_t I, typename T>
-   ripple_host_device constexpr inline auto
+   ripple_all constexpr inline auto
    get_impl(const Element<I, T>& e) noexcept -> const std::remove_reference_t<T>& {
      return e.value;
    }
    
    template <size_t I, typename T>
-   ripple_host_device constexpr inline auto
+   ripple_all constexpr inline auto
    get_impl(Element<I, T>& e) noexcept -> std::remove_reference_t<T>& {
      return e.value;
    }
    
    template <size_t I, typename T>
-   ripple_host_device constexpr inline auto
+   ripple_all constexpr inline auto
    get_impl(Element<I, T>&& e) noexcept -> std::remove_reference_t<T>&& {
      using DataType = decltype(e.value);
      return static_cast<std::remove_reference_t<DataType>&&>(e.value);
@@ -90,11 +90,11 @@ Program Listing for File basic_tuple_.hpp
      constexpr TupleStorage() = default;
    
      template <typename... Types>
-     ripple_host_device constexpr TupleStorage(Types&&... elements) noexcept
+     ripple_all constexpr TupleStorage(Types&&... elements) noexcept
      : Element<Is, Ts>{static_cast<Ts&&>(elements)}... {}
    
      template <typename... Types>
-     ripple_host_device TupleStorage(const Types&... elements) noexcept
+     ripple_all TupleStorage(const Types&... elements) noexcept
      : Element<Is, Ts>{static_cast<const Ts&>(elements)}... {}
    };
    
@@ -113,11 +113,11 @@ Program Listing for File basic_tuple_.hpp
      constexpr BasicTuple() = default;
    
      template <typename... Types>
-     ripple_host_device explicit constexpr BasicTuple(Types&&... elements) noexcept
+     ripple_all explicit constexpr BasicTuple(Types&&... elements) noexcept
      : Base{static_cast<Ts&&>(elements)...} {}
    
      template <typename... Types>
-     ripple_host_device constexpr explicit BasicTuple(
+     ripple_all constexpr explicit BasicTuple(
        const Types&... elements) noexcept
      : Base{static_cast<const Ts&>(elements)...} {}
    };

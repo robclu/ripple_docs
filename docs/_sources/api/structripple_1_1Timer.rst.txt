@@ -3,7 +3,7 @@
 Struct Timer
 ============
 
-- Defined in :ref:`file_include_ripple_core_utility_timer.hpp`
+- Defined in :ref:`file_include_ripple_utility_timer.hpp`
 
 
 Struct Documentation

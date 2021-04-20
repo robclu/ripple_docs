@@ -72,53 +72,53 @@ Program Listing for File mat.hpp
    
      /*==--- [construction] ---------------------------------------------------==*/
    
-     ripple_host_device constexpr MatImpl() noexcept {}
+     ripple_all constexpr MatImpl() noexcept {}
    
-     ripple_host_device constexpr MatImpl(T val) noexcept {
+     ripple_all constexpr MatImpl(T val) noexcept {
        unrolled_for<elements>(
          [&](auto i) { storage_.template get<0, i>() = val; });
      }
    
      template <typename... Values, variadic_size_enable_t<elements, Values...> = 0>
-     ripple_host_device constexpr MatImpl(Values&&... values) noexcept {
+     ripple_all constexpr MatImpl(Values&&... values) noexcept {
        const auto v = Tuple<Values...>{values...};
        unrolled_for<elements>(
          [&](auto i) { storage_.template get<0, i>() = get<i>(v); });
      }
    
-     ripple_host_device constexpr MatImpl(Storage storage) noexcept
+     ripple_all constexpr MatImpl(Storage storage) noexcept
      : storage_{storage} {}
    
-     ripple_host_device constexpr MatImpl(const MatImpl& other) noexcept
+     ripple_all constexpr MatImpl(const MatImpl& other) noexcept
      : storage_{other.storage_} {}
    
-     ripple_host_device constexpr MatImpl(MatImpl&& other) noexcept
+     ripple_all constexpr MatImpl(MatImpl&& other) noexcept
      : storage_{ripple_move(other.storage_)} {}
    
      template <typename OtherLayout>
-     ripple_host_device constexpr MatImpl(
+     ripple_all constexpr MatImpl(
        const MatImpl<T, Rows, Cols, OtherLayout>& other) noexcept
      : storage_{other.storage_} {}
    
      template <typename OtherLayout>
-     ripple_host_device constexpr MatImpl(
+     ripple_all constexpr MatImpl(
        MatImpl<T, Rows, Cols, OtherLayout>&& other)
      : storage_{ripple_move(other.storage_)} {}
    
      /*==--- [operator overloads] ---------------------------------------------==*/
    
-     ripple_host_device auto operator=(const MatImpl& other) noexcept -> MatImpl& {
+     ripple_all auto operator=(const MatImpl& other) noexcept -> MatImpl& {
        storage_ = other.storage_;
        return *this;
      }
    
-     ripple_host_device auto operator=(MatImpl&& other) noexcept -> MatImpl& {
+     ripple_all auto operator=(MatImpl&& other) noexcept -> MatImpl& {
        storage_ = ripple_move(other.storage_);
        return *this;
      }
    
      template <typename OtherLayout>
-     ripple_host_device auto
+     ripple_all auto
      operator=(const MatImpl<T, Rows, Cols, OtherLayout>& other) noexcept
        -> MatImpl& {
        unrolled_for<elements>([&](auto i) {
@@ -128,34 +128,34 @@ Program Listing for File mat.hpp
      }
    
      template <typename OtherLayout>
-     ripple_host_device auto
+     ripple_all auto
      operator=(MatImpl<T, Rows, Cols, OtherLayout>&& other) noexcept -> MatImpl& {
        storage_ = ripple_move(other.storage_);
        return *this;
      }
    
-     ripple_host_device auto
+     ripple_all auto
      operator()(size_t row, size_t col) noexcept -> Value& {
        return storage_.template get<0>(to_index(row, col));
      }
    
-     ripple_host_device auto
+     ripple_all auto
      operator()(size_t row, size_t col) const noexcept -> const Value& {
        return storage_.template get<0>(to_index(row, col));
      }
    
      /*==--- [interface] ------------------------------------------------------==*/
    
-     ripple_host_device constexpr auto columns() const noexcept -> size_t {
+     ripple_all constexpr auto columns() const noexcept -> size_t {
        return Cols::value;
      }
    
-     ripple_host_device constexpr auto rows() const noexcept -> size_t {
+     ripple_all constexpr auto rows() const noexcept -> size_t {
        return Rows::value;
      }
    
      template <size_t Row, size_t Col>
-     ripple_host_device constexpr auto at() const noexcept -> const Value& {
+     ripple_all constexpr auto at() const noexcept -> const Value& {
        static_assert((Row < rows()), "Compile time row index out of range!");
        static_assert((Col < columns()), "Compile time col index out of range!");
        constexpr size_t i = to_index(Row, Col);
@@ -163,19 +163,19 @@ Program Listing for File mat.hpp
      }
    
      template <size_t Row, size_t Col>
-     ripple_host_device constexpr auto at() const noexcept -> Value& {
+     ripple_all constexpr auto at() const noexcept -> Value& {
        static_assert((Row < rows()), "Compile time row index out of range!");
        static_assert((Col < columns()), "Compile time col index out of range!");
        constexpr size_t i = to_index(Row, Col);
        return storage_.template get<0, i>();
      }
    
-     ripple_host_device constexpr auto size() const noexcept -> size_t {
+     ripple_all constexpr auto size() const noexcept -> size_t {
        return elements;
      }
    
     private:
-     ripple_host_device constexpr auto
+     ripple_all constexpr auto
      to_index(size_t r, size_t c) const noexcept -> size_t {
        return r * columns() + c;
      }
@@ -186,7 +186,7 @@ Program Listing for File mat.hpp
      typename array_traits_t<Vec>::template ImplType<Rows, ContiguousOwned>;
    
    template <typename T, typename R, typename C, typename L, typename Impl>
-   ripple_host_device auto
+   ripple_all auto
    operator*(const MatImpl<T, R, C, L>& m, const Array<Impl>& v) noexcept
      -> mat_vec_result_t<Impl, R::value> {
      constexpr size_t rows = R::value;
@@ -217,7 +217,7 @@ Program Listing for File mat.hpp
      typename C2,
      typename L1,
      typename L2>
-   ripple_host_device auto operator*(
+   ripple_all auto operator*(
      const MatImpl<T1, R1, C1R2, L1>& a,
      const MatImpl<T2, C1R2, C2, L2>& b) noexcept
      -> MatImpl<T1, R1, C2, ContiguousOwned> {

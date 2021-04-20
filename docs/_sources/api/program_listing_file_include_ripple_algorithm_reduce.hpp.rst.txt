@@ -1,0 +1,91 @@
+
+.. _program_listing_file_include_ripple_algorithm_reduce.hpp:
+
+Program Listing for File reduce.hpp
+===================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_algorithm_reduce.hpp>` (``include/ripple/algorithm/reduce.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_ALGORITHM_REDUCE_HPP
+   #define RIPPLE_ALGORITHM_REDUCE_HPP
+   
+   #include "kernel/reduce_cpp_.hpp"
+   #include "kernel/reduce_cuda_.cuh"
+   #include <ripple/container/host_block.hpp>
+   
+   namespace ripple {
+   
+   /*==--- [predicates] -------------------------------------------------------==*/
+   
+   struct SumReducer {
+     template <typename T>
+     ripple_all auto inplace(T& a, const T& b) const noexcept -> void {
+       *a += *b;
+     }
+   
+     template <typename T>
+     ripple_all auto
+     operator()(const T& a, const T& b) const noexcept -> T {
+       return T{a + b};
+     }
+   };
+   
+   struct SubtractionReducer {
+     template <typename T>
+     ripple_all auto inplace(T& a, const T& b) const noexcept -> void {
+       *a -= *b;
+     }
+   
+     template <typename T>
+     ripple_all auto
+     operator()(const T& a, const T& b) const noexcept -> T {
+       return a - b;
+     }
+   };
+   
+   struct MaxReducer {
+     template <typename T>
+     ripple_all auto inplace(T& a, const T& b) const noexcept -> void {
+       *a = std::max(*a, *b);
+     }
+   
+     template <typename T>
+     ripple_all auto
+     operator()(const T& a, const T& b) const noexcept -> T {
+       return std::max(a, b);
+     }
+   };
+   
+   struct MinReducer {
+     template <typename T>
+     ripple_all auto operator()(T& a, const T& b) const noexcept -> void {
+       *a = std::min(*a, *b);
+     }
+   
+     template <typename T>
+     ripple_all auto
+     operator()(const T& a, const T& b) const noexcept -> T {
+       return std::min(a, b);
+     }
+   };
+   
+   /*==--- [interface] --------------------------------------------------------==*/
+   
+   template <typename T, size_t Dims, typename Pred>
+   auto reduce(const DeviceBlock<T, Dims>& block, Pred&& pred) noexcept -> T {
+     return kernel::gpu::reduce(block, ripple_forward(pred));
+   }
+   
+   template <typename T, size_t Dims, typename Pred>
+   auto reduce(const HostBlock<T, Dims>& block, Pred&& pred) noexcept -> T {
+     return kernel::cpu::reduce(block, ripple_forward(pred));
+   }
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_ALGORITHM_REDUCE_HPP

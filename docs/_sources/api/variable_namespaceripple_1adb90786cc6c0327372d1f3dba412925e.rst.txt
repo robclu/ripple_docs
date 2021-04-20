@@ -3,7 +3,7 @@
 Variable ripple::any_same_v
 ===========================
 
-- Defined in :ref:`file_include_ripple_core_utility_type_traits.hpp`
+- Defined in :ref:`file_include_ripple_utility_type_traits.hpp`
 
 
 Variable Documentation

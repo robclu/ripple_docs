@@ -1,0 +1,141 @@
+
+.. _program_listing_file_include_ripple_functional_kernel_invoke_utils_.hpp:
+
+Program Listing for File invoke_utils_.hpp
+==========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_functional_kernel_invoke_utils_.hpp>` (``include/ripple/functional/kernel/invoke_utils_.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_FUNCTIONAL_KERNEL_INVOKE_UTILS__HPP
+   #define RIPPLE_FUNCTIONAL_KERNEL_INVOKE_UTILS__HPP
+   
+   #include <ripple/container/shared_wrapper.hpp>
+   #include <ripple/execution/execution_size.hpp>
+   
+   namespace ripple::kernel {
+   
+   using DimSizes = std::array<size_t, 3>;
+   
+   /*==--- [block extraction] -------------------------------------------------==*/
+   
+   template <typename T>
+   auto extract_device_block(SharedWrapper<T> wrapper) -> SharedWrapper<T> {
+     return SharedWrapper<T>{wrapper.wrapped, wrapper.padding};
+   }
+   
+   template <typename T>
+   decltype(auto) extract_device_block(T&& t) {
+     return t;
+   }
+   
+   /*==--- [block size] -------------------------------------------------------==*/
+   
+   template <typename T, typename Dim, any_block_enable_t<T> = 0>
+   auto get_size_if_block(T&& block, Dim&& dim, int expansion = 0) noexcept
+     -> size_t {
+     return any_block_traits_t<T>::dimensions > dim
+              ? block.size(ripple_forward(dim)) + 2 * expansion
+              : size_t{0};
+   }
+   
+   template <typename T, typename Dim, non_any_block_enable_t<T> = 0>
+   auto get_size_if_block(T&& block, Dim&& dim, int expansion = 0) noexcept
+     -> size_t {
+     return 0;
+   }
+   
+   template <typename T, typename Dim>
+   auto get_size_if_block(SharedWrapper<T>& wrapper, Dim&& dim) noexcept
+     -> size_t {
+     return get_size_if_block(
+       wrapper.wrapped, ripple_forward(dim), wrapper.expansion);
+   }
+   
+   template <typename T, typename Dim>
+   auto get_size_if_block(ExpansionWrapper<T>& wrapper, Dim&& dim) noexcept
+     -> size_t {
+     return get_size_if_block(
+       wrapper.wrapped, ripple_forward(dim), wrapper.expansion);
+     //    wrapper.overlap != 0 ? 0 : wrapper.expansion);
+   }
+   
+   template <typename T>
+   auto get_overlap_factor(const T& wrapper) noexcept -> int {
+     if constexpr (is_expansion_wrapper_v<T> || is_shared_wrapper_v<T>) {
+       return wrapper.overlap;
+     } else {
+       return 0;
+     }
+   }
+   
+   namespace gpu::util {
+   
+   template <typename T, multiblock_enable_t<T> = 0>
+   auto block_iter_or_same(T&& block) noexcept
+     -> std::decay_t<decltype(block.device_iterator())> {
+     return block.device_iterator();
+   }
+   
+   template <typename T, non_multiblock_enable_t<T> = 0>
+   auto block_iter_or_same(T&& t) noexcept -> std::decay_t<T> {
+     return t;
+   }
+   
+   template <typename T, multiblock_enable_t<T> = 0>
+   auto block_iter_or_same(SharedWrapper<T>& wrapper) noexcept
+     -> std::decay_t<decltype(wrapper.wrapped.device_iterator())> {
+     return wrapper.wrapped.device_iterator(wrapper.offset_amount());
+   }
+   
+   template <typename T, non_multiblock_enable_t<T> = 0>
+   auto block_iter_or_same(SharedWrapper<T>& wrapper) noexcept -> std::decay_t<T> {
+     return wrapper.wrapped;
+   }
+   
+   template <typename T, multiblock_enable_t<T> = 0>
+   auto block_iter_or_same(const SharedWrapper<T>& wrapper) noexcept
+     -> std::decay_t<decltype(wrapper.wrapped.device_iterator())> {
+     return wrapper.wrapped.device_iterator(wrapper.offset_amount());
+   }
+   
+   template <typename T, non_multiblock_enable_t<T> = 0>
+   auto block_iter_or_same(const SharedWrapper<T>& wrapper) noexcept
+     -> std::decay_t<T> {
+     return wrapper.wrapped;
+   }
+   
+   /*==--- [expansion wrapper] ------------------------------------------------==*/
+   
+   template <typename T, multiblock_enable_t<T> = 0>
+   auto block_iter_or_same(ExpansionWrapper<T>& wrapper) noexcept
+     -> std::decay_t<decltype(wrapper.wrapped.device_iterator())> {
+     return wrapper.wrapped.device_iterator(wrapper.offset_amount());
+   }
+   
+   template <typename T, non_multiblock_enable_t<T> = 0>
+   auto block_iter_or_same(ExpansionWrapper<T>& wrapper) noexcept
+     -> std::decay_t<T> {
+     return wrapper.wrapped;
+   }
+   
+   template <typename T, multiblock_enable_t<T> = 0>
+   auto block_iter_or_same(const ExpansionWrapper<T>& wrapper) noexcept
+     -> std::decay_t<decltype(wrapper.wrapped.device_iterator())> {
+     return wrapper.wrapped.device_iterator(wrapper.offset_amount());
+   }
+   
+   template <typename T, non_multiblock_enable_t<T> = 0>
+   auto block_iter_or_same(const ExpansionWrapper<T>& wrapper) noexcept
+     -> std::decay_t<T> {
+     return wrapper.wrapped;
+   }
+   
+   } // namespace gpu::util
+   } // namespace ripple::kernel
+   
+   #endif // RIPPLE_FUNCTIONAL_KERNEL_INVOKE_UTILS__HPP

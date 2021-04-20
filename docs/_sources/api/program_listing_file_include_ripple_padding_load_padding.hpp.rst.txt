@@ -1,0 +1,151 @@
+
+.. _program_listing_file_include_ripple_padding_load_padding.hpp:
+
+Program Listing for File load_padding.hpp
+=========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_padding_load_padding.hpp>` (``include/ripple/padding/load_padding.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_PADDING_LOAD_BOUNDARY_HPP
+   #define RIPPLE_PADDING_LOAD_BOUNDARY_HPP
+   
+   #include "detail/load_global_padding_impl_.hpp"
+   #include "detail/load_internal_padding_impl_.hpp"
+   #include "padding_loader.hpp"
+   #include <ripple/execution/execution_traits.hpp>
+   #include <ripple/execution/thread_index.hpp>
+   
+   namespace ripple {
+   
+   template <typename Iterator, typename Loader, typename... Args>
+   ripple_all auto
+   load_boundary(Iterator&& it, Loader&& loader, Args&&... args) noexcept -> void {
+     static_assert(
+       is_iterator_v<Iterator>,
+       "Padding loading requires the input to be an iterator!");
+     static_assert(
+       is_loader_v<Loader>,
+       "Padding loading requires a loader which implements the PaddingLoader "
+       "interface!");
+   
+     constexpr auto   dims = iterator_traits_t<Iterator>::dimensions;
+     GhostIndex<dims> indices;
+     if (!indices.init_as_global(it)) {
+       return;
+     }
+   
+     // Call loader impl ...
+     detail::load_global_padding(
+       dim_type_from_dims_t<dims>{},
+       ripple_forward(it),
+       indices,
+       ripple_forward(loader),
+       ripple_forward(args)...);
+   }
+   
+   struct LoadPadding {
+     template <typename Iterator, typename Loader, typename... Args>
+     ripple_all auto
+     operator()(Iterator&& it, Loader&& loader, Args&&... args) const noexcept
+       -> void {
+       static_assert(
+         is_iterator_v<Iterator>,
+         "Padding loading requires input to be an iterator!");
+       static_assert(
+         is_loader_v<Loader>,
+         "Padding loading requires a loader which implements the PaddingLoader "
+         "interface!");
+   
+       constexpr auto   dims = iterator_traits_t<Iterator>::dimensions;
+       GhostIndex<dims> indices;
+       if (!indices.init_as_global(it)) {
+         return;
+       }
+   
+       // Call loader impl ...
+       detail::load_global_padding(
+         dim_type_from_dims_t<dims>{},
+         ripple_forward(it),
+         indices,
+         ripple_forward(loader),
+         ripple_forward(args)...);
+     }
+   };
+   
+   struct LoadMultiPadding {
+     template <typename ItA, typename ItB, typename Loader, typename... Args>
+     ripple_all auto operator()(
+       ItA&& it_a, ItB&& it_b, Loader&& loader, Args&&... args) const noexcept
+       -> void {
+       static_assert(
+         is_iterator_v<ItA> && is_iterator_v<ItB>,
+         "Padding loading requires inputs to be iterators!");
+       static_assert(
+         is_loader_v<Loader>,
+         "Padding loading requires a loader which implements the PaddingLoader "
+         "interface!");
+   
+       constexpr auto   dims = iterator_traits_t<ItA>::dimensions;
+       GhostIndex<dims> indices;
+       if (indices.init_as_global(it_a)) {
+         detail::load_global_padding(
+           dim_type_from_dims_t<dims>{},
+           ripple_forward(it_a),
+           indices,
+           ripple_forward(loader),
+           ripple_forward(args)...);
+       }
+   
+       constexpr auto dims_b = iterator_traits_t<ItB>::dimensions;
+       if (indices.init_as_global(it_b)) {
+         detail::load_global_padding(
+           dim_type_from_dims_t<dims_b>{},
+           ripple_forward(it_b),
+           indices,
+           ripple_forward(loader),
+           ripple_forward(args)...);
+       }
+     }
+   };
+   
+   template <size_t Dims, typename ItFrom, typename ItTo>
+   ripple_all auto
+   load_internal_boundary(ItFrom&& from, ItTo&& to) noexcept -> void {
+     static_assert(
+       is_iterator_v<ItFrom>,
+       "Internal boundary loading requires the input to get loading data from to "
+       "be an iterator!");
+     static_assert(
+       is_iterator_v<ItTo>,
+       "Internal boundary loading requires the input to get loading data into to "
+       "be an iterator!");
+   
+     static constexpr size_t dims_from = iterator_traits_t<ItFrom>::dimensions;
+     static constexpr size_t dims_to   = iterator_traits_t<ItTo>::dimensions;
+     static_assert(
+       dims_from >= Dims && dims_to >= Dims,
+       "Invalid dimensions for loading of boundary data!");
+   
+     // Move both iterators to the top left of the domain:
+     unrolled_for<Dims>([&](auto dim) {
+       from.shift(dim, -static_cast<int>(to.padding()));
+       to.shift(dim, -static_cast<int>(to.padding()));
+     });
+   
+     detail::load_internal<Dims>(from, to);
+   
+     // Shift the iterators back:
+     unrolled_for<Dims>([&](auto dim) {
+       from.shift(dim, static_cast<int>(to.padding()));
+       to.shift(dim, static_cast<int>(to.padding()));
+     });
+   }
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_PADDING_LOAD_BOUNDARY_HPP

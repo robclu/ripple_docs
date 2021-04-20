@@ -3,7 +3,7 @@
 Variable ripple::is_strided_view_v
 ==================================
 
-- Defined in :ref:`file_include_ripple_core_storage_storage_layout.hpp`
+- Defined in :ref:`file_include_ripple_storage_storage_layout.hpp`
 
 
 Variable Documentation

@@ -3,7 +3,7 @@
 Template Class InternalLoader
 =============================
 
-- Defined in :ref:`file_include_ripple_core_boundary_internal_loader.hpp`
+- Defined in :ref:`file_include_ripple_padding_internal_loader.hpp`
 
 
 Class Documentation

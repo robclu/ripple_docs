@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceripple_1aacb09a891c59b7cac4a249d7b2540e52:
+
+Typedef ripple::GhostIndex1d
+============================
+
+.. did not find file this was defined in
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: ripple::GhostIndex1d

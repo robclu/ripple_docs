@@ -1,0 +1,75 @@
+
+.. _file_include_ripple_allocation_linear_allocator.hpp:
+
+File linear_allocator.hpp
+=========================
+
+
+= :ref:`file_include_ripple_allocation_linear_allocator.hpp` ---------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/allocation/linear_allocator.hpp``)
+---------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_allocation_linear_allocator.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file defines a linear allocator implementation.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``ripple/utility/memory.hpp`` (:ref:`file_include_ripple_utility_memory.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_allocation_multiarch_allocator.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classripple_1_1LinearAllocator`
+

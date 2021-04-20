@@ -3,7 +3,7 @@
 Variable ripple::is_iterator_v
 ==============================
 
-- Defined in :ref:`file_include_ripple_core_iterator_iterator_traits.hpp`
+- Defined in :ref:`file_include_ripple_iterator_iterator_traits.hpp`
 
 
 Variable Documentation

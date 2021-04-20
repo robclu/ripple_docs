@@ -3,7 +3,7 @@
 Template Struct DynamicExecParams
 =================================
 
-- Defined in :ref:`file_include_ripple_core_execution_dynamic_execution_params.hpp`
+- Defined in :ref:`file_include_ripple_execution_dynamic_execution_params.hpp`
 
 
 Inheritance Relationships

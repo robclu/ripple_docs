@@ -64,19 +64,19 @@ Functions
 
 - :ref:`exhale_function_math_8hpp_1a62fd022c7a3c990a08267dd5a17f765f`
 
-- :ref:`exhale_function_math_8hpp_1aab5eaf31f3c4904c5b824dc10db65356`
+- :ref:`exhale_function_math_8hpp_1a5cf81ea8b457c74609190560fc616fac`
 
 - :ref:`exhale_function_math_8hpp_1a12e1bfae19e0f0e7ffca9c2935a803c2`
 
-- :ref:`exhale_function_math_8hpp_1a5cf81ea8b457c74609190560fc616fac`
+- :ref:`exhale_function_math_8hpp_1aab5eaf31f3c4904c5b824dc10db65356`
 
-- :ref:`exhale_function_math_8hpp_1a3aeef3543706d4e4046ce85c4891b863`
+- :ref:`exhale_function_math_8hpp_1a57e37b60469945bd88c777ae8d5e21f4`
 
 - :ref:`exhale_function_math_8hpp_1af79173eb3939deaf2392d3cbf4d5a75e`
 
 - :ref:`exhale_function_math_8hpp_1a90b8b0e67e0f955db7ca690b47e78071`
 
-- :ref:`exhale_function_math_8hpp_1a57e37b60469945bd88c777ae8d5e21f4`
+- :ref:`exhale_function_math_8hpp_1a3aeef3543706d4e4046ce85c4891b863`
 
 - :ref:`exhale_function_math_8hpp_1a3e3b05723bd3ac2c37146b3fc784f105`
 

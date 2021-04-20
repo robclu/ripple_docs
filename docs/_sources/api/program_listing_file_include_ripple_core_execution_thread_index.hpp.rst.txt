@@ -33,45 +33,45 @@ Program Listing for File thread_index.hpp
    /*==--- [sizes] ------------------------------------------------------------==*/
    
    template <typename Dim>
-   ripple_host_device inline auto block_size(Dim&& dim) noexcept -> size_t {
+   ripple_all inline auto block_size(Dim&& dim) noexcept -> size_t {
      return detail::block_size(std::forward<Dim>(dim));
    }
    
    template <typename Dim>
-   ripple_host_device inline auto grid_size(Dim&& dim) noexcept -> size_t {
+   ripple_all inline auto grid_size(Dim&& dim) noexcept -> size_t {
      return detail::grid_size(std::forward<Dim>(dim));
    }
    
    template <typename Dim>
-   ripple_host_device inline auto global_size(Dim&& dim) noexcept -> size_t {
+   ripple_all inline auto global_size(Dim&& dim) noexcept -> size_t {
      return detail::grid_size(dim) * detail::block_size(dim);
    }
    
    /*==--- [indexing] ---------------------------------------------------------==*/
    
    template <typename Dim>
-   ripple_host_device inline auto thread_idx(Dim&& dim) noexcept -> size_t {
+   ripple_all inline auto thread_idx(Dim&& dim) noexcept -> size_t {
      return detail::thread_idx(std::forward<Dim>(dim));
    }
    
    template <typename Dim>
-   ripple_host_device inline auto block_idx(Dim&& dim) noexcept -> size_t {
+   ripple_all inline auto block_idx(Dim&& dim) noexcept -> size_t {
      return detail::block_idx(std::forward<Dim>(dim));
    }
    
    template <typename Dim>
-   ripple_host_device inline auto global_idx(Dim&& dim) noexcept -> size_t {
+   ripple_all inline auto global_idx(Dim&& dim) noexcept -> size_t {
      return detail::global_idx(ripple_forward(dim));
    }
    
    template <typename Dim>
-   ripple_host_device inline auto global_norm_idx(Dim&& dim) noexcept -> double {
+   ripple_all inline auto global_norm_idx(Dim&& dim) noexcept -> double {
      return (static_cast<double>(global_idx(dim)) + 0.5) /
             static_cast<double>(detail::global_elements(dim));
    }
    
    template <typename Dim>
-   ripple_host_device inline auto block_norm_idx(Dim&& dim) noexcept -> double {
+   ripple_all inline auto block_norm_idx(Dim&& dim) noexcept -> double {
      return static_cast<double>(block_idx(dim)) /
             static_cast<double>(block_size(dim));
    }
@@ -79,46 +79,46 @@ Program Listing for File thread_index.hpp
    /*==--- [utilities] --------------------------------------------------------==*/
    
    template <typename Dim>
-   ripple_host_device inline auto
+   ripple_all inline auto
    first_thread_in_block(Dim&& dim) noexcept -> bool {
      return detail::thread_idx(std::forward<Dim>(dim)) == size_t{0};
    }
    
-   ripple_host_device inline auto first_thread_in_block() noexcept -> bool {
+   ripple_all inline auto first_thread_in_block() noexcept -> bool {
      return first_thread_in_block(dimx()) && first_thread_in_block(dimy()) &&
             first_thread_in_block(dimz());
    }
    
    template <typename Dim>
-   ripple_host_device inline auto
+   ripple_all inline auto
    last_thread_in_block(Dim&& dim) noexcept -> bool {
      return detail::thread_idx(ripple_forward(dim)) ==
             (detail::block_size(ripple_forward(dim)) - 1);
    }
    
-   ripple_host_device inline auto last_thread_in_block() noexcept -> bool {
+   ripple_all inline auto last_thread_in_block() noexcept -> bool {
      return last_thread_in_block(dimx()) && last_thread_in_block(dimy()) &&
             last_thread_in_block(dimz());
    }
    
    template <typename Dim>
-   ripple_host_device inline auto
+   ripple_all inline auto
    first_thread_in_grid(Dim&& dim) noexcept -> bool {
      return detail::global_idx(std::forward<Dim>(dim)) == size_t{0};
    }
    
-   ripple_host_device inline auto first_thread_in_grid() noexcept -> bool {
+   ripple_all inline auto first_thread_in_grid() noexcept -> bool {
      return first_thread_in_grid(dimx()) && first_thread_in_grid(dimy()) &&
             first_thread_in_grid(dimz());
    }
    
    template <typename Dim>
-   ripple_host_device inline auto last_thread_in_grid(Dim&& dim) noexcept -> bool {
+   ripple_all inline auto last_thread_in_grid(Dim&& dim) noexcept -> bool {
      return detail::global_idx(ripple_forward(dim)) ==
             (detail::global_elements(ripple_forward(dim)) - 1);
    }
    
-   ripple_host_device inline auto last_thread_in_grid() noexcept -> bool {
+   ripple_all inline auto last_thread_in_grid() noexcept -> bool {
      return last_thread_in_grid(dimx()) && last_thread_in_grid(dimy()) &&
             last_thread_in_grid(dimz());
    }

@@ -3,7 +3,7 @@
 Template Function ripple::make_reduction_result
 ===============================================
 
-- Defined in :ref:`file_include_ripple_core_graph_reducer.hpp`
+- Defined in :ref:`file_include_ripple_graph_reducer.hpp`
 
 
 Function Documentation

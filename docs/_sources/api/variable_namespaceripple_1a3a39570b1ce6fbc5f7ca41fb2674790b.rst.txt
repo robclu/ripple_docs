@@ -3,7 +3,7 @@
 Variable ripple::is_number_v
 ============================
 
-- Defined in :ref:`file_include_ripple_core_utility_number.hpp`
+- Defined in :ref:`file_include_ripple_utility_number.hpp`
 
 
 Variable Documentation

@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a73e12a6030e9b38edd28b4f8308e0268:
+
+Template Function ripple::block_norm_idx
+========================================
+
+- Defined in :ref:`file_include_ripple_execution_thread_index.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::block_norm_idx(Dim&&)

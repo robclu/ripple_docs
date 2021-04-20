@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceripple_1a06c5d2856d58bdf30b043e0a02e47476:
+
+Template Function ripple::load_internal_boundary
+================================================
+
+- Defined in :ref:`file_include_ripple_padding_load_padding.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::load_internal_boundary(ItFrom&&, ItTo&&)

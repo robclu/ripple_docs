@@ -3,7 +3,7 @@
 Template Function ripple::apply_modifier_after_deref
 ====================================================
 
-- Defined in :ref:`file_include_ripple_core_graph_splitter.hpp`
+- Defined in :ref:`file_include_ripple_graph_splitter.hpp`
 
 
 Function Documentation

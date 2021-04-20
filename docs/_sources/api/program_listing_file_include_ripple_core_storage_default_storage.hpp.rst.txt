@@ -50,19 +50,19 @@ Program Listing for File default_storage.hpp
          return sizeof(T);
        }
    
-       ripple_host_device static constexpr auto
+       ripple_all static constexpr auto
        allocation_size(size_t elements) noexcept -> size_t {
          return sizeof(T) * elements;
        }
    
        template <size_t Elements>
-       ripple_host_device static constexpr auto
+       ripple_all static constexpr auto
        allocation_size() noexcept -> size_t {
          return sizeof(T) * Elements;
        }
    
        template <typename SpaceImpl, typename Dim, diff_enable_t<Dim, int> = 0>
-       ripple_host_device static auto offset(
+       ripple_all static auto offset(
          const Storage&                  storage,
          const MultidimSpace<SpaceImpl>& space,
          Dim&&                           dim,
@@ -73,7 +73,7 @@ Program Listing for File default_storage.hpp
        }
    
        template <typename SpaceImpl, typename Dim>
-       ripple_host_device static auto shift(
+       ripple_all static auto shift(
          Storage&                        storage,
          const MultidimSpace<SpaceImpl>& space,
          Dim&&                           dim,
@@ -82,7 +82,7 @@ Program Listing for File default_storage.hpp
        }
    
        template <typename SpaceImpl>
-       ripple_host_device static auto
+       ripple_all static auto
        create(void* ptr, const MultidimSpace<SpaceImpl>& space) -> Storage {
          return static_cast<T*>(ptr);
        }

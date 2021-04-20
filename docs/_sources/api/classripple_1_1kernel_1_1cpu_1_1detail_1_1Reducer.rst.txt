@@ -3,7 +3,7 @@
 Template Class Reducer
 ======================
 
-- Defined in :ref:`file_include_ripple_core_algorithm_kernel_reduce_cpp_.hpp`
+- Defined in :ref:`file_include_ripple_algorithm_kernel_reduce_cpp_.hpp`
 
 
 Class Documentation

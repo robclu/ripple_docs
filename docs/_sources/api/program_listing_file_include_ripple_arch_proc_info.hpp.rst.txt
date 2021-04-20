@@ -1,0 +1,35 @@
+
+.. _program_listing_file_include_ripple_arch_proc_info.hpp:
+
+Program Listing for File proc_info.hpp
+======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_arch_proc_info.hpp>` (``include/ripple/arch/proc_info.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_ARCH_PROC_INFO_HPP
+   #define RIPPLE_ARCH_PROC_INFO_HPP
+   
+   #include <cstdint>
+   
+   namespace ripple {
+   
+   struct ProcInfo {
+     static constexpr uint32_t invalid = 0xFFFFFFFF;
+   
+     constexpr auto is_invalid() const -> bool {
+       return package == invalid || core == invalid || thread == invalid;
+     }
+   
+     uint32_t package = invalid; 
+     uint32_t core    = invalid; 
+     uint32_t thread  = invalid; 
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_ARCH_PROC_INFO_HPP

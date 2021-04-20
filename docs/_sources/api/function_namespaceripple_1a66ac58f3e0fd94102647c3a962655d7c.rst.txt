@@ -3,7 +3,7 @@
 Template Function ripple::create_quat(const Vec2d<T, L1>&, const Vec2d<U, L2>&)
 ===============================================================================
 
-.. did not find file this was defined in
+- Defined in :ref:`file_include_ripple_math_quat.hpp`
 
 
 Function Documentation

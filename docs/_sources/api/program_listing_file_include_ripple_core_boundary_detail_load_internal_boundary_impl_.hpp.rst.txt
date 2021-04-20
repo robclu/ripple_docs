@@ -34,7 +34,7 @@ Program Listing for File load_internal_boundary_impl_.hpp
    // clang-format off
    template <
      size_t Dims, typename ItFrom, typename ItTo, dim_1d_enable_t<Dims> = 0>
-   ripple_host_device auto
+   ripple_all auto
      load_internal(ItFrom&& it_from, ItTo&& it_to) noexcept -> void {
      // clang-format on
      const auto pad      = static_cast<int>(it_to.padding());
@@ -56,7 +56,7 @@ Program Listing for File load_internal_boundary_impl_.hpp
    
    template <
      size_t Dims, typename ItFrom, typename ItTo, not_dim_1d_enable_t<Dims> = 0>
-   ripple_host_device auto
+   ripple_all auto
    load_internal(ItFrom&& it_from, ItTo&& it_to) noexcept -> void {
      // clang-format on
      // Has to be 2d or 3d:

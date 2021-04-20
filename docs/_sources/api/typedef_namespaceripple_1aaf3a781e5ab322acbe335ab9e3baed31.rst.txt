@@ -3,7 +3,7 @@
 Typedef ripple::PaddingType
 ===========================
 
-- Defined in :ref:`file_include_ripple_core_container_shared_wrapper.hpp`
+- Defined in :ref:`file_include_ripple_container_shared_wrapper.hpp`
 
 
 Typedef Documentation

@@ -3,7 +3,7 @@
 Function ripple::gpu::set_device
 ================================
 
-- Defined in :ref:`file_include_ripple_core_arch_gpu_utils.hpp`
+- Defined in :ref:`file_include_ripple_arch_gpu_utils.hpp`
 
 
 Function Documentation

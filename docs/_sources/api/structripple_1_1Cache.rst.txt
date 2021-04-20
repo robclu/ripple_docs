@@ -3,7 +3,7 @@
 Struct Cache
 ============
 
-- Defined in :ref:`file_include_ripple_core_arch_cache.hpp`
+- Defined in :ref:`file_include_ripple_arch_cache.hpp`
 
 
 Struct Documentation

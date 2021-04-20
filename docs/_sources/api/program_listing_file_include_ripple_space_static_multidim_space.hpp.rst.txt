@@ -1,0 +1,85 @@
+
+.. _program_listing_file_include_ripple_space_static_multidim_space.hpp:
+
+Program Listing for File static_multidim_space.hpp
+==================================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_space_static_multidim_space.hpp>` (``include/ripple/space/static_multidim_space.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_SPACE_STATIC_MULTIDIM_SPACE_HPP
+   #define RIPPLE_SPACE_STATIC_MULTIDIM_SPACE_HPP
+   
+   #include "multidim_space.hpp"
+   
+   namespace ripple {
+   
+   template <size_t... Sizes>
+   struct StaticMultidimSpace
+   : public MultidimSpace<StaticMultidimSpace<Sizes...>> {
+    private:
+     static constexpr size_t dims = sizeof...(Sizes);
+   
+     size_t padding_ = 0; 
+   
+    public:
+     constexpr StaticMultidimSpace() = default;
+   
+     ripple_all constexpr StaticMultidimSpace(size_t padding) noexcept
+     : padding_{padding} {}
+   
+     ripple_all constexpr auto padding() noexcept -> size_t& {
+       return padding_;
+     }
+   
+     ripple_all constexpr auto padding() const noexcept -> size_t {
+       return padding_;
+     }
+   
+     ripple_all constexpr auto dim_padding() const noexcept -> size_t {
+       return padding_ * 2;
+     }
+   
+     ripple_all constexpr auto dimensions() const noexcept -> size_t {
+       return dims;
+     }
+   
+     ripple_all constexpr auto size() const noexcept -> size_t {
+       return ((Sizes + dim_padding()) * ... * size_t{1});
+     }
+   
+     template <typename Dim>
+     ripple_all constexpr auto size(Dim&& dim) const noexcept -> size_t {
+       constexpr size_t sizes[dims] = {Sizes...};
+       return sizes[dim] + dim_padding();
+     }
+   
+     template <typename Dim>
+     ripple_all constexpr auto
+     internal_size(Dim&& dim) const noexcept -> size_t {
+       constexpr size_t sizes[dims] = {Sizes...};
+       return sizes[dim];
+     }
+   
+     ripple_all constexpr auto internal_size() const noexcept -> size_t {
+       return (Sizes * ... * size_t{1});
+     }
+   
+     template <typename Dim>
+     ripple_all constexpr auto step(Dim&& dim) const noexcept -> size_t {
+       constexpr size_t sizes[dims] = {Sizes...};
+       size_t           res         = 1;
+       for (size_t i = 0; i < static_cast<size_t>(dim); ++i) {
+         res *= sizes[i] + dim_padding();
+       }
+       return res;
+     }
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_SPACE_STATIC_MULTIDIM_SPACE_HPP

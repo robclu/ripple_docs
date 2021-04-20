@@ -1,0 +1,103 @@
+
+.. _file_include_ripple_container_block_traits.hpp:
+
+File block_traits.hpp
+=====================
+
+
+= :ref:`file_include_ripple_container_block_traits.hpp` --------------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/container/block_traits.hpp``)
+----------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_container_block_traits.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file defines traits and forward declarations for blocks.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``ripple/iterator/block_iterator.hpp`` (:ref:`file_include_ripple_iterator_block_iterator.hpp`)
+
+- ``ripple/space/dynamic_multidim_space.hpp`` (:ref:`file_include_ripple_space_dynamic_multidim_space.hpp`)
+
+- ``ripple/storage/storage_traits.hpp`` (:ref:`file_include_ripple_storage_storage_traits.hpp`)
+
+- ``ripple/utility/portability.hpp`` (:ref:`file_include_ripple_utility_portability.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_container_device_block.hpp`
+
+- :ref:`file_include_ripple_container_host_block.hpp`
+
+- :ref:`file_include_ripple_container_memcopy_padding.hpp`
+
+- :ref:`file_include_ripple_container_shared_wrapper.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1AnyBlockTraits`
+
+- :ref:`exhale_struct_structripple_1_1Block`
+
+- :ref:`exhale_struct_structripple_1_1BlockTraits`
+
+- :ref:`exhale_struct_structripple_1_1BlockTraits_3_01DeviceBlock_3_01T_00_01Dimensions_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1BlockTraits_3_01HostBlock_3_01T_00_01Dimensions_01_4_01_4`
+
+- :ref:`exhale_struct_structripple_1_1MultiBlock`
+
+- :ref:`exhale_struct_structripple_1_1MultiBlockTraits`
+
+- :ref:`exhale_class_classripple_1_1DeviceBlock`
+
+- :ref:`exhale_class_classripple_1_1HostBlock`
+

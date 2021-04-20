@@ -142,6 +142,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -238,10 +239,10 @@ which to use, and can use both, concurrently, if desired.</p>
 <p>Ripple uses a number of abstractions to facilitate the above, which allow for
 simple, expressive code to run in parallel across many large systems (it has
 been used to run physics simulations on grids consisting of billions of cells).</p>
-<p>The interface for specifying computational flow is the graph interface, which
+<p>The means for specifying computational flow is the graph interface, which
 allows computational operations and dependencies to be specified expressively
 and concisely, and from which ripple can determine efficient parallelization.
-The graph interface scales well, and can scale up to 7.3x for 8 V100 GPUs for
+The graph interface scales well, and with up to 7.3x for 8 V100 GPUs for
 non-trivial real-world problems</p>
 <p>The documentation contains the API, main features, examples, and tutorials.</p>
 <div class="section" id="building-ripple">
@@ -302,6 +303,8 @@ current fix for this is to first specify the build parameters as above using
 <p>Ripple will print out the complete build configuration at the end of the
 cmake command, so you can verify that the chosen parameters are correct.</p>
 </div>
+<p>This process is trying to be made simpler, but with current Cmake, this is the
+simplest process to ensure that the build is correct.</p>
 </div>
 <div class="section" id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
@@ -323,7 +326,7 @@ which is as simple as the following:</p>
 <span class="c1">// tensor. The arguments to the functors are iterators which point to the</span>
 <span class="c1">// cell in the tensor at the global thread indices.</span>
 <span class="n">ripple</span><span class="o">::</span><span class="n">Graph</span> <span class="n">graph</span><span class="p">;</span>
-<span class="n">graph</span><span class="p">.</span><span class="n">split</span><span class="p">([]</span> <span class="n">ripple_host_device</span> <span class="p">(</span><span class="k">auto</span> <span class="n">a</span><span class="p">,</span> <span class="k">auto</span> <span class="n">b</span><span class="p">,</span> <span class="k">auto</span> <span class="n">c</span><span class="p">,</span> <span class="kt">float</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+<span class="n">graph</span><span class="p">.</span><span class="n">split</span><span class="p">([]</span> <span class="n">ripple_all</span> <span class="p">(</span><span class="k">auto</span> <span class="n">a</span><span class="p">,</span> <span class="k">auto</span> <span class="n">b</span><span class="p">,</span> <span class="k">auto</span> <span class="n">c</span><span class="p">,</span> <span class="kt">float</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Set a and b to thread indices:</span>
   <span class="o">*</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="n">global_idx</span><span class="p">(</span><span class="n">ripple</span><span class="o">::</span><span class="n">dimx</span><span class="p">());</span>
   <span class="o">*</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">global_idx</span><span class="p">(</span><span class="n">ripple</span><span class="o">::</span><span class="n">dimx</span><span class="p">());</span>
@@ -350,6 +353,7 @@ following links:</p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 </div>
 </div>
@@ -480,7 +484,7 @@ we don’t include that here.</p>
 <span class="c1">// Step 1: Intialize all data to have a thread index sum:</span>
 <span class="n">graph</span><span class="p">.</span><span class="n">split</span><span class="p">(</span>
   <span class="n">ripple</span><span class="o">::</span><span class="n">ExecutionKind</span><span class="o">::</span><span class="n">Gpu</span><span class="p">,</span>
-  <span class="p">[]</span> <span class="n">ripple_host_device</span> <span class="p">(</span><span class="k">auto</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="p">[]</span> <span class="n">ripple_all</span> <span class="p">(</span><span class="k">auto</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">x</span><span class="o">-&gt;</span><span class="n">x</span><span class="p">()</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="n">global_idx</span><span class="p">(</span><span class="n">ripple</span><span class="o">::</span><span class="n">dimx</span><span class="p">());</span>
     <span class="n">x</span><span class="o">-&gt;</span><span class="n">y</span><span class="p">()</span> <span class="o">=</span> <span class="n">y</span><span class="p">.</span><span class="n">global_idx</span><span class="p">(</span><span class="n">ripple</span><span class="o">::</span><span class="n">dimy</span><span class="p">());</span>
   <span class="p">},</span> <span class="n">soa_x</span><span class="p">);</span>
@@ -489,7 +493,7 @@ we don’t include that here.</p>
 <span class="c1">// This must be submitted after the previous operation, hence then_split</span>
 <span class="n">graph</span><span class="p">.</span><span class="n">then_split</span><span class="p">(</span>
   <span class="n">ripple</span><span class="o">::</span><span class="n">ExecutionKind</span><span class="o">::</span><span class="n">Gpu</span><span class="p">,</span>
-  <span class="p">[]</span> <span class="n">ripple_host_device</span> <span class="p">(</span><span class="k">auto</span> <span class="n">x</span><span class="p">,</span> <span class="k">auto</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="p">[]</span> <span class="n">ripple_all</span> <span class="p">(</span><span class="k">auto</span> <span class="n">x</span><span class="p">,</span> <span class="k">auto</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">const</span> <span class="kt">float</span> <span class="n">dot</span> <span class="o">=</span> <span class="n">x</span><span class="o">-&gt;</span><span class="n">dot</span><span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="p">);</span>
     <span class="n">y</span><span class="o">-&gt;</span><span class="n">x</span><span class="p">()</span> <span class="o">=</span> <span class="n">dot</span><span class="p">;</span>
     <span class="n">y</span><span class="o">-&gt;</span><span class="n">y</span><span class="p">()</span> <span class="o">=</span> <span class="n">dot</span><span class="p">;</span>
@@ -501,7 +505,7 @@ we don’t include that here.</p>
 <span class="c1">// neighbour dot product result computed on any adjacent cells on a different</span>
 <span class="c1">// gpu:</span>
 <span class="n">graph</span><span class="p">.</span><span class="n">then_split</span><span class="p">(</span><span class="n">ripple</span><span class="o">::</span><span class="n">ExecutionKind</span><span class="o">::</span><span class="n">Gpu</span><span class="p">,</span>
-  <span class="p">[]</span> <span class="n">ripple_host_device</span> <span class="p">(</span><span class="k">auto</span> <span class="n">x</span><span class="p">,</span> <span class="k">auto</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="p">[]</span> <span class="n">ripple_all</span> <span class="p">(</span><span class="k">auto</span> <span class="n">x</span><span class="p">,</span> <span class="k">auto</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">x</span><span class="o">-&gt;</span><span class="n">x</span><span class="p">()</span> <span class="o">=</span> <span class="n">y</span><span class="p">.</span><span class="n">offset</span><span class="p">(</span><span class="n">ripple</span><span class="o">::</span><span class="n">dimx</span><span class="p">(),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">y</span><span class="p">.</span><span class="n">offset</span><span class="p">(</span><span class="n">ripple</span><span class="o">::</span><span class="n">dimx</span><span class="p">(),</span> <span class="mi">1</span><span class="p">);</span>
   <span class="n">x</span><span class="o">-&gt;</span><span class="n">y</span><span class="p">()</span> <span class="o">=</span> <span class="n">y</span><span class="p">.</span><span class="n">offset</span><span class="p">(</span><span class="n">ripple</span><span class="o">::</span><span class="n">dimy</span><span class="p">(),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">y</span><span class="p">.</span><span class="n">offset</span><span class="p">(</span><span class="n">ripple</span><span class="o">::</span><span class="n">dimy</span><span class="p">(),</span> <span class="mi">1</span><span class="p">);</span>
 <span class="p">},</span> <span class="n">soa_x</span><span class="p">,</span> <span class="n">ripple</span><span class="o">::</span><span class="n">concurrent_padded_access</span><span class="p">(</span><span class="n">soa_y</span><span class="p">));</span>

@@ -141,6 +141,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -237,7 +238,7 @@
 
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Impl</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">Printable</span> <span class="p">{</span>
-  <span class="n">ripple_host_device</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">impl</span><span class="p">()</span> <span class="k">const</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">Impl</span><span class="o">*</span> <span class="p">{</span>
+  <span class="n">ripple_all</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">impl</span><span class="p">()</span> <span class="k">const</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">Impl</span><span class="o">*</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">Impl</span><span class="o">*&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
   <span class="p">}</span>
 

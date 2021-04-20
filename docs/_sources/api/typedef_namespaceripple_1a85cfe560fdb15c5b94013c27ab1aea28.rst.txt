@@ -3,7 +3,7 @@
 Typedef ripple::non_block_enable_t
 ==================================
 
-- Defined in :ref:`file_include_ripple_core_container_block_traits.hpp`
+- Defined in :ref:`file_include_ripple_container_block_traits.hpp`
 
 
 Typedef Documentation

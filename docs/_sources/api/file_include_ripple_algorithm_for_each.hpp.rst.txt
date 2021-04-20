@@ -1,0 +1,66 @@
+
+.. _file_include_ripple_algorithm_for_each.hpp:
+
+File for_each.hpp
+=================
+
+
+= ripple/algorithm/for_each_.hpp ------------------ -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/algorithm/for_each.hpp``)
+------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_algorithm_for_each.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file implements a for each functionality on containers.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``ripple/container/tuple.hpp`` (:ref:`file_include_ripple_container_tuple.hpp`)
+
+- ``ripple/utility/forward.hpp`` (:ref:`file_include_ripple_utility_forward.hpp`)
+
+- ``unrolled_for.hpp`` (:ref:`file_include_ripple_algorithm_unrolled_for.hpp`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+

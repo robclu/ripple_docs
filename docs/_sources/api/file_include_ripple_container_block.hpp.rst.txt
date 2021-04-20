@@ -1,0 +1,89 @@
+
+.. _file_include_ripple_container_block.hpp:
+
+File block.hpp
+==============
+
+
+= :ref:`file_include_ripple_container_block.hpp` ---------------------- -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/container/block.hpp``)
+---------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_container_block.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file defines a class for a block which has both host and device data.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``device_block.hpp`` (:ref:`file_include_ripple_container_device_block.hpp`)
+
+- ``host_block.hpp`` (:ref:`file_include_ripple_container_host_block.hpp`)
+
+- ``memcopy_padding.hpp`` (:ref:`file_include_ripple_container_memcopy_padding.hpp`)
+
+- ``ripple/algorithm/reduce.hpp`` (:ref:`file_include_ripple_algorithm_reduce.hpp`)
+
+- ``ripple/arch/topology.hpp`` (:ref:`file_include_ripple_arch_topology.hpp`)
+
+- ``ripple/iterator/indexed_iterator.hpp`` (:ref:`file_include_ripple_iterator_indexed_iterator.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_container_tensor.hpp`
+
+- :ref:`file_include_ripple_graph_detail_utils_.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1Block`
+
+- :ref:`exhale_struct_structripple_1_1MultiBlockTraits_3_01Block_3_01T_00_01Dimensions_01_4_01_4`
+

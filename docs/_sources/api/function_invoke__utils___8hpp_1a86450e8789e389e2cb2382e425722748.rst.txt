@@ -1,0 +1,13 @@
+.. _exhale_function_invoke__utils___8hpp_1a86450e8789e389e2cb2382e425722748:
+
+Template Function ripple::kernel::extract_device_block(T&&)
+===========================================================
+
+- Defined in :ref:`file_include_ripple_functional_kernel_invoke_utils_.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::kernel::extract_device_block(T&&)

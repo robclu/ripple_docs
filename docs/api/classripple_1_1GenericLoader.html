@@ -32,9 +32,7 @@
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
   <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
   <link rel="index" title="Index" href="../genindex.html" />
-  <link rel="search" title="Search" href="../search.html" />
-  <link rel="next" title="Class Graph" href="classripple_1_1Graph.html" />
-  <link rel="prev" title="Class Freelist" href="classripple_1_1Freelist.html" /> 
+  <link rel="search" title="Search" href="../search.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -143,6 +141,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -182,8 +181,6 @@
         </a> &gt;
       </li>
 
-        
-          <li><a href="ripple_api_root.html">Ripple API</a> &gt;</li>
         
       <li>Class GenericLoader</li>
     
@@ -231,87 +228,10 @@
 </div>
 <div class="section" id="class-documentation">
 <h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
-<dl class="cpp class">
-<dt id="_CPPv4N6ripple13GenericLoaderE">
-<span id="_CPPv3N6ripple13GenericLoaderE"></span><span id="_CPPv2N6ripple13GenericLoaderE"></span><span id="ripple::GenericLoader"></span><span class="target" id="classripple_1_1GenericLoader"></span><em class="property">class </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">GenericLoader</code> : <em class="property">public</em> ripple::<a class="reference internal" href="classripple_1_1BoundaryLoader.html#_CPPv4I0EN6ripple14BoundaryLoaderE" title="ripple::BoundaryLoader">BoundaryLoader</a>&lt;<a class="reference internal" href="#_CPPv4N6ripple13GenericLoaderE" title="ripple::GenericLoader">GenericLoader</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple13GenericLoaderE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>The <a class="reference internal" href="#classripple_1_1GenericLoader"><span class="std std-ref">GenericLoader</span></a> is an implementation of an <a class="reference internal" href="classripple_1_1BoundaryLoader.html#classripple_1_1BoundaryLoader"><span class="std std-ref">BoundaryLoader</span></a> which can be configured to have different behaviour at different boundary locations. </p>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="cpp function">
-<dt id="_CPPv4I0EN6ripple13GenericLoader9configureER13GenericLoaderRR3Dim16BoundaryLocation12BoundaryType">
-<span id="_CPPv3I0EN6ripple13GenericLoader9configureERR3Dim16BoundaryLocation12BoundaryType"></span><span id="_CPPv2I0EN6ripple13GenericLoader9configureERR3Dim16BoundaryLocation12BoundaryType"></span>template&lt;typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1GenericLoader_1ad94ef387c1e06d6a5e246e0cd42bcf8f"></span><em class="property">constexpr</em> auto <code class="sig-name descname">configure</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN6ripple13GenericLoader9configureER13GenericLoaderRR3Dim16BoundaryLocation12BoundaryType" title="ripple::GenericLoader::configure::Dim">Dim</a> &amp;&amp;<em>dim</em>, <a class="reference internal" href="enum_namespaceripple_1ad242b598ccd7062fe54ff42b2f8212c7.html#_CPPv4N6ripple16BoundaryLocationE" title="ripple::BoundaryLocation">BoundaryLocation</a> <em>location</em>, <a class="reference internal" href="enum_namespaceripple_1a4ec397f4549f779f188aa0580cb735ca.html#_CPPv4N6ripple12BoundaryTypeE" title="ripple::BoundaryType">BoundaryType</a> <em>type</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple13GenericLoaderE" title="ripple::GenericLoader">GenericLoader</a>&amp;<a class="headerlink" href="#_CPPv4I0EN6ripple13GenericLoader9configureER13GenericLoaderRR3Dim16BoundaryLocation12BoundaryType" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Contigures the loader for the given dimension to have the given location and type for the dimension. </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>A refernce to the loader. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to confiure. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">location</span></code>: The location to configure. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code>: The type of the boundary at the location. </p></li>
-</ul>
-</dd>
-<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4NK6ripple13GenericLoader13configurationEv">
-<span id="_CPPv3NK6ripple13GenericLoader13configurationEv"></span><span id="_CPPv2NK6ripple13GenericLoader13configurationEv"></span><span id="ripple::GenericLoader::configurationCCE"></span><span class="target" id="classripple_1_1GenericLoader_1adc8789cb163fcb37961e0a78f7c22eb1"></span><em class="property">constexpr</em> auto <code class="sig-name descname">configuration</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; uint64_t<a class="headerlink" href="#_CPPv4NK6ripple13GenericLoader13configurationEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets the configuration value of the loader, useful for debugging. </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>The configuration of the loader. </p>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4I00ENK6ripple13GenericLoader10load_frontEvRR8IteratoriRR3Dim">
-<span id="_CPPv3I00ENK6ripple13GenericLoader10load_frontERR8IteratoriRR3Dim"></span><span id="_CPPv2I00ENK6ripple13GenericLoader10load_frontERR8IteratoriRR3Dim"></span>template&lt;typename <code class="sig-name descname">Iterator</code>, typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1GenericLoader_1a7082d418f50ec62033c2caf694b220ac"></span><em class="property">constexpr</em> auto <code class="sig-name descname">load_front</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00ENK6ripple13GenericLoader10load_frontEvRR8IteratoriRR3Dim" title="ripple::GenericLoader::load_front::Iterator">Iterator</a> &amp;&amp;<em>it</em>, int <em>index</em>, <a class="reference internal" href="#_CPPv4I00ENK6ripple13GenericLoader10load_frontEvRR8IteratoriRR3Dim" title="ripple::GenericLoader::load_front::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4I00ENK6ripple13GenericLoader10load_frontEvRR8IteratoriRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Loads the front boundary in the given dimension, using the value of the index in the dimension to find the appropriate cell. </p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">it</span></code>: An iterator to the boundary cell to load. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">index</span></code>: The index of the boundary cell in the dimension. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to load the boundary in. </p></li>
-</ul>
-</dd>
-<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Iterator</span></code>: The type of the iterator. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4I00ENK6ripple13GenericLoader9load_backEvRR8IteratoriRR3Dim">
-<span id="_CPPv3I00ENK6ripple13GenericLoader9load_backERR8IteratoriRR3Dim"></span><span id="_CPPv2I00ENK6ripple13GenericLoader9load_backERR8IteratoriRR3Dim"></span>template&lt;typename <code class="sig-name descname">Iterator</code>, typename <code class="sig-name descname">Dim</code>&gt;<br /><span class="target" id="classripple_1_1GenericLoader_1ae1c81069c25f26dcc758cbc059351417"></span><em class="property">constexpr</em> auto <code class="sig-name descname">load_back</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00ENK6ripple13GenericLoader9load_backEvRR8IteratoriRR3Dim" title="ripple::GenericLoader::load_back::Iterator">Iterator</a> &amp;&amp;<em>it</em>, int <em>index</em>, <a class="reference internal" href="#_CPPv4I00ENK6ripple13GenericLoader9load_backEvRR8IteratoriRR3Dim" title="ripple::GenericLoader::load_back::Dim">Dim</a> &amp;&amp;<em>dim</em><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4I00ENK6ripple13GenericLoader9load_backEvRR8IteratoriRR3Dim" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Loads the back boundary in the given dimension, using the value of the index in the dimension to find the appropriate cell. </p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">it</span></code>: An iterator to the boundary cell to load. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">index</span></code>: The index of the boundary cell in the dimension. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimension to load the boundary in. </p></li>
-</ul>
-</dd>
-<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Iterator</span></code>: The type of the iterator. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Dim</span></code>: The type of the dimension specifier. </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenclass: Cannot find class “ripple::GenericLoader” in doxygen xml output for project “Ripple” from directory: /home/hiccup/Catalyst/ripple/build/docs/docs/doxygen/xml</p>
 </div>
-</dd></dl>
-
 </div>
 </div>
 
@@ -320,15 +240,6 @@
               
             </div>
             <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="classripple_1_1Graph.html" class="btn btn-neutral float-right" title="Class Graph" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
-      
-      
-        <a href="classripple_1_1Freelist.html" class="btn btn-neutral" title="Class Freelist" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
-      
-    </div>
   
 
   

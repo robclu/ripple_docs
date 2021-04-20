@@ -1,0 +1,149 @@
+
+.. _program_listing_file_include_ripple_padding_ghost_index.hpp:
+
+Program Listing for File ghost_index.hpp
+========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_padding_ghost_index.hpp>` (``include/ripple/padding/ghost_index.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_PADDING_GHOST_INDEX_HPP
+   #define RIPPLE_PADDING_GHOST_INDEX_HPP
+   
+   #include <ripple/algorithm/unrolled_for.hpp>
+   #include <ripple/execution/thread_index.hpp>
+   #include <ripple/math/math.hpp>
+   #include <ripple/utility/dim.hpp>
+   
+   namespace ripple {
+   
+   /*==--- [forward declaration] ----------------------------------------------==*/
+   
+   template <size_t Dimensions>
+   struct GhostIndex;
+   
+   /*==--- [aliases] ----------------------------------------------------------==*/
+   
+   using GhostIndex1d = GhostIndex<1>;
+   using GhostIndex2d = GhostIndex<2>;
+   using GhostIndex3d = GhostIndex<3>;
+   
+   /*==--- [implementation] ---------------------------------------------------==*/
+   
+   template <size_t Dimensions>
+   struct GhostIndex {
+     using Value = int8_t;
+   
+     static constexpr auto void_value = Value{0};
+   
+    private:
+     template <typename Iterator, typename Dim>
+     ripple_all constexpr auto init_dim(
+       Iterator&& it,
+       size_t     idx,
+       Dim&&      dim,
+       size_t     size,
+       bool&      valid_cell) noexcept -> void {
+       /* Set the value, and make sure that there is no overflow if the index
+        * is too big, otherwise indices in the middle of a domain will think that
+        * they need to load data! */
+       constexpr size_t max_padding = size_t{16};
+       values_[dim] =
+         static_cast<Value>(std::min(max_padding, std::min(idx, size - idx - 1)));
+   
+       /* Second condition for the case that there are more threads than the
+        * iterator size in the dimension, and idx > it.size(), making the index
+        * negative. */
+       if (values_[dim] < it.padding() && values_[dim] >= Value{0}) {
+         values_[dim] -= it.padding();
+         const int idx_i     = static_cast<int>(idx);
+         const int size_half = static_cast<int>(size) / 2;
+   
+         /* Have to handle the case that the dimension is very small, i.e 2
+          * elements, then idx_i - size_half = 0, rather than 1 which should be
+          * the sign to use. */
+         values_[dim] *= idx_i == size_half ? 1 : math::sign(idx_i - size_half);
+         valid_cell = true;
+         return;
+       }
+       set_as_void(dim);
+     }
+   
+    public:
+     template <typename Iterator>
+     ripple_all constexpr auto
+     init_as_global(Iterator&& it) noexcept -> bool {
+       bool loader_cell = false;
+       unrolled_for<Dimensions>([&](auto d) {
+         constexpr auto dim = d;
+         const auto     idx = it.global_idx(dim);
+         init_dim(it, idx, dim, it.global_size(dim), loader_cell);
+       });
+       return loader_cell;
+     }
+   
+     template <typename Iterator, typename Space>
+     ripple_all constexpr auto
+     init_as_block(Iterator&& it, Space&& space) noexcept -> bool {
+       bool loader_cell = false;
+       unrolled_for<Dimensions>([&](auto d) {
+         constexpr auto dim = d;
+         const auto     idx = thread_idx(dim);
+         init_dim(it, idx, dim, space.size(dim), loader_cell);
+       });
+       return loader_cell;
+     }
+   
+     ripple_all constexpr auto dimensions() const noexcept -> size_t {
+       return Dimensions;
+     }
+   
+     /*==--- [access] ---------------------------------------------------------==*/
+   
+     template <typename Dim>
+     ripple_all constexpr auto index(Dim&& dim) const noexcept -> Value {
+       return values_[dim];
+     }
+   
+     template <typename Dim>
+     ripple_all constexpr auto index(Dim&& dim) noexcept -> Value& {
+       return values_[dim];
+     }
+   
+     template <typename Dim>
+     ripple_all constexpr auto
+     abs_index(Dim&& dim) const noexcept -> Value {
+       return math::sign(values_[dim]) * values_[dim];
+     }
+   
+     template <typename Dim>
+     ripple_all constexpr auto is_front(Dim&& dim) const noexcept -> bool {
+       return values_[dim] > Value{0};
+     }
+   
+     template <typename Dim>
+     ripple_all constexpr auto is_back(Dim&& dim) const noexcept -> bool {
+       return values_[dim] < Value{0};
+     }
+   
+     template <typename Dim>
+     ripple_all constexpr auto is_void(Dim&& dim) const noexcept -> bool {
+       return values_[dim] == void_value;
+     }
+   
+     template <typename Dim>
+     ripple_all constexpr auto set_as_void(Dim&& dim) noexcept -> void {
+       values_[dim] = void_value;
+     }
+   
+    private:
+     Value values_[3] = {void_value, void_value, void_value};
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_PADDING_GHOST_INDEX_HPP

@@ -1,0 +1,15 @@
+.. _dir__home_hiccup_Catalyst_ripple_include_ripple_functional_kernel:
+
+
+Directory kernel
+================
+
+
+|exhale_lsh| :ref:`Parent directory <dir__home_hiccup_Catalyst_ripple_include_ripple_functional>` (``/home/hiccup/Catalyst/ripple/include/ripple/functional``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+*Directory path:* ``/home/hiccup/Catalyst/ripple/include/ripple/functional/kernel``
+
+
+

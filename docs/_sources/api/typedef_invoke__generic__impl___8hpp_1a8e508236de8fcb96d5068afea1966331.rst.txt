@@ -3,7 +3,7 @@
 Typedef ripple::kernel::cpu::non_any_block_or_shared_or_expansion_enable_t
 ==========================================================================
 
-- Defined in :ref:`file_include_ripple_core_functional_kernel_invoke_generic_impl_.hpp`
+- Defined in :ref:`file_include_ripple_functional_kernel_invoke_generic_impl_.hpp`
 
 
 Typedef Documentation

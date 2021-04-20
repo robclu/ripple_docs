@@ -3,7 +3,7 @@
 Template Class Tensor
 =====================
 
-- Defined in :ref:`file_include_ripple_core_container_tensor.hpp`
+- Defined in :ref:`file_include_ripple_container_tensor.hpp`
 
 
 Class Documentation

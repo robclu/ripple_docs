@@ -3,7 +3,7 @@
 Template Struct SharedWrapperTraits< SharedWrapper< T > >
 =========================================================
 
-- Defined in :ref:`file_include_ripple_core_container_shared_wrapper.hpp`
+- Defined in :ref:`file_include_ripple_container_shared_wrapper.hpp`
 
 
 Struct Documentation

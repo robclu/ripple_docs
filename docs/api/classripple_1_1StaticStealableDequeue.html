@@ -143,6 +143,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../performance/saxpy.html">Saxpy Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance/particle_update.html">Particle Update Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/eikonal_solver.html">Eikonal Solver Performance</a></li>
 </ul>
 
         
@@ -218,13 +219,13 @@
   <div class="section" id="template-class-staticstealabledequeue">
 <span id="exhale-class-classripple-1-1staticstealabledequeue"></span><h1>Template Class StaticStealableDequeue<a class="headerlink" href="#template-class-staticstealabledequeue" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>Defined in <a class="reference internal" href="file_include_ripple_core_container_static_stealable_dequeue.hpp.html#file-include-ripple-core-container-static-stealable-dequeue-hpp"><span class="std std-ref">File static_stealable_dequeue.hpp</span></a></p></li>
+<li><p>Defined in <a class="reference internal" href="file_include_ripple_container_static_stealable_dequeue.hpp.html#file-include-ripple-container-static-stealable-dequeue-hpp"><span class="std std-ref">File static_stealable_dequeue.hpp</span></a></p></li>
 </ul>
 <div class="section" id="class-documentation">
 <h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp class">
 <dt id="_CPPv4I0_8uint32_tEN6ripple22StaticStealableDequeueE">
-<span id="_CPPv3I0_8uint32_tEN6ripple22StaticStealableDequeueE"></span><span id="_CPPv2I0_8uint32_tEN6ripple22StaticStealableDequeueE"></span>template&lt;typename <code class="sig-name descname">Object</code>, uint32_t <code class="sig-name descname">MaxObjects</code>&gt;<br /><span class="target" id="classripple_1_1StaticStealableDequeue"></span><em class="property">class </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">StaticStealableDequeue</code><a class="headerlink" href="#_CPPv4I0_8uint32_tEN6ripple22StaticStealableDequeueE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3I0_8uint32_tEN6ripple22StaticStealableDequeueE"></span><span id="_CPPv2I0_8uint32_tEN6ripple22StaticStealableDequeueE"></span>template&lt;typename <code class="sig-name descname">Type</code>, uint32_t <code class="sig-name descname">MaxElements</code>&gt;<br /><span class="target" id="classripple_1_1StaticStealableDequeue"></span><em class="property">class </em><code class="sig-prename descclassname">ripple<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">StaticStealableDequeue</code><a class="headerlink" href="#_CPPv4I0_8uint32_tEN6ripple22StaticStealableDequeueE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The <a class="reference internal" href="#classripple_1_1StaticStealableDequeue"><span class="std std-ref">StaticStealableDequeue</span></a> is a fixed-size, concurrent, lock-free stealable double-ended queue implementation. </p>
 <p>It is designed for a single thread to push and pop onto and from the bottom of the queue, respectively, and any number of threads to steal from the top of the queue.</p>
 <p>The API provides by try_push, push, pop, steal, and size.</p>
@@ -246,8 +247,8 @@
 </p>
 <p><dl class="simple">
 <dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Object</span></code>: The type of the data in the queue. </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">MaxObjects</span></code>: The maximum number of objects for the queue. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Type</span></code>: The type of the data in the queue. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MaxElements</span></code>: The maximum number of elements for the queue. </p></li>
 </ul>
 </dd>
 </dl>
@@ -255,33 +256,32 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Types</p>
 <dl class="cpp type">
-<dt id="_CPPv4N6ripple22StaticStealableDequeue9size_typeE">
-<span id="_CPPv3N6ripple22StaticStealableDequeue9size_typeE"></span><span id="_CPPv2N6ripple22StaticStealableDequeue9size_typeE"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1a8a2ea6963c17611aa3299033d1215ba0"></span><em class="property">using </em><code class="sig-name descname">size_type</code> = uint32_t<a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue9size_typeE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>== [aliases] —————————————————-==// </p>
-<p>Defines the size type of for the indices. </p>
+<dt id="_CPPv4N6ripple22StaticStealableDequeue4SizeE">
+<span id="_CPPv3N6ripple22StaticStealableDequeue4SizeE"></span><span id="_CPPv2N6ripple22StaticStealableDequeue4SizeE"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1a78e3d413cd6d41a4f28dd405a1968ba7"></span><em class="property">using </em><code class="sig-name descname">Size</code> = uint32_t<a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue4SizeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the size type of for the indices. </p>
 </dd></dl>
 
 <dl class="cpp type">
-<dt id="_CPPv4N6ripple22StaticStealableDequeue8atomic_tE">
-<span id="_CPPv3N6ripple22StaticStealableDequeue8atomic_tE"></span><span id="_CPPv2N6ripple22StaticStealableDequeue8atomic_tE"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1a2cb5c77804f759b31ec60421ceb43511"></span><em class="property">using </em><code class="sig-name descname">atomic_t</code> = std::atomic&lt;<a class="reference internal" href="#_CPPv4N6ripple22StaticStealableDequeue9size_typeE" title="ripple::StaticStealableDequeue::size_type">size_type</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue8atomic_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N6ripple22StaticStealableDequeue6AtomicE">
+<span id="_CPPv3N6ripple22StaticStealableDequeue6AtomicE"></span><span id="_CPPv2N6ripple22StaticStealableDequeue6AtomicE"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1a44053a1960ae4db5c33575dcfd458843"></span><em class="property">using </em><code class="sig-name descname">Atomic</code> = std::atomic&lt;<a class="reference internal" href="#_CPPv4N6ripple22StaticStealableDequeue4SizeE" title="ripple::StaticStealableDequeue::Size">Size</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue6AtomicE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Defines the atomic type used for the index pointers. </p>
 </dd></dl>
 
 <dl class="cpp type">
-<dt id="_CPPv4N6ripple22StaticStealableDequeue8object_tE">
-<span id="_CPPv3N6ripple22StaticStealableDequeue8object_tE"></span><span id="_CPPv2N6ripple22StaticStealableDequeue8object_tE"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1aa58b667de12d736b776093589ed3539b"></span><em class="property">using </em><code class="sig-name descname">object_t</code> = <a class="reference internal" href="#_CPPv4I0_8uint32_tEN6ripple22StaticStealableDequeueE" title="ripple::StaticStealableDequeue::Object">Object</a><a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue8object_tE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Defines the type of the objects in the queue. </p>
+<dt id="_CPPv4N6ripple22StaticStealableDequeue7ElementE">
+<span id="_CPPv3N6ripple22StaticStealableDequeue7ElementE"></span><span id="_CPPv2N6ripple22StaticStealableDequeue7ElementE"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1a83e5f8f0b812ec48943e41056c428cc8"></span><em class="property">using </em><code class="sig-name descname">Element</code> = <a class="reference internal" href="#_CPPv4I0_8uint32_tEN6ripple22StaticStealableDequeueE" title="ripple::StaticStealableDequeue::Type">Type</a><a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue7ElementE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines the type of the elements in the queue. </p>
 </dd></dl>
 
 <dl class="cpp type">
-<dt id="_CPPv4N6ripple22StaticStealableDequeue10optional_tE">
-<span id="_CPPv3N6ripple22StaticStealableDequeue10optional_tE"></span><span id="_CPPv2N6ripple22StaticStealableDequeue10optional_tE"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1a45ee1f1a3dac787688d40a7cc73df1a3"></span><em class="property">using </em><code class="sig-name descname">optional_t</code> = std::optional&lt;<a class="reference internal" href="#_CPPv4N6ripple22StaticStealableDequeue8object_tE" title="ripple::StaticStealableDequeue::object_t">object_t</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue10optional_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N6ripple22StaticStealableDequeue8OptionalE">
+<span id="_CPPv3N6ripple22StaticStealableDequeue8OptionalE"></span><span id="_CPPv2N6ripple22StaticStealableDequeue8OptionalE"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1ae7e3b55d7d0afffdd434832494b6df2f"></span><em class="property">using </em><code class="sig-name descname">Optional</code> = std::optional&lt;<a class="reference internal" href="#_CPPv4N6ripple22StaticStealableDequeue7ElementE" title="ripple::StaticStealableDequeue::Element">Element</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue8OptionalE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Defines an optional typeto use when returning value types. </p>
 </dd></dl>
 
 <dl class="cpp type">
-<dt id="_CPPv4N6ripple22StaticStealableDequeue11container_tE">
-<span id="_CPPv3N6ripple22StaticStealableDequeue11container_tE"></span><span id="_CPPv2N6ripple22StaticStealableDequeue11container_tE"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1a0aaa9629a3c21e956d2cfd95a6c7025b"></span><em class="property">using </em><code class="sig-name descname">container_t</code> = std::vector&lt;<a class="reference internal" href="#_CPPv4N6ripple22StaticStealableDequeue8object_tE" title="ripple::StaticStealableDequeue::object_t">object_t</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue11container_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4N6ripple22StaticStealableDequeue9ContainerE">
+<span id="_CPPv3N6ripple22StaticStealableDequeue9ContainerE"></span><span id="_CPPv2N6ripple22StaticStealableDequeue9ContainerE"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1a42777ca2cd5acbd7e95209e172df5696"></span><em class="property">using </em><code class="sig-name descname">Container</code> = std::vector&lt;<a class="reference internal" href="#_CPPv4N6ripple22StaticStealableDequeue7ElementE" title="ripple::StaticStealableDequeue::Element">Element</a>&gt;<a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue9ContainerE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Defines the type of container used to store the queue’s objects. </p>
 </dd></dl>
 
@@ -290,14 +290,14 @@
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="cpp function">
 <dt id="_CPPv4N6ripple22StaticStealableDequeue22StaticStealableDequeueEv">
-<span id="_CPPv3N6ripple22StaticStealableDequeue22StaticStealableDequeueEv"></span><span id="_CPPv2N6ripple22StaticStealableDequeue22StaticStealableDequeueEv"></span><span id="ripple::StaticStealableDequeue::StaticStealableDequeue"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1a75a9c3e08a773b32299f31da82e510f4"></span><code class="sig-name descname">StaticStealableDequeue</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = default<a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue22StaticStealableDequeueEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6ripple22StaticStealableDequeue22StaticStealableDequeueEv"></span><span id="_CPPv2N6ripple22StaticStealableDequeue22StaticStealableDequeueEv"></span><span id="ripple::StaticStealableDequeue::StaticStealableDequeue"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1a92e77c137838277dfcd7f3acab860b03"></span><code class="sig-name descname">StaticStealableDequeue</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = default<a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue22StaticStealableDequeueEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Default constructor for the queue. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N6ripple22StaticStealableDequeue22StaticStealableDequeueERR22StaticStealableDequeue">
-<span id="_CPPv3N6ripple22StaticStealableDequeue22StaticStealableDequeueERR22StaticStealableDequeue"></span><span id="_CPPv2N6ripple22StaticStealableDequeue22StaticStealableDequeueERR22StaticStealableDequeue"></span><span id="ripple::StaticStealableDequeue::StaticStealableDequeue__StaticStealableDequeueRR"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1adc5c48b6ba14d2531f57c8972c289de8"></span><code class="sig-name descname">StaticStealableDequeue</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple22StaticStealableDequeue22StaticStealableDequeueERR22StaticStealableDequeue" title="ripple::StaticStealableDequeue::StaticStealableDequeue">StaticStealableDequeue</a> &amp;&amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue22StaticStealableDequeueERR22StaticStealableDequeue" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Move constructor to move the <code class="docutils literal notranslate"><span class="pre">other</span></code> queue into this one. </p>
+<span id="_CPPv3N6ripple22StaticStealableDequeue22StaticStealableDequeueERR22StaticStealableDequeue"></span><span id="_CPPv2N6ripple22StaticStealableDequeue22StaticStealableDequeueERR22StaticStealableDequeue"></span><span id="ripple::StaticStealableDequeue::StaticStealableDequeue__StaticStealableDequeueRR"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1acdd604422f59ca491cb4ee793961635f"></span><code class="sig-name descname">StaticStealableDequeue</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ripple22StaticStealableDequeue22StaticStealableDequeueERR22StaticStealableDequeue" title="ripple::StaticStealableDequeue::StaticStealableDequeue">StaticStealableDequeue</a> &amp;&amp;<em>other</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue22StaticStealableDequeueERR22StaticStealableDequeue" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Move constructor to move the other queue into this one. </p>
 <p><dl class="simple">
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: The other queue to move into this one. </p></li>
@@ -309,15 +309,17 @@
 
 <dl class="cpp function">
 <dt id="_CPPv4N6ripple22StaticStealableDequeue22StaticStealableDequeueERK22StaticStealableDequeue">
-<span id="_CPPv3N6ripple22StaticStealableDequeue22StaticStealableDequeueERK22StaticStealableDequeue"></span><span id="_CPPv2N6ripple22StaticStealableDequeue22StaticStealableDequeueERK22StaticStealableDequeue"></span><span id="ripple::StaticStealableDequeue::StaticStealableDequeue__StaticStealableDequeueCR"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1a889bdc80b65f7cb0d13fba1d4e2a0c9a"></span><code class="sig-name descname">StaticStealableDequeue</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple22StaticStealableDequeue22StaticStealableDequeueERK22StaticStealableDequeue" title="ripple::StaticStealableDequeue::StaticStealableDequeue">StaticStealableDequeue</a>&amp;<span class="sig-paren">)</span> = delete<a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue22StaticStealableDequeueERK22StaticStealableDequeue" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6ripple22StaticStealableDequeue22StaticStealableDequeueERK22StaticStealableDequeue"></span><span id="_CPPv2N6ripple22StaticStealableDequeue22StaticStealableDequeueERK22StaticStealableDequeue"></span><span id="ripple::StaticStealableDequeue::StaticStealableDequeue__StaticStealableDequeueCR"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1a819bc4f5cb7bd7809debae9e838c0e44"></span><code class="sig-name descname">StaticStealableDequeue</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6ripple22StaticStealableDequeue22StaticStealableDequeueERK22StaticStealableDequeue" title="ripple::StaticStealableDequeue::StaticStealableDequeue">StaticStealableDequeue</a>&amp;<span class="sig-paren">)</span> = delete<a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue22StaticStealableDequeueERK22StaticStealableDequeue" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Copy constructor  deleted. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4I0_16pointer_enable_tI1TEEN6ripple22StaticStealableDequeue4pushEv1T">
-<span id="_CPPv3I0_16pointer_enable_tI1TEEN6ripple22StaticStealableDequeue4pushE1T"></span><span id="_CPPv2I0_16pointer_enable_tI1TEEN6ripple22StaticStealableDequeue4pushE1T"></span>template&lt;typename <code class="sig-name descname">T</code>, <a class="reference internal" href="typedef_namespaceripple_1a1222a6f8279a47c6e153bd72a1bfcded.html#_CPPv4I0EN6ripple16pointer_enable_tE" title="ripple::pointer_enable_t">pointer_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I0_16pointer_enable_tI1TEEN6ripple22StaticStealableDequeue4pushEv1T" title="ripple::StaticStealableDequeue::push::T">T</a>&gt; = 0&gt;<br /><span class="target" id="classripple_1_1StaticStealableDequeue_1ad87a019702c46dba8d13af78ae84b575"></span>auto <code class="sig-name descname">push</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0_16pointer_enable_tI1TEEN6ripple22StaticStealableDequeue4pushEv1T" title="ripple::StaticStealableDequeue::push::T">T</a> <em>ptr</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4I0_16pointer_enable_tI1TEEN6ripple22StaticStealableDequeue4pushEv1T" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Pushes an object onto the front of the queue, when the object is an rvalue reference type. </p>
-<p>This does not check if the queue is full, and hence it <strong>will overwrite</strong> the least recently added element if the queue is full. <dl class="simple">
+<span id="_CPPv3I0_16pointer_enable_tI1TEEN6ripple22StaticStealableDequeue4pushE1T"></span><span id="_CPPv2I0_16pointer_enable_tI1TEEN6ripple22StaticStealableDequeue4pushE1T"></span>template&lt;typename <code class="sig-name descname">T</code>, <a class="reference internal" href="typedef_namespaceripple_1a1222a6f8279a47c6e153bd72a1bfcded.html#_CPPv4I0EN6ripple16pointer_enable_tE" title="ripple::pointer_enable_t">pointer_enable_t</a>&lt;<a class="reference internal" href="#_CPPv4I0_16pointer_enable_tI1TEEN6ripple22StaticStealableDequeue4pushEv1T" title="ripple::StaticStealableDequeue::push::T">T</a>&gt; = 0&gt;<br /><span class="target" id="classripple_1_1StaticStealableDequeue_1ab881f4cb1530c0220e87bb28548493f7"></span>auto <code class="sig-name descname">push</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0_16pointer_enable_tI1TEEN6ripple22StaticStealableDequeue4pushEv1T" title="ripple::StaticStealableDequeue::push::T">T</a> <em>ptr</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4I0_16pointer_enable_tI1TEEN6ripple22StaticStealableDequeue4pushEv1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Pushes an element onto the front of the queue, when the element is an rvalue reference type. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This does not check if the queue is full, and hence it <strong>will overwrite</strong> the least recently added element if the queue is full</p>
+</dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: The arguments used to construct the object. </p></li>
 </ul>
@@ -332,9 +334,11 @@
 
 <dl class="cpp function">
 <dt id="_CPPv4IDp_20non_pointer_enable_tIDp4ArgsEEN6ripple22StaticStealableDequeue4pushEvDpRR4Args">
-<span id="_CPPv3IDp_20non_pointer_enable_tIDp4ArgsEEN6ripple22StaticStealableDequeue4pushEDpRR4Args"></span><span id="_CPPv2IDp_20non_pointer_enable_tIDp4ArgsEEN6ripple22StaticStealableDequeue4pushEDpRR4Args"></span>template&lt;typename ...<code class="sig-name descname">Args</code>, non_pointer_enable_t&lt;<a class="reference internal" href="#_CPPv4IDp_20non_pointer_enable_tIDp4ArgsEEN6ripple22StaticStealableDequeue4pushEvDpRR4Args" title="ripple::StaticStealableDequeue::push::Args">Args</a>...&gt; = 0&gt;<br /><span class="target" id="classripple_1_1StaticStealableDequeue_1a7740cb2f6ad309678bec086a9c5898a4"></span>auto <code class="sig-name descname">push</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDp_20non_pointer_enable_tIDp4ArgsEEN6ripple22StaticStealableDequeue4pushEvDpRR4Args" title="ripple::StaticStealableDequeue::push::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4IDp_20non_pointer_enable_tIDp4ArgsEEN6ripple22StaticStealableDequeue4pushEvDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Pushes an object onto the front of the queue, when the object is an rvalue reference type. </p>
-<p>This does not check if the queue is full, and hence it <strong>will overwrite</strong> the least recently added element if the queue is full. <dl class="simple">
+<span id="_CPPv3IDp_20non_pointer_enable_tIDp4ArgsEEN6ripple22StaticStealableDequeue4pushEDpRR4Args"></span><span id="_CPPv2IDp_20non_pointer_enable_tIDp4ArgsEEN6ripple22StaticStealableDequeue4pushEDpRR4Args"></span>template&lt;typename ...<code class="sig-name descname">Args</code>, non_pointer_enable_t&lt;<a class="reference internal" href="#_CPPv4IDp_20non_pointer_enable_tIDp4ArgsEEN6ripple22StaticStealableDequeue4pushEvDpRR4Args" title="ripple::StaticStealableDequeue::push::Args">Args</a>...&gt; = 0&gt;<br /><span class="target" id="classripple_1_1StaticStealableDequeue_1a2d1e99332969005d0b2e9d293c667ca1"></span>auto <code class="sig-name descname">push</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDp_20non_pointer_enable_tIDp4ArgsEEN6ripple22StaticStealableDequeue4pushEvDpRR4Args" title="ripple::StaticStealableDequeue::push::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; void<a class="headerlink" href="#_CPPv4IDp_20non_pointer_enable_tIDp4ArgsEEN6ripple22StaticStealableDequeue4pushEvDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Pushes an element onto the front of the queue, when the element is an rvalue reference type. </p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This does not check if the queue is full, and hence it <strong>will overwrite</strong> the least recently added element if the queue is full.</p>
+</dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: The arguments used to construct the object. </p></li>
 </ul>
@@ -349,15 +353,17 @@
 
 <dl class="cpp function">
 <dt id="_CPPv4IDpEN6ripple22StaticStealableDequeue8try_pushEbDpRR4Args">
-<span id="_CPPv3IDpEN6ripple22StaticStealableDequeue8try_pushEDpRR4Args"></span><span id="_CPPv2IDpEN6ripple22StaticStealableDequeue8try_pushEDpRR4Args"></span>template&lt;typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classripple_1_1StaticStealableDequeue_1abd46ec817a161a051b168629e7e569e3"></span>auto <code class="sig-name descname">try_push</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDpEN6ripple22StaticStealableDequeue8try_pushEbDpRR4Args" title="ripple::StaticStealableDequeue::try_push::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4IDpEN6ripple22StaticStealableDequeue8try_pushEbDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3IDpEN6ripple22StaticStealableDequeue8try_pushEDpRR4Args"></span><span id="_CPPv2IDpEN6ripple22StaticStealableDequeue8try_pushEDpRR4Args"></span>template&lt;typename ...<code class="sig-name descname">Args</code>&gt;<br /><span class="target" id="classripple_1_1StaticStealableDequeue_1a8d42f32be986034c2582118440662ada"></span>auto <code class="sig-name descname">try_push</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDpEN6ripple22StaticStealableDequeue8try_pushEbDpRR4Args" title="ripple::StaticStealableDequeue::try_push::Args">Args</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; bool<a class="headerlink" href="#_CPPv4IDpEN6ripple22StaticStealableDequeue8try_pushEbDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Tries to push an object onto the front of the queue. </p>
-<p>Returns true if the push was successful, otherwise returns false. <dl class="simple">
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if a new object was pushed onto the queue. </p>
+</dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: The arguments used to construct the object. </p></li>
 </ul>
 </dd>
 <dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The type of the arguments for object construction. Returns true if a new object was pushed onto the queue. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Args</span></code>: The type of the arguments for object construction. </p></li>
 </ul>
 </dd>
 </dl>
@@ -366,7 +372,7 @@
 
 <dl class="cpp function">
 <dt id="_CPPv4N6ripple22StaticStealableDequeue3popEv">
-<span id="_CPPv3N6ripple22StaticStealableDequeue3popEv"></span><span id="_CPPv2N6ripple22StaticStealableDequeue3popEv"></span><span id="ripple::StaticStealableDequeue::pop"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1aac08b290ddc0d8775d9b0f6cd115fbed"></span>auto <code class="sig-name descname">pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple22StaticStealableDequeue10optional_tE" title="ripple::StaticStealableDequeue::optional_t">optional_t</a><a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue3popEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6ripple22StaticStealableDequeue3popEv"></span><span id="_CPPv2N6ripple22StaticStealableDequeue3popEv"></span><span id="ripple::StaticStealableDequeue::pop"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1ab3afa439986d19dd2699742a62d6c892"></span>auto <code class="sig-name descname">pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple22StaticStealableDequeue8OptionalE" title="ripple::StaticStealableDequeue::Optional">Optional</a><a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue3popEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Pops an object from the front of the queue. </p>
 <p>This returns an optional type which holds either the object at the bottom of the queue (the most recently added object) or an invalid optional.</p>
 <p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// If using the object directly:</span>
@@ -382,12 +388,16 @@
 </pre></div>
 </div>
 </p>
-<p>Returns an optional type which is in a valid state if the queue is not empty. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>An optional type which is in a valid state if the queue is not empty. </p>
+</dd>
+</dl>
+</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N6ripple22StaticStealableDequeue5stealEv">
-<span id="_CPPv3N6ripple22StaticStealableDequeue5stealEv"></span><span id="_CPPv2N6ripple22StaticStealableDequeue5stealEv"></span><span id="ripple::StaticStealableDequeue::steal"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1a9da6569d7ca9630861763c2a2a4ee51c"></span>auto <code class="sig-name descname">steal</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple22StaticStealableDequeue10optional_tE" title="ripple::StaticStealableDequeue::optional_t">optional_t</a><a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue5stealEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6ripple22StaticStealableDequeue5stealEv"></span><span id="_CPPv2N6ripple22StaticStealableDequeue5stealEv"></span><span id="ripple::StaticStealableDequeue::steal"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1a277a418d63f7de633c9a6a739ec218c9"></span>auto <code class="sig-name descname">steal</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple22StaticStealableDequeue8OptionalE" title="ripple::StaticStealableDequeue::Optional">Optional</a><a class="headerlink" href="#_CPPv4N6ripple22StaticStealableDequeue5stealEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Steals an object from the top of the queue. </p>
 <p>This returns an optional type which is the object if the steal was successful, or a default constructed optional if not.</p>
 <p>Example usage is:</p>
@@ -404,13 +414,17 @@
 </pre></div>
 </div>
 </p>
-<p>Returns a pointer to the top (oldest) element in the queue, or nullptr. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A pointer to the top (oldest) element in the queue, or nullptr. </p>
+</dd>
+</dl>
+</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK6ripple22StaticStealableDequeue4sizeEv">
-<span id="_CPPv3NK6ripple22StaticStealableDequeue4sizeEv"></span><span id="_CPPv2NK6ripple22StaticStealableDequeue4sizeEv"></span><span id="ripple::StaticStealableDequeue::sizeC"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1aecaef29a9cf071a22a0e4733c8a38da2"></span>auto <code class="sig-name descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple22StaticStealableDequeue9size_typeE" title="ripple::StaticStealableDequeue::size_type">size_type</a><a class="headerlink" href="#_CPPv4NK6ripple22StaticStealableDequeue4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns the number of elements in the queue. </p>
+<span id="_CPPv3NK6ripple22StaticStealableDequeue4sizeEv"></span><span id="_CPPv2NK6ripple22StaticStealableDequeue4sizeEv"></span><span id="ripple::StaticStealableDequeue::sizeC"></span><span class="target" id="classripple_1_1StaticStealableDequeue_1aa0c40efb26bebcd27711d488796916d5"></span>auto <code class="sig-name descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em> -&gt; <a class="reference internal" href="#_CPPv4N6ripple22StaticStealableDequeue4SizeE" title="ripple::StaticStealableDequeue::Size">Size</a><a class="headerlink" href="#_CPPv4NK6ripple22StaticStealableDequeue4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the number of elements in the queue. </p>
 <p>This <strong>does not</strong> always return the actual size, but an approximation of the size since top can be modified by another thread which steals. </p>
 </dd></dl>
 

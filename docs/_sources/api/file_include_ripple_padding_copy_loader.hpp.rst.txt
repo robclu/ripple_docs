@@ -1,0 +1,69 @@
+
+.. _file_include_ripple_padding_copy_loader.hpp:
+
+File copy_loader.hpp
+====================
+
+
+= :ref:`file_include_ripple_padding_copy_loader.hpp` ------------------ -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/padding/copy_loader.hpp``)
+-------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_padding_copy_loader.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file defines an implementation of an internal loader which copies the padding data from one iterator into another.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``internal_loader.hpp`` (:ref:`file_include_ripple_padding_internal_loader.hpp`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structripple_1_1CopyLoader`
+

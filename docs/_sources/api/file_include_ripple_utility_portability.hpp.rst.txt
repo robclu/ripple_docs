@@ -1,0 +1,172 @@
+
+.. _file_include_ripple_utility_portability.hpp:
+
+File portability.hpp
+====================
+
+
+= :ref:`file_include_ripple_utility_portability.hpp` ------------------ -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/utility/portability.hpp``)
+-------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_utility_portability.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file defines portability utilities.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``cstddef``
+
+- ``cstdio``
+
+- ``cuda.h``
+
+- ``cuda_runtime.h``
+
+- ``cuda_runtime_api.h``
+
+- ``exception``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_algorithm_max_element.hpp`
+
+- :ref:`file_include_ripple_arch_cpu_utils.hpp`
+
+- :ref:`file_include_ripple_arch_gpu_utils.hpp`
+
+- :ref:`file_include_ripple_arch_gpu_info.hpp`
+
+- :ref:`file_include_ripple_container_block_traits.hpp`
+
+- :ref:`file_include_ripple_container_detail_basic_tuple_.hpp`
+
+- :ref:`file_include_ripple_container_vec.hpp`
+
+- :ref:`file_include_ripple_execution_execution_traits.hpp`
+
+- :ref:`file_include_ripple_execution_execution_params.hpp`
+
+- :ref:`file_include_ripple_execution_synchronize.hpp`
+
+- :ref:`file_include_ripple_functional_functional_traits.hpp`
+
+- :ref:`file_include_ripple_math_mat.hpp`
+
+- :ref:`file_include_ripple_math_quat.hpp`
+
+- :ref:`file_include_ripple_padding_padding_loader.hpp`
+
+- :ref:`file_include_ripple_padding_internal_loader.hpp`
+
+- :ref:`file_include_ripple_space_space_traits.hpp`
+
+- :ref:`file_include_ripple_storage_storage_layout.hpp`
+
+- :ref:`file_include_ripple_storage_default_storage.hpp`
+
+- :ref:`file_include_ripple_storage_pointer_wrapper.hpp`
+
+- :ref:`file_include_ripple_storage_struct_accessor.hpp`
+
+- :ref:`file_include_ripple_utility_bitops.hpp`
+
+- :ref:`file_include_ripple_utility_detail_nth_element_impl_.hpp`
+
+- :ref:`file_include_ripple_utility_dim.hpp`
+
+- :ref:`file_include_ripple_utility_memory.hpp`
+
+- :ref:`file_include_ripple_utility_number.hpp`
+
+- :ref:`file_include_ripple_utility_range.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+
+- :ref:`namespace_ripple__gpu`
+
+- :ref:`namespace_ripple__gpu__debug`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_portability_8hpp_1ae8f55936e454a6d03a671468ee80eec5`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_portability_8hpp_1a6fca802a76a5cad9e25c983711ba3ab4`
+
+- :ref:`exhale_define_portability_8hpp_1ac28ba8fb1c8fe287d83cb754a6457a31`
+
+- :ref:`exhale_define_portability_8hpp_1afc4b41f116dfc88cc5ea8ea55b3fb68c`
+
+- :ref:`exhale_define_portability_8hpp_1a672a8260bffb3a2ec4c993b2ff903a57`
+
+- :ref:`exhale_define_portability_8hpp_1a9ff116c1f2728edfb21219451030c8f4`
+
+- :ref:`exhale_define_portability_8hpp_1aa7d8268079f5990ce857116054df36eb`
+
+- :ref:`exhale_define_portability_8hpp_1aed27224db533d80f5bbd3fd5eeb029fa`
+
+- :ref:`exhale_define_portability_8hpp_1ac629f61aabc45302833de25eb29ee88a`
+
+- :ref:`exhale_define_portability_8hpp_1a919cdc689603abec0a3960e15c3c33ad`
+
+- :ref:`exhale_define_portability_8hpp_1a767aca0c2eefa5862d1390de9655dcba`
+
+- :ref:`exhale_define_portability_8hpp_1a544dd7f206ac704ccb5af5be93af8276`
+
+- :ref:`exhale_define_portability_8hpp_1a49cf83b7877da12cbaae1c149848f042`
+
+- :ref:`exhale_define_portability_8hpp_1a36bbb4cc9c6826d0928548f40ce8c423`
+
+- :ref:`exhale_define_portability_8hpp_1a0f42519b8f664d746f9136025121dedd`
+

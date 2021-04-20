@@ -3,7 +3,7 @@
 Struct ProcInfo
 ===============
 
-- Defined in :ref:`file_include_ripple_core_arch_proc_info.hpp`
+- Defined in :ref:`file_include_ripple_arch_proc_info.hpp`
 
 
 Struct Documentation

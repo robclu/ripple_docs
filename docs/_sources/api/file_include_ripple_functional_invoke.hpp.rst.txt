@@ -1,0 +1,116 @@
+
+.. _file_include_ripple_functional_invoke.hpp:
+
+File invoke.hpp
+===============
+
+
+= ripple/kernel/invoke.hpp ------------------------ -*- C++ -*- ==** 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/ripple/functional/invoke.hpp``)
+-----------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_ripple_functional_invoke.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+                             Ripple
+
+                 Copyright (c) 2019 - 2021 Rob Clucas.
+
+
+This file is distributed under the MIT License. See LICENSE for details.
+
+==----------------------------------------------------------------------==*
+
+This file implements functionality to invoke a functor on a block.
+
+==---------------------------------------------------------------------== 
+
+
+
+
+Includes
+--------
+
+
+- ``/home/hiccup/Catalyst/ripple/include/ripple/functional/kernel/invoke_utils_.cuh``
+
+- ``/home/hiccup/Catalyst/ripple/include/ripple/functional/kernel/invoke_utils_.hpp``
+
+- ``kernel/invoke_cpu_impl_.hpp`` (:ref:`file_include_ripple_functional_kernel_invoke_cpu_impl_.hpp`)
+
+- ``kernel/invoke_generic_impl_.cuh``
+
+- ``kernel/invoke_generic_impl_.hpp`` (:ref:`file_include_ripple_functional_kernel_invoke_generic_impl_.hpp`)
+
+- ``kernel/invoke_gpu_impl_.cuh``
+
+- ``ripple/algorithm/max_element.hpp`` (:ref:`file_include_ripple_algorithm_max_element.hpp`)
+
+- ``ripple/arch/gpu_utils.hpp`` (:ref:`file_include_ripple_arch_gpu_utils.hpp`)
+
+- ``ripple/container/block.hpp`` (:ref:`file_include_ripple_container_block.hpp`)
+
+- ``ripple/container/block_traits.hpp`` (:ref:`file_include_ripple_container_block_traits.hpp`)
+
+- ``ripple/container/device_block.hpp`` (:ref:`file_include_ripple_container_device_block.hpp`)
+
+- ``ripple/execution/detail/thread_index_impl_.hpp`` (:ref:`file_include_ripple_execution_detail_thread_index_impl_.hpp`)
+
+- ``ripple/execution/dynamic_execution_params.hpp`` (:ref:`file_include_ripple_execution_dynamic_execution_params.hpp`)
+
+- ``ripple/execution/execution_params.hpp`` (:ref:`file_include_ripple_execution_execution_params.hpp`)
+
+- ``ripple/execution/execution_size.hpp`` (:ref:`file_include_ripple_execution_execution_size.hpp`)
+
+- ``ripple/execution/execution_traits.hpp`` (:ref:`file_include_ripple_execution_execution_traits.hpp`)
+
+- ``ripple/execution/execution_traits.hpp`` (:ref:`file_include_ripple_execution_execution_traits.hpp`)
+
+- ``ripple/execution/static_execution_params.hpp`` (:ref:`file_include_ripple_execution_static_execution_params.hpp`)
+
+- ``ripple/execution/synchronize.hpp`` (:ref:`file_include_ripple_execution_synchronize.hpp`)
+
+- ``ripple/execution/thread_index.hpp`` (:ref:`file_include_ripple_execution_thread_index.hpp`)
+
+- ``ripple/iterator/iterator_traits.hpp`` (:ref:`file_include_ripple_iterator_iterator_traits.hpp`)
+
+- ``ripple/padding/copy_loader.hpp`` (:ref:`file_include_ripple_padding_copy_loader.hpp`)
+
+- ``ripple/padding/load_padding.hpp`` (:ref:`file_include_ripple_padding_load_padding.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_ripple_container_tensor.hpp`
+
+- :ref:`file_include_ripple_graph_memcopy.hpp`
+
+- :ref:`file_include_ripple_graph_splitter.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_ripple`
+

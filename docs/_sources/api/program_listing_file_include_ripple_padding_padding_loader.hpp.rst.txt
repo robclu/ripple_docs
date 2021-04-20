@@ -1,0 +1,61 @@
+
+.. _program_listing_file_include_ripple_padding_padding_loader.hpp:
+
+Program Listing for File padding_loader.hpp
+===========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_padding_padding_loader.hpp>` (``include/ripple/padding/padding_loader.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_PADDING_PADDING_LOADER_HPP
+   #define RIPPLE_PADDING_PADDING_LOADER_HPP
+   
+   #include <ripple/iterator/iterator_traits.hpp>
+   #include <ripple/utility/portability.hpp>
+   
+   namespace ripple {
+   
+   template <typename Impl>
+   class PaddingLoader {
+     ripple_all constexpr auto impl() const noexcept -> const Impl* {
+       return static_cast<const Impl*>(this);
+     }
+   
+    protected:
+     template <typename Iterator>
+     ripple_all auto
+     static_assert_iterator(Iterator&&) const noexcept -> void {
+       static_assert(
+         is_iterator_v<Iterator>,
+         "Padding loader requires a parameter which is an iterator!");
+     }
+   
+    public:
+     template <typename Iterator, typename Dim, typename... Args>
+     ripple_all constexpr auto
+     load_front(Iterator&& it, int index, Dim&& dim, Args&&... args) const noexcept
+       -> void {
+       impl()->load_front(
+         ripple_forward(it), index, ripple_forward(dim), ripple_forward(args)...);
+     }
+   
+     template <typename Iterator, typename Dim, typename... Args>
+     ripple_all constexpr auto
+     load_back(Iterator&& it, int index, Dim&& dim, Args&&... args) const noexcept
+       -> void {
+       impl()->load_back(
+         ripple_forward(it), index, ripple_forward(dim), ripple_forward(args)...);
+     }
+   };
+   
+   template <typename T>
+   static constexpr bool is_loader_v =
+     std::is_base_of_v<PaddingLoader<std::decay_t<T>>, std::decay_t<T>>;
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_PADDING_PADDING_LOADER_HPP

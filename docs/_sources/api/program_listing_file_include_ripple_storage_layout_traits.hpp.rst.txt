@@ -1,0 +1,82 @@
+
+.. _program_listing_file_include_ripple_storage_layout_traits.hpp:
+
+Program Listing for File layout_traits.hpp
+==========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_storage_layout_traits.hpp>` (``include/ripple/storage/layout_traits.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_STORAGE_LAYOUT_TRAITS_HPP
+   #define RIPPLE_STORAGE_LAYOUT_TRAITS_HPP
+   
+   #include "detail/storage_traits_impl_.hpp"
+   #include "default_storage.hpp"
+   #include "pointer_wrapper.hpp"
+   #include "storage_layout.hpp"
+   
+   namespace ripple {
+   
+   template <typename T, bool PolyAndNonOwningData>
+   struct LayoutTraits {
+     // clang-format off
+     static constexpr bool       is_polymorphic_layout = false;
+     static constexpr LayoutKind layout_kind           = LayoutKind::none;
+     static constexpr bool       is_strided_view       = false;
+     static constexpr size_t     alignment             = alignof(std::decay_t<T>); 
+   
+     using Value        = std::decay_t<T>;
+     using Allocator    = typename DefaultStorage<T>::Allocator;
+     using IterCopy     = Value;
+     using IterStorage  = Value*;
+     using IterRef      = Value&;
+     using IterConstRef = const Value&;
+     using IterPtr      = Value*;
+     using IterConstPtr = const Value*;
+     using RawPtr       = Value*;
+     using ConstRawPtr  = const Value*;
+     // clang-format on
+   };
+   
+   template <typename T>
+   struct LayoutTraits<T, true> {
+    private:
+     // clang-format off
+     using Descriptor    = typename T::Descriptor;
+     using StridedView   = typename Descriptor::StridedView;
+     using ContigView    = typename Descriptor::ContigView;
+     using AsContigOwned = detail::StorageAs<ContiguousOwned, T>;
+   
+    public:
+     /*==--- [constants] ------------------------------------------------------==*/
+   
+     static constexpr LayoutKind layout_kind = detail::StorageLayoutKind<T>::value;
+   
+     static constexpr bool is_strided_view       = is_strided_view_v<layout_kind>;
+     static constexpr bool is_contiguous_view    = is_contig_view_v<layout_kind>;
+     static constexpr bool is_polymorphic_layout = true;
+   
+     using IterStorage = std::conditional_t<
+       is_strided_view, StridedView, ContigView>;
+   
+     using Allocator    = typename IterStorage::Allocator;
+     using Value        = std::decay_t<T>;
+     using IterCopy     = typename AsContigOwned::Type;
+     using IterRef      = Value;
+     using IterConstRef = const Value;
+     using IterPtr      = PointerWrapper<Value>;
+     using IterConstPtr = const IterPtr;
+     using RawPtr       = void*;
+     using ConstRawPtr  = const void*;
+     // clang-format off
+   
+     static constexpr size_t alignment = Allocator::alignment;
+   };
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_STORAGE_LAYOUT_TRAITS_HPP

@@ -1,0 +1,13 @@
+.. _exhale_function_invoke__cpu__impl___8hpp_1af3d168a26096d02f962ff22517bccfac:
+
+Template Function ripple::kernel::invoke(HostBlock<T, Dims>&, Callable&&, Args&&...)
+====================================================================================
+
+- Defined in :ref:`file_include_ripple_functional_kernel_invoke_cpu_impl_.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ripple::kernel::invoke(HostBlock<T, Dims>&, Callable&&, Args&&...)

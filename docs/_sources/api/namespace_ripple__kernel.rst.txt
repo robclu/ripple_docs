@@ -28,27 +28,27 @@ Functions
 ---------
 
 
-- :ref:`exhale_function_invoke__utils_8hpp_1aa76ddfa3130f18ba7f33e73e5b7c77e8`
+- :ref:`exhale_function_invoke__utils___8hpp_1a86450e8789e389e2cb2382e425722748`
 
-- :ref:`exhale_function_invoke__utils_8hpp_1a86450e8789e389e2cb2382e425722748`
+- :ref:`exhale_function_invoke__utils___8hpp_1aa76ddfa3130f18ba7f33e73e5b7c77e8`
 
-- :ref:`exhale_function_invoke__utils_8hpp_1a7dace31c06cfa04136639d2827cdf458`
+- :ref:`exhale_function_invoke__utils___8hpp_1a7dace31c06cfa04136639d2827cdf458`
 
-- :ref:`exhale_function_invoke__utils_8hpp_1ac0f64c8e9de179bd5e446054f250e8c7`
+- :ref:`exhale_function_invoke__utils___8hpp_1ad386b61b19913cf8fae89f0dca4f7526`
 
-- :ref:`exhale_function_invoke__utils_8hpp_1ad386b61b19913cf8fae89f0dca4f7526`
+- :ref:`exhale_function_invoke__utils___8hpp_1a5aadd9683a92460f256e7274b5b4c74a`
 
-- :ref:`exhale_function_invoke__utils_8hpp_1a5aadd9683a92460f256e7274b5b4c74a`
+- :ref:`exhale_function_invoke__utils___8hpp_1ac0f64c8e9de179bd5e446054f250e8c7`
 
-- :ref:`exhale_function_invoke__cpp___8hpp_1af3d168a26096d02f962ff22517bccfac`
+- :ref:`exhale_function_invoke__cpu__impl___8hpp_1af3d168a26096d02f962ff22517bccfac`
 
-- :ref:`exhale_function_invoke__cpp___8hpp_1ad54380e145e797395aa185f5db33c13b`
+- :ref:`exhale_function_invoke__cpu__impl___8hpp_1ad54380e145e797395aa185f5db33c13b`
 
-- :ref:`exhale_function_invoke__cpp___8hpp_1a7420d272ca4e92041a4523aadc63c9a1`
+- :ref:`exhale_function_invoke__cpu__impl___8hpp_1a7420d272ca4e92041a4523aadc63c9a1`
 
 
 Typedefs
 --------
 
 
-- :ref:`exhale_typedef_invoke__utils_8hpp_1a361de60b93138975cdbde330471c89fc`
+- :ref:`exhale_typedef_invoke__utils___8hpp_1a361de60b93138975cdbde330471c89fc`

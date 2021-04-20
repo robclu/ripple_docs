@@ -1,0 +1,82 @@
+
+.. _program_listing_file_include_ripple_container_tensor_traits.hpp:
+
+Program Listing for File tensor_traits.hpp
+==========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_ripple_container_tensor_traits.hpp>` (``include/ripple/container/tensor_traits.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef RIPPLE_CONTAINER_TENSOR_TRAITS_HPP
+   #define RIPPLE_CONTAINER_TENSOR_TRAITS_HPP
+   
+   #include <ripple/utility/type_traits.hpp>
+   
+   namespace ripple {
+   
+   /*==--- [forward declarations] ---------------------------------------------==*/
+   
+   struct Splitter;
+   
+   template <typename T, size_t Dimensions>
+   class Tensor;
+   
+   /*==--- [tensor traits] ----------------------------------------------------==*/
+   
+   template <typename T>
+   struct TensorTraits {
+     // clang-format off
+     using Value          = T;
+     using Iterator       = std::void_t<>;
+     using SharedIterator = std::void_t<>;
+   
+   
+     // clang-format off
+     static constexpr bool   is_tensor  = false;
+     static constexpr size_t dimensions = 0;
+     // clang-format on
+   };
+   
+   template <typename T, size_t Dimensions>
+   struct TensorTraits<Tensor<T, Dimensions>> {
+     // clang-format off
+     using Value          = T;
+     using Iterator       = typename Block<T, Dimensions>::Iterator;
+     using SharedIterator = typename Block<T, Dimensions>::SharedIterator;
+   
+     // clang-format off
+     static constexpr bool   is_tensor  = true;
+     static constexpr size_t dimensions = Dimensions;
+     // clang-format on.
+   };
+   
+   /*==--- [aliases] ----------------------------------------------------------==*/
+   
+   template <typename T>
+   using Tensor1d = Tensor<T, 1>;
+   
+   template <typename T>
+   using Tensor2d = Tensor<T, 2>;
+   
+   template <typename T>
+   using Tensor3d = Tensor<T, 3>;
+   
+   template <typename T>
+   using tensor_traits_t = TensorTraits<std::decay_t<T>>;
+   
+   template <typename T>
+   static constexpr bool is_tensor_v = tensor_traits_t<T>::is_tensor;
+   
+   template <typename T>
+   using tensor_enable_t = std::enable_if_t<is_tensor_v<T>, int>;
+   
+   template <typename T>
+   using non_tensor_enable_t = std::enable_if_t<!is_tensor_v<T>, int>;
+   
+   } // namespace ripple
+   
+   #endif // RIPPLE_CONTAINER_TENSOR_TRAITS_HPP
